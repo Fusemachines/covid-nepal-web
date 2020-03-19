@@ -25,17 +25,8 @@ const Landing = () => (
                 <div className="display-4 font-weight-bold">1</div>
                 <div className="h6 text-success">
                   <span className="mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11.192"
-                      height="11"
-                      viewBox="0 0 11.192 11"
-                    >
-                      <g
-                        id="Group_99"
-                        data-name="Group 99"
-                        transform="translate(-381 -206)"
-                      >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11.192" height="11" viewBox="0 0 11.192 11">
+                      <g id="Group_99" data-name="Group 99" transform="translate(-381 -206)">
                         <circle
                           id="Ellipse_5"
                           data-name="Ellipse 5"
@@ -46,11 +37,7 @@ const Landing = () => (
                           fill="#8aca2b"
                           opacity="0.2"
                         />
-                        <g
-                          id="Group_70"
-                          data-name="Group 70"
-                          transform="translate(219.365 -207.365) rotate(45)"
-                        >
+                        <g id="Group_70" data-name="Group 70" transform="translate(219.365 -207.365) rotate(45)">
                           <line
                             id="Line_10"
                             data-name="Line 10"
@@ -96,17 +83,8 @@ const Landing = () => (
                 <div className="display-4 font-weight-bold">1</div>
                 <div className="h6 text-warning">
                   <span className="mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11.192"
-                      height="11"
-                      viewBox="0 0 11.192 11"
-                    >
-                      <g
-                        id="Group_100"
-                        data-name="Group 100"
-                        transform="translate(-557 -206)"
-                      >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11.192" height="11" viewBox="0 0 11.192 11">
+                      <g id="Group_100" data-name="Group 100" transform="translate(-557 -206)">
                         <circle
                           id="Ellipse_6"
                           data-name="Ellipse 6"
@@ -117,11 +95,7 @@ const Landing = () => (
                           fill="#fedb41"
                           opacity="0.2"
                         />
-                        <g
-                          id="Group_71"
-                          data-name="Group 71"
-                          transform="translate(395.365 -207.365) rotate(45)"
-                        >
+                        <g id="Group_71" data-name="Group 71" transform="translate(395.365 -207.365) rotate(45)">
                           <line
                             id="Line_10"
                             data-name="Line 10"
@@ -169,17 +143,8 @@ const Landing = () => (
                 <div className="display-4 font-weight-bold">0</div>
                 <div className="h6 text-warning">
                   <span className="mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="11.192"
-                      viewBox="0 0 11 11.192"
-                    >
-                      <g
-                        id="Group_101"
-                        data-name="Group 101"
-                        transform="translate(-381 -295)"
-                      >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11.192" viewBox="0 0 11 11.192">
+                      <g id="Group_101" data-name="Group 101" transform="translate(-381 -295)">
                         <circle
                           id="Ellipse_7"
                           data-name="Ellipse 7"
@@ -190,11 +155,7 @@ const Landing = () => (
                           fill="#ffc400"
                           opacity="0.2"
                         />
-                        <g
-                          id="Group_72"
-                          data-name="Group 72"
-                          transform="translate(386.243 305.192) rotate(-135)"
-                        >
+                        <g id="Group_72" data-name="Group 72" transform="translate(386.243 305.192) rotate(-135)">
                           <line
                             id="Line_10"
                             data-name="Line 10"
@@ -240,17 +201,8 @@ const Landing = () => (
                 <div className="display-4 font-weight-bold">0</div>
                 <div className="h6 text-danger">
                   <span className="mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="11.192"
-                      viewBox="0 0 11 11.192"
-                    >
-                      <g
-                        id="Group_102"
-                        data-name="Group 102"
-                        transform="translate(-558 -295)"
-                      >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11.192" viewBox="0 0 11 11.192">
+                      <g id="Group_102" data-name="Group 102" transform="translate(-558 -295)">
                         <circle
                           id="Ellipse_8"
                           data-name="Ellipse 8"
@@ -261,11 +213,7 @@ const Landing = () => (
                           fill="#e42929"
                           opacity="0.2"
                         />
-                        <g
-                          id="Group_73"
-                          data-name="Group 73"
-                          transform="translate(563.243 305.192) rotate(-135)"
-                        >
+                        <g id="Group_73" data-name="Group 73" transform="translate(563.243 305.192) rotate(-135)">
                           <line
                             id="Line_10"
                             data-name="Line 10"
@@ -319,21 +267,11 @@ const Landing = () => (
 
         <Col md="12" lg="5" className="mt-2">
           <div className="rounded bg-bluelight p-3">
-            <div className="h5 d-inline-block font-weight-bold mb-3">
-              Live Data
-            </div>
+            <div className="h5 d-inline-block font-weight-bold mb-3">Live Data</div>
             <div className="search-wrapper">
-              <input
-                className="form-control form-control-sm"
-                placeholder="search"
-              />
+              <input className="form-control form-control-sm" placeholder="search" />
               <i>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12.88"
-                  height="12.88"
-                  viewBox="0 0 12.88 12.88"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="12.88" height="12.88" viewBox="0 0 12.88 12.88">
                   <path
                     id="Icon_map-search"
                     data-name="Icon map-search"
