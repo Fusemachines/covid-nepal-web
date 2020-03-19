@@ -18,9 +18,9 @@ const Landing = () => (
 
               <div className="d-inline-block float-right">Country Dropdown</div>
             </div>
-
+            <div className="clearfix"></div>
             <Row className="mb-3">
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Conformed</div>
                 <div className="display-4 font-weight-bold">1</div>
                 <div className="h6 text-success">
@@ -91,7 +91,7 @@ const Landing = () => (
                 </div>
               </Col>
 
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Recovered</div>
                 <div className="display-4 font-weight-bold">1</div>
                 <div className="h6 text-warning">
@@ -164,7 +164,7 @@ const Landing = () => (
             </Row>
 
             <Row>
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Serious</div>
                 <div className="display-4 font-weight-bold">0</div>
                 <div className="h6 text-warning">
@@ -235,7 +235,7 @@ const Landing = () => (
                 </div>
               </Col>
 
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Death</div>
                 <div className="display-4 font-weight-bold">0</div>
                 <div className="h6 text-danger">
