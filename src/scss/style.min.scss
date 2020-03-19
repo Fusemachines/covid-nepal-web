@@ -29,3 +29,15 @@ body {
         right: 10px;
     }
 }
+
+.table {
+    thead th {
+        border-top: 0;
+        border-color: #2074B9;
+        font-weight: 600;
+    }
+
+    tbody td {
+        border-bottom: 1px solid #2074B9;
+    }
+}

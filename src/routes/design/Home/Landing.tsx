@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Media, Table } from 'react-bootstrap';
+import { Row, Col, Table } from 'react-bootstrap';
 import Menu from '../Navbar';
 
 const Landing = () => (
