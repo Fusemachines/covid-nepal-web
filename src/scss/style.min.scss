@@ -1,0 +1,47 @@
+body {
+    background: #0A375D;
+    color: #ffffff;
+}
+
+.navbar-dark {
+    background: #0A375D !important;
+}
+
+.bg-bluelight {
+    background-color: #004E90;
+}
+
+.search-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 200px;
+    position: relative;
+    float: right;
+
+    input {
+        border-radius: 25px;
+        padding-right: 25px;
+    }
+
+    i {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+    }
+}
+
+.rounded {
+    border-radius: 15px !important;
+}
+
+.table {
+    thead th {
+        border-top: 0;
+        border-color: #2074B9;
+        font-weight: 600;
+    }
+
+    tbody td {
+        border-bottom: 1px solid #2074B9;
+    }
+}

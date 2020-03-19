@@ -1,11 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
-const TestComponent = () => <p>Design Route Test</p>;
+import Landing from './Home';
 
 const DesignRoutes: React.FC = () => (
   <Switch>
-    <Route exact path={'/design/test'} component={TestComponent} />
+    <Route exact path={'/design'} component={Landing} />
   </Switch>
 );
 
