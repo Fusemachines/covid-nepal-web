@@ -1,8 +1,6 @@
 import React from 'react';
-import DesignRoutes from './Router';
+import Router from './Router';
 
-const Design = () => (
-  <DesignRoutes />
-);
+const Design = () => <Router />;
 
 export default Design;
