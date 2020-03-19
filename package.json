@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.{ts, tsx, js}\"",
+    "format": "prettier --write \"src/**/*.{tsx,ts,js}\"",
     "clean": "rimraf build",
     "deploy": ""
   },
@@ -40,7 +40,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
+    "*.{ts,tsx,js}": [
       "prettier --trailing-commas es5 --single-quote --write",
       "git add"
     ]
