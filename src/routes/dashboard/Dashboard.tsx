@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Dashboard = () => {
-  return <h1>COVID-19 NEPAL</h1>;
+import SampleComponent from 'src/components/SampleComponent';
+
+const Dashboard: FC<{}> = () => {
+  return (
+    <>
+      <h1>COVID-19 NEPAL</h1>
+      <SampleComponent />
+    </>
+  );
 };
 
 export default Dashboard;
