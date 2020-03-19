@@ -11,8 +11,8 @@ const Landing = () => (
         <Col md="12" lg="4" className="mt-2">
           <div className="rounded bg-bluelight p-4">
             <div className="mb-3">
-              <div className="h5 d-inline-block font-weight-bold">
-                Virus Counts <br />
+              <div className="d-inline-block ">
+                <div className="h5 mb-0 font-weight-bold">Virus Counts</div>
                 <small>Updated 1 minutes ago</small>
               </div>
 

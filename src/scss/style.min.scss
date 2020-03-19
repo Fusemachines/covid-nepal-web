@@ -1,6 +1,7 @@
 body {
     background: #0A375D;
     color: #ffffff;
+    font-size: 14px;
 }
 
 .navbar-dark {
@@ -43,5 +44,48 @@ body {
 
     tbody td {
         border-bottom: 1px solid #2074B9;
+    }
+}
+
+.right-bar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 490px;
+    background: #09365B;
+    color: #ffffff;
+    z-index: 10;
+    font-size: 14px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.info {
+    &-item  {
+        display: block;
+        border-bottom: 1px solid #2074B9;
+    }
+}
+
+.badges {
+    &-item {
+        display: inline-block;
+        color: #00C571;
+        background: rgba(0, 197, 112, .1);
+        padding: 6px 12px;
+        border-radius: 15px;
+        margin-top: 12px;
+        margin-right: 12px;
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            margin-top: -5px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
