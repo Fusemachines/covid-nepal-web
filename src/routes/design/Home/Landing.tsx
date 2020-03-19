@@ -8,14 +8,6 @@ const Landing = () => (
 
     <div className="container-fluid mt-3">
       <Row>
-        <Col md="12" lg="3" className="mt-2">
-          <div className="rounded bg-bluelight p-3">
-            <div className="h5 font-weight-bold mb-3">Latest News</div>
-
-            <div className="">Latest News</div>
-          </div>
-        </Col>
-
         <Col md="12" lg="4" className="mt-2">
           <div className="rounded bg-bluelight p-4">
             <div className="mb-3">
@@ -437,6 +429,14 @@ const Landing = () => (
                 </tr>
               </tbody>
             </Table>
+          </div>
+        </Col>
+
+        <Col md="12" lg="3" className="mt-2 order-lg-first">
+          <div className="rounded bg-bluelight p-3">
+            <div className="h5 font-weight-bold mb-3">Latest News</div>
+
+            <div className="">Latest News</div>
           </div>
         </Col>
       </Row>
