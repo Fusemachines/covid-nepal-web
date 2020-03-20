@@ -1,22 +1,31 @@
 import React, { FC } from 'react';
 import { Table } from 'react-bootstrap';
 import ContactBadge from 'src/components/Badges/ContactBadge';
+import { IContact } from 'src/services/contacts';
 
-interface IHospitalContactsRecordsProps {}
+interface IHospitalContactsRecordsProps {
+  hospitalContacts: IContact[];
+}
 
 const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
+  const { hospitalContacts } = props;
+
   return (
     <div className="px-4">
       <Table className="text-white">
         <tbody>
-          <tr>
-            <td>Sukraraj Hospital, Teku</td>
-            <td className="text-right">
-              <div className="badges">
-                <ContactBadge contactNumber={'123'} />
-              </div>
-            </td>
-          </tr>
+          {hospitalContacts.map(contact => (
+            <tr>
+              <td>{contact.name}</td>
+              <td className="text-right">
+                <div className="badges">
+                  {contact.landLine.map(number => (
+                    <ContactBadge contactNumber={number} />
+                  ))}
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </div>
