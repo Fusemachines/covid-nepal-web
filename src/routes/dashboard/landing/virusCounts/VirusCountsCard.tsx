@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import TextCaption from 'src/components/TextCaption/TextCaption';
+import { fetchVirusCountsAPI, IFetchVirusCountsAPIResponse } from 'src/services/virusCounts';
 
 const VirusCountsCard = () => {
+  const [virusCounts, setVirusCounts] = useState<IFetchVirusCountsAPIResponse>({} as IFetchVirusCountsAPIResponse);
+
+  useEffect(() => {
+    getVirusCounts();
+  }, []);
+
+  const getVirusCounts = async () => {
+    const response = await fetchVirusCountsAPI();
+    setVirusCounts(response);
+  };
+
   return (
     <div className="rounded bg-bluelight p-4">
       <div className="mb-3">
