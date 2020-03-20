@@ -1,6 +1,7 @@
 body {
     background: #0A375D;
     color: #ffffff;
+    font-size: 14px;
 }
 
 .navbar-dark {
@@ -9,6 +10,72 @@ body {
 
 .bg-bluelight {
     background-color: #004E90;
+}
+
+.btn-outline-white {
+    border: 1px solid #ffffff;
+    margin-right: 10px;
+    padding: 6px 15px !important;
+
+    &:hover {
+        background: #ffffff;
+        color: #004E90 !important;
+
+        svg path {
+            fill: #004E90 !important;
+        }
+    }
+}
+
+.btn-green {
+    background: #079558;
+    color: #ffffff;
+}
+
+.title {
+    display: inline-block;
+    border-radius: 15px;
+    padding: 6px 15px;
+    font-weight: bold;
+}
+
+.bg-orange {
+    background: #D1454B;
+}
+
+.bg-yellow {
+    background: #FFC400;
+}
+
+.navbar-expand  .navbar-nav {
+    margin-left: 15%;
+
+    .nav-link {
+        color: #ffffff;
+        position: relative;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        margin-right: 25px;
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition: all ease-in-out 0.3s;
+        }
+
+        &:hover:after,
+        &.active:after {
+            content: "";
+            width: 100%;
+        }
+    }
 }
 
 .search-wrapper {
@@ -30,6 +97,15 @@ body {
     }
 }
 
+.rec {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: #D1454B;
+    border: 2px solid lighten( #D1454B, 20% );
+    border-radius: 50%;
+}
+
 .rounded {
     border-radius: 15px !important;
 }
@@ -43,5 +119,53 @@ body {
 
     tbody td {
         border-bottom: 1px solid #2074B9;
+    }
+}
+
+.right-bar {
+    position: fixed;
+    right: -500px;
+    top: 0;
+    bottom: 0;
+    width: 490px;
+    background: #09365B;
+    color: #ffffff;
+    z-index: 10;
+    font-size: 14px;
+    height: 100%;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+
+    &.show {
+        right: 0;
+    }
+}
+
+.info {
+    &-item  {
+        display: block;
+        border-bottom: 1px solid #2074B9;
+    }
+}
+
+.badges {
+    &-item {
+        display: inline-block;
+        color: #00C571;
+        background: rgba(0, 197, 112, .1);
+        padding: 6px 12px;
+        border-radius: 15px;
+        margin-top: 12px;
+        margin-right: 12px;
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            margin-top: -5px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
