@@ -29,14 +29,13 @@ export async function fetchEmergencyContactsAPI() {
 }
 
 interface IFetchEmergencyContactsAPIPayload {
-  district: string[];
+  district: string;
 }
 
 export async function fetchHospitalContactsAPI(payload: IFetchEmergencyContactsAPIPayload) {
   try {
-    const districts = payload.district.join(',');
     const response: AxiosResponse<IFetchContactsAPIResponse> = await axios.get(
-      `/contacts/hospitals?district=${districts}`
+      `/contacts/hospitals?district=${payload.district}`
     );
     return response.data;
   } catch (error) {
@@ -44,6 +43,16 @@ export async function fetchHospitalContactsAPI(payload: IFetchEmergencyContactsA
   }
 }
 
-export async function fetchProvinceListAPI() {}
+export interface IFetchDistrictListAPIResponse {
+  name: string;
+  province: string;
+}
 
-export async function fetchDistrictListAPI() {}
+export async function fetchDistrictListAPI(province: string) {
+  try {
+    const response: AxiosResponse<IFetchDistrictListAPIResponse> = await axios.get(`/district?province=${province}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
