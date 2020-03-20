@@ -35,7 +35,7 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
 
           <Nav>
-            <TransparentButton text={'Govt. Notices'} handleClick={() => ({})} />
+            <TransparentButton text={'Covid-19 Casea'} handleClick={() => ({})} />
             <EmergencyButton text={'Emergency Contact'} handleClick={toggleSidebar} />
             <Nav.Link className="d-none d-lg-block">Language</Nav.Link>
           </Nav>
