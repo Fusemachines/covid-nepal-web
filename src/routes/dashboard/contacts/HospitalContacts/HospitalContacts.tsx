@@ -19,7 +19,7 @@ interface IContactFilters {
 
 const initialFilters: IContactFilters = {
   province: ProvinceOptions[2].value,
-  district: ''
+  district: 'Kathmandu'
 };
 
 const HospitalContacts: FC<{}> = () => {
@@ -29,9 +29,13 @@ const HospitalContacts: FC<{}> = () => {
   const [filters, setFilters] = useState<IContactFilters>(initialFilters);
 
   useEffect(() => {
-    fetchHospitalContacts();
     fetchDistrictsByProvince();
-  }, [filters]);
+    fetchHospitalContacts();
+  }, [filters.province]);
+
+  useEffect(() => {
+    fetchHospitalContacts();
+  }, [filters.district]);
 
   const fetchHospitalContacts = async () => {
     try {
@@ -57,13 +61,11 @@ const HospitalContacts: FC<{}> = () => {
   const handleProvinceFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
     const selectedField = value as IOptions;
     setFilters({ province: selectedField.value, district: '' });
-    fetchDistrictsByProvince();
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
     const selectedField = value as IOptions;
     setFilters({ ...filters, district: selectedField.value });
-    fetchDistrictsByProvince();
   };
 
   return (
