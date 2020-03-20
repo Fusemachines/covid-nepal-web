@@ -32,7 +32,6 @@ const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
         <CustomSelectInput
           name={'district-select'}
           options={props.districtOptions}
-          // options={DistrictOptions}
           placeholder={'Select District'}
           handleChange={props.handleDistrictFilterChange}
           className={'filter-select'}

@@ -21,8 +21,8 @@ export interface ILiveDataFiltersContext {
   handleDistrictFilterChange: (value: ValueType<IOptions>) => void;
 }
 interface ILiveDataFilters {
-  province: IOptions | null;
-  district: IOptions | null;
+  province: IOptions;
+  district: IOptions;
 }
 
 export const LiveDataTableContext = React.createContext({} as ILiveDataTableContext);
@@ -69,10 +69,11 @@ const LiveData: FC<{}> = () => {
       if (filters.province) {
         const response: IFetchDistrictListAPIResponse = await fetchDistrictListAPI(filters.province.value);
 
-        const mappedOptions = response.docs.map(doc => {
+        let mappedOptions = response.docs.map(doc => {
           return { label: doc.name, value: doc.name };
         });
 
+        mappedOptions.unshift({ label: 'All', value: '' });
         setDistrictDropdownOptions(mappedOptions);
       }
     } catch (error) {
@@ -82,7 +83,7 @@ const LiveData: FC<{}> = () => {
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
-    setFilters({ province: selectedField, district: null });
+    setFilters({ province: selectedField, district: { label: 'All', value: '' } });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
