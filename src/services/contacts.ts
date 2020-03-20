@@ -44,13 +44,17 @@ export async function fetchHospitalContactsAPI(payload: IFetchEmergencyContactsA
 }
 
 export interface IFetchDistrictListAPIResponse {
+  docs: IDistricts[];
+}
+
+export interface IDistricts {
   name: string;
   province: string;
 }
 
 export async function fetchDistrictListAPI(province: string) {
   try {
-    const response: AxiosResponse<IFetchDistrictListAPIResponse> = await axios.get(`/district?province=${province}`);
+    const response: AxiosResponse<IFetchDistrictListAPIResponse> = await axios.get(`/districts?province=${province}`);
     return response.data;
   } catch (error) {
     throw error;
