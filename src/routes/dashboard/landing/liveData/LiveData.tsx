@@ -94,16 +94,17 @@ const LiveData: FC<{}> = () => {
     <>
       <Col md="12" lg="5" className="mt-2">
         <div className="rounded bg-bluelight p-3">
-          <div className="h5 d-inline-block font-weight-bold mb-3">
-            <div className="rec"></div> Live Data
+          <div className="filter-wrapper mb-3 d-md-flex">
+            <div className="h5 d-inline-block font-weight-bold">
+              <div className="rec"></div> Live Data
+            </div>
+
+            <LiveDataFiltersContext.Provider
+              value={{ filters, districtDropdownOptions, handleProvinceFilterChange, handleDistrictFilterChange }}
+            >
+              <LiveDataFilter />
+            </LiveDataFiltersContext.Provider>
           </div>
-
-          <LiveDataFiltersContext.Provider
-            value={{ filters, districtDropdownOptions, handleProvinceFilterChange, handleDistrictFilterChange }}
-          >
-            <LiveDataFilter />
-          </LiveDataFiltersContext.Provider>
-
           <LiveDataTableContext.Provider value={{ isLoaded, liveDataList }}>
             <LiveDataTable />
           </LiveDataTableContext.Provider>

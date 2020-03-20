@@ -11,7 +11,8 @@ const Contacts: FC<IContactsProps> = props => {
   const { visibility, toggleContacts } = props;
 
   return (
-    <div className={`right-bar ${visibility ? 'show' : ''}`} onClick={() => toggleContacts()}>
+    <div className={`right-bar ${visibility ? 'show' : ''}`}>
+      <div className="overlay" onClick={() => toggleContacts()} />
       <div className="content">
         <div className="px-4 mt-4">
           <div className="h5">
