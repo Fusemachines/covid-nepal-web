@@ -35,12 +35,13 @@ const CustomSelectInput: React.FC<ICustomSelectInputProps> = props => {
       name={name}
       className={className}
       placeholder={placeholder}
-      value={selectedValue}
+      // value={selectedValue}
       onChange={handleChange}
       isLoading={isLoading}
       isDisabled={isDisabled}
       isClearable={isClearable}
       options={options}
+      defaultValue={selectedValue}
     />
   );
 };

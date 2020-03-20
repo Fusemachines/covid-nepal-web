@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import CustomSelectInput from 'src/components/CustomSelectInput';
-import { ProvinceOptions } from 'src/constants/options';
+import { ProvinceOptions, DistrictOptions } from 'src/constants/options';
 import { ValueType, ActionMeta } from 'react-select';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 
@@ -30,6 +30,7 @@ const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
         <CustomSelectInput
           name={'district-select'}
           options={props.districtOptions}
+          // options={DistrictOptions}
           placeholder={'Select District'}
           handleChange={props.handleDistrictFilterChange}
           className={'filter-select'}
