@@ -14,7 +14,6 @@ const VirusCountsCard = () => {
     try {
       const response = await fetchVirusCountsOfTodayAPI();
       setVirusCountsOfToday(response);
-      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +34,7 @@ const VirusCountsCard = () => {
 
           <div className="display-4 font-weight-bold">
             {' '}
-            {virusCountsOfToday ? virusCountsOfToday.confirmedToday : '-'}
+            {virusCountsOfToday ? virusCountsOfToday.confirmedTotal : '-'}
           </div>
           <TextCaption type={'success'} value={'0.10'} />
         </Col>
@@ -44,7 +43,7 @@ const VirusCountsCard = () => {
           <div className="">Total Recovered</div>
           <div className="display-4 font-weight-bold">
             {' '}
-            {virusCountsOfToday ? virusCountsOfToday.recoveredToday : '-'}
+            {virusCountsOfToday ? virusCountsOfToday.recoveredTotal : '-'}
           </div>
 
           <TextCaption type={'warning'} value={'0.10'} />
@@ -54,13 +53,13 @@ const VirusCountsCard = () => {
       <Row>
         <Col xs="6">
           <div className="">Total Serious</div>
-          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.seriousToday : '-'}</div>
+          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.seriousTotal : '-'}</div>
           <TextCaption type={'warning'} value={'0.10'} />
         </Col>
 
         <Col xs="6">
           <div className="">Total Death</div>
-          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.deathToday : '-'}</div>
+          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.deathTotal : '-'}</div>
           <TextCaption type={'danger'} value={'0.10'} />
         </Col>
       </Row>

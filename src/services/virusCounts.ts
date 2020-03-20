@@ -27,6 +27,7 @@ export interface IVirusCountOfToday {
   confirmedToday: number;
   recoveredToday: number;
   seriousToday: number;
+  seriousTotal: number;
   deathToday: number;
   testedTotal: number;
   confirmedTotal: number;
@@ -35,23 +36,6 @@ export interface IVirusCountOfToday {
   district: string;
   province: string;
 }
-
-const mockTodaysVirusCounts = {
-  docs: {
-    _id: '5e749a6a5840b814cc9dcb16',
-    testedToday: 1100,
-    confirmedToday: 0,
-    recoveredToday: 132,
-    seriousToday: 123,
-    deathToday: 0,
-    testedTotal: 1000000,
-    confirmedTotal: 12,
-    recoveredTotal: 12,
-    deathTotal: 0,
-    district: 'Kathmandu',
-    province: 'Province-1'
-  }
-};
 
 const mockVirusCountsResponse = {
   docs: [
@@ -110,7 +94,7 @@ export async function fetchVirusCountsAPI() {
 
 export async function fetchVirusCountsOfTodayAPI() {
   try {
-    const response: AxiosResponse = await axios.get(`virus-counts/today`);
+    const response: AxiosResponse = await axios.get(`http://ac132bce.ngrok.io/virus-counts/today`);
     return response.data;
   } catch (error) {
     throw error;
