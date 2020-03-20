@@ -1,12 +1,10 @@
 import React, { useEffect, useState, FC } from 'react';
 
-import { fetchEmergencyContactsAPI, IFetchEmergencyContactsAPIResponse } from 'src/services/emergencyContacts';
+import { fetchSampleAPI, IFetchSampleAPIResponse } from 'src/services/sampleService';
 
 const SampleComponent: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [newsList, setNewsList] = useState<IFetchEmergencyContactsAPIResponse>(
-    {} as IFetchEmergencyContactsAPIResponse
-  );
+  const [newsList, setNewsList] = useState<IFetchSampleAPIResponse>({} as IFetchSampleAPIResponse);
 
   useEffect(() => {
     fetchEmergencyContacts();
@@ -14,7 +12,7 @@ const SampleComponent: FC<{}> = () => {
 
   const fetchEmergencyContacts = async () => {
     try {
-      const response: IFetchEmergencyContactsAPIResponse = await fetchEmergencyContactsAPI();
+      const response: IFetchSampleAPIResponse = await fetchSampleAPI();
       setNewsList(response);
       setIsLoaded(true);
     } catch (error) {

@@ -1,4 +1,6 @@
-import React, { FC } from 'react';
+import React, { useEffect, useState, FC } from 'react';
+import { IFetchEmergencyContactsAPIResponse, fetchEmergencyContactsAPI } from 'src/services/emergencyContacts';
+import EmergencyContactItem from './EmergencyContactItem';
 
 interface IEmergencyContactsProps {
   visibility: boolean;
@@ -7,6 +9,24 @@ interface IEmergencyContactsProps {
 
 const EmergencyContacts: FC<IEmergencyContactsProps> = props => {
   const { visibility, toggleSidebar } = props;
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [contactList, setContactList] = useState<IFetchEmergencyContactsAPIResponse>(
+    {} as IFetchEmergencyContactsAPIResponse
+  );
+
+  useEffect(() => {
+    fetchEmergencyContacts();
+  }, []);
+
+  const fetchEmergencyContacts = async () => {
+    try {
+      const response: IFetchEmergencyContactsAPIResponse = await fetchEmergencyContactsAPI();
+      setContactList(response);
+      setIsLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={`right-bar ${visibility ? 'show' : ''}`}>
@@ -49,84 +69,10 @@ const EmergencyContacts: FC<IEmergencyContactsProps> = props => {
         </svg>
       </div>
 
-      {/*  */}
       <div className="px-5">
         <div className="h4">Emergency Contacts</div>
-
         <div className="info-list">
-          <div className="info-item py-3 mt-4">
-            <div>
-              COVID-19 Hotline <small className="float-right">8 AM - 8 PM</small>
-            </div>
-            <div className="badges mt-2">
-              <div className="badges-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                  <path
-                    id="Icon_material-call"
-                    data-name="Icon material-call"
-                    d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                    transform="translate(-1.75 -1.75)"
-                    fill="#00c571"
-                  />
-                </svg>
-                9851255839
-              </div>
-              <div className="badges-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                  <path
-                    id="Icon_material-call"
-                    data-name="Icon material-call"
-                    d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                    transform="translate(-1.75 -1.75)"
-                    fill="#00c571"
-                  />
-                </svg>
-                9851255839
-              </div>
-              <div className="badges-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                  <path
-                    id="Icon_material-call"
-                    data-name="Icon material-call"
-                    d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                    transform="translate(-1.75 -1.75)"
-                    fill="#00c571"
-                  />
-                </svg>
-                9851255839
-              </div>
-            </div>
-          </div>
-
-          <div className="info-item py-3 mt-4">
-            <div>Nepal Police</div>
-            <div className="badges mt-2">
-              <div className="badges-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                  <path
-                    id="Icon_material-call"
-                    data-name="Icon material-call"
-                    d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                    transform="translate(-1.75 -1.75)"
-                    fill="#00c571"
-                  />
-                </svg>
-                9851255839
-              </div>
-              <div className="badges-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                  <path
-                    id="Icon_material-call"
-                    data-name="Icon material-call"
-                    d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                    transform="translate(-1.75 -1.75)"
-                    fill="#00c571"
-                  />
-                </svg>
-                9851255839
-              </div>
-            </div>
-          </div>
+          {isLoaded && contactList.docs.map(contact => <EmergencyContactItem contact={contact} />)}
         </div>
       </div>
     </div>
