@@ -13,7 +13,9 @@ const NavItem: FC<INavItemProps> = props => {
 
   return (
     <Nav.Link className={`${active ? 'active' : ''}`}>
-      <Link to={to}>{title}</Link>
+      <Link to={to} className="nav-link">
+        {title}
+      </Link>
     </Nav.Link>
   );
 };
