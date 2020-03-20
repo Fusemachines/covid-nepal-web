@@ -2,7 +2,7 @@ import { AxiosResponse } from 'axios';
 
 import axios from 'src/utils/axios';
 
-export interface IFetchEmergencyContactsAPIResponse {
+export interface IFetchSampleAPIResponse {
   hits: Array<IHits>;
 }
 
@@ -11,9 +11,9 @@ interface IHits {
   author: string;
 }
 
-export async function fetchEmergencyContactsAPI() {
+export async function fetchSampleAPI() {
   try {
-    const response: AxiosResponse<IFetchEmergencyContactsAPIResponse> = await axios.get(
+    const response: AxiosResponse<IFetchSampleAPIResponse> = await axios.get(
       `https://hn.algolia.com/api/v1/search?query=corona`
     );
     return response.data;

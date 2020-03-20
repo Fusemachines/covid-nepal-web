@@ -1,11 +1,8 @@
 import React from 'react';
 import { Row, Col, Media } from 'react-bootstrap';
-import Menu from '../Navbar';
 
 const Symptoms = () => (
   <>
-    <Menu />
-
     <div className="container mt-3">
       <Row className="mt-5">
         <Col lg="3" className="mt-4 text-white">
