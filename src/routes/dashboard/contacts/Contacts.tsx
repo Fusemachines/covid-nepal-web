@@ -20,11 +20,9 @@ const Contacts: FC<IContactsProps> = props => {
               &times;
             </div>
           </div>
-
           <EmergencyContacts />
-
-          <HospitalContacts />
         </div>
+        <HospitalContacts />
       </div>
     </div>
   );
