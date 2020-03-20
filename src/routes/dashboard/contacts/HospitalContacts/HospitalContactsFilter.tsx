@@ -1,9 +1,13 @@
 import React, { FC } from 'react';
 import CustomSelectInput from 'src/components/CustomSelectInput';
 import { ProvinceOptions } from 'src/constants/options';
+import { ValueType, ActionMeta } from 'react-select';
+import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 
 interface IHospitalContactsFilterProps {
-  handleProvinceFilterChange: () => void;
+  districtOptions: IOptions[];
+  handleProvinceFilterChange: (value: ValueType<IOptions>, action?: ActionMeta) => void;
+  handleDistrictFilterChange: (value: ValueType<IOptions>, action?: ActionMeta) => void;
 }
 
 const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
@@ -22,9 +26,13 @@ const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
 
       <div className="filter d-inline-block">
         <span>District</span>
-        <select className="custom-select form-control-sm">
-          <option>Kathmandu</option>
-        </select>
+        <CustomSelectInput
+          name={'district-select'}
+          options={props.districtOptions}
+          placeholder={'Select District'}
+          handleChange={props.handleDistrictFilterChange}
+          className={''}
+        />
       </div>
     </>
   );
