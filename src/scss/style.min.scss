@@ -21,10 +21,15 @@ body {
         background: #ffffff;
         color: #004E90 !important;
 
-        svg {
+        svg path {
             fill: #004E90 !important;
         }
     }
+}
+
+.btn-green {
+    background: #079558;
+    color: #ffffff;
 }
 
 .search-wrapper {
