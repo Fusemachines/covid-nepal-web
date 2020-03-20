@@ -37,7 +37,12 @@ body {
     display: inline-block;
     border-radius: 15px;
     padding: 6px 15px;
-    font-weight: bold;
+    font-weight: 600;
+}
+
+.h4 {
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
 .bg-orange {
@@ -125,21 +130,28 @@ body {
 
 .right-bar {
     position: fixed;
-    right: -590px;
+    left: 100%;
     top: 0;
     bottom: 0;
-    width: 590px;
-    background: #09365B;
-    color: #ffffff;
+    width: 100%;
+    background: #ffffff63;
     z-index: 1030;
-    font-size: 14px;
-    height: 100%;
-    overflow-y: auto;
     transition: all 0.3s ease-in-out;
     max-width: 100%;
 
     &.show {
-        right: 0;
+        left: 0;
+
+        .content {
+            background: #09365B;
+            max-width: 620px;
+            font-size: 14px;
+            height: 100%;
+            overflow-y: auto;
+            color: #ffffff;
+            float: right;
+            max-width: 100%;
+        }
     }
 
     .filter-wrapper {
