@@ -1,6 +1,15 @@
 import React, { FC } from 'react';
+import { ValueType, ActionMeta } from 'react-select';
+
+import CustomSelectInput from 'src/components/CustomSelectInput';
+import { ProvinceOptions } from 'src/constants/options';
+import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 
 const LiveDataFilter: FC<{}> = () => {
+  const handleProvinceFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
+    const selectedField = value as IOptions;
+  };
+
   return (
     <div className="search-wrapper">
       {/* <input className="form-control form-control-sm" placeholder="search" />
@@ -15,6 +24,18 @@ const LiveDataFilter: FC<{}> = () => {
             />
           </svg>
         </i> */}
+      <div className="filter d-inline-block">
+        <span>Province</span>
+        <CustomSelectInput
+          name={'province-select'}
+          options={ProvinceOptions}
+          placeholder={'Select Province'}
+          handleChange={handleProvinceFilterChange}
+          className={'filter-select'}
+          selectedValue={ProvinceOptions[2]}
+        />
+      </div>
+
       <select className="custom-select form-control-sm">
         <option>Kathmandu</option>
         <option>Bhaktapur</option>
