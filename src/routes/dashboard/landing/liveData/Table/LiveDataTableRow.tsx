@@ -1,20 +1,29 @@
 import React, { FC } from 'react';
 import { TextCaptionIcon } from 'src/components/TextCaption/TextCaptionIcons';
+import { ILiveData } from 'src/services/liveData';
 
-const LiveDataTableRow: FC<{}> = () => {
+interface ILiveTableRowProps {
+  liveData: ILiveData;
+}
+
+const LiveDataTableRow: FC<ILiveTableRowProps> = props => {
+  const {
+    liveData: { nameOfHospital, numberOfBed, numberOfPatient, covid19Symptom, covid19SymptomPercentage }
+  } = props;
   return (
     <>
+      {}
       <tr>
         <td>
-          <div>Bir Hospital</div>
-          <small>200 Beds</small>
+          <div>{nameOfHospital}</div>
+          <small>{numberOfBed} Beds</small>
         </td>
-        <td>80</td>
+        <td>{numberOfPatient}</td>
         <td>
-          20
+          {covid19Symptom}
           <small className="d-block text-success">
             <TextCaptionIcon type={'success'} />
-            0.01%
+            {covid19SymptomPercentage}%
           </small>
         </td>
       </tr>
