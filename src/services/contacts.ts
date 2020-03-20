@@ -50,7 +50,7 @@ export interface IFetchDistrictListAPIResponse {
 
 export async function fetchDistrictListAPI(province: string) {
   try {
-    const response: AxiosResponse<IFetchDistrictListAPIResponse> = await axios.get(`/district?province=${province}`);
+    const response: AxiosResponse<IFetchDistrictListAPIResponse> = await axios.get(`/districts?province=${province}`);
     return response.data;
   } catch (error) {
     throw error;
