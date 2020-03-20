@@ -1,12 +1,10 @@
 import React, { useEffect, useState, FC } from 'react';
-import { IFetchEmergencyContactsAPIResponse, fetchEmergencyContactsAPI } from 'src/services/contacts';
+import { IFetchContactsAPIResponse, fetchEmergencyContactsAPI } from 'src/services/contacts';
 import EmergencyContactItem from './EmergencyContactItem';
 
 const EmergencyContacts: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [contactList, setContactList] = useState<IFetchEmergencyContactsAPIResponse>(
-    {} as IFetchEmergencyContactsAPIResponse
-  );
+  const [contactList, setContactList] = useState<IFetchContactsAPIResponse>({} as IFetchContactsAPIResponse);
 
   useEffect(() => {
     fetchEmergencyContacts();
@@ -14,7 +12,7 @@ const EmergencyContacts: FC<{}> = () => {
 
   const fetchEmergencyContacts = async () => {
     try {
-      const response: IFetchEmergencyContactsAPIResponse = await fetchEmergencyContactsAPI();
+      const response: IFetchContactsAPIResponse = await fetchEmergencyContactsAPI();
       setContactList(response);
       setIsLoaded(true);
     } catch (error) {
@@ -24,7 +22,6 @@ const EmergencyContacts: FC<{}> = () => {
 
   return (
     <div className="info-list">
-      <p>Emergency Contacts</p>
       {isLoaded && contactList.docs.map(contact => <EmergencyContactItem contact={contact} />)}
     </div>
   );

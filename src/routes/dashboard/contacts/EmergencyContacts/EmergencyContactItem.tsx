@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { IEmergencyContact } from 'src/services/contacts';
+import { IContact } from 'src/services/contacts';
 import ContactBadge from 'src/components/Badges/ContactBadge';
 
 interface IEmergencyContactItemProps {
-  contact: IEmergencyContact;
+  contact: IContact;
 }
 
 const EmergencyContactItem: FC<IEmergencyContactItemProps> = props => {
@@ -21,7 +21,7 @@ const EmergencyContactItem: FC<IEmergencyContactItemProps> = props => {
         {contact.mobile.map(mobile => (
           <ContactBadge contactNumber={mobile} />
         ))}
-        {contact.landline.map(landline => (
+        {contact.landLine.map(landline => (
           <ContactBadge contactNumber={landline} />
         ))}
       </div>
