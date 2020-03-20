@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IEmergencyContact } from 'src/services/emergencyContacts';
+import { IEmergencyContact } from 'src/services/contacts';
 import ContactBadge from 'src/components/Badges/ContactBadge';
 
 interface IEmergencyContactItemProps {
