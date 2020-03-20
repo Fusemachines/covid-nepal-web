@@ -157,14 +157,13 @@ body {
     top: 0;
     bottom: 0;
     width: 100%;
-    background: #ffffff63;
+    background: rgba(0,0,0,0.75);
     z-index: 1030;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
     max-width: 100%;
 
     &.show {
         left: 0;
-
     }
     
     .content {

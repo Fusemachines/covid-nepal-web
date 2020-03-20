@@ -4,10 +4,10 @@ import TextCaption from 'src/components/TextCaption/TextCaption';
 
 const VirusCountsCard = () => {
   return (
-    <div className="rounded bg-bluelight p-4">
+    <div className="rounded bg-bluelight p-3">
       <div className="mb-3">
         <div className="d-inline-block ">
-          <div className="h5 mb-0 font-weight-bold">Government Virus Counts</div>
+          <div className="h5 mb-0 font-weight-bold">Covid-19 cases</div>
           <small>Updated 1 minutes ago</small>
         </div>
       </div>
