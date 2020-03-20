@@ -9,6 +9,7 @@ const Landing = () => (
     <div className="container-fluid mt-3">
       <Row>
         <VirusCounts />
+
         <LiveData />
 
         <Col md="12" lg="3" className="mt-2 order-lg-first">

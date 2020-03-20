@@ -37,7 +37,12 @@ body {
     display: inline-block;
     border-radius: 15px;
     padding: 6px 15px;
-    font-weight: bold;
+    font-weight: 600;
+}
+
+.h5 {
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
 .bg-orange {
@@ -76,6 +81,29 @@ body {
             content: "";
             width: 100%;
         }
+    }
+}
+
+.emg-call {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .icon {
+        padding: 6px 12px;
+        background: #079558;
+    }
+    .text {
+        padding: 6px 12px;
+        background: #00C571;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 6px #00C571
     }
 }
 
@@ -125,21 +153,28 @@ body {
 
 .right-bar {
     position: fixed;
-    right: -590px;
+    left: 100%;
     top: 0;
     bottom: 0;
-    width: 590px;
-    background: #09365B;
-    color: #ffffff;
+    width: 100%;
+    background: rgba(0,0,0,0.75);
     z-index: 1030;
-    font-size: 14px;
-    height: 100%;
-    overflow-y: auto;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
     max-width: 100%;
 
     &.show {
-        right: 0;
+        left: 0;
+    }
+    
+    .content {
+        background: #09365B;
+        width: 620px;
+        font-size: 14px;
+        height: 100%;
+        overflow-y: auto;
+        color: #ffffff;
+        float: right;
+        max-width: 100%;
     }
 
     .filter-wrapper {
@@ -155,13 +190,29 @@ body {
                 display: inline-block;
             }
 
-            .custom-select {
-                max-width: 110px;
+            .filter-select {
+                max-width: 112px;
                 display: inline-block;
                 font-size: 12px;
-                height: 26px;
-                padding: 4px 20px 4px 4px;
-                width: 106px;
+                width: 112px;
+                
+                .css-1pahdxg-control,
+                .css-yk16xz-control {
+                    min-height: 26px;
+                    
+                    .css-1gtu0rj-indicatorContainer,
+                    .css-tlfecz-indicatorContainer {
+                        padding: 4px 5px 4px 0;
+                    }
+                    .css-1okebmr-indicatorSeparator {
+                        margin: 0 2px 0 0px;
+                    }
+                }
+
+                .css-26l3qy-menu {
+                    color: #000000 !important;
+                }
+
             }
         }
     }
@@ -219,7 +270,7 @@ body {
             margin: 35px 0 0;
         }
 
-        .btn-group {
+        .emg-call {
             margin: 0 !important;
             max-width: 250px;
             position: absolute;

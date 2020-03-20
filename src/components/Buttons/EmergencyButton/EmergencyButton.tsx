@@ -9,8 +9,8 @@ const EmeergencyButton: FC<IEmergencyButtonProps> = props => {
   const { text, handleClick } = props;
 
   return (
-    <div className="btn-group mx-3" role="group" onClick={() => handleClick()}>
-      <button type="button" className="btn btn-green">
+    <div className="emg-call mx-3" role="group" onClick={() => handleClick()}>
+      <div className="icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="18.491" height="18.483" viewBox="0 0 18.491 18.483">
           <path
             id="Path_34"
@@ -20,10 +20,8 @@ const EmeergencyButton: FC<IEmergencyButtonProps> = props => {
             fill="#fff"
           />
         </svg>
-      </button>
-      <button type="button" className="btn btn-success">
-        {text}
-      </button>
+      </div>
+      <div className="text">{text}</div>
     </div>
   );
 };

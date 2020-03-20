@@ -10,9 +10,11 @@
 
 # production
 /build
+/build.zip
 
 # misc
 .env
+.env.zip
 .DS_Store
 .env.local
 .env.development.local
