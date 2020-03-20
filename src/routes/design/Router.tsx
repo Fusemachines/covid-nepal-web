@@ -6,7 +6,7 @@ import Symptoms from './Symptoms';
 const DesignRoutes: React.FC = () => (
   <Switch>
     <Route exact path={'/design'} component={Landing} />
-    <Route exact path={'/symptoms'} component={Symptoms} />
+    <Route exact path={'/design/symptoms'} component={Symptoms} />
   </Switch>
 );
 

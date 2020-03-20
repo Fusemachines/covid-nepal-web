@@ -4,7 +4,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 const Call = () => (
   <>
-    <div className="right-bar">
+    <div className="right-bar show">
       <div className="p-3">
         <svg xmlns="http://www.w3.org/2000/svg" width="21.207" height="18.557" viewBox="0 0 21.207 18.557">
           <g id="Group_86" data-name="Group 86" transform="translate(195 -410.793) rotate(90)">

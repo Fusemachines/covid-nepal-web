@@ -1,20 +1,22 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-// import RightBar from '../EmergencyCall';
+import RightBar from '../EmergencyCall';
 
 const Menu = () => (
-  <>
+  <React.Fragment>
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/design" className="font-weight-bold">
-        {' '}
         <span className="mr-2">nCOVID</span>
         <span>NEPAL</span>
       </Navbar.Brand>
+
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/design">Home</Nav.Link>
+          <Nav.Link href="/design" className="active">
+            Home
+          </Nav.Link>
           <Nav.Link href="/design/symptoms">Symptoms</Nav.Link>
         </Nav>
         <Nav>
@@ -53,8 +55,8 @@ const Menu = () => (
       </Navbar.Collapse>
     </Navbar>
 
-    {/* <RightBar /> */}
-  </>
+    <RightBar />
+  </React.Fragment>
 );
 
 export default Menu;
