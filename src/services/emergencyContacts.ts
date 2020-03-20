@@ -2,20 +2,26 @@ import { AxiosResponse } from 'axios';
 
 import axios from 'src/utils/axios';
 
-export interface IFetchEmergencyContactsAPIResponse {
-  hits: Array<IHits>;
+export interface IEmergencyContact {
+  name: string;
+  contactType: string;
+  landline: string[];
+  mobile: string[];
+  openingTime: string;
+  closingTime: string;
+  district: string;
+  province: string;
+  createdDate: string;
+  updatedDate: string;
 }
 
-interface IHits {
-  title: string;
-  author: string;
+export interface IFetchEmergencyContactsAPIResponse {
+  docs: IEmergencyContact[];
 }
 
 export async function fetchEmergencyContactsAPI() {
   try {
-    const response: AxiosResponse<IFetchEmergencyContactsAPIResponse> = await axios.get(
-      `https://hn.algolia.com/api/v1/search?query=corona`
-    );
+    const response: AxiosResponse<IFetchEmergencyContactsAPIResponse> = await axios.get(`/contact`);
     return response.data;
   } catch (error) {
     throw error;
