@@ -22,15 +22,15 @@ const HospitalContactsFilter: FC<{}> = props => {
         <CustomSelectInput
           name={'province-select'}
           options={dummyOptions}
-          placeholder={'Select Province'}
+          placeholder={'Province'}
           handleChange={() => {}}
-          className={''}
+          className={'filter-select'}
         />
       </div>
 
       <div className="filter d-inline-block">
         <span>District</span>
-        <select className="custom-select form-control-sm">
+        <select className="custom-select filter-select form-control-sm">
           <option>Kathmandu</option>
         </select>
       </div>
