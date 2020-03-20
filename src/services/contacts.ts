@@ -44,6 +44,10 @@ export async function fetchHospitalContactsAPI(payload: IFetchEmergencyContactsA
 }
 
 export interface IFetchDistrictListAPIResponse {
+  docs: IDistricts[];
+}
+
+export interface IDistricts {
   name: string;
   province: string;
 }

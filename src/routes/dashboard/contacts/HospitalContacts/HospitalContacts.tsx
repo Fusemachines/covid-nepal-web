@@ -47,12 +47,14 @@ const HospitalContacts: FC<{}> = () => {
   const fetchDistrictsByProvince = async () => {
     try {
       const response: IFetchDistrictListAPIResponse = await fetchDistrictListAPI(filters.province);
-      setDistrictList([
-        {
-          label: response.name,
-          value: response.name
-        }
-      ]);
+      const dataArray: IOptions[] = [];
+      response.docs.map(doc => {
+        dataArray.push({
+          label: doc.name,
+          value: doc.name
+        });
+      });
+      setDistrictList(dataArray);
     } catch (error) {
       console.log(error);
     }
