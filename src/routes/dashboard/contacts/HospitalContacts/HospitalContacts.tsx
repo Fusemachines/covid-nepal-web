@@ -10,6 +10,7 @@ import {
   fetchHospitalContactsAPI
 } from 'src/services/contacts';
 import { ValueType, ActionMeta } from 'react-select';
+import { ProvinceOptions } from 'src/constants/options';
 
 interface IContactFilters {
   province: string;
@@ -17,7 +18,7 @@ interface IContactFilters {
 }
 
 const initialFilters: IContactFilters = {
-  province: '',
+  province: ProvinceOptions[2].value,
   district: ''
 };
 
@@ -29,6 +30,7 @@ const HospitalContacts: FC<{}> = () => {
 
   useEffect(() => {
     fetchHospitalContacts();
+    fetchDistrictsByProvince();
   }, [filters]);
 
   const fetchHospitalContacts = async () => {

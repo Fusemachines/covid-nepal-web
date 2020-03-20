@@ -21,6 +21,7 @@ const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
           placeholder={'Select Province'}
           handleChange={props.handleProvinceFilterChange}
           className={'filter-select'}
+          selectedValue={ProvinceOptions[2]}
         />
       </div>
 
