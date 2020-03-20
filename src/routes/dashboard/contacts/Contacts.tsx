@@ -12,16 +12,18 @@ const Contacts: FC<IContactsProps> = props => {
 
   return (
     <div className={`right-bar ${visibility ? 'show' : ''}`}>
-      <div className="px-4 mt-4">
-        <div className="h4">
-          Emergency Contacts
-          <div className="float-right pointer" onClick={() => toggleContacts()}>
-            &times;
+      <div className="content">
+        <div className="px-4 mt-4">
+          <div className="h4">
+            Emergency Contacts
+            <div className="float-right pointer" onClick={() => toggleContacts()}>
+              &times;
+            </div>
           </div>
-        </div>
 
-        <EmergencyContacts />
-        <HospitalContacts />
+          <EmergencyContacts />
+          <HospitalContacts />
+        </div>
       </div>
     </div>
   );
