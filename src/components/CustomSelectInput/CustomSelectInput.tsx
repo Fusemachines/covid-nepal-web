@@ -1,24 +1,24 @@
 import React from 'react';
 import Select, { ValueType, ActionMeta } from 'react-select';
 
-export interface IOptionProps {
+export interface IOptions {
   value: string;
   label: string;
 }
 
-interface ICustomSelectFieldProps {
+interface ICustomSelectInputProps {
   name: string;
   placeholder: string;
-  options: Array<IOptionProps>;
-  selectedValue?: IOptionProps | null;
+  options: Array<IOptions>;
+  selectedValue?: IOptions | null;
   className?: string;
   isLoading?: boolean;
   isDisabled?: boolean;
   isClearable?: boolean;
-  handleChange: (value: ValueType<IOptionProps>, action?: ActionMeta) => void;
+  handleChange: (value: ValueType<IOptions>, action?: ActionMeta) => void;
 }
 
-const CustomSelectField: React.FC<ICustomSelectFieldProps> = props => {
+const CustomSelectInput: React.FC<ICustomSelectInputProps> = props => {
   const {
     name,
     placeholder,
@@ -45,4 +45,4 @@ const CustomSelectField: React.FC<ICustomSelectFieldProps> = props => {
   );
 };
 
-export default CustomSelectField;
+export default CustomSelectInput;
