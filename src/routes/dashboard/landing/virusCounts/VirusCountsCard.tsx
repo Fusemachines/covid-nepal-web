@@ -8,7 +8,7 @@ const VirusCountsCard = () => {
 
   useEffect(() => {
     getVirusCounts();
-  }, [virusCountsOfToday]);
+  }, []);
 
   const getVirusCounts = async () => {
     try {
@@ -35,7 +35,7 @@ const VirusCountsCard = () => {
 
           <div className="display-4 font-weight-bold">
             {' '}
-            {virusCountsOfToday ? virusCountsOfToday.confirmedToday : 'N/A'}
+            {virusCountsOfToday ? virusCountsOfToday.confirmedToday : '-'}
           </div>
           <TextCaption type={'success'} value={'0.10'} />
         </Col>
@@ -44,7 +44,7 @@ const VirusCountsCard = () => {
           <div className="">Total Recovered</div>
           <div className="display-4 font-weight-bold">
             {' '}
-            {virusCountsOfToday ? virusCountsOfToday.recoveredToday : 'N/A'}
+            {virusCountsOfToday ? virusCountsOfToday.recoveredToday : '-'}
           </div>
 
           <TextCaption type={'warning'} value={'0.10'} />
@@ -54,15 +54,13 @@ const VirusCountsCard = () => {
       <Row>
         <Col xs="6">
           <div className="">Total Serious</div>
-          <div className="display-4 font-weight-bold">
-            {virusCountsOfToday ? virusCountsOfToday.seriousToday : 'N/A'}
-          </div>
+          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.seriousToday : '-'}</div>
           <TextCaption type={'warning'} value={'0.10'} />
         </Col>
 
         <Col xs="6">
           <div className="">Total Death</div>
-          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.deathToday : 'N/A'}</div>
+          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.deathToday : '-'}</div>
           <TextCaption type={'danger'} value={'0.10'} />
         </Col>
       </Row>
