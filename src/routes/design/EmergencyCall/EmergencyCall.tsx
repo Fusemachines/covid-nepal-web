@@ -7,7 +7,7 @@ const Call = () => (
       <div className="content">
         {/* Emergency call */}
         <div className="px-4 mt-4">
-          <div className="h4">
+          <div className="h5">
             Emergency Contacts
             <div className="float-right pointer">&times;</div>
           </div>
@@ -91,7 +91,7 @@ const Call = () => (
 
         {/* filter */}
         <div className="filter-wrapper px-4 py-4">
-          <div className="h4 d-inline-block">Hospital Contacts</div>
+          <div className="h5 d-inline-block">Hospital Contacts</div>
 
           <div className="filter d-inline-block">
             <span>Province</span>

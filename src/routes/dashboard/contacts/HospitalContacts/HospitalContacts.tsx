@@ -67,7 +67,7 @@ const HospitalContacts: FC<{}> = () => {
   return (
     <>
       <div className="filter-wrapper px-4 py-4">
-        <div className="h4 d-inline-block">Hospital Contacts</div>
+        <div className="h5 d-inline-block">Hospital Contacts</div>
         <HospitalContactsFilter
           districtOptions={districtList}
           handleProvinceFilterChange={handleProvinceFilterChange}
