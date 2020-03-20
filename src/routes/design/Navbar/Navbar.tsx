@@ -4,7 +4,7 @@ import RightBar from '../EmergencyCall';
 
 const Menu = () => (
   <React.Fragment>
-    <Navbar bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
       <Navbar.Brand href="/design" className="font-weight-bold">
         <span className="mr-2">nCOVID</span>
         <span>NEPAL</span>
@@ -50,7 +50,7 @@ const Menu = () => (
             </button>
           </div>
 
-          <Nav.Link href="">Language</Nav.Link>
+          <Nav.Link className="d-none d-lg-block">Language</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
