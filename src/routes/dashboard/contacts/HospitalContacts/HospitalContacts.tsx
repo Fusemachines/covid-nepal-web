@@ -12,14 +12,14 @@ import {
 import { ValueType, ActionMeta } from 'react-select';
 import { ProvinceOptions } from 'src/constants/options';
 
-interface IContactFilters {
-  province: string;
-  district: string;
+export interface IContactFilters {
+  province: IOptions | null;
+  district: IOptions | null;
 }
 
 const initialFilters: IContactFilters = {
-  province: ProvinceOptions[2].value,
-  district: 'Kathmandu'
+  province: ProvinceOptions[2],
+  district: { label: 'Kathmandu', value: 'Kathmandu' }
 };
 
 const HospitalContacts: FC<{}> = () => {
@@ -39,22 +39,28 @@ const HospitalContacts: FC<{}> = () => {
 
   const fetchHospitalContacts = async () => {
     try {
-      const response: IFetchContactsAPIResponse = await fetchHospitalContactsAPI({ district: filters.district });
-      setHospitalContacts(response.docs);
+      if (filters.district) {
+        const response: IFetchContactsAPIResponse = await fetchHospitalContactsAPI({
+          district: filters.district.value
+        });
+        setHospitalContacts(response.docs);
+      }
     } catch (error) {}
   };
 
   const fetchDistrictsByProvince = async () => {
     try {
-      const response: IFetchDistrictListAPIResponse = await fetchDistrictListAPI(filters.province);
-      const dataArray: IOptions[] = [];
-      response.docs.map(doc => {
-        dataArray.push({
-          label: doc.name,
-          value: doc.name
+      if (filters.province) {
+        const response: IFetchDistrictListAPIResponse = await fetchDistrictListAPI(filters.province.value);
+        const dataArray: IOptions[] = [];
+        response.docs.map(doc => {
+          dataArray.push({
+            label: doc.name,
+            value: doc.name
+          });
         });
-      });
-      setDistrictList(dataArray);
+        setDistrictList(dataArray);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -62,12 +68,12 @@ const HospitalContacts: FC<{}> = () => {
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
     const selectedField = value as IOptions;
-    setFilters({ province: selectedField.value, district: '' });
+    setFilters({ province: selectedField, district: null });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
     const selectedField = value as IOptions;
-    setFilters({ ...filters, district: selectedField.value });
+    setFilters({ ...filters, district: selectedField });
   };
 
   return (
@@ -75,6 +81,7 @@ const HospitalContacts: FC<{}> = () => {
       <div className="filter-wrapper px-4 py-4">
         <div className="h5 d-inline-block">Hospital Contacts</div>
         <HospitalContactsFilter
+          filters={filters}
           districtOptions={districtList}
           handleProvinceFilterChange={handleProvinceFilterChange}
           handleDistrictFilterChange={handleDistrictFilterChange}
