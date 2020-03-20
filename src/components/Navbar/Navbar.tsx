@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Navbar as Navigation, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import * as routes from 'src/constants/routes';
 import TransparentButton from 'src/components/Buttons/TransparentButton';
@@ -13,6 +13,9 @@ interface INavbarProps {
 
 const Navbar: FC<INavbarProps> = props => {
   const { toggleSidebar } = props;
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <React.Fragment>
       <Navigation collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
@@ -27,8 +30,8 @@ const Navbar: FC<INavbarProps> = props => {
 
         <Navigation.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <NavItem title={'Home'} to={routes.DASHBOARD} active={false} />
-            <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={false} />
+            <NavItem title={'Home'} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
+            <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
           </Nav>
 
           <Nav>
