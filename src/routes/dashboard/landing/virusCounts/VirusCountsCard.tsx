@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import TextCaption from 'src/components/TextCaption/TextCaption';
-import { fetchVirusCountsAPI, IFetchVirusCountsAPIResponse } from 'src/services/virusCounts';
+import { fetchVirusCountsOfTodayAPI, IVirusCountOfToday } from 'src/services/virusCounts';
 
 const VirusCountsCard = () => {
-  const [virusCounts, setVirusCounts] = useState<IFetchVirusCountsAPIResponse>({} as IFetchVirusCountsAPIResponse);
+  const [virusCountsOfToday, setVirusCountsOfToday] = useState<IVirusCountOfToday>({} as IVirusCountOfToday);
 
   useEffect(() => {
     getVirusCounts();
   }, []);
 
   const getVirusCounts = async () => {
-    const response = await fetchVirusCountsAPI();
-    setVirusCounts(response);
+    const response = await fetchVirusCountsOfTodayAPI();
+    debugger;
+    setVirusCountsOfToday(response);
   };
 
   return (
@@ -27,6 +28,7 @@ const VirusCountsCard = () => {
       <Row className="mb-3">
         <Col xs="6">
           <div className="">Total Confirmed</div>
+          {virusCountsOfToday && virusCountsOfToday.confirmedToday ? virusCountsOfToday.confirmedToday : 'N/A'}
           <div className="display-4 font-weight-bold">1</div>
           <TextCaption type={'success'} value={'0.10'} />
         </Col>
