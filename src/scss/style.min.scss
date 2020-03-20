@@ -5,6 +5,11 @@ body {
     padding-top: 60px;
 }
 
+:-moz-focusring {
+    color: red;
+    outline: 0px dotted green;
+}
+
 .navbar-dark {
     background: #0A375D !important;
 }
