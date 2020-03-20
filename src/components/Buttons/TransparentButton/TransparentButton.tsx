@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Nav } from 'react-bootstrap';
 
 interface ITransparentButton {
   text: string;
@@ -11,7 +10,7 @@ const TransparentButton: FC<ITransparentButton> = props => {
   const { text, handleClick } = props;
 
   return (
-    <Nav.Link className="btn btn-outline-white" onClick={() => handleClick()}>
+    <a className="btn btn-outline-white" onClick={() => handleClick()}>
       <svg xmlns="http://www.w3.org/2000/svg" width="20.571" className="mr-1" height="18" viewBox="0 0 20.571 18">
         <path
           id="Path_647"
@@ -22,7 +21,7 @@ const TransparentButton: FC<ITransparentButton> = props => {
         />
       </svg>
       {text}
-    </Nav.Link>
+    </a>
   );
 };
 
