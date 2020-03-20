@@ -1,12 +1,18 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 
-import SampleComponent from 'src/components/SampleComponent';
+import Navbar from 'src/components/Navbar';
+import Router from 'src/routes/dashboard/Router';
 
 const Dashboard: FC<{}> = () => {
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
+  const toggleEmergencyContact = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
   return (
     <>
-      <h1>COVID-19 NEPAL</h1>
-      <SampleComponent />
+      <Navbar toggleSidebar={toggleEmergencyContact} />
+      <Router />
     </>
   );
 };
