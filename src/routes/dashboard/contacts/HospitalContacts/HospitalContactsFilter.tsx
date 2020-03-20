@@ -1,29 +1,21 @@
 import React, { FC } from 'react';
 import CustomSelectInput from 'src/components/CustomSelectInput';
-import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
+import { ProvinceOptions } from 'src/constants/options';
 
-interface IHospitalContactsFilterProps {}
+interface IHospitalContactsFilterProps {
+  handleProvinceFilterChange: () => void;
+}
 
-const dummyOptions: IOptions[] = [
-  {
-    label: 'Bagmati',
-    value: 'Bagmati'
-  },
-  {
-    label: 'Another Province',
-    value: 'Another Province'
-  }
-];
-const HospitalContactsFilter: FC<{}> = props => {
+const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
   return (
     <>
       <div className="filter d-inline-block">
         <span>Province</span>
         <CustomSelectInput
           name={'province-select'}
-          options={dummyOptions}
+          options={ProvinceOptions}
           placeholder={'Select Province'}
-          handleChange={() => {}}
+          handleChange={props.handleProvinceFilterChange}
           className={''}
         />
       </div>
