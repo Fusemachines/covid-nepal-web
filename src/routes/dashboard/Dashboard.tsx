@@ -11,7 +11,7 @@ const Dashboard: FC<{}> = () => {
   };
   return (
     <>
-      <Navbar />
+      <Navbar toggleSidebar={toggleEmergencyContact} />
       <Router />
     </>
   );
