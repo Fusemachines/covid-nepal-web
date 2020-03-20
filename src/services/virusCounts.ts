@@ -94,7 +94,7 @@ export async function fetchVirusCountsAPI() {
 
 export async function fetchVirusCountsOfTodayAPI() {
   try {
-    const response: AxiosResponse = await axios.get(`http://ac132bce.ngrok.io/virus-counts/today`);
+    const response: AxiosResponse = await axios.get(`/virus-counts/today`);
     return response.data;
   } catch (error) {
     throw error;
