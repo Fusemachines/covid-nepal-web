@@ -8,23 +8,13 @@ const Landing = () => (
 
     <div className="container-fluid mt-3">
       <Row>
-        <Col md="12" lg="3" className="mt-2 order-lg-first">
-          <div className="rounded bg-bluelight p-3">
-            <div className="h5 font-weight-bold mb-3">Latest News</div>
-
-            <div className="">Latest News</div>
-          </div>
-        </Col>
-
         <Col md="12" lg="4" className="mt-2">
           <div className="rounded bg-bluelight p-4">
             <div className="mb-3">
               <div className="d-inline-block ">
-                <div className="h5 mb-0 font-weight-bold">Virus Counts</div>
+                <div className="h5 mb-0 font-weight-bold">Government Virus Counts</div>
                 <small>Updated 1 minutes ago</small>
               </div>
-
-              <div className="d-inline-block float-right">Country Dropdown</div>
             </div>
             <div className="clearfix"></div>
             <Row className="mb-3">
@@ -648,6 +638,14 @@ const Landing = () => (
                 </tr>
               </tbody>
             </Table>
+          </div>
+        </Col>
+
+        <Col md="12" lg="3" className="mt-2 order-lg-first">
+          <div className="rounded bg-bluelight p-3">
+            <div className="h5 font-weight-bold mb-3">Latest News</div>
+
+            <div className="">Latest News</div>
           </div>
         </Col>
       </Row>
