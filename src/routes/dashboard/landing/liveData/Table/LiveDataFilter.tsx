@@ -1,14 +1,13 @@
-import React, { FC } from 'react';
-import { ValueType, ActionMeta } from 'react-select';
+import React, { FC, useContext } from 'react';
 
 import CustomSelectInput from 'src/components/CustomSelectInput';
 import { ProvinceOptions } from 'src/constants/options';
-import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
+import { LiveDataFiltersContext } from '../LiveData';
 
 const LiveDataFilter: FC<{}> = () => {
-  const handleProvinceFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
-    const selectedField = value as IOptions;
-  };
+  const { districtDropdownOptions, filters, handleProvinceFilterChange, handleDistrictFilterChange } = useContext(
+    LiveDataFiltersContext
+  );
 
   return (
     <div className="search-wrapper">
@@ -32,14 +31,21 @@ const LiveDataFilter: FC<{}> = () => {
           placeholder={'Select Province'}
           handleChange={handleProvinceFilterChange}
           className={'filter-select'}
-          selectedValue={ProvinceOptions[2]}
+          selectedValue={filters.province}
         />
       </div>
 
-      <select className="custom-select form-control-sm">
-        <option>Kathmandu</option>
-        <option>Bhaktapur</option>
-      </select>
+      <div className="filter d-inline-block">
+        <span>District</span>
+        <CustomSelectInput
+          name={'district-select'}
+          options={districtDropdownOptions}
+          placeholder={'Select District'}
+          handleChange={handleDistrictFilterChange}
+          className={'filter-select'}
+          selectedValue={filters.district}
+        />
+      </div>
     </div>
   );
 };
