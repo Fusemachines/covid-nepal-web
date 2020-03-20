@@ -17,9 +17,14 @@ export interface ILiveData {
   district: string;
 }
 
-export async function fetchLiveDataAPI() {
+export interface IFetchLiveDataAPIPayload {
+  province?: string;
+  district?: string;
+}
+
+export async function fetchLiveDataAPI(payload: IFetchLiveDataAPIPayload) {
   try {
-    const response: AxiosResponse<ILiveDataResponse> = await axios.get(`/livedata`);
+    const response: AxiosResponse<ILiveDataResponse> = await axios.get(`/livedata`, { params: payload });
     return response.data;
   } catch (error) {
     throw error;

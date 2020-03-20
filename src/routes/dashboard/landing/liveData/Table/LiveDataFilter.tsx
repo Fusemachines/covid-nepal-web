@@ -1,6 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+
+import CustomSelectInput from 'src/components/CustomSelectInput';
+import { ProvinceOptions } from 'src/constants/options';
+import { LiveDataFiltersContext } from '../LiveData';
 
 const LiveDataFilter: FC<{}> = () => {
+  const { districtDropdownOptions, filters, handleProvinceFilterChange, handleDistrictFilterChange } = useContext(
+    LiveDataFiltersContext
+  );
+
   return (
     <div className="search-wrapper">
       {/* <input className="form-control form-control-sm" placeholder="search" />
@@ -15,10 +23,29 @@ const LiveDataFilter: FC<{}> = () => {
             />
           </svg>
         </i> */}
-      <select className="custom-select form-control-sm">
-        <option>Kathmandu</option>
-        <option>Bhaktapur</option>
-      </select>
+      <div className="filter d-inline-block">
+        <span>Province</span>
+        <CustomSelectInput
+          name={'province-select'}
+          options={ProvinceOptions}
+          placeholder={'Select Province'}
+          handleChange={handleProvinceFilterChange}
+          className={'filter-select'}
+          selectedValue={filters.province}
+        />
+      </div>
+
+      <div className="filter d-inline-block">
+        <span>District</span>
+        <CustomSelectInput
+          name={'district-select'}
+          options={districtDropdownOptions}
+          placeholder={'Select District'}
+          handleChange={handleDistrictFilterChange}
+          className={'filter-select'}
+          selectedValue={filters.district}
+        />
+      </div>
     </div>
   );
 };
