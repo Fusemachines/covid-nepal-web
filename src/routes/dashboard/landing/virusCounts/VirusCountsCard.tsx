@@ -4,16 +4,20 @@ import TextCaption from 'src/components/TextCaption/TextCaption';
 import { fetchVirusCountsOfTodayAPI, IVirusCountOfToday } from 'src/services/virusCounts';
 
 const VirusCountsCard = () => {
-  const [virusCountsOfToday, setVirusCountsOfToday] = useState<IVirusCountOfToday>({} as IVirusCountOfToday);
+  const [virusCountsOfToday, setVirusCountsOfToday] = useState<IVirusCountOfToday | null>(null);
 
   useEffect(() => {
     getVirusCounts();
-  }, []);
+  }, [virusCountsOfToday]);
 
   const getVirusCounts = async () => {
-    const response = await fetchVirusCountsOfTodayAPI();
-    debugger;
-    setVirusCountsOfToday(response);
+    try {
+      const response = await fetchVirusCountsOfTodayAPI();
+      setVirusCountsOfToday(response);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -28,14 +32,20 @@ const VirusCountsCard = () => {
       <Row className="mb-3">
         <Col xs="6">
           <div className="">Total Confirmed</div>
-          {virusCountsOfToday && virusCountsOfToday.confirmedToday ? virusCountsOfToday.confirmedToday : 'N/A'}
-          <div className="display-4 font-weight-bold">1</div>
+
+          <div className="display-4 font-weight-bold">
+            {' '}
+            {virusCountsOfToday ? virusCountsOfToday.confirmedToday : 'N/A'}
+          </div>
           <TextCaption type={'success'} value={'0.10'} />
         </Col>
 
         <Col xs="6">
           <div className="">Total Recovered</div>
-          <div className="display-4 font-weight-bold">1</div>
+          <div className="display-4 font-weight-bold">
+            {' '}
+            {virusCountsOfToday ? virusCountsOfToday.recoveredToday : 'N/A'}
+          </div>
 
           <TextCaption type={'warning'} value={'0.10'} />
         </Col>
@@ -44,13 +54,15 @@ const VirusCountsCard = () => {
       <Row>
         <Col xs="6">
           <div className="">Total Serious</div>
-          <div className="display-4 font-weight-bold">0</div>
+          <div className="display-4 font-weight-bold">
+            {virusCountsOfToday ? virusCountsOfToday.seriousToday : 'N/A'}
+          </div>
           <TextCaption type={'warning'} value={'0.10'} />
         </Col>
 
         <Col xs="6">
           <div className="">Total Death</div>
-          <div className="display-4 font-weight-bold">0</div>
+          <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.deathToday : 'N/A'}</div>
           <TextCaption type={'danger'} value={'0.10'} />
         </Col>
       </Row>

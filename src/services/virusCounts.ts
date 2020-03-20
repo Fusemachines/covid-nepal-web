@@ -110,8 +110,8 @@ export async function fetchVirusCountsAPI() {
 
 export async function fetchVirusCountsOfTodayAPI() {
   try {
-    // const response: AxiosResponse = await axios.get(`virus-counts/today`);
-    return mockTodaysVirusCounts.docs;
+    const response: AxiosResponse = await axios.get(`virus-counts/today`);
+    return response.data;
   } catch (error) {
     throw error;
   }
