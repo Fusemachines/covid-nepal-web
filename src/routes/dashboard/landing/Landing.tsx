@@ -77,8 +77,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_11"
@@ -88,8 +88,8 @@ const Landing = () => (
                               transform="translate(411.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_12"
@@ -99,8 +99,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                           </g>
                         </g>
@@ -145,8 +145,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_11"
@@ -156,8 +156,8 @@ const Landing = () => (
                               transform="translate(411.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_12"
@@ -167,8 +167,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                           </g>
                         </g>
@@ -213,8 +213,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_11"
@@ -224,8 +224,8 @@ const Landing = () => (
                               transform="translate(411.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_12"
@@ -235,8 +235,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                           </g>
                         </g>
@@ -281,8 +281,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_11"
@@ -292,8 +292,8 @@ const Landing = () => (
                               transform="translate(411.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_12"
@@ -303,8 +303,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                           </g>
                         </g>
@@ -349,8 +349,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_11"
@@ -360,8 +360,8 @@ const Landing = () => (
                               transform="translate(411.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                             <line
                               id="Line_12"
@@ -371,8 +371,8 @@ const Landing = () => (
                               transform="translate(414.5 174.5)"
                               fill="none"
                               stroke="#8aca2b"
-                              stroke-linecap="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeWidth="1"
                             />
                           </g>
                         </g>
