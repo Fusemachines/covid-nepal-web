@@ -48,7 +48,7 @@ body {
     background: #FFC400;
 }
 
-.navbar-expand  .navbar-nav {
+.navbar-dark  .navbar-nav {
     margin-left: 15%;
 
     .nav-link {
@@ -205,22 +205,27 @@ body {
 }
 
 @media(max-width: 800px) {
- .navbar-collapse {
-    height: calc(100vh - 50px);
-    position: relative;
-
-    .btn {
-        max-width: 250px;
-        margin: 35px 0 0;
+    
+    .navbar-dark  .navbar-nav {
+        margin-left: 0%;
     }
+    
+    .navbar-collapse {
+        height: calc(100vh - 50px);
+        position: relative;
 
-    .btn-group {
-        margin: 0 !important;
-        max-width: 250px;
-        position: absolute;
-        left: 0px;
-        bottom: 15px;
-        width: 300px;
+        .btn {
+            max-width: 250px;
+            margin: 35px 0 0;
+        }
+
+        .btn-group {
+            margin: 0 !important;
+            max-width: 250px;
+            position: absolute;
+            left: 0px;
+            bottom: 15px;
+            width: 300px;
+        }
     }
- }
 }
