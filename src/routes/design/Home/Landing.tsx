@@ -11,16 +11,16 @@ const Landing = () => (
         <Col md="12" lg="4" className="mt-2">
           <div className="rounded bg-bluelight p-4">
             <div className="mb-3">
-              <div className="h5 d-inline-block font-weight-bold">
-                Virus Counts <br />
+              <div className="d-inline-block ">
+                <div className="h5 mb-0 font-weight-bold">Virus Counts</div>
                 <small>Updated 1 minutes ago</small>
               </div>
 
               <div className="d-inline-block float-right">Country Dropdown</div>
             </div>
-
+            <div className="clearfix"></div>
             <Row className="mb-3">
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Conformed</div>
                 <div className="display-4 font-weight-bold">1</div>
                 <div className="h6 text-success">
@@ -78,7 +78,7 @@ const Landing = () => (
                 </div>
               </Col>
 
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Recovered</div>
                 <div className="display-4 font-weight-bold">1</div>
                 <div className="h6 text-warning">
@@ -138,7 +138,7 @@ const Landing = () => (
             </Row>
 
             <Row>
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Serious</div>
                 <div className="display-4 font-weight-bold">0</div>
                 <div className="h6 text-warning">
@@ -196,7 +196,7 @@ const Landing = () => (
                 </div>
               </Col>
 
-              <Col sm="6">
+              <Col xs="6">
                 <div className="">Total Death</div>
                 <div className="display-4 font-weight-bold">0</div>
                 <div className="h6 text-danger">
