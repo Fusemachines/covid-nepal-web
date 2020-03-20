@@ -36,7 +36,7 @@ const VirusCountsCard = () => {
             {' '}
             {virusCountsOfToday ? virusCountsOfToday.confirmedTotal : '-'}
           </div>
-          <TextCaption type={'success'} value={'0.10'} />
+          {/* <TextCaption type={'success'} value={'0.10'} /> */}
         </Col>
 
         <Col xs="6">
@@ -46,7 +46,7 @@ const VirusCountsCard = () => {
             {virusCountsOfToday ? virusCountsOfToday.recoveredTotal : '-'}
           </div>
 
-          <TextCaption type={'warning'} value={'0.10'} />
+          {/* <TextCaption type={'warning'} value={'0.10'} /> */}
         </Col>
       </Row>
 
@@ -54,13 +54,13 @@ const VirusCountsCard = () => {
         <Col xs="6">
           <div className="">Total Serious</div>
           <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.seriousTotal : '-'}</div>
-          <TextCaption type={'warning'} value={'0.10'} />
+          {/* <TextCaption type={'warning'} value={'0.10'} /> */}
         </Col>
 
         <Col xs="6">
           <div className="">Total Death</div>
           <div className="display-4 font-weight-bold">{virusCountsOfToday ? virusCountsOfToday.deathTotal : '-'}</div>
-          <TextCaption type={'danger'} value={'0.10'} />
+          {/* <TextCaption type={'danger'} value={'0.10'} /> */}
         </Col>
       </Row>
     </div>
