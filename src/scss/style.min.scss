@@ -12,6 +12,21 @@ body {
     background-color: #004E90;
 }
 
+.btn-outline-white {
+    border: 1px solid #ffffff;
+    margin-right: 10px;
+    padding: 6px 15px !important;
+
+    &:hover {
+        background: #ffffff;
+        color: #004E90 !important;
+
+        svg {
+            fill: #004E90 !important;
+        }
+    }
+}
+
 .search-wrapper {
     display: inline-block;
     vertical-align: middle;
@@ -29,6 +44,15 @@ body {
         top: 0px;
         right: 10px;
     }
+}
+
+.rec {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: #D1454B;
+    border: 2px solid lighten( #D1454B, 20% );
+    border-radius: 50%;
 }
 
 .rounded {
