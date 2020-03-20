@@ -9,8 +9,8 @@ const NotFound = () => <p>404 -Not Found</p>;
 
 const Router: React.FC = () => (
   <Switch>
-    <Route exact path={routes.DASHBOARD} component={Dashboard} />
     <Route path={routes.DESIGN} component={Design} />
+    <Route path={routes.DASHBOARD} component={Dashboard} />
     <Route component={NotFound} />
   </Switch>
 );
