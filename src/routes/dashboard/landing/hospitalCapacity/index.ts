@@ -1,3 +1,3 @@
-import LiveData from './HospitalCapacity';
+import HospitalCapacity from './HospitalCapacity';
 
-export default LiveData;
+export default HospitalCapacity;
