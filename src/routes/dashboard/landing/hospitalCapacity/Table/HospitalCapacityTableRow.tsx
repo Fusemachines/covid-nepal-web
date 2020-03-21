@@ -29,13 +29,13 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         </td>
         <td>{contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))}</td>
 
-        <td>{totalBeds ? totalBeds : '-'}</td>
+        <td>{totalBeds ? totalBeds : 'N/A'}</td>
 
-        <td>{icu ? icu : '-'}</td>
+        <td>{icu ? icu : 'N/A'}</td>
 
-        <td>{'-'}</td>
+        <td>{'N/A - sourcing info'}</td>
 
-        <td>{numIsolationBeds ? numIsolationBeds : '-'}</td>
+        <td>{numIsolationBeds ? numIsolationBeds : 'N/A'}</td>
       </tr>
     </>
   );

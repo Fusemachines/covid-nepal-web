@@ -13,7 +13,9 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
       <Col xs="6">
         <div className="font-weight-bold h5 mb-3">Global Update</div>
 
-        <div className="mt-3">Total Confirmed</div>
+        <div className="mt-3" style={{ paddingTop: '69px' }}>
+          Total Confirmed
+        </div>
         <div className="h3 m-0 font-weight-bold  d-inline-block">
           {' '}
           {covidCasesCounts ? covidCasesCounts.confirmedGlobal : '-'}
