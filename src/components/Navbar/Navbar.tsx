@@ -19,7 +19,7 @@ const Navbar: FC<INavbarProps> = props => {
   const location = useLocation();
   const history = useHistory();
   const currentPath = location.pathname;
-  const [language, setLanguage] = useState(location.search.includes('en') ? 'en' : 'ne');
+  const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
   const interLang = i18n();
   const { navBar } = interLang;
 
@@ -42,7 +42,7 @@ const Navbar: FC<INavbarProps> = props => {
     if (location.search.includes('ne')) {
       languageTranslate('ne');
     }
-  });
+  }, [language]);
 
   return (
     <React.Fragment>
