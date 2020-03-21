@@ -19,9 +19,12 @@ const TableRow: FC<ITableRowProps> = props => {
         <small>{hospital.openDays}</small>
       </td>
       <td className="align-middle">
-        <div className="h5 text-warning font-weight-bold text-right">
-          {hospital.availableBeds} / {hospital.totalBeds}
-        </div>
+        {/* <div className="h5 text-warning font-weight-bold text-right"> */}
+        {hospital.contact && hospital.contact.join(',')}
+        {/* </div> */}
+      </td>
+      <td>
+        <small>More info</small>
       </td>
     </tr>
   );

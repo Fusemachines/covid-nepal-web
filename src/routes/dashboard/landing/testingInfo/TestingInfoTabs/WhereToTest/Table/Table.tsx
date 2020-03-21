@@ -30,9 +30,10 @@ const AllocatedHospitalTable: FC<{}> = () => {
     <Table responsive className="text-white h-50">
       <thead>
         <tr>
-          <th>Name of Hospital</th>
+          <th>Hospital Name</th>
           <th>Open Hours</th>
-          <th>No. of beds available</th>
+          <th>Phone Number</th>
+          <th></th>
         </tr>
       </thead>
 
