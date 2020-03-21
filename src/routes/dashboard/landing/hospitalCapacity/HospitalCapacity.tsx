@@ -19,10 +19,12 @@ export interface IHospitalCapacityFiltersContext {
   filters: IHospitalCapacityFilters;
   handleProvinceFilterChange: (value: ValueType<IOptions>) => void;
   handleDistrictFilterChange: (value: ValueType<IOptions>) => void;
+  handleCovidTestFilterChange: (value: ValueType<IOptions>) => void;
 }
 interface IHospitalCapacityFilters {
   province: IOptions;
   district: IOptions;
+  covidTest: IOptions;
 }
 
 export const HospitalCapacityTableContext = React.createContext({} as IHospitalCapacityTableContext);
@@ -30,7 +32,8 @@ export const HospitalCapacityFiltersContext = React.createContext({} as IHospita
 
 const initialHospitalCapacityFiltersState = {
   province: ProvinceOptions[2],
-  district: { label: 'Kathmandu', value: 'Kathmandu' }
+  district: { label: 'Kathmandu', value: 'Kathmandu' },
+  covidTest: { label: 'All', value: '' }
 };
 
 const HospitalCapacity: FC<{}> = () => {
@@ -41,7 +44,7 @@ const HospitalCapacity: FC<{}> = () => {
 
   useEffect(() => {
     fetchLiveData();
-  }, [filters.province, filters.district]);
+  }, [filters]);
 
   useEffect(() => {
     fetchDistrictsByProvince();
@@ -50,10 +53,11 @@ const HospitalCapacity: FC<{}> = () => {
   const fetchLiveData = async () => {
     setIsLoaded(false);
     try {
-      const { province, district } = filters;
+      const { province, district, covidTest } = filters;
       let payload = {
         province: province ? province.value : '',
-        district: district ? district.value : ''
+        district: district ? district.value : '',
+        covidTest: covidTest ? covidTest.value : ''
       };
       const response = await fetchHospitalCapacityAPI(payload);
       setHospitalCapacityList(response.docs);
@@ -83,12 +87,17 @@ const HospitalCapacity: FC<{}> = () => {
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
-    setFilters({ province: selectedField, district: { label: 'All', value: '' } });
+    setFilters({ ...filters, province: selectedField, district: { label: 'All', value: '' } });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
     setFilters({ ...filters, district: selectedField });
+  };
+
+  const handleCovidTestFilterChange = (value: ValueType<IOptions>) => {
+    const selectedField = value as IOptions;
+    setFilters({ ...filters, covidTest: selectedField });
   };
 
   return (
@@ -97,12 +106,17 @@ const HospitalCapacity: FC<{}> = () => {
         <div className="rounded bg-bluelight px-3 py-4">
           <div className="d-md-flex filter-wrapper mb-4">
             <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
-            <HospitalCapacityFilter />
-            {/* <HospitalCapacityFiltersContext.Provider
-               value={{ filters, districtDropdownOptions, handleProvinceFilterChange, handleDistrictFilterChange }}
-           >
-               <HospitalCapacityFilter />
-           </HospitalCapacityFiltersContext.Provider> */}
+            <HospitalCapacityFiltersContext.Provider
+              value={{
+                filters,
+                districtDropdownOptions,
+                handleProvinceFilterChange,
+                handleDistrictFilterChange,
+                handleCovidTestFilterChange
+              }}
+            >
+              <HospitalCapacityFilter />
+            </HospitalCapacityFiltersContext.Provider>
           </div>
           <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
             <HospitalCapacityTable />
