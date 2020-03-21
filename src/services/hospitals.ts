@@ -45,7 +45,7 @@ export interface IFetchAllocatedHospitalListAPIResponse {
 // TODO:pragyakar update after backend confirms
 export async function fetchAllocatedHospitalListAPI() {
   try {
-    const response: AxiosResponse<IFetchAllocatedHospitalListAPIResponse> = await axios.get(`/allocatedHospitals`);
+    const response: AxiosResponse<IFetchAllocatedHospitalListAPIResponse> = await axios.get(`/hospitals/covid`);
     return response.data;
   } catch (error) {
     throw error;
