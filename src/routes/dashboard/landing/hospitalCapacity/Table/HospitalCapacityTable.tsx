@@ -6,16 +6,22 @@ import { HospitalCapacityTableContext } from '../HospitalCapacity';
 import MapsModal from 'src/components/MapsModal';
 import MapsIframe from 'src/components/MapsIframe';
 
+export interface IMapModalValues {
+  title: string;
+  mapURL: string;
+}
+
 const HospitalCapacityTable: FC<{}> = () => {
   const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
 
   const [showMapsModal, setShowMapsModal] = useState(false);
-  const [mapURL, setMapURL] = useState('');
+  const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
 
-  const toggleMapsModal = (title?: string) => {
+  const toggleMapsModal = (mapModalValues?: IMapModalValues) => {
     setShowMapsModal(prevShowMapsState => !prevShowMapsState);
-    if (title) {
-      setMapURL(title);
+    if (mapModalValues) {
+      const { title, mapURL } = mapModalValues;
+      setMapModalValues({ title, mapURL });
     }
   };
 
@@ -56,9 +62,9 @@ const HospitalCapacityTable: FC<{}> = () => {
       </Table>
 
       {showMapsModal && (
-        <MapsModal showModal={showMapsModal} title={mapURL} toggleModal={toggleMapsModal}>
+        <MapsModal showModal={showMapsModal} title={mapModalValues.title} toggleModal={toggleMapsModal}>
           <div className="map-large">
-            <MapsIframe url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4035172171098!2d85.31146271500164!3d27.704824882792977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18fffc37200b%3A0xfcc471d3e99106bc!2sBir%20Hospital!5e0!3m2!1sen!2snp!4v1584781293143!5m2!1sen!2snp" />
+            <MapsIframe url={mapModalValues.mapURL} />
           </div>
         </MapsModal>
       )}
