@@ -1,42 +1,42 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Col } from 'react-bootstrap';
 
-import LiveDataTable from './Table/LiveDataTable';
-import LiveDataFilter from './Table/LiveDataFilter';
-import { ILiveData, fetchLiveDataAPI } from 'src/services/liveData';
+import HospitalCapacityTable from './Table/HospitalCapacityTable';
+import HospitalCapacityFilter from './Table/HospitalCapacityFilter';
+import { IHospitalCapacity, fetchHospitalCapacityAPI } from 'src/services/hospitals';
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 import { ValueType } from 'react-select';
 
-export interface ILiveDataTableContext {
+export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
-  liveDataList: Array<ILiveData>;
+  hospitalCapacityList: Array<IHospitalCapacity>;
 }
 
-export interface ILiveDataFiltersContext {
+export interface IHospitalCapacityFiltersContext {
   districtDropdownOptions: Array<IOptions>;
-  filters: ILiveDataFilters;
+  filters: IHospitalCapacityFilters;
   handleProvinceFilterChange: (value: ValueType<IOptions>) => void;
   handleDistrictFilterChange: (value: ValueType<IOptions>) => void;
 }
-interface ILiveDataFilters {
+interface IHospitalCapacityFilters {
   province: IOptions;
   district: IOptions;
 }
 
-export const LiveDataTableContext = React.createContext({} as ILiveDataTableContext);
-export const LiveDataFiltersContext = React.createContext({} as ILiveDataFiltersContext);
+export const HospitalCapacityTableContext = React.createContext({} as IHospitalCapacityTableContext);
+export const HospitalCapacityFiltersContext = React.createContext({} as IHospitalCapacityFiltersContext);
 
-const initialLiveDataFiltersState = {
+const initialHospitalCapacityFiltersState = {
   province: ProvinceOptions[2],
   district: { label: 'Kathmandu', value: 'Kathmandu' }
 };
 
-const LiveData: FC<{}> = () => {
+const HospitalCapacity: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [liveDataList, setLiveDataList] = useState<Array<ILiveData>>([]);
-  const [filters, setFilters] = useState<ILiveDataFilters>(initialLiveDataFiltersState);
+  const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospitalCapacity>>([]);
+  const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
 
   useEffect(() => {
@@ -55,8 +55,8 @@ const LiveData: FC<{}> = () => {
         province: province ? province.value : '',
         district: district ? district.value : ''
       };
-      const response = await fetchLiveDataAPI(payload);
-      setLiveDataList(response.docs);
+      const response = await fetchHospitalCapacityAPI(payload);
+      setHospitalCapacityList(response.docs);
     } catch (error) {
       console.log(error);
     } finally {
@@ -100,19 +100,19 @@ const LiveData: FC<{}> = () => {
               <div className="rec"></div> Live Data
             </div>
 
-            <LiveDataFiltersContext.Provider
+            <HospitalCapacityFiltersContext.Provider
               value={{ filters, districtDropdownOptions, handleProvinceFilterChange, handleDistrictFilterChange }}
             >
-              <LiveDataFilter />
-            </LiveDataFiltersContext.Provider>
+              <HospitalCapacityFilter />
+            </HospitalCapacityFiltersContext.Provider>
           </div>
-          <LiveDataTableContext.Provider value={{ isLoaded, liveDataList }}>
-            <LiveDataTable />
-          </LiveDataTableContext.Provider>
+          <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
+            <HospitalCapacityTable />
+          </HospitalCapacityTableContext.Provider>
         </div>
       </Col>
     </>
   );
 };
 
-export default LiveData;
+export default HospitalCapacity;

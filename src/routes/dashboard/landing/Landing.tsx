@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
 import VirusCounts from 'src/routes/dashboard/landing/virusCounts';
-import LiveData from 'src/routes/dashboard/landing/liveData';
+import LiveData from 'src/routes/dashboard/landing/hospitalCapacity';
 
 const Landing = () => (
   <>
