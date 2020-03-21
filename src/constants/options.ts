@@ -19,3 +19,9 @@ export const DistrictOptions: IOptions[] = [
   { label: 'District-06', value: 'District-06' },
   { label: 'District-07', value: 'District-07' }
 ];
+
+export const CovidTestOptions: Array<IOptions> = [
+  { label: 'All', value: '' },
+  { label: 'Available', value: 'available' },
+  { label: 'Unavailable', value: 'unavailable' }
+];
