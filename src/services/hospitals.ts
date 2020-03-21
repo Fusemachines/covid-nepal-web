@@ -31,20 +31,47 @@ export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAP
   }
 }
 
-// TODO:pragyakar update after backend confirms
-export interface IAllocatedHospital {
-  id: string;
+export interface IHospital {
+  _id: string;
+  availableTime: Array<string>;
+  coordinates: Array<number>;
+  contact: Array<string>;
   name: string;
+  hospitalType: string;
+  openDays: string;
+  location: string;
+  mapLink: string;
+  totalBeds: number;
+  availableBeds: number;
+  covidTest: boolean;
+  testingProcess: string;
+  govtDesignated: boolean;
+  numIsolationBeds: number;
+  icu: number;
+  focalPoint: string;
+  province: {
+    code: number;
+    name: string;
+  };
+  district: string;
 }
 
 export interface IFetchAllocatedHospitalListAPIResponse {
-  docs: IAllocatedHospital[];
+  docs: IHospital[];
 }
 
-// TODO:pragyakar update after backend confirms
 export async function fetchAllocatedHospitalListAPI() {
   try {
-    const response: AxiosResponse<IFetchAllocatedHospitalListAPIResponse> = await axios.get(`/allocatedHospitals`);
+    const response: AxiosResponse<IFetchAllocatedHospitalListAPIResponse> = await axios.get(`/hospitals/covid`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function fetchSingleHospitalDetailAPI(id: string) {
+  try {
+    const response: AxiosResponse<IHospital> = await axios.get(`/hospitals/${id}`);
     return response.data;
   } catch (error) {
     throw error;

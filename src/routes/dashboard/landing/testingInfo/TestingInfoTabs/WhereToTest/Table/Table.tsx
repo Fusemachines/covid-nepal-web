@@ -4,12 +4,12 @@ import TableRow from './TableRow';
 import {
   IFetchAllocatedHospitalListAPIResponse,
   fetchAllocatedHospitalListAPI,
-  IAllocatedHospital
+  IHospital
 } from 'src/services/hospitals';
 
 const AllocatedHospitalTable: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [allocatedHospitalList, setAllocatedHospitalList] = useState<IAllocatedHospital[]>([] as IAllocatedHospital[]);
+  const [allocatedHospitalList, setAllocatedHospitalList] = useState<IHospital[]>([] as IHospital[]);
 
   useEffect(() => {
     fetchAllocatedHospitalList();
