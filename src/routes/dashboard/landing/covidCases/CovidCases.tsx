@@ -3,10 +3,10 @@ import { Row, Col } from 'react-bootstrap';
 
 import NepalCovidCases from './NepalCovidCases';
 import GlobalCovidCases from './GlobalCovidCases';
-import { fetchVirusCountsOfTodayAPI, IVirusCountOfToday } from 'src/services/virusCounts';
+import { fetchCovidCasesCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
 
 const CovidCases = () => {
-  const [virusCountsOfToday, setVirusCountsOfToday] = useState<IVirusCountOfToday | null>(null);
+  const [covidCasesCounts, setCovidCasesCounts] = useState<ICovidCasesCounts | null>(null);
 
   useEffect(() => {
     getVirusCounts();
@@ -14,8 +14,8 @@ const CovidCases = () => {
 
   const getVirusCounts = async () => {
     try {
-      const response = await fetchVirusCountsOfTodayAPI();
-      setVirusCountsOfToday(response);
+      const response = await fetchCovidCasesCountsAPI();
+      setCovidCasesCounts(response);
     } catch (error) {
       console.log(error);
     }
@@ -34,8 +34,8 @@ const CovidCases = () => {
           <div className="clearfix"></div>
 
           <Row className="mb-3">
-            <NepalCovidCases />
-            <GlobalCovidCases />
+            <NepalCovidCases covidCasesCounts={covidCasesCounts} />
+            <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
           </Row>
 
           <small>
