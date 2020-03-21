@@ -8,6 +8,7 @@ import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
 import i18n from '../../i18n';
+import { setCookie } from '../../utils/storage';
 
 interface INavbarProps {
   toggleSidebar: () => void;
@@ -25,6 +26,13 @@ const Navbar: FC<INavbarProps> = props => {
   const setLanguagePath = (lang: string) => {
     setLanguage(lang);
     history.push(location.pathname + `?lang=${lang}`);
+    setCookie('googtrans', `/en/${lang}`);
+
+    try {
+      const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
+      googleTeCombo.value = lang;
+      window.location.reload();
+    } catch (e) {}
   };
 
   return (
@@ -39,14 +47,14 @@ const Navbar: FC<INavbarProps> = props => {
 
         {/* language */}
         <div className="lang mobile-flag">
-          <label htmlFor="np-lang" className={language === 'np' ? 'active' : ''}>
+          <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
               id="np-lang"
-              onClick={() => setLanguagePath('np')}
+              onClick={() => setLanguagePath('ne')}
               name="language"
               value="np"
-              checked={language === 'np'}
+              checked={language === 'ne'}
             />
             <img src="/images/nepal.png" className="mx-1" /> {navBar.NEP}
           </label>
@@ -78,14 +86,14 @@ const Navbar: FC<INavbarProps> = props => {
 
             {/* language */}
             <div className="lang menu-flag">
-              <label htmlFor="np-lang" className={language === 'np' ? 'active' : ''}>
+              <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
                   id="np-lang"
-                  onClick={() => setLanguage('np')}
+                  onClick={() => setLanguage('ne')}
                   name="language"
-                  value="np"
-                  checked={language === 'np'}
+                  value="ne"
+                  checked={language === 'ne'}
                 />
                 <img src="/images/nepal.png" className="mx-1" /> {navBar.NEP}
               </label>
