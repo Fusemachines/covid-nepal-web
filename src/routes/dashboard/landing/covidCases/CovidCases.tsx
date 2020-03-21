@@ -61,11 +61,11 @@ const CovidCases = () => {
 
           <small>
             *Disclaimer: These numbers are obtained from{' '}
-            <a className={'text-white'} href="https://heoc.mohp.gov.np/">
+            <a className={'text-white'} target="_blank" href="https://heoc.mohp.gov.np/">
               Nepal Government
             </a>{' '}
             and{' '}
-            <a className={'text-white'} href="https://coronavirus.jhu.edu/map.html">
+            <a className={'text-white'} target="_blank" href="https://coronavirus.jhu.edu/map.html">
               {' '}
               Johns Hopkins University
             </a>{' '}

@@ -518,3 +518,11 @@ a {
 #google_translate_element {
     display: none;
 }
+
+.badge-cus:first-child {
+    margin-bottom: 20px;
+}
+
+.badge-cus:only-child {
+    margin-bottom: 0px;
+}

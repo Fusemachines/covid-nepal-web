@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Table } from 'react-bootstrap';
-import ContactBadge from 'src/components/Badges/ContactBadge';
+import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IContact } from 'src/services/contacts';
 
 interface IHospitalContactsRecordsProps {
@@ -18,11 +18,11 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
             <tr>
               <td>{contact.name}</td>
               <td className="text-right">
-                <div className="badges">
-                  {contact.landLine.map(number => (
-                    <ContactBadge contactNumber={number} />
-                  ))}
-                </div>
+                {contact.landLine.map(number => (
+                  <div className="badges badge-cus">
+                    <GreenContactBadge contactNumber={number} />
+                  </div>
+                ))}
               </td>
             </tr>
           ))}
