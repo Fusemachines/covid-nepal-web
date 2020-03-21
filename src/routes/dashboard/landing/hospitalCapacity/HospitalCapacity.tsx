@@ -43,19 +43,18 @@ const HospitalCapacity: FC<{}> = () => {
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
 
   useEffect(() => {
-    fetchLiveData();
+    fetchHospitalCapacityData();
   }, [filters]);
 
   useEffect(() => {
     fetchDistrictsByProvince();
   }, [filters.province]);
 
-  const fetchLiveData = async () => {
+  const fetchHospitalCapacityData = async () => {
     setIsLoaded(false);
     try {
-      const { province, district, covidTest } = filters;
+      const { district, covidTest } = filters;
       let payload = {
-        province: province ? province.value : '',
         district: district ? district.value : '',
         covidTest: covidTest ? covidTest.value : ''
       };
