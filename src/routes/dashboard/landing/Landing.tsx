@@ -11,10 +11,11 @@ const Landing = () => (
     <div className="container-fluid mt-3">
       <Row>
         <CovidCases />
+
         <TestingInformation />
+
         <Col md="12" lg="3" className="mt-2 order-lg-first">
-          <div className="rounded bg-bluelight p-3">
-            <div className="h5 font-weight-bold mb-3">Latest News</div>
+          <div className="tweet-wrapper">
             <LatestNews />
           </div>
         </Col>
