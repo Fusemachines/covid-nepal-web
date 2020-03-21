@@ -26,7 +26,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   } = props;
   return (
     <>
-      <tr onClick={() => window.location.assign(`/hospitals/${_id}`)}>
+      <tr onClick={() => window.location.assign(`/hospital/${_id}`)}>
         <td>
           <div>{name}</div>
         </td>
