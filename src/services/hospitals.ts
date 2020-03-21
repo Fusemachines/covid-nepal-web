@@ -20,6 +20,7 @@ export interface IHospitalCapacity {
 export interface IFetchHospitalCapacityAPIPayload {
   province?: string;
   district?: string;
+  covidTest?: string;
 }
 
 export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAPIPayload) {
