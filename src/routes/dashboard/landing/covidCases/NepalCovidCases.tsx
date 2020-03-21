@@ -3,7 +3,7 @@ import { Col } from 'react-bootstrap';
 
 import TextCaption from 'src/components/TextCaption/TextCaption';
 import { ICovidCasesCounts } from 'src/services/covidCases';
-
+import { setCommas } from 'src/utils/stringManipulation';
 interface INepalCovidCasesProps {
   covidCasesCounts: ICovidCasesCounts | null;
 }
@@ -15,25 +15,25 @@ const NepalCovidCases: FC<INepalCovidCasesProps> = ({ covidCasesCounts }) => {
 
       <div className="">Total Tested</div>
       <div className="h3 m-0 font-weight-bold  d-inline-block">
-        {covidCasesCounts ? covidCasesCounts.testedTotal : '-'}
+        {covidCasesCounts ? setCommas(covidCasesCounts.testedTotal) : '-'}
       </div>
       {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
       <div className="mt-3">Total Confirmed</div>
       <div className="h3 m-0 font-weight-bold  d-inline-block">
-        {covidCasesCounts ? covidCasesCounts.confirmedTotal : '-'}
+        {covidCasesCounts ? setCommas(covidCasesCounts.confirmedTotal) : '-'}
       </div>
       {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
       <div className="mt-3">Total Recovered</div>
       <div className="h3 m-0 font-weight-bold d-inline-block ">
-        {covidCasesCounts ? covidCasesCounts.recoveredTotal : '-'}
+        {covidCasesCounts ? setCommas(covidCasesCounts.recoveredTotal) : '-'}
       </div>
       {/* <TextCaption type={'warning'} value={'0.10'} /> */}
 
       <div className="mt-3">Total Deaths</div>
       <div className="h3 m-0 font-weight-bold d-inline-block">
-        {covidCasesCounts ? covidCasesCounts.deathTotal : '-'}
+        {covidCasesCounts ? setCommas(covidCasesCounts.deathTotal) : '-'}
       </div>
       {/* <TextCaption type={'danger'} value={'0.10'} /> */}
     </Col>
