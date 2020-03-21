@@ -6,6 +6,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [React with react-hooks](https://reactjs.org/docs/hooks-intro.html)
 - [Typescript](https://www.typescriptlang.org/)
 
+### First time setup
+
+After you have cloned the repo, move into the project directory and run the yarn command to install the dependencies
+```
+> cd covid-nepal-web
+> yarn
+```
+The project can now be started by running the start script
+```
+> yarn start
+```
+
 ### Available Scripts
 
 #### `yarn start`
