@@ -2,11 +2,11 @@ import React, { FC, useContext } from 'react';
 
 import CustomSelectInput from 'src/components/CustomSelectInput';
 import { ProvinceOptions } from 'src/constants/options';
-import { LiveDataFiltersContext } from '../LiveData';
+import { HospitalCapacityFiltersContext } from '../HospitalCapacity';
 
-const LiveDataFilter: FC<{}> = () => {
+const HospitalCapacityFilter: FC<{}> = () => {
   const { districtDropdownOptions, filters, handleProvinceFilterChange, handleDistrictFilterChange } = useContext(
-    LiveDataFiltersContext
+    HospitalCapacityFiltersContext
   );
 
   return (
@@ -38,4 +38,4 @@ const LiveDataFilter: FC<{}> = () => {
   );
 };
 
-export default LiveDataFilter;
+export default HospitalCapacityFilter;

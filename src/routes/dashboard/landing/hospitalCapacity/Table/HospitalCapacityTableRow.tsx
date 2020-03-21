@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { TextCaptionIcon } from 'src/components/TextCaption/TextCaptionIcons';
-import { ILiveData } from 'src/services/liveData';
+import { IHospitalCapacity } from 'src/services/hospitals';
 
 interface ILiveTableRowProps {
-  liveData: ILiveData;
+  hospitalCapacity: IHospitalCapacity;
 }
 
-const LiveDataTableRow: FC<ILiveTableRowProps> = props => {
+const HospitalCapacityTableRow: FC<ILiveTableRowProps> = props => {
   const {
-    liveData: { nameOfHospital, numberOfBed, numberOfPatient, covid19Symptom, covid19SymptomPercentage }
+    hospitalCapacity: { nameOfHospital, numberOfBed, numberOfPatient, covid19Symptom, covid19SymptomPercentage }
   } = props;
   return (
     <>
@@ -31,4 +31,4 @@ const LiveDataTableRow: FC<ILiveTableRowProps> = props => {
   );
 };
 
-export default LiveDataTableRow;
+export default HospitalCapacityTableRow;
