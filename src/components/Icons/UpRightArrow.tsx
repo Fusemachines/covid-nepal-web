@@ -6,14 +6,12 @@ const colors = {
   danger: '#e42929'
 };
 
-export const TextCaptionIcon: FC<{ type: string }> = ({ type }) => {
+const UpRightArrow: FC<{ type?: string }> = ({ type }) => {
   let color;
-  if (type === 'success') {
-    color = colors.success;
-  } else if (type === 'warning') {
+  if (type === 'warning') {
     color = colors.warning;
   } else {
-    color = colors.danger;
+    color = colors.success;
   }
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="11.192" height="11" viewBox="0 0 11.192 11">
@@ -66,3 +64,5 @@ export const TextCaptionIcon: FC<{ type: string }> = ({ type }) => {
     </svg>
   );
 };
+
+export default UpRightArrow;

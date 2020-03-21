@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TextCaptionIcon } from 'src/components/TextCaption/TextCaptionIcons';
+
 import { IHospitalCapacity } from 'src/services/hospitals';
 import ContactBadge from 'src/components/Badges/ContactBadge';
 

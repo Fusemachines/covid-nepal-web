@@ -1,14 +1,14 @@
 import React from 'react';
 import { Row, Col, Tab, Nav, Media, Table } from 'react-bootstrap';
 
-import VirusCounts from 'src/routes/dashboard/landing/virusCounts';
+import CovidCases from 'src/routes/dashboard/landing/covidCases';
 import HospitalCapacity from 'src/routes/dashboard/landing/hospitalCapacity';
 
 const Landing = () => (
   <>
     <div className="container-fluid mt-3">
       <Row>
-        <VirusCounts />
+        <CovidCases />
 
         {/* tabpannel */}
         <Col md="12" lg="5" className="mt-2">

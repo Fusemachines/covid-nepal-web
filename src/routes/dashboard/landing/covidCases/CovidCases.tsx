@@ -1,0 +1,51 @@
+import React, { useState, useEffect } from 'react';
+import { Row, Col } from 'react-bootstrap';
+
+import NepalCovidCases from './NepalCovidCases';
+import GlobalCovidCases from './GlobalCovidCases';
+import { fetchVirusCountsOfTodayAPI, IVirusCountOfToday } from 'src/services/virusCounts';
+
+const CovidCases = () => {
+  const [virusCountsOfToday, setVirusCountsOfToday] = useState<IVirusCountOfToday | null>(null);
+
+  useEffect(() => {
+    getVirusCounts();
+  }, []);
+
+  const getVirusCounts = async () => {
+    try {
+      const response = await fetchVirusCountsOfTodayAPI();
+      setVirusCountsOfToday(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <>
+      <Col md="12" lg="4" className="mt-2">
+        <div className="rounded bg-bluelight p-4">
+          <div className="mb-3 border-bottom pb-2">
+            <div className="d-inline-block">
+              <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
+              <small>Updated 1 minutes ago</small>
+            </div>
+          </div>
+          <div className="clearfix"></div>
+
+          <Row className="mb-3">
+            <NepalCovidCases />
+            <GlobalCovidCases />
+          </Row>
+
+          <small>
+            *Disclaimer: Aliquam faucibus, odio nec commodo aliqum, neque felis placerat dui, a porta ante lectus
+            dapibus est. Aliquam a bibendum mi
+          </small>
+        </div>
+      </Col>
+    </>
+  );
+};
+
+export default CovidCases;
