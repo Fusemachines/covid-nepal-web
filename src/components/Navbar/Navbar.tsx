@@ -26,7 +26,7 @@ const Navbar: FC<INavbarProps> = props => {
   const setLanguagePath = (lang: string) => {
     setLanguage(lang);
     history.push(location.pathname + `?lang=${lang}`);
-    setCookie('googtrans', `/en/${lang}`);
+    // setCookie('googtrans', `/en/${lang}`);
 
     try {
       const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
@@ -46,7 +46,7 @@ const Navbar: FC<INavbarProps> = props => {
         </Link>
 
         {/* language */}
-        <div className="lang mobile-flag">
+        {/* <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
@@ -70,7 +70,7 @@ const Navbar: FC<INavbarProps> = props => {
             />
             {navBar.ENG} <img src="/images/english.png" className="mx-1" />
           </label>
-        </div>
+        </div> */}
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -86,7 +86,7 @@ const Navbar: FC<INavbarProps> = props => {
             <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} />
 
             {/* language */}
-            <div className="lang menu-flag">
+            {/* <div className="lang menu-flag">
               <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
@@ -110,7 +110,7 @@ const Navbar: FC<INavbarProps> = props => {
                 />
                 {navBar.ENG} <img src="/images/english.png" className="mx-1" />
               </label>
-            </div>
+            </div> */}
           </Nav>
         </Navigation.Collapse>
       </Navigation>
