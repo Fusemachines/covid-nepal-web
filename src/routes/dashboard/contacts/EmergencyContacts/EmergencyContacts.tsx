@@ -1,6 +1,6 @@
 import React, { useEffect, useState, FC } from 'react';
 import { IFetchContactsAPIResponse, fetchEmergencyContactsAPI } from 'src/services/contacts';
-import EmergencyContactItem from './EmergencyContactItem';
+import EmergencyContactItem from './EmergencyContactRecords';
 
 const EmergencyContacts: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);

@@ -13,8 +13,8 @@ import { ValueType, ActionMeta } from 'react-select';
 import { ProvinceOptions } from 'src/constants/options';
 
 export interface IContactFilters {
-  province: IOptions | null;
-  district: IOptions | null;
+  province: IOptions;
+  district: IOptions;
 }
 
 const initialFilters: IContactFilters = {
@@ -25,26 +25,23 @@ const initialFilters: IContactFilters = {
 const HospitalContacts: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hospitalContacts, setHospitalContacts] = useState<IContact[]>([] as IContact[]);
-  const [districtList, setDistrictList] = useState<IOptions[]>([] as IOptions[]);
+  const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
   const [filters, setFilters] = useState<IContactFilters>(initialFilters);
 
   useEffect(() => {
-    fetchDistrictsByProvince();
     fetchHospitalContacts();
-  }, [filters.province]);
+  }, [filters.province, filters.district]);
 
   useEffect(() => {
-    fetchHospitalContacts();
-  }, [filters.district]);
+    fetchDistrictsByProvince();
+  }, [filters.province]);
 
   const fetchHospitalContacts = async () => {
     try {
-      if (filters.district) {
-        const response: IFetchContactsAPIResponse = await fetchHospitalContactsAPI({
-          district: filters.district.value
-        });
-        setHospitalContacts(response.docs);
-      }
+      const response: IFetchContactsAPIResponse = await fetchHospitalContactsAPI({
+        district: filters.district ? filters.district.value : ''
+      });
+      setHospitalContacts(response.docs);
     } catch (error) {}
   };
 
@@ -52,14 +49,13 @@ const HospitalContacts: FC<{}> = () => {
     try {
       if (filters.province) {
         const response: IFetchDistrictListAPIResponse = await fetchDistrictListAPI(filters.province.value);
-        const dataArray: IOptions[] = [];
-        response.docs.map(doc => {
-          dataArray.push({
-            label: doc.name,
-            value: doc.name
-          });
+
+        let mappedOptions = response.docs.map(doc => {
+          return { label: doc.name, value: doc.name };
         });
-        setDistrictList(dataArray);
+
+        mappedOptions.unshift({ label: 'All', value: '' });
+        setDistrictDropdownOptions(mappedOptions);
       }
     } catch (error) {
       console.log(error);
@@ -68,7 +64,7 @@ const HospitalContacts: FC<{}> = () => {
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
     const selectedField = value as IOptions;
-    setFilters({ province: selectedField, district: null });
+    setFilters({ province: selectedField, district: { label: 'All', value: '' } });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>, action?: ActionMeta) => {
@@ -82,7 +78,7 @@ const HospitalContacts: FC<{}> = () => {
         <div className="h5 d-inline-block">Hospital Contacts</div>
         <HospitalContactsFilter
           filters={filters}
-          districtOptions={districtList}
+          districtOptions={districtDropdownOptions}
           handleProvinceFilterChange={handleProvinceFilterChange}
           handleDistrictFilterChange={handleDistrictFilterChange}
         />
