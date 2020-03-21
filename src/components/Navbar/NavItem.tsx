@@ -12,9 +12,9 @@ const NavItem: FC<INavItemProps> = props => {
   const { to, title, active } = props;
 
   return (
-    <Link to={to} className={`nav-link ${active ? 'active' : ''}`}>
+    <Nav.Link href={to} className={`nav-link ${active ? 'active' : ''}`}>
       {title}
-    </Link>
+    </Nav.Link>
   );
 };
 
