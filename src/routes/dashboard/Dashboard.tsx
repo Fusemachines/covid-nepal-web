@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 
 import Navbar from 'src/components/Navbar';
-import Router from 'src/routes/dashboard/Router';
+import DashboardRouter from 'src/routes/dashboard/Router';
 import Contacts from 'src/routes/dashboard/contacts';
 
 const Dashboard: FC<{}> = () => {
@@ -14,7 +14,7 @@ const Dashboard: FC<{}> = () => {
     <>
       <Navbar toggleSidebar={toggleEmergencyContact} />
       <Contacts visibility={isSidebarVisible} toggleContacts={toggleEmergencyContact} />
-      <Router />
+      <DashboardRouter />
     </>
   );
 };

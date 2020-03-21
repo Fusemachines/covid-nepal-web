@@ -46,13 +46,18 @@ body {
     overflow: hidden;
     padding: 0;
 
-    span {
+    input {
+      visibility: hidden;
+    }
+
+    label {
         padding: 9px 5px;
         display: inline-block;
         color: #000000;
         vertical-align: middle;
         cursor: pointer;
         font-size: 10px;
+        margin-bottom: 0;
 
         &.active {
             background: #2074B9;
@@ -192,7 +197,7 @@ body {
     z-index: 1030;
     transition: all 0.1s ease-in-out;
     max-width: 100%;
-    
+
     .overlay {
         background: rgba(0,0,0,0.75);
         width: 100%;
@@ -204,7 +209,7 @@ body {
     &.show {
         left: 0;
     }
-    
+
     .content {
         background: #09365B;
         width: 620px;
@@ -240,11 +245,11 @@ body {
             display: inline-block;
             font-size: 12px;
             width: 112px;
-            
+
             .css-1pahdxg-control,
             .css-yk16xz-control {
                 min-height: 26px;
-                
+
                 .css-1gtu0rj-indicatorContainer,
                 .css-tlfecz-indicatorContainer {
                     padding: 4px 5px 4px 0;
@@ -307,7 +312,7 @@ body {
     .navbar-dark  .navbar-nav {
         margin-left: 0%;
     }
-    
+
     .navbar-collapse {
         height: calc(100vh - 50px);
         position: relative;
@@ -347,7 +352,7 @@ body {
                 color: #004E90;
                 background-color: #FFC400;
             }
-            
+
         }
     }
 }
