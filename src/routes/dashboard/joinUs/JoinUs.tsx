@@ -11,7 +11,7 @@ const JoinUs = () => (
           <div className="h1 text-primary font-weight-bold">Open Source Platform for COVID19 for Nepal</div>
 
           <div className="my-2 text-white my-4 ">
-            <a className={'text-white'} href="https://covidnepal.org/">
+            <a className={'text-white'} target="_blank" href="https://covidnepal.org/">
               covidnepal.org
             </a>{' '}
             is an Open Source Platform started at Fusemachines and asking all like minded citizens of Nepal to join in

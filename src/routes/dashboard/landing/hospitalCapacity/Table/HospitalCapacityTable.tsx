@@ -33,7 +33,7 @@ const HospitalCapacityTable: FC<{}> = () => {
             *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
             hospital operators, doctors, etc. We need your help to continue gathering this information across all
             hospitals in Nepal. If you would like to help collect data, please sign up{' '}
-            <a className={'text-white'} target="_blank" href="https://covidnepal.org/about/#join-us">
+            <a className={'text-white'} target="_blank" href="https://covidnepal.org/join-us">
               here
             </a>
             .
