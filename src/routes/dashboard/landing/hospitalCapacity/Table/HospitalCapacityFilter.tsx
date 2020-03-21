@@ -38,7 +38,7 @@ const HospitalCapacityFilter: FC<{}> = () => {
           selectedValue={filters.district}
         />
       </div>
-      <div className="filter d-inline-block">
+      {/* <div className="filter d-inline-block">
         <span>Covid Test</span>
         <CustomSelectInput
           name={'district-select'}
@@ -48,7 +48,7 @@ const HospitalCapacityFilter: FC<{}> = () => {
           className={'filter-select'}
           selectedValue={filters.covidTest}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
