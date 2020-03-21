@@ -55,6 +55,7 @@ body {
 
     input {
       visibility: hidden;
+      position: absolute;
     }
 
     label {
@@ -65,6 +66,7 @@ body {
         cursor: pointer;
         font-size: 10px;
         margin-bottom: 0;
+        position: relative;
 
         &.active {
             background: #2074B9;
@@ -209,6 +211,7 @@ body {
     z-index: 1030;
     transition: all 0.1s ease-in-out;
     max-width: 100%;
+    overflow: hidden;
 
     .overlay {
         background: rgba(0,0,0,0.75);
@@ -395,6 +398,13 @@ body {
     }
 }
 
+@media(max-width: 550px) {
+    .right-bar .toggle-rightbar {
+        right: 0;
+        z-index: 1;
+    }
+}
+
 .font-16 {
     font-size: 16px;
     font-weight: 600;
@@ -502,4 +512,9 @@ a {
 .tweet-wrapper {
     max-height: 75vh;
     overflow-y: auto;
+}
+
+
+#google_translate_element {
+    display: none;
 }

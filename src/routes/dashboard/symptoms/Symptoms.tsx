@@ -30,7 +30,7 @@ const Symptoms = () => (
         </Col>
 
         <Col lg="6" className="mt-4">
-          <img alt={''} src="/images/symptoms.png" className="img alt={''}-responsive" />
+          <img alt={''} src="/images/symptoms.png" className="img-fluid" />
         </Col>
 
         <Col lg="3" className="mt-4">
