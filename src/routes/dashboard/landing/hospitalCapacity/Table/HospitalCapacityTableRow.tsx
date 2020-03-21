@@ -1,15 +1,17 @@
 import React, { FC } from 'react';
 
 import { IHospitalCapacity } from 'src/services/hospitals';
-import ContactBadge from 'src/components/Badges/ContactBadge';
+import LocationIcon from 'src/components/Icons/LocationIcon';
 
 interface ILiveTableRowProps {
   hospitalCapacity: IHospitalCapacity;
+  toggleMapsModal: (title: string) => void;
 }
 
 const HospitalCapacityTableRow: FC<ILiveTableRowProps> = props => {
   const {
-    hospitalCapacity: { nameOfHospital, numberOfBed, numberOfPatient, covid19Symptom, covid19SymptomPercentage }
+    hospitalCapacity: { nameOfHospital, numberOfBed, numberOfPatient, covid19Symptom, covid19SymptomPercentage },
+    toggleMapsModal
   } = props;
   return (
     <>
@@ -17,16 +19,28 @@ const HospitalCapacityTableRow: FC<ILiveTableRowProps> = props => {
         <td>
           <div>{nameOfHospital}</div>
         </td>
-        <td>Ranipokhari, Kathmandu</td>
+        <td>
+          <div>Ranipokhari, Kathmandu</div>
+          <a className="pointer" onClick={() => toggleMapsModal(nameOfHospital)}>
+            <LocationIcon />
+            <span className="ml-2">Map</span>
+          </a>
+        </td>
         <td>
           <div className="badges">
-            <ContactBadge contactNumber={'9851255839'} />
+            <div className="badges-item m-0">Available</div>
           </div>
         </td>
-        <td>{numberOfBed}}</td>
+        <td>01-4331390, 01-4332160</td>
+
+        <td>{}</td>
         <td>20</td>
-        <td>Available</td>
-        <td>Available</td>
+
+        <td>
+          <div className="badges">
+            <div className="badges-item m-0">Yes</div>
+          </div>
+        </td>
       </tr>
     </>
   );
