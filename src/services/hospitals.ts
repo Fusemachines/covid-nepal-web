@@ -18,7 +18,6 @@ export interface IHospitalCapacity {
 }
 
 export interface IFetchHospitalCapacityAPIPayload {
-  province?: string;
   district?: string;
   covidTest?: string;
 }
