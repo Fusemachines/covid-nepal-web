@@ -799,7 +799,7 @@ const Home = () => {
         </Row>
 
         {/* hospital data */}
-        <Row className="my-5">
+        <Row className="my-3">
           <Col sm="12">
             <div className="rounded bg-bluelight px-3 py-4">
               <div className="d-md-flex filter-wrapper mb-4">
