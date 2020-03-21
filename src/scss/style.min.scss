@@ -38,6 +38,33 @@ body {
     color: #ffffff;
 }
 
+// language
+
+.lang {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+
+    span {
+        padding: 9px 5px;
+        display: inline-block;
+        color: #000000;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 10px;
+
+        &.active {
+            background: #2074B9;
+            color: #ffffff;
+        }
+    }
+}
+
+.mobile-flag {
+    display: none;
+}
+
 .title {
     display: inline-block;
     border-radius: 15px;
@@ -269,7 +296,14 @@ body {
 }
 
 @media(max-width: 800px) {
-    
+    .mobile-flag {
+        display: inline;
+    }
+
+    .menu-flag {
+        display: none;
+    }
+
     .navbar-dark  .navbar-nav {
         margin-left: 0%;
     }
@@ -323,3 +357,41 @@ body {
     font-size: 18px;
     font-style: italic;
 }
+
+.table-hover tbody tr:hover {
+    color: #ffffff;
+}
+
+.hospital-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hospitalinfo-list {
+    padding: 0;
+
+    li {
+        border-bottom: 1px solid #2074B9;
+        list-style: none;
+        padding: 12px 0;
+    }
+}
+
+.text-secondary {
+    color: #9BC7ED !important;
+}
+
+.numc {
+    list-style: decimal;
+}
+
+// maps
+.map-large,
+.maps {
+    iframe {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+}
+
