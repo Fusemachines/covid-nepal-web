@@ -13,9 +13,9 @@ const CovidCases = () => {
 
   useEffect(() => {
     fetchCovidCases();
-    window.setInterval(getUpdatedTime, 30000);
+    let covidInterval = window.setInterval(getUpdatedTime, 30000);
     return () => {
-      clearInterval();
+      clearInterval(covidInterval);
     };
   }, []);
 
