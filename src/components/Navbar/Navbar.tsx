@@ -42,6 +42,7 @@ const Navbar: FC<INavbarProps> = props => {
           <Nav className="mr-auto">
             <NavItem title={'Home'} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
+            <NavItem title={'About'} to={routes.ABOUT} active={routes.ABOUT === currentPath} />
           </Nav>
 
           <Nav>

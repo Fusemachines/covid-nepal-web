@@ -21,6 +21,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-select": "^3.0.8",
+    "source-map-explorer": "^2.4.0",
     "typescript": "~3.7.2"
   },
   "devDependencies": {
