@@ -4,12 +4,15 @@ import { Media } from 'react-bootstrap';
 const WhenToTest: FC<{}> = () => {
   return (
     <div className="px-3 py-4">
-      <div className="info-title mx-5">Go for immediate Covid-19 test if you are showing following symptoms</div>
+      <div className="info-title mx-5">
+        If you believe you have been exposed to COVID-19 and develop symptoms like fever, cough and difficulty of
+        breathing, call your doctor!
+      </div>
 
       <Media className="mt-4 bg-white px-4 py-3">
         <img alt={'High Fever'} src="/images/highfever.png" className="align-self-center mr-3" />
         <Media.Body className="align-self-center">
-          <div className="text-danger font-weight-bold h6">High Fever (Above 100.4° F)</div>
+          <div className="text-danger font-weight-bold h6">High Fever </div>
         </Media.Body>
       </Media>
 
