@@ -10,7 +10,7 @@ const LatestNews = () => {
   return (
     <div className="twitter-embed">
       <a className="twitter-timeline" href="https://twitter.com/WHO?ref_src=twsrc%5Etfw">
-        Tweets by WHO
+        COVID-19 Nepal News
       </a>
     </div>
   );
