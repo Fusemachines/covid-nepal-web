@@ -1,14 +1,31 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import TableRow from './TableRow';
-import { IAllocatedHospital } from 'src/services/hospitals';
+import {
+  IFetchAllocatedHospitalListAPIResponse,
+  fetchAllocatedHospitalListAPI,
+  IAllocatedHospital
+} from 'src/services/hospitals';
 
-interface IAllocatedHospitalTableProps {
-  allocatedHospitals: IAllocatedHospital[];
-}
+const AllocatedHospitalTable: FC<{}> = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [allocatedHospitalList, setAllocatedHospitalList] = useState<IAllocatedHospital[]>([] as IAllocatedHospital[]);
 
-const AllocatedHospitalTable: FC<IAllocatedHospitalTableProps> = props => {
-  const { allocatedHospitals } = props;
+  useEffect(() => {
+    fetchAllocatedHospitalList();
+  }, []);
+
+  const fetchAllocatedHospitalList = async () => {
+    try {
+      const response: IFetchAllocatedHospitalListAPIResponse = await fetchAllocatedHospitalListAPI();
+      setAllocatedHospitalList(response.docs);
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setIsLoaded(true);
+    }
+  };
+
   return (
     <Table responsive className="text-white">
       <thead>
@@ -20,9 +37,15 @@ const AllocatedHospitalTable: FC<IAllocatedHospitalTableProps> = props => {
       </thead>
 
       <tbody>
-        {allocatedHospitals.map(hospital => (
-          <TableRow hospital={hospital} />
-        ))}
+        {isLoaded ? (
+          allocatedHospitalList.length > 0 ? (
+            allocatedHospitalList.map(hospital => <TableRow hospital={hospital} />)
+          ) : (
+            <span>No records found</span>
+          )
+        ) : (
+          <span>Loading...</span>
+        )}
       </tbody>
     </Table>
   );
