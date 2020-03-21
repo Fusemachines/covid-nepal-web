@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import CovidCases from 'src/routes/dashboard/landing/covidCases';
 import HospitalCapacity from 'src/routes/dashboard/landing/hospitalCapacity';
@@ -15,9 +16,11 @@ const Landing = () => (
         <TestingInformation />
 
         <Col md="12" lg="3" className="mt-2 order-lg-first">
-          <div className="tweet-wrapper">
+          <Scrollbars>
+            {/* <div className="tweet-wrapper"> */}
             <LatestNews />
-          </div>
+            {/* </div> */}
+          </Scrollbars>
         </Col>
       </Row>
       <HospitalCapacity />
