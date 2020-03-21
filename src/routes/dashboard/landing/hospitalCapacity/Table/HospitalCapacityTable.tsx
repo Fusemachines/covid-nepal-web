@@ -27,17 +27,19 @@ const HospitalCapacityTable: FC<{}> = () => {
 
   return (
     <>
-      <small>
-        <i>
-          *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
-          hospital operators, doctors, etc. We need your help to continue gathering this information across all
-          hospitals in Nepal. If you would like to help collect data, please sign up{' '}
-          <a className={'text-white'} href="https://covidnepal.org/about/#join-us">
-            here
-          </a>
-          .
-        </i>
-      </small>
+      <div style={{ marginBottom: '20px', marginTop: '-25px' }}>
+        <small>
+          <i>
+            *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
+            hospital operators, doctors, etc. We need your help to continue gathering this information across all
+            hospitals in Nepal. If you would like to help collect data, please sign up{' '}
+            <a className={'text-white'} href="https://covidnepal.org/about/#join-us">
+              here
+            </a>
+            .
+          </i>
+        </small>
+      </div>
       <Table responsive className="text-white">
         <thead>
           <tr>
