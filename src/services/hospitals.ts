@@ -31,3 +31,23 @@ export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAP
     throw error;
   }
 }
+
+// TODO:pragyakar update after backend confirms
+export interface IAllocatedHospital {
+  id: string;
+  name: string;
+}
+
+export interface IFetchAllocatedHospitalListAPIResponse {
+  docs: IAllocatedHospital[];
+}
+
+// TODO:pragyakar update after backend confirms
+export async function fetchAllocatedHospitalListAPI() {
+  try {
+    const response: AxiosResponse<IFetchAllocatedHospitalListAPIResponse> = await axios.get(`/allocatedHospitals`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
