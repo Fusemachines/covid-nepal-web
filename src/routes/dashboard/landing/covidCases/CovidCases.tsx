@@ -60,8 +60,13 @@ const CovidCases = () => {
           </Row>
 
           <small>
-            *Disclaimer: Aliquam faucibus, odio nec commodo aliqum, neque felis placerat dui, a porta ante lectus
-            dapibus est. Aliquam a bibendum mi
+            *Disclaimer: These are the numbers obtained from
+            <a href="https://nepal.gov.np:8443/NationalPortal/NP?splashAction=home"> Nepal Government website </a>
+            and <a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd">
+              {' '}
+              WHO website{' '}
+            </a>{' '}
+            and being updated as the numbers in these websites get updated.
           </small>
         </div>
       </Col>

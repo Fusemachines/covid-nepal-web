@@ -18,35 +18,35 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
           {' '}
           {covidCasesCounts ? covidCasesCounts.testedGlobal : '-'}
         </div>
-        <TextCaption type={'success'} value={'0.10'} />
+        {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
         <div className="mt-3">Total Confirmed</div>
         <div className="h3 m-0 font-weight-bold  d-inline-block">
           {' '}
           {covidCasesCounts ? covidCasesCounts.confirmedGlobal : '-'}
         </div>
-        <TextCaption type={'success'} value={'0.10'} />
+        {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
         <div className="mt-3">Total Recovered</div>
         <div className="h3 m-0 font-weight-bold d-inline-block ">
           {' '}
           {covidCasesCounts ? covidCasesCounts.recoveredGlobal : '-'}
         </div>
-        <TextCaption type={'warning'} value={'0.10'} />
+        {/* <TextCaption type={'warning'} value={'0.10'} /> */}
 
         <div className="mt-3">Total Serious</div>
         <div className="h3 m-0 font-weight-bold d-inline-block">
           {' '}
           {covidCasesCounts ? covidCasesCounts.seriousGlobal : '-'}
         </div>
-        <TextCaption type={'danger'} value={'0.10'} />
+        {/* <TextCaption type={'danger'} value={'0.10'} /> */}
 
         <div className="mt-3">Total Death</div>
         <div className="h3 m-0 font-weight-bold d-inline-block">
           {' '}
           {covidCasesCounts ? covidCasesCounts.deathGlobal : '-'}
         </div>
-        <TextCaption type={'danger'} value={'0.10'} />
+        {/* <TextCaption type={'danger'} value={'0.10'} /> */}
       </Col>
     </>
   );
