@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import RightBar from '../EmergencyCall';
+// import RightBar from '../EmergencyCall';
 
 const Menu = () => (
   <React.Fragment>
@@ -55,7 +55,7 @@ const Menu = () => (
       </Navbar.Collapse>
     </Navbar>
 
-    <RightBar />
+    {/* <RightBar /> */}
   </React.Fragment>
 );
 
