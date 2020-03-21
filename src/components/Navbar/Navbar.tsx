@@ -21,7 +21,7 @@ const Navbar: FC<INavbarProps> = props => {
       <Navigation collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
         <Link to={routes.DASHBOARD}>
           <Navigation.Brand className="font-weight-bold">
-            <span className="mr-2">nCOVID</span>
+            <span className="mr-2">COVID</span>
             <span>NEPAL</span>
           </Navigation.Brand>
         </Link>

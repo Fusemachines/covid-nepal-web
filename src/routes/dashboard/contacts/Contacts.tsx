@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-// import EmergencyContacts from './EmergencyContacts';
 import HospitalContacts from './HospitalContacts';
-import { Table, Tab, Nav } from 'react-bootstrap';
+import { Tab, Nav } from 'react-bootstrap';
+import EmergencyContacts from './EmergencyContacts';
+import SquareRightArrow from 'src/components/Icons/SquareRightArrow';
 
 interface IContactsProps {
   visibility: boolean;
@@ -16,54 +17,7 @@ const Contacts: FC<IContactsProps> = props => {
       <div className="overlay" onClick={() => toggleContacts()} />
 
       <div className="toggle-rightbar pointer" onClick={() => toggleContacts()}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-          <g id="Group_629" data-name="Group 629" transform="translate(-671)">
-            <g id="Group_621" data-name="Group 621" transform="translate(670.582)">
-              <rect
-                id="Rectangle_660"
-                data-name="Rectangle 660"
-                width="40"
-                height="40"
-                transform="translate(0.418)"
-                fill="#fff"
-              />
-            </g>
-            <g id="Group_86" data-name="Group 86" transform="translate(874.5 -400.5) rotate(90)">
-              <line
-                id="Line_10"
-                data-name="Line 10"
-                y2="20"
-                transform="translate(420.071 174.5)"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="round"
-                stroke-width="1"
-              />
-              <line
-                id="Line_11"
-                data-name="Line 11"
-                x1="8.571"
-                y2="8.571"
-                transform="translate(411.5 174.5)"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="round"
-                stroke-width="1"
-              />
-              <line
-                id="Line_12"
-                data-name="Line 12"
-                x2="8.571"
-                y2="8.571"
-                transform="translate(420.071 174.5)"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="round"
-                stroke-width="1"
-              />
-            </g>
-          </g>
-        </svg>
+        <SquareRightArrow />
       </div>
 
       <div className="content">
@@ -76,224 +30,14 @@ const Contacts: FC<IContactsProps> = props => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="second" className="py-3 m-0">
-                Hospita Contacts
+                Hospital Contacts
               </Nav.Link>
             </Nav.Item>
           </Nav>
 
           <Tab.Content>
             <Tab.Pane eventKey="first">
-              <div className="px-5">
-                <div className="info-list">
-                  <div className="info-item py-3 mt-2">
-                    <div className="font-16">Consular Service Hotline | 24hrs</div>
-
-                    <span className="rounded bg-success px-3 py-1 mr-2 mt-2 d-inline-block">
-                      <i className="mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                          <path
-                            id="Icon_material-call"
-                            data-name="Icon material-call"
-                            d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                            transform="translate(-1.75 -1.75)"
-                            fill="#ffffff"
-                          />
-                        </svg>
-                      </i>
-                      0091-8929601925
-                    </span>
-                  </div>
-
-                  <div className="info-item py-3 mt-2">
-                    <div className="font-16">COVID-19 Hotline | 8 AM - 8 PM</div>
-
-                    <span className="rounded bg-success px-3 py-1 mr-2 mt-2 d-inline-block">
-                      <i className="mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                          <path
-                            id="Icon_material-call"
-                            data-name="Icon material-call"
-                            d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                            transform="translate(-1.75 -1.75)"
-                            fill="#ffffff"
-                          />
-                        </svg>
-                      </i>
-                      9851255839
-                    </span>
-
-                    <span className="rounded bg-success px-3 py-1 mr-2 mt-2 d-inline-block">
-                      <i className="mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                          <path
-                            id="Icon_material-call"
-                            data-name="Icon material-call"
-                            d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                            transform="translate(-1.75 -1.75)"
-                            fill="#ffffff"
-                          />
-                        </svg>
-                      </i>
-                      9851255837
-                    </span>
-
-                    <span className="rounded bg-success px-3 py-1 mr-2 mt-2 d-inline-block">
-                      <i className="mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                          <path
-                            id="Icon_material-call"
-                            data-name="Icon material-call"
-                            d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                            transform="translate(-1.75 -1.75)"
-                            fill="#ffffff"
-                          />
-                        </svg>
-                      </i>
-                      9851255834
-                    </span>
-                  </div>
-
-                  <div className="info-item py-3 mt-2">
-                    <div className="font-16">Nepal Police | 24hrs</div>
-
-                    <span className="rounded bg-success px-3 py-1 mr-2 mt-2 d-inline-block">
-                      <i className="mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                          <path
-                            id="Icon_material-call"
-                            data-name="Icon material-call"
-                            d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                            transform="translate(-1.75 -1.75)"
-                            fill="#ffffff"
-                          />
-                        </svg>
-                      </i>
-                      100
-                    </span>
-
-                    <span className="rounded bg-success px-3 py-1 mr-2 mt-2 d-inline-block">
-                      <i className="mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                          <path
-                            id="Icon_material-call"
-                            data-name="Icon material-call"
-                            d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                            transform="translate(-1.75 -1.75)"
-                            fill="#ffffff"
-                          />
-                        </svg>
-                      </i>
-                      01-4228435
-                    </span>
-                  </div>
-
-                  <div className="info-item py-3 mt-2">
-                    <div className="font-16">Sukraraj Tropical And Infectious Disease Hospital</div>
-
-                    <div className="d-flex mt-3">
-                      <div className="col-5">1) Dr. Shrawan K. Mishra :</div>
-                      <div className="col-7">
-                        <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
-                          <i className="mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                              <path
-                                id="Icon_material-call"
-                                data-name="Icon material-call"
-                                d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                                transform="translate(-1.75 -1.75)"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </i>
-                          9851168220
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="d-flex mt-3">
-                      <div className="col-5">2) Dr. Ranjit Shah : </div>
-                      <div className="col-7">
-                        <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
-                          <i className="mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                              <path
-                                id="Icon_material-call"
-                                data-name="Icon material-call"
-                                d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                                transform="translate(-1.75 -1.75)"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </i>
-                          9872701465
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="d-flex mt-3">
-                      <div className="col-5">3) Mr. Rajesh K. Gupta :</div>
-                      <div className="col-7">
-                        <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
-                          <i className="mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                              <path
-                                id="Icon_material-call"
-                                data-name="Icon material-call"
-                                d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                                transform="translate(-1.75 -1.75)"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </i>
-                          9851239988
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="d-flex mt-3">
-                      <div className="col-5">4) Mr. Dinesh Thapa Magar : </div>
-                      <div className="col-7">
-                        <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
-                          <i className="mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                              <path
-                                id="Icon_material-call"
-                                data-name="Icon material-call"
-                                d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                                transform="translate(-1.75 -1.75)"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </i>
-                          9823168540
-                        </span>
-                        <small className="ml3">(Nights only)</small>
-                      </div>
-                    </div>
-
-                    <div className="d-flex mt-3">
-                      <div className="col-5">5) Mr. Naresh Thapa Magar :</div>
-                      <div className="col-7">
-                        <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
-                          <i className="mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
-                              <path
-                                id="Icon_material-call"
-                                data-name="Icon material-call"
-                                d="M4.063,6.727a9.678,9.678,0,0,0,4.21,4.21L9.679,9.532a.635.635,0,0,1,.652-.153,7.288,7.288,0,0,0,2.281.364.641.641,0,0,1,.639.639v2.23a.641.641,0,0,1-.639.639A10.86,10.86,0,0,1,1.75,2.389a.641.641,0,0,1,.639-.639H4.625a.641.641,0,0,1,.639.639A7.258,7.258,0,0,0,5.628,4.67a.641.641,0,0,1-.16.652L4.063,6.727Z"
-                                transform="translate(-1.75 -1.75)"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </i>
-                          9803152149
-                        </span>
-                        <small className="ml3">(Nights only)</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <EmergencyContacts />
             </Tab.Pane>
 
             <Tab.Pane eventKey="second">
@@ -303,17 +47,6 @@ const Contacts: FC<IContactsProps> = props => {
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>
-
-        {/* <div className="px-4 mt-4">
-          <div className="h5">
-            Emergency Contacts
-            <div className="float-right pointer" onClick={() => toggleContacts()}>
-              &times;
-            </div>
-          </div>
-          <EmergencyContacts />
-        </div>
-        <HospitalContacts /> */}
       </div>
     </div>
   );

@@ -100,7 +100,7 @@ const HospitalCapacity: FC<{}> = () => {
   };
 
   return (
-    <Row className="mt-5">
+    <Row className="mt-3">
       <Col sm="12">
         <div className="rounded bg-bluelight px-3 py-4">
           <div className="d-md-flex filter-wrapper mb-4">

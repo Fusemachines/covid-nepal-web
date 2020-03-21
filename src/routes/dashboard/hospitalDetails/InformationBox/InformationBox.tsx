@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-const InformationBox: FC<{}> = props => {
+const InformationBox: FC<{}> = () => {
   return (
     <div className="py-4 px-5 rounded bg-bluelight">
       <div className="hospital-title">Process of Testing</div>
