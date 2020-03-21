@@ -23,17 +23,26 @@ const Navbar: FC<INavbarProps> = props => {
   const interLang = i18n();
   const { navBar } = interLang;
 
-  const setLanguagePath = (lang: string) => {
-    setLanguage(lang);
-    history.push(location.pathname + `?lang=${lang}`);
-    setCookie('googtrans', `/en/${lang}`);
-
+  const languageTranslate = (lang: string) => {
     try {
+      setCookie('googtrans', `/en/${lang}`);
       const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
       googleTeCombo.value = lang;
       window.location.reload();
     } catch (e) {}
   };
+
+  const setLanguagePath = (lang: string) => {
+    setLanguage(lang);
+    history.push(location.pathname + `?lang=${lang}`);
+    languageTranslate(lang);
+  };
+
+  useEffect(() => {
+    if (location.search.includes('ne')) {
+      languageTranslate('ne');
+    }
+  });
 
   return (
     <React.Fragment>
