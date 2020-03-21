@@ -30,6 +30,7 @@ interface IHospitalCapaciyResponse {
   docs: Array<IHospital>;
 }
 export interface IFetchHospitalCapacityAPIPayload {
+  province?: string;
   district?: string;
   covidTest?: string;
 }

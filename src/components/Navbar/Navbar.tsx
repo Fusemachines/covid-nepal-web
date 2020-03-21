@@ -40,7 +40,7 @@ const Navbar: FC<INavbarProps> = props => {
       <Navigation collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
         <Link to={routes.DASHBOARD}>
           <Navigation.Brand className="font-weight-bold">
-            <span className="mr-2">COVID</span>
+            <span className="mr-2">COVID-19</span>
             <span>{navBar.Nepal}</span>
           </Navigation.Brand>
         </Link>
@@ -78,7 +78,7 @@ const Navbar: FC<INavbarProps> = props => {
           <Nav className="mr-auto">
             <NavItem title={'Home'} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
-            <NavItem title={'About'} to={routes.ABOUT} active={routes.ABOUT === currentPath} />
+            <NavItem title={'Join Us'} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} />
           </Nav>
 
           <Nav>

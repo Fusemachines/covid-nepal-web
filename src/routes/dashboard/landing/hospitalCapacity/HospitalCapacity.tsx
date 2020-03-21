@@ -53,10 +53,11 @@ const HospitalCapacity: FC<{}> = () => {
   const fetchHospitalCapacityData = async () => {
     setIsLoaded(false);
     try {
-      const { district, covidTest } = filters;
+      const { province, district, covidTest } = filters;
       let payload = {
-        district: district ? district.value : '',
-        covidTest: covidTest ? covidTest.value : ''
+        province: province ? province.value : '',
+        district: district ? district.value : ''
+        // covidTest: covidTest ? covidTest.value : ''
       };
       const response = await fetchHospitalCapacityAPI(payload);
       setHospitalCapacityList(response.docs);

@@ -26,7 +26,7 @@ const EmergencyContacts: FC<{}> = () => {
         {isLoaded && contactList.docs.map(contact => <EmergencyContactItem contact={contact} />)}
         <div className="info-item py-3 mt-2">
           <div className="font-16">Sukraraj Tropical And Infectious Disease Hospital</div>
-
+          <small className="ml3">(As provided in the government notices)</small>
           <div className="d-flex mt-3">
             <div className="col-5">1) Dr. Shrawan K. Mishra :</div>
             <div className="col-7">
