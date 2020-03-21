@@ -8,12 +8,16 @@ const HospitalCapacityTable: FC<{}> = () => {
   const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
 
   return (
-    <Table className="text-white">
+    <Table responsive className="text-white">
       <thead>
         <tr>
           <th>Name of Hospital</th>
-          <th>No. of Patients</th>
-          <th>Covid-19 Symptoms</th>
+          <th>Address</th>
+          <th>Contact</th>
+          <th>No. of beds</th>
+          <th>No. of ICU beds</th>
+          <th>Covid-19 Test</th>
+          <th>Isolation Rooms</th>
         </tr>
       </thead>
 
