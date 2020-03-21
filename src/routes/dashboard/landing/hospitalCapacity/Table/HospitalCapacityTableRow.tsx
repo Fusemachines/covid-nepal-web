@@ -11,17 +11,7 @@ export interface IHospitalCapacityTableRowProps {
 
 const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   const {
-    hospitalCapacity: {
-      _id,
-      name,
-      location: address,
-      mapLink: mapURL,
-      covidTest,
-      contact,
-      numIsolationBeds,
-      icu,
-      govtDesignated
-    },
+    hospitalCapacity: { _id, name, location: address, mapLink: mapURL, contact, totalBeds, numIsolationBeds, icu },
     toggleMapsModal
   } = props;
   return (
@@ -37,29 +27,15 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
             <span className="ml-2">Map</span>
           </a>
         </td>
-        <td>
-          {covidTest ? (
-            <div className="badges">
-              <div className="badges-item m-0">Available</div>
-            </div>
-          ) : (
-            '-'
-          )}
-        </td>
         <td>{contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))}</td>
 
-        <td>{numIsolationBeds ? numIsolationBeds : '-'}</td>
+        <td>{totalBeds ? totalBeds : '-'}</td>
+
         <td>{icu ? icu : '-'}</td>
 
-        <td>
-          {govtDesignated ? (
-            <div className="badges">
-              <div className="badges-item m-0">Yes</div>
-            </div>
-          ) : (
-            '-'
-          )}
-        </td>
+        <td>{'-'}</td>
+
+        <td>{numIsolationBeds ? numIsolationBeds : '-'}</td>
       </tr>
     </>
   );
