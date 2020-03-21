@@ -12,14 +12,14 @@ const CovidCases = () => {
   const [updatedTime, setUpdatedTime] = useState(0);
 
   useEffect(() => {
-    getVirusCounts();
+    fetchCovidCases();
     window.setInterval(getUpdatedTime, 30000);
     return () => {
       clearInterval();
     };
   }, []);
 
-  const getVirusCounts = async () => {
+  const fetchCovidCases = async () => {
     try {
       const response = await fetchCovidCasesCountsAPI();
       setCovidCasesCounts(response);
@@ -46,7 +46,7 @@ const CovidCases = () => {
               <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
               <small>
                 {updatedTime > 0 ? `Updated ${updatedTime} minutes ago` : `Updated a while ago`}
-                <i className="ml-2 pointer" onClick={() => getVirusCounts()}>
+                <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
                   <RefreshIcon />
                 </i>
               </small>
