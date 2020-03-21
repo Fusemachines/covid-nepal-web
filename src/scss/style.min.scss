@@ -22,6 +22,9 @@ body {
     background-color: #004E90;
 }
 
+.btn {
+    text-decoration: none;
+}
 .btn-outline-white {
     border: 1px solid #ffffff;
     margin-right: 10px;
@@ -397,7 +400,20 @@ body {
     font-weight: 600;
 }
 
+.font-18 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: underline;
+}
+
 // nav tabs
+
+.nav-link {
+    text-decoration: none;
+}
 
 .nav.nav-tabs{
 
@@ -410,6 +426,7 @@ body {
             border-radius: 0;
             color: #ffffff;
             border-color: transparent;
+            text-decoration: none;
 
             &.active,
             &:hover {
@@ -451,6 +468,25 @@ body {
 
 .numc {
     list-style: decimal;
+}
+
+.circle {
+    li {
+        list-style: none;
+        position: relative;
+        margin: 12px 0;
+
+        &:before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #079558;
+            top: 4px;
+            left: -30px;
+        }
+    }
 }
 
 // maps

@@ -76,8 +76,9 @@ const Navbar: FC<INavbarProps> = props => {
 
         <Navigation.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <NavItem title={navBar.Home} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
-            <NavItem title={navBar.Symptoms} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
+            <NavItem title={'Home'} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
+            <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
+            <NavItem title={'About'} to={routes.ABOUT} active={routes.ABOUT === currentPath} />
           </Nav>
 
           <Nav>
