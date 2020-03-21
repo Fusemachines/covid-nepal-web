@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
+import { IAllocatedHospital } from 'src/services/hospitals';
 
-interface ITableRowProps {}
+interface ITableRowProps {
+  hospital: IAllocatedHospital;
+}
 
 const TableRow: FC<ITableRowProps> = props => {
   return (

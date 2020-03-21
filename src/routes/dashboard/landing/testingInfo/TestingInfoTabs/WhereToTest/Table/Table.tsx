@@ -1,8 +1,14 @@
 import React, { FC } from 'react';
 import { Table } from 'react-bootstrap';
 import TableRow from './TableRow';
+import { IAllocatedHospital } from 'src/services/hospitals';
 
-const AllocatedHospitalTable: FC<{}> = () => {
+interface IAllocatedHospitalTableProps {
+  allocatedHospitals: IAllocatedHospital[];
+}
+
+const AllocatedHospitalTable: FC<IAllocatedHospitalTableProps> = props => {
+  const { allocatedHospitals } = props;
   return (
     <Table responsive className="text-white">
       <thead>
@@ -14,7 +20,9 @@ const AllocatedHospitalTable: FC<{}> = () => {
       </thead>
 
       <tbody>
-        <TableRow />
+        {allocatedHospitals.map(hospital => (
+          <TableRow hospital={hospital} />
+        ))}
       </tbody>
     </Table>
   );

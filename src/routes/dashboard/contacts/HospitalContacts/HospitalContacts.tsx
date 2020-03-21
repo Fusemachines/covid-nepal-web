@@ -42,7 +42,9 @@ const HospitalContacts: FC<{}> = () => {
         district: filters.district ? filters.district.value : ''
       });
       setHospitalContacts(response.docs);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const fetchDistrictsByProvince = async () => {
