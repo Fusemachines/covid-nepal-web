@@ -14,7 +14,7 @@ interface IHospitalContactsFilterProps {
 
 const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
   return (
-    <div className="ml-auto">
+    <div className="">
       <div className="filter d-inline-block">
         <span>Province</span>
         <CustomSelectInput
