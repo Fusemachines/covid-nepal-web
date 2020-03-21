@@ -181,6 +181,11 @@ body {
     tbody td {
         border-bottom: 1px solid #2074B9;
     }
+
+    &.h-50 {
+        max-height: 53vh;
+        overflow-y: auto;
+    }
 }
 
 .right-bar {

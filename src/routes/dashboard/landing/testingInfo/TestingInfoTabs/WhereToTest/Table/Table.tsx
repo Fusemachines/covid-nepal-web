@@ -27,7 +27,7 @@ const AllocatedHospitalTable: FC<{}> = () => {
   };
 
   return (
-    <Table responsive className="text-white">
+    <Table responsive className="text-white h-50">
       <thead>
         <tr>
           <th>Name of Hospital</th>
