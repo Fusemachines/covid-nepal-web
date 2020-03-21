@@ -6,7 +6,7 @@ const Symptoms = () => (
     <div className="container mt-3">
       <Row className="mt-5">
         <Col lg="3" className="mt-4 text-white">
-          <div className="h5 title bg-orange">Contagion</div>
+          <div className="h5 title bg-orange">CONTAGION</div>
 
           <Media className="mt-4">
             <img alt={''} src="/images/airtransmission.png" className="align-self-center mr-3" />
@@ -34,7 +34,7 @@ const Symptoms = () => (
         </Col>
 
         <Col lg="3" className="mt-4">
-          <div className="h5 title bg-yellow">Preventions</div>
+          <div className="h5 title bg-yellow">PREVENTIONS</div>
 
           <Media className="mt-4">
             <img alt={''} src="/images/wearmasks.png" className="align-self-center mr-3" />

@@ -293,3 +293,33 @@ body {
         }
     }
 }
+
+// nav tabs
+
+.nav.nav-tabs{
+
+    &.nav-fill {
+        border-color: transparent;
+
+        .nav-link {
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 0;
+            color: #ffffff;
+            border-color: #004E90;
+
+            &.active,
+            &:hover {
+                color: #004E90;
+                background-color: #FFC400;
+            }
+            
+        }
+    }
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 18px;
+    font-style: italic;
+}
