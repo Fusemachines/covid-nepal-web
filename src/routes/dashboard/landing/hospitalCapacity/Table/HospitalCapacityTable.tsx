@@ -32,11 +32,11 @@ const HospitalCapacityTable: FC<{}> = () => {
           <tr>
             <th>Name of Hospital</th>
             <th>Address</th>
-            <th>Covid-19 Tests</th>
             <th>Contact</th>
-            <th>Isolation Beds</th>
-            <th>ICU</th>
-            <th>Govt Designated Center</th>
+            <th>Num of Beds</th>
+            <th>Num of ICU Beds</th>
+            <th>Num of Ventilators</th>
+            <th>Num of Isolation Beds</th>
           </tr>
         </thead>
 
