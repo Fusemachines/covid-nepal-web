@@ -21,11 +21,13 @@ const CovidCases = () => {
 
   const getVirusCounts = async () => {
     try {
-      setTimeOfFetch(new Date());
       const response = await fetchCovidCasesCountsAPI();
       setCovidCasesCounts(response);
+      setTimeOfFetch(new Date());
     } catch (error) {
       console.log(error);
+    } finally {
+      getUpdatedTime();
     }
   };
 
