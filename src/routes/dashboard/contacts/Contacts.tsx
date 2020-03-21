@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
-import EmergencyContacts from './EmergencyContacts';
 import HospitalContacts from './HospitalContacts';
+import { Tab, Nav } from 'react-bootstrap';
+import EmergencyContacts from './EmergencyContacts';
+import SquareRightArrow from 'src/components/Icons/SquareRightArrow';
 
 interface IContactsProps {
   visibility: boolean;
@@ -13,17 +15,38 @@ const Contacts: FC<IContactsProps> = props => {
   return (
     <div className={`right-bar ${visibility ? 'show' : ''}`}>
       <div className="overlay" onClick={() => toggleContacts()} />
+
+      <div className="toggle-rightbar pointer" onClick={() => toggleContacts()}>
+        <SquareRightArrow />
+      </div>
+
       <div className="content">
-        <div className="px-4 mt-4">
-          <div className="h5">
-            Emergency Contacts
-            <div className="float-right pointer" onClick={() => toggleContacts()}>
-              &times;
-            </div>
-          </div>
-          <EmergencyContacts />
-        </div>
-        <HospitalContacts />
+        <Tab.Container defaultActiveKey="first">
+          <Nav fill variant="tabs" className="contact">
+            <Nav.Item>
+              <Nav.Link eventKey="first" className="py-3 m-0">
+                Emergency Contacts
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="second" className="py-3 m-0">
+                Hospital Contacts
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+          <Tab.Content>
+            <Tab.Pane eventKey="first">
+              <EmergencyContacts />
+            </Tab.Pane>
+
+            <Tab.Pane eventKey="second">
+              <div className="mt-4">
+                <HospitalContacts />
+              </div>
+            </Tab.Pane>
+          </Tab.Content>
+        </Tab.Container>
       </div>
     </div>
   );

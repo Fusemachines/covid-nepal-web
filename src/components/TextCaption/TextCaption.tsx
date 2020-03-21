@@ -1,18 +1,17 @@
 import React, { FC } from 'react';
-import { TextCaptionIcon } from './TextCaptionIcons';
+import UpRightArrow from '../Icons/UpRightArrow';
+import DownLeftArrow from '../Icons/DownLeftArrow';
 
 interface ITextCaption {
   type: string;
   value: string;
 }
 
-const TextCaption: FC<ITextCaption> = props => {
+const TextCaption: FC<ITextCaption> = ({ type, value }) => {
   return (
-    <div className={`h6 text-${props.type}`}>
-      <span className="mr-2">
-        <TextCaptionIcon type={props.type} />
-      </span>
-      {props.value}%
+    <div className={`text-${type} d-inline-block`}>
+      <span className="mx-2">{type === 'danger' ? <DownLeftArrow /> : <UpRightArrow type={type} />}</span>
+      <small>{value}%</small>
     </div>
   );
 };

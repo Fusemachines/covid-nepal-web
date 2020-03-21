@@ -1,22 +1,27 @@
 import React, { FC } from 'react';
-import { IAllocatedHospital } from 'src/services/hospitals';
+import { IHospital } from 'src/services/hospitals';
 
 interface ITableRowProps {
-  hospital: IAllocatedHospital;
+  hospital: IHospital;
 }
 
 const TableRow: FC<ITableRowProps> = props => {
+  const { hospital } = props;
   return (
-    <tr>
+    <tr onClick={() => window.location.assign(`/hospital/${hospital._id}`)}>
       <td>
-        <div>Bir Hospital</div>
+        <div>{hospital.name}</div>
       </td>
       <td className="text-center">
-        <div>8 AM - 3 PM</div>
-        <small>Sun - Fri</small>
+        <div>
+          {hospital.availableTime[0]} AM - {hospital.availableTime[1]} PM
+        </div>
+        <small>{hospital.openDays}</small>
       </td>
       <td className="align-middle">
-        <div className="h5 text-warning font-weight-bold text-right">50 / 120</div>
+        <div className="h5 text-warning font-weight-bold text-right">
+          {hospital.availableBeds} / {hospital.totalBeds}
+        </div>
       </td>
     </tr>
   );

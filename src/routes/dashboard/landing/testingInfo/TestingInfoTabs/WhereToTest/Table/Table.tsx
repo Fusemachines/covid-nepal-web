@@ -4,12 +4,12 @@ import TableRow from './TableRow';
 import {
   IFetchAllocatedHospitalListAPIResponse,
   fetchAllocatedHospitalListAPI,
-  IAllocatedHospital
+  IHospital
 } from 'src/services/hospitals';
 
 const AllocatedHospitalTable: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [allocatedHospitalList, setAllocatedHospitalList] = useState<IAllocatedHospital[]>([] as IAllocatedHospital[]);
+  const [allocatedHospitalList, setAllocatedHospitalList] = useState<IHospital[]>([] as IHospital[]);
 
   useEffect(() => {
     fetchAllocatedHospitalList();
@@ -27,7 +27,7 @@ const AllocatedHospitalTable: FC<{}> = () => {
   };
 
   return (
-    <Table responsive className="text-white">
+    <Table responsive className="text-white h-50">
       <thead>
         <tr>
           <th>Name of Hospital</th>

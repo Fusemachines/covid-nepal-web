@@ -23,7 +23,7 @@ const Home = () => {
             <div className="rounded bg-bluelight p-4">
               <div className="mb-3 border-bottom pb-2">
                 <div className="d-inline-block">
-                  <div className="h5 mb-0 font-weight-bold">Government Virus Counts</div>
+                  <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
                   <small>
                     Updated 1 minutes ago
                     <i className="ml-2 pointer">
@@ -799,7 +799,7 @@ const Home = () => {
         </Row>
 
         {/* hospital data */}
-        <Row className="my-5">
+        <Row className="my-3">
           <Col sm="12">
             <div className="rounded bg-bluelight px-3 py-4">
               <div className="d-md-flex filter-wrapper mb-4">

@@ -186,6 +186,11 @@ body {
     tbody td {
         border-bottom: 1px solid #2074B9;
     }
+
+    &.h-50 {
+        max-height: 53vh;
+        overflow-y: auto;
+    }
 }
 
 .right-bar {
@@ -219,6 +224,56 @@ body {
         color: #ffffff;
         float: right;
         max-width: 100%;
+        position: relative;
+
+        .nav.nav-tabs{
+
+            &.nav-fill {
+                border-color: transparent;
+
+                .nav-link {
+                    font-size: 20px;
+                    font-weight: 700;
+                    border-radius: 0;
+                    border-color: transparent;
+                    color: #2074B9;
+
+                    &.active,
+                    &:hover {
+                        color: #ffffff;
+                        background-color: #2074B9;
+                    }
+                }
+            }
+        }
+
+        &.emergency {
+            background: #00361F;
+            .nav.nav-tabs{
+
+                &.nav-fill {
+                    border-color: transparent;
+
+                    .nav-link {
+
+                        &.active,
+                        &:hover {
+                            background-color: #00C06E;
+                        }
+                    }
+                }
+            }
+
+            .info-item {
+                border-color: #00C571;
+            }
+        }
+
+    }
+    .toggle-rightbar {
+        position: absolute;
+        top: 0;
+        right: 620px;
     }
 
     table td {
@@ -228,7 +283,7 @@ body {
 
 
 .filter-wrapper {
-    background: #004E90;
+    // background: #004E90;
     position: sticky;
     top: 0;
 
@@ -333,6 +388,11 @@ body {
     }
 }
 
+.font-16 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
 // nav tabs
 
 .nav.nav-tabs{
@@ -345,14 +405,13 @@ body {
             font-weight: 600;
             border-radius: 0;
             color: #ffffff;
-            border-color: #004E90;
+            border-color: transparent;
 
             &.active,
             &:hover {
                 color: #004E90;
                 background-color: #FFC400;
             }
-
         }
     }
 }
@@ -400,3 +459,7 @@ body {
     }
 }
 
+.tweet-wrapper {
+    max-height: 75vh;
+    overflow-y: auto;
+}

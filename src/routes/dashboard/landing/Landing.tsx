@@ -1,33 +1,32 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import i18n from '../../../i18n';
+import { Scrollbars } from 'react-custom-scrollbars';
 
-import VirusCounts from 'src/routes/dashboard/landing/virusCounts';
+import CovidCases from 'src/routes/dashboard/landing/covidCases';
 import HospitalCapacity from 'src/routes/dashboard/landing/hospitalCapacity';
 import TestingInformation from 'src/routes/dashboard/landing/testingInfo';
+import LatestNews from './latestNews';
 
-const Landing = () => {
-  const interLang = i18n();
-  const { landing } = interLang;
+const Landing = () => (
+  <>
+    <div className="container-fluid mt-3">
+      <Row>
+        <CovidCases />
 
-  return (
-    <>
-      <div className="container-fluid mt-3">
-        <Row>
-          <VirusCounts />
-          <TestingInformation />
-          <Col md="12" lg="3" className="mt-2 order-lg-first">
-            <div className="rounded bg-bluelight p-3">
-              <div className="h5 font-weight-bold mb-3">{landing.LatestNews}</div>
+        <TestingInformation />
 
-              <div className="">{landing.LatestNews}</div>
-            </div>
-          </Col>
-        </Row>
-        <HospitalCapacity />
-      </div>
-    </>
-  );
-};
+        <Col md="12" lg="3" className="mt-2 order-lg-first">
+          <Scrollbars>
+            {/* <div className="tweet-wrapper"> */}
+            <LatestNews />
+            {/* </div> */}
+          </Scrollbars>
+        </Col>
+      </Row>
+      <HospitalCapacity />
+    </div>
+  </>
+);
 
 export default Landing;

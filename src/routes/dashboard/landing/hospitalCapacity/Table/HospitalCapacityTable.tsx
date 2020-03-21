@@ -1,40 +1,74 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import { Table } from 'react-bootstrap';
 
 import HospitalCapacityTableRow from './HospitalCapacityTableRow';
 import { HospitalCapacityTableContext } from '../HospitalCapacity';
+import MapsModal from 'src/components/MapsModal';
+import MapsIframe from 'src/components/MapsIframe';
+
+export interface IMapModalValues {
+  title: string;
+  mapURL: string;
+}
 
 const HospitalCapacityTable: FC<{}> = () => {
   const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
 
-  return (
-    <Table responsive className="text-white">
-      <thead>
-        <tr>
-          <th>Name of Hospital</th>
-          <th>Address</th>
-          <th>Contact</th>
-          <th>No. of beds</th>
-          <th>No. of ICU beds</th>
-          <th>Covid-19 Test</th>
-          <th>Isolation Rooms</th>
-        </tr>
-      </thead>
+  const [showMapsModal, setShowMapsModal] = useState(false);
+  const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
 
-      <tbody>
-        {isLoaded ? (
-          hospitalCapacityList.length > 0 ? (
-            hospitalCapacityList.map(hospitalCapacity => {
-              return <HospitalCapacityTableRow key={hospitalCapacity._id} hospitalCapacity={hospitalCapacity} />;
-            })
+  const toggleMapsModal = (mapModalValues?: IMapModalValues) => {
+    setShowMapsModal(prevShowMapsState => !prevShowMapsState);
+    if (mapModalValues) {
+      const { title, mapURL } = mapModalValues;
+      setMapModalValues({ title, mapURL });
+    }
+  };
+
+  return (
+    <>
+      <Table responsive className="text-white">
+        <thead>
+          <tr>
+            <th>Name of Hospital</th>
+            <th>Address</th>
+            <th>Covid-19 Tests</th>
+            <th>Contact</th>
+            <th>Isolation Beds</th>
+            <th>ICU</th>
+            <th>Govt Designated Center</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {isLoaded ? (
+            hospitalCapacityList.length > 0 ? (
+              hospitalCapacityList.map(hospitalCapacity => {
+                return (
+                  <HospitalCapacityTableRow
+                    key={hospitalCapacity._id}
+                    hospitalCapacity={hospitalCapacity}
+                    toggleMapsModal={toggleMapsModal}
+                  />
+                );
+              })
+            ) : (
+              <span>No records found</span>
+            )
           ) : (
-            <span>No records found</span>
-          )
-        ) : (
-          <span>Loading...</span>
-        )}
-      </tbody>
-    </Table>
+            <span>Loading...</span>
+          )}
+        </tbody>
+      </Table>
+
+      {showMapsModal && (
+        <MapsModal showModal={showMapsModal} title={mapModalValues.title} toggleModal={toggleMapsModal}>
+          <div className="map-large">
+            <MapsIframe url={mapModalValues.mapURL} />
+          </div>
+        </MapsModal>
+      )}
+    </>
   );
 };
 
