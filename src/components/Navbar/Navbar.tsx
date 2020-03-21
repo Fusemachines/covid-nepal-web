@@ -19,14 +19,14 @@ const Navbar: FC<INavbarProps> = props => {
   const location = useLocation();
   const history = useHistory();
   const currentPath = location.pathname;
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(location.search.includes('en') ? 'en' : 'ne');
   const interLang = i18n();
   const { navBar } = interLang;
 
   const setLanguagePath = (lang: string) => {
     setLanguage(lang);
     history.push(location.pathname + `?lang=${lang}`);
-    // setCookie('googtrans', `/en/${lang}`);
+    setCookie('googtrans', `/en/${lang}`);
 
     try {
       const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
@@ -46,14 +46,14 @@ const Navbar: FC<INavbarProps> = props => {
         </Link>
 
         {/* language */}
-        {/* <div className="lang mobile-flag">
+        <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
               id="np-lang"
               onClick={() => setLanguagePath('ne')}
-              name="language"
-              value="np"
+              name="lang-mobile"
+              value="ne"
               checked={language === 'ne'}
             />
             <img src="/images/nepal.png" className="mx-1" /> {navBar.NEP}
@@ -64,13 +64,13 @@ const Navbar: FC<INavbarProps> = props => {
               type="radio"
               id="en-lang"
               onClick={() => setLanguagePath('en')}
-              name="language"
+              name="lang-mobile"
               value="en"
               checked={language === 'en'}
             />
             {navBar.ENG} <img src="/images/english.png" className="mx-1" />
           </label>
-        </div> */}
+        </div>
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -86,12 +86,12 @@ const Navbar: FC<INavbarProps> = props => {
             <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} />
 
             {/* language */}
-            {/* <div className="lang menu-flag">
+            <div className="lang menu-flag">
               <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
                   id="np-lang"
-                  onClick={() => setLanguage('ne')}
+                  onClick={() => setLanguagePath('ne')}
                   name="language"
                   value="ne"
                   checked={language === 'ne'}
@@ -103,14 +103,14 @@ const Navbar: FC<INavbarProps> = props => {
                 <input
                   type="radio"
                   id="en-lang"
-                  onClick={() => setLanguage('en')}
+                  onClick={() => setLanguagePath('en')}
                   name="language"
                   value="en"
                   checked={language === 'en'}
                 />
                 {navBar.ENG} <img src="/images/english.png" className="mx-1" />
               </label>
-            </div> */}
+            </div>
           </Nav>
         </Navigation.Collapse>
       </Navigation>
