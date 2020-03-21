@@ -26,6 +26,16 @@ const Navbar: FC<INavbarProps> = props => {
           </Navigation.Brand>
         </Link>
 
+        {/* language */}
+        <div className="lang mobile-flag">
+          <span className="">
+            <img src="/images/nepal.png" className="mx-1" /> NEP
+          </span>
+          <span className="active">
+            ENG <img src="/images/english.png" className="mx-1" />
+          </span>
+        </div>
+
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navigation.Collapse id="responsive-navbar-nav">
@@ -37,7 +47,16 @@ const Navbar: FC<INavbarProps> = props => {
           <Nav>
             {/* <TransparentButton text={'Covid-19 Cases'} handleClick={() => ({})} /> */}
             <EmergencyButton text={'Emergency Contact'} handleClick={toggleSidebar} />
-            {/* <Nav.Link className="d-none d-lg-block">Language</Nav.Link> */}
+
+            {/* language */}
+            <div className="lang menu-flag">
+              <span className="">
+                <img src="/images/nepal.png" className="mx-1" /> NEP
+              </span>
+              <span className="active">
+                ENG <img src="/images/english.png" className="mx-1" />
+              </span>
+            </div>
           </Nav>
         </Navigation.Collapse>
       </Navigation>
