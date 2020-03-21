@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 
 import HospitalCapacityTable from './Table/HospitalCapacityTable';
 import HospitalCapacityFilter from './Table/HospitalCapacityFilter';
-import { IHospitalCapacity, fetchHospitalCapacityAPI } from 'src/services/hospitals';
+import { fetchHospitalCapacityAPI, IHospital } from 'src/services/hospitals';
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
@@ -11,7 +11,7 @@ import { ValueType } from 'react-select';
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
-  hospitalCapacityList: Array<IHospitalCapacity>;
+  hospitalCapacityList: Array<IHospital>;
 }
 
 export interface IHospitalCapacityFiltersContext {
@@ -38,7 +38,7 @@ const initialHospitalCapacityFiltersState = {
 
 const HospitalCapacity: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospitalCapacity>>([]);
+  const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
 

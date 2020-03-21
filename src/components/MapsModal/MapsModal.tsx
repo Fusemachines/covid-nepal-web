@@ -4,7 +4,7 @@ import { Modal } from 'react-bootstrap';
 interface IMapsModal {
   showModal: boolean;
   title: string;
-  toggleModal: (title?: string) => void;
+  toggleModal: () => void;
 }
 
 const MapsModal: FC<IMapsModal> = ({ showModal, title, toggleModal, children }) => {

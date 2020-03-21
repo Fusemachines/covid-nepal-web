@@ -25,9 +25,11 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
           </li>
           <li>
             <span className="text-secondary">Open hours:</span>
-            <span className="mx-2">
-              {hospital.availableTime[0]} AM - {hospital.availableTime[1]}PM
-            </span>
+            {hospital.availableTime && (
+              <span className="mx-2">
+                {hospital.availableTime[0]} AM - {hospital.availableTime[1]}PM
+              </span>
+            )}
             <span className="ml-3">{hospital.openDays}</span>
           </li>
           <li>
@@ -38,9 +40,7 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
           </li>
           <li>
             <span className="text-secondary">Contact :</span>
-            {hospital.contact.map(contact => (
-              <GreenContactBadge contactNumber={contact} />
-            ))}
+            {hospital.contact && hospital.contact.map(contact => <GreenContactBadge contactNumber={contact} />)}
           </li>
           <li>
             <span className="text-secondary">Hosptial Type :</span>

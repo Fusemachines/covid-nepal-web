@@ -1,45 +1,64 @@
 import React, { FC } from 'react';
 
-import { IHospitalCapacity } from 'src/services/hospitals';
+import { IHospital } from 'src/services/hospitals';
 import LocationIcon from 'src/components/Icons/LocationIcon';
+import { IMapModalValues } from './HospitalCapacityTable';
 
-interface ILiveTableRowProps {
-  hospitalCapacity: IHospitalCapacity;
-  toggleMapsModal: (title: string) => void;
+export interface IHospitalCapacityTableRowProps {
+  hospitalCapacity: IHospital;
+  toggleMapsModal: (mapModalValues: IMapModalValues) => void;
 }
 
-const HospitalCapacityTableRow: FC<ILiveTableRowProps> = props => {
+const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   const {
-    hospitalCapacity: { nameOfHospital, numberOfBed, numberOfPatient, covid19Symptom, covid19SymptomPercentage },
+    hospitalCapacity: {
+      _id,
+      name,
+      location: address,
+      mapLink: mapURL,
+      covidTest,
+      contact,
+      numIsolationBeds,
+      icu,
+      govtDesignated
+    },
     toggleMapsModal
   } = props;
   return (
     <>
-      <tr>
+      <tr onClick={() => window.location.assign(`/hospital/${_id}`)}>
         <td>
-          <div>{nameOfHospital}</div>
+          <div>{name}</div>
         </td>
         <td>
-          <div>Ranipokhari, Kathmandu</div>
-          <a className="pointer" onClick={() => toggleMapsModal(nameOfHospital)}>
+          <div>{address}</div>
+          <a className="pointer" onClick={() => toggleMapsModal({ title: name, mapURL })}>
             <LocationIcon />
             <span className="ml-2">Map</span>
           </a>
         </td>
         <td>
-          <div className="badges">
-            <div className="badges-item m-0">Available</div>
-          </div>
+          {covidTest ? (
+            <div className="badges">
+              <div className="badges-item m-0">Available</div>
+            </div>
+          ) : (
+            '-'
+          )}
         </td>
-        <td>01-4331390, 01-4332160</td>
+        <td>{contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))}</td>
 
-        <td>{}</td>
-        <td>20</td>
+        <td>{numIsolationBeds ? numIsolationBeds : '-'}</td>
+        <td>{icu ? icu : '-'}</td>
 
         <td>
-          <div className="badges">
-            <div className="badges-item m-0">Yes</div>
-          </div>
+          {govtDesignated ? (
+            <div className="badges">
+              <div className="badges-item m-0">Yes</div>
+            </div>
+          ) : (
+            '-'
+          )}
         </td>
       </tr>
     </>
