@@ -476,6 +476,18 @@ body {
     }
 }
 
+@media(max-width: 321px) {
+    
+    .right-bar {
+        .content{
+            padding-top: 32px;
+        }
+        .toggle-rightbar {
+            top: 38px;
+        }
+    }
+}
+
 .font-16 {
     font-size: 16px;
     font-weight: 600;
