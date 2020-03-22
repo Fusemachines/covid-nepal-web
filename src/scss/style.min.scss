@@ -526,3 +526,32 @@ a {
 .badge-cus:only-child {
     margin-bottom: 0px;
 }
+
+.symptoms-table {
+    thead th,
+    tbody td {
+        border-color: #FFFFFF;
+    }
+}
+
+.text-lightblue {
+    color: #7AABD4;
+}
+
+.bg-red {
+    &-l1 {
+        background-color: #FFBABD;
+    }
+    &-l2 {
+        background-color: #FDD6D8;
+    }
+    &-l3 {
+        background-color: #FFDDDE;
+    }
+    &-l4 {
+        background-color: #E56E73;
+    }
+    &-l5 {
+        background-color: #EF8A8E;
+    }
+}
