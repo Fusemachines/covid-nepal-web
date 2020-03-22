@@ -12,7 +12,7 @@ const JoinUs = () => (
           <div className="h1 text-primary font-weight-bold">Open Source Platform for COVID19 for Nepal</div>
 
           <div className="my-2 text-white my-4 ">
-            <Link className={'text-white'} to="https://covidnepal.org/">
+            <Link className={'text-white'} to="/">
               covidnepal.org
             </Link>{' '}
             is an Open Source Platform started at{' '}
