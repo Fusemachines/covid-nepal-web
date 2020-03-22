@@ -84,7 +84,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   );
 };
 
-const NotAvailable: React.FC<{ id: string; placement?: 'right' | 'left' | 'top' | 'bottom' }> = ({
+export const NotAvailable: React.FC<{ id: string; placement?: 'right' | 'left' | 'top' | 'bottom' }> = ({
   id,
   placement = 'right'
 }) => {

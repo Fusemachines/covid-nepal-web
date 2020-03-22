@@ -12,6 +12,7 @@ const NepalCovidCases: FC<INepalCovidCasesProps> = ({ covidCasesCounts }) => {
   return (
     <Col xs="6">
       <div className="font-weight-bold h5 mb-3">Nepal Update</div>
+      <small>(Nepal Govt. reported numbers)</small>
 
       <div className="">Total Tested</div>
       <div className="h3 m-0 font-weight-bold  d-inline-block">

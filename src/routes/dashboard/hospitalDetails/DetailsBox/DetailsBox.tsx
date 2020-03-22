@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IHospital } from 'src/services/hospitals';
-
+import { NotAvailable } from 'src/routes/dashboard/landing/hospitalCapacity/Table/HospitalCapacityTableRow';
 interface IDetailsBoxProps {
   hospital: IHospital;
 }
@@ -33,10 +33,14 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
             <span className="ml-3">{hospital.openDays}</span>
           </li>
           <li>
-            <span className="text-secondary">Beds for COVID-19 patients :</span>
-            <span className="ml-2 h6 mb-0 text-warning font-weight-bold">
-              {hospital.availableBeds} / {hospital.totalBeds}
-            </span>
+            <span className="text-secondary">Beds for COVID-19 patients : </span>
+            {hospital.availableBeds > 0 && hospital.totalBeds > 0 ? (
+              <span className="ml-2 h6 mb-0 text-warning font-weight-bold">
+                ? {hospital.availableBeds} / {hospital.totalBeds}
+              </span>
+            ) : (
+              <NotAvailable id={'hospital-' + hospital._id} />
+            )}
           </li>
           <li>
             <span className="text-secondary">Contact :</span>
