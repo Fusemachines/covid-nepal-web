@@ -516,6 +516,7 @@ a {
 .symptoms {
     display: inline-block;
     min-height: 150px;
+    min-width: 150px;
     position: relative;
     margin: auto;
 
@@ -525,7 +526,6 @@ a {
 
     > div {
         position: absolute;
-        top: 20px;
         font-size: 18px;
 
         &.left {
@@ -535,6 +535,7 @@ a {
                 left: 29%;
                 font-weight: 800;
                 font-size: 20px;
+                top: 0;
             }
 
             &-2 {

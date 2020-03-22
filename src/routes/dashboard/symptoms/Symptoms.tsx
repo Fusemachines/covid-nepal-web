@@ -12,10 +12,10 @@ const Symptoms = () => {
           <Col lg="3" className="mt-4 text-white">
             <div className="h5 title bg-orange">CONTAGION</div>
 
-            <Media className="mt-4">
+            {/* <Media className="mt-4">
               <img alt={''} src="/images/airtransmission.png" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Air Transmission</Media.Body>
-            </Media>
+            </Media> */}
 
             <Media className="mt-4">
               <img alt={''} src="/images/humancontact.png" className="align-self-center mr-3" />
@@ -63,9 +63,14 @@ const Symptoms = () => {
             </Media>
 
             <Media className="mt-4">
+              <img alt={''} src="/images/socialdistance.png" className="align-self-center mr-3" />
+              <Media.Body className="align-self-center">Social Distancing</Media.Body>
+            </Media>
+
+            {/* <Media className="mt-4">
               <img alt={''} src="/images/usenose-rag.png" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Use Nose-Rag</Media.Body>
-            </Media>
+            </Media> */}
 
             {/* <Media className="mt-4">
               <img alt={''} src="/images/avoid.png" className="align-self-center mr-3" />
