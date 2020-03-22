@@ -8,7 +8,7 @@ import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
 import i18n from '../../i18n';
-import { setCookie } from '../../utils/storage';
+// import { setCookie } from '../../utils/storage';
 
 interface INavbarProps {
   toggleSidebar: () => void;
@@ -17,32 +17,32 @@ interface INavbarProps {
 const Navbar: FC<INavbarProps> = props => {
   const { toggleSidebar } = props;
   const location = useLocation();
-  const history = useHistory();
+  // const history = useHistory();
   const currentPath = location.pathname;
-  const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
+  // const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
   const interLang = i18n();
   const { navBar } = interLang;
 
-  const languageTranslate = (lang: string) => {
-    try {
-      setCookie('googtrans', `/en/${lang}`);
-      const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
-      googleTeCombo.value = lang;
-      window.location.reload();
-    } catch (e) {}
-  };
+  // const languageTranslate = (lang: string) => {
+  //   try {
+  //     setCookie('googtrans', `/en/${lang}`);
+  //     const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
+  //     googleTeCombo.value = lang;
+  //     window.location.reload();
+  //   } catch (e) {}
+  // };
 
-  const setLanguagePath = (lang: string) => {
-    setLanguage(lang);
-    history.push(location.pathname + `?lang=${lang}`);
-    languageTranslate(lang);
-  };
+  // const setLanguagePath = (lang: string) => {
+  //   setLanguage(lang);
+  //   history.push(location.pathname + `?lang=${lang}`);
+  //   languageTranslate(lang);
+  // };
 
-  useEffect(() => {
-    if (location.search.includes('ne')) {
-      languageTranslate('ne');
-    }
-  }, [language]);
+  // useEffect(() => {
+  //   if (location.search.includes('ne')) {
+  //     languageTranslate('ne');
+  //   }
+  // }, [language, location.search]);
 
   return (
     <React.Fragment>
@@ -55,7 +55,7 @@ const Navbar: FC<INavbarProps> = props => {
         </Link>
 
         {/* language */}
-        <div className="lang mobile-flag">
+        {/* <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
@@ -79,7 +79,10 @@ const Navbar: FC<INavbarProps> = props => {
             />
             {navBar.ENG} <img src="/images/english.png" className="mx-1" />
           </label>
-        </div>
+        </div> */}
+
+        {/* emergency contact */}
+        <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="mob-view" />
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -92,10 +95,10 @@ const Navbar: FC<INavbarProps> = props => {
 
           <Nav>
             {/* <TransparentButton text={'Covid-19 Cases'} handleClick={() => ({})} /> */}
-            <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} />
+            <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="desktop-view" />
 
             {/* language */}
-            <div className="lang menu-flag">
+            {/* <div className="lang menu-flag">
               <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
@@ -119,7 +122,7 @@ const Navbar: FC<INavbarProps> = props => {
                 />
                 {navBar.ENG} <img src="/images/english.png" className="mx-1" />
               </label>
-            </div>
+            </div> */}
           </Nav>
         </Navigation.Collapse>
       </Navigation>
