@@ -15,9 +15,7 @@ const TableRow: FC<ITableRowProps> = props => {
         <div>{hospital.name}</div>
       </td>
       <td className="text-center">
-        <div>
-          {hospital.availableTime[0]} AM - {hospital.availableTime[1]} PM
-        </div>
+        <div>{(hospital.availableTime && hospital.availableTime.length && hospital.availableTime[0]) || ''}</div>
         <small>{hospital.openDays}</small>
       </td>
       <td className="align-middle">
