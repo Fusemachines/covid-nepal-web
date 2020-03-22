@@ -19,6 +19,7 @@ export interface IHospital {
   govtDesignated: boolean;
   numIsolationBeds: number;
   icu: number;
+  nameSlug?: string;
   focalPoint: string;
   province: {
     code: number;
