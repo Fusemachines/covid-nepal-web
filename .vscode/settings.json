@@ -1,6 +1,0 @@
-{
-  "deepscan.enable": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
-}
