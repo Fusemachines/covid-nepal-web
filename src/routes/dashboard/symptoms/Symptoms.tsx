@@ -59,31 +59,97 @@ const Symptoms = () => (
       </Row>
 
       <Row className="mt-4 justify-content-center">
-        <Col md="6" lg="5" sm="12">
-          <Table className="symptoms-table">
+        <Col md="9" sm="12">
+          <Table className="symptoms-table bg-bluelight" responsive>
             <thead className="font-weight-bold text-white">
               <tr>
-                <th className="bg-danger">High Risk</th>
-                <th className="bg-red-l4">Sometimes</th>
-                <th className="bg-red-l5">Rare</th>
+                <th className="">Symptoms</th>
+                <th className="">COVID-19</th>
+                <th className="">Common Cold</th>
+                <th>Flu</th>
+                <th>Allergies</th>
               </tr>
             </thead>
 
-            <tbody className="text-danger">
+            <tbody className="text-white">
               <tr>
-                <td className="bg-red-l1">Fever</td>
-                <td className="bg-red-l2">Headaches</td>
-                <td className="bg-red-l3">Diarrohea</td>
+                <td className="">Fever</td>
+                <td className="text-warning">Common</td>
+                <td className="">Rare</td>
+                <td>Common</td>
+                <td>Sometimes</td>
               </tr>
+
               <tr>
-                <td className="bg-red-l1">Dry Cough</td>
-                <td className="bg-red-l2">Aches & pain</td>
-                <td className="bg-red-l3">Runny Nose</td>
+                <td className="">Dry cough</td>
+                <td className="text-warning">Common</td>
+                <td className="">Mild</td>
+                <td>Common</td>
+                <td>Sometimes</td>
               </tr>
+
               <tr>
-                <td className="bg-red-l1">Shortness of breath</td>
-                <td className="bg-red-l2">Sore throat</td>
-                <td className="bg-red-l3"></td>
+                <td className="">Shortness of breath</td>
+                <td className="text-warning">Common</td>
+                <td className="">No</td>
+                <td>No</td>
+                <td>Common</td>
+              </tr>
+
+              <tr>
+                <td className="">Headache</td>
+                <td className="text-warning">Sometimes</td>
+                <td className="">Rare</td>
+                <td>Common</td>
+                <td>Sometimes</td>
+              </tr>
+
+              <tr>
+                <td className="">Aches and pains</td>
+                <td className="text-warning">Sometimes</td>
+                <td className="">Common</td>
+                <td>Common</td>
+                <td>No</td>
+              </tr>
+
+              <tr>
+                <td className="">Sore throat</td>
+                <td className="text-warning">Sometimes</td>
+                <td className="">Common</td>
+                <td>Common</td>
+                <td>No</td>
+              </tr>
+
+              <tr>
+                <td className="">Fatigue</td>
+                <td className="text-warning">Sometimes</td>
+                <td className="">Sometimes</td>
+                <td>Common</td>
+                <td>Sometimes</td>
+              </tr>
+
+              <tr>
+                <td className="">Diarrhea</td>
+                <td className="text-warning">Rare</td>
+                <td className="">No</td>
+                <td>Sometimes*</td>
+                <td>No</td>
+              </tr>
+
+              <tr>
+                <td className="">Runny nose</td>
+                <td className="text-warning">Rare</td>
+                <td className="">Common</td>
+                <td>Sometimes</td>
+                <td>Common</td>
+              </tr>
+
+              <tr>
+                <td className="">Sneezing</td>
+                <td className="text-warning">No</td>
+                <td className="">Common</td>
+                <td>No</td>
+                <td>Common</td>
               </tr>
             </tbody>
           </Table>

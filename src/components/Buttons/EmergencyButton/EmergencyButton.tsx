@@ -3,13 +3,14 @@ import React, { FC } from 'react';
 interface IEmergencyButtonProps {
   text: string;
   handleClick: () => void;
+  className: string;
 }
 
 const EmeergencyButton: FC<IEmergencyButtonProps> = props => {
   const { text, handleClick } = props;
 
   return (
-    <div className="emg-call mx-3" role="group" onClick={() => handleClick()}>
+    <div className={`emg-call mx-3 ${props.className}`} role="group" onClick={() => handleClick()}>
       <div className="icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="18.491" height="18.483" viewBox="0 0 18.491 18.483">
           <path

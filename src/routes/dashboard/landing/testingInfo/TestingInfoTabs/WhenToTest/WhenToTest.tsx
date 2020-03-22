@@ -12,7 +12,7 @@ const WhenToTest: FC<{}> = () => {
       <Media className="mt-4 bg-white px-4 py-3">
         <img alt={'High Fever'} src="/images/highfever.png" className="align-self-center mr-3" />
         <Media.Body className="align-self-center">
-          <div className="text-danger font-weight-bold h6">High Fever </div>
+          <div className="text-danger font-weight-bold h6">High Fever</div>
         </Media.Body>
       </Media>
 
