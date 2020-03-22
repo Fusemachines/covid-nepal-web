@@ -6,7 +6,7 @@ body {
     background: #0A375D;
     color: #ffffff;
     font-size: 14px;
-    padding-top: 60px;
+    padding-top: 80px;
 }
 
 :-moz-focusring {
@@ -44,6 +44,17 @@ body {
 .btn-green {
     background: #079558;
     color: #ffffff;
+}
+
+.covid-alert {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1031;
+    
+    a {
+        color: #079558;
+    }
 }
 
 // language
@@ -100,33 +111,37 @@ body {
     background: #FFC400;
 }
 
-.navbar-dark  .navbar-nav {
-    margin-left: 15%;
+.navbar-dark  {
+    top: 20px;
 
-    .nav-link {
-        color: #ffffff;
-        position: relative;
+    .navbar-nav {
+        margin-left: 15%;
 
-        padding-left: 0;
-        padding-right: 0;
+        .nav-link {
+            color: #ffffff;
+            position: relative;
 
-        margin-right: 25px;
+            padding-left: 0;
+            padding-right: 0;
 
-        &:after {
-            content: "";
-            width: 0;
-            height: 2px;
-            background: #ffffff;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            transition: all ease-in-out 0.3s;
-        }
+            margin-right: 25px;
 
-        &:hover:after,
-        &.active:after {
-            content: "";
-            width: 100%;
+            &:after {
+                content: "";
+                width: 0;
+                height: 2px;
+                background: #ffffff;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                transition: all ease-in-out 0.3s;
+            }
+
+            &:hover:after,
+            &.active:after {
+                content: "";
+                width: 100%;
+            }
         }
     }
 }
