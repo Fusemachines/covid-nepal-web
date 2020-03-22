@@ -434,9 +434,19 @@ body {
 }
 
 @media(max-width: 550px) {
-    .right-bar .toggle-rightbar {
-        right: 0;
-        z-index: 1;
+    .right-bar {
+        
+
+        .toggle-rightbar {
+            right: 0;
+            z-index: 1;
+        }
+
+        .nav-item {
+            span {
+                display: block;
+            }
+        }
     }
 
     .navbar-brand {
