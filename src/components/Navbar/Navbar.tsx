@@ -49,7 +49,7 @@ const Navbar: FC<INavbarProps> = props => {
   useEffect(() => {
     if (location.search.includes('ne')) {
       languageTranslate('ne');
-    }
+    } else deleteCookie('googtrans');
   }, [language, location.search]);
 
   return (
