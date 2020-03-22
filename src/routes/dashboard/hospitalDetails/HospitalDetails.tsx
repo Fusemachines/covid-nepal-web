@@ -34,7 +34,7 @@ const HospitalDetails: FC<{}> = () => {
         </Col>
 
         <Col md={8} lg={7}>
-          <InformationBox />
+          <InformationBox hospital={hospitalDetails} />
         </Col>
       </Row>
     </div>
