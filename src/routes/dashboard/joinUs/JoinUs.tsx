@@ -59,7 +59,7 @@ const JoinUs = () => (
 
             <ul className="circle">
               <li>
-                Government released data from various government and it agencies websites and published documents.
+                Government released data from various government and IT agencies websites and published documents.
               </li>
               <li>World Health Organization (WHO) published data</li>
               <li>Our data team reaching out to hospitals and health clinics to collect data</li>
@@ -83,7 +83,7 @@ const JoinUs = () => (
             </a>
           </div>
           <div className="my-3">If you have reliable information that can help general public then please input</div>
-          <div>Reachout to your contact that may have reliable information and ask them for help.</div>
+          <div>Reach out to your contact that may have reliable information and ask them for help.</div>
         </Col>
 
         <Col md="2">
@@ -96,7 +96,7 @@ const JoinUs = () => (
 
         <Col lg="3" md="5">
           <div className="my-3">
-            If you would like to contribute to this opensource project as an engineer, data analyst, doctor, nurse,
+            If you would like to contribute to this open source project as an engineer, data analyst, doctor, nurse,
             government officials, media or any other profession please join this effort by emailing how you want to
             contribute to the following email address
           </div>

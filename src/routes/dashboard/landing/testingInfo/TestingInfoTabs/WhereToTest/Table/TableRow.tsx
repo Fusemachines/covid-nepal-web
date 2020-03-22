@@ -10,7 +10,7 @@ const TableRow: FC<ITableRowProps> = props => {
   const history = useHistory();
   const { hospital } = props;
   return (
-    <tr onClick={() => history.push(`/hospital/${hospital.nameSlug}`)} style={{ cursor: 'pointer' }}>
+    <tr>
       <td>
         <div>{hospital.name}</div>
       </td>
@@ -38,7 +38,12 @@ const TableRow: FC<ITableRowProps> = props => {
         {/* </div> */}
       </td>
       <td>
-        <a href="#" className="text-white small">
+        <a
+          href="#"
+          className="text-white small"
+          onClick={() => history.push(`/hospital/${hospital.nameSlug}`)}
+          style={{ cursor: 'pointer' }}
+        >
           More info
         </a>
       </td>

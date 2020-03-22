@@ -44,7 +44,9 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
           </li>
           <li>
             <span className="text-secondary">Hospital Type :</span>
-            <span className="ml-2">{hospital.hospitalType}</span>
+            <span className="ml-2" style={{ textTransform: 'capitalize' }}>
+              {hospital.hospitalType}
+            </span>
           </li>
         </ul>
       </div>
