@@ -525,7 +525,6 @@ a {
 
     > div {
         position: absolute;
-        top: 20px;
         font-size: 18px;
 
         &.left {
@@ -535,6 +534,7 @@ a {
                 left: 29%;
                 font-weight: 800;
                 font-size: 20px;
+                top: 0;
             }
 
             &-2 {
