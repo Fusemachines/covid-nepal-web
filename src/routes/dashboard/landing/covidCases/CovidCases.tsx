@@ -5,25 +5,34 @@ import NepalCovidCases from './NepalCovidCases';
 import GlobalCovidCases from './GlobalCovidCases';
 import { fetchCovidCasesCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
 import RefreshIcon from 'src/components/Icons/RefreshIcon';
+import { getFormattedTime } from 'src/utils/date';
+
+interface IUpdatedTime {
+  days: number;
+  hours: number;
+  minutes: number;
+}
 
 const CovidCases = () => {
   const [covidCasesCounts, setCovidCasesCounts] = useState<ICovidCasesCounts | null>(null);
-  const [timeOfFetch, setTimeOfFetch] = useState<Date>(new Date());
-  const [updatedTime, setUpdatedTime] = useState(0);
+  const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
 
   useEffect(() => {
     fetchCovidCases();
+  }, []);
+
+  useEffect(() => {
+    getUpdatedTime();
     let covidInterval = window.setInterval(getUpdatedTime, 30000);
     return () => {
       clearInterval(covidInterval);
     };
-  }, []);
+  }, [covidCasesCounts]);
 
   const fetchCovidCases = async () => {
     try {
       const response = await fetchCovidCasesCountsAPI();
       setCovidCasesCounts(response);
-      setTimeOfFetch(new Date());
     } catch (error) {
       console.log(error);
     } finally {
@@ -32,9 +41,37 @@ const CovidCases = () => {
   };
 
   const getUpdatedTime = () => {
-    const currentTime = new Date();
-    const interval = currentTime.getMinutes() - timeOfFetch.getMinutes();
-    setUpdatedTime(interval);
+    if (covidCasesCounts) {
+      const updatedDate = Date.parse(covidCasesCounts.updatedDate);
+      const currentDate = Date.parse(new Date().toString());
+      const intervalInSeconds = (currentDate - updatedDate) / 1000;
+      const formattedTime = getFormattedTime(intervalInSeconds);
+      setUpdatedTime(formattedTime);
+    }
+  };
+
+  const showDays = () => {
+    if (updatedTime && updatedTime.days > 0) {
+      return `${updatedTime.days} days`;
+    } else {
+      return '';
+    }
+  };
+
+  const showHours = () => {
+    if (updatedTime && updatedTime.hours > 0 && updatedTime.hours < 24) {
+      return `${updatedTime.hours} hours`;
+    } else {
+      return '';
+    }
+  };
+
+  const showMinutes = () => {
+    if (updatedTime && updatedTime.minutes > 0 && updatedTime.minutes < 60) {
+      return `${updatedTime.minutes} minutes`;
+    } else {
+      return '';
+    }
   };
 
   return (
@@ -45,7 +82,9 @@ const CovidCases = () => {
             <div className="d-inline-block">
               <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
               <small>
-                {updatedTime > 0 ? `Updated ${updatedTime} minutes ago` : `Updated a while ago`}
+                {updatedTime && updatedTime.days && updatedTime.hours
+                  ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ago`
+                  : ''}
                 <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
                   <RefreshIcon />
                 </i>

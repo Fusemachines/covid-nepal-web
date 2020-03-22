@@ -20,7 +20,7 @@ const TableRow: FC<ITableRowProps> = props => {
       </td>
       <td className="align-middle">
         {/* <div className="h5 text-warning font-weight-bold text-right"> */}
-        {hospital.contact && hospital.contact.join(',')}
+        {hospital.contact && hospital.contact.join(', ')}
         {/* </div> */}
       </td>
       <td>

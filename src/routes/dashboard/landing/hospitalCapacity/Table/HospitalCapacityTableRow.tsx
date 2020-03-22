@@ -48,7 +48,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         </td>
         <td onClick={e => e.stopPropagation()}>
           {contact ? (
-            contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))
+            contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number}, `))
           ) : (
             <NotAvailable id={'contact-' + _id} />
           )}
