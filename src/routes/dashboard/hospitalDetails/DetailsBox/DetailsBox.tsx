@@ -27,7 +27,7 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
             <span className="text-secondary">Open hours:</span>
             {hospital.availableTime && (
               <span className="mx-2">
-                {hospital.availableTime[0]} AM - {hospital.availableTime[1]}PM
+                <AvailableTimeComponent availableTime={hospital.availableTime} />
               </span>
             )}
             <span className="ml-3">{hospital.openDays}</span>
@@ -58,3 +58,15 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
 };
 
 export default DetailsBox;
+
+const AvailableTimeComponent: React.SFC<{ availableTime: string[] }> = ({ availableTime }) => {
+  if (availableTime.length == 2) {
+    return (
+      <span>
+        {availableTime[0]} AM - {availableTime[1]}PM
+      </span>
+    );
+  } else {
+    return <span>{(availableTime && availableTime[0]) || ''}</span>;
+  }
+};
