@@ -7,7 +7,7 @@ const WhereToTest: FC<{}> = () => {
     <div className="px-3 py-4">
       <div className="h5 m-0">
         <HospitalCross />
-        Hospitals where you may potentially get tested for Covid-19
+        Hospitals where you may get tested for Covid-19
       </div>
       <div className="mt-4">
         <AllocatedHospitalsTable />
