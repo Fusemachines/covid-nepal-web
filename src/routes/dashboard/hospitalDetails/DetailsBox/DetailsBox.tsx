@@ -43,7 +43,7 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
             {hospital.contact && hospital.contact.map(contact => <GreenContactBadge contactNumber={contact} />)}
           </li>
           <li>
-            <span className="text-secondary">Hosptial Type :</span>
+            <span className="text-secondary">Hospital Type :</span>
             <span className="ml-2">{hospital.hospitalType}</span>
           </li>
         </ul>

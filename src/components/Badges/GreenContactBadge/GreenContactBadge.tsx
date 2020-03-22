@@ -8,7 +8,7 @@ const GreenContactBadge: FC<IGreenContactBadgeProps> = props => {
   const { contactNumber } = props;
 
   return (
-    <span className="mx-2 bg-success rounded py-1 px-2">
+    <a href={`tel:${contactNumber}`} className="mx-2 bg-success rounded py-1 px-2">
       <svg
         id="Group_16"
         data-name="Group 16"
@@ -37,7 +37,7 @@ const GreenContactBadge: FC<IGreenContactBadgeProps> = props => {
           </tspan>
         </text>
       </svg>
-    </span>
+    </a>
   );
 };
 
