@@ -12,6 +12,7 @@ const HospitalDetails: FC<{}> = () => {
   const [hospitalDetails, setHospitalDetails] = useState<IHospital>({} as IHospital);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchHospitalDetails();
   }, []);
 
