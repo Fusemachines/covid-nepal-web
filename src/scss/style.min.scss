@@ -513,6 +513,85 @@ a {
     font-weight: 600;
 }
 
+.symptoms {
+    display: inline-block;
+    min-height: 150px;
+    position: relative;
+    margin: auto;
+
+    > img {
+        display: block;
+    }
+
+    > div {
+        position: absolute;
+        top: 20px;
+        font-size: 18px;
+
+        &.left {
+            left: 0;
+
+            &-1 {
+                left: 29%;
+                font-weight: 800;
+                font-size: 20px;
+            }
+
+            &-2 {
+                top: 22%;
+            }
+
+            &-3 {
+                top: 46%;
+                left: 3%;
+            }
+
+            &-4 {
+                top: 72%;
+                left: 24%;
+                font-weight: 800;
+            }
+
+            &-5 {
+                top: 86%;
+                left: 1%;
+                font-weight: 300;
+                font-size: 16px;
+            }
+
+            &-6 {
+                top: 93%;
+                left: 40%;
+            }
+        }
+
+        &.right {
+            right: 0;
+
+            &-1 {
+                top: 72%;
+                right: 10%;
+                font-weight: 800;
+            }
+
+            &-2 {
+                top: 33%;
+                right: 6%;
+            }
+            
+            &-3 {
+                top: 13%;
+                font-weight: 300;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.small-xs {
+    font-size: 10px;
+}
+
 .hospitalinfo-list {
     padding: 0;
 
