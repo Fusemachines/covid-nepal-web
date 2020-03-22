@@ -39,6 +39,7 @@ const HospitalContacts: FC<{}> = () => {
   const fetchHospitalContacts = async () => {
     try {
       const response: IFetchContactsAPIResponse = await fetchHospitalContactsAPI({
+        province: filters.province ? filters.province.value : '',
         district: filters.district ? filters.district.value : ''
       });
       setHospitalContacts(response.docs);
