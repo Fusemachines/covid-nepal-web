@@ -47,7 +47,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         </td>
         <td>
           {contact ? (
-            contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))
+            contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number}, `))
           ) : (
             <span>
               NA <small>(sourcing info)</small>
