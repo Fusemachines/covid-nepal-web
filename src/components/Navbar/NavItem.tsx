@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+// import { NavLink, useHistory } from 'react-router-dom';
 
 interface INavItemProps {
   to: string;
@@ -10,12 +10,14 @@ interface INavItemProps {
 }
 
 const NavItem: FC<INavItemProps> = props => {
-  const { to, title, active, exact = true } = props;
+  // const history = useHistory();
+
+  const { to, title, active /* , exact = true */ } = props;
 
   return (
-    <NavLink exact={exact} to={to} className={`nav-link ${active ? 'active' : ''}`}>
+    <Nav.Link href={to} /* exact={exact} to={to} */ className={`nav-link ${active ? 'active' : ''}`}>
       {title}
-    </NavLink>
+    </Nav.Link>
   );
 };
 
