@@ -24,7 +24,7 @@ const Symptoms = () => {
 
             <Media className="mt-4">
               <img alt={''} src="/images/containedobject.png" className="align-self-center mr-3" />
-              <Media.Body className="align-self-center">Containted Objects</Media.Body>
+              <Media.Body className="align-self-center">Contaminated Objects</Media.Body>
             </Media>
 
             <Media className="mt-4">
