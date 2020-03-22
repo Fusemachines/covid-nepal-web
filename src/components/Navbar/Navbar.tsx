@@ -81,6 +81,9 @@ const Navbar: FC<INavbarProps> = props => {
           </label>
         </div> */}
 
+        {/* emergency contact */}
+        <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="mob-view" />
+
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navigation.Collapse id="responsive-navbar-nav">
@@ -92,7 +95,7 @@ const Navbar: FC<INavbarProps> = props => {
 
           <Nav>
             {/* <TransparentButton text={'Covid-19 Cases'} handleClick={() => ({})} /> */}
-            <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} />
+            <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="desktop-view" />
 
             {/* language */}
             {/* <div className="lang menu-flag">

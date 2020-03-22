@@ -58,35 +58,103 @@ const Symptoms = () => (
         </Col>
       </Row>
 
-      <Row className="mt-4 justify-content-center">
-        <Col md="6" lg="5" sm="12">
-          <Table className="symptoms-table">
-            <thead className="font-weight-bold text-white">
-              <tr>
-                <th className="bg-danger">High Risk</th>
-                <th className="bg-red-l4">Sometimes</th>
-                <th className="bg-red-l5">Rare</th>
-              </tr>
-            </thead>
+      <Row className="my-4 justify-content-center">
+        <Col md="9" sm="12">
+          <div className="rounded oveflow-hidden bg-bluelight p-3">
+            <Table className="symptoms-table" responsive>
+              <thead className="font-weight-bold text-white">
+                <tr>
+                  <th className="">Symptoms</th>
+                  <th className="">COVID-19</th>
+                  <th className="">Common Cold</th>
+                  <th>Flu</th>
+                  <th>Allergies</th>
+                </tr>
+              </thead>
 
-            <tbody className="text-danger">
-              <tr>
-                <td className="bg-red-l1">Fever</td>
-                <td className="bg-red-l2">Headaches</td>
-                <td className="bg-red-l3">Diarrohea</td>
-              </tr>
-              <tr>
-                <td className="bg-red-l1">Dry Cough</td>
-                <td className="bg-red-l2">Aches & pain</td>
-                <td className="bg-red-l3">Runny Nose</td>
-              </tr>
-              <tr>
-                <td className="bg-red-l1">Shortness of breath</td>
-                <td className="bg-red-l2">Sore throat</td>
-                <td className="bg-red-l3"></td>
-              </tr>
-            </tbody>
-          </Table>
+              <tbody className="text-white">
+                <tr>
+                  <td className="">Fever</td>
+                  <td className="font-weight-bold text-warning">Common</td>
+                  <td className="">Rare</td>
+                  <td>Common</td>
+                  <td>Sometimes</td>
+                </tr>
+
+                <tr>
+                  <td className="">Dry cough</td>
+                  <td className="font-weight-bold text-warning">Common</td>
+                  <td className="">Mild</td>
+                  <td>Common</td>
+                  <td>Sometimes</td>
+                </tr>
+
+                <tr>
+                  <td className="">Shortness of breath</td>
+                  <td className="font-weight-bold text-warning">Common</td>
+                  <td className="">No</td>
+                  <td>No</td>
+                  <td>Common</td>
+                </tr>
+
+                <tr>
+                  <td className="">Headache</td>
+                  <td className="text-warning font-weight-bold">Sometimes</td>
+                  <td className="">Rare</td>
+                  <td>Common</td>
+                  <td>Sometimes</td>
+                </tr>
+
+                <tr>
+                  <td className="">Aches and pains</td>
+                  <td className="text-warning font-weight-bold">Sometimes</td>
+                  <td className="">Common</td>
+                  <td>Common</td>
+                  <td>No</td>
+                </tr>
+
+                <tr>
+                  <td className="">Sore throat</td>
+                  <td className="text-warning font-weight-bold">Sometimes</td>
+                  <td className="">Common</td>
+                  <td>Common</td>
+                  <td>No</td>
+                </tr>
+
+                <tr>
+                  <td className="">Fatigue</td>
+                  <td className="text-warning font-weight-bold">Sometimes</td>
+                  <td className="">Sometimes</td>
+                  <td>Common</td>
+                  <td>Sometimes</td>
+                </tr>
+
+                <tr>
+                  <td className="">Diarrhea</td>
+                  <td className="text-warning font-weight-bold">Rare</td>
+                  <td className="">No</td>
+                  <td>Sometimes*</td>
+                  <td>No</td>
+                </tr>
+
+                <tr>
+                  <td className="">Runny nose</td>
+                  <td className="text-warning font-weight-bold">Rare</td>
+                  <td className="">Common</td>
+                  <td>Sometimes</td>
+                  <td>Common</td>
+                </tr>
+
+                <tr>
+                  <td className="">Sneezing</td>
+                  <td className="text-warning font-weight-bold">No</td>
+                  <td className="">Common</td>
+                  <td>No</td>
+                  <td>Common</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
 
           <div className="small mb-3 text-center text-lightblue">
             Sources: CDC, WHO, American College of Allergy, Asthma and Immunology
