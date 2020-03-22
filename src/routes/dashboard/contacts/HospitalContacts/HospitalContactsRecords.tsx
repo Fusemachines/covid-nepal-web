@@ -11,7 +11,7 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
   const { hospitalContacts } = props;
 
   return (
-    <div className="px-4">
+    <div className="px-3">
       <Table className="text-white">
         <tbody>
           {hospitalContacts.map(contact => (

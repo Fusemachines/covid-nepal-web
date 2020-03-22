@@ -25,6 +25,7 @@ body {
 .btn {
     text-decoration: none;
 }
+
 .btn-outline-white {
     border: 1px solid #ffffff;
     margin-right: 10px;
@@ -280,6 +281,7 @@ body {
         }
 
     }
+
     .toggle-rightbar {
         position: absolute;
         top: 0;
@@ -352,6 +354,7 @@ body {
         border-radius: 15px;
         margin-top: 12px;
         margin-right: 12px;
+        text-decoration: none;
 
         svg {
             display: inline-block;
@@ -380,13 +383,9 @@ body {
     
 
     .emg-call {
-        margin: 0;
-        .icon {
-            // padding: 6px 8px;
-        }
+        margin: 0 !important;
 
         .text {
-            // padding: 6px 8px;
             font-size: 12px;
         }
     }
@@ -437,6 +436,22 @@ body {
     .filter-wrapper {
         .filter {
             margin: 10px 0 0;
+        }
+    }
+
+    .nav.nav-tabs {
+        .nav-item {
+            width: 50%;
+
+            .nav-link {
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    .emg-call {
+        .icon {
+            display: none;
         }
     }
 }

@@ -77,7 +77,7 @@ const HospitalContacts: FC<{}> = () => {
 
   return (
     <>
-      <div className="filter-wrapper px-4 py-4 d-md-flex">
+      <div className="filter-wrapper px-3 py-4 d-md-flex">
         <HospitalContactsFilter
           filters={filters}
           districtOptions={districtDropdownOptions}

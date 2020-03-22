@@ -21,7 +21,7 @@ const EmergencyContacts: FC<{}> = () => {
   };
 
   return (
-    <div className="px-5">
+    <div className="px-3">
       <div className="info-list">
         {isLoaded && contactList.docs.map(contact => <EmergencyContactItem contact={contact} />)}
         <div className="info-item py-3 mt-2">
@@ -30,7 +30,7 @@ const EmergencyContacts: FC<{}> = () => {
           <div className="d-flex mt-3">
             <div className="col-5">1) Dr. Shrawan K. Mishra :</div>
             <div className="col-7">
-              <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
+              <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9851168220`}>
                 <i className="mr-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
                     <path
@@ -43,14 +43,14 @@ const EmergencyContacts: FC<{}> = () => {
                   </svg>
                 </i>
                 9851168220
-              </span>
+              </a>
             </div>
           </div>
 
           <div className="d-flex mt-3">
             <div className="col-5">2) Dr. Ranjit Shah : </div>
             <div className="col-7">
-              <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
+              <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9872701465`}>
                 <i className="mr-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
                     <path
@@ -63,14 +63,14 @@ const EmergencyContacts: FC<{}> = () => {
                   </svg>
                 </i>
                 9872701465
-              </span>
+              </a>
             </div>
           </div>
 
           <div className="d-flex mt-3">
             <div className="col-5">3) Mr. Rajesh K. Gupta :</div>
             <div className="col-7">
-              <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
+              <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9851239988`}>
                 <i className="mr-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
                     <path
@@ -83,14 +83,14 @@ const EmergencyContacts: FC<{}> = () => {
                   </svg>
                 </i>
                 9851239988
-              </span>
+              </a>
             </div>
           </div>
 
           <div className="d-flex mt-3">
             <div className="col-5">4) Mr. Dinesh Thapa Magar : </div>
             <div className="col-7">
-              <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
+              <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9823168540`}>
                 <i className="mr-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
                     <path
@@ -103,7 +103,7 @@ const EmergencyContacts: FC<{}> = () => {
                   </svg>
                 </i>
                 9823168540
-              </span>
+              </a>
               <small className="ml3">(Nights only)</small>
             </div>
           </div>
@@ -111,7 +111,7 @@ const EmergencyContacts: FC<{}> = () => {
           <div className="d-flex mt-3">
             <div className="col-5">5) Mr. Naresh Thapa Magar :</div>
             <div className="col-7">
-              <span className="rounded bg-success px-3 py-1 mx-2 d-inline-block">
+              <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9803152149`}>
                 <i className="mr-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
                     <path
@@ -124,7 +124,7 @@ const EmergencyContacts: FC<{}> = () => {
                   </svg>
                 </i>
                 9803152149
-              </span>
+              </a>
               <small className="ml3">(Nights only)</small>
             </div>
           </div>
