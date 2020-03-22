@@ -27,14 +27,26 @@ const Symptoms = () => {
               <Media.Body className="align-self-center">Contaminated Objects</Media.Body>
             </Media>
 
-            <Media className="mt-4">
+            {/* <Media className="mt-4">
               <img alt={''} src="/images/unvaccinatedanimals.png" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Unvaccinated Animals</Media.Body>
-            </Media>
+            </Media> */}
           </Col>
 
           <Col lg="6" className="mt-4">
-            <img alt={''} src="/images/symptoms.png" className="img-fluid" />
+            <div className="symptoms">
+              <img alt={''} src="/images/symptoms.png" className="img-fluid" />
+
+              <div className="left left-1">Shortness of Breath</div>
+              <div className="left left-2">Aches & Pain</div>
+              <div className="left-3 left">Fatigue</div>
+              <div className="left-4 left">Fever</div>
+              <div className="left-5 left">Runny Nose</div>
+              <div className="left left-6">Sore Throat</div>
+              <div className="right right-1">Dry Cough</div>
+              <div className="right right-2">Headache</div>
+              <div className="right-3 right">Diarrohea</div>
+            </div>
           </Col>
 
           <Col lg="3" className="mt-4">
@@ -55,14 +67,14 @@ const Symptoms = () => {
               <Media.Body className="align-self-center">Use Nose-Rag</Media.Body>
             </Media>
 
-            <Media className="mt-4">
+            {/* <Media className="mt-4">
               <img alt={''} src="/images/avoid.png" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Avoid Contact with Unvaccinated Animals</Media.Body>
-            </Media>
+            </Media> */}
           </Col>
         </Row>
 
-        <Row className="my-4 justify-content-center">
+        <Row className="mt-5 justify-content-center">
           <Col md="9" sm="12">
             <div className="rounded oveflow-hidden bg-bluelight p-3">
               <Table className="symptoms-table" responsive>
@@ -160,7 +172,7 @@ const Symptoms = () => {
               </Table>
             </div>
 
-            <div className="small mb-3 text-center text-lightblue">
+            <div className="small my-3 text-center text-lightblue">
               Sources: CDC, WHO, American College of Allergy, Asthma and Immunology
             </div>
           </Col>

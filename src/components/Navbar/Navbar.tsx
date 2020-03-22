@@ -3,7 +3,7 @@ import { Navbar as Navigation, Nav } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 
 import * as routes from 'src/constants/routes';
-import TransparentButton from 'src/components/Buttons/TransparentButton';
+// import TransparentButton from 'src/components/Buttons/TransparentButton';
 import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
