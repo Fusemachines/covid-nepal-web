@@ -19,7 +19,7 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
               <td>{contact.name}</td>
               <td className="text-right">
                 {contact.landLine.map(number => (
-                  <div className="badges">
+                  <div className="badges badge-cus">
                     <GreenContactBadge contactNumber={number} />
                   </div>
                 ))}
