@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import JoinUsIcon from 'src/components/Icons/JoinUsIcon';
 import { JOIN_US } from 'src/constants/routes';
@@ -11,12 +12,15 @@ const JoinUs = () => (
           <div className="h1 text-primary font-weight-bold">Open Source Platform for COVID19 for Nepal</div>
 
           <div className="my-2 text-white my-4 ">
-            <a className={'text-white'} target="_blank" href="https://covidnepal.org/">
+            <Link className={'text-white'} to="/">
               covidnepal.org
+            </Link>{' '}
+            is an Open Source Platform started at{' '}
+            <a className={'text-white'} target="_blank" href="https://fusemachines.com">
+              Fusemachines
             </a>{' '}
-            is an Open Source Platform started at Fusemachines and asking all like minded citizens of Nepal to join in
-            this effort to create an Open Source platform to serve as a reliable source of information about Covid-19 in
-            Nepal.
+            and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to
+            serve as a reliable source of information about Covid-19 in Nepal.
             <br></br>
             Let’s fight this pandemic together!
           </div>
