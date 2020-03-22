@@ -27,12 +27,12 @@ const Contacts: FC<IContactsProps> = props => {
           <Nav fill variant="tabs" className="contact">
             <Nav.Item>
               <Nav.Link eventKey="first" className="py-3 m-0">
-                Emergency Contacts
+                <span>Emergency</span> <span>Contacts</span>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="second" className="py-3 m-0">
-                Hospital Contacts
+                <span>Hospital</span> <span>Contacts</span>
               </Nav.Link>
             </Nav.Item>
           </Nav>
