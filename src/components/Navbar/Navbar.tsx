@@ -55,7 +55,7 @@ const Navbar: FC<INavbarProps> = props => {
         </Link>
 
         {/* language */}
-        <div className="lang mobile-flag">
+        {/* <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
@@ -79,7 +79,10 @@ const Navbar: FC<INavbarProps> = props => {
             />
             {navBar.ENG} <img src="/images/english.png" className="mx-1" />
           </label>
-        </div>
+        </div> */}
+
+        {/* emergency contact */}
+        <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="mob-view" />
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -92,7 +95,7 @@ const Navbar: FC<INavbarProps> = props => {
 
           <Nav>
             {/* <TransparentButton text={'Covid-19 Cases'} handleClick={() => ({})} /> */}
-            <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} />
+            <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="desktop-view" />
 
             {/* language */}
             <div className="lang menu-flag">

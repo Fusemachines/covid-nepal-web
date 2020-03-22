@@ -294,7 +294,7 @@ body {
 
 .filter-wrapper {
     // background: #004E90;
-    position: sticky;
+    // position: sticky;
     top: 0;
 
     .filter {
@@ -365,9 +365,34 @@ body {
     }
 }
 
+.mob-view {
+    display: none;
+}
+
 @media(max-width: 800px) {
     .mobile-flag {
         display: inline;
+    }
+
+    .mob-view {
+        display: inline-flex;
+    }
+    
+
+    .emg-call {
+        margin: 0;
+        .icon {
+            // padding: 6px 8px;
+        }
+
+        .text {
+            // padding: 6px 8px;
+            font-size: 12px;
+        }
+    }
+
+    .desktop-view {
+        display: none;
     }
 
     .menu-flag {
@@ -386,15 +411,6 @@ body {
             max-width: 250px;
             margin: 35px 0 0;
         }
-
-        .emg-call {
-            margin: 0 !important;
-            max-width: 250px;
-            position: absolute;
-            left: 0px;
-            bottom: 15px;
-            width: 300px;
-        }
     }
 }
 
@@ -402,6 +418,26 @@ body {
     .right-bar .toggle-rightbar {
         right: 0;
         z-index: 1;
+    }
+
+    .navbar-brand {
+        line-height: 1.2;
+
+        span {
+            display: block;
+            font-size: 16px;
+        }
+    }
+
+    .navbar-toggler {
+        padding: 0 0;
+        border: 0;
+    }
+
+    .filter-wrapper {
+        .filter {
+            margin: 10px 0 0;
+        }
     }
 }
 
