@@ -36,7 +36,8 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         <td>
           <div>{address}</div>
           <a
-            className="pointer"
+            href="javascript:void(0);"
+            className="text-white"
             onClick={event => {
               event.stopPropagation();
               toggleMapsModal({ title: name, mapURL });

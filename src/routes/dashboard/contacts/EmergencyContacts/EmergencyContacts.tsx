@@ -21,7 +21,7 @@ const EmergencyContacts: FC<{}> = () => {
   };
 
   return (
-    <div className="px-5">
+    <div className="px-3">
       <div className="info-list">
         {isLoaded && contactList.docs.map(contact => <EmergencyContactItem contact={contact} />)}
         <div className="info-item py-3 mt-2">
