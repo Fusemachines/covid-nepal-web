@@ -8,7 +8,7 @@ const ContactBadge: FC<IContactBadgeProps> = props => {
   const { contactNumber } = props;
 
   return (
-    <div className="badges-item mt-0">
+    <a href={`tel:${contactNumber}`} className="badges-item mt-0 mb-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
         <path
           id="Icon_material-call"
@@ -19,7 +19,7 @@ const ContactBadge: FC<IContactBadgeProps> = props => {
         />
       </svg>
       {contactNumber}
-    </div>
+    </a>
   );
 };
 
