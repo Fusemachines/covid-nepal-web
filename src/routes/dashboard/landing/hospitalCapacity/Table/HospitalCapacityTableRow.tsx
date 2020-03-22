@@ -46,18 +46,50 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           </a>
         </td>
         <td>
-          {contact
-            ? contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))
-            : 'N/A'}
+          {contact ? (
+            contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))
+          ) : (
+            <span>
+              NA <small>(sourcing info)</small>
+            </span>
+          )}
         </td>
 
-        <td>{totalBeds ? totalBeds : 'N/A'}</td>
+        <td>
+          {totalBeds ? (
+            totalBeds
+          ) : (
+            <span>
+              NA <small>(sourcing info)</small>
+            </span>
+          )}
+        </td>
 
-        <td>{icu ? icu : 'N/A'}</td>
+        <td>
+          {icu ? (
+            icu
+          ) : (
+            <span>
+              NA <small>(sourcing info)</small>
+            </span>
+          )}
+        </td>
 
-        <td>{'N/A - sourcing info'}</td>
+        <td>
+          <span>
+            NA <small>(sourcing info)</small>
+          </span>
+        </td>
 
-        <td>{numIsolationBeds ? numIsolationBeds : 'N/A'}</td>
+        <td>
+          {numIsolationBeds ? (
+            numIsolationBeds
+          ) : (
+            <span>
+              NA <small>(sourcing info)</small>
+            </span>
+          )}
+        </td>
       </tr>
     </>
   );

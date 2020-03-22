@@ -1,5 +1,6 @@
 import React, { FC, useContext, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import HospitalCapacityTableRow from './HospitalCapacityTableRow';
 import { HospitalCapacityTableContext } from '../HospitalCapacity';
@@ -33,9 +34,9 @@ const HospitalCapacityTable: FC<{}> = () => {
             *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
             hospital operators, doctors, etc. We need your help to continue gathering this information across all
             hospitals in Nepal. If you would like to help collect data, please sign up{' '}
-            <a className={'text-white'} target="_blank" href="https://covidnepal.org/join-us">
+            <Link className={'text-white'} to="/join-us">
               here
-            </a>
+            </Link>
             .
           </i>
         </small>
