@@ -255,7 +255,8 @@ body {
         float: right;
         max-width: 100%;
         position: relative;
-
+        padding-top: 28px;
+        
         .nav.nav-tabs{
 
             &.nav-fill {
@@ -303,7 +304,7 @@ body {
 
     .toggle-rightbar {
         position: absolute;
-        top: 0;
+        top: 28px;
         right: 620px;
     }
 
