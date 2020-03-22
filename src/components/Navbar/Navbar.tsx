@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav } from 'react-bootstrap';
+import { Navbar as Navigation, Nav, Alert } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 
 import * as routes from 'src/constants/routes';
@@ -15,6 +15,8 @@ interface INavbarProps {
 }
 
 const Navbar: FC<INavbarProps> = props => {
+  const [show, setShow] = useState(true);
+
   const { toggleSidebar } = props;
   const location = useLocation();
   // const history = useHistory();
@@ -46,6 +48,12 @@ const Navbar: FC<INavbarProps> = props => {
 
   return (
     <React.Fragment>
+      <div className="text-center bg-bluelight covid-alert">
+        <a className="small" href="https://bit.ly/covidnepal_report_error_newinfo" target="blank">
+          Help us keep data reliable! Report Errors, New Info and Verify Data
+        </a>
+      </div>
+
       <Navigation collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
         <Link to={routes.DASHBOARD}>
           <Navigation.Brand className="font-weight-bold">
