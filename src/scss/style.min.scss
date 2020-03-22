@@ -564,9 +564,13 @@ a {
 }
 
 .symptoms-table {
-    thead th,
-    tbody td {
+    margin: 0;
+    thead th {
         border-color: #FFFFFF;
+        font-weight: 700;
+    }
+    tbody td {
+        border: 0;
     }
 }
 
