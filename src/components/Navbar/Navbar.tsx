@@ -8,7 +8,7 @@ import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
 import i18n from '../../i18n';
-import { setCookie } from '../../utils/storage';
+import { setCookie, deleteCookie } from '../../utils/storage';
 
 interface INavbarProps {
   toggleSidebar: () => void;
@@ -24,12 +24,20 @@ const Navbar: FC<INavbarProps> = props => {
   const { navBar } = interLang;
 
   const languageTranslate = (lang: string) => {
-    try {
-      setCookie('googtrans', `/en/${lang}`);
-      const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
-      googleTeCombo.value = lang;
+    if (lang === 'ne') {
+      try {
+        setCookie('googtrans', `/en/${lang}`);
+        const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
+        googleTeCombo.value = lang;
+        window.location.reload();
+      } catch (e) {
+        // setCookie('googtrans', `/en/${lang}`);
+        console.log(e);
+      }
+    } else {
+      deleteCookie('googtrans');
       window.location.reload();
-    } catch (e) {}
+    }
   };
 
   const setLanguagePath = (lang: string) => {
