@@ -8,7 +8,7 @@ interface IConfigValue {
   ApiEnv: IApiEnvConfig;
 }
 
-const { REACT_APP_BASE_URL, REACT_APP_TIMEOUT, REACT_APP_GOOGLE_ANALYTICS } = process.env;
+const { REACT_APP_BASE_URL, REACT_APP_GOOGLE_ANALYTICS } = process.env;
 
 const ApiEnv: IApiEnvConfig = {
   baseURL: REACT_APP_BASE_URL,
