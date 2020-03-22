@@ -555,11 +555,15 @@ a {
     display: none;
 }
 
-.badge-cus:first-child {
+.badge-cus:not(:only-child) {
     margin-bottom: 20px;
 }
 
 .badge-cus:only-child {
+    margin-bottom: 0px;
+}
+
+.badge-cus:last-child {
     margin-bottom: 0px;
 }
 
