@@ -34,7 +34,19 @@ const Symptoms = () => {
           </Col>
 
           <Col lg="6" className="mt-4">
-            <img alt={''} src="/images/symptoms.png" className="img-fluid" />
+            <div className="symptoms">
+              <img alt={''} src="/images/symptoms.png" className="img-fluid" />
+
+              <div className="left left-1">Shortness of Breath</div>
+              <div className="left left-2">Aches & Pain</div>
+              <div className="left-3 left">Fatigue</div>
+              <div className="left-4 left">Fever</div>
+              <div className="left-5 left">Runny Nose</div>
+              <div className="left left-6">Sore Throat</div>
+              <div className="right right-1">Dry Cough</div>
+              <div className="right right-2">Headache</div>
+              <div className="right-3 right">Diarrohea</div>
+            </div>
           </Col>
 
           <Col lg="3" className="mt-4">
