@@ -29,14 +29,15 @@ export async function fetchEmergencyContactsAPI() {
 }
 
 interface IFetchEmergencyContactsAPIPayload {
+  province: string;
   district: string;
 }
 
 export async function fetchHospitalContactsAPI(payload: IFetchEmergencyContactsAPIPayload) {
   try {
-    const response: AxiosResponse<IFetchContactsAPIResponse> = await axios.get(
-      `/contacts/hospitals?district=${payload.district}`
-    );
+    const response: AxiosResponse<IFetchContactsAPIResponse> = await axios.get(`/contacts/hospitals`, {
+      params: payload
+    });
     return response.data;
   } catch (error) {
     throw error;
