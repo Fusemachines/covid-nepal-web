@@ -48,7 +48,7 @@ const Navbar: FC<INavbarProps> = props => {
 
   return (
     <React.Fragment>
-      <div className="text-center bg-bluelight py-1 covid-alert">
+      <div className="text-center bg-bluelight covid-alert">
         <a className="small" href="https://bit.ly/covidnepal_report_error_newinfo" target="blank">
           Help us keep data reliable! Report Errors, New Info and Verify Data
         </a>
