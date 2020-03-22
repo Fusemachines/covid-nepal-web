@@ -555,7 +555,7 @@ a {
     display: none;
 }
 
-.badge-cus:first-child {
+.badge-cus:not(:only-child) {
     margin-bottom: 20px;
 }
 
@@ -563,10 +563,18 @@ a {
     margin-bottom: 0px;
 }
 
+.badge-cus:last-child {
+    margin-bottom: 0px;
+}
+
 .symptoms-table {
-    thead th,
-    tbody td {
+    margin: 0;
+    thead th {
         border-color: #FFFFFF;
+        font-weight: 700;
+    }
+    tbody td {
+        border: 0;
     }
 }
 
