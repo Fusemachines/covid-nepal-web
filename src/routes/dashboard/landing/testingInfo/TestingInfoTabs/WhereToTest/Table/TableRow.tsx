@@ -24,7 +24,9 @@ const TableRow: FC<ITableRowProps> = props => {
         {/* </div> */}
       </td>
       <td>
-        <small>More info</small>
+        <a href="#" className="text-white small">
+          More info
+        </a>
       </td>
     </tr>
   );
