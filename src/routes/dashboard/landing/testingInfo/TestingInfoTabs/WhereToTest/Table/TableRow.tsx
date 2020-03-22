@@ -39,7 +39,7 @@ const TableRow: FC<ITableRowProps> = props => {
       </td>
       <td>
         <a
-          href="#"
+          href={'javascript:void(0)'}
           className="text-white small"
           onClick={() => history.push(`/hospital/${hospital.nameSlug}`)}
           style={{ cursor: 'pointer' }}
