@@ -21,7 +21,7 @@ export interface ICovidCasesCounts {
   recoveredGlobal: number;
   seriousGlobal: number;
   deathGlobal: number;
-  updatedDate: string;
+  updatedAt: string;
 }
 
 export async function fetchCovidCasesCountsAPI() {
