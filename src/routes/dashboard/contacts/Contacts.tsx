@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import HospitalContacts from './HospitalContacts';
 import { Tab, Nav } from 'react-bootstrap';
 import EmergencyContacts from './EmergencyContacts';
@@ -11,7 +11,9 @@ interface IContactsProps {
 
 const Contacts: FC<IContactsProps> = props => {
   const { visibility, toggleContacts } = props;
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={`right-bar ${visibility ? 'show' : ''}`}>
       <div className="overlay" onClick={() => toggleContacts()} />
