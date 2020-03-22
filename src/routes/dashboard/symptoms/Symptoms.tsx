@@ -22,7 +22,7 @@ const Symptoms = () => {
               <Media.Body className="align-self-center">Human Contact</Media.Body>
             </Media>
 
-            <Media className="mt-4">
+            {/* <Media className="mt-4">
               <img alt={''} src="/images/containedobject.png" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Contaminated Objects</Media.Body>
             </Media>
@@ -30,7 +30,7 @@ const Symptoms = () => {
             <Media className="mt-4">
               <img alt={''} src="/images/unvaccinatedanimals.png" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Unvaccinated Animals</Media.Body>
-            </Media>
+            </Media> */}
           </Col>
 
           <Col lg="6" className="mt-4">
@@ -55,14 +55,14 @@ const Symptoms = () => {
               <Media.Body className="align-self-center">Use Nose-Rag</Media.Body>
             </Media>
 
-            <Media className="mt-4">
+            {/* <Media className="mt-4">
               <img alt={''} src="/images/avoid.png" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Avoid Contact with Unvaccinated Animals</Media.Body>
-            </Media>
+            </Media> */}
           </Col>
         </Row>
 
-        <Row className="my-4 justify-content-center">
+        <Row className="mt-5 justify-content-center">
           <Col md="9" sm="12">
             <div className="rounded oveflow-hidden bg-bluelight p-3">
               <Table className="symptoms-table" responsive>
@@ -160,7 +160,7 @@ const Symptoms = () => {
               </Table>
             </div>
 
-            <div className="small mb-3 text-center text-lightblue">
+            <div className="small my-3 text-center text-lightblue">
               Sources: CDC, WHO, American College of Allergy, Asthma and Immunology
             </div>
           </Col>
