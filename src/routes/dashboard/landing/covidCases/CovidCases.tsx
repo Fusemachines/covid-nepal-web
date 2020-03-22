@@ -82,7 +82,7 @@ const CovidCases = () => {
             <div className="d-inline-block">
               <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
               <small>
-                {updatedTime && updatedTime.days && updatedTime.hours
+                {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
                   ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ago`
                   : ''}
                 <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
