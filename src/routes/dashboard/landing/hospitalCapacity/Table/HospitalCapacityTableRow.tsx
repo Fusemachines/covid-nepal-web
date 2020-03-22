@@ -13,12 +13,22 @@ export interface IHospitalCapacityTableRowProps {
 const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   const history = useHistory();
   const {
-    hospitalCapacity: { _id, name, location: address, mapLink: mapURL, contact, totalBeds, numIsolationBeds, icu },
+    hospitalCapacity: {
+      _id,
+      name,
+      location: address,
+      mapLink: mapURL,
+      contact,
+      totalBeds,
+      numIsolationBeds,
+      icu,
+      nameSlug
+    },
     toggleMapsModal
   } = props;
   return (
     <>
-      <tr onClick={() => history.push(`/hospital/${_id}`)} style={{ cursor: 'pointer' }}>
+      <tr onClick={() => history.push(`/hospital/${nameSlug}`)} style={{ cursor: 'pointer' }}>
         <td>
           <div>{name}</div>
         </td>
