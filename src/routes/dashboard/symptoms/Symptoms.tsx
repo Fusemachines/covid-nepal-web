@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Media } from 'react-bootstrap';
+import { Row, Col, Media, Table } from 'react-bootstrap';
 
 const Symptoms = () => (
   <>
@@ -55,6 +55,42 @@ const Symptoms = () => (
             <img alt={''} src="/images/avoid.png" className="align-self-center mr-3" />
             <Media.Body className="align-self-center">Avoid Contact with Unvaccinated Animals</Media.Body>
           </Media>
+        </Col>
+      </Row>
+
+      <Row className="mt-4 justify-content-center">
+        <Col md="6" lg="5" sm="12">
+          <Table className="symptoms-table">
+            <thead className="font-weight-bold text-white">
+              <tr>
+                <th className="bg-danger">High Risk</th>
+                <th className="bg-red-l4">Sometimes</th>
+                <th className="bg-red-l5">Rare</th>
+              </tr>
+            </thead>
+
+            <tbody className="text-danger">
+              <tr>
+                <td className="bg-red-l1">Fever</td>
+                <td className="bg-red-l2">Headaches</td>
+                <td className="bg-red-l3">Diarrohea</td>
+              </tr>
+              <tr>
+                <td className="bg-red-l1">Dry Cough</td>
+                <td className="bg-red-l2">Aches & pain</td>
+                <td className="bg-red-l3">Runny Nose</td>
+              </tr>
+              <tr>
+                <td className="bg-red-l1">Shortness of breath</td>
+                <td className="bg-red-l2">Sore throat</td>
+                <td className="bg-red-l3"></td>
+              </tr>
+            </tbody>
+          </Table>
+
+          <div className="small mb-3 text-center text-lightblue">
+            Sources: CDC, WHO, American College of Allergy, Asthma and Immunology
+          </div>
         </Col>
       </Row>
     </div>

@@ -95,7 +95,8 @@ const JoinUs = () => (
         <Col lg="3" md="5">
           <div className="my-3">
             If you would like to contribute to this opensource project as an engineer, data analyst, doctor, nurse,
-            government officials, media or any other profession please join this effort by emailing
+            government officials, media or any other profession please join this effort by emailing how you want to
+            contribute to the following email address
           </div>
           <div className="mt-3">
             <a
