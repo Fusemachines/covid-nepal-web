@@ -61,5 +61,18 @@
                 background-color: #FFC400;
             }
         }
+    }   
+}
+
+.resources-page .nav {
+    &-item {
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+        }
+        a.active {
+            color: #2074B9 !important;
+        }
     }
 }

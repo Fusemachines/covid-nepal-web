@@ -51,12 +51,12 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           {contact ? (
             contact.map((number, index) =>
               index === contact.length - 1 ? (
-                <a className="text-white" href={`tel:${number}`}>
+                <a key={index} className="text-white" href={`tel:${number}`}>
                   {number}
                 </a>
               ) : (
                 <>
-                  <a className="text-white" href={`tel:${number}`}>
+                  <a key={index} className="text-white" href={`tel:${number}`}>
                     {number}
                   </a>
                   ,{' '}

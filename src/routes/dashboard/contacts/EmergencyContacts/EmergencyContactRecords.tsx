@@ -13,8 +13,8 @@ const EmergencyContactItem: FC<IEmergencyContactItemProps> = props => {
       <div className="font-16">
         {contact.name} | {contact.openingTime} - {contact.closingTime}
       </div>
-      {contact.mobile.map(mobile => (
-        <a className="rounded btn-success px-3 py-1 mx-2 btn my-2" href={`tel:${mobile}`}>
+      {contact.mobile.map((mobile, index) => (
+        <a key={index} className="rounded btn-success px-3 py-1 mx-2 btn my-2" href={`tel:${mobile}`}>
           <i className="mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
               <path
@@ -29,8 +29,8 @@ const EmergencyContactItem: FC<IEmergencyContactItemProps> = props => {
           {mobile}
         </a>
       ))}
-      {contact.landLine.map(mobile => (
-        <a className="rounded btn-success px-3 py-1 mx-2 btn my-2" href={`tel:${mobile}`}>
+      {contact.landLine.map((mobile, index) => (
+        <a key={index} className="rounded btn-success px-3 py-1 mx-2 btn my-2" href={`tel:${mobile}`}>
           <i className="mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
               <path
