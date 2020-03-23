@@ -21,7 +21,60 @@ const NoticesandResources = () => (
 
             <Tab.Content>
               <Tab.Pane eventKey="notice">
-                <div className="p-4">Government Notices</div>
+                <ul className="notices__list">
+                  <li>
+                    <a href="https://drive.google.com/file/d/1ouT9PpNpGuWJSWlQuvZzqGS5f3Ur2Jzb/view" className="p-3">
+                      <h5 className="notices__title">Press Release as of 21 March 2020</h5>
+                      <div className="notices__tag mr-3">
+                        <img src="/images/tag.svg" />
+                        <span>Press Release</span>
+                      </div>
+                      <div className="notices__date">
+                        <img src="/images/history.svg" />
+                        <span>20 March 2020</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://drive.google.com/file/d/1c1aju7qThbnHGKCiqqxdfIobWWO9ulRP/view" className="p-3">
+                      <h5 className="notices__title">Situation Report_COVID-19 #42 (as of 20 March 2020)</h5>
+                      <div className="notices__tag mr-3">
+                        <img src="/images/tag.svg" />
+                        <span>Press Release</span>
+                      </div>
+                      <div className="notices__date">
+                        <img src="/images/history.svg" />
+                        <span>20 March 2020</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx" className="p-3">
+                      <h5 className="notices__title">Situation Reports #1 to #41</h5>
+                      <div className="notices__tag mr-3">
+                        <img src="/images/tag.svg" />
+                        <span>Reports</span>
+                      </div>
+                      <div className="notices__date">
+                        <img src="/images/history.svg" />
+                        <span>19 March 2020</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx" className="p-3">
+                      <h5 className="notices__title">Updated notice on travel restriction related to COVID-19</h5>
+                      <div className="notices__tag mr-3">
+                        <img src="/images/tag.svg" />
+                        <span>Press Release</span>
+                      </div>
+                      <div className="notices__date">
+                        <img src="/images/history.svg" />
+                        <span>18 March 2020</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </Tab.Pane>
 
               <Tab.Pane eventKey="resources">
