@@ -6,6 +6,13 @@ const GovernmentNotices: FC<{}> = () => {
     <ul className="notices__list">
       <GovernmentNoticeItem
         category="Press Release"
+        date="23 March 2020"
+        title="भोलि बिहान ६ बजेदेखि देशभर लक डाउन, घरबाहिर ननिस्कन आदेश [निर्णयसहित]"
+        url="https://ekantipur.com/news/2020/03/23/158497075637384607.html"
+      />
+
+      <GovernmentNoticeItem
+        category="Press Release"
         date="20 March 2020"
         title="Press Release as of 21 March 2020"
         url="https://drive.google.com/file/d/1ouT9PpNpGuWJSWlQuvZzqGS5f3Ur2Jzb/view"
