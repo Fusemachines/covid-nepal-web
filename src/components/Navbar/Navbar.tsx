@@ -3,7 +3,7 @@ import { Navbar as Navigation, Nav, Alert } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 
 import * as routes from 'src/constants/routes';
-// import TransparentButton from 'src/components/Buttons/TransparentButton';
+import TransparentButton from 'src/components/Buttons/TransparentButton';
 import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
@@ -15,8 +15,6 @@ interface INavbarProps {
 }
 
 const Navbar: FC<INavbarProps> = props => {
-  const [show, setShow] = useState(true);
-
   const { toggleSidebar } = props;
   const location = useLocation();
   // const history = useHistory();
@@ -24,6 +22,11 @@ const Navbar: FC<INavbarProps> = props => {
   // const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
   const interLang = i18n();
   const { navBar } = interLang;
+
+  useEffect(() => {
+    const path = location.pathname.split('/');
+    console.log(path);
+  }, []);
 
   // const languageTranslate = (lang: string) => {
   //   try {
@@ -102,7 +105,8 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
 
           <Nav>
-            {/* <TransparentButton text={'Covid-19 Cases'} handleClick={() => ({})} /> */}
+            <TransparentButton text={'Govt. Notices & Resources'} handleClick={() => ({})} />
+
             <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="desktop-view" />
 
             {/* language */}

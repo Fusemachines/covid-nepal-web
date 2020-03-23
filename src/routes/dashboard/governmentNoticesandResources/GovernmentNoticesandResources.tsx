@@ -1,11 +1,8 @@
 import React from 'react';
-import Menu from '../Navbar';
 import { Row, Col, Tab, Nav, Media } from 'react-bootstrap';
 
-const NoticesandResources = () => (
+const GovernmentNoticesandResources = () => (
   <>
-    <Menu />
-
     <div className="container resources-page">
       <Row className="mt-5 bg-bluelight semi-rounded justify-content-center">
         <Col lg={10} className="pt-4 pb-4">
@@ -127,4 +124,4 @@ const NoticesandResources = () => (
   </>
 );
 
-export default NoticesandResources;
+export default GovernmentNoticesandResources;
