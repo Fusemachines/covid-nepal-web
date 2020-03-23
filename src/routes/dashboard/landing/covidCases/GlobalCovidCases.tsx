@@ -12,11 +12,20 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
   return (
     <>
       <Col xs="6">
-        <div className="font-weight-bold h5 mb-3">Global Update</div>
+        <div className="font-weight-bold h5">Global Update </div>
+        <div className="invisible small-xs mb-3">(WHO reported numbers)</div>
 
-        <div className="mt-3" style={{ paddingTop: '69px' }}>
-          Total Confirmed
+        {/* donot delete this */}
+        <div className="invisible">
+          <div className="mt-3">Total Tested</div>
+          <div className="h3 m-0 font-weight-bold  d-inline-block">
+            {' '}
+            {covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
+          </div>
         </div>
+        {/* to make height equal */}
+
+        <div className="mt-3">Total Confirmed</div>
         <div className="h3 m-0 font-weight-bold  d-inline-block">
           {' '}
           {covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}

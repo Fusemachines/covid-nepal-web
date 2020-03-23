@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { IHospital } from 'src/services/hospitals';
 import LocationIcon from 'src/components/Icons/LocationIcon';
 import { IMapModalValues } from './HospitalCapacityTable';
-import { Popover, OverlayTrigger } from 'react-bootstrap';
+import NotAvailable from 'src/components/NotAvailable';
 
 export interface IHospitalCapacityTableRowProps {
   hospitalCapacity: IHospital;
@@ -81,34 +81,6 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         </td>
       </tr>
     </>
-  );
-};
-
-export const NotAvailable: React.FC<{ id: string; placement?: 'right' | 'left' | 'top' | 'bottom' }> = ({
-  id,
-  placement = 'right'
-}) => {
-  return (
-    <OverlayTrigger
-      trigger={['click']}
-      data-id="test"
-      placement={placement}
-      overlay={
-        <Popover id={id}>
-          {/* <Popover.Title as="h3">Help us!</Popover.Title> */}
-          <Popover.Content>
-            Please help us source or re-verify this data by filling{' '}
-            <a className="text-black" href="https://bit.ly/collectnepalhospitaldata" target="_blank">
-              this form
-            </a>
-          </Popover.Content>
-        </Popover>
-      }
-    >
-      <span>
-        NA <small>(sourcing info)</small>
-      </span>
-    </OverlayTrigger>
   );
 };
 

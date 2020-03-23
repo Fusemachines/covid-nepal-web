@@ -1,0 +1,34 @@
+.badges {
+    &-item {
+        display: inline-block;
+        color: #00C571;
+        background: rgba(0, 197, 112, .1);
+        padding: 6px 12px;
+        border-radius: 15px;
+        margin-top: 12px;
+        margin-right: 12px;
+        text-decoration: none;
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            margin-top: -5px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.badge-cus:not(:only-child) {
+    margin-bottom: 20px;
+}
+
+.badge-cus:only-child {
+    margin-bottom: 0px;
+}
+
+.badge-cus:last-child {
+    margin-bottom: 0px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import RightBar from '../EmergencyCall';
+// import RightBar from '../EmergencyCall';
 
 const Menu = () => (
   <React.Fragment>
@@ -20,7 +20,7 @@ const Menu = () => (
           <Nav.Link href="/design/symptoms">Symptoms</Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link href="" className="btn btn-outline-white">
+          <Nav.Link href="/design/notices&resources" className="btn btn-outline-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="20.571" className="mr-1" height="18" viewBox="0 0 20.571 18">
               <path
                 id="Path_647"
@@ -30,7 +30,7 @@ const Menu = () => (
                 fill="#fff"
               />
             </svg>
-            Govt. Notices
+            Notices & Resources
           </Nav.Link>
 
           <div className="btn-group mx-3" role="group">
@@ -55,7 +55,7 @@ const Menu = () => (
       </Navbar.Collapse>
     </Navbar>
 
-    <RightBar />
+    {/* <RightBar /> */}
   </React.Fragment>
 );
 
