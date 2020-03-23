@@ -77,7 +77,7 @@ const CovidCases = () => {
   return (
     <>
       <Col md="12" lg="4" className="mt-2">
-        <div className="rounded bg-bluelight p-4">
+        <div className="rounded bg-bluelight p-4 h-100">
           <div className="mb-3 border-bottom pb-2">
             <div className="d-inline-block">
               <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
