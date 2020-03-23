@@ -105,8 +105,9 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
 
           <Nav>
-            <TransparentButton text={'Govt. Notices & Resources'} handleClick={() => ({})} />
-
+            <Link to={routes.NOTICES}>
+              <TransparentButton text={'Govt. Notices & Resources'} handleClick={() => {}} />
+            </Link>
             <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="desktop-view" />
 
             {/* language */}

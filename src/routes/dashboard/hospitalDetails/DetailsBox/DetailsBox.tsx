@@ -67,7 +67,7 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
 export default DetailsBox;
 
 const AvailableTimeComponent: React.SFC<{ availableTime: string[] }> = ({ availableTime }) => {
-  if (availableTime.length == 2) {
+  if (availableTime.length === 2) {
     return (
       <span>
         {availableTime[0]} AM - {availableTime[1]}PM
