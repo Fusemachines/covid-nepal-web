@@ -1,18 +1,7 @@
 .semi-rounded {
   border-radius: 12px;
 }
-.nav {
-  &-item {
-    a {
-      text-decoration: none;
-      font-weight: 600;
-      color: white;
-    }
-    a.active {
-      color: #2074B9 !important;
-    }
-  }
-}
+
 .resources {
   &__list {
     list-style-type: none;
