@@ -42,7 +42,7 @@ const CovidCases = () => {
 
   const getUpdatedTime = () => {
     if (covidCasesCounts) {
-      const updatedDate = Date.parse(covidCasesCounts.updatedDate);
+      const updatedDate = Date.parse(covidCasesCounts.updatedAt);
       const currentDate = Date.parse(new Date().toString());
       const intervalInSeconds = (currentDate - updatedDate) / 1000;
       const formattedTime = getFormattedTime(intervalInSeconds);
