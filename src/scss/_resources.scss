@@ -1,0 +1,45 @@
+.semi-rounded {
+  border-radius: 12px;
+}
+.nav {
+  &-item {
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+    }
+    a.active {
+      color: #2074B9 !important;
+    }
+  }
+}
+.resources {
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 4px 0;
+    li {
+      padding-bottom: 6px;
+      padding-top: 6px;
+      border-bottom: 0.5px solid #2074B9;
+      a {
+        text-decoration: none;
+        display: block;
+        border-radius: 4px;
+        color: white;
+        &:hover {
+          background-color: #2074B9;
+          color: white;
+        }
+      }
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  &__link {
+    color: #00C571;
+
+  }
+}
