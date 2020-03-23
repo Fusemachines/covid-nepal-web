@@ -11,6 +11,7 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.13.0",
     "react-ga": "^2.7.0",
+    "react-i18next": "^11.3.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-select": "^3.0.8",
