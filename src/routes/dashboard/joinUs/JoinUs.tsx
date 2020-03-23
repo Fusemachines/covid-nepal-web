@@ -12,7 +12,7 @@ const JoinUs = () => {
     <>
       <div className="container-fluid mt-3">
         <Row className="mt-5 justify-content-center">
-          <Col lg="6" md="8" className="text-center">
+          <Col lg="5" md="8" className="text-center">
             <div className="h1 text-primary font-weight-bold">Open Source Platform for COVID-19 for Nepal</div>
 
             <div className="my-2 text-white my-4 ">
