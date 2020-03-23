@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IHospital } from 'src/services/hospitals';
-import { NotAvailable } from 'src/routes/dashboard/landing/hospitalCapacity/Table/HospitalCapacityTableRow';
+import NotAvailable from 'src/components/NotAvailable';
+
 interface IDetailsBoxProps {
   hospital: IHospital;
 }
