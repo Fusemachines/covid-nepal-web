@@ -6,13 +6,6 @@ const GovernmentNotices: FC<{}> = () => {
     <ul className="notices__list">
       <GovernmentNoticeItem
         category="Press Release"
-        date="23 March 2020"
-        title="These 8 decisions will be implemented from 6 AM tomorrow"
-        url="https://myrepublica.nagariknetwork.com/news/these-8-decisions-will-be-implemented-from-6am-tomorrow/"
-      />
-
-      <GovernmentNoticeItem
-        category="Press Release"
         date="20 March 2020"
         title="Press Release as of 21 March 2020"
         url="https://drive.google.com/file/d/1ouT9PpNpGuWJSWlQuvZzqGS5f3Ur2Jzb/view"
