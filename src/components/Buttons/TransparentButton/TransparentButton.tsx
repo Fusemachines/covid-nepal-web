@@ -16,7 +16,7 @@ const TransparentButton: FC<ITransparentButton> = props => {
       onClick={() => handleClick()}
       style={{ color: '#fff' }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20.571" className="mr-1" height="18" viewBox="0 0 20.571 18">
+      {/* <svg xmlns="http://www.w3.org/2000/svg" width="20.571" className="mr-1" height="18" viewBox="0 0 20.571 18">
         <path
           id="Path_647"
           data-name="Path 647"
@@ -24,7 +24,7 @@ const TransparentButton: FC<ITransparentButton> = props => {
           transform="translate(709.868 -69.084)"
           fill="#fff"
         />
-      </svg>
+      </svg> */}
       {text}
     </a>
   );
