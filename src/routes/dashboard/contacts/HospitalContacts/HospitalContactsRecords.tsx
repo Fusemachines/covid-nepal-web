@@ -4,29 +4,38 @@ import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IContact } from 'src/services/contacts';
 
 interface IHospitalContactsRecordsProps {
+  isLoaded: boolean;
   hospitalContacts: IContact[];
 }
 
 const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
-  const { hospitalContacts } = props;
+  const { isLoaded, hospitalContacts } = props;
 
   return (
     <div className="px-3">
       <Table className="text-white">
-        <tbody>
-          {hospitalContacts.map(contact => (
-            <tr>
-              <td>{contact.name}</td>
-              <td className="text-right">
-                {contact.landLine.map(number => (
-                  <div className="badges badge-cus">
-                    <GreenContactBadge contactNumber={number} />
-                  </div>
-                ))}
-              </td>
-            </tr>
-          ))}
-        </tbody>
+        {isLoaded ? (
+          hospitalContacts.length > 0 ? (
+            hospitalContacts.map(contact => (
+              <tbody>
+                <tr>
+                  <td>{contact.name}</td>
+                  <td className="text-right">
+                    {contact.landLine.map(number => (
+                      <div className="badges badge-cus">
+                        <GreenContactBadge contactNumber={number} />
+                      </div>
+                    ))}
+                  </td>
+                </tr>
+              </tbody>
+            ))
+          ) : (
+            <span>No records found</span>
+          )
+        ) : (
+          <span>Loading...</span>
+        )}
       </Table>
     </div>
   );
