@@ -1,0 +1,29 @@
+
+
+.bg-bluelight {
+    background-color: #004E90;
+}
+
+.btn {
+    text-decoration: none;
+}
+
+.btn-outline-white {
+    border: 1px solid #ffffff;
+    margin-right: 10px;
+    padding: 6px 15px !important;
+
+    &:hover {
+        background: #ffffff;
+        color: #004E90 !important;
+
+        svg path {
+            fill: #004E90 !important;
+        }
+    }
+}
+
+.btn-green {
+    background: #079558;
+    color: #ffffff;
+}
