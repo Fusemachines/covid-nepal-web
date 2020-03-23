@@ -40,12 +40,20 @@ const AllocatedHospitalTable: FC<{}> = () => {
       <tbody>
         {isLoaded ? (
           allocatedHospitalList.length > 0 ? (
-            allocatedHospitalList.map(hospital => <TableRow hospital={hospital} />)
+            allocatedHospitalList.map((hospital, index) => <TableRow key={index} hospital={hospital} />)
           ) : (
-            <span>No records found</span>
+            <tr>
+              <td colSpan={4}>
+                <span>No records found</span>
+              </td>
+            </tr>
           )
         ) : (
-          <span>Loading...</span>
+          <tr>
+            <td colSpan={4}>
+              <span>Loading...</span>
+            </td>
+          </tr>
         )}
       </tbody>
     </Table>

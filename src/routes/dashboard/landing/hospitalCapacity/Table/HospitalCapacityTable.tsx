@@ -28,18 +28,16 @@ const HospitalCapacityTable: FC<{}> = () => {
 
   return (
     <>
-      <div style={{ marginBottom: '20px', marginTop: '-25px' }}>
-        <small>
-          <i>
-            *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
-            hospital operators, doctors, etc. We need your help to continue gathering this information across all
-            hospitals in Nepal. If you would like to help collect data, please sign up{' '}
-            <Link className={'text-white'} to="/join-us">
-              here
-            </Link>
-            .
-          </i>
-        </small>
+      <div className="small mb-3 mt-1">
+        <i>
+          *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
+          hospital operators, doctors, etc. We need your help to continue gathering this information across all
+          hospitals in Nepal. If you would like to help collect data, please sign up{' '}
+          <Link className={'text-white'} to="/join-us">
+            here
+          </Link>
+          .
+        </i>
       </div>
       <Table responsive className="text-white">
         <thead>
@@ -47,10 +45,10 @@ const HospitalCapacityTable: FC<{}> = () => {
             <th>Name of Hospital</th>
             <th>Address</th>
             <th>Contact</th>
-            <th>Num of Beds</th>
-            <th>Num of ICU Beds</th>
-            <th>Num of Ventilators</th>
-            <th>Num of Isolation Beds</th>
+            <th>No. of Beds</th>
+            <th>No. of ICU Beds</th>
+            <th>No. of Ventilators</th>
+            <th>No. of Isolation Beds</th>
           </tr>
         </thead>
 
@@ -67,10 +65,18 @@ const HospitalCapacityTable: FC<{}> = () => {
                 );
               })
             ) : (
-              <span>No records found</span>
+              <tr>
+                <td colSpan={7}>
+                  <span>No records found</span>
+                </td>
+              </tr>
             )
           ) : (
-            <span>Loading...</span>
+            <tr>
+              <td colSpan={7}>
+                <span>Loading...</span>
+              </td>
+            </tr>
           )}
         </tbody>
       </Table>

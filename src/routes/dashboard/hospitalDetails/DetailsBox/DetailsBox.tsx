@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IHospital } from 'src/services/hospitals';
-import { NotAvailable } from 'src/routes/dashboard/landing/hospitalCapacity/Table/HospitalCapacityTableRow';
+import NotAvailable from 'src/components/NotAvailable';
+
 interface IDetailsBoxProps {
   hospital: IHospital;
 }
@@ -66,7 +67,7 @@ const DetailsBox: FC<IDetailsBoxProps> = props => {
 export default DetailsBox;
 
 const AvailableTimeComponent: React.SFC<{ availableTime: string[] }> = ({ availableTime }) => {
-  if (availableTime.length == 2) {
+  if (availableTime.length === 2) {
     return (
       <span>
         {availableTime[0]} AM - {availableTime[1]}PM

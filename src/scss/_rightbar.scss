@@ -56,6 +56,11 @@
             }
         }
 
+        .tab-content {
+            height: calc(100% - 86px);
+            overflow-y: auto;
+        }
+
         &.emergency {
             background: #00361F;
             .nav.nav-tabs{
@@ -65,7 +70,7 @@
 
                     .nav-link {
 
-                        &.active,
+                        &.activeT,
                         &:hover {
                             background-color: #00C06E;
                         }
