@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 
 import Navbar from 'src/components/Navbar';
 import DashboardRouter from 'src/routes/dashboard/Router';
@@ -10,6 +10,15 @@ const Dashboard: FC<{}> = () => {
   const toggleEmergencyContact = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
+
+  useEffect(() => {
+    if (isSidebarVisible) {
+      document.getElementsByTagName('body')[0].classList.add('modal-open');
+    } else {
+      document.getElementsByTagName('body')[0].classList.remove('modal-open');
+    }
+  }, [isSidebarVisible]);
+
   return (
     <>
       <Navbar toggleSidebar={toggleEmergencyContact} />
