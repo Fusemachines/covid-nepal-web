@@ -92,6 +92,17 @@
             display: none;
         }
     }
+
+    .filter-wrapper .filter {
+        > span {
+            display: block;
+            margin: 0 0 5px 0;
+        }
+
+        &:first-child {
+            margin-right: 15px;
+        }
+    }
 }
 
 @media(max-width: 360px) {
