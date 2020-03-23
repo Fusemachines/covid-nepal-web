@@ -1,0 +1,145 @@
+.covid-alert {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1031;
+    padding: 5px 2px 8px;
+    display: block;
+    line-height: 1;
+
+    a {
+        line-height: 1.2;
+        font-weight: 600; 
+        color: #07ff95
+    }
+}
+
+// language
+
+.lang {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+
+    input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    label {
+        padding: 9px 5px;
+        display: inline-block;
+        color: #000000;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 10px;
+        margin-bottom: 0;
+        position: relative;
+
+        &.active {
+            background: #2074B9;
+            color: #ffffff;
+        }
+    }
+}
+
+.mobile-flag {
+    display: none;
+}
+
+.title {
+    display: inline-block;
+    border-radius: 15px;
+    padding: 6px 15px;
+    font-weight: 600;
+}
+
+
+.emg-call {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .icon {
+        padding: 6px 12px;
+        background: #079558;
+    }
+    .text {
+        padding: 6px 12px;
+        background: #00C571;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 6px #00C571
+    }
+}
+
+.rec {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: #D1454B;
+    border: 2px solid lighten( #D1454B, 20% );
+    border-radius: 50%;
+}
+
+.info {
+    &-item  {
+        display: block;
+        border-bottom: 1px solid #2074B9;
+    }
+}
+
+.mob-view {
+    display: none;
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.hospital-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.small-xs {
+    font-size: 10px;
+}
+
+.hospitalinfo-list {
+    padding: 0;
+
+    li {
+        border-bottom: 1px solid #2074B9;
+        list-style: none;
+        padding: 12px 0;
+    }
+}
+
+// maps
+.map-large,
+.maps {
+    iframe {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+}
+
+.tweet-wrapper {
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+
+#google_translate_element {
+    display: none;
+}
