@@ -104,6 +104,7 @@ const Landing = () => (
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14130.828627230478!2d85.3069413!3d27.6954445!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbd8552665e65d95b!2sTeku%20Hospital%20(Shukraraaj%20Tropical%20%26%20Infectious%20Disease%20Hospital)!5e0!3m2!1sen!2snp!4v1584778123055!5m2!1sen!2snp"
                 width="400"
                 height="300"
+                title="design"
               ></iframe>
             </div>
           </div>

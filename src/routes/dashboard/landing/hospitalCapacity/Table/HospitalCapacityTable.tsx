@@ -65,10 +65,18 @@ const HospitalCapacityTable: FC<{}> = () => {
                 );
               })
             ) : (
-              <span>No records found</span>
+              <tr>
+                <td colSpan={7}>
+                  <span>No records found</span>
+                </td>
+              </tr>
             )
           ) : (
-            <span>Loading...</span>
+            <tr>
+              <td colSpan={7}>
+                <span>Loading...</span>
+              </td>
+            </tr>
           )}
         </tbody>
       </Table>

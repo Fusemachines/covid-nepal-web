@@ -14,12 +14,12 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
     <div className="px-3">
       <Table className="text-white">
         <tbody>
-          {hospitalContacts.map(contact => (
-            <tr>
+          {hospitalContacts.map((contact, index) => (
+            <tr key={index}>
               <td>{contact.name}</td>
               <td className="text-right">
-                {contact.landLine.map(number => (
-                  <div className="badges badge-cus">
+                {contact.landLine.map((number, index) => (
+                  <div className="badges badge-cus" key={index}>
                     <GreenContactBadge contactNumber={number} />
                   </div>
                 ))}

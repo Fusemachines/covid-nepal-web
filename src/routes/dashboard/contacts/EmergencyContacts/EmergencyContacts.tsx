@@ -23,7 +23,7 @@ const EmergencyContacts: FC<{}> = () => {
   return (
     <div className="px-3">
       <div className="info-list">
-        {isLoaded && contactList.docs.map(contact => <EmergencyContactItem contact={contact} />)}
+        {isLoaded && contactList.docs.map((contact, index) => <EmergencyContactItem key={index} contact={contact} />)}
         <div className="info-item py-3 mt-2">
           <div className="font-16">Sukraraj Tropical And Infectious Disease Hospital</div>
           <small className="ml3">(As provided in the government notices)</small>
