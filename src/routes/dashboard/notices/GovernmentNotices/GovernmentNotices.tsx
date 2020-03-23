@@ -26,13 +26,6 @@ const GovernmentNotices: FC<{}> = () => {
       />
 
       <GovernmentNoticeItem
-        category="Reports"
-        date="19 March 2020"
-        title="Situation Reports #1 to #41"
-        url="https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
-      />
-
-      <GovernmentNoticeItem
         category="Press Release"
         date="18 March 2020"
         title="Updated notice on travel restriction related to COVID-19"
