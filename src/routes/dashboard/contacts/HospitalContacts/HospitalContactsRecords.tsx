@@ -13,30 +13,30 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
 
   return (
     <div className="px-3">
-      <Table className="text-white">
-        {isLoaded ? (
-          hospitalContacts.length > 0 ? (
-            hospitalContacts.map(contact => (
-              <tbody>
-                <tr>
+      {isLoaded ? (
+        hospitalContacts.length > 0 ? (
+          <Table className="text-white">
+            <tbody>
+              {hospitalContacts.map((contact, index) => (
+                <tr key={index}>
                   <td>{contact.name}</td>
                   <td className="text-right">
-                    {contact.landLine.map(number => (
-                      <div className="badges badge-cus">
+                    {contact.landLine.map((number, index) => (
+                      <div className="badges badge-cus" key={index}>
                         <GreenContactBadge contactNumber={number} />
                       </div>
                     ))}
                   </td>
                 </tr>
-              </tbody>
-            ))
-          ) : (
-            <span>No records found</span>
-          )
+              ))}
+            </tbody>
+          </Table>
         ) : (
-          <span>Loading...</span>
-        )}
-      </Table>
+          <span>No records found</span>
+        )
+      ) : (
+        <span>Loading...</span>
+      )}
     </div>
   );
 };
