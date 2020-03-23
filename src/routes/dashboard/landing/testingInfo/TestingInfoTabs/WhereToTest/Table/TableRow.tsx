@@ -23,12 +23,12 @@ const TableRow: FC<ITableRowProps> = props => {
         {/* {hospital.contact && hospital.contact.join(', ')} */}
         {hospital.contact.map((number, index) =>
           index === hospital.contact.length - 1 ? (
-            <a className="text-white" href={`tel:${number}`}>
+            <a key={index} className="text-white" href={`tel:${number}`}>
               {number}
             </a>
           ) : (
             <>
-              <a className="text-white" href={`tel:${number}`}>
+              <a key={index} className="text-white" href={`tel:${number}`}>
                 {number}
               </a>
               ,{' '}

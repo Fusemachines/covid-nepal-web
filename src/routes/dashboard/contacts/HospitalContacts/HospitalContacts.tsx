@@ -37,6 +37,7 @@ const HospitalContacts: FC<{}> = () => {
   }, [filters.province]);
 
   const fetchHospitalContacts = async () => {
+    setIsLoaded(false);
     try {
       const response: IFetchContactsAPIResponse = await fetchHospitalContactsAPI({
         province: filters.province ? filters.province.value : '',
@@ -45,6 +46,8 @@ const HospitalContacts: FC<{}> = () => {
       setHospitalContacts(response.docs);
     } catch (error) {
       console.log(error.message);
+    } finally {
+      setIsLoaded(true);
     }
   };
 
@@ -86,7 +89,7 @@ const HospitalContacts: FC<{}> = () => {
         />
       </div>
 
-      <HospitalContactsRecords hospitalContacts={hospitalContacts} />
+      <HospitalContactsRecords isLoaded={isLoaded} hospitalContacts={hospitalContacts} />
     </>
   );
 };

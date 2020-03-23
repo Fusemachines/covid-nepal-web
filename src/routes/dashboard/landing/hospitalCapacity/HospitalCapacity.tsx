@@ -104,7 +104,7 @@ const HospitalCapacity: FC<{}> = () => {
     <Row className="mt-3">
       <Col sm="12">
         <div className="rounded bg-bluelight px-3 py-4">
-          <div className="d-md-flex filter-wrapper mb-4">
+          <div className="d-md-flex filter-wrapper">
             <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
             <HospitalCapacityFiltersContext.Provider
               value={{

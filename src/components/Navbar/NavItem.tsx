@@ -1,18 +1,19 @@
 import React, { FC } from 'react';
 import { Nav } from 'react-bootstrap';
-import { /* NavLink, */ useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 interface INavItemProps {
   to: string;
   title: string;
   active: boolean;
   exact?: boolean;
+  className?: string;
 }
 
 const NavItem: FC<INavItemProps> = props => {
   const history = useHistory();
 
-  const { to, title, active /* , exact = true */ } = props;
+  const { to, title, active, className } = props;
 
   const onSelect = (eventKey: any, e: any) => {
     e.preventDefault();
@@ -20,11 +21,7 @@ const NavItem: FC<INavItemProps> = props => {
   };
 
   return (
-    <Nav.Link
-      href={to}
-      onSelect={onSelect}
-      /* exact={exact} to={to} */ className={`nav-link ${active ? 'active' : ''}`}
-    >
+    <Nav.Link href={to} onSelect={onSelect} className={`nav-link ${active ? 'activeT' : ''} ${className}`}>
       {title}
     </Nav.Link>
   );

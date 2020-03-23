@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Col } from 'react-bootstrap';
 
-import TextCaption from 'src/components/TextCaption/TextCaption';
 import { ICovidCasesCounts } from 'src/services/covidCases';
 import { setCommas } from 'src/utils/stringManipulation';
 interface INepalCovidCasesProps {

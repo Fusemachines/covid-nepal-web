@@ -1,0 +1,48 @@
+.covid-loader {
+  display: block;
+  text-align: center;
+  padding: 25px 25px;
+
+  > svg,
+  rect {
+    height: 100px;
+    width: 100px;
+    border-radius: 2px;
+  }
+
+  rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 5;
+    -webkit-animation: dash 3s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+    animation: dash 3s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 1000;
+  }
+
+  @-webkit-keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  &.absolute {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.4);
+    svg {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

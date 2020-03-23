@@ -672,8 +672,8 @@ const Home = () => {
                                     transform="translate(764 193)"
                                     fill="none"
                                     stroke="#fff"
-                                    stroke-linecap="square"
-                                    stroke-width="2"
+                                    strokeLinecap="square"
+                                    strokeWidth="2"
                                   >
                                     <rect width="24" height="24" rx="4" stroke="none" />
                                     <rect x="1" y="1" width="22" height="22" rx="3" fill="none" />

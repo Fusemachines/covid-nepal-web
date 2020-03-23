@@ -1,11 +1,13 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
+
 import TableRow from './TableRow';
 import {
   IFetchAllocatedHospitalListAPIResponse,
   fetchAllocatedHospitalListAPI,
   IHospital
 } from 'src/services/hospitals';
+import Loader from 'src/components/Loader';
 
 const AllocatedHospitalTable: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -40,12 +42,20 @@ const AllocatedHospitalTable: FC<{}> = () => {
       <tbody>
         {isLoaded ? (
           allocatedHospitalList.length > 0 ? (
-            allocatedHospitalList.map(hospital => <TableRow hospital={hospital} />)
+            allocatedHospitalList.map((hospital, index) => <TableRow key={index} hospital={hospital} />)
           ) : (
-            <span>No records found</span>
+            <tr>
+              <td colSpan={4}>
+                <span>No records found</span>
+              </td>
+            </tr>
           )
         ) : (
-          <span>Loading...</span>
+          <tr>
+            <td colSpan={4}>
+              <Loader />
+            </td>
+          </tr>
         )}
       </tbody>
     </Table>

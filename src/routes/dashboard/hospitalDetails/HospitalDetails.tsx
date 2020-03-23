@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, createContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
@@ -7,8 +7,16 @@ import InformationBox from './InformationBox';
 import { IHospital } from 'src/services/hospitals';
 import { fetchSingleHospitalDetailAPI } from 'src/services/hospitals';
 
+interface IHospitalDetailsContext {
+  isLoaded: boolean;
+  hospital: IHospital;
+}
+
+export const HospitalDetailsContext = createContext({} as IHospitalDetailsContext);
+
 const HospitalDetails: FC<{}> = () => {
   const { hospitalId } = useParams();
+  const [isLoaded, setIsLoaded] = useState(false);
   const [hospitalDetails, setHospitalDetails] = useState<IHospital>({} as IHospital);
 
   useEffect(() => {
@@ -17,6 +25,7 @@ const HospitalDetails: FC<{}> = () => {
   }, []);
 
   const fetchHospitalDetails = async () => {
+    setIsLoaded(false);
     try {
       if (hospitalId) {
         const response: IHospital = await fetchSingleHospitalDetailAPI(hospitalId);
@@ -24,6 +33,8 @@ const HospitalDetails: FC<{}> = () => {
       }
     } catch (error) {
       console.log(error.message);
+    } finally {
+      setIsLoaded(true);
     }
   };
 
@@ -31,7 +42,9 @@ const HospitalDetails: FC<{}> = () => {
     <div className="container-fluid mt-4">
       <Row className="mb-2">
         <Col md={4}>
-          <DetailsBox hospital={hospitalDetails} />
+          <HospitalDetailsContext.Provider value={{ isLoaded, hospital: hospitalDetails }}>
+            <DetailsBox />
+          </HospitalDetailsContext.Provider>
         </Col>
 
         <Col md={8} lg={7}>
