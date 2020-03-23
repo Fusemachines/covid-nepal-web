@@ -12,7 +12,7 @@ const TransparentButton: FC<ITransparentButton> = props => {
 
   return (
     <a
-      className={`btn btn-outline-white ${active ? 'active' : ''}`}
+      className={`btn btn-outline-white btn-sm ${active ? 'active' : ''}`}
       onClick={() => handleClick()}
       style={{ color: '#fff' }}
     >
