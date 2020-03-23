@@ -1,11 +1,13 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
+
 import TableRow from './TableRow';
 import {
   IFetchAllocatedHospitalListAPIResponse,
   fetchAllocatedHospitalListAPI,
   IHospital
 } from 'src/services/hospitals';
+import Loader from 'src/components/Loader';
 
 const AllocatedHospitalTable: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -51,7 +53,7 @@ const AllocatedHospitalTable: FC<{}> = () => {
         ) : (
           <tr>
             <td colSpan={4}>
-              <span>Loading...</span>
+              <Loader />
             </td>
           </tr>
         )}
