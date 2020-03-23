@@ -6,11 +6,13 @@ import GlobalCovidCases from './GlobalCovidCases';
 import { fetchCovidCasesCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
 import RefreshIcon from 'src/components/Icons/RefreshIcon';
 import { getFormattedTime } from 'src/utils/date';
+import { pluralize } from 'src/utils/stringManipulation';
 
 interface IUpdatedTime {
   days: number;
   hours: number;
   minutes: number;
+  seconds: number;
 }
 
 const CovidCases = () => {
@@ -52,7 +54,7 @@ const CovidCases = () => {
 
   const showDays = () => {
     if (updatedTime && updatedTime.days > 0) {
-      return `${updatedTime.days} days`;
+      return `${updatedTime.days} ${pluralize(updatedTime.days, 'day')}`;
     } else {
       return '';
     }
@@ -60,7 +62,7 @@ const CovidCases = () => {
 
   const showHours = () => {
     if (updatedTime && updatedTime.hours > 0 && updatedTime.hours < 24) {
-      return `${updatedTime.hours} hours`;
+      return `${updatedTime.hours} ${pluralize(updatedTime.hours, 'hour')}`;
     } else {
       return '';
     }
@@ -68,7 +70,15 @@ const CovidCases = () => {
 
   const showMinutes = () => {
     if (updatedTime && updatedTime.minutes > 0 && updatedTime.minutes < 60) {
-      return `${updatedTime.minutes} minutes`;
+      return `${updatedTime.minutes}  ${pluralize(updatedTime.minutes, 'minute')}`;
+    } else {
+      return '';
+    }
+  };
+
+  const showSeconds = () => {
+    if (updatedTime && updatedTime.seconds > 0 && updatedTime.seconds < 60) {
+      return `less than a minute`;
     } else {
       return '';
     }
@@ -83,7 +93,7 @@ const CovidCases = () => {
               <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
               <small>
                 {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
-                  ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ago`
+                  ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ago`
                   : ''}
                 <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
                   <RefreshIcon />
