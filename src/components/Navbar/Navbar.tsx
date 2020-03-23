@@ -3,7 +3,7 @@ import { Navbar as Navigation, Nav, Alert } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 
 import * as routes from 'src/constants/routes';
-import TransparentButton from 'src/components/Buttons/TransparentButton';
+// import TransparentButton from 'src/components/Buttons/TransparentButton';
 import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
@@ -114,13 +114,20 @@ const Navbar: FC<{}> = () => {
           </Nav>
 
           <Nav>
-            <Link to={routes.NOTICES}>
+            <NavItem
+              title={'Govt. Notices & Resources'}
+              exact={false}
+              to={routes.NOTICES}
+              active={routes.NOTICES === currentPath}
+              className="btn btn-outline-white btn-sm"
+            />
+            {/* <Link to={routes.NOTICES}>
               <TransparentButton
                 text={'Govt. Notices & Resources'}
                 handleClick={() => {}}
                 active={routes.NOTICES === currentPath}
               />
-            </Link>
+            </Link> */}
             <EmergencyButton
               text={navBar.EmergencyContact}
               handleClick={toggleEmergencyContact}

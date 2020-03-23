@@ -7,12 +7,13 @@ interface INavItemProps {
   title: string;
   active: boolean;
   exact?: boolean;
+  className?: string;
 }
 
 const NavItem: FC<INavItemProps> = props => {
   const history = useHistory();
 
-  const { to, title, active } = props;
+  const { to, title, active, className } = props;
 
   const onSelect = (eventKey: any, e: any) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const NavItem: FC<INavItemProps> = props => {
   };
 
   return (
-    <Nav.Link href={to} onSelect={onSelect} className={`nav-link ${active ? 'activeT' : ''}`}>
+    <Nav.Link href={to} onSelect={onSelect} className={`nav-link ${active ? 'activeT' : ''} ${className}`}>
       {title}
     </Nav.Link>
   );
