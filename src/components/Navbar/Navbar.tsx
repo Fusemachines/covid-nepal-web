@@ -15,8 +15,6 @@ interface INavbarProps {
 }
 
 const Navbar: FC<INavbarProps> = props => {
-  const [show, setShow] = useState(true);
-
   const { toggleSidebar } = props;
   const location = useLocation();
   // const history = useHistory();
@@ -24,6 +22,11 @@ const Navbar: FC<INavbarProps> = props => {
   // const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
   const interLang = i18n();
   const { navBar } = interLang;
+
+  useEffect(() => {
+    const path = location.pathname.split('/');
+    console.log(path);
+  }, []);
 
   // const languageTranslate = (lang: string) => {
   //   try {
