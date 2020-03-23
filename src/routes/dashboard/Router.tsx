@@ -7,6 +7,7 @@ import Symptoms from 'src/routes/dashboard/symptoms';
 import HospitalDetails from 'src/routes/dashboard/hospitalDetails';
 import withTracker from 'src/utils/googleAnalytics';
 import JoinUs from 'src/routes/dashboard/joinUs';
+import Notices from 'src/routes/dashboard/notices';
 
 const DashboardRouter: FC<{}> = () => (
   <Switch>
@@ -14,6 +15,7 @@ const DashboardRouter: FC<{}> = () => (
     <Route path={routes.SYMPTOMS} component={withTracker(Symptoms)} />
     <Route path={routes.HOSPITAL_DETAIL} component={withTracker(HospitalDetails)} />
     <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
+    <Route path={routes.NOTICES} component={withTracker(Notices)} />
   </Switch>
 );
 

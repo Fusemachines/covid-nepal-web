@@ -8,25 +8,34 @@ import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
 import i18n from '../../i18n';
+import Contacts from 'src/routes/dashboard/contacts';
 // import { setCookie } from '../../utils/storage';
 
-interface INavbarProps {
-  toggleSidebar: () => void;
-}
-
-const Navbar: FC<INavbarProps> = props => {
-  const { toggleSidebar } = props;
+const Navbar: FC<{}> = () => {
   const location = useLocation();
   // const history = useHistory();
   const currentPath = location.pathname;
   // const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
   const interLang = i18n();
   const { navBar } = interLang;
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   useEffect(() => {
     const path = location.pathname.split('/');
     console.log(path);
   }, []);
+
+  useEffect(() => {
+    if (isSidebarVisible) {
+      document.getElementsByTagName('body')[0].classList.add('modal-open');
+    } else {
+      document.getElementsByTagName('body')[0].classList.remove('modal-open');
+    }
+  }, [isSidebarVisible]);
+
+  const toggleEmergencyContact = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
 
   // const languageTranslate = (lang: string) => {
   //   try {
@@ -93,7 +102,7 @@ const Navbar: FC<INavbarProps> = props => {
         </div> */}
 
         {/* emergency contact */}
-        <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="mob-view" />
+        <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleEmergencyContact} className="mob-view" />
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -105,9 +114,18 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
 
           <Nav>
-            <TransparentButton text={'Govt. Notices & Resources'} handleClick={() => ({})} />
-
-            <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleSidebar} className="desktop-view" />
+            <Link to={routes.NOTICES}>
+              <TransparentButton
+                text={'Govt. Notices & Resources'}
+                handleClick={() => {}}
+                active={routes.NOTICES === currentPath}
+              />
+            </Link>
+            <EmergencyButton
+              text={navBar.EmergencyContact}
+              handleClick={toggleEmergencyContact}
+              className="desktop-view"
+            />
 
             {/* language */}
             {/* <div className="lang menu-flag">
@@ -138,6 +156,7 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
         </Navigation.Collapse>
       </Navigation>
+      <Contacts visibility={isSidebarVisible} toggleContacts={toggleEmergencyContact} />
     </React.Fragment>
   );
 };
