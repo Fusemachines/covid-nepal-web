@@ -145,6 +145,20 @@
     display: none;
 }
 
+.social-link {
+    a {
+        cursor: pointer;
+        margin: 0 15px 0 0;
+
+        &:hover {
+            svg path {
+                fill: #0A375D;
+            }
+        }
+    }
+    
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
       -webkit-transform: rotate(0deg);

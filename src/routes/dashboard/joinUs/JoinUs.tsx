@@ -29,7 +29,11 @@ const JoinUs = () => {
               Let’s fight this pandemic together!
             </div>
 
-            <a href={`${JOIN_US}/#volunteer-with-us`} className="btn btn-success px-3">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform"
+              target="_blank"
+              className="btn btn-success px-3"
+            >
               Join Us
             </a>
           </Col>
