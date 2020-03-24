@@ -23,7 +23,8 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
       totalBeds,
       numIsolationBeds,
       icu,
-      nameSlug
+      nameSlug,
+      ventilators
     },
     toggleMapsModal
   } = props;
@@ -71,7 +72,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         <td onClick={e => e.stopPropagation()}>{icu ? icu : <NotAvailable id={'icu-' + _id} />}</td>
 
         <td onClick={e => e.stopPropagation()}>
-          <NotAvailable id={'ventilators-' + _id} />
+          {ventilators ? ventilators : <NotAvailable id={'ventilators-' + _id} />}
         </td>
 
         <td onClick={e => e.stopPropagation()}>
