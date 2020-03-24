@@ -29,7 +29,7 @@ const JoinUs = () => {
                     get better themselves and do not require any treatment
                   </p>
                   <p>
-                    yes, Teku hospital is a specialized hospital that has more experience dealing with the case of viral
+                    Yes, Teku hospital is a specialized hospital that has more experience dealing with the case of viral
                     diseases like this. they are also close to National Lab which is the only lan in Nepal (as of today)
                     that does nfirmatory testing for COVID-19. But please remember other hospitals can take a specimen
                     and send it to NPHL. Patients don not have to go to Teku hospital for it.{' '}
