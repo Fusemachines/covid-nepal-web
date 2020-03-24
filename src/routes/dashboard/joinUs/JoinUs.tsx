@@ -69,10 +69,10 @@ const JoinUs = () => {
                 <li>
                   Government released data from various government and IT agencies websites and published documents.
                 </li>
-                <li>World Health Organization (WHO) published data</li>
-                <li>Our data team reaching out to hospitals and health clinics to collect data</li>
-                <li>Our data team Reaching out to pool of doctors to help with hospital capacity data</li>
-                <li>Reaching out to general public to help with data collection</li>
+                <li>World Health Organization (WHO) published data.</li>
+                <li>Our data team reaching out to hospitals and health clinics to collect data.</li>
+                <li>Our data team Reaching out to pool of doctors to help with hospital capacity data.</li>
+                <li>Reaching out to general public to help with data collection.</li>
               </ul>
             </div>
           </Col>
