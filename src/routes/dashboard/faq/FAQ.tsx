@@ -61,7 +61,7 @@ const JoinUs = () => {
                     If in case the test is sent to foreign how many days it takes for the report to come?
                   </div>
                   <p>
-                    It depends but its not not very quick. The test itself can be done in two hours or so but it can
+                    It depends but its not very quick. The test itself can be done in two hours or so but it can
                     generally take a week. Again the positive cases are reported to doctors immediately so treatment and
                     isolation do not have to wait.
                   </p>
