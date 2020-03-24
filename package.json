@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build & cp -rf ./OneSDK/* ./build",
+    "build": "react-scripts build && cp -rf ./OneSDK/* ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{tsx,ts,js}\"",
