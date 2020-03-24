@@ -27,25 +27,23 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
     },
     toggleMapsModal
   } = props;
+
+  const showMapModal = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+    toggleMapsModal({ title: name, mapURL });
+  };
+
   return (
     <>
       <tr onClick={() => history.push(`/hospital/${nameSlug}`)} style={{ cursor: 'pointer' }}>
         <td>
           <div>{name}</div>
         </td>
-        <td>
+        <td onClick={showMapModal}>
           <div>{address}</div>
-          <a
-            href="javascript:void(0);"
-            className="text-white"
-            onClick={event => {
-              event.stopPropagation();
-              toggleMapsModal({ title: name, mapURL });
-            }}
-          >
-            <LocationIcon />
-            <span className="ml-2">Map</span>
-          </a>
+
+          <LocationIcon />
+          <span className="ml-2">Map</span>
         </td>
         <td onClick={e => e.stopPropagation()}>
           {contact ? (
