@@ -11,7 +11,7 @@ const ResourceItem: FC<IResourceItemProps> = props => {
   const { url, title, imageUrl } = props;
   return (
     <li>
-      <a href={url} className="p-3" target="_blank">
+      <a href={url} className="p-3" target="_blank" rel="noopener noreferrer">
         <Media>
           <img width={80} height={80} className="mr-3" src={imageUrl} alt="Generic placeholder" />
           <Media.Body>

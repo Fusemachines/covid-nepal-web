@@ -1,38 +1,12 @@
 export default {
-  navBar: {
-    Nepal: 'Nepal',
-    NEP: 'NEP',
-    ENG: 'ENG',
-    Home: 'Home',
-    Symptoms: 'Symptoms',
-    EmergencyContact: 'Emergency Contact'
-  },
-  landing: {
-    LatestNews: 'Latest News'
-  },
-  virusCount: {
-    GovernmentVirusCounts: 'Government Virus Counts',
-    Updated: 'Updated',
-    ago: 'ago',
-    NepalUpdate: 'Nepal Update',
-    GlobalUpdate: 'Global Update',
-    TotalSamplesTested: 'Total  Tested',
-    TotalConformed: 'Total Confirmed',
-    TotalRecovered: 'Total Recovered',
-    TotalSerious: 'Total Serious',
-    TotalDeath: 'Total Death',
-    Disclamair:
-      'Disclaimer: Aliquam faucibus, odio nec commodo aliqum, neque felis placerat dui, a porta ante lectus dapibus est. Aliquam a bibendum mi'
-  },
-  TestingInfoTabs: {
-    WhereToGetTested: 'Where to get tested?',
-    WhenToGetTested: 'When to get tested?'
-  },
-  whereToGetTest: {
-    HospitalsAllocatedForCovid: 'Hospitals allocated for Covid-19',
-    NameOfHospital: 'Name of Hospital',
-    OpenHours: 'Open Hours',
-    NoOfBedsAvailable: 'No. of beds available',
-    NoRecordsFound: 'No records found'
-  }
+  HelpUsKeepDataReliable: 'Help us keep data reliable! Report Errors, New Info and Verify Data',
+  covid19: 'COVID-19',
+  Nepal: 'Nepal',
+  NEP: 'NEP',
+  ENG: 'ENG',
+  Home: 'Home',
+  Symptoms: 'Symptoms',
+  JoinUs: 'Join Us',
+  EmergencyContact: 'Emergency Contact',
+  GovNotice: 'Govt. Notices & Resources',
 };
