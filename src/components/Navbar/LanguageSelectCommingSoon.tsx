@@ -24,9 +24,7 @@ const LanguageSelectCommingSoon: React.FC<any> = ({ isMobile }) => {
         </label>
       </div>
       {showModal ? (
-        <Modal showModal={showModal} title="Coming Soon!" toggleModal={() => setModal(false)}>
-          <span style={{ color: 'black' }}>Nepali translation is coming soon!</span>
-        </Modal>
+        <Modal showModal={showModal} title="Nepali version coming in a few days" toggleModal={() => setModal(false)} />
       ) : null}
     </>
   );

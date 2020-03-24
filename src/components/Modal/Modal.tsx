@@ -9,11 +9,11 @@ interface IMapsModal {
 
 const CustomModal: FC<IMapsModal> = ({ showModal, title, toggleModal, children }) => {
   return (
-    <Modal show={showModal} onHide={toggleModal} centered size="lg">
+    <Modal show={showModal} onHide={toggleModal} centered size="sm">
       <Modal.Header closeButton>
-        <Modal.Title className="text-dark">{title}</Modal.Title>
+        <div className="text-dark">{title}</div>
       </Modal.Header>
-      <Modal.Body>{children}</Modal.Body>
+      {children ? <Modal.Body>{children}</Modal.Body> : null}
     </Modal>
   );
 };
