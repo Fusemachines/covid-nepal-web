@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Table } from 'react-bootstrap';
 import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IContact } from 'src/services/contacts';
+import Loader from 'src/components/Loader';
 
 interface IHospitalContactsRecordsProps {
   isLoaded: boolean;
@@ -35,7 +36,7 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
           <span>No records found</span>
         )
       ) : (
-        <span>Loading...</span>
+        <Loader />
       )}
     </div>
   );

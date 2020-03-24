@@ -6,6 +6,7 @@ import HospitalCapacityTableRow from './HospitalCapacityTableRow';
 import { HospitalCapacityTableContext } from '../HospitalCapacity';
 import MapsModal from 'src/components/MapsModal';
 import MapsIframe from 'src/components/MapsIframe';
+import Loader from 'src/components/Loader';
 
 export interface IMapModalValues {
   title: string;
@@ -74,7 +75,7 @@ const HospitalCapacityTable: FC<{}> = () => {
           ) : (
             <tr>
               <td colSpan={7}>
-                <span>Loading...</span>
+                <Loader />
               </td>
             </tr>
           )}
