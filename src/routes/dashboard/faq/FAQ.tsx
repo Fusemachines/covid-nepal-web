@@ -51,14 +51,14 @@ const JoinUs = () => {
                     lab in the region for re-confirmation. The doctors are, however, immediately notified when a case
                     shows a positive result. It is transported in the Viral Transport Medium (VTM). You can uderstand it
                     as a tube with rubber seals and has chemicals inside it to prevent the specimen from disintegrating.
-                    It is generally Tripple packed in virus transport package. Maintaince should be cold chain of 2-8
-                    degrees. Probably put in a puncture-resistant box and sent in a plane.
+                    It is generally Tripple packed in virus transport package. Maintenance should be in a cold chain of
+                    2-8 degrees. Probably put in a puncture-resistant box and sent in a plane.
                   </p>
                 </li>
 
                 <li className="mb-4">
                   <div className="font-18 mb-2">
-                    If in case the test is send to foreign how many days it takes for the report to come?
+                    If in case the test is sent to foreign how many days it takes for the report to come?
                   </div>
                   <p>
                     It depends but its not not very quick. The test itself can be done in two hours or so but it can
