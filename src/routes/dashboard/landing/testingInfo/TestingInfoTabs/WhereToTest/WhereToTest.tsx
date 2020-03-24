@@ -1,13 +1,18 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import HospitalCross from 'src/components/Icons/HospitalCross';
 import AllocatedHospitalsTable from './Table';
+import lo from 'src/i18n/locale.json';
 
 const WhereToTest: FC<{}> = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="px-3 py-4">
       <div className="h5 m-0">
         <HospitalCross />
-        Hospitals where you may get tested for Covid-19
+        {t(lo.contac_hospitalWhereToGetTested)}
       </div>
       <div className="mt-4">
         <AllocatedHospitalsTable />

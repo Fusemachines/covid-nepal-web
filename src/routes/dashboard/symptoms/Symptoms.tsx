@@ -1,16 +1,22 @@
 import React, { useEffect } from 'react';
 import { Row, Col, Media, Table } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+
+import lo from 'src/i18n/locale.json';
 
 const Symptoms = () => {
+  const [t] = useTranslation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <div className="container mt-3">
         <Row className="mt-5">
           <Col lg="3" className="mt-4 text-white">
-            <div className="h5 title bg-orange">CONTAGION</div>
+            <div className="h5 title bg-orange">{t(lo.sym_CONTAGION)}</div>
 
             {/* <Media className="mt-4">
               <img alt={''} src="/images/airtransmission.png" className="align-self-center mr-3" />
@@ -19,12 +25,12 @@ const Symptoms = () => {
 
             <Media className="mt-4">
               <img alt={''} src="/images/humancontact.png" className="align-self-center mr-3" />
-              <Media.Body className="align-self-center">Human Contact</Media.Body>
+              <Media.Body className="align-self-center">{t(lo.sym_HumanContact)}</Media.Body>
             </Media>
 
             <Media className="mt-4">
               <img alt={''} src="/images/containedobject.png" className="align-self-center mr-3" />
-              <Media.Body className="align-self-center">Contaminated Objects</Media.Body>
+              <Media.Body className="align-self-center">{t(lo.sym_ContaminatedObject)}</Media.Body>
             </Media>
 
             {/* <Media className="mt-4">

@@ -1,9 +1,12 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import CustomSelectInput from 'src/components/CustomSelectInput';
 import { ProvinceOptions } from 'src/constants/options';
 import { ValueType, ActionMeta } from 'react-select';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 import { IContactFilters } from './HospitalContacts';
+import lo from 'src/i18n/locale.json';
 
 interface IHospitalContactsFilterProps {
   filters: IContactFilters;
@@ -13,10 +16,12 @@ interface IHospitalContactsFilterProps {
 }
 
 const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
+  const [t] = useTranslation();
+
   return (
     <div className="">
       <div className="filter d-inline-block">
-        <span>Province</span>
+        <span>{t(lo.fil_Province)}</span>
         <CustomSelectInput
           name={'province-select'}
           options={ProvinceOptions}
@@ -28,7 +33,7 @@ const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
       </div>
 
       <div className="filter d-inline-block">
-        <span>District</span>
+        <span>{t(lo.fil_District)}</span>
         <CustomSelectInput
           name={'district-select'}
           options={props.districtOptions}

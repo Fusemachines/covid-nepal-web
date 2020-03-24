@@ -37,6 +37,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           <div>{address}</div>
           <a
             href="javascript:void(0);"
+            rel="noopener noreferrer"
             className="text-white"
             onClick={event => {
               event.stopPropagation();
