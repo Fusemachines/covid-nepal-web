@@ -33,9 +33,9 @@ const AllocatedHospitalTable: FC<{}> = () => {
       <thead>
         <tr>
           <th>Hospital Name</th>
-          <th>Open Hours</th>
+          <th className="w-110">Open Hours</th>
           <th>Phone Number</th>
-          <th></th>
+          <th className="w-76"></th>
         </tr>
       </thead>
 

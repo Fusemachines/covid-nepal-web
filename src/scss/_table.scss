@@ -4,6 +4,14 @@
         border-top: 0;
         border-color: #2074B9;
         font-weight: 600;
+
+        &.w-76 {
+            width: 76px;
+        }
+
+        &.w-110 {
+            width: 110px;
+        }
     }
 
     tbody td {
