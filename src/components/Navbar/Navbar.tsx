@@ -9,6 +9,7 @@ import NavItem from './NavItem';
 
 import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';
+import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
 // import { setCookie } from '../../utils/storage';
 
 const Navbar: FC<{}> = () => {
@@ -74,6 +75,8 @@ const Navbar: FC<{}> = () => {
           </Navigation.Brand>
         </Link>
 
+        {/* Temporary Langauge Select */}
+        <LanguageSelectCommingSoon isMobile={true} />
         {/* language */}
         {/* <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
@@ -133,6 +136,8 @@ const Navbar: FC<{}> = () => {
               handleClick={toggleEmergencyContact}
               className="desktop-view"
             />
+            {/* Temporary Langauge Select */}
+            <LanguageSelectCommingSoon isMobile={false} />
 
             {/* language */}
             {/* <div className="lang menu-flag">
