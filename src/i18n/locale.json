@@ -77,6 +77,7 @@
 
 
 
+
   "0": "0",
   "1": "1",
   "2": "2",
@@ -89,8 +90,61 @@
   "9": "9",
 
 
-  "nav_FAQ": "nav_FAQ"
+  "nav_FAQ": "nav_FAQ",
+  "sym_Headache": "sym_Headache",
+  "symCh_commonCold": "symCh_commonCold",
+  "symCh_Flu": "symCh_Flu",
+  "symCh_Allergies": "symCh_Allergies",
+  "symCh_Sneezing": "symCh_Sneezing",
+  "symCh_Common": "symCh_Common",
+  "symCh_Sometimes": "symCh_Sometimes",
+  "symCh_Rare": "symCh_Rare",
+  "symCh_No": "symCh_No",
+  "symCh_Mild": "symCh_Mild",
 
+  "join_openSource": "join_openSource",
+  "join_askingAllLikeMinded": "join_askingAllLikeMinded",
+  "join_objective": "join_objective",
+  "join_objectiveDetail_1": "join_objectiveDetail_1",
+  "join_objectiveDetail_2": "join_objectiveDetail_2",
+  "join_objectiveDetail_3": "join_objectiveDetail_3",
+  "join_objectiveDetail_4": "join_objectiveDetail_4",
+  "join_process": "join_process",
+  "join_processDetail_1": "join_processDetail_1",
+  "join_processDetail_2": "join_processDetail_2",
+  "join_processDetail_3": "join_processDetail_3",
+  "join_processDetail_4": "join_processDetail_4",
+  "join_processDetail_5": "join_processDetail_5",
+
+  "join_hereHowCanHelpUs": "join_hereHowCanHelpUs",
+  "join_accessThisForm": "join_accessThisForm",
+  "join_reachOut": "join_reachOut",
+  "join_reliableInfo": "join_reliableInfo",
+  "join_contribute": "join_contribute",
+
+  "notic_governNotice": "notic_governNotice",
+  "notic_resources": "notic_resources",
+  "notic_pressRelease": "notic_pressRelease",
+  "notic_reports": "notic_reports",
+  "notic_pressRelease21March": "notic_pressRelease21March",
+  "notic_situationReport20March": "notic_situationReport20March",
+  "notic_situationReport1To41": "notic_situationReport1To41",
+  "notic_travelRestriction": "notic_travelRestriction",
+
+  "resourc_howToProtectUrself": "resourc_howToProtectUrself",
+  "resourc_joinFight": "resourc_joinFight",
+
+  "faq_q1_ques": "faq_q1_ques",
+  "faq_q1_ans_1": "faq_q1_ans_1",
+  "faq_q1_ans_2": "faq_q1_ans_2",
+  "faq_q2_ques": "faq_q2_ques",
+  "faq_q2_ans": "faq_q2_ans",
+  "faq_q3_ques": "faq_q3_ques",
+  "faq_q3_ans": "faq_q3_ans",
+  "faq_q4_ques": "faq_q4_ques",
+  "faq_q4_ans": "faq_q4_ans",
+  "faq_q5_ques": "faq_q5_ques",
+  "faq_q5_ans": "faq_q5_ans"
 
 
 

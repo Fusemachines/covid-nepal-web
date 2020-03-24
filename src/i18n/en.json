@@ -95,7 +95,61 @@
 
 
 
-  "nav_FAQ": "FAQ"
+  "nav_FAQ": "FAQ",
+  "sym_Headache": "Headache",
+  "symCh_commonCold": "Common Cold",
+  "symCh_Flu": "Flu",
+  "symCh_Allergies": "Allergies",
+  "symCh_Sneezing": "Sneezing",
+  "symCh_Common": "Common",
+  "symCh_Sometimes": "Sometimes",
+  "symCh_Rare": "Rare",
+  "symCh_No": "No",
+  "symCh_Mild": "Mild",
 
+  "join_openSource": "Open Source Platform for COVID-19 for Nepal",
+  "join_askingAllLikeMinded": "<1>covidnepal.org</1> is an Open Source Platform started at <3>Fusemachines</3> and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to serve as a reliable source of information about Covid-19 in Nepal.<5>Let’s fight this pandemic together!",
+  "join_objective": "Objective",
+  "join_objectiveDetail_1": "Collect reliable data from various trusted sources, so public can stay well informed and leverage that data to better manage their fight with this pandemic.",
+  "join_objectiveDetail_2": "Make relevant data easily consumable to get right information quickly, so informed decisions can be made during time of panic, should there be one.",
+  "join_objectiveDetail_3": "In future, this could be extended to a public sourced and curated portal for additional real-time information on the outbreak.",
+  "join_objectiveDetail_4": "In future, AI capabilities could be built to provide early warning projections.",
+
+  "join_process": "Our process for collecting data:",
+  "join_processDetail_1": "Government released data from various government and IT agencies websites and published documents.",
+  "join_processDetail_2": "World Health Organization (WHO) published data.",
+  "join_processDetail_3": "Our data team reaching out to hospitals and health clinics to collect data.",
+  "join_processDetail_4": "Our data team Reaching out to pool of doctors to help with hospital capacity data.",
+  "join_processDetail_5": "Reaching out to general public to help with data collection.",
+
+  "join_hereHowCanHelpUs": "Here is how you can help us",
+  "join_accessThisForm": "Access this form",
+  "join_reliableInfo": "If you have reliable information that can help general public then please input",
+  "join_reachOut": "Reach out to your contact that may have reliable information and ask them for help.",
+  "join_contribute": "If you would like to contribute to this open source project as an engineer, data analyst, doctor, nurse, government officials, media or any other profession please join this effort by emailing how you want to contribute to the following email address",
+
+  "notic_governNotice": "Government Notices",
+  "notic_resources": "Resources",
+  "notic_reports": "Reports",
+  "notic_pressRelease": "Press Release",
+  "notic_pressRelease21March": "Press Release as of 21 March 2020",
+  "notic_situationReport20March": "Situation Report_COVID-19 #42 (as of 20 March 2020)",
+  "notic_situationReport1To41": "Situation Reports #1 to #41",
+  "notic_travelRestriction": "Updated notice on travel restriction related to COVID-19",
+
+  "resourc_howToProtectUrself": "How to protect yourself and others against COVID-19",
+  "resourc_joinFight": "Join the fight against misinformation",
+
+  "faq_q1_ques": "Is Teku hospital the only hospital for testing Covid-19 in Nepal?",
+  "faq_q1_ans_1": "No- All hospitals can manage a case of COVID-19. Since there is no treatment per se case management involves giving antivirals and antibacterial therapy to patients with severe symptoms. 80% of people get better themselves and do not require any treatment.",
+  "faq_q1_ans_2": "Yes, Teku hospital is a specialized hospital that has more experience dealing with the case of viral diseases like this. They are also close to National Lab which is the only lab in Nepal (as of today) that does confirmatory testing for COVID-19. But please remember other hospitals can take a specimen and send it to NPHL. Patients do not have to go to Teku hospital for it.",
+  "faq_q2_ques": "How many Testing Kit is Currently present in Hospital?",
+  "faq_q2_ans": "The last news suggests that we have about 1500 test kits left. 522 test were done till yesterday.",
+  "faq_q3_ques": "Is Testing of Swab done in Nepal or is being Sent to Foreign Country & What is the means of Transport?",
+  "faq_q3_ans": "Testing is done in Nepal; however, sometimes sample of positive cases are sent to a WHO reference lab in the region for re-confirmation. The doctors are, however, immediately notified when a case shows a positive result. It is transported in the Viral Transport Medium (VTM). You can uderstand it as a tube with rubber seals and has chemicals inside it to prevent the specimen from disintegrating. It is generally Tripple packed in virus transport package. Maintenance should be in a cold chain of 2-8 degrees. Probably put in a puncture-resistant box and sent in a plane.",
+  "faq_q4_ques": "If in case the test is sent to foreign how many days it takes for the report to come?",
+  "faq_q4_ans": "It depends but its not very quick. The test itself can be done in two hours or so but it can generally take a week. Again the positive cases are reported to doctors immediately so treatment and isolation do not have to wait.",
+  "faq_q5_ques": "What is the survival rate & time period of the virus outside the human body?",
+  "faq_q5_ans": "No one knows for sure. It depends on the environmental condition, but studies suggest it can survive for thousands of years in the right scenario. Since they are not considering living and do not have any metabolism they are either inactive or active. Not live or dead."
 
 }
