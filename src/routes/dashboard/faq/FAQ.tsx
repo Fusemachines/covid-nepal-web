@@ -74,7 +74,7 @@ const JoinUs = () => {
                   <p>
                     No one knows for sure. It depends on the environmental condition, but studies suggest it can survive
                     for thousands of years in the right scenario. Since they are not considering living and do not have
-                    any metabolism they are either inactie or active. Not live or dead.
+                    any metabolism they are either inactive or active. Not live or dead.
                   </p>
                 </li>
               </ul>
