@@ -11,11 +11,7 @@ const TransparentButton: FC<ITransparentButton> = props => {
   const { text, handleClick, active } = props;
 
   return (
-    <a
-      className={`btn btn-outline-white btn-sm ${active ? 'active' : ''}`}
-      onClick={() => handleClick()}
-      style={{ color: '#fff' }}
-    >
+    <div className={`${active ? 'active' : ''}`} onClick={() => handleClick()}>
       {/* <svg xmlns="http://www.w3.org/2000/svg" width="20.571" className="mr-1" height="18" viewBox="0 0 20.571 18">
         <path
           id="Path_647"
@@ -26,7 +22,7 @@ const TransparentButton: FC<ITransparentButton> = props => {
         />
       </svg> */}
       {text}
-    </a>
+    </div>
   );
 };
 

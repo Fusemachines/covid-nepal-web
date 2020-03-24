@@ -47,7 +47,6 @@
     <meta name="twitter:image" content="https://covidnepal.org/images/og-img.jpg">
     <meta name="twitter:image:alt" content="COVID NEPAL">
 
-
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -58,6 +57,20 @@
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
       }
+    </script>
+
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "206bc4e5-185f-4aba-886c-b95af8264bb7",
+          notifyButton: {
+            enable: true,
+          },
+        });
+      });
+      // OneSignal.showHttpPermissionRequest();
     </script>
 
     <!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->

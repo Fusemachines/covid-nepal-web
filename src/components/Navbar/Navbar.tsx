@@ -3,12 +3,13 @@ import { Navbar as Navigation, Nav, Alert } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 
 import * as routes from 'src/constants/routes';
-import TransparentButton from 'src/components/Buttons/TransparentButton';
+// import TransparentButton from 'src/components/Buttons/TransparentButton';
 import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 
 import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';
+import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
 // import { setCookie } from '../../utils/storage';
 
 const Navbar: FC<{}> = () => {
@@ -74,6 +75,8 @@ const Navbar: FC<{}> = () => {
           </Navigation.Brand>
         </Link>
 
+        {/* Temporary Langauge Select */}
+        <LanguageSelectCommingSoon isMobile={true} />
         {/* language */}
         {/* <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
@@ -114,18 +117,27 @@ const Navbar: FC<{}> = () => {
           </Nav>
 
           <Nav>
-            <Link to={routes.NOTICES}>
+            <NavItem
+              title={'Govt. Notices & Resources'}
+              exact={false}
+              to={routes.NOTICES}
+              active={routes.NOTICES === currentPath}
+              className="btn btn-outline-white btn-sm"
+            />
+            {/* <Link to={routes.NOTICES}>
               <TransparentButton
                 text={'Govt. Notices & Resources'}
                 handleClick={() => {}}
                 active={routes.NOTICES === currentPath}
               />
-            </Link>
+            </Link> */}
             <EmergencyButton
               text={navBar.EmergencyContact}
               handleClick={toggleEmergencyContact}
               className="desktop-view"
             />
+            {/* Temporary Langauge Select */}
+            <LanguageSelectCommingSoon isMobile={false} />
 
             {/* language */}
             {/* <div className="lang menu-flag">
