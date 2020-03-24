@@ -29,6 +29,7 @@ const HospitalContactsFilter: FC<IHospitalContactsFilterProps> = props => {
           handleChange={props.handleProvinceFilterChange}
           className={'filter-select'}
           selectedValue={props.filters.province}
+          isSearchable={false}
         />
       </div>
 

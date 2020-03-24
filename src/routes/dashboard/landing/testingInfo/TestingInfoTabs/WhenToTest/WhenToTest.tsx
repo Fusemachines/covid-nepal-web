@@ -26,7 +26,7 @@ const WhenToTest: FC<{}> = () => {
       </Media>
 
       <Media className="mt-4 bg-white px-4 py-3">
-        <img alt={'Use Nose Rag'} src="/images/usenose-rag.png" className="align-self-center mr-3" />
+        <img alt={'Use Nose Rag'} src="/images/usenose-rag-red.svg" className="align-self-center mr-3" />
         <Media.Body className="align-self-center">
           <div className="text-danger font-weight-bold h6">{t(lo.contac_difficultToBreathing)}</div>
         </Media.Body>

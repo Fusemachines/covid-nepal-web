@@ -28,6 +28,7 @@ const HospitalCapacityFilter: FC<{}> = () => {
           handleChange={handleProvinceFilterChange}
           className={'filter-select'}
           selectedValue={filters.province}
+          isSearchable={false}
         />
       </div>
       <div className="filter d-inline-block">

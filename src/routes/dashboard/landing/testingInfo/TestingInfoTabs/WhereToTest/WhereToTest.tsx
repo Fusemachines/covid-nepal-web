@@ -10,9 +10,9 @@ const WhereToTest: FC<{}> = () => {
 
   return (
     <div className="px-3 py-4">
-      <div className="h5 m-0">
+      <div className="h5 m-0 d-flex">
         <HospitalCross />
-        {t(lo.contac_hospitalWhereToGetTested)}
+        <div>{t(lo.contac_hospitalWhereToGetTested)}</div>
       </div>
       <div className="mt-4">
         <AllocatedHospitalsTable />

@@ -22,6 +22,7 @@ const CovidCases = () => {
   const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
   const { t } = useTranslation();
 
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCovidCases();
@@ -43,7 +44,13 @@ const CovidCases = () => {
       console.log(error);
     } finally {
       getUpdatedTime();
+      setIsLoading(false);
     }
+  };
+
+  const handleRefreshClick = () => {
+    setIsLoading(true);
+    fetchCovidCases();
   };
 
   const getUpdatedTime = () => {
@@ -99,7 +106,7 @@ const CovidCases = () => {
                 {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
                   ? `${t(lo.covC_Updated)} ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ${t(lo.covC_ago)}`
                   : ''}
-                <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
+                <i className={`ml-2 pointer ${isLoading ? 'rotating' : ''}`} onClick={() => handleRefreshClick()}>
                   <RefreshIcon />
                 </i>
               </small>

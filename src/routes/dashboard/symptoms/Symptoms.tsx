@@ -1120,6 +1120,8 @@ const Symptoms = () => {
               </Table>
             </div>
 
+            <div className="small my-3 text-center text-lightblue">* Sometimes for children</div>
+
             <div className="small my-3 text-center text-lightblue">
               Sources: CDC, WHO, American College of Allergy, Asthma and Immunology
             </div>
