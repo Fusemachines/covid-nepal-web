@@ -15,6 +15,7 @@ interface ICustomSelectInputProps {
   isLoading?: boolean;
   isDisabled?: boolean;
   isClearable?: boolean;
+  isSearchable?: boolean;
   handleChange: (value: ValueType<IOptions>, action?: ActionMeta) => void;
 }
 
@@ -28,7 +29,8 @@ const CustomSelectInput: React.FC<ICustomSelectInputProps> = props => {
     isLoading,
     isDisabled,
     isClearable,
-    handleChange
+    handleChange,
+    isSearchable
   } = props;
   return (
     <Select
@@ -42,6 +44,7 @@ const CustomSelectInput: React.FC<ICustomSelectInputProps> = props => {
       isClearable={isClearable}
       options={options}
       defaultValue={selectedValue}
+      isSearchable={isSearchable}
     />
   );
 };
