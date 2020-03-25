@@ -7,7 +7,7 @@ const GovernmentNotices: FC<{}> = () => {
       <GovernmentNoticeItem
         category="Press Release"
         date="25 March 2020"
-        title="MoHP Daily Press Brief as of 25th March"
+        title="MoHP 4:15pm Daily Press Brief as of 25th March"
         url="https://youtu.be/TSWADtbqAPg"
       />
 
