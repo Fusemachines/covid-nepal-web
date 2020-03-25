@@ -70,6 +70,9 @@ const Navbar: FC<INavbarProps> = props => {
   }
 
   const setLanguagePath = (lang: string) => {
+    if (language === lang) {
+      return;
+    }
     setLanguage(lang);
     // history.push(location.pathname + `?lang=${lang}`);
     languageTranslate(lang, true);
@@ -102,7 +105,7 @@ const Navbar: FC<INavbarProps> = props => {
         </Link>
 
         {/* language */}
-        <div className="lang mobile-flag">
+        <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
