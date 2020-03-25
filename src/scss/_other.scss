@@ -198,6 +198,20 @@
     }
 }
 
+.covid-hospital-count {
+    &.tooltip {
+        .tooltip-inner {
+            background: #ffffff;
+            color: #0A375D;
+            font-size: 9px;
+        }
+    
+        .arrow:before {
+            border-top-color: #ffffff;
+        }
+    }
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
       -webkit-transform: rotate(0deg);

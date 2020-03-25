@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Nav, Tab, Table, Media, Modal } from 'react-bootstrap';
+import { Row, Col, Nav, Tab, Table, Media, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Menu from '../Navbar';
 
 // const [show, setShow] = useState(false);
@@ -811,15 +811,44 @@ const Home = () => {
                 <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
 
                 <div className="mx-auto">
-                  <div className="count-box yellow">
-                    <span>Total Hospitals </span> <span className="count">100</span>
-                  </div>
-                  <div className="count-box green">
-                    <span>Total Verified </span> <span className="count">40</span>
-                  </div>
-                  <div className="count-box blue">
-                    <span>In Review </span> <span className="count">60</span>
-                  </div>
+                  <OverlayTrigger
+                    placement={'top'}
+                    overlay={
+                      <Tooltip id={`tooltip-total`} className="covid-hospital-count">
+                        The total number of hospitals listed in covidnepal.org
+                      </Tooltip>
+                    }
+                  >
+                    <div className="count-box yellow">
+                      <span>Total Hospitals </span> <span className="count">100</span>
+                    </div>
+                  </OverlayTrigger>
+
+                  <OverlayTrigger
+                    placement={'top'}
+                    overlay={
+                      <Tooltip id={`tooltip-verified`} className="covid-hospital-count">
+                        The number of hospitals we called and verified the information.
+                      </Tooltip>
+                    }
+                  >
+                    <div className="count-box green">
+                      <span>Total Verified </span> <span className="count">40</span>
+                    </div>
+                  </OverlayTrigger>
+
+                  <OverlayTrigger
+                    placement={'top'}
+                    overlay={
+                      <Tooltip id={`tooltip-review`} className="covid-hospital-count">
+                        The number of hospitals we are currently verifying the information.
+                      </Tooltip>
+                    }
+                  >
+                    <div className="count-box blue">
+                      <span>In Review </span> <span className="count">60</span>
+                    </div>
+                  </OverlayTrigger>
                 </div>
 
                 <div className="ml-auto">
