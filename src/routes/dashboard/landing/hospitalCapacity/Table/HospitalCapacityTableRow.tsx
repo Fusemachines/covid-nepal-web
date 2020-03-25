@@ -31,7 +31,9 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
 
   const showMapModal = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    toggleMapsModal({ title: name, mapURL });
+    if (address) {
+      toggleMapsModal({ title: name, mapURL });
+    }
   };
 
   return (
@@ -41,27 +43,24 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           <div>{name}</div>
         </td>
         <td onClick={showMapModal}>
-          <div>{address}</div>
+          {address ? (
+            <>
+              <div>{address}</div>
 
-          <LocationIcon />
-          <span className="ml-2">Map</span>
+              <LocationIcon />
+              <span className="ml-2">Map</span>
+            </>
+          ) : (
+            <NotAvailable id={'address-' + _id} />
+          )}
         </td>
         <td onClick={e => e.stopPropagation()}>
           {contact ? (
-            contact.map((number, index) =>
-              index === contact.length - 1 ? (
-                <a key={index} className="text-white" href={`tel:${number}`}>
-                  {number}
-                </a>
-              ) : (
-                <>
-                  <a key={index} className="text-white" href={`tel:${number}`}>
-                    {number}
-                  </a>
-                  ,{' '}
-                </>
-              )
-            )
+            contact.map((number, index) => (
+              <a key={index} className="text-white" href={`tel:${number}`}>
+                {number} {index === contact.length - 1 ? ' ' : ', '}
+              </a>
+            ))
           ) : (
             <NotAvailable id={'contact-' + _id} />
           )}
