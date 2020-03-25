@@ -795,10 +795,10 @@ const Home = () => {
 
               <div className="">Latest News</div>
 
-              <div className="covid-verified">
+              {/* <div className="covid-verified">
                 <img src="/images/verified.svg" />
                 <span>Verified</span>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>
