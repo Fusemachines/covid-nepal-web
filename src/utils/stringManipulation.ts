@@ -1,6 +1,6 @@
-export function setCommas(input: number) {
+export const setCommas = (input: number) => {
   return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+};
 
 export const pluralize = (count: number, text: string) => {
   if (count === 1) {
