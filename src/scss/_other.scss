@@ -159,6 +159,59 @@
     
 }
 
+.count-box {
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px 12px;
+    font-size: 12px;
+    overflow: hidden;
+
+    > span {
+        padding: 4px 12px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.green {
+        background: rgba(0, 197, 13, 0.2);
+
+        .count {
+            background: #00C571;
+        }
+    }
+
+    &.blue {
+        background: rgba(32, 116, 185, 0.2);
+
+        .count {
+            background: #2074B9;
+        }
+    }
+
+    &.yellow {
+        background: rgba(255, 208, 58, 0.2);
+
+        .count {
+            background: #FFD03A;
+            color: #004E90;
+        }
+    }
+}
+
+.covid-hospital-count {
+    &.tooltip {
+        .tooltip-inner {
+            background: #ffffff;
+            color: #0A375D;
+            font-size: 9px;
+        }
+    
+        .arrow:before {
+            border-top-color: #ffffff;
+        }
+    }
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
       -webkit-transform: rotate(0deg);
