@@ -115,30 +115,33 @@ const HospitalCapacity: FC<{}> = () => {
   };
 
   return (
-    <Row className="mt-3">
-      <Col sm="12">
-        <div className="rounded bg-bluelight px-3 py-4">
-          <div className="d-md-flex filter-wrapper">
-            <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
-            <HospitalCapacityFiltersContext.Provider
-              value={{
-                filters,
-                districtDropdownOptions,
-                handleProvinceFilterChange,
-                handleDistrictFilterChange,
-                handleCovidTestFilterChange
-              }}
-            >
-              <HospitalCapacityFilter />
-            </HospitalCapacityFiltersContext.Provider>
+    <>
+      <Row className="mt-3">
+        <Col sm="12">
+          <div className="rounded bg-bluelight px-3 py-4">
+            <div className="d-md-flex filter-wrapper">
+              <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
+              <HospitalCapacityFiltersContext.Provider
+                value={{
+                  filters,
+                  districtDropdownOptions,
+                  handleProvinceFilterChange,
+                  handleDistrictFilterChange,
+                  handleCovidTestFilterChange
+                }}
+              >
+                <HospitalCapacityFilter />
+              </HospitalCapacityFiltersContext.Provider>
+            </div>
+            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
+              <HospitalCapacityTable />
+            </HospitalCapacityTableContext.Provider>
           </div>
-          <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
-            <HospitalCapacityTable />
-          </HospitalCapacityTableContext.Provider>
-        </div>
-      </Col>
+        </Col>
+      </Row>
+
       <Pagination {...pagination} handlePageChange={handlePageChange} />
-    </Row>
+    </>
   );
 };
 

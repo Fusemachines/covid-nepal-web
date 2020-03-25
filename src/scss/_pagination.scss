@@ -1,0 +1,16 @@
+.pagination {
+    li {
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        &.disabled {
+            pointer-events: none;
+        }
+
+        &#prev-button a svg {
+            transform: rotate(180deg);
+        }
+    }
+}
