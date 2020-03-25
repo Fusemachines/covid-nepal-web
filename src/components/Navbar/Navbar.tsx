@@ -53,7 +53,7 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
   return (
     <React.Fragment>
       <div className="text-center bg-bluelight covid-alert d-flex">
-        <a className="small" href="https://bit.ly/covidnepal_report_error_newinfo" target="_blank" rel="noopener noreferrer">
+        <a className="small mx-auto" href="https://bit.ly/covidnepal_report_error_newinfo" target="_blank" rel="noopener noreferrer">
           {t(lo.nav_HelpUsKeepDataReliable)}
         </a>
         <div className="d-none d-sm-none d-md-block social-link">
@@ -126,7 +126,7 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navigation.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="mx-auto">
             <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
             <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} />
