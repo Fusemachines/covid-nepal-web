@@ -1,4 +1,17 @@
+.pagination-wrapper {
+    background: #0A375D;
+    padding: {
+        top: 15px;
+        bottom: 12px;
+    }
+
+    &.sticky {
+        position: sticky;
+    }
+}
+
 .pagination {
+    margin: 0;
     li {
         a {
             text-decoration: none;

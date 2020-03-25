@@ -66,7 +66,7 @@ const Pagination: React.SFC<IPaginationProps> = ({
 
   return totalPages > 0 ? (
     <>
-      <Row className="align-items-center py-2">
+      <Row className="align-items-center pagination-wrapper sticky">
         <Col md="4">
           <small>
             Showing <span className="font-weight-bold">{size}</span> of {totalItems} entries
