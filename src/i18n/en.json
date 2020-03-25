@@ -133,14 +133,15 @@
   "resourc_joinFight": "Join the fight against misinformation",
 
   "faq_q1_ques": "Is Teku-based hospital, Sukraraj Tropical and Infectious Disease Hospital, the only hospital allocated for testing and treatment of COVID-19 in Nepal?",
-  "faq_q1_ans_1": "No- All hospitals can manage a case of COVID-19. Since there is no treatment per se case management involves giving antivirals and antibacterial therapy to patients with severe symptoms. 80% of people get better themselves and do not require any treatment.",
+  "faq_q1_ans_1": "No. The Government of Nepal has allocated two hospitals, STIDH(Teku) hospital, and Patan Hospital, where you can get tested for Covid-19 infection. Teku hospital is, however, given the first priority since it specializes in dealing with all kinds of infectious diseases like COVID-19.  They work closely with the National Public Health Laboratory which is also situated in Teku that performs the confirmatory testing for COVID-19. Do remember that you do not have to go to Teku hospital to take the swab specimen as other hospitals can take a specimen and send it to NPHL. For the treatment of COVID-19, all hospitals can manage beds, ICUs and ventilators for severely infected patients. Since there is no evidence that current medicine can prevent or cure the disease, each case can be managed by all the hospitals, giving antiviral and antibacterial therapy.",
   "faq_q1_ans_2": "Yes, Teku hospital is a specialized hospital that has more experience dealing with the case of viral diseases like this. They are also close to National Lab which is the only lab in Nepal (as of today) that does confirmatory testing for COVID-19. But please remember other hospitals can take a specimen and send it to NPHL. Patients do not have to go to Teku hospital for it.",
-  "faq_q2_ques": "How many Testing Kit is Currently present in Hospital?",
-  "faq_q2_ans": "The last news suggests that we have about 1500 test kits left. 522 test were done till yesterday.",
-  "faq_q3_ques": "Is Testing of Swab done in Nepal or is being Sent to Foreign Country & What is the means of Transport?",
+  "faq_q2_ques": "With how many testing kits is the Teku hospital equipped currently?",
+  "faq_q2_ans": "The last news suggests that the Teku hospital is equipped with about 1500 test kits. 522 tests were performed until yesterday.",
+  "faq_q3_ques": "Is the swab testing carried out in Nepal or sent abroad? What is the medium of transportation of the specimens?",
+
   "faq_q3_ans": "Testing is done in Nepal; however, sometimes sample of positive cases are sent to a WHO reference lab in the region for re-confirmation. The doctors are, however, immediately notified when a case shows a positive result. It is transported in the Viral Transport Medium (VTM). You can uderstand it as a tube with rubber seals and has chemicals inside it to prevent the specimen from disintegrating. It is generally Tripple packed in virus transport package. Maintenance should be in a cold chain of 2-8 degrees. Probably put in a puncture-resistant box and sent in a plane.",
-  "faq_q4_ques": "If in case the test is sent to foreign how many days it takes for the report to come?",
-  "faq_q4_ans": "It depends but its not very quick. The test itself can be done in two hours or so but it can generally take a week. Again the positive cases are reported to doctors immediately so treatment and isolation do not have to wait.",
+  "faq_q4_ques": "If the test sample is transported to the laboratory outside Nepal,  how long does it take for the reports to arrive in Nepal?",
+  "faq_q4_ans": "It depends on cases but it is not very quick. It generally takes two hours or so to perform the test and can generally take a week to get the final result. The positive cases are reported to doctors immediately so that you are immediately transferred to the isolation room and treated accordingly.",
   "faq_q5_ques": "What is the survival rate & time period of the virus outside the human body?",
   "faq_q5_ans": "No one knows for sure. It depends on the environmental condition, but studies suggest it can survive for thousands of years in the right scenario. Since they are not considering living and do not have any metabolism they are either inactive or active. Not live or dead."
 
