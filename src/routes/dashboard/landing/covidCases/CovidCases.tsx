@@ -16,6 +16,7 @@ interface IUpdatedTime {
 const CovidCases = () => {
   const [covidCasesCounts, setCovidCasesCounts] = useState<ICovidCasesCounts | null>(null);
   const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
+  const [loadingCases, setLoadingCases] = useState(false);
 
   useEffect(() => {
     fetchCovidCases();
@@ -31,8 +32,10 @@ const CovidCases = () => {
 
   const fetchCovidCases = async () => {
     try {
+      setLoadingCases(true);
       const response = await fetchCovidCasesCountsAPI();
       setCovidCasesCounts(response);
+      setLoadingCases(false);
     } catch (error) {
       console.log(error);
     } finally {
@@ -75,44 +78,42 @@ const CovidCases = () => {
   };
 
   return (
-    <>
-      <Col md="12" lg="4" className="mt-2">
-        <div className="rounded bg-bluelight p-4">
-          <div className="mb-3 border-bottom pb-2">
-            <div className="d-inline-block">
-              <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
-              <small>
-                {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
-                  ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ago`
-                  : ''}
-                <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
-                  <RefreshIcon />
-                </i>
-              </small>
-            </div>
+    <Col key={loadingCases + ''} md="12" lg="4" className={`mt-2`}>
+      <div className="rounded bg-bluelight p-4">
+        <div className="mb-3 border-bottom pb-2">
+          <div className="d-inline-block">
+            <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
+            <small>
+              {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
+                ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ago`
+                : ''}
+              <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
+                <RefreshIcon />
+              </i>
+            </small>
           </div>
-          <div className="clearfix"></div>
-
-          <Row className="mb-3">
-            <NepalCovidCases covidCasesCounts={covidCasesCounts} />
-            <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
-          </Row>
-
-          <small>
-            *Disclaimer: These numbers are obtained from{' '}
-            <a className={'text-white'} target="_blank" href="https://heoc.mohp.gov.np/">
-              Nepal Government
-            </a>{' '}
-            and{' '}
-            <a className={'text-white'} target="_blank" href="https://coronavirus.jhu.edu/map.html">
-              {' '}
-              Johns Hopkins University
-            </a>{' '}
-            and being updated as the numbers from these sources get updated.
-          </small>
         </div>
-      </Col>
-    </>
+        <div className="clearfix"></div>
+
+        <Row className="mb-3">
+          <NepalCovidCases covidCasesCounts={covidCasesCounts} />
+          <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
+        </Row>
+
+        <small>
+          *Disclaimer: These numbers are obtained from{' '}
+          <a className={'text-white'} target="_blank" href="https://heoc.mohp.gov.np/">
+            Nepal Government
+          </a>{' '}
+          and{' '}
+          <a className={'text-white'} target="_blank" href="https://coronavirus.jhu.edu/map.html">
+            {' '}
+            Johns Hopkins University
+          </a>{' '}
+          and being updated as the numbers from these sources get updated.
+        </small>
+      </div>
+    </Col>
   );
 };
 

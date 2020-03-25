@@ -54,7 +54,15 @@
 
     <script type="text/javascript">
       function googleTranslateElementInit() {
+        // need to setCookie before google translate code is run
+        setCookie('googtrans', `${localStorage.getItem('googtrans') || 'en'}`);
         new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+      function setCookie(key, value){
+        let d = new Date();
+        const time = 15 * 60 * 1000;
+        window.document.cookie = key + '=' + value + '; expires =' + d.setTime(d.getTime + time);
+        // setlocalStorage(key, value);
       }
     </script>
 

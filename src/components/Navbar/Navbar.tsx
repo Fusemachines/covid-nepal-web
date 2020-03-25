@@ -21,37 +21,68 @@ const Navbar: FC<INavbarProps> = props => {
   const location = useLocation();
   const history = useHistory();
   const currentPath = location.pathname;
-  const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
+  const googtrans = localStorage.getItem('googtrans') || 'en';
+  const [language, setLanguage] = useState(googtrans.includes('ne') ? 'ne' : 'en');
   const interLang = i18n();
   const { navBar } = interLang;
 
-  const languageTranslate = (lang: string) => {
+  const languageTranslate = (lang: string, setLanguage = false) => {
     if (lang === 'ne') {
+      setCookie('googtrans', `/en/${lang}`);
       try {
-        setCookie('googtrans', `/en/${lang}`);
         const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
         googleTeCombo.value = lang;
-        window.location.reload();
+        const element = getElementFromIframe(':1.confirm');
+        if (element && element.click) {
+          element.click();
+        } else {
+          alert('1');
+          window.location.reload();
+        }
       } catch (e) {
         // setCookie('googtrans', `/en/${lang}`);
         console.log(e);
       }
     } else {
+      // setCookie('googtrans', `/en/${lang}`);
       deleteCookie('googtrans');
-      window.location.reload();
+      const element = getElementFromIframe(':1.restore');
+      if (element && element.click) {
+        element.click();
+      } else {
+        alert('2');
+        window.location.reload();
+      }
     }
   };
 
+  function getElementFromIframe(id: string) {
+    const iframe: HTMLIFrameElement = document.getElementById(':1.container') as HTMLIFrameElement;
+    if (!iframe) {
+      return null;
+    }
+    if (iframe && iframe.contentWindow && iframe.contentWindow.document) {
+      const IframeDocument = iframe.contentWindow.document;
+      return IframeDocument.getElementById(id);
+    } else {
+      return null;
+    }
+  }
+
   const setLanguagePath = (lang: string) => {
     setLanguage(lang);
-    history.push(location.pathname + `?lang=${lang}`);
-    languageTranslate(lang);
+    // history.push(location.pathname + `?lang=${lang}`);
+    languageTranslate(lang, true);
   };
 
   useEffect(() => {
-    if (location.search.includes('ne')) {
+    const googtrans = localStorage.getItem('googtrans') || 'en';
+    if (googtrans.includes('ne')) {
       languageTranslate('ne');
-    } else deleteCookie('googtrans');
+    } else {
+      setCookie('googtrans', `/en/en`);
+      // deleteCookie('googtrans')
+    }
   }, [language, location.search]);
 
   return (
