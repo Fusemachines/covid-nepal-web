@@ -9,17 +9,22 @@ import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
 import lo from 'src/i18n/locale.json';
 
-
-
 // import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';
-import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
+// import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
 // import { setCookie } from '../../utils/storage';
 
-const Navbar: FC<{}> = () => {
+interface NavbarProps {
+  language: string,
+  setLanguage: (lang: string) => void
+}
+
+const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
   const location = useLocation();
   const currentPath = location.pathname;
-  const [language/* , setLanguage */] = useState(location.search.includes('ne') ? 'ne' : 'en');
+  const { language , setLanguage } = props;
+
+  // const [language/* , setLanguage */] = useState(location.search.includes('ne') ? 'ne' : 'en');
 
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const { t } = useTranslation();
@@ -48,11 +53,11 @@ const Navbar: FC<{}> = () => {
   return (
     <React.Fragment>
       <div className="text-center bg-bluelight covid-alert d-flex">
-        <a className="small" href="https://bit.ly/covidnepal_report_error_newinfo" target="_blank">
+        <a className="small" href="https://bit.ly/covidnepal_report_error_newinfo" target="_blank" rel="noopener noreferrer">
           {t(lo.nav_HelpUsKeepDataReliable)}
         </a>
         <div className="d-none d-sm-none d-md-block social-link">
-          <a href="https://www.facebook.com/covidnepalorg/" target="_blank">
+          <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="6.574" height="14.166" viewBox="0 0 6.574 14.166">
               <path
                 id="Path_675"
@@ -64,7 +69,7 @@ const Navbar: FC<{}> = () => {
             </svg>
           </a>
 
-          <a href="https://twitter.com/covidnepalorg" target="_blank">
+          <a href="https://twitter.com/covidnepalorg" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="14.655" height="11.726" viewBox="0 0 14.655 11.726">
               <path
                 id="Path_676"
@@ -87,14 +92,14 @@ const Navbar: FC<{}> = () => {
         </Link>
 
         {/* Temporary Langauge Select */}
-        <LanguageSelectCommingSoon isMobile={true} />
+        {/* <LanguageSelectCommingSoon isMobile={true} /> */}
         {/* language */}
         <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
               id="np-lang"
-              /* onClick={() => setLanguagePath('ne')} */
+              onClick={() => setLanguage('ne')}
               name="lang-mobile"
               value="ne"
               checked={language === 'ne'}
@@ -106,7 +111,7 @@ const Navbar: FC<{}> = () => {
             <input
               type="radio"
               id="en-lang"
-              /* onClick={() => setLanguagePath('en')} */
+              onClick={() => setLanguage('en')}
               name="lang-mobile"
               value="en"
               checked={language === 'en'}
@@ -149,10 +154,10 @@ const Navbar: FC<{}> = () => {
               className="desktop-view"
             />
             {/* Temporary Langauge Select */}
-            <LanguageSelectCommingSoon isMobile={false} />
+            {/* <LanguageSelectCommingSoon isMobile={false} /> */}
 
             <div className="d-sm-block d-md-none social-link mt-4">
-              <a href="https://www.facebook.com/covidnepalorg/" target="_blank">
+              <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="6.574" height="14.166" viewBox="0 0 6.574 14.166">
                   <path
                     id="Path_675"
@@ -164,7 +169,7 @@ const Navbar: FC<{}> = () => {
                 </svg>
               </a>
 
-              <a href="https://twitter.com/covidnepalorg" target="_blank">
+              <a href="https://twitter.com/covidnepalorg" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14.655" height="11.726" viewBox="0 0 14.655 11.726">
                   <path
                     id="Path_676"
@@ -178,31 +183,31 @@ const Navbar: FC<{}> = () => {
             </div>
 
             {/* language */}
-            {/* <div className="lang menu-flag">
+            <div className="lang menu-flag">
               <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
                   id="np-lang"
-                  onClick={() => setLanguagePath('ne')}
+                  onClick={() => setLanguage('ne')}
                   name="language"
                   value="ne"
                   checked={language === 'ne'}
                 />
-                <img src="/images/nepal.png" className="mx-1" alt="nepal" /> {t(lo.NEP)}
+                <img src="/images/nepal.png" className="mx-1" alt="nepal" /> {t(lo.nav_NEP)}
               </label>
 
               <label htmlFor="en-lang" className={language === 'en' ? 'active' : ''}>
                 <input
                   type="radio"
                   id="en-lang"
-                  onClick={() => setLanguagePath('en')}
+                  onClick={() => setLanguage('en')}
                   name="language"
                   value="en"
                   checked={language === 'en'}
                 />
-                {t(lo.NEP)} <img src="/images/english.png" className="mx-1" />
+                {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt="eng" />
               </label>
-            </div> */}
+            </div>
           </Nav>
         </Navigation.Collapse>
       </Navigation>

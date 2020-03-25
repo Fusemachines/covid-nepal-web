@@ -4,6 +4,7 @@ import en from "./en.json";
 import ne from './ne.json'
 import detector from 'i18next-browser-languagedetector';
 import backend from 'i18next-xhr-backend';
+import { getlocalStorage } from "src/utils/storage";
 
 const resources = {
   en: { translation: en },
@@ -16,7 +17,7 @@ i18n
   /*.use(backend) */
   .init({
     resources,
-    lng: "en",
+    lng: getlocalStorage('covLang') === 'ne' ? 'ne' : 'en',
     fallbackLng: "en",
     debug: true,
 
@@ -25,6 +26,8 @@ i18n
     saveMissing: true, // send not translated keys to endpoint
 
     interpolation: {
-      escapeValue: false // react already safes from xss
+      escapeValue: false, // react already safes from xss
+      /* transSupportBasicHtmlNodes: true,
+      transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'b'] */
     }
   });

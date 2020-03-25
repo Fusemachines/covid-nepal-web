@@ -1,13 +1,13 @@
 {
-  "HelpUsKeepDataReliable": "Help us keep data reliable! Report Errors, New Info and Verify Data",
-  "covid19": "COVID-19",
-  "Nepal": "नेपाल",
-  "NEP": "NEP",
-  "ENG": "ENG",
-  "Home": "घर",
-  "Symptoms": "लक्षण",
-  "JoinUs": "Join Us",
-  "EmergencyContact": "आपतकालीन सम्पर्क",
-  "GovNotice": "Govt. Notices & Resources",
-  "disclaimerNepalGovJohnsHopkins": "*Disclaimer: These numbers are obtained from <1>Hello </1> and <3>world</3> oe"
+  "nav_HelpUsKeepDataReliable": "Help us keep data reliable! Report Errors, New Info and Verify Data",
+  "nav_covid19": "COVID-19",
+  "nav_Nepal": "नेपाल",
+  "nav_NEP": "NEP",
+  "nav_ENG": "ENG",
+  "nav_Home": "घर",
+  "nav_Symptoms": "लक्षण",
+  "nav_JoinUs": "Join Us",
+  "com_EmergencyContact": "आपतकालीन सम्पर्क",
+  "nav_GovNotice": "Govt. Notices & Resources",
+  "covC_disclaimerNepalGovJohnsHopkins": "*Disclaimer: These numbers are obtained from <1>Hello </1> and <3>world</3> oe"
 }

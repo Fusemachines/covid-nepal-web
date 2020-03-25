@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { ICovidCasesCounts } from 'src/services/covidCases';
 import { setCommas } from 'src/utils/stringManipulation';
 import lo from 'src/i18n/locale.json'
+import numberTransCheck from 'src/utils/numberTranslate';
 
 interface INepalCovidCasesProps {
   covidCasesCounts: ICovidCasesCounts | null;
@@ -20,25 +21,25 @@ const NepalCovidCases: FC<INepalCovidCasesProps> = ({ covidCasesCounts }) => {
 
       <div className="">{t(lo.covC_totalTested)}</div>
       <div className="h3 m-0 font-weight-bold  d-inline-block">
-        {covidCasesCounts ? setCommas(covidCasesCounts.testedTotal) : '-'}
+        {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.testedTotal) as number) : '-'}
       </div>
       {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
       <div className="mt-3">{t(lo.covC_totalConfirmed)}</div>
       <div className="h3 m-0 font-weight-bold  d-inline-block">
-        {covidCasesCounts ? setCommas(covidCasesCounts.confirmedTotal) : '-'}
+        {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.confirmedTotal) as number) : '-'}
       </div>
       {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
       <div className="mt-3">{t(lo.covC_totalRecovered)}</div>
       <div className="h3 m-0 font-weight-bold d-inline-block ">
-        {covidCasesCounts ? setCommas(covidCasesCounts.recoveredTotal) : '-'}
+        {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.recoveredTotal) as number) : '-'}
       </div>
       {/* <TextCaption type={'warning'} value={'0.10'} /> */}
 
       <div className="mt-3">{t(lo.covC_totalDeath)}</div>
       <div className="h3 m-0 font-weight-bold d-inline-block">
-        {covidCasesCounts ? setCommas(covidCasesCounts.deathTotal) : '-'}
+        {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.deathTotal) as number) : '-'}
       </div>
       {/* <TextCaption type={'danger'} value={'0.10'} /> */}
     </Col>
