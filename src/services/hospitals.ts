@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 
 import axios from 'src/utils/axios';
-
+import { IPagination } from 'src/components/Pagination/Pagination';
 export interface IHospital {
   _id: string;
   availableTime: Array<string>;
@@ -28,10 +28,12 @@ export interface IHospital {
   district: string;
   ventilators: number;
 }
-interface IHospitalCapaciyResponse {
+interface IHospitalCapaciyResponse extends IPagination {
   docs: Array<IHospital>;
 }
 export interface IFetchHospitalCapacityAPIPayload {
+  page: number;
+  size: number;
   province?: string;
   district?: string;
   covidTest?: string;
@@ -40,6 +42,8 @@ export interface IFetchHospitalCapacityAPIPayload {
 export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAPIPayload) {
   try {
     const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload });
+    const modifiedResponse = { docs: response.data.docs, total: 50, size: 10, page: 1, pages: 3 };
+    return modifiedResponse;
     return response.data;
   } catch (error) {
     throw error;

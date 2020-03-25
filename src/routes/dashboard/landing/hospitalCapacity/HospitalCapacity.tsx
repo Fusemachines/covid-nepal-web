@@ -37,16 +37,21 @@ const initialHospitalCapacityFiltersState = {
   covidTest: { label: 'All', value: '' }
 };
 
+const initialPaginationState = {
+  page: 1,
+  size: 10
+};
+
 const HospitalCapacity: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
-  const [pagination, setPagination] = useState({} as IPagination);
+  const [pagination, setPagination] = useState(initialPaginationState as IPagination);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
 
   useEffect(() => {
     fetchHospitalCapacityData();
-  }, [filters]);
+  }, [filters, pagination.page]);
 
   useEffect(() => {
     fetchDistrictsByProvince();
@@ -57,6 +62,8 @@ const HospitalCapacity: FC<{}> = () => {
     try {
       const { province, district } = filters;
       let payload = {
+        page: pagination.page,
+        size: pagination.size,
         province: province ? province.value : '',
         district: district ? district.value : ''
       };
@@ -103,9 +110,12 @@ const HospitalCapacity: FC<{}> = () => {
     setFilters({ ...filters, covidTest: selectedField });
   };
 
+  const handlePageChange = (pageNumber: number) => {
+    setPagination(prevPaginationState => ({ ...prevPaginationState, page: pageNumber }));
+  };
+
   return (
     <Row className="mt-3">
-      <Pagination {...pagination} changePage={(page = 1) => console.log('ola')} />
       <Col sm="12">
         <div className="rounded bg-bluelight px-3 py-4">
           <div className="d-md-flex filter-wrapper">
@@ -127,6 +137,7 @@ const HospitalCapacity: FC<{}> = () => {
           </HospitalCapacityTableContext.Provider>
         </div>
       </Col>
+      <Pagination {...pagination} handlePageChange={handlePageChange} />
     </Row>
   );
 };
