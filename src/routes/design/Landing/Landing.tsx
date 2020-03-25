@@ -794,6 +794,11 @@ const Home = () => {
               <div className="h5 font-weight-bold mb-3">Latest News</div>
 
               <div className="">Latest News</div>
+
+              <div className="covid-verified">
+                <img src="/images/verified.svg" />
+                <span>Verified</span>
+              </div>
             </div>
           </Col>
         </Row>
