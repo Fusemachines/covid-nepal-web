@@ -12,14 +12,15 @@ const WhenToTest: FC<{}> = () => {
       <div className="info-title mx-5">{t(lo.contac_exposedToDevelopSymptoms)}</div>
 
       <Media className="mt-4 bg-white px-4 py-3">
-        <img alt={'High Fever'} src="/images/highfever.png" className="align-self-center mr-3" />
+        <img alt={'High Fever'} src="/images/high.svg" className="align-self-center mr-3" />
+
         <Media.Body className="align-self-center">
           <div className="text-danger font-weight-bold h6">{t(lo.contac_highFever)}</div>
         </Media.Body>
       </Media>
 
       <Media className="mt-4 bg-white px-4 py-3">
-        <img alt={'Ait Transmission'} src="/images/airtransmission.png" className="align-self-center mr-3" />
+        <img alt={'Ait Transmission'} src="/images/airtransmission.svg" className="align-self-center mr-3" />
         <Media.Body className="align-self-center">
           <div className="text-danger font-weight-bold h6">{t(lo.contac_drycough)}</div>
         </Media.Body>

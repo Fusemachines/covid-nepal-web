@@ -130,6 +130,7 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
             <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
             <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} />
+
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
 
@@ -148,6 +149,16 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
                 active={routes.NOTICES === currentPath}
               />
             </Link> */}
+
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
+              target="_blank"
+              className="btn btn-outline-white btn-sm nav-link"
+            >
+              Sign up
+            </a>
+
             <EmergencyButton
               text={t(lo.com_EmergencyContact)}
               handleClick={toggleEmergencyContact}

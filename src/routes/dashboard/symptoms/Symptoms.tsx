@@ -49,17 +49,17 @@ const Symptoms = () => {
             <div className="h5 title bg-yellow">PREVENTIONS</div>
 
             <Media className="mt-4">
-              <img alt={''} src="/images/wearmasks.png" className="align-self-center mr-3" />
+              <img alt={''} src="/images/wearmasks.svg" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Wear Masks</Media.Body>
             </Media>
 
             <Media className="mt-4">
-              <img alt={''} src="/images/washhand.png" className="align-self-center mr-3" />
+              <img alt={''} src="/images/washhand.svg" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Wash your Hands</Media.Body>
             </Media>
 
             <Media className="mt-4">
-              <img alt={''} src="/images/socialdistance.png" className="align-self-center mr-3" />
+              <img alt={''} src="/images/socialdistance.svg" className="align-self-center mr-3" />
               <Media.Body className="align-self-center">Social Distancing</Media.Body>
             </Media>
 
