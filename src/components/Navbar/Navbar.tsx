@@ -139,24 +139,27 @@ const Navbar: FC<{}> = () => {
             <NavItem title={'Home'} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
             <NavItem title={'Join Us'} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} />
+            <NavItem title={'Notices'} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
             <NavItem title={'FAQ'} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
 
           <Nav>
-            <NavItem
+            {/* <NavItem
               title={'Govt. Notices & Resources'}
               exact={false}
               to={routes.NOTICES}
               active={routes.NOTICES === currentPath}
               className="btn btn-outline-white btn-sm"
-            />
-            {/* <Link to={routes.NOTICES}>
-              <TransparentButton
-                text={'Govt. Notices & Resources'}
-                handleClick={() => {}}
-                active={routes.NOTICES === currentPath}
-              />
-            </Link> */}
+            /> */}
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
+              target="_blank"
+              className="btn btn-outline-white btn-sm nav-link"
+            >
+              Sign up
+            </a>
+
             <EmergencyButton
               text={navBar.EmergencyContact}
               handleClick={toggleEmergencyContact}

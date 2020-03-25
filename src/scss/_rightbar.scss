@@ -11,6 +11,9 @@
     transition: all 0.1s ease-in-out;
     max-width: 100%;
     overflow: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
     .overlay {
         background: rgba(0,0,0,0.75);
