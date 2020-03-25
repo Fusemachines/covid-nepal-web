@@ -87,14 +87,6 @@
   "8": "8",
   "9": "9",
 
-
-
-
-
-
-
-
-
   "nav_FAQ": "FAQ",
   "sym_Headache": "Headache",
   "symCh_commonCold": "Common Cold",
@@ -108,7 +100,7 @@
   "symCh_Mild": "Mild",
 
   "join_openSource": "Open Source Platform for COVID-19 for Nepal",
-  "join_askingAllLikeMinded": "<1>covidnepal.org</1> is an Open Source Platform started at <3>Fusemachines</3> and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to serve as a reliable source of information about Covid-19 in Nepal.<5>Let’s fight this pandemic together!",
+  "join_askingAllLikeMinded": "<1>covidnepal.org</1> is an Open Source Platform started at <3>Fusemachines</3> and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to serve as a reliable source of information about Covid-19 in Nepal.<5>Let’s fight this pandemic together!</5>",
   "join_objective": "Objective",
   "join_objectiveDetail_1": "Collect reliable data from various trusted sources, so public can stay well informed and leverage that data to better manage their fight with this pandemic.",
   "join_objectiveDetail_2": "Make relevant data easily consumable to get right information quickly, so informed decisions can be made during time of panic, should there be one.",
@@ -140,7 +132,7 @@
   "resourc_howToProtectUrself": "How to protect yourself and others against COVID-19",
   "resourc_joinFight": "Join the fight against misinformation",
 
-  "faq_q1_ques": "Is Teku hospital the only hospital for testing Covid-19 in Nepal?",
+  "faq_q1_ques": "Is Teku-based hospital, Sukraraj Tropical and Infectious Disease Hospital, the only hospital allocated for testing and treatment of COVID-19 in Nepal?",
   "faq_q1_ans_1": "No- All hospitals can manage a case of COVID-19. Since there is no treatment per se case management involves giving antivirals and antibacterial therapy to patients with severe symptoms. 80% of people get better themselves and do not require any treatment.",
   "faq_q1_ans_2": "Yes, Teku hospital is a specialized hospital that has more experience dealing with the case of viral diseases like this. They are also close to National Lab which is the only lab in Nepal (as of today) that does confirmatory testing for COVID-19. But please remember other hospitals can take a specimen and send it to NPHL. Patients do not have to go to Teku hospital for it.",
   "faq_q2_ques": "How many Testing Kit is Currently present in Hospital?",
