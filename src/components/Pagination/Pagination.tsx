@@ -10,14 +10,14 @@ export interface IPagination {
 
 interface IPaginationProps extends IPagination {
   range?: number;
-  changePage: (page: number) => void;
+  handlePageChange: (page: number) => void;
 }
 
 const Pagination: React.SFC<IPaginationProps> = ({
   page,
   pages: totalPages,
   total: totalItems,
-  changePage,
+  handlePageChange,
   range = 5,
   size
 }) => {
@@ -46,7 +46,7 @@ const Pagination: React.SFC<IPaginationProps> = ({
 
   for (let number = start; number <= end; number++) {
     items.push(
-      <PG.Item key={number} active={number === page} onClick={() => changePage(number)}>
+      <PG.Item key={number} active={number === page} onClick={() => handlePageChange(number)}>
         {number}
       </PG.Item>
     );
@@ -78,7 +78,7 @@ const Pagination: React.SFC<IPaginationProps> = ({
             <li
               id="prev-button"
               className={`${page === 1 ? 'disabled' : ''}`}
-              onClick={page === 1 ? () => {} : () => changePage(page - 1)}
+              onClick={page === 1 ? () => {} : () => handlePageChange(page - 1)}
             >
               Prev
             </li>
@@ -88,7 +88,7 @@ const Pagination: React.SFC<IPaginationProps> = ({
             <li
               id="next-button"
               className={`${page === totalPages ? 'disabled' : ''}`}
-              onClick={page === totalPages ? () => {} : () => changePage(page + 1)}
+              onClick={page === totalPages ? () => {} : () => handlePageChange(page + 1)}
             >
               Next
             </li>
