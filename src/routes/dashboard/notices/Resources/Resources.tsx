@@ -19,6 +19,12 @@ const Resources: FC<{}> = () => {
       />
 
       <ResourceItem
+        title={'WHO Guidelines - How to protect yourself against COVID-19'}
+        url={' https://drive.google.com/open?id=1PFuFqHs7-ZNk1hlrU74e27cUZnd_picy'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
         title={'Reduce Your Risk of coronavirus infection'}
         url={'https://drive.google.com/open?id=11ZIhFJ9D-Txdo43SCb2umiKQuNoX6C97'}
         imageUrl={''}
