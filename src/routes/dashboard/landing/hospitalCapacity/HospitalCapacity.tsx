@@ -138,9 +138,11 @@ const HospitalCapacity: FC<{}> = () => {
             </HospitalCapacityTableContext.Provider>
           </div>
         </Col>
-      </Row>
 
-      <Pagination {...pagination} handlePageChange={handlePageChange} />
+        <Col sm="12">
+          <Pagination {...pagination} handlePageChange={handlePageChange} />
+        </Col>
+      </Row>
     </>
   );
 };
