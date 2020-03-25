@@ -5,6 +5,20 @@ const GovernmentNotices: FC<{}> = () => {
   return (
     <ul className="notices__list">
       <GovernmentNoticeItem
+        category="Press Release"
+        date="25 March 2020"
+        title="MoHP Daily Press Brief as of 25th March"
+        url="https://youtu.be/TSWADtbqAPg"
+      />
+
+      <GovernmentNoticeItem
+        category="Press Release"
+        date="25 March 2020"
+        title="MOHP notice on Rectifying The Flight Number of Air Arabia"
+        url="https://drive.google.com/open?id=1UwpLZ-BCf3m4Vjwt9HD4kzNVhSzppMYe"
+      />
+
+      <GovernmentNoticeItem
         category="Reports"
         date="25 March 2020"
         title="Covid-outbreak updates- as of March 25"
