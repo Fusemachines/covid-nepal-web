@@ -22,7 +22,7 @@ const JoinUs = () => {
             <h1 className="text-center font-weight-bold">{t(lo.nav_FAQ)}</h1>
           </Col>
 
-          <Col sm="12" className="my-3">
+          {/* <Col sm="12" className="my-3">
             <div className="rounded bg-bluelight p-4">
               <ul className="numc">
                 <li className="mb-4">
@@ -52,7 +52,7 @@ const JoinUs = () => {
                 </li>
               </ul>
             </div>
-          </Col>
+          </Col> */}
         </Row>
       </div>
     </>
