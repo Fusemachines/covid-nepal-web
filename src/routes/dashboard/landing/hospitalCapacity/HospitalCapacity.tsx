@@ -8,6 +8,7 @@ import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/service
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 import { ValueType } from 'react-select';
+import Pagination, { IPagination } from 'src/components/Pagination/Pagination';
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
@@ -39,6 +40,7 @@ const initialHospitalCapacityFiltersState = {
 const HospitalCapacity: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
+  const [pagination, setPagination] = useState({} as IPagination);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
 
@@ -53,14 +55,15 @@ const HospitalCapacity: FC<{}> = () => {
   const fetchHospitalCapacityData = async () => {
     setIsLoaded(false);
     try {
-      const { province, district, covidTest } = filters;
+      const { province, district } = filters;
       let payload = {
         province: province ? province.value : '',
         district: district ? district.value : ''
-        // covidTest: covidTest ? covidTest.value : ''
       };
       const response = await fetchHospitalCapacityAPI(payload);
-      setHospitalCapacityList(response.docs);
+      const { docs, ...rest } = response;
+      setHospitalCapacityList(docs);
+      setPagination(rest);
     } catch (error) {
       console.log(error);
     } finally {
@@ -102,6 +105,7 @@ const HospitalCapacity: FC<{}> = () => {
 
   return (
     <Row className="mt-3">
+      <Pagination {...pagination} changePage={(page = 1) => console.log('ola')} />
       <Col sm="12">
         <div className="rounded bg-bluelight px-3 py-4">
           <div className="d-md-flex filter-wrapper">
