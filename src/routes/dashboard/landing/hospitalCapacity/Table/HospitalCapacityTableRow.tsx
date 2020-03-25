@@ -45,7 +45,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         <td onClick={showMapModal}>
           {address ? (
             <>
-              <div>{address}</div>
+              <div style={{ textTransform: 'capitalize' }}>{address}</div>
 
               <LocationIcon />
               <span className="ml-2">Map</span>
