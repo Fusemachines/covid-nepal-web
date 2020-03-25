@@ -1,10 +1,14 @@
 import React, { FC } from 'react';
 import { Row, Col, Tab, Nav } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 import WhereToTest from './WhereToTest';
 import WhenToTest from './WhenToTest';
+import lo from 'src/i18n/locale.json';
 
 const TestingInfoTabs: FC<{}> = () => {
+  const { t } = useTranslation();
+
   return (
     <Tab.Container defaultActiveKey="first">
       <Row>
@@ -13,13 +17,13 @@ const TestingInfoTabs: FC<{}> = () => {
           <Nav fill variant="tabs">
             <Nav.Item>
               <Nav.Link eventKey="first" className="p-3">
-                Where to get tested?
+                {t(lo.contac_whereToGetTested)}
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link eventKey="second" className="p-3">
-                When to get tested?
+                {t(lo.contac_whenToGetTested)}
               </Nav.Link>
             </Nav.Item>
           </Nav>

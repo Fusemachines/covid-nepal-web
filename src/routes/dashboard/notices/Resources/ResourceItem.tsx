@@ -11,7 +11,7 @@ const ResourceItem: FC<IResourceItemProps> = props => {
   const { url, title, imageUrl } = props;
   return (
     <li>
-      <a href={url} className="p-3" target="_blank">
+      <a href={url} className="p-3" target="_blank" rel="noopener noreferrer">
         <Media>
           <div className="align-self-center mr-3">
             {imageUrl ? (

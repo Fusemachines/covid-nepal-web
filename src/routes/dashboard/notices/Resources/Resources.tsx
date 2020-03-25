@@ -1,10 +1,16 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import ResourceItem from './ResourceItem';
+import lo from 'src/i18n/locale.json';
 
 const Resources: FC<{}> = () => {
+  const [t] = useTranslation();
+
   return (
     <ul className="resources__list">
       <ResourceItem
+      /* {t(lo.resourc_howToProtectUrself)} */
         title={'Fact or fiction: How much do you know about the coronavirus disease (COVID-19)?'}
         url={
           'https://www.unicef.org/coronavirus/fact-or-fiction-how-much-do-you-actually-know-about-coronavirus-covid-19'
@@ -43,7 +49,7 @@ const Resources: FC<{}> = () => {
       />
 
       <ResourceItem
-        title={'Join the fight against misinformation'}
+        title={t(lo.resourc_joinFight)}
         url={'https://www.unicef.org/nepal/join-fight-against-misinformation'}
         imageUrl={'/images/fight_misinformation.png'}
       />

@@ -12,7 +12,7 @@ const GovernmentNoticeItem: FC<IGovernmentNoticeItemProps> = props => {
 
   return (
     <li>
-      <a href={url} className="p-3" target="_blank">
+      <a href={url} className="p-3" target="_blank" rel="noopener noreferrer">
         <h5 className="notices__title">{title}</h5>
         <div className="notices__tag mr-3">
           <img src="/images/tag.svg" alt={'Tag'} />

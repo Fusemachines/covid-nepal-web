@@ -19,7 +19,7 @@ export const NotAvailable: React.FC<INotAvailableProps> = ({ id, placement = 'ri
         <Popover id={id}>
           <Popover.Content>
             Please help us source or re-verify this data by filling{' '}
-            <a className="text-black" href="https://bit.ly/collectnepalhospitaldata" target="_blank">
+            <a className="text-black" href="https://bit.ly/collectnepalhospitaldata" target="_blank" rel="noopener noreferrer">
               this form
             </a>
           </Popover.Content>
