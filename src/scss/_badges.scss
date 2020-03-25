@@ -1,4 +1,8 @@
 .badges {
+    > a {
+        font-size: 14px;
+    }
+
     &-item {
         display: inline-block;
         color: #00C571;
@@ -22,7 +26,7 @@
 }
 
 .badge-cus:not(:only-child) {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .badge-cus:only-child {

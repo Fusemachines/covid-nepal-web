@@ -18,6 +18,7 @@ interface IUpdatedTime {
 const CovidCases = () => {
   const [covidCasesCounts, setCovidCasesCounts] = useState<ICovidCasesCounts | null>(null);
   const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCovidCases();
@@ -39,7 +40,13 @@ const CovidCases = () => {
       console.log(error);
     } finally {
       getUpdatedTime();
+      setIsLoading(false);
     }
+  };
+
+  const handleRefreshClick = () => {
+    setIsLoading(true);
+    fetchCovidCases();
   };
 
   const getUpdatedTime = () => {
@@ -95,7 +102,7 @@ const CovidCases = () => {
                 {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
                   ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ago`
                   : ''}
-                <i className="ml-2 pointer" onClick={() => fetchCovidCases()}>
+                <i className={`ml-2 pointer ${isLoading ? 'rotating' : ''}`} onClick={() => handleRefreshClick()}>
                   <RefreshIcon />
                 </i>
               </small>

@@ -13,6 +13,7 @@ body {
     color: red;
     outline: 0px dotted green;
 }
+
 .h5 {
     font-weight: 600;
     margin-bottom: 0;
@@ -24,6 +25,10 @@ body {
 
 .bg-yellow {
     background: #FFC400;
+}
+
+.bg-bluelight {
+    background-color: #004E90;
 }
 
 .rounded {
@@ -113,7 +118,9 @@ a {
 
 @import "rightbar";
 
-@import "notices-resources.scss";
+@import "notices-resources";
+
+@import "notification";
 
 @import "other";
 

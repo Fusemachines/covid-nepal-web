@@ -5,9 +5,9 @@ import AllocatedHospitalsTable from './Table';
 const WhereToTest: FC<{}> = () => {
   return (
     <div className="px-3 py-4">
-      <div className="h5 m-0">
+      <div className="h5 m-0 d-flex">
         <HospitalCross />
-        Hospitals where you may get tested for Covid-19
+        <div>Hospitals where you may get tested for Covid-19</div>
       </div>
       <div className="mt-4">
         <AllocatedHospitalsTable />

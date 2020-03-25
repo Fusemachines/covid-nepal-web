@@ -4,10 +4,9 @@
 }
 
 .navbar-dark  {
-    top: 27px;
+    top: 26px;
 
     .navbar-nav {
-        margin-left: 15%;
 
         .nav-link {
             color: #ffffff;
@@ -35,6 +34,10 @@
                 width: 100%;
             }
         }
+
+        // .social-link a svg {
+        //     height: 15px;
+        // }
     }
 }
 

@@ -17,17 +17,19 @@ const DetailsBoxContent: FC<{}> = () => {
         <li>
           <span className="text-secondary">Address:</span>{' '}
           <span className="ml-2 text-success">
-            {hospital.location}, {hospital.district}
+            {hospital.location ? hospital.location : ''}, {hospital.district}
           </span>
         </li>
         <li>
           <span className="text-secondary">Open hours:</span>
-          {hospital.availableTime && (
+          {hospital.availableTime ? (
             <span className="mx-2">
               <AvailableTimeComponent availableTime={hospital.availableTime} />
             </span>
+          ) : (
+            <NotAvailable id={'availableTime-' + hospital._id} />
           )}
-          <span className="ml-3">{hospital.openDays}</span>
+          <span className="ml-3">{hospital.openDays ? hospital.openDays : ''}</span>
         </li>
         <li>
           <span className="text-secondary">Beds for COVID-19 patients : </span>
@@ -36,17 +38,21 @@ const DetailsBoxContent: FC<{}> = () => {
               ? {hospital.availableBeds} / {hospital.totalBeds}
             </span>
           ) : (
-            <NotAvailable id={'hospital-' + hospital._id} />
+            <NotAvailable id={'availableBeds-' + hospital._id} />
           )}
         </li>
         <li>
           <span className="text-secondary">Contact :</span>
-          {hospital.contact && hospital.contact.map(contact => <GreenContactBadge contactNumber={contact} />)}
+          {hospital.contact ? (
+            hospital.contact.map(contact => <GreenContactBadge contactNumber={contact} />)
+          ) : (
+            <NotAvailable id={'contact-' + hospital._id} />
+          )}
         </li>
         <li>
           <span className="text-secondary">Hospital Type :</span>
           <span className="ml-2" style={{ textTransform: 'capitalize' }}>
-            {hospital.hospitalType}
+            {hospital.hospitalType ? hospital.hospitalType : <NotAvailable id={'hospitalType-' + hospital._id} />}
           </span>
         </li>
       </ul>
