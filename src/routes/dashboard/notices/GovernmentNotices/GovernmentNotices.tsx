@@ -10,6 +10,20 @@ const GovernmentNotices: FC<{}> = () => {
   return (
     <ul className="notices__list">
       <GovernmentNoticeItem
+        category="Reports"
+        date="25 March 2020"
+        title="Covid-outbreak updates- as of March 25"
+        url="https://drive.google.com/open?id=1Ahreq6VwU6qkn2aNVQ-E0UTzQxLZE7-2"
+      />
+
+      <GovernmentNoticeItem
+        category={t(lo.notic_pressRelease)}
+        date="24 March 2020"
+        title="Press Release Video as of March 24 by Ministry of Health"
+        url="https://drive.google.com/open?id=1geRCtoaOHg0nCTk-4ZFE4vthxtvcy4ji"
+      />
+
+      <GovernmentNoticeItem
         category={t(lo.notic_pressRelease)}
         date="20 March 2020"
         title={t(lo.notic_pressRelease21March)}

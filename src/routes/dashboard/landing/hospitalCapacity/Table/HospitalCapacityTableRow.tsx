@@ -23,14 +23,17 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
       totalBeds,
       numIsolationBeds,
       icu,
-      nameSlug
+      nameSlug,
+      ventilators
     },
     toggleMapsModal
   } = props;
 
   const showMapModal = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    toggleMapsModal({ title: name, mapURL });
+    if (address) {
+      toggleMapsModal({ title: name, mapURL });
+    }
   };
 
   return (
@@ -40,26 +43,24 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           <div>{name}</div>
         </td>
         <td onClick={showMapModal}>
-          <div>{address}</div>
-          <LocationIcon />
-          <span className="ml-2">Map</span>
+          {address ? (
+            <>
+              <div>{address}</div>
+
+              <LocationIcon />
+              <span className="ml-2">Map</span>
+            </>
+          ) : (
+            <NotAvailable id={'address-' + _id} />
+          )}
         </td>
         <td onClick={e => e.stopPropagation()}>
           {contact ? (
-            contact.map((number, index) =>
-              index === contact.length - 1 ? (
-                <a key={index} className="text-white" href={`tel:${number}`}>
-                  {number}
-                </a>
-              ) : (
-                <>
-                  <a key={index} className="text-white" href={`tel:${number}`}>
-                    {number}
-                  </a>
-                  ,{' '}
-                </>
-              )
-            )
+            contact.map((number, index) => (
+              <a key={index} className="text-white" href={`tel:${number}`}>
+                {number} {index === contact.length - 1 ? ' ' : ', '}
+              </a>
+            ))
           ) : (
             <NotAvailable id={'contact-' + _id} />
           )}
@@ -70,7 +71,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         <td onClick={e => e.stopPropagation()}>{icu ? icu : <NotAvailable id={'icu-' + _id} />}</td>
 
         <td onClick={e => e.stopPropagation()}>
-          <NotAvailable id={'ventilators-' + _id} />
+          {ventilators ? ventilators : <NotAvailable id={'ventilators-' + _id} />}
         </td>
 
         <td onClick={e => e.stopPropagation()}>
