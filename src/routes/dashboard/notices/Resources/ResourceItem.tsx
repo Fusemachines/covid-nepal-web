@@ -13,8 +13,12 @@ const ResourceItem: FC<IResourceItemProps> = props => {
     <li>
       <a href={url} className="p-3" target="_blank">
         <Media>
-          <img width={80} height={80} className="mr-3" src={imageUrl} alt="Generic placeholder" />
-          <Media.Body>
+          <div className="align-self-center mr-3">
+            {imageUrl ? (
+              <img width={80} height={80} className="img-fluid" src={imageUrl} alt="Generic placeholder" />
+            ) : null}
+          </div>
+          <Media.Body className="align-self-center">
             <h5 className="resources__title">{title}</h5>
             <span className="resources__link">{url}</span>
           </Media.Body>
