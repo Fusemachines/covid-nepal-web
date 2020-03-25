@@ -200,6 +200,7 @@
 
 .covid-hospital-count {
     &.tooltip {
+        max-width: 168px;
         .tooltip-inner {
             background: #ffffff;
             color: #0A375D;
