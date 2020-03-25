@@ -139,7 +139,7 @@ const Navbar: FC<{}> = () => {
             <NavItem title={'Home'} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
             <NavItem title={'Join Us'} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} />
-            <NavItem title={'NOTICES'} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
+            <NavItem title={'Notices'} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
             <NavItem title={'FAQ'} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
 
