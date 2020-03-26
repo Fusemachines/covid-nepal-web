@@ -2,11 +2,15 @@
   visibility: hidden !important ;
 }
 
-body {
+html,body {
     background: #0A375D;
     color: #ffffff;
     font-size: 14px;
     padding-top: 80px;
+    height: 100%;
+}
+#root {
+    min-height: calc(100% - 80px);
 }
 
 :-moz-focusring {
