@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import { Col } from 'react-bootstrap';
 // import TextCaption from 'src/components/TextCaption/TextCaption';
+import { useTranslation } from 'react-i18next';
 import { ICovidCasesCounts } from 'src/services/covidCases';
 import { setCommas } from 'src/utils/stringManipulation';
+import lo from 'src/i18n/locale.json';
 import { useCookies } from 'react-cookie';
 import TranslateNumber from 'src/components/TranslateNumber';
 
@@ -14,14 +16,28 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
   const [cookies] = useCookies(['googtrans']);
   const googtrans = cookies['googtrans'] || localStorage.getItem('googtrans') || 'en';
   const language = googtrans.includes('ne') ? 'ne' : 'en';
+  const { t } = useTranslation();
+
   return (
     <>
       <Col xs="6">
-        <div className="font-weight-bold h5 mb-3">Global Update</div>
+        <div className="font-weight-bold h5">{`${t(lo.covC_Global)} ${t(lo.covC_Update)}`}</div>
+        <div className="invisible small-xs mb-3">({t(lo.covC_whoReportedNo)})</div>
 
-        <div className="mt-3" style={{ paddingTop: '69px' }}>
-          Total Confirmed
+        {/* donot delete this */}
+        <div className="invisible">
+          <div className="mt-3">{t(lo.covC_totalTested)}</div>
+          <div className="h3 m-0 font-weight-bold  d-inline-block">
+            {' '}
+            <TranslateNumber
+              originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
+              language={language}
+            />
+          </div>
         </div>
+        {/* to make height equal */}
+
+        <div className="mt-3">{t(lo.covC_totalConfirmed)}</div>
         <div className="h3 m-0 font-weight-bold  d-inline-block">
           {' '}
           <TranslateNumber
@@ -32,7 +48,7 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
         </div>
         {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
-        <div className="mt-3">Total Recovered</div>
+        <div className="mt-3">{t(lo.covC_totalRecovered)}</div>
         <div className="h3 m-0 font-weight-bold d-inline-block ">
           {' '}
           <TranslateNumber
@@ -43,7 +59,7 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
         </div>
         {/* <TextCaption type={'warning'} value={'0.10'} /> */}
 
-        <div className="mt-3">Total Deaths</div>
+        <div className="mt-3">{t(lo.covC_totalDeath)}</div>
         <div className="h3 m-0 font-weight-bold d-inline-block">
           {' '}
           <TranslateNumber

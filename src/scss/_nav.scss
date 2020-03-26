@@ -4,10 +4,9 @@
 }
 
 .navbar-dark  {
-    top: 27px;
+    top: 26px;
 
     .navbar-nav {
-        margin-left: 15%;
 
         .nav-link {
             color: #ffffff;
@@ -30,11 +29,15 @@
             }
 
             &:hover:after,
-            &.active:after {
+            &.activeT:after {
                 content: "";
                 width: 100%;
             }
         }
+
+        // .social-link a svg {
+        //     height: 15px;
+        // }
     }
 }
 
@@ -60,6 +63,19 @@
                 color: #004E90;
                 background-color: #FFC400;
             }
+        }
+    }   
+}
+
+.resources-page .nav {
+    &-item {
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+        }
+        a.active {
+            color: #2074B9 !important;
         }
     }
 }

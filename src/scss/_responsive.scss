@@ -1,6 +1,4 @@
-
-
-@media(max-width: 800px) {
+@media(max-width: 991px) {
     .mobile-flag {
         display: inline;
     }
@@ -35,7 +33,7 @@
         position: relative;
 
         .btn {
-            max-width: 250px;
+            max-width: 280px;
             margin: 35px 0 0;
         }
     }
@@ -90,6 +88,18 @@
     .emg-call {
         .icon {
             display: none;
+        }
+    }
+
+    .filter-wrapper .filter {
+        vertical-align: top;
+        > span {
+            display: block;
+            margin: 0 0 5px 0;
+        }
+
+        &:first-child {
+            margin-right: 15px;
         }
     }
 }

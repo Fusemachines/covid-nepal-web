@@ -1,4 +1,8 @@
 .badges {
+    > a {
+        font-size: 14px;
+    }
+
     &-item {
         display: inline-block;
         color: #00C571;
@@ -21,8 +25,23 @@
     }
 }
 
+.covid-verified {
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 10px;
+    background: rgba(66, 170, 91, 0.4);
+    color: #ffffff;
+    vertical-align: middle;
+    line-height: 1;
+
+    span {
+        padding: 0px 8px 0px 1px;
+    }
+}
+
 .badge-cus:not(:only-child) {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .badge-cus:only-child {

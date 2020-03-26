@@ -1,8 +1,10 @@
 import React, { FC, useContext } from 'react';
+import { useTranslation,  } from 'react-i18next';
 
 import CustomSelectInput from 'src/components/CustomSelectInput';
-import { ProvinceOptions, CovidTestOptions } from 'src/constants/options';
+import { ProvinceOptions/* , CovidTestOptions */ } from 'src/constants/options';
 import { HospitalCapacityFiltersContext } from '../HospitalCapacity';
+import lo from 'src/i18n/locale.json'
 
 const HospitalCapacityFilter: FC<{}> = () => {
   const {
@@ -10,13 +12,14 @@ const HospitalCapacityFilter: FC<{}> = () => {
     filters,
     handleProvinceFilterChange,
     handleDistrictFilterChange,
-    handleCovidTestFilterChange
+    /* handleCovidTestFilterChange */
   } = useContext(HospitalCapacityFiltersContext);
+  const [t] = useTranslation();
 
   return (
     <div className="ml-auto">
       <div className="filter d-inline-block">
-        <span>Province</span>
+        <span>{t(lo.fil_Province)}</span>
 
         <CustomSelectInput
           name={'province-select'}
@@ -25,10 +28,11 @@ const HospitalCapacityFilter: FC<{}> = () => {
           handleChange={handleProvinceFilterChange}
           className={'filter-select'}
           selectedValue={filters.province}
+          isSearchable={false}
         />
       </div>
       <div className="filter d-inline-block">
-        <span>District</span>
+        <span>{t(lo.fil_District)}</span>
         <CustomSelectInput
           name={'district-select'}
           options={districtDropdownOptions}

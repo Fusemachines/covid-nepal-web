@@ -26,6 +26,7 @@ export interface IHospital {
     name: string;
   };
   district: string;
+  ventilators: number;
 }
 interface IHospitalCapaciyResponse {
   docs: Array<IHospital>;

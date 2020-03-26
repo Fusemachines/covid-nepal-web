@@ -1,5 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import { ValueType } from 'react-select';
 
 import HospitalCapacityTable from './Table/HospitalCapacityTable';
 import HospitalCapacityFilter from './Table/HospitalCapacityFilter';
@@ -7,7 +9,7 @@ import { fetchHospitalCapacityAPI, IHospital } from 'src/services/hospitals';
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
-import { ValueType } from 'react-select';
+import lo from 'src/i18n/locale.json'
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
@@ -41,6 +43,7 @@ const HospitalCapacity: FC<{}> = () => {
   const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
+  const [t] = useTranslation();
 
   useEffect(() => {
     fetchHospitalCapacityData();
@@ -53,7 +56,7 @@ const HospitalCapacity: FC<{}> = () => {
   const fetchHospitalCapacityData = async () => {
     setIsLoaded(false);
     try {
-      const { province, district, covidTest } = filters;
+      const { province, district /* , covidTest */ } = filters;
       let payload = {
         province: province ? province.value : '',
         district: district ? district.value : ''
@@ -104,8 +107,8 @@ const HospitalCapacity: FC<{}> = () => {
     <Row className="mt-3">
       <Col sm="12">
         <div className="rounded bg-bluelight px-3 py-4">
-          <div className="d-md-flex filter-wrapper mb-4">
-            <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
+          <div className="d-md-flex filter-wrapper">
+            <div className="h5 font-weight-bold mb-3 mr-auto">{t(lo.contac_hospitalCapacityData)}</div>
             <HospitalCapacityFiltersContext.Provider
               value={{
                 filters,

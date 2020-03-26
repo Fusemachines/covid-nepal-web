@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/fav-icon-64.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Opensource platform to serve as reliable information portal about Covid-19 in Nepal" />
@@ -47,7 +47,6 @@
     <meta name="twitter:image" content="https://covidnepal.org/images/og-img.jpg">
     <meta name="twitter:image:alt" content="COVID NEPAL">
 
-
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -66,9 +65,27 @@
       }
     </script>
 
+<<<<<<< HEAD
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+=======
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "206bc4e5-185f-4aba-886c-b95af8264bb7",
+          notifyButton: {
+            enable: true,
+          },
+        });
+      });
+      // OneSignal.showHttpPermissionRequest();
+    </script>
 
-    <div id="google_translate_element"></div>
+    <!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+>>>>>>> 799b214f6594c76d62a7e5f00b7c74d0f8a20d09
+
+    <!-- <div id="google_translate_element"></div> -->
 
     <div id="root"></div>
 

@@ -21,6 +21,7 @@
     border-radius: 15px;
     overflow: hidden;
     padding: 0;
+    height: 33px;
 
     input {
       visibility: hidden;
@@ -143,3 +144,107 @@
 #google_translate_element {
     display: none;
 }
+
+.social-link {
+    a {
+        cursor: pointer;
+        margin: 0 15px 0 0;
+
+        &:hover {
+            svg path {
+                fill: #0A375D;
+            }
+        }
+    }
+    
+}
+
+.count-box {
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px 12px;
+    font-size: 12px;
+    overflow: hidden;
+
+    > span {
+        padding: 4px 12px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.green {
+        background: rgba(0, 197, 13, 0.2);
+
+        .count {
+            background: #00C571;
+        }
+    }
+
+    &.blue {
+        background: rgba(32, 116, 185, 0.2);
+
+        .count {
+            background: #2074B9;
+        }
+    }
+
+    &.yellow {
+        background: rgba(255, 208, 58, 0.2);
+
+        .count {
+            background: #FFD03A;
+            color: #004E90;
+        }
+    }
+}
+
+.covid-hospital-count {
+    &.tooltip {
+        max-width: 168px;
+        .tooltip-inner {
+            background: #ffffff;
+            color: #0A375D;
+            font-size: 9px;
+        }
+    
+        .arrow:before {
+            border-top-color: #ffffff;
+        }
+    }
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .rotating svg {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+  }

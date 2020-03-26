@@ -15,6 +15,10 @@ export function deleteCookie(key: string) {
   } catch (e) {}
 }
 
-function setlocalStorage(key: string, value: string) {
+export function setlocalStorage(key: string, value: string) {
   localStorage.setItem(key, value);
+}
+
+export function getlocalStorage(key: string) {
+  return localStorage.getItem(key);
 }

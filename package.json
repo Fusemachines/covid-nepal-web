@@ -5,7 +5,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
-    "google-translate": "^3.0.0",
+    "i18next": "^19.3.3",
+    "i18next-browser-languagedetector": "^4.0.2",
+    "i18next-xhr-backend": "^3.2.2",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
@@ -13,6 +15,7 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.13.0",
     "react-ga": "^2.7.0",
+    "react-i18next": "^11.3.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-select": "^3.0.8",
@@ -38,7 +41,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp -rf ./OneSDK/* ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{tsx,ts,js}\"",
@@ -46,9 +49,7 @@
     "deploy": ""
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
