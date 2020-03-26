@@ -13,7 +13,7 @@ import lo from 'src/i18n/locale.json';
 // import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';
 // import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
-import { setCookie } from '../../utils/storage';
+import { setCookie, getlocalStorage } from '../../utils/storage';
 import TranslateText from '../TranslateText';
 
 interface INavbarProps {
@@ -28,7 +28,7 @@ const Navbar: FC<INavbarProps> = props => {
   const location = useLocation();
   // const history = useHistory();
   const currentPath = location.pathname;
-  const googtrans = cookies['googtrans'] || localStorage.getItem('googtrans') || 'en';
+  const googtrans = cookies['googtrans'] || getlocalStorage('googtrans') || 'en';
   // const [language, setLanguage] = useState(googtrans.includes('ne') ? 'ne' : 'en');
   const language = googtrans.includes('ne') ? 'ne' : 'en';
   // const interLang = i18n();
@@ -46,13 +46,14 @@ const Navbar: FC<INavbarProps> = props => {
       try {
         const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
         googleTeCombo.value = lang;
-        const element = getElementFromIframe(':1.confirm');
+        /* const element = getElementFromIframe(':1.confirm');
         if (element && element.click) {
           element.click();
         } else {
           // alert('1');
           window.location.reload();
-        }
+        } */
+        window.location.reload();
       } catch (e) {
         // setCookie('googtrans', `/en/${lang}`);
         console.log(e);
@@ -61,13 +62,14 @@ const Navbar: FC<INavbarProps> = props => {
       // setCookie('googtrans', `/en/${lang}`);
       setCookie('googtrans', ``, setCookieFunction);
       // deleteCookie('googtrans');
-      const element = getElementFromIframe(':1.restore');
+      /* const element = getElementFromIframe(':1.restore');
       if (element && element.click) {
         element.click();
       } else {
         // alert('2');
         window.location.reload();
-      }
+      } */
+      window.location.reload();
     }
   };
 
@@ -235,7 +237,7 @@ const Navbar: FC<INavbarProps> = props => {
               />
             </Link> */}
 
-            
+
             <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="btn btn-outline-white btn-sm"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavItem>
             {/* <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
