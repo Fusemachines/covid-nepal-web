@@ -63,7 +63,7 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
         <div className="h3 m-0 font-weight-bold d-inline-block">
           {' '}
           <TranslateNumber
-            originalString={covidCasesCounts ? setCommas(covidCasesCounts.deathTotal) : '-'}
+            originalString={covidCasesCounts ? setCommas(covidCasesCounts.deathGlobal) : '-'}
             language={language}
           />
           {/* {covidCasesCounts ? setCommas(covidCasesCounts.deathGlobal) : '-'} */}
