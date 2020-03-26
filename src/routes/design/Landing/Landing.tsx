@@ -837,7 +837,7 @@ const Home = () => {
                     </div>
                   </OverlayTrigger>
 
-                  <OverlayTrigger
+                  {/* <OverlayTrigger
                     placement={'top'}
                     overlay={
                       <Tooltip id={`tooltip-review`} className="covid-hospital-count">
@@ -848,7 +848,7 @@ const Home = () => {
                     <div className="count-box blue">
                       <span>In Review </span> <span className="count">60</span>
                     </div>
-                  </OverlayTrigger>
+                  </OverlayTrigger> */}
                 </div>
 
                 <div className="ml-auto">
@@ -896,7 +896,17 @@ const Home = () => {
                     <td>
                       <div>
                         Bir Hospital
-                        <img src="/images/verified.svg" className="ml-2" />
+                        
+                        <OverlayTrigger
+                          placement={'top'}
+                          overlay={
+                            <Tooltip id={`tooltip-total`} className="covid-hospital-count">
+                              Verified by covidnepal.org
+                            </Tooltip>
+                          }
+                        >
+                          <img src="/images/verified.svg" className="ml-2" />
+                        </OverlayTrigger>
                       </div>
                     </td>
                     <td>
@@ -951,6 +961,7 @@ const Home = () => {
           </div>
         </Modal.Body>
       </Modal>
+
     </>
   );
 };

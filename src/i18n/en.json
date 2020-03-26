@@ -7,7 +7,7 @@
   "nav_Home": "Home",
   "nav_Symptoms": "Symptoms",
   "nav_JoinUs": "Join Us",
-  "nav_GovNotice": "Govt. Notices & Resources",
+  "nav_GovNotice": "Notices",
   "nav_Cases": "Cases",
 
   "com_EmergencyContact": "Emergency Contact",
@@ -70,7 +70,7 @@
   "sym_DryCough": "Dry Cough",
   "sym_RunnyNose": "Runny Nose",
   "sym_SoreThroad": "Sore Throat",
-  "sym_Diarrohea": "Diarrohea",
+  "sym_Diarrohea": "Diarrhoea",
   "sym_Preventions": "PREVENTIONS",
   "sym_WearMasks": "Wear Masks",
   "sym_WashYourHands": "Wash your Hands",

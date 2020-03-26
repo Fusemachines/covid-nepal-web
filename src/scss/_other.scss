@@ -45,6 +45,33 @@
     }
 }
 
+.lang-selector {
+    margin: 3px 0;
+    
+    .dropdown-toggle {
+        background: #ffffff;
+        color: #0A375D;
+        padding: 4px 8px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        min-width: 100px;
+        padding: 0;
+        overflow: hidden;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                background: #76B1E3;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
 .mobile-flag {
     display: none;
 }
@@ -211,6 +238,12 @@
             border-top-color: #ffffff;
         }
     }
+}
+
+.supported-by {
+    bottom: 0;
+    width: 100%;
+    font-weight: 700;
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
