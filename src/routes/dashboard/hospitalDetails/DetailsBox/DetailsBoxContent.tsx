@@ -1,10 +1,14 @@
 import React, { FC, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import NotAvailable from 'src/components/NotAvailable';
 import { HospitalDetailsContext } from '../HospitalDetails';
+import lo from 'src/i18n/locale.json'
 
 const DetailsBoxContent: FC<{}> = () => {
   const { hospital } = useContext(HospitalDetailsContext);
+  const [t] = useTranslation();
 
   return (
     <>
@@ -15,13 +19,13 @@ const DetailsBoxContent: FC<{}> = () => {
 
       <ul className="hospitalinfo-list">
         <li>
-          <span className="text-secondary">Address:</span>{' '}
+          <span className="text-secondary">{t(lo.hosp_Address)}:</span>{' '}
           <span className="ml-2 text-success">
             {hospital.location ? hospital.location : ''}, {hospital.district}
           </span>
         </li>
         <li>
-          <span className="text-secondary">Open hours:</span>
+          <span className="text-secondary">{t(lo.contac_openHours)}</span>
           {hospital.availableTime ? (
             <span className="mx-2">
               <AvailableTimeComponent availableTime={hospital.availableTime} />
@@ -42,7 +46,7 @@ const DetailsBoxContent: FC<{}> = () => {
           )}
         </li>
         <li>
-          <span className="text-secondary">Contact :</span>
+          <span className="text-secondary">{t(lo.hosp_Contact)} :</span>
           {hospital.contact ? (
             hospital.contact.map(contact => <GreenContactBadge contactNumber={contact} />)
           ) : (
