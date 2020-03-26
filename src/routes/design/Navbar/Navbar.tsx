@@ -19,7 +19,7 @@ const Menu = () => (
               </g>
             </svg>
 
-            <span className="new-notification" />
+            <span className="new-notification rounded-circle" />
           </Dropdown.Toggle>
 
           <Dropdown.Menu as={'div'} alignRight>
