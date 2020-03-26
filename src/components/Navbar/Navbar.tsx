@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Navbar as Navigation, Nav, Alert } from 'react-bootstrap';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation /*useHistory*/ } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 import * as routes from 'src/constants/routes';
 // import TransparentButton from 'src/components/Buttons/TransparentButton';
@@ -16,19 +17,21 @@ interface INavbarProps {
 
 const Navbar: FC<INavbarProps> = props => {
   const [show, setShow] = useState(true);
+  const [cookies, setCookieFunction] = useCookies(['googtrans']);
 
   const { toggleSidebar } = props;
   const location = useLocation();
-  const history = useHistory();
+  // const history = useHistory();
   const currentPath = location.pathname;
-  const googtrans = localStorage.getItem('googtrans') || 'en';
-  const [language, setLanguage] = useState(googtrans.includes('ne') ? 'ne' : 'en');
+  const googtrans = cookies['googtrans'] || localStorage.getItem('googtrans') || 'en';
+  // const [language, setLanguage] = useState(googtrans.includes('ne') ? 'ne' : 'en');
+  const language = googtrans.includes('ne') ? 'ne' : 'en';
   const interLang = i18n();
   const { navBar } = interLang;
 
   const languageTranslate = (lang: string, setLanguage = false) => {
     if (lang === 'ne') {
-      setCookie('googtrans', `/en/${lang}`);
+      setCookie('googtrans', `/en/${lang}`, setCookieFunction);
       try {
         const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
         googleTeCombo.value = lang;
@@ -45,7 +48,8 @@ const Navbar: FC<INavbarProps> = props => {
       }
     } else {
       // setCookie('googtrans', `/en/${lang}`);
-      deleteCookie('googtrans');
+      setCookie('googtrans', ``, setCookieFunction);
+      // deleteCookie('googtrans');
       const element = getElementFromIframe(':1.restore');
       if (element && element.click) {
         element.click();
@@ -73,7 +77,7 @@ const Navbar: FC<INavbarProps> = props => {
     if (language === lang) {
       return;
     }
-    setLanguage(lang);
+    // setLanguage(lang);
     // history.push(location.pathname + `?lang=${lang}`);
     languageTranslate(lang, true);
   };
@@ -83,7 +87,7 @@ const Navbar: FC<INavbarProps> = props => {
     if (googtrans.includes('ne')) {
       languageTranslate('ne');
     } else {
-      setCookie('googtrans', `/en/en`);
+      setCookie('googtrans', `/en/en`, setCookieFunction);
       // deleteCookie('googtrans')
     }
   }, [language, location.search]);

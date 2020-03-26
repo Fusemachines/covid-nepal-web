@@ -1,7 +1,8 @@
-export function setCookie(key: string, value: string) {
+export function setCookie(key: string, value: string, setCookieFunction: Function) {
   let d = new Date();
   const time: any = 15 * 60 * 1000;
-  window.document.cookie = key + '=' + value + '; expires =' + d.setTime(d.getTime + time);
+  setCookieFunction(key, value + '; expires =' + d.setTime(d.getTime + time));
+  // window.document.cookie = key + '=' + value + '; expires =' + d.setTime(d.getTime + time);
   setlocalStorage(key, value);
 }
 
