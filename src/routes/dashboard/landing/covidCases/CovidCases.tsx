@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
+import { useTranslation, Trans } from 'react-i18next'
 
 import NepalCovidCases from './NepalCovidCases';
 import GlobalCovidCases from './GlobalCovidCases';
@@ -7,6 +8,8 @@ import { fetchCovidCasesCountsAPI, ICovidCasesCounts } from 'src/services/covidC
 import RefreshIcon from 'src/components/Icons/RefreshIcon';
 import { getFormattedTime } from 'src/utils/date';
 import { pluralize } from 'src/utils/stringManipulation';
+import lo from 'src/i18n/locale.json';
+import NoTranslate from 'src/components/NoTranslate';
 
 interface IUpdatedTime {
   days: number;
@@ -18,6 +21,8 @@ interface IUpdatedTime {
 const CovidCases = () => {
   const [covidCasesCounts, setCovidCasesCounts] = useState<ICovidCasesCounts | null>(null);
   const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
+  const { t } = useTranslation();
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -34,8 +39,10 @@ const CovidCases = () => {
 
   const fetchCovidCases = async () => {
     try {
+      setIsLoading(true);
       const response = await fetchCovidCasesCountsAPI();
       setCovidCasesCounts(response);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     } finally {
@@ -97,10 +104,12 @@ const CovidCases = () => {
         <div className="rounded bg-bluelight p-4 h-100">
           <div className="mb-3 border-bottom pb-2">
             <div className="d-inline-block">
-              <div className="h5 mb-0 font-weight-bold">Covid-19 Cases</div>
+              <div className="h5 mb-0 font-weight-bold">
+                <NoTranslate noTranslate={`${t(lo.nav_covid19)} ${t(lo.nav_Cases)}`}/>
+              </div>
               <small>
                 {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
-                  ? `Updated ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ago`
+                  ? `${t(lo.covC_Updated)} ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ${t(lo.covC_ago)}`
                   : ''}
                 <i className={`ml-2 pointer ${isLoading ? 'rotating' : ''}`} onClick={() => handleRefreshClick()}>
                   <RefreshIcon />
@@ -108,24 +117,22 @@ const CovidCases = () => {
               </small>
             </div>
           </div>
+
           <div className="clearfix"></div>
 
-          <Row className="mb-3">
-            <NepalCovidCases covidCasesCounts={covidCasesCounts} />
-            <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
-          </Row>
+        <Row className="mb-3">
+          <NepalCovidCases covidCasesCounts={covidCasesCounts} />
+          <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
+        </Row>
 
           <small>
-            *Disclaimer: These numbers are obtained from{' '}
-            <a className={'text-white'} target="_blank" href="https://heoc.mohp.gov.np/">
-              Nepal Government
-            </a>{' '}
-            and{' '}
-            <a className={'text-white'} target="_blank" href="https://coronavirus.jhu.edu/map.html">
-              {' '}
-              Johns Hopkins University
-            </a>{' '}
-            and being updated as the numbers from these sources get updated.
+            <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
+              *Disclaimer: These numbers are obtained from <a
+                className={'text-white'} target="_blank" rel="noopener noreferrer" href="https://heoc.mohp.gov.np/">
+                Nepal Government </a> and <a
+                className={'text-white'} target="_blank" rel="noopener noreferrer" href="https://coronavirus.jhu.edu/map.html">
+                Johns Hopkins University</a> and being updated as the numbers from these sources get updated.
+            </Trans>
           </small>
         </div>
       </Col>

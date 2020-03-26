@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import i18n from '../../../i18n';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 import CovidCases from 'src/routes/dashboard/landing/covidCases';

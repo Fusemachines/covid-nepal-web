@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
+import { useTranslation, Trans } from 'react-i18next';
+
 import JoinUsIcon from 'src/components/Icons/JoinUsIcon';
-import { JOIN_US } from 'src/constants/routes';
+import lo from 'src/i18n/locale.json'
+import { NoTransWrapper } from 'src/components/NoTranslate';
+/* import { JOIN_US } from 'src/constants/routes'; */
 
 const JoinUs = () => {
+  const [t] = useTranslation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -13,66 +19,51 @@ const JoinUs = () => {
       <div className="container-fluid mt-3">
         <Row className="mt-5 justify-content-center">
           <Col lg="5" md="8" className="text-center">
-            <div className="h1 text-primary font-weight-bold">Open Source Platform for COVID-19 for Nepal</div>
-
+            <div className="h1 text-primary font-weight-bold">{t(lo.join_openSource)}</div>
             <div className="my-2 text-white my-4 ">
-              <Link className={'text-white'} to="/">
-                covidnepal.org
-              </Link>{' '}
-              is an Open Source Platform started at{' '}
-              <a className={'text-white'} target="_blank" href="https://fusemachines.com">
-                Fusemachines
-              </a>{' '}
-              and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to
-              serve as a reliable source of information about Covid-19 in Nepal.
-              <br></br>
-              Let’s fight this pandemic together!
+              <Link className='text-white' to="/">covidnepal.org </Link>
+              <NoTransWrapper>
+                <Trans i18nKey="join_askingAllLikeMinded">
+                  is an Open Source Platform started at <a className={'text-white'} rel="noopener noreferrer" target="_blank" href="https://fusemachines.com">
+                    Fusemachines
+                  </a> and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to
+                  serve as a reliable source of information about Covid-19 in Nepal.
+                  <br/>
+                  Let’s fight this pandemic together!
+                </Trans>
+              </NoTransWrapper>
             </div>
-
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform"
               target="_blank"
               className="btn btn-success px-3"
-            >
-              Join Us
-            </a>
+              rel="noopener noreferrer"
+            >{t(lo.nav_JoinUs)}</a>
           </Col>
         </Row>
 
         <Row className="mt-5 justify-content-center">
           <Col lg="4" md="8" className="mt-4">
             <div className="bg-bluelight rounded p-4 h-100">
-              <div className="font-18">Objective</div>
+              <div className="font-18">{t(lo.join_objective)}</div>
               <ul className="circle">
-                <li>
-                  Collect reliable data from various trusted sources, so public can stay well informed and leverage that
-                  data to better manage their fight with this pandemic.
-                </li>
-                <li>
-                  Make relevant data easily consumable to get right information quickly, so informed decisions can be
-                  made during time of panic, should there be one.
-                </li>
-                <li>
-                  In future, this could be extended to a public sourced and curated portal for additional real-time
-                  information on the outbreak.
-                </li>
-                <li>In future, AI capabilities could be built to provide early warning projections. </li>
+                <li>{t(lo.join_objectiveDetail_1)}</li>
+                <li>{t(lo.join_objectiveDetail_2)}</li>
+                <li>{t(lo.join_objectiveDetail_3)}</li>
+                <li>{t(lo.join_objectiveDetail_4)}</li>
               </ul>
             </div>
           </Col>
 
           <Col lg="4" md="6" className="mt-4">
             <div className="bg-bluelight rounded p-4 h-100">
-              <div className="font-18">Our process for collecting data:</div>
-
+              <div className="font-18">{t(lo.join_process)}</div>
               <ul className="circle">
-                <li>
-                  Government released data from various government and IT agencies websites and published documents.
-                </li>
-                <li>World Health Organization (WHO) published data.</li>
-                <li>Our data team reaching out to hospitals and health clinics to collect data.</li>
-                <li>Our data team Reaching out to pool of doctors to help with hospital capacity data.</li>
-                <li>Reaching out to general public to help with data collection.</li>
+                <li>{t(lo.join_processDetail_1)}</li>
+                <li>{t(lo.join_processDetail_2)}</li>
+                <li>{t(lo.join_processDetail_3)}</li>
+                <li>{t(lo.join_processDetail_4)}</li>
+                <li>{t(lo.join_processDetail_5)}</li>
               </ul>
             </div>
           </Col>
@@ -80,18 +71,18 @@ const JoinUs = () => {
 
         <Row className="py-5 mt-5 bg-success justify-content-center" id="volunteer-with-us">
           <Col sm="12" className="mb-3">
-            <div className="h4 text-center font-weight-bold">Here is how you can help us:</div>
+            <div className="h4 text-center font-weight-bold">{t(lo.join_hereHowCanHelpUs)}</div>
           </Col>
 
           <Col lg="3" md="5">
             <div className="">
-              Access this form:{' '}
-              <a href="https://bit.ly/collectnepalhospitaldata" target="_blank" className="text-white">
+              {t(lo.join_accessThisForm)}:
+              <a href="https://bit.ly/collectnepalhospitaldata" target="_blank" rel="noopener noreferrer" className="text-white">
                 https://bit.ly/collectnepalhospitaldata
               </a>
             </div>
-            <div className="my-3">If you have reliable information that can help general public then please input</div>
-            <div>Reach out to your contact that may have reliable information and ask them for help.</div>
+            <div className="my-3">{t(lo.join_reliableInfo)}</div>
+            <div>{t(lo.join_reachOut)}</div>
           </Col>
 
           <Col md="2">
@@ -103,11 +94,7 @@ const JoinUs = () => {
           </Col>
 
           <Col lg="3" md="5">
-            <div className="my-3">
-              If you would like to contribute to this open source project as an engineer, data analyst, doctor, nurse,
-              government officials, media or any other profession please join this effort by emailing how you want to
-              contribute to the following email address
-            </div>
+            <div className="my-3">{t(lo.join_contribute)}</div>
             <div className="mt-3">
               <a
                 className="btn btn-primary rounded px-3"

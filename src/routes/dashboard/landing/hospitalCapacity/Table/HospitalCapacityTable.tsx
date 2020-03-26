@@ -1,12 +1,14 @@
 import React, { FC, useContext, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 import HospitalCapacityTableRow from './HospitalCapacityTableRow';
 import { HospitalCapacityTableContext } from '../HospitalCapacity';
 import MapsModal from 'src/components/MapsModal';
 import MapsIframe from 'src/components/MapsIframe';
 import Loader from 'src/components/Loader';
+import lo from 'src/i18n/locale.json';
 
 export interface IMapModalValues {
   title: string;
@@ -18,6 +20,7 @@ const HospitalCapacityTable: FC<{}> = () => {
 
   const [showMapsModal, setShowMapsModal] = useState(false);
   const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
+  const [t] = useTranslation();
 
   const toggleMapsModal = (mapModalValues?: IMapModalValues) => {
     setShowMapsModal(prevShowMapsState => !prevShowMapsState);
@@ -31,25 +34,23 @@ const HospitalCapacityTable: FC<{}> = () => {
     <>
       <div className="small mb-3 mt-1">
         <i>
-          *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
-          hospital operators, doctors, etc. We need your help to continue gathering this information across all
-          hospitals in Nepal. If you would like to help collect data, please sign up{' '}
-          <Link className={'text-white'} to="/join-us">
-            here
-          </Link>
-          .
+          <Trans i18nKey={lo.contac_disclaimerHospitalGoverWebsite}>
+            *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
+            hospital operators, doctors, etc. We need your help to continue gathering this information across all
+            hospitals in Nepal. If you would like to help collect data, please sign up <Link className={'text-white'} to="/join-us"> here </Link>.
+          </Trans>
         </i>
       </div>
       <Table responsive className="text-white">
         <thead>
           <tr>
-            <th>Name of Hospital</th>
-            <th>Address</th>
-            <th>Contact</th>
-            <th>No. of Beds</th>
-            <th>No. of ICU Beds</th>
-            <th>No. of Ventilators</th>
-            <th>No. of Isolation Beds</th>
+            <th>{t(lo.contac_hospitalName)}</th>
+            <th>{t(lo.hosp_Address)}</th>
+            <th>{t(lo.hosp_Contact)}</th>
+            <th>{t(lo.hosp_BedNo)}</th>
+            <th>{t(lo.hosp_ICUBedsNo)}</th>
+            <th>{t(lo.hosp_VentilatorsNo)}</th>
+            <th>{t(lo.hosp_IsolationsBedNo)}</th>
           </tr>
         </thead>
 
@@ -68,7 +69,7 @@ const HospitalCapacityTable: FC<{}> = () => {
             ) : (
               <tr>
                 <td colSpan={7}>
-                  <span>No records found</span>
+                <span>{t(lo.com_noRecordsFound)}</span>
                 </td>
               </tr>
             )

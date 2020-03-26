@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import GovernmentNoticeItem from './GovernmentNoticeItem';
+import lo from 'src/i18n/locale.json';
 
 const GovernmentNotices: FC<{}> = () => {
+  const [t] = useTranslation();
+
   return (
     <ul className="notices__list">
       <GovernmentNoticeItem
@@ -54,37 +59,37 @@ const GovernmentNotices: FC<{}> = () => {
       />
 
       <GovernmentNoticeItem
-        category="Press Release"
+        category={t(lo.notic_pressRelease)}
         date="24 March 2020"
         title="MoHP 4:15pm Press Release Video as of March 24 by Ministry of Health"
         url="https://drive.google.com/open?id=1geRCtoaOHg0nCTk-4ZFE4vthxtvcy4ji"
       />
 
       <GovernmentNoticeItem
-        category="Press Release"
+        category={t(lo.notic_pressRelease)}
         date="20 March 2020"
-        title="Press Release as of 21 March 2020"
+        title={t(lo.notic_pressRelease21March)}
         url="https://drive.google.com/file/d/1ouT9PpNpGuWJSWlQuvZzqGS5f3Ur2Jzb/view"
       />
 
       <GovernmentNoticeItem
-        category="Press Release"
+        category={t(lo.notic_pressRelease)}
         date="20 March 2020"
-        title="Situation Report_COVID-19 #42 (as of 20 March 2020)"
+        title={t(lo.notic_situationReport20March)}
         url="https://drive.google.com/file/d/1c1aju7qThbnHGKCiqqxdfIobWWO9ulRP/view"
       />
 
       <GovernmentNoticeItem
-        category="Reports"
+        category={t(lo.notic_reports)}
         date="19 March 2020"
-        title="Situation Reports #1 to #41"
+        title={t(lo.notic_situationReport1To41)}
         url="https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
       />
 
       <GovernmentNoticeItem
-        category="Press Release"
+        category={t(lo.notic_pressRelease)}
         date="18 March 2020"
-        title="Updated notice on travel restriction related to COVID-19"
+        title={t(lo.notic_travelRestriction)}
         url="https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
       />
     </ul>
