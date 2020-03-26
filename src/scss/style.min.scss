@@ -137,6 +137,6 @@ a {
 @import "loader";
 
 .goog-text-highlight {
-    background: transparent;
-    box-shadow: none;
+    background: transparent !important;
+    box-shadow: none !important;
 }
