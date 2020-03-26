@@ -17,7 +17,7 @@ const DashboardRouter: FC<{}> = () => (
     <Route path={routes.HOSPITAL_DETAIL} component={withTracker(HospitalDetails)} />
     <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
     <Route path={routes.NOTICES} component={withTracker(Notices)} />
-    <Route path={routes.FAQ} component={withTracker(FAQ)} />
+    {/* <Route path={routes.FAQ} component={withTracker(FAQ)} /> */}
   </Switch>
 );
 

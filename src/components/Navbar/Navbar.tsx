@@ -1,30 +1,42 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav, Alert } from 'react-bootstrap';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Navbar as Navigation, Nav } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import * as routes from 'src/constants/routes';
 // import TransparentButton from 'src/components/Buttons/TransparentButton';
 import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
+import lo from 'src/i18n/locale.json';
 
-import i18n from '../../i18n';
+// import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';
-import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
+// import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
 // import { setCookie } from '../../utils/storage';
 
-const Navbar: FC<{}> = () => {
+interface NavbarProps {
+  language: string,
+  setLanguage: (lang: string) => void
+}
+
+const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
   const location = useLocation();
-  // const history = useHistory();
   const currentPath = location.pathname;
-  // const [language, setLanguage] = useState(location.search.includes('ne') ? 'ne' : 'en');
-  const interLang = i18n();
-  const { navBar } = interLang;
+  const { language , setLanguage } = props;
+
+  // const [language/* , setLanguage */] = useState(location.search.includes('ne') ? 'ne' : 'en');
+
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const { t } = useTranslation();
+  // i18n.use
+
+  /* const interLang = i18n();
+  const { navBar } = interLang; */
 
   useEffect(() => {
     const path = location.pathname.split('/');
     console.log(path);
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (isSidebarVisible) {
@@ -38,35 +50,14 @@ const Navbar: FC<{}> = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
 
-  // const languageTranslate = (lang: string) => {
-  //   try {
-  //     setCookie('googtrans', `/en/${lang}`);
-  //     const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
-  //     googleTeCombo.value = lang;
-  //     window.location.reload();
-  //   } catch (e) {}
-  // };
-
-  // const setLanguagePath = (lang: string) => {
-  //   setLanguage(lang);
-  //   history.push(location.pathname + `?lang=${lang}`);
-  //   languageTranslate(lang);
-  // };
-
-  // useEffect(() => {
-  //   if (location.search.includes('ne')) {
-  //     languageTranslate('ne');
-  //   }
-  // }, [language, location.search]);
-
   return (
     <React.Fragment>
       <div className="text-center bg-bluelight covid-alert d-flex">
-        <a className="small mx-auto" href="https://bit.ly/covidnepal_report_error_newinfo" target="blank">
-          Help us keep data reliable! Report Errors, New Info and Verify Data
+        <a className="small mx-auto" href="https://bit.ly/covidnepal_report_error_newinfo" target="_blank" rel="noopener noreferrer">
+          {t(lo.nav_HelpUsKeepDataReliable)}
         </a>
         <div className="d-none d-sm-none d-md-block social-link">
-          <a href="https://www.facebook.com/covidnepalorg/" target="_blank">
+          <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="6.574" height="14.166" viewBox="0 0 6.574 14.166">
               <path
                 id="Path_675"
@@ -78,7 +69,7 @@ const Navbar: FC<{}> = () => {
             </svg>
           </a>
 
-          <a href="https://twitter.com/covidnepalorg" target="_blank">
+          <a href="https://twitter.com/covidnepalorg" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="14.655" height="11.726" viewBox="0 0 14.655 11.726">
               <path
                 id="Path_676"
@@ -95,81 +86,91 @@ const Navbar: FC<{}> = () => {
       <Navigation collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
         <Link to={routes.DASHBOARD}>
           <Navigation.Brand className="font-weight-bold">
-            <span className="mr-2">COVID-19</span>
-            <span>{navBar.Nepal}</span>
+            <span className="mr-2">{t(lo.nav_covid19)}</span>
+            <span>{t(lo.nav_Nepal)}</span>
           </Navigation.Brand>
         </Link>
 
         {/* Temporary Langauge Select */}
-        <LanguageSelectCommingSoon isMobile={true} />
+        {/* <LanguageSelectCommingSoon isMobile={true} /> */}
         {/* language */}
-        {/* <div className="lang mobile-flag">
+        <div className="lang mobile-flag">
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
               id="np-lang"
-              onClick={() => setLanguagePath('ne')}
+              onClick={() => setLanguage('ne')}
               name="lang-mobile"
               value="ne"
               checked={language === 'ne'}
             />
-            <img src="/images/nepal.png" className="mx-1" /> {navBar.NEP}
+            <img alt='nep' src="/images/nepal.png" className="mx-1" /> {t(lo.nav_NEP)}
           </label>
 
           <label htmlFor="en-lang" className={language === 'en' ? 'active' : ''}>
             <input
               type="radio"
               id="en-lang"
-              onClick={() => setLanguagePath('en')}
+              onClick={() => setLanguage('en')}
               name="lang-mobile"
               value="en"
               checked={language === 'en'}
             />
-            {navBar.ENG} <img src="/images/english.png" className="mx-1" />
+            {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt='eng' />
           </label>
-        </div> */}
+        </div>
 
         {/* emergency contact */}
-        <EmergencyButton text={navBar.EmergencyContact} handleClick={toggleEmergencyContact} className="mob-view" />
+        <EmergencyButton text={t(lo.com_EmergencyContact)} handleClick={toggleEmergencyContact} className="mob-view" />
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navigation.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <NavItem title={'Home'} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
-            <NavItem title={'Symptoms'} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
-            <NavItem title={'Join Us'} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} />
-            <NavItem title={'Notices'} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
-            <NavItem title={'FAQ'} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
+            <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
+            <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
+            {/* <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} /> */}
+
+            <NavItem title={t(lo.nav_GovNotice)} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
+            {/* <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} /> */}
           </Nav>
 
           <Nav>
             {/* <NavItem
-              title={'Govt. Notices & Resources'}
+              title={t(lo.nav_GovNotice)}
               exact={false}
               to={routes.NOTICES}
               active={routes.NOTICES === currentPath}
               className="btn btn-outline-white btn-sm"
             /> */}
+            {/* <Link to={routes.NOTICES}>
+              <TransparentButton
+                text={t(en.GovNotice)}
+                handleClick={() => {}}
+                active={routes.NOTICES === currentPath}
+              />
+            </Link> */}
 
-            <a
+            
+            <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="btn btn-outline-white btn-sm" />
+            {/* <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
               target="_blank"
               className="btn btn-outline-white btn-sm nav-link"
             >
               Sign up
-            </a>
+            </a> */}
 
             <EmergencyButton
-              text={navBar.EmergencyContact}
+              text={t(lo.com_EmergencyContact)}
               handleClick={toggleEmergencyContact}
               className="desktop-view"
             />
             {/* Temporary Langauge Select */}
-            <LanguageSelectCommingSoon isMobile={false} />
+            {/* <LanguageSelectCommingSoon isMobile={false} /> */}
 
             <div className="d-sm-block d-md-none social-link mt-4">
-              <a href="https://www.facebook.com/covidnepalorg/" target="_blank">
+              <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="6.574" height="14.166" viewBox="0 0 6.574 14.166">
                   <path
                     id="Path_675"
@@ -181,7 +182,7 @@ const Navbar: FC<{}> = () => {
                 </svg>
               </a>
 
-              <a href="https://twitter.com/covidnepalorg" target="_blank">
+              <a href="https://twitter.com/covidnepalorg" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14.655" height="11.726" viewBox="0 0 14.655 11.726">
                   <path
                     id="Path_676"
@@ -195,31 +196,31 @@ const Navbar: FC<{}> = () => {
             </div>
 
             {/* language */}
-            {/* <div className="lang menu-flag">
+            <div className="lang menu-flag">
               <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
                   id="np-lang"
-                  onClick={() => setLanguagePath('ne')}
+                  onClick={() => setLanguage('ne')}
                   name="language"
                   value="ne"
                   checked={language === 'ne'}
                 />
-                <img src="/images/nepal.png" className="mx-1" /> {navBar.NEP}
+                <img src="/images/nepal.png" className="mx-1" alt="nepal" /> {t(lo.nav_NEP)}
               </label>
 
               <label htmlFor="en-lang" className={language === 'en' ? 'active' : ''}>
                 <input
                   type="radio"
                   id="en-lang"
-                  onClick={() => setLanguagePath('en')}
+                  onClick={() => setLanguage('en')}
                   name="language"
                   value="en"
                   checked={language === 'en'}
                 />
-                {navBar.ENG} <img src="/images/english.png" className="mx-1" />
+                {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt="eng" />
               </label>
-            </div> */}
+            </div>
           </Nav>
         </Navigation.Collapse>
       </Navigation>

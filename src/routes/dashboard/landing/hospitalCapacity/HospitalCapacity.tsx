@@ -1,14 +1,16 @@
-import React, { FC, useState, useEffect } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React, { FC, useState, useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import { ValueType } from "react-select";
 
-import HospitalCapacityTable from './Table/HospitalCapacityTable';
-import HospitalCapacityFilter from './Table/HospitalCapacityFilter';
-import { fetchHospitalCapacityAPI, IHospital } from 'src/services/hospitals';
-import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
-import { ProvinceOptions } from 'src/constants/options';
-import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
-import { ValueType } from 'react-select';
-import Pagination, { IPagination } from 'src/components/Pagination/Pagination';
+import HospitalCapacityTable from "./Table/HospitalCapacityTable";
+import HospitalCapacityFilter from "./Table/HospitalCapacityFilter";
+import { fetchHospitalCapacityAPI, IHospital } from "src/services/hospitals";
+import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from "src/services/contacts";
+import { ProvinceOptions } from "src/constants/options";
+import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
+import Pagination, { IPagination } from "src/components/Pagination/Pagination";
+import lo from "src/i18n/locale.json";
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
@@ -33,8 +35,8 @@ export const HospitalCapacityFiltersContext = React.createContext({} as IHospita
 
 const initialHospitalCapacityFiltersState = {
   province: ProvinceOptions[2],
-  district: { label: 'Kathmandu', value: 'Kathmandu' },
-  covidTest: { label: 'All', value: '' }
+  district: { label: "Kathmandu", value: "Kathmandu" },
+  covidTest: { label: "All", value: "" }
 };
 
 const initialPaginationState = {
@@ -48,6 +50,7 @@ const HospitalCapacity: FC<{}> = () => {
   const [pagination, setPagination] = useState(initialPaginationState as IPagination);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
+  const [t] = useTranslation();
 
   useEffect(() => {
     fetchHospitalCapacityData();
@@ -64,8 +67,8 @@ const HospitalCapacity: FC<{}> = () => {
       let payload = {
         page: pagination.page,
         size: pagination.size,
-        province: province ? province.value : '',
-        district: district ? district.value : ''
+        province: province ? province.value : "",
+        district: district ? district.value : ""
       };
       const response = await fetchHospitalCapacityAPI(payload);
       const { docs, ...rest } = response;
@@ -87,7 +90,7 @@ const HospitalCapacity: FC<{}> = () => {
           return { label: doc.name, value: doc.name };
         });
 
-        mappedOptions.unshift({ label: 'All', value: '' });
+        mappedOptions.unshift({ label: "All", value: "" });
         setDistrictDropdownOptions(mappedOptions);
       }
     } catch (error) {
@@ -97,7 +100,7 @@ const HospitalCapacity: FC<{}> = () => {
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
-    setFilters({ ...filters, province: selectedField, district: { label: 'All', value: '' } });
+    setFilters({ ...filters, province: selectedField, district: { label: "All", value: "" } });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
@@ -120,7 +123,7 @@ const HospitalCapacity: FC<{}> = () => {
         <Col sm="12">
           <div className="rounded bg-bluelight px-3 py-4">
             <div className="d-md-flex filter-wrapper">
-              <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
+              <div className="h5 font-weight-bold mb-3 mr-auto">{t(lo.contac_hospitalCapacityData)}</div>
               <HospitalCapacityFiltersContext.Provider
                 value={{
                   filters,
@@ -133,9 +136,6 @@ const HospitalCapacity: FC<{}> = () => {
                 <HospitalCapacityFilter />
               </HospitalCapacityFiltersContext.Provider>
             </div>
-            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
-              <HospitalCapacityTable />
-            </HospitalCapacityTableContext.Provider>
           </div>
         </Col>
 

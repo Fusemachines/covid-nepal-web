@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 import { Table } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+
 import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IContact } from 'src/services/contacts';
 import Loader from 'src/components/Loader';
+import lo from 'src/i18n/locale.json';
 
 interface IHospitalContactsRecordsProps {
   isLoaded: boolean;
@@ -11,6 +14,7 @@ interface IHospitalContactsRecordsProps {
 
 const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
   const { isLoaded, hospitalContacts } = props;
+  const [t] = useTranslation();
 
   return (
     <div className="px-3">
@@ -32,9 +36,7 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
               ))}
             </tbody>
           </Table>
-        ) : (
-          <span>No records found</span>
-        )
+        ) : (<span>{t(lo.com_noRecordsFound)}</span>)
       ) : (
         <Loader />
       )}
