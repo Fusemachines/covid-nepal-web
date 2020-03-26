@@ -142,15 +142,12 @@ const Menu = () => (
             Home
           </Nav.Link>
           <Nav.Link href="/design/symptoms">Symptoms</Nav.Link>
-          <Nav.Link href="/design/landing">Join Us</Nav.Link>
           <Nav.Link href="/design/notices&resources">Notices</Nav.Link>
           <Nav.Link href="/design/landing">FAQ</Nav.Link>
         </Nav>
 
-        <Nav>
-          <Nav.Link href="#" className="btn btn-outline-white">
-            SIgn Up
-          </Nav.Link>
+        <Nav>          
+          <Nav.Link href="/design/landing" className="btn btn-outline-white">Join Us</Nav.Link>
 
           <div className="btn-group mx-3" role="group">
             <button type="button" className="btn btn-green">
