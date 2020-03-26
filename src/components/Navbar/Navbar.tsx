@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav, Alert } from 'react-bootstrap';
+import { Navbar as Navigation, Nav, Dropdown } from 'react-bootstrap';
 import { Link, useLocation /*useHistory*/ } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
@@ -163,7 +163,21 @@ const Navbar: FC<INavbarProps> = props => {
         {/* Temporary Langauge Select */}
         {/* <LanguageSelectCommingSoon isMobile={true} /> */}
         {/* language */}
-        <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
+        <Dropdown className="lang-selector mobile-flag">
+            <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+            {language === 'ne'?
+            <><img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>Nep</span></>
+            :
+              <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span></>
+            }
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu as={'div'} alignRight>
+              <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
+              <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        {/* <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
@@ -187,7 +201,7 @@ const Navbar: FC<INavbarProps> = props => {
             />
             {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt='eng' />
           </label>
-        </div>
+        </div> */}
 
         {/* emergency contact */}
         <EmergencyButton text={t(lo.com_EmergencyContact)} handleClick={toggleEmergencyContact} className="mob-view" />
@@ -265,7 +279,21 @@ const Navbar: FC<INavbarProps> = props => {
             </div>
 
             {/* language */}
-            <div className="lang menu-flag">
+            <Dropdown className="lang-selector menu-flag">
+              <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+              {language === 'ne'?
+              <><img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>Nep</span></>
+              :
+                <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span></>
+              }
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu as={'div'} alignRight>
+                <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
+                <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* <div className="lang menu-flag">
               <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
@@ -289,7 +317,7 @@ const Navbar: FC<INavbarProps> = props => {
                 />
                 {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt="eng" />
               </label>
-            </div>
+            </div> */}
           </Nav>
         </Navigation.Collapse>
       </Navigation>
