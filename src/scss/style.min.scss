@@ -135,3 +135,8 @@ a {
 @import "responsive";
 
 @import "loader";
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
