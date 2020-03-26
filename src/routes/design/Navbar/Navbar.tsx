@@ -167,7 +167,7 @@ const Menu = () => (
           </div>
 
           {/* langiage */}
-          <Dropdown className="lang-selector my-1">
+          <Dropdown className="lang-selector">
             <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
               <img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span>
             </Dropdown.Toggle>
