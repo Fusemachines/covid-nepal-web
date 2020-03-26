@@ -114,8 +114,8 @@ const CovidCases = () => {
               </small>
             </div>
           </div>
-        </div>
-        <div className="clearfix"></div>
+
+          <div className="clearfix"></div>
 
         <Row className="mb-3">
           <NepalCovidCases covidCasesCounts={covidCasesCounts} />
@@ -131,6 +131,7 @@ const CovidCases = () => {
                 Johns Hopkins University</a> and being updated as the numbers from these sources get updated.
             </Trans>
           </small>
+        </div>
       </Col>
     </>
   );
