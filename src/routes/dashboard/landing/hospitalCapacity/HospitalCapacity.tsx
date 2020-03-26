@@ -136,6 +136,9 @@ const HospitalCapacity: FC<{}> = () => {
                 <HospitalCapacityFilter />
               </HospitalCapacityFiltersContext.Provider>
             </div>
+            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
+              <HospitalCapacityTable />
+            </HospitalCapacityTableContext.Provider>
           </div>
         </Col>
 
