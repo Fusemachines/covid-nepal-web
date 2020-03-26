@@ -7,8 +7,10 @@ export function setCookie(key: string, value: string, setCookieFunction: Functio
   setlocalStorage(key, value);
 }
 
-export function deleteCookie(key: string) {
+export function deleteCookie(key: string, setCookieFunction: Function) {
   window.document.cookie = key + '= ; expires = Thu, 01 Jan 1970 00:00:00 GMT';
+  setCookieFunction(key, '/en/en');
+  setCookieFunction('expires', 'Thu, 01 Jan 1970 00:00:00 GMT')
   setlocalStorage(key, 'en/en');
   try {
     window.document.cookie = key + '= ; domain=.covidnepal.org;  expires = Thu, 01 Jan 1970 00:00:00 GMT';

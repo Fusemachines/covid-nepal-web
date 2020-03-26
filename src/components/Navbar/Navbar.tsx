@@ -13,7 +13,7 @@ import lo from 'src/i18n/locale.json';
 // import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';
 // import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
-import { setCookie, getlocalStorage } from '../../utils/storage';
+import { setCookie, getlocalStorage, deleteCookie } from '../../utils/storage';
 import TranslateText from '../TranslateText';
 
 interface INavbarProps {
@@ -60,7 +60,7 @@ const Navbar: FC<INavbarProps> = props => {
       }
     } else {
       // setCookie('googtrans', `/en/${lang}`);
-      setCookie('googtrans', ``, setCookieFunction);
+      deleteCookie('googtrans', setCookieFunction);
       // deleteCookie('googtrans');
       /* const element = getElementFromIframe(':1.restore');
       if (element && element.click) {
@@ -100,7 +100,7 @@ const Navbar: FC<INavbarProps> = props => {
     if (googtrans.includes('ne')) {
       languageTranslate('ne');
     } else {
-      setCookie('googtrans', `/en/en`, setCookieFunction);
+      deleteCookie('googtrans', setCookieFunction);
       // deleteCookie('googtrans')
     }
   }, []);
