@@ -15,6 +15,7 @@ import Contacts from 'src/routes/dashboard/contacts';
 // import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
 import { setCookie, getlocalStorage, deleteCookie } from '../../utils/storage';
 import TranslateText from '../TranslateText';
+import { NoTransWrapper } from '../NoTranslate';
 
 interface INavbarProps {
   language: string,
@@ -158,8 +159,10 @@ const Navbar: FC<INavbarProps> = props => {
       <Navigation collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
         <Link to={routes.DASHBOARD}>
           <Navigation.Brand className="font-weight-bold">
-            <span className="mr-2">{t(lo.nav_covid19)}</span>
-            <span>{t(lo.nav_Nepal)}</span>
+            <NoTransWrapper>
+              <span className="mr-2">{t(lo.nav_covid19)}</span>
+              <span>{t(lo.nav_Nepal)}</span>
+            </NoTransWrapper>
           </Navigation.Brand>
         </Link>
 
