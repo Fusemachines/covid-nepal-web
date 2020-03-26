@@ -16,7 +16,7 @@ interface INavbarProps {
 }
 
 const Navbar: FC<INavbarProps> = props => {
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
   const [cookies, setCookieFunction] = useCookies(['googtrans']);
 
   const { toggleSidebar } = props;
