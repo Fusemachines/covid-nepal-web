@@ -169,15 +169,15 @@ const Navbar: FC<INavbarProps> = props => {
         <Dropdown className="lang-selector mobile-flag">
             <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
             {language === 'ne'?
-            <><img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>Nep</span></>
+            <><img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_NEP)}</span></>
             :
-              <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span></>
+              <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></>
             }
             </Dropdown.Toggle>
 
             <Dropdown.Menu as={'div'} alignRight>
-              <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
-              <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
+          <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
+              <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         {/* <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
@@ -285,15 +285,15 @@ const Navbar: FC<INavbarProps> = props => {
             <Dropdown className="lang-selector menu-flag">
               <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
               {language === 'ne'?
-              <><img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>Nep</span></>
+              <><img src="/images/nepal.png" className="mx-1" alt="nep" /> <span>{t(lo.nav_NEP)}</span></>
               :
-                <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span></>
+                <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></>
               }
               </Dropdown.Toggle>
 
               <Dropdown.Menu as={'div'} alignRight>
-                <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
-                <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
+                <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
+                <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             {/* <div className="lang menu-flag">
