@@ -6,6 +6,8 @@ import Menu from '../Navbar';
 const Landing = () => (
   <>
     <Menu />
+    
+
   </>
 );
 

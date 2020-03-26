@@ -11,7 +11,7 @@ const SymtomSVG: FC = () => {
       {/* <img alt={''} src="/images/symptoms.png" className="img-fluid" /> */}
 
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="https://www.w3.org/2000/svg"
         width="400"
         height="310.715"
         viewBox="0 0 400 310.715"

@@ -9,13 +9,16 @@ const NoticesandResources = () => (
     <div className="container resources-page">
       <Row className="mt-5 bg-bluelight semi-rounded justify-content-center">
         <Col lg={10} className="pt-4 pb-4">
-          <Tab.Container id="left-tabs-example" defaultActiveKey="resources">
+          <Tab.Container id="left-tabs-example" defaultActiveKey="supports">
             <Nav variant="tabs" className="">
               <Nav.Item>
                 <Nav.Link eventKey="notice">Government Notices</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="resources">Resources</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="supports">Other Covid-19 Supports</Nav.Link>
               </Nav.Item>
             </Nav>
 
@@ -119,11 +122,57 @@ const NoticesandResources = () => (
                   </li>
                 </ul>
               </Tab.Pane>
+
+              <Tab.Pane eventKey="supports">
+                <ul className="resources__list">
+                  <li>
+                    <a href="https://covid.hamropatro.com/" className="p-3">
+                      <Media>
+                        <img
+                          width={80}
+                          height={80}
+                          className="mr-3"
+                          src="/images/calldoctor.jpg"
+                          alt="call to doctor"
+                        />
+                        <Media.Body>
+                          <h5 className="resources__title">Call to Doctor Sewa</h5>
+                          <span className="resources__link">
+                          https://covid.hamropatro.com/
+                          </span>
+                        </Media.Body>
+                      </Media>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.coronanepal.org/" className="p-3">
+                      <Media>
+                        <img
+                          width={80}
+                          height={80}
+                          className="mr-3"
+                          src="/images/coronanepal.jpg"
+                          alt="Generic placeholder"
+                        />
+                        <Media.Body>
+                          <h5 className="resources__title">Corona Nepal</h5>
+                          <span className="resources__link">
+                          http://www.coronanepal.org/
+                          </span>
+                        </Media.Body>
+                      </Media>
+                    </a>
+                  </li>
+                </ul>
+              </Tab.Pane>
+
+
             </Tab.Content>
           </Tab.Container>
         </Col>
       </Row>
     </div>
+    
   </>
 );
 

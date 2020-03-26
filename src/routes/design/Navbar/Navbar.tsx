@@ -11,25 +11,23 @@ const Menu = () => (
       <div className="d-none d-sm-none d-md-block social-link">
         <Dropdown className="covid-notificatio">
           <Dropdown.Toggle as={'a'} id="dropdown-custom-components">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13.264" height="15.779" viewBox="0 0 13.264 15.779">
-              <path
-                id="Path_683"
-                data-name="Path 683"
-                d="M-574.593,919.785a1.7,1.7,0,0,0-.285-.281c-.216-.176-.447-.333-.658-.515a3.758,3.758,0,0,1-1.133-1.939,8.83,8.83,0,0,1-.275-2.234,5.722,5.722,0,0,0-.114-1.253,3.791,3.791,0,0,0-2.183-2.729c-.186-.086-.383-.148-.582-.224a1.284,1.284,0,0,0-.165-1.136A1.267,1.267,0,0,0-581,908.9a1.244,1.244,0,0,0-.969.349,1.3,1.3,0,0,0-.362,1.37c-.152.054-.3.1-.438.157a3.645,3.645,0,0,0-.421.2,3.892,3.892,0,0,0-2,3.343c-.028.422-.026.846-.051,1.268a7.065,7.065,0,0,1-.275,1.595,3.886,3.886,0,0,1-.879,1.6,5.248,5.248,0,0,1-.74.616c-.076.055-.15.113-.222.173a.854.854,0,0,0-.234,1.124,1.52,1.52,0,0,0,.723.7,4.655,4.655,0,0,0,1.266.423,15.75,15.75,0,0,0,2.318.273l.354.02a1.913,1.913,0,0,0,.856,2.249,1.794,1.794,0,0,0,2.087-.053,1.9,1.9,0,0,0,.772-2.19c.4-.03.807-.057,1.21-.091a11.207,11.207,0,0,0,1.626-.245,4.091,4.091,0,0,0,1.234-.463,1.428,1.428,0,0,0,.6-.641A.84.84,0,0,0-574.593,919.785Zm-6.482-10.136a.561.561,0,0,1,.562.561.566.566,0,0,1-.563.563.566.566,0,0,1-.562-.564A.561.561,0,0,1-581.074,909.649Zm1.19,13.143a1.064,1.064,0,0,1-.029.2c-.006.026-.014.052-.022.077l-.013.038a1.246,1.246,0,0,1-.216.367,1.345,1.345,0,0,1-.223.215l-.034.025a1.054,1.054,0,0,1-.531.191,1.212,1.212,0,0,1-.3-.015q-.066-.011-.133-.029a1.141,1.141,0,0,1-.859-.933,1.049,1.049,0,0,1-.022-.231,1.174,1.174,0,0,1,.065-.359l.016-.044q.016-.044.036-.087a.1.1,0,0,1,.1-.063l.486,0h.486c.321,0,.642,0,.964,0a.143.143,0,0,1,.057.009.086.086,0,0,1,.038.03l.01.016.009.019q.027.064.047.127l.013.042a1.278,1.278,0,0,1,.051.288c0,.014,0,.027,0,.04s0,.027,0,.04S-579.884,922.778-579.885,922.791Z"
-                transform="translate(587.702 -908.896)"
-                fill="#fff"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20.723" height="14.295" viewBox="0 0 20.723 14.295">
+              <g id="Group_874" data-name="Group 874" transform="translate(-128.973 -305.09)">
+                <path id="Path_699" data-name="Path 699" d="M421.374,348.452l-.9-.9a6.514,6.514,0,0,0,.013-8.111l.9-.871A7.571,7.571,0,0,1,421.374,348.452Z" transform="translate(-273.525 -31.412)" fill="#fff"/>
+                <path id="Path_700" data-name="Path 700" d="M393.835,371.911l-.913-.934a4.086,4.086,0,0,0,.02-4.73l.917-.918A5.271,5.271,0,0,1,393.835,371.911Z" transform="translate(-247.667 -56.523)" fill="#fff"/>
+                <path id="Path_701" data-name="Path 701" d="M143.654,307.028a1.955,1.955,0,0,0-1.637-1.917,1.164,1.164,0,0,0-.8.129q-2.232,1.246-4.484,2.456a1.7,1.7,0,0,1-.769.2c-1.173.023-2.349-.014-3.521.031a3.664,3.664,0,0,0-.931,7.145c.134.043.269.084.413.128a.1.1,0,0,1,.065.12l-1.117,3.934a.1.1,0,0,0,.088.124h0c1.264,0,2.528,0,3.792.006.2,0,.229-.1.272-.251.333-1.181.673-2.361,1.012-3.54.119-.413.153-.426.545-.211q2.353,1.289,4.708,2.573a1.167,1.167,0,0,0,.516.121,1.953,1.953,0,0,0,1.845-1.907c.011-.9,0-1.806,0-2.708C143.657,311.316,143.664,309.172,143.654,307.028Z" transform="translate(0 0)" fill="#fff"/>
+              </g>
             </svg>
 
-            <span className="new-notification" />
+            <span className="new-notification rounded-circle" />
           </Dropdown.Toggle>
 
           <Dropdown.Menu as={'div'} alignRight>
-            <div className="noti-title">Notification</div>
+            <div className="noti-title">Announcement</div>
             <div className="noti-content">
               <a href="#">
                 Government announced all Nepal lockdown from 6 AM Chaitra 11 to 6 PM Chaitra 18.
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-green">General</span> <span className="time">6:00 PM Mon</span></div>
               </a>
 
               <a href="#">
@@ -42,12 +40,12 @@ const Menu = () => (
                   </div>
                 </Media>
 
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-drak">Developer</span> <span className="time">6:00 PM Mon</span></div>
               </a>
 
               <a href="#">
                 Government announced all Nepal lockdown from 6 AM Chaitra 11 to 6 PM Chaitra 18.
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-green">General</span> <span className="time">6:00 PM Mon</span></div>
               </a>
 
               <a href="#">
@@ -60,12 +58,12 @@ const Menu = () => (
                   </div>
                 </Media>
 
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-green">General</span> <span className="time">6:00 PM Mon</span></div>
               </a>
 
               <a href="#">
                 Government announced all Nepal lockdown from 6 AM Chaitra 11 to 6 PM Chaitra 18.
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-green">General</span> <span className="time">6:00 PM Mon</span></div>
               </a>
 
               <a href="#">
@@ -78,12 +76,12 @@ const Menu = () => (
                   </div>
                 </Media>
 
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-green">General</span> <span className="time">6:00 PM Mon</span></div>
               </a>
 
               <a href="#">
                 Government announced all Nepal lockdown from 6 AM Chaitra 11 to 6 PM Chaitra 18.
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-green">General</span> <span className="time">6:00 PM Mon</span></div>
               </a>
 
               <a href="#">
@@ -96,7 +94,7 @@ const Menu = () => (
                   </div>
                 </Media>
 
-                <span className="time">6:00 PM Mon</span>
+                <div className="mt-2"><span className="badges-green">General</span> <span className="time">6:00 PM Mon</span></div>
               </a>
             </div>
           </Dropdown.Menu>
@@ -142,14 +140,13 @@ const Menu = () => (
             Home
           </Nav.Link>
           <Nav.Link href="/design/symptoms">Symptoms</Nav.Link>
-          <Nav.Link href="/design/landing">Join Us</Nav.Link>
           <Nav.Link href="/design/notices&resources">Notices</Nav.Link>
+          <Nav.Link href="/design/news">News</Nav.Link>
           <Nav.Link href="/design/landing">FAQ</Nav.Link>
         </Nav>
-        <Nav>
-          <Nav.Link href="#" className="btn btn-outline-white">
-            SIgn Up
-          </Nav.Link>
+
+        <Nav>          
+          <Nav.Link href="/design/landing" className="btn btn-outline-white">Join Us</Nav.Link>
 
           <div className="btn-group mx-3" role="group">
             <button type="button" className="btn btn-green">
@@ -168,7 +165,18 @@ const Menu = () => (
             </button>
           </div>
 
-          <Nav.Link className="d-none d-lg-block">Language</Nav.Link>
+          {/* langiage */}
+          <Dropdown className="lang-selector">
+            <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+              <img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu as={'div'} alignRight>
+              <Dropdown.Item><img src="/images/english.png" className="mr-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
+              <Dropdown.Item><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>

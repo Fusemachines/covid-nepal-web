@@ -146,6 +146,7 @@ const Landing = () => (
         </Col>
       </Row>
     </div>
+    
   </>
 );
 
