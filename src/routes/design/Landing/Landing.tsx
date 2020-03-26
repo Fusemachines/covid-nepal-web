@@ -837,7 +837,7 @@ const Home = () => {
                     </div>
                   </OverlayTrigger>
 
-                  <OverlayTrigger
+                  {/* <OverlayTrigger
                     placement={'top'}
                     overlay={
                       <Tooltip id={`tooltip-review`} className="covid-hospital-count">
@@ -848,7 +848,7 @@ const Home = () => {
                     <div className="count-box blue">
                       <span>In Review </span> <span className="count">60</span>
                     </div>
-                  </OverlayTrigger>
+                  </OverlayTrigger> */}
                 </div>
 
                 <div className="ml-auto">

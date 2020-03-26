@@ -17,6 +17,9 @@ const NoticesandResources = () => (
               <Nav.Item>
                 <Nav.Link eventKey="resources">Resources</Nav.Link>
               </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="supports">Other Covid-19 Supports</Nav.Link>
+              </Nav.Item>
             </Nav>
 
             <Tab.Content>
@@ -119,6 +122,51 @@ const NoticesandResources = () => (
                   </li>
                 </ul>
               </Tab.Pane>
+
+              <Tab.Pane eventKey="supports">
+                <ul className="resources__list">
+                  <li>
+                    <a href="https://www.unicef.org/nepal/stories/novel-coronavirus" className="p-3">
+                      <Media>
+                        <img
+                          width={80}
+                          height={80}
+                          className="mr-3"
+                          src="/images/protect_yourself.png"
+                          alt="Generic placeholder"
+                        />
+                        <Media.Body>
+                          <h5 className="resources__title">How to protect yourself and others against COVID-19</h5>
+                          <span className="resources__link">
+                            https://www.unicef.org/nepal/stories/novel-coronavirus
+                          </span>
+                        </Media.Body>
+                      </Media>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.unicef.org/nepal/join-fight-against-misinformation" className="p-3">
+                      <Media>
+                        <img
+                          width={80}
+                          height={80}
+                          className="mr-3"
+                          src="/images/fight_misinformation.png"
+                          alt="Generic placeholder"
+                        />
+                        <Media.Body>
+                          <h5 className="resources__title">Join the fight against misinformation</h5>
+                          <span className="resources__link">
+                            https://www.unicef.org/nepal/join-fight-against-misinformation
+                          </span>
+                        </Media.Body>
+                      </Media>
+                    </a>
+                  </li>
+                </ul>
+              </Tab.Pane>
+
+
             </Tab.Content>
           </Tab.Container>
         </Col>
