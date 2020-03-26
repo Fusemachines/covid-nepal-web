@@ -5,6 +5,7 @@ import { useTranslation, Trans } from 'react-i18next';
 
 import JoinUsIcon from 'src/components/Icons/JoinUsIcon';
 import lo from 'src/i18n/locale.json'
+import { NoTransWrapper } from 'src/components/NoTranslate';
 /* import { JOIN_US } from 'src/constants/routes'; */
 
 const JoinUs = () => {
@@ -20,16 +21,17 @@ const JoinUs = () => {
           <Col lg="5" md="8" className="text-center">
             <div className="h1 text-primary font-weight-bold">{t(lo.join_openSource)}</div>
             <div className="my-2 text-white my-4 ">
-              <Trans i18nKey="join_askingAllLikeMinded">
-                <Link className={'text-white'} to="/">
-                  covidnepal.org
-                </Link> is an Open Source Platform started at <a className={'text-white'} rel="noopener noreferrer" target="_blank" href="https://fusemachines.com">
-                  Fusemachines
-                </a> and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to
-                serve as a reliable source of information about Covid-19 in Nepal.
-                <br/>
-                Let’s fight this pandemic together!
-              </Trans>
+              <Link className='text-white' to="/">covidnepal.org </Link>
+              <NoTransWrapper>
+                <Trans i18nKey="join_askingAllLikeMinded">
+                  is an Open Source Platform started at <a className={'text-white'} rel="noopener noreferrer" target="_blank" href="https://fusemachines.com">
+                    Fusemachines
+                  </a> and asking all like minded citizens of Nepal to join in this effort to create an Open Source platform to
+                  serve as a reliable source of information about Covid-19 in Nepal.
+                  <br/>
+                  Let’s fight this pandemic together!
+                </Trans>
+              </NoTransWrapper>
             </div>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform"
@@ -75,7 +77,7 @@ const JoinUs = () => {
           <Col lg="3" md="5">
             <div className="">
               {t(lo.join_accessThisForm)}:
-              <a href="https://bit.ly/collectnepalhospitaldata" target="_blank" className="text-white">
+              <a href="https://bit.ly/collectnepalhospitaldata" target="_blank" rel="noopener noreferrer" className="text-white">
                 https://bit.ly/collectnepalhospitaldata
               </a>
             </div>
