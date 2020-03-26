@@ -23,7 +23,7 @@ const Dashboard: FC<{}> = () => {
       <Navbar language={language} setLanguage={setLanguageFunc} />
       <DashboardRouter />
 
-      <div className="small p-2 text-center text-lightblue">
+      <div className="small  pt-2 pb-3  text-center text-lightblue">
         Suported by 
         <a href="https://fusemachines.com/" className="text-white mx-2" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="77.601" height="11.328" viewBox="0 0 77.601 11.328">
