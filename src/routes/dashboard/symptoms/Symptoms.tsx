@@ -38,14 +38,14 @@ const Symptoms = () => {
               {/* <img alt={''} src="/images/symptoms.png" className="img-fluid" /> */}
 
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="https://www.w3.org/2000/svg"
                 width="400"
                 height="310.715"
                 viewBox="0 0 400 310.715"
                 className="img-fluid"
               >
                 <defs>
-                  <clipPath id="clip-path">
+                  <clipPath id="clipPath">
                     <circle id="Ellipse_17" data-name="Ellipse 17" cx="88.916" cy="88.916" r="88.916" fill="none" />
                   </clipPath>
                 </defs>
@@ -80,7 +80,7 @@ const Symptoms = () => {
                         fill="#003f7d"
                       />
                       <g id="Group_211" data-name="Group 211" transform="translate(0 21.492)">
-                        <g id="Group_210" data-name="Group 210" clip-path="url(#clip-path)">
+                        <g id="Group_210" data-name="Group 210" clipPath="url(#clipPath)">
                           <g id="Group_209" data-name="Group 209" transform="translate(-11.415 -21.492)">
                             <path
                               id="Path_200"
@@ -863,9 +863,9 @@ const Symptoms = () => {
                     data-name="Shortness of Breath"
                     transform="translate(511.978 247.325)"
                     fill="none"
-                    font-size="17"
-                    font-family="OpenSans-Extrabold, Open Sans"
-                    font-weight="800"
+                    fontSize="17"
+                    fontFamily="OpenSans-Extrabold, Open Sans"
+                    fontWeight="800"
                   >
                     <tspan x="0" y="0">
                       Shortness of Breath
@@ -875,9 +875,9 @@ const Symptoms = () => {
                     id="Fever"
                     transform="translate(492.072 454.182)"
                     fill="none"
-                    font-size="17"
-                    font-family="OpenSans-Extrabold, Open Sans"
-                    font-weight="800"
+                    fontSize="17"
+                    fontFamily="OpenSans-Extrabold, Open Sans"
+                    fontWeight="800"
                   >
                     <tspan x="0" y="0">
                       Fever
@@ -888,9 +888,9 @@ const Symptoms = () => {
                     data-name="Dry Cough"
                     transform="translate(667.77 454.182)"
                     fill="none"
-                    font-size="17"
-                    font-family="OpenSans-Extrabold, Open Sans"
-                    font-weight="800"
+                    fontSize="17"
+                    fontFamily="OpenSans-Extrabold, Open Sans"
+                    fontWeight="800"
                   >
                     <tspan x="0" y="0">
                       Dry Cough
@@ -900,9 +900,9 @@ const Symptoms = () => {
                     id="Headache"
                     transform="translate(698.928 331.876)"
                     fill="none"
-                    font-size="15"
-                    font-family="OpenSans-Semibold, Open Sans"
-                    font-weight="600"
+                    fontSize="15"
+                    fontFamily="OpenSans-Semibold, Open Sans"
+                    fontWeight="600"
                   >
                     <tspan x="0" y="0">
                       Headache
@@ -913,9 +913,9 @@ const Symptoms = () => {
                     data-name="Aches &amp; Pain"
                     transform="translate(396 295.525)"
                     fill="none"
-                    font-size="15"
-                    font-family="OpenSans-Semibold, Open Sans"
-                    font-weight="600"
+                    fontSize="15"
+                    fontFamily="OpenSans-Semibold, Open Sans"
+                    fontWeight="600"
                   >
                     <tspan x="0" y="0">
                       Aches &amp; Pain
@@ -925,9 +925,9 @@ const Symptoms = () => {
                     id="Diarrohea"
                     transform="translate(737 275.559)"
                     fill="none"
-                    font-size="13"
-                    font-family="OpenSans-Light, Open Sans"
-                    font-weight="300"
+                    fontSize="13"
+                    fontFamily="OpenSans-Light, Open Sans"
+                    fontWeight="300"
                   >
                     <tspan x="0" y="0">
                       Diarrohea
@@ -937,9 +937,9 @@ const Symptoms = () => {
                     id="Fatigue"
                     transform="translate(406.386 372.555)"
                     fill="none"
-                    font-size="15"
-                    font-family="OpenSans-Semibold, Open Sans"
-                    font-weight="600"
+                    fontSize="15"
+                    fontFamily="OpenSans-Semibold, Open Sans"
+                    fontWeight="600"
                   >
                     <tspan x="0" y="0">
                       Fatigue
@@ -950,9 +950,9 @@ const Symptoms = () => {
                     data-name="Sore Throat"
                     transform="translate(555.254 518.826)"
                     fill="none"
-                    font-size="15"
-                    font-family="OpenSans-Semibold, Open Sans"
-                    font-weight="600"
+                    fontSize="15"
+                    fontFamily="OpenSans-Semibold, Open Sans"
+                    fontWeight="600"
                   >
                     <tspan x="0" y="0">
                       Sore Throat
@@ -963,9 +963,9 @@ const Symptoms = () => {
                     data-name="Runny Nose"
                     transform="translate(422.193 496.054)"
                     fill="none"
-                    font-size="13"
-                    font-family="OpenSans-Light, Open Sans"
-                    font-weight="300"
+                    fontSize="13"
+                    fontFamily="OpenSans-Light, Open Sans"
+                    fontWeight="300"
                   >
                     <tspan x="0" y="0">
                       Runny Nose
