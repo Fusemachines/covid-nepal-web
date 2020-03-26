@@ -12,6 +12,27 @@ const GovernmentNotices: FC<{}> = () => {
       <GovernmentNoticeItem
         category="Press Release"
         date="26 March 2020"
+        title="MoHP Audio Message To the Public To Prevent COVID-19"
+        url="https://drive.google.com/open?id=1w5KJeDucp954FV8EDh9tp3GlDdoEw-Kn"
+      />
+
+      <GovernmentNoticeItem
+        category="Press Release"
+        date="26 March 2020"
+        title="MoHP 4:15pm Daily Press Brief as of 26th March"
+        url="https://youtu.be/rxYXW40kruw"
+      />
+
+      <GovernmentNoticeItem
+        category="Press Release"
+        date="26 March 2020"
+        title="Guidelines for use of personal protective equipment in relation to Covid-19"
+        url="https://drive.google.com/open?id=18ZZVfHuQUvVxWY_O6qoONRLzsvuaVE7l"
+      />
+
+      <GovernmentNoticeItem
+        category="Press Release"
+        date="26 March 2020"
         title="Novel Corona Disease Prevention and Control High Level Coordination Committee"
         url="https://drive.google.com/open?id=1qYd5Vr7n-O6eRmCGodjZ49pjcCGbmFC1"
       />
@@ -26,7 +47,7 @@ const GovernmentNotices: FC<{}> = () => {
       <GovernmentNoticeItem
         category="Press Release"
         date="25 March 2020"
-        title="MOHP notice on Rectifying The Flight Number of Air Arabia"
+        title="MoHP notice on Rectifying The Flight Number of Air Arabia"
         url="https://drive.google.com/open?id=1UwpLZ-BCf3m4Vjwt9HD4kzNVhSzppMYe"
       />
 
@@ -40,7 +61,7 @@ const GovernmentNotices: FC<{}> = () => {
       <GovernmentNoticeItem
         category={t(lo.notic_pressRelease)}
         date="24 March 2020"
-        title="Press Release Video as of March 24 by Ministry of Health"
+        title="MoHP 4:15pm Press Release Video as of March 24 by Ministry of Health"
         url="https://drive.google.com/open?id=1geRCtoaOHg0nCTk-4ZFE4vthxtvcy4ji"
       />
 
