@@ -14,6 +14,7 @@ import lo from 'src/i18n/locale.json';
 import Contacts from 'src/routes/dashboard/contacts';
 // import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
 import { setCookie } from '../../utils/storage';
+import TranslateText from '../TranslateText';
 
 interface INavbarProps {
   language: string,
@@ -235,7 +236,7 @@ const Navbar: FC<INavbarProps> = props => {
             </Link> */}
 
             
-            <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="btn btn-outline-white btn-sm" />
+            <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="btn btn-outline-white btn-sm"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavItem>
             {/* <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
               target="_blank"
