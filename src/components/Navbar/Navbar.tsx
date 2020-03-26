@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Navbar as Navigation, Nav, Dropdown } from 'react-bootstrap';
+import { Link, useLocation /*useHistory*/ } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
 
 import * as routes from 'src/constants/routes';
@@ -12,26 +13,98 @@ import lo from 'src/i18n/locale.json';
 // import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';
 // import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
-// import { setCookie } from '../../utils/storage';
+import { setCookie, getlocalStorage, deleteCookie } from '../../utils/storage';
+import TranslateText from '../TranslateText';
+import { NoTransWrapper } from '../NoTranslate';
 
-interface NavbarProps {
+interface INavbarProps {
   language: string,
   setLanguage: (lang: string) => void
 }
 
-const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
+const Navbar: FC<INavbarProps> = props => {
+  // const [show, setShow] = useState(true);
+  const [cookies, setCookieFunction] = useCookies(['googtrans']);
+
   const location = useLocation();
+  // const history = useHistory();
   const currentPath = location.pathname;
-  const { language , setLanguage } = props;
-
-  // const [language/* , setLanguage */] = useState(location.search.includes('ne') ? 'ne' : 'en');
-
+  const googtrans = cookies['googtrans'] || getlocalStorage('googtrans') || 'en';
+  // const [language, setLanguage] = useState(googtrans.includes('ne') ? 'ne' : 'en');
+  const language = googtrans.includes('ne') ? 'ne' : 'en';
+  // const interLang = i18n();
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const { t } = useTranslation();
+
   // i18n.use
 
   /* const interLang = i18n();
   const { navBar } = interLang; */
+
+  const languageTranslate = (lang: string, setLanguage = false) => {
+    if (lang === 'ne') {
+      setCookie('googtrans', `/en/${lang}`, setCookieFunction);
+      try {
+        const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
+        googleTeCombo.value = lang;
+        /* const element = getElementFromIframe(':1.confirm');
+        if (element && element.click) {
+          element.click();
+        } else {
+          // alert('1');
+          window.location.reload();
+        } */
+        window.location.reload();
+      } catch (e) {
+        // setCookie('googtrans', `/en/${lang}`);
+        console.log(e);
+      }
+    } else {
+      // setCookie('googtrans', `/en/${lang}`);
+      deleteCookie('googtrans', setCookieFunction);
+      // deleteCookie('googtrans');
+      /* const element = getElementFromIframe(':1.restore');
+      if (element && element.click) {
+        element.click();
+      } else {
+        // alert('2');
+        window.location.reload();
+      } */
+      window.location.reload();
+    }
+  };
+
+  function getElementFromIframe(id: string) {
+    const iframe: HTMLIFrameElement = document.getElementById(':1.container') as HTMLIFrameElement;
+    if (!iframe) {
+      return null;
+    }
+    if (iframe && iframe.contentWindow && iframe.contentWindow.document) {
+      const IframeDocument = iframe.contentWindow.document;
+      return IframeDocument.getElementById(id);
+    } else {
+      return null;
+    }
+  }
+
+  const setLanguagePath = (lang: string) => {
+    if (language === lang) {
+      return;
+    }
+    // setLanguage(lang);
+    // history.push(location.pathname + `?lang=${lang}`);
+    languageTranslate(lang, true);
+  };
+
+  useEffect(() => {
+    const googtrans = localStorage.getItem('googtrans') || 'en';
+    if (googtrans.includes('ne')) {
+      languageTranslate('ne');
+    } else {
+      deleteCookie('googtrans', setCookieFunction);
+      // deleteCookie('googtrans')
+    }
+  }, []);
 
   useEffect(() => {
     const path = location.pathname.split('/');
@@ -86,20 +159,36 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
       <Navigation collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
         <Link to={routes.DASHBOARD}>
           <Navigation.Brand className="font-weight-bold">
-            <span className="mr-2">{t(lo.nav_covid19)}</span>
-            <span>{t(lo.nav_Nepal)}</span>
+            <NoTransWrapper>
+              <span className="mr-2">{t(lo.nav_covid19)}</span>
+              <span>{t(lo.nav_Nepal)}</span>
+            </NoTransWrapper>
           </Navigation.Brand>
         </Link>
 
         {/* Temporary Langauge Select */}
         {/* <LanguageSelectCommingSoon isMobile={true} /> */}
         {/* language */}
-        <div className="lang mobile-flag">
+        <Dropdown className="lang-selector mobile-flag">
+            <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+            {language === 'ne'?
+            <><img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_NEP)}</span></>
+            :
+              <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></>
+            }
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu as={'div'} alignRight>
+          <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
+              <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        {/* <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
               type="radio"
               id="np-lang"
-              onClick={() => setLanguage('ne')}
+              onClick={() => setLanguagePath('ne')}
               name="lang-mobile"
               value="ne"
               checked={language === 'ne'}
@@ -111,14 +200,14 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
             <input
               type="radio"
               id="en-lang"
-              onClick={() => setLanguage('en')}
+              onClick={() => setLanguagePath('en')}
               name="lang-mobile"
               value="en"
               checked={language === 'en'}
             />
             {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt='eng' />
           </label>
-        </div>
+        </div> */}
 
         {/* emergency contact */}
         <EmergencyButton text={t(lo.com_EmergencyContact)} handleClick={toggleEmergencyContact} className="mob-view" />
@@ -151,8 +240,8 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
               />
             </Link> */}
 
-            
-            <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="btn btn-outline-white btn-sm" />
+
+            <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="btn btn-outline-white btn-sm"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavItem>
             {/* <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
               target="_blank"
@@ -196,12 +285,26 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
             </div>
 
             {/* language */}
-            <div className="lang menu-flag">
+            <Dropdown className="lang-selector menu-flag">
+              <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+              {language === 'ne'?
+              <><img src="/images/nepal.svg" className="mx-1" alt="nep" /> <span>{t(lo.nav_NEP)}</span></>
+              :
+                <><img src="/images/english.svg" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></>
+              }
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu as={'div'} alignRight>
+                <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.svg" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
+                <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.svg" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span></Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* <div className="lang menu-flag">
               <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
                 <input
                   type="radio"
                   id="np-lang"
-                  onClick={() => setLanguage('ne')}
+                  onClick={() => setLanguagePath('ne')}
                   name="language"
                   value="ne"
                   checked={language === 'ne'}
@@ -213,14 +316,14 @@ const Navbar: FC<NavbarProps> = (props: NavbarProps) => {
                 <input
                   type="radio"
                   id="en-lang"
-                  onClick={() => setLanguage('en')}
+                  onClick={() => setLanguagePath('en')}
                   name="language"
                   value="en"
                   checked={language === 'en'}
                 />
                 {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt="eng" />
               </label>
-            </div>
+            </div> */}
           </Nav>
         </Navigation.Collapse>
       </Navigation>

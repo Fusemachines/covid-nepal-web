@@ -53,10 +53,19 @@
 
     <script type="text/javascript">
       function googleTranslateElementInit() {
+        // need to setCookie before google translate code is run
+        setCookie('googtrans', `${localStorage.getItem('googtrans') || 'en'}`);
         new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+      function setCookie(key, value){
+        let d = new Date();
+        const time = 15 * 60 * 1000;
+        window.document.cookie = key + '=' + value + '; expires =' + d.setTime(d.getTime + time);
+        // setlocalStorage(key, value);
       }
     </script>
 
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
     <script>
       var OneSignal = window.OneSignal || [];
@@ -73,7 +82,7 @@
 
     <!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 
-    <!-- <div id="google_translate_element"></div> -->
+    <div id="google_translate_element"></div>
 
     <div id="root"></div>
 

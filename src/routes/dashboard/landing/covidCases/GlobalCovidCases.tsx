@@ -1,18 +1,21 @@
 import React, { FC } from 'react';
 import { Col } from 'react-bootstrap';
-import { useTranslation } from 'react-i18next';
-
 // import TextCaption from 'src/components/TextCaption/TextCaption';
+import { useTranslation } from 'react-i18next';
 import { ICovidCasesCounts } from 'src/services/covidCases';
 import { setCommas } from 'src/utils/stringManipulation';
 import lo from 'src/i18n/locale.json';
-import numberTransCheck from 'src/utils/numberTranslate';
+import { useCookies } from 'react-cookie';
+import TranslateNumber from 'src/components/TranslateNumber';
 
 interface IGlobalCovidCasesProps {
   covidCasesCounts: ICovidCasesCounts | null;
 }
 
 const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
+  const [cookies] = useCookies(['googtrans']);
+  const googtrans = cookies['googtrans'] || localStorage.getItem('googtrans') || 'en';
+  const language = googtrans.includes('ne') ? 'ne' : 'en';
   const { t } = useTranslation();
 
   return (
@@ -26,7 +29,10 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
           <div className="mt-3">{t(lo.covC_totalTested)}</div>
           <div className="h3 m-0 font-weight-bold  d-inline-block">
             {' '}
-            {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.confirmedGlobal) as number) : '-'}
+            <TranslateNumber
+              originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
+              language={language}
+            />
           </div>
         </div>
         {/* to make height equal */}
@@ -34,21 +40,33 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
         <div className="mt-3">{t(lo.covC_totalConfirmed)}</div>
         <div className="h3 m-0 font-weight-bold  d-inline-block">
           {' '}
-          {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.confirmedGlobal) as number) : '-'}
+          <TranslateNumber
+            originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
+            language={language}
+          />
+          {/* {covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'} */}
         </div>
         {/* <TextCaption type={'success'} value={'0.10'} /> */}
 
         <div className="mt-3">{t(lo.covC_totalRecovered)}</div>
         <div className="h3 m-0 font-weight-bold d-inline-block ">
           {' '}
-          {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.recoveredGlobal) as number) : '-'}
+          <TranslateNumber
+            originalString={covidCasesCounts ? setCommas(covidCasesCounts.recoveredGlobal) : '-'}
+            language={language}
+          />
+          {/* {covidCasesCounts ? setCommas(covidCasesCounts.recoveredGlobal) : '-'} */}
         </div>
         {/* <TextCaption type={'warning'} value={'0.10'} /> */}
 
         <div className="mt-3">{t(lo.covC_totalDeath)}</div>
         <div className="h3 m-0 font-weight-bold d-inline-block">
           {' '}
-          {covidCasesCounts ? setCommas(numberTransCheck(covidCasesCounts.deathGlobal) as number) : '-'}
+          <TranslateNumber
+            originalString={covidCasesCounts ? setCommas(covidCasesCounts.deathTotal) : '-'}
+            language={language}
+          />
+          {/* {covidCasesCounts ? setCommas(covidCasesCounts.deathGlobal) : '-'} */}
         </div>
         {/* <TextCaption type={'danger'} value={'0.10'} /> */}
       </Col>
