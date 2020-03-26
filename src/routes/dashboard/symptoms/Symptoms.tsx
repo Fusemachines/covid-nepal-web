@@ -982,7 +982,7 @@ const Symptoms = () => {
               <div className="left left-6">Sore Throat</div>
               <div className="right right-1">Dry Cough</div>
               <div className="right right-2">Headache</div>
-              <div className="right-3 right">Diarrohea</div>
+              <div className="right-3 right">Diarrhoea</div>
             </div>
           </Col>
 
