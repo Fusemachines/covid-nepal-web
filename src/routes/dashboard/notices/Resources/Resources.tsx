@@ -5,6 +5,40 @@ const Resources: FC<{}> = () => {
   return (
     <ul className="resources__list">
       <ResourceItem
+        title={
+          '7 ways employers can support working parents during the coronavirus disease  COVID 19  outbreak byUNICEF.pdf'
+        }
+        url={'https://drive.google.com/open?id=1WRFP2u0zKaYbGypFPLBEutCuAWuu6Gp8'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
+        title={
+          'COVID-19: Operational Planning Guidelines and COVID-19 Partners Platform to support country preparedness and response'
+        }
+        url={'https://openwho.org/courses/UNCT-COVID19-preparedness-and-response-EN'}
+        imageUrl={'https://i.vimeocdn.com/video/857141728.jpg?mw=900&mh=506&q=70'}
+      />
+
+      <ResourceItem
+        title={'Hamro Patro and Ncell Presents Online Doctor Service for Covid-19.pdf'}
+        url={'https://drive.google.com/open?id=1ia6wLH00ewleXTDu6buDCbuUgYCs2Bku'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
+        title={'Coping with stress during the 2019-nCoV outbreak'}
+        url={'https://www.who.int/docs/default-source/coronaviruse/coping-with-stress.pdf?sfvrsn=9845bc3a_2'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
+        title={'PSA Safe Grocery Shopping in COVID-19 Pandemic'}
+        url={'https://youtu.be/sjDuwc9KBps'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
         title={'Coronavirus Symptoms and Preventive Measures - सचेत रहौ त्रसित नबनौ by NEPAL TELEVISION'}
         url={'https://youtu.be/8M7uQc23FnY'}
         imageUrl={''}
@@ -27,7 +61,7 @@ const Resources: FC<{}> = () => {
         url={
           'https://www.unicef.org/coronavirus/fact-or-fiction-how-much-do-you-actually-know-about-coronavirus-covid-19'
         }
-        imageUrl={'http://cdn.poll-maker.com/51-1749455/coronavirus-quiz-1.png?sz=800'}
+        imageUrl={'https://cdn.poll-maker.com/51-1749455/coronavirus-quiz-1.png?sz=800'}
       />
 
       <ResourceItem
