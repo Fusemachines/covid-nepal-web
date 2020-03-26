@@ -39,7 +39,7 @@ const Navbar: FC<INavbarProps> = props => {
         if (element && element.click) {
           element.click();
         } else {
-          alert('1');
+          // alert('1');
           window.location.reload();
         }
       } catch (e) {
@@ -54,7 +54,7 @@ const Navbar: FC<INavbarProps> = props => {
       if (element && element.click) {
         element.click();
       } else {
-        alert('2');
+        // alert('2');
         window.location.reload();
       }
     }
