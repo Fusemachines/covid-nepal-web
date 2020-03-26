@@ -9,6 +9,7 @@ import RefreshIcon from 'src/components/Icons/RefreshIcon';
 import { getFormattedTime } from 'src/utils/date';
 import { pluralize } from 'src/utils/stringManipulation';
 import lo from 'src/i18n/locale.json';
+import NoTranslate from 'src/components/NoTranslate';
 
 interface IUpdatedTime {
   days: number;
@@ -103,7 +104,9 @@ const CovidCases = () => {
         <div className="rounded bg-bluelight p-4 h-100">
           <div className="mb-3 border-bottom pb-2">
             <div className="d-inline-block">
-              <div className="h5 mb-0 font-weight-bold">{`${t(lo.nav_covid19)} ${t(lo.nav_Cases)}`}</div>
+              <div className="h5 mb-0 font-weight-bold">
+                <NoTranslate noTranslate={`${t(lo.nav_covid19)} ${t(lo.nav_Cases)}`}/>
+              </div>
               <small>
                 {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
                   ? `${t(lo.covC_Updated)} ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ${t(lo.covC_ago)}`
