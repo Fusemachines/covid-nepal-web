@@ -167,14 +167,14 @@ const Menu = () => (
           </div>
 
           {/* langiage */}
-          <Dropdown className="lang-selector">
+          <Dropdown className="lang-selector my-1">
             <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
               <img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span>
             </Dropdown.Toggle>
 
             <Dropdown.Menu as={'div'} alignRight>
-              <Dropdown.Item><img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
-              <Dropdown.Item><img src="/images/nepal.png" className="mx-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
+              <Dropdown.Item><img src="/images/english.png" className="mr-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
+              <Dropdown.Item><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
