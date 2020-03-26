@@ -11,6 +11,13 @@ const GovernmentNotices: FC<{}> = () => {
     <ul className="notices__list">
       <GovernmentNoticeItem
         category="Press Release"
+        date="26 March 2020"
+        title="Novel Corona Disease Prevention and Control High Level Coordination Committee"
+        url="https://drive.google.com/open?id=1qYd5Vr7n-O6eRmCGodjZ49pjcCGbmFC1"
+      />
+
+      <GovernmentNoticeItem
+        category="Press Release"
         date="25 March 2020"
         title="MoHP 4:15pm Daily Press Brief as of 25th March"
         url="https://youtu.be/TSWADtbqAPg"

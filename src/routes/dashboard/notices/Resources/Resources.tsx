@@ -10,7 +10,24 @@ const Resources: FC<{}> = () => {
   return (
     <ul className="resources__list">
       <ResourceItem
-      /* {t(lo.resourc_howToProtectUrself)} */
+        title={'Coronavirus Symptoms and Preventive Measures - सचेत रहौ त्रसित नबनौ by NEPAL TELEVISION'}
+        url={'https://youtu.be/8M7uQc23FnY'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
+        title={"CORONA VIRUS || DO's and DONT's || NEPAL || Ayushman Joshi || Priyanka Karki"}
+        url={'https://youtu.be/TohlSCG2eZ8'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
+        title={'When and How to Use a Mask-WHO'}
+        url={'https://drive.google.com/open?id=1DA2Be-WKTPXb35jyR8zEix5UFjM2NLba'}
+        imageUrl={''}
+      />
+
+      <ResourceItem
         title={'Fact or fiction: How much do you know about the coronavirus disease (COVID-19)?'}
         url={
           'https://www.unicef.org/coronavirus/fact-or-fiction-how-much-do-you-actually-know-about-coronavirus-covid-19'
