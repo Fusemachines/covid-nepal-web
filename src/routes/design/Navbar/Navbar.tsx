@@ -146,6 +146,7 @@ const Menu = () => (
           <Nav.Link href="/design/notices&resources">Notices</Nav.Link>
           <Nav.Link href="/design/landing">FAQ</Nav.Link>
         </Nav>
+
         <Nav>
           <Nav.Link href="#" className="btn btn-outline-white">
             SIgn Up
@@ -168,7 +169,18 @@ const Menu = () => (
             </button>
           </div>
 
-          <Nav.Link className="d-none d-lg-block">Language</Nav.Link>
+          {/* langiage */}
+          <Dropdown className="lang-selector">
+            <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+              <img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu as={'div'} alignRight>
+              <Dropdown.Item><img src="/images/english.png" className="mx-1" alt="eng" /> <span>Eng</span></Dropdown.Item>
+              <Dropdown.Item><img src="/images/nepal.png" className="mx-1" alt="nepal" /> <span>Nep</span></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>

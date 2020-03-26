@@ -45,6 +45,31 @@
     }
 }
 
+.lang-selector {
+    .dropdown-toggle {
+        background: #ffffff;
+        color: #0A375D;
+        padding: 4px 8px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        min-width: 100px;
+        padding: 0;
+        overflow: hidden;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                background: #76B1E3;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
 .mobile-flag {
     display: none;
 }
