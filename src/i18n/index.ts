@@ -11,13 +11,16 @@ const resources = {
   ne: { translation: ne }
 }
 
+const googtrans = getlocalStorage('googtrans') || 'en';
+const lng = googtrans.includes('ne') ? 'ne' : 'en';
+
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(detector)
   /*.use(backend) */
   .init({
     resources,
-    lng: getlocalStorage('covLang') === 'ne' ? 'ne' : 'en',
+    lng,
     fallbackLng: "en",
     debug: true,
 

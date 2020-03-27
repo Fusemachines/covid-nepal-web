@@ -240,6 +240,12 @@
     }
 }
 
+.supported-by {
+    bottom: 0;
+    width: 100%;
+    font-weight: 700;
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
       -webkit-transform: rotate(0deg);

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Nav } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import NoTranslate from '../NoTranslate';
 
 interface INavItemProps {
   to: string;
@@ -13,7 +14,7 @@ interface INavItemProps {
 const NavItem: FC<INavItemProps> = props => {
   const history = useHistory();
 
-  const { to, title, active, className } = props;
+  const { to, title, active, className, children } = props;
 
   const onSelect = (eventKey: any, e: any) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ const NavItem: FC<INavItemProps> = props => {
 
   return (
     <Nav.Link href={to} onSelect={onSelect} className={`nav-link ${active ? 'activeT' : ''} ${className}`}>
-      {title}
+      {children? children : <NoTranslate noTranslate={title} />}
     </Nav.Link>
   );
 };

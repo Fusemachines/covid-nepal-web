@@ -37,7 +37,7 @@ const AllocatedHospitalTable: FC<{}> = () => {
         <tr>
           <th>{t(lo.contac_hospitalName)}</th>
           <th className="w-125">{t(lo.contac_openHours)}</th>
-          <th>{t(lo.contac_openHours)}</th>
+          <th>{t(lo.hosp_Contact)}</th>
           <th className="w-76"></th>
         </tr>
       </thead>

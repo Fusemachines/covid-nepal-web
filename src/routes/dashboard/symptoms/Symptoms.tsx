@@ -46,21 +46,21 @@ const Symptoms = () => {
           </Col>
 
           <Col lg="3" className="mt-4">
-            <div className="h5 title bg-yellow">PREVENTIONS</div>
+          <div className="h5 title bg-yellow">{t(lo.sym_Preventions)}</div>
 
             <Media className="mt-4">
               <img alt={''} src="/images/wearmasks.svg" className="align-self-center mr-3" />
-              <Media.Body className="align-self-center">Wear Masks</Media.Body>
+          <Media.Body className="align-self-center">{t(lo.sym_WearMasks)}</Media.Body>
             </Media>
 
             <Media className="mt-4">
               <img alt={''} src="/images/washhand.svg" className="align-self-center mr-3" />
-              <Media.Body className="align-self-center">Wash your Hands</Media.Body>
+          <Media.Body className="align-self-center">{t(lo.sym_WashYourHands)}</Media.Body>
             </Media>
 
             <Media className="mt-4">
               <img alt={''} src="/images/socialdistance.svg" className="align-self-center mr-3" />
-              <Media.Body className="align-self-center">Social Distancing</Media.Body>
+          <Media.Body className="align-self-center">{t(lo.sym_SocialDistancing)}</Media.Body>
             </Media>
 
             {/* <Media className="mt-4">
@@ -81,10 +81,10 @@ const Symptoms = () => {
               <SymtomChart />
             </div>
 
-            <div className="small my-3 text-center text-lightblue">* Sometimes for children</div>
+          <div className="small my-3 text-center text-lightblue">* {t(lo.sym_SometimeChildren)}</div>
 
             <div className="small my-3 text-center text-lightblue">
-              Sources: CDC, WHO, American College of Allergy, Asthma and Immunology
+              {t(lo.sym_sourcesFooter)}
             </div>
           </Col>
         </Row>

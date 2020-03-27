@@ -11,7 +11,7 @@ const Resources: FC<{}> = () => {
     <ul className="resources__list">
       <ResourceItem
         title={
-          '7 ways employers can support working parents during the coronavirus disease  COVID 19  outbreak byUNICEF.pdf'
+          '7 ways employers can support working parents during the coronavirus disease COVID-19 outbreak by UNICEF'
         }
         url={'https://drive.google.com/open?id=1WRFP2u0zKaYbGypFPLBEutCuAWuu6Gp8'}
         imageUrl={''}
@@ -26,7 +26,7 @@ const Resources: FC<{}> = () => {
       />
 
       <ResourceItem
-        title={'Hamro Patro and Ncell Presents Online Doctor Service for Covid-19.pdf'}
+        title={'Hamro Patro and Ncell Presents Online Doctor Service for Covid-19'}
         url={'https://drive.google.com/open?id=1ia6wLH00ewleXTDu6buDCbuUgYCs2Bku'}
         imageUrl={''}
       />
