@@ -1,0 +1,283 @@
+.covid-alert {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1031;
+    padding: 5px 2px 8px;
+    display: block;
+    line-height: 1;
+
+    a {
+        line-height: 1.2;
+        font-weight: 600; 
+        color: #07ff95
+    }
+}
+
+// language
+
+.lang {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+    height: 33px;
+
+    input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    label {
+        padding: 9px 5px;
+        display: inline-block;
+        color: #000000;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 10px;
+        margin-bottom: 0;
+        position: relative;
+
+        &.active {
+            background: #2074B9;
+            color: #ffffff;
+        }
+    }
+}
+
+.lang-selector {
+    margin: 3px 0;
+    
+    .dropdown-toggle {
+        background: #ffffff;
+        color: #0A375D;
+        padding: 4px 8px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        min-width: 100px;
+        padding: 0;
+        overflow: hidden;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                background: #76B1E3;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.mobile-flag {
+    display: none;
+}
+
+.title {
+    display: inline-block;
+    border-radius: 15px;
+    padding: 6px 15px;
+    font-weight: 600;
+}
+
+
+.emg-call {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .icon {
+        padding: 6px 12px;
+        background: #079558;
+    }
+    .text {
+        padding: 6px 12px;
+        background: #00C571;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 6px #00C571
+    }
+}
+
+.rec {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: #D1454B;
+    border: 2px solid lighten( #D1454B, 20% );
+    border-radius: 50%;
+}
+
+.info {
+    &-item  {
+        display: block;
+        border-bottom: 1px solid #2074B9;
+    }
+}
+
+.mob-view {
+    display: none;
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.hospital-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.small-xs {
+    font-size: 10px;
+}
+
+.hospitalinfo-list {
+    padding: 0;
+
+    li {
+        border-bottom: 1px solid #2074B9;
+        list-style: none;
+        padding: 12px 0;
+    }
+}
+
+// maps
+.map-large,
+.maps {
+    iframe {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+}
+
+.tweet-wrapper {
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+
+#google_translate_element {
+    display: none;
+}
+
+.social-link {
+    a {
+        cursor: pointer;
+        margin: 0 15px 0 0;
+
+        &:hover {
+            svg path {
+                fill: #0A375D;
+            }
+        }
+    }
+    
+}
+
+.count-box {
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px 12px;
+    font-size: 12px;
+    overflow: hidden;
+
+    > span {
+        padding: 4px 12px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.green {
+        background: rgba(0, 197, 13, 0.2);
+
+        .count {
+            background: #00C571;
+        }
+    }
+
+    &.blue {
+        background: rgba(32, 116, 185, 0.2);
+
+        .count {
+            background: #2074B9;
+        }
+    }
+
+    &.yellow {
+        background: rgba(255, 208, 58, 0.2);
+
+        .count {
+            background: #FFD03A;
+            color: #004E90;
+        }
+    }
+}
+
+.covid-hospital-count {
+    &.tooltip {
+        max-width: 168px;
+        .tooltip-inner {
+            background: #ffffff;
+            color: #0A375D;
+            font-size: 9px;
+        }
+    
+        .arrow:before {
+            border-top-color: #ffffff;
+        }
+    }
+}
+
+.supported-by {
+    bottom: 0;
+    width: 100%;
+    font-weight: 700;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .rotating svg {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+  }

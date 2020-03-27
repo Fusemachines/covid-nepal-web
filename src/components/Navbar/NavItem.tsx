@@ -1,20 +1,30 @@
 import React, { FC } from 'react';
 import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import NoTranslate from '../NoTranslate';
 
 interface INavItemProps {
   to: string;
   title: string;
   active: boolean;
+  exact?: boolean;
+  className?: string;
 }
 
 const NavItem: FC<INavItemProps> = props => {
-  const { to, title, active } = props;
+  const history = useHistory();
+
+  const { to, title, active, className, children } = props;
+
+  const onSelect = (eventKey: any, e: any) => {
+    e.preventDefault();
+    history.push(to);
+  };
 
   return (
-    <Link to={to} className={`nav-link ${active ? 'active' : ''}`}>
-      {title}
-    </Link>
+    <Nav.Link href={to} onSelect={onSelect} className={`nav-link ${active ? 'activeT' : ''} ${className}`}>
+      {children? children : <NoTranslate noTranslate={title} />}
+    </Nav.Link>
   );
 };
 

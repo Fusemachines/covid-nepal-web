@@ -1,0 +1,165 @@
+{
+  "nav_HelpUsKeepDataReliable": "nav_HelpUsKeepDataReliable",
+  "nav_covid19": "nav_covid19",
+  "nav_Nepal": "nav_Nepal",
+  "nav_NEP": "nav_NEP",
+  "nav_ENG": "nav_ENG",
+  "nav_Home": "nav_Home",
+  "nav_Symptoms": "nav_Symptoms",
+  "nav_JoinUs": "nav_JoinUs",
+  "nav_GovNotice": "nav_GovNotice",
+  "nav_Cases": "nav_Cases",
+
+  "com_EmergencyContact": "com_EmergencyContact",
+  "com_HospitalContact": "com_HospitalContact",
+  "com_noRecordsFound": "com_noRecordsFound",
+
+  "covC_Update": "covC_Update",
+  "covC_Updated": "covC_Updated",
+  "covC_ago": "covC_ago",
+  "covC_Global": "covC_Global",
+  "covC_nepalGovReportNo": "covC_nepalGovReportNo",
+  "covC_totalTested": "covC_totalTested",
+  "covC_totalConfirmed": "covC_totalConfirmed",
+  "covC_totalRecovered": "covC_totalRecovered",
+  "covC_totalDeath": "covC_totalDeath",
+  "covC_whoReportedNo": "covC_whoReportedNo",
+  "covC_disclaimerNepalGovJohnsHopkins": "covC_disclaimerNepalGovJohnsHopkins",
+
+  "contac_whereToGetTested": "contac_whereToGetTested",
+  "contac_whenToGetTested": "contac_whenToGetTested",
+  "contac_hospitalWhereToGetTested": "contac_hospitalWhereToGetTested",
+  "contac_hospitalName": "contac_hospitalName",
+  "contac_openHours": "contac_openHours",
+  "contac_phoneNumber": "contac_phoneNumber",
+  "contac_exposedToDevelopSymptoms": "contac_exposedToDevelopSymptoms",
+  "contac_highFever": "contac_highFever",
+  "contac_drycough": "contac_drycough",
+  "contac_difficultToBreathing": "contac_difficultToBreathing",
+  "contac_hospitalCapacityData": "contac_hospitalCapacityData",
+  "contac_disclaimerHospitalGoverWebsite": "contac_disclaimerHospitalGoverWebsite",
+
+  "fil_Province": "fil_Province",
+  "fil_District": "fil_District",
+
+  "hosp_Address": "hosp_Address",
+  "hosp_Contact": "hosp_Contact",
+  "hosp_BedNo": "hosp_BedNo",
+  "hosp_ICUBedsNo": "hosp_ICUBedsNo",
+  "hosp_VentilatorsNo": "hosp_VentilatorsNo",
+  "hosp_IsolationsBedNo": "hosp_IsolationsBedNo",
+
+  "emerg_sukrarajTropicalInfecDisHosp": "emerg_sukrarajTropicalInfecDisHosp",
+  "emerg_asProvideGovNotice": "emerg_asProvideGovNotice",
+  "emerg_nightOnly": "emerg_nightOnly",
+
+  "emerg_drShrawanKMishra": "emerg_drShrawanKMishra",
+  "emerg_drRanjitShah": "emerg_drRanjitShah",
+  "emerg_mrRajeshKGupta": "emerg_mrRajeshKGupta",
+  "emerg_mrDineshThapaMagar": "emerg_mrDineshThapaMagar",
+  "emerg_mrNareshThapaMagar": "emerg_mrNareshThapaMagar",
+
+  "sym_CONTAGION": "sym_CONTAGION",
+  "sym_HumanContact": "sym_HumanContact",
+  "sym_ContaminatedObject": "sym_ContaminatedObject",
+  "sym_ShortnessOfBreath": "sym_ShortnessOfBreath",
+  "sym_AcheNPain": "sym_AcheNPain",
+  "sym_Fatigue": "sym_Fatigue",
+  "sym_Fever": "sym_Fever",
+  "sym_DryCough": "sym_DryCough",
+  "sym_RunnyNose": "sym_RunnyNose",
+  "sym_SoreThroad": "sym_SoreThroad",
+  "sym_Diarrohea": "sym_Diarrohea",
+  "sym_Preventions": "sym_Preventions",
+  "sym_WearMasks": "sym_WearMasks",
+  "sym_WashYourHands": "sym_WashYourHands",
+  "sym_SocialDistancing": "sym_SocialDistancing",
+  "sym_SometimeChildren": "sym_SometimeChildren",
+  "sym_sourcesFooter": "sym_sourcesFooter",
+
+
+
+
+  "0": "0",
+  "1": "1",
+  "2": "2",
+  "3": "3",
+  "4": "4",
+  "5": "5",
+  "6": "6",
+  "7": "7",
+  "8": "8",
+  "9": "9",
+
+
+  "nav_FAQ": "nav_FAQ",
+  "sym_Headache": "sym_Headache",
+  "symCh_commonCold": "symCh_commonCold",
+  "symCh_Flu": "symCh_Flu",
+  "symCh_Allergies": "symCh_Allergies",
+  "symCh_Sneezing": "symCh_Sneezing",
+  "symCh_Common": "symCh_Common",
+  "symCh_Sometimes": "symCh_Sometimes",
+  "symCh_Rare": "symCh_Rare",
+  "symCh_No": "symCh_No",
+  "symCh_Mild": "symCh_Mild",
+
+  "join_openSource": "join_openSource",
+  "join_askingAllLikeMinded": "join_askingAllLikeMinded",
+  "join_objective": "join_objective",
+  "join_objectiveDetail_1": "join_objectiveDetail_1",
+  "join_objectiveDetail_2": "join_objectiveDetail_2",
+  "join_objectiveDetail_3": "join_objectiveDetail_3",
+  "join_objectiveDetail_4": "join_objectiveDetail_4",
+  "join_process": "join_process",
+  "join_processDetail_1": "join_processDetail_1",
+  "join_processDetail_2": "join_processDetail_2",
+  "join_processDetail_3": "join_processDetail_3",
+  "join_processDetail_4": "join_processDetail_4",
+  "join_processDetail_5": "join_processDetail_5",
+
+  "join_hereHowCanHelpUs": "join_hereHowCanHelpUs",
+  "join_accessThisForm": "join_accessThisForm",
+  "join_reachOut": "join_reachOut",
+  "join_reliableInfo": "join_reliableInfo",
+  "join_contribute": "join_contribute",
+
+  "notic_governNotice": "notic_governNotice",
+  "notic_resources": "notic_resources",
+  "notic_support": "notic_support",
+  "notic_pressRelease": "notic_pressRelease",
+  "notic_reports": "notic_reports",
+  "notic_pressRelease21March": "notic_pressRelease21March",
+  "notic_situationReport20March": "notic_situationReport20March",
+  "notic_situationReport1To41": "notic_situationReport1To41",
+  "notic_travelRestriction": "notic_travelRestriction",
+
+  "resourc_howToProtectUrself": "resourc_howToProtectUrself",
+  "resourc_joinFight": "resourc_joinFight",
+
+  "faq_q1_ques": "faq_q1_ques",
+  "faq_q1_ans_1": "faq_q1_ans_1",
+  "faq_q1_ans_2": "faq_q1_ans_2",
+  "faq_q2_ques": "faq_q2_ques",
+  "faq_q2_ans": "faq_q2_ans",
+  "faq_q3_ques": "faq_q3_ques",
+  "faq_q3_ans": "faq_q3_ans",
+  "faq_q4_ques": "faq_q4_ques",
+  "faq_q4_ans": "faq_q4_ans",
+  "faq_q5_ques": "faq_q5_ques",
+  "faq_q5_ans": "faq_q5_ans"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

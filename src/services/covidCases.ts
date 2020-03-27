@@ -21,8 +21,7 @@ export interface ICovidCasesCounts {
   recoveredGlobal: number;
   seriousGlobal: number;
   deathGlobal: number;
-  // "createdDate" : ISODate("2020-02-20T10:20:20.650+0000"),
-  // "updatedDate" : ISODate("2020-03-20T10:20:20.650+0000"),
+  updatedAt: string;
 }
 
 export async function fetchCovidCasesCountsAPI() {

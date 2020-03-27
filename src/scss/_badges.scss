@@ -1,0 +1,74 @@
+.badges {
+    > a {
+        font-size: 14px;
+    }
+
+    &-item {
+        display: inline-block;
+        color: #00C571;
+        background: rgba(0, 197, 112, .1);
+        padding: 6px 12px;
+        border-radius: 15px;
+        margin-top: 12px;
+        margin-right: 12px;
+        text-decoration: none;
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+            margin-top: -5px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.covid-verified {
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 10px;
+    background: rgba(66, 170, 91, 0.4);
+    color: #ffffff;
+    vertical-align: middle;
+    line-height: 1;
+
+    span {
+        padding: 0px 8px 0px 1px;
+    }
+}
+
+.badge-cus:not(:only-child) {
+    margin-bottom: 15px;
+}
+
+.badge-cus:only-child {
+    margin-bottom: 0px;
+}
+
+.badge-cus:last-child {
+    margin-bottom: 0px;
+}
+
+.badges-green {
+    padding: 4px 8px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 7px;
+    color: #00C571;
+    background: lighten(#00C571, 55%);
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.badges-drak {
+    padding: 4px 8px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 7px;
+    color: #000000;
+    background: lighten(#000000, 90%);
+    font-size: 10px;
+}

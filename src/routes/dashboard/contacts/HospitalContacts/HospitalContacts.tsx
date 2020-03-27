@@ -37,13 +37,17 @@ const HospitalContacts: FC<{}> = () => {
   }, [filters.province]);
 
   const fetchHospitalContacts = async () => {
+    setIsLoaded(false);
     try {
       const response: IFetchContactsAPIResponse = await fetchHospitalContactsAPI({
+        province: filters.province ? filters.province.value : '',
         district: filters.district ? filters.district.value : ''
       });
       setHospitalContacts(response.docs);
     } catch (error) {
       console.log(error.message);
+    } finally {
+      setIsLoaded(true);
     }
   };
 
@@ -76,7 +80,7 @@ const HospitalContacts: FC<{}> = () => {
 
   return (
     <>
-      <div className="filter-wrapper px-4 py-4 d-md-flex">
+      <div className="filter-wrapper px-3 py-4 d-md-flex">
         <HospitalContactsFilter
           filters={filters}
           districtOptions={districtDropdownOptions}
@@ -85,7 +89,7 @@ const HospitalContacts: FC<{}> = () => {
         />
       </div>
 
-      <HospitalContactsRecords hospitalContacts={hospitalContacts} />
+      <HospitalContactsRecords isLoaded={isLoaded} hospitalContacts={hospitalContacts} />
     </>
   );
 };

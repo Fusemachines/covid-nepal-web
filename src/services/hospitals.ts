@@ -19,17 +19,20 @@ export interface IHospital {
   govtDesignated: boolean;
   numIsolationBeds: number;
   icu: number;
+  nameSlug?: string;
   focalPoint: string;
   province: {
     code: number;
     name: string;
   };
   district: string;
+  ventilators: number;
 }
 interface IHospitalCapaciyResponse {
   docs: Array<IHospital>;
 }
 export interface IFetchHospitalCapacityAPIPayload {
+  province?: string;
   district?: string;
   covidTest?: string;
 }

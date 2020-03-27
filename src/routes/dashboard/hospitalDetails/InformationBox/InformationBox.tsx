@@ -1,17 +1,14 @@
 import React, { FC } from 'react';
+import { IHospital } from 'src/services/hospitals';
 
-const InformationBox: FC<{}> = () => {
+const InformationBox: FC<{ hospital: IHospital }> = ({ hospital }) => {
   return (
     <div className="py-4 px-5 rounded bg-bluelight">
       <div className="hospital-title">Process of Testing</div>
 
-      <div className="mt-4 text-secondary">
-        Integer at faucibus urna. Nullam condimentum leo id elit sagittis auctor. Curabitur elementum nunc a leo
-        imperdiet, nec elemetum diam elementum.accumsan mauris. Phasellus egestas et risus sit amet hendrerit. Nulla
-        facilisi. Cras urna sem, vulputate sed contum a, posuere vel enim.
-      </div>
+      <div className="mt-4 text-secondary" dangerouslySetInnerHTML={{ __html: hospital.testingProcess }} />
 
-      <ul className="numc mt-5">
+      {/* <ul className="numc mt-5">
         <li>
           In at iaculis lorem praesent tempor dictum tellus ut molestie. Sed sed ullamcorper lorem, id faucibus odio.
         </li>
@@ -27,7 +24,7 @@ const InformationBox: FC<{}> = () => {
         <li>
           In at iaculis lorem praesent tempor dictum tellus ut molestie. Sed sed ullamcorper lorem, id faucibus odio.
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };

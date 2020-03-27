@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { IHospital } from 'src/services/hospitals';
 import LocationIcon from 'src/components/Icons/LocationIcon';
 import { IMapModalValues } from './HospitalCapacityTable';
+import NotAvailable from 'src/components/NotAvailable';
 
 export interface IHospitalCapacityTableRowProps {
   hospitalCapacity: IHospital;
@@ -10,55 +12,70 @@ export interface IHospitalCapacityTableRowProps {
 }
 
 const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
+  const history = useHistory();
   const {
     hospitalCapacity: {
       _id,
       name,
       location: address,
       mapLink: mapURL,
-      covidTest,
       contact,
+      totalBeds,
       numIsolationBeds,
       icu,
-      govtDesignated
+      nameSlug,
+      ventilators
     },
     toggleMapsModal
   } = props;
+
+  const showMapModal = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+    if (address) {
+      toggleMapsModal({ title: name, mapURL });
+    }
+  };
+
   return (
     <>
-      <tr onClick={() => window.location.assign(`/hospital/${_id}`)}>
+      <tr onClick={() => history.push(`/hospital/${nameSlug}`)} style={{ cursor: 'pointer' }}>
         <td>
           <div>{name}</div>
         </td>
-        <td>
-          <div>{address}</div>
-          <a className="pointer" onClick={() => toggleMapsModal({ title: name, mapURL })}>
-            <LocationIcon />
-            <span className="ml-2">Map</span>
-          </a>
-        </td>
-        <td>
-          {covidTest ? (
-            <div className="badges">
-              <div className="badges-item m-0">Available</div>
-            </div>
+        <td onClick={showMapModal}>
+          {address ? (
+            <>
+              <div style={{ textTransform: 'capitalize' }}>{address}</div>
+
+              <LocationIcon />
+              <span className="ml-2">Map</span>
+            </>
           ) : (
-            '-'
+            <NotAvailable id={'address-' + _id} />
           )}
         </td>
-        <td>{contact.map((number, index) => (index === contact.length - 1 ? `${number}` : `${number},`))}</td>
-
-        <td>{numIsolationBeds ? numIsolationBeds : '-'}</td>
-        <td>{icu ? icu : '-'}</td>
-
-        <td>
-          {govtDesignated ? (
-            <div className="badges">
-              <div className="badges-item m-0">Yes</div>
-            </div>
+        <td onClick={e => e.stopPropagation()}>
+          {contact ? (
+            contact.map((number, index) => (
+              <a key={index} className="text-white" href={`tel:${number}`}>
+                {number} {index === contact.length - 1 ? ' ' : ', '}
+              </a>
+            ))
           ) : (
-            '-'
+            <NotAvailable id={'contact-' + _id} />
           )}
+        </td>
+
+        <td onClick={e => e.stopPropagation()}>{totalBeds ? totalBeds : <NotAvailable id={'bed-' + _id} />}</td>
+
+        <td onClick={e => e.stopPropagation()}>{icu ? icu : <NotAvailable id={'icu-' + _id} />}</td>
+
+        <td onClick={e => e.stopPropagation()}>
+          {ventilators ? ventilators : <NotAvailable id={'ventilators-' + _id} />}
+        </td>
+
+        <td onClick={e => e.stopPropagation()}>
+          {numIsolationBeds ? numIsolationBeds : <NotAvailable id={'isolation-bed-' + _id} placement="left" />}
         </td>
       </tr>
     </>

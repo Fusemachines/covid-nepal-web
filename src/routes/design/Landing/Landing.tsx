@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Nav, Tab, Table, Media, Modal } from 'react-bootstrap';
+import { Row, Col, Nav, Tab, Table, Media, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Menu from '../Navbar';
 
 // const [show, setShow] = useState(false);
@@ -672,8 +672,8 @@ const Home = () => {
                                     transform="translate(764 193)"
                                     fill="none"
                                     stroke="#fff"
-                                    stroke-linecap="square"
-                                    stroke-width="2"
+                                    strokeLinecap="square"
+                                    strokeWidth="2"
                                   >
                                     <rect width="24" height="24" rx="4" stroke="none" />
                                     <rect x="1" y="1" width="22" height="22" rx="3" fill="none" />
@@ -794,6 +794,11 @@ const Home = () => {
               <div className="h5 font-weight-bold mb-3">Latest News</div>
 
               <div className="">Latest News</div>
+
+              {/* <div className="covid-verified">
+                <img src="/images/verified.svg" />
+                <span>Verified</span>
+              </div> */}
             </div>
           </Col>
         </Row>
@@ -804,6 +809,48 @@ const Home = () => {
             <div className="rounded bg-bluelight px-3 py-4">
               <div className="d-md-flex filter-wrapper mb-4">
                 <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
+
+                <div className="mx-auto">
+                  <OverlayTrigger
+                    placement={'top'}
+                    overlay={
+                      <Tooltip id={`tooltip-total`} className="covid-hospital-count">
+                        The total number of hospitals listed in covidnepal.org
+                      </Tooltip>
+                    }
+                  >
+                    <div className="count-box yellow">
+                      <span>Total Hospitals </span> <span className="count">100</span>
+                    </div>
+                  </OverlayTrigger>
+
+                  <OverlayTrigger
+                    placement={'top'}
+                    overlay={
+                      <Tooltip id={`tooltip-verified`} className="covid-hospital-count">
+                        The number of hospitals we called and verified the information.
+                      </Tooltip>
+                    }
+                  >
+                    <div className="count-box green">
+                      <span>Total Verified </span> <span className="count">40</span>
+                    </div>
+                  </OverlayTrigger>
+
+                  {/* <OverlayTrigger
+                    placement={'top'}
+                    overlay={
+                      <Tooltip id={`tooltip-review`} className="covid-hospital-count">
+                        The number of hospitals we are currently verifying the information.
+                      </Tooltip>
+                    }
+                  >
+                    <div className="count-box blue">
+                      <span>In Review </span> <span className="count">60</span>
+                    </div>
+                  </OverlayTrigger> */}
+                </div>
+
                 <div className="ml-auto">
                   <div className="filter d-inline-block">
                     <span>Provinance</span>
@@ -847,7 +894,20 @@ const Home = () => {
                 <tbody>
                   <tr>
                     <td>
-                      <div>Bir Hospital</div>
+                      <div>
+                        Bir Hospital
+                        
+                        <OverlayTrigger
+                          placement={'top'}
+                          overlay={
+                            <Tooltip id={`tooltip-total`} className="covid-hospital-count">
+                              Verified by covidnepal.org
+                            </Tooltip>
+                          }
+                        >
+                          <img src="/images/verified.svg" className="ml-2" />
+                        </OverlayTrigger>
+                      </div>
                     </td>
                     <td>
                       <div>Ranipokhari, Kathmandu</div>
@@ -901,6 +961,7 @@ const Home = () => {
           </div>
         </Modal.Body>
       </Modal>
+
     </>
   );
 };
