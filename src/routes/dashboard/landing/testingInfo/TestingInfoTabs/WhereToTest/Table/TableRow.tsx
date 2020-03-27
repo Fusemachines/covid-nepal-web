@@ -13,7 +13,7 @@ const TableRow: FC<ITableRowProps> = props => {
   return (
     <tr>
       <td>
-        <div>{hospital.name.en}</div>
+        <div>{selectLanguage(hospital.name)}</div>
       </td>
       <td className="text-center">
         <div>{(hospital.availableTime && hospital.availableTime.length && selectLanguage(hospital.availableTime[0])) || ''}</div>
