@@ -104,7 +104,7 @@
     }
 }
 
-@media(max-width: 360px) {
+@media(max-width: 376px) {
     
     .right-bar {
         .content{
@@ -112,6 +112,18 @@
         }
         .toggle-rightbar {
             top: 38px;
+        }
+    }
+
+    .lang-selector {
+        .dropdown-toggle {
+            img {
+                margin: 0 !important;
+            }
+
+            > span {
+                display: none;
+            }
         }
     }
 }
