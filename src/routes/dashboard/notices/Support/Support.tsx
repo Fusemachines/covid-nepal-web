@@ -1,30 +1,15 @@
-import React, { FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { FC } from "react";
 
-import SupportItem from './SupportItem';
-import lo from 'src/i18n/locale.json';
+import support from "src/constants/notices/support.json";
+import SupportItem from "./SupportItem";
 
 const Resources: FC<{}> = () => {
-  const [t] = useTranslation();
 
   return (
-      <ul className="resources__list">
-
-        <SupportItem
-            title={
-            'Call to Doctor Sewa'
-            }
-            url={'https://covid.hamropatro.com/'}
-            imageUrl={'/images/calldoctor.jpg'}
-        />
-
-        <SupportItem
-            title={
-            'Corona Nepal'
-            }
-            url={'http://www.coronanepal.org/'}
-            imageUrl={'/images/coronanepal.jpg'}
-        />
+    <ul className="resources__list">
+      {support.reverse().map(support => (
+        <SupportItem key={support._id} title={support.title} url={support.url} imageUrl={support.imageUrl} />
+      ))}
     </ul>
   );
 };
