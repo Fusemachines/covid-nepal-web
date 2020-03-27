@@ -8,6 +8,7 @@
   "nav_Symptoms": "Symptoms",
   "nav_JoinUs": "Join Us",
   "nav_GovNotice": "Notices",
+  "nav_News": "News",
   "nav_Cases": "Cases",
 
   "com_EmergencyContact": "Emergency Contact",
@@ -147,5 +148,4 @@
   "faq_q4_ans": "It depends on cases but it is not very quick. It generally takes two hours or so to perform the test and can generally take a week to get the final result. The positive cases are reported to doctors immediately so that you are immediately transferred to the isolation room and treated accordingly.",
   "faq_q5_ques": "What is the survival rate & time period of the virus outside the human body?",
   "faq_q5_ans": "No one knows for sure. It depends on the environmental condition, but studies suggest it can survive for thousands of years in the right scenario. Since they are not considering living and do not have any metabolism they are either inactive or active. Not live or dead."
-
 }
