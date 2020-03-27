@@ -4,6 +4,7 @@ import { useTranslation, Trans } from 'react-i18next'
 
 import NepalCovidCases from './NepalCovidCases';
 import GlobalCovidCases from './GlobalCovidCases';
+import CovidData from './CovidData';
 import { fetchCovidCasesCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
 import RefreshIcon from 'src/components/Icons/RefreshIcon';
 import { getFormattedTime } from 'src/utils/date';
@@ -120,10 +121,15 @@ const CovidCases = () => {
 
           <div className="clearfix"></div>
 
-        <Row className="mb-3">
+        {/* <Row className="mb-3">
           <NepalCovidCases covidCasesCounts={covidCasesCounts} />
           <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
-        </Row>
+        </Row> */}
+        
+        {/* covid counts */}
+        <CovidData covidCasesCounts={covidCasesCounts} />
+        {/* covid counts end */}
+        
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>

@@ -5,12 +5,13 @@ import { ValueType } from "react-select";
 
 import HospitalCapacityTable from "./Table/HospitalCapacityTable";
 import HospitalCapacityFilter from "./Table/HospitalCapacityFilter";
-import { fetchHospitalCapacityAPI, IHospital } from "src/services/hospitals";
+import { fetchHospitalCapacityAPI, IHospital, IHospitalsCount } from "src/services/hospitals";
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from "src/services/contacts";
 import { ProvinceOptions } from "src/constants/options";
 import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
 import Pagination, { IPagination } from "src/components/Pagination/Pagination";
 import lo from "src/i18n/locale.json";
+import HospitalsCount from "./Table/HospitalsCount";
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
@@ -33,7 +34,7 @@ interface IHospitalCapacityFilters {
 export const HospitalCapacityTableContext = React.createContext({} as IHospitalCapacityTableContext);
 export const HospitalCapacityFiltersContext = React.createContext({} as IHospitalCapacityFiltersContext);
 
-const initialHospitalCapacityFiltersState = {
+const initialHospitalCapacityFiltersState: IHospitalCapacityFilters = {
   province: ProvinceOptions[2],
   district: { label: "Kathmandu", value: "Kathmandu" },
   covidTest: { label: "All", value: "" }
@@ -44,10 +45,17 @@ const initialPaginationState = {
   size: 10
 };
 
+const initialHospitalsCountState = {
+  totalHospitals: null,
+  totalPending: null,
+  totalVerified: null
+};
+
 const HospitalCapacity: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
-  const [pagination, setPagination] = useState(initialPaginationState as IPagination);
+  const [hospitalsCount, setHospitalsCount] = useState<IHospitalsCount>(initialHospitalsCountState);
+  const [pagination, setPagination] = useState<IPagination>(initialPaginationState as IPagination);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
   const [t] = useTranslation();
@@ -71,8 +79,9 @@ const HospitalCapacity: FC<{}> = () => {
         district: district ? district.value : ""
       };
       const response = await fetchHospitalCapacityAPI(payload);
-      const { docs, ...rest } = response;
+      const { docs, totalHospitals, totalPending, totalVerified, ...rest } = response;
       setHospitalCapacityList(docs);
+      setHospitalsCount({ totalHospitals, totalPending, totalVerified });
       setPagination(rest);
     } catch (error) {
       console.log(error);
@@ -124,6 +133,9 @@ const HospitalCapacity: FC<{}> = () => {
           <div className="rounded bg-bluelight px-3 py-4">
             <div className="d-md-flex filter-wrapper">
               <div className="h5 font-weight-bold mb-3 mr-auto">{t(lo.contac_hospitalCapacityData)}</div>
+
+              <HospitalsCount hospitalsCount={hospitalsCount} />
+
               <HospitalCapacityFiltersContext.Provider
                 value={{
                   filters,

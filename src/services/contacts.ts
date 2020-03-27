@@ -1,11 +1,12 @@
 import { AxiosResponse } from 'axios';
 
 import axios from 'src/utils/axios';
+import { ILanguage } from 'src/interface/common';
 
 export interface IContact {
-  name: string;
+  name: ILanguage;
   contactType: string;
-  landLine: string[];
+  landLine: Array<ILanguage>;
   mobile: string[];
   openingTime: string;
   closingTime: string;
