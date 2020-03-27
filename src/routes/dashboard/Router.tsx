@@ -20,7 +20,7 @@ const DashboardRouter: FC<{}> = () => (
     <Route path={routes.NOTICES} component={withTracker(Notices)} />
     {/* TODO:pragyakar add tracker for News component */}
     <Route path={routes.NEWS} component={News} />
-    {/* <Route path={routes.FAQ} component={withTracker(FAQ)} /> */}
+    <Route path={routes.FAQ} component={withTracker(FAQ)} />
   </Switch>
 );
 

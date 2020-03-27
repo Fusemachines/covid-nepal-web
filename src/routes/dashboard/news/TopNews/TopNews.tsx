@@ -1,5 +1,5 @@
 import React from "react";
-import NewsCard from "src/components/NewsCard";
+import TipsCard from "src/components/TipsCard";
 
 const TopNews = () => {
   return (
@@ -24,21 +24,18 @@ const TopNews = () => {
       <div className="news-block bg-white">
         <div className="bg-grey text-primary p-2">TIPS</div>
         <div className="news-list px-3">
-          <NewsCard
+          <TipsCard
             title={'Global research and innovation forum: towards a research'}
-            source={'CNN'}
             createdAt={'2 hours ago'}
             imageUrl={'/images/news/news1.jpg'}
           />
-          <NewsCard
+          <TipsCard
             title={'Global research and innovation forum: towards a research'}
-            source={'CNN'}
             createdAt={'2 hours ago'}
             imageUrl={'/images/news/news2.jpg'}
           />
-          <NewsCard
+          <TipsCard
             title={'Global research and innovation forum: towards a research'}
-            source={'CNN'}
             createdAt={'2 hours ago'}
             imageUrl={'/images/news/news3.jpg'}
           />

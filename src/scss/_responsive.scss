@@ -37,12 +37,16 @@
             margin: 35px 0 0;
         }
     }
+
+    .right-bar {
+        height: calc(var(--vh, 1vh) * 100);
+    }
 }
 
 @media(max-width: 550px) {
     .right-bar {
         
-
+        
         .toggle-rightbar {
             right: 0;
             z-index: 1;
