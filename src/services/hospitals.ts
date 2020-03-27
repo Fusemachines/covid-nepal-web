@@ -13,6 +13,7 @@ export interface IHospital {
   coordinates: Array<number>;
   contact: Array<ILanguage>;
   name: ILanguage;
+  isVerified: boolean;
   hospitalType: ILanguage;
   openDays: ILanguage;
   location: ILanguage;

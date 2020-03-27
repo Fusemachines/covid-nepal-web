@@ -18,6 +18,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
     hospitalCapacity: {
       _id,
       name,
+      isVerified,
       location: address,
       mapLink: mapURL,
       contact,
@@ -43,6 +44,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         <td>
           <div>
             {name.en}
+            {isVerified && <VerfiedCheckmark />}
           </div>
         </td>
         <td onClick={showMapModal}>
@@ -86,3 +88,16 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
 };
 
 export default HospitalCapacityTableRow;
+
+const VerfiedCheckmark = () => (
+  <OverlayTrigger
+    placement={"top"}
+    overlay={
+      <Tooltip id={`tooltip-total`} className="covid-hospital-count">
+        Verified by covidnepal.org
+      </Tooltip>
+    }
+  >
+    <img src="/images/verified.svg" className="ml-2" />
+  </OverlayTrigger>
+);
