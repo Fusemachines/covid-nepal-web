@@ -48,7 +48,7 @@ axiosInstance.interceptors.request.use(
   function(config) {
     config.params = {
       ...config.params,
-      lang: getlocalStorage('i18nextLng')
+      lang: getlocalStorage('i18nextLng') === 'ne' ? 'np' : 'en'
     }
     return config;
   }, function(error) {
