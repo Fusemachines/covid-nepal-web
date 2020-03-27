@@ -1,11 +1,11 @@
-import { AxiosResponse } from 'axios';
+import { AxiosResponse } from "axios";
 
-import axios from 'src/utils/axios';
-import { IPagination } from 'src/components/Pagination/Pagination';
+import axios from "src/utils/axios";
+import { IPagination } from "src/components/Pagination/Pagination";
 
-export interface ILanguage{
-  en: string,
-  np? : string
+export interface ILanguage {
+  en: string;
+  np?: string;
 }
 export interface IHospital {
   _id: string;
@@ -33,7 +33,14 @@ export interface IHospital {
   district: ILanguage;
   ventilators: number;
 }
-interface IHospitalCapaciyResponse extends IPagination {
+
+export interface IHospitalsCount {
+  totalHospitals: number | null;
+  totalPending: number | null;
+  totalVerified: number | null;
+}
+
+interface IHospitalCapaciyResponse extends IPagination, IHospitalsCount {
   docs: Array<IHospital>;
 }
 export interface IFetchHospitalCapacityAPIPayload {
@@ -46,7 +53,7 @@ export interface IFetchHospitalCapacityAPIPayload {
 
 export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAPIPayload) {
   try {
-    const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload});
+    const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload });
     return response.data;
   } catch (error) {
     throw error;
