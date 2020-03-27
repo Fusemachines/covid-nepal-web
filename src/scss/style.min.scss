@@ -13,8 +13,12 @@ body {
     height: 100%;
     top: 0 !important;
 }
-#root {
-    min-height: calc(100% - 50px);
+
+#root .App {
+    > .container-fluid,
+    > .container {
+        min-height: calc(100vh - 169px);
+    }
 }
 
 :-moz-focusring {
