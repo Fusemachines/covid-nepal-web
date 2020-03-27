@@ -96,7 +96,7 @@ const HospitalCapacity: FC<{}> = () => {
         const response: IFetchDistrictListAPIResponse = await fetchDistrictListAPI(filters.province.value);
 
         let mappedOptions = response.docs.map(doc => {
-          return { label: doc.name, value: doc.name };
+          return { label: doc.name.en, value: doc.name.en };
         });
 
         mappedOptions.unshift({ label: "All", value: "" });
