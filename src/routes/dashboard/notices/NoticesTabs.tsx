@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import GovernmentNotices from './GovernmentNotices';
 import Resources from './Resources';
+import Support from './Support';
 import lo from 'src/i18n/locale.json';
 
 const NoticesTabs: FC<{}> = () => {
@@ -18,6 +19,9 @@ const NoticesTabs: FC<{}> = () => {
         <Nav.Item>
           <Nav.Link eventKey="resources">{t(lo.notic_resources)}</Nav.Link>
         </Nav.Item>
+        {/* <Nav.Item>
+          <Nav.Link eventKey="support">{t(lo.notic_support)}</Nav.Link>
+        </Nav.Item> */}
       </Nav>
 
       <Tab.Content>
@@ -26,6 +30,9 @@ const NoticesTabs: FC<{}> = () => {
         </Tab.Pane>
         <Tab.Pane eventKey="resources">
           <Resources />
+        </Tab.Pane>
+        <Tab.Pane eventKey="support">
+          <Support />
         </Tab.Pane>
       </Tab.Content>
     </Tab.Container>

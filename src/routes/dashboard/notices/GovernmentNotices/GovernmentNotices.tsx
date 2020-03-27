@@ -9,6 +9,20 @@ const GovernmentNotices: FC<{}> = () => {
 
   return (
     <ul className="notices__list">
+       <GovernmentNoticeItem
+        category="Press Release"
+        date="27 March 2020"
+        title="Situation Report #1 to #46"
+        url="https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
+      />
+
+       <GovernmentNoticeItem
+        category="Press Release"
+        date="27 March 2020"
+        title="Criterias for COVID-19 Isolation and Quarantine Set up and Management by MoHP"
+        url="https://drive.google.com/open?id=1AYfWh0CEuGwK237AN1KWjxU9C_bDKEM2"
+      />
+
       <GovernmentNoticeItem
         category="Press Release"
         date="26 March 2020"
@@ -26,7 +40,7 @@ const GovernmentNotices: FC<{}> = () => {
       <GovernmentNoticeItem
         category="Press Release"
         date="26 March 2020"
-        title="Guidelines for use of personal protective equipment in relation to Covid-19"
+        title="Guidelines for use of personal protective equipment in relation to COVID-19"
         url="https://drive.google.com/open?id=18ZZVfHuQUvVxWY_O6qoONRLzsvuaVE7l"
       />
 
@@ -54,7 +68,7 @@ const GovernmentNotices: FC<{}> = () => {
       <GovernmentNoticeItem
         category="Reports"
         date="25 March 2020"
-        title="Covid-outbreak updates- as of March 25"
+        title="COVID-19 outbreak updates- as of March 25"
         url="https://drive.google.com/open?id=1Ahreq6VwU6qkn2aNVQ-E0UTzQxLZE7-2"
       />
 
