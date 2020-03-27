@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Nav, Dropdown, Media } from 'react-bootstrap';
-// import RightBar from '../EmergencyCall';
 
 const Menu = () => (
   <React.Fragment>
@@ -142,7 +141,7 @@ const Menu = () => (
           <Nav.Link href="/design/symptoms">Symptoms</Nav.Link>
           <Nav.Link href="/design/notices&resources">Notices</Nav.Link>
           <Nav.Link href="/design/news">News</Nav.Link>
-          <Nav.Link href="/design/landing">FAQ</Nav.Link>
+          <Nav.Link href="/design/faq">FAQ</Nav.Link>
         </Nav>
 
         <Nav>          
