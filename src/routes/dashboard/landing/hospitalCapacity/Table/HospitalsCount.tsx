@@ -22,7 +22,7 @@ const HospitalsCount: FC<IHospitalsCountProps> = props => {
           }
         >
           <div className="count-box yellow">
-            <span>Total Hospitals </span> <span className="count">{!totalHospitals ? "NA" : totalHospitals}</span>
+            <span>Total Hospitals </span> <span className="count">{typeof(totalHospitals) === "number" && totalHospitals > -1 ? totalHospitals : "NA"}</span>
           </div>
         </OverlayTrigger>
 
@@ -35,7 +35,7 @@ const HospitalsCount: FC<IHospitalsCountProps> = props => {
           }
         >
           <div className="count-box green">
-            <span>Total Verified </span> <span className="count">{!totalVerified ? "NA" : totalVerified}</span>
+            <span>Total Verified </span> <span className="count">{typeof(totalVerified) === "number" && totalVerified > -1 ? totalVerified : "NA"}</span>
           </div>
         </OverlayTrigger>
 
