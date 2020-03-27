@@ -12,24 +12,24 @@ const TableRow: FC<ITableRowProps> = props => {
   return (
     <tr>
       <td>
-        <div>{hospital.name}</div>
+        <div>{hospital.name.en}</div>
       </td>
       <td className="text-center">
-        <div>{(hospital.availableTime && hospital.availableTime.length && hospital.availableTime[0]) || ''}</div>
-        <small>{hospital.openDays}</small>
+        <div>{(hospital.availableTime && hospital.availableTime.length && hospital.availableTime[0].en) || ''}</div>
+        <small>{hospital.openDays.en}</small>
       </td>
       <td className="align-middle" onClick={e => e.stopPropagation()}>
         {/* <div className="h5 text-warning font-weight-bold text-right"> */}
         {/* {hospital.contact && hospital.contact.join(', ')} */}
         {hospital.contact.map((number, index) =>
           index === hospital.contact.length - 1 ? (
-            <a key={index} className="text-white" href={`tel:${number}`}>
-              {number}
+            <a key={index} className="text-white" href={`tel:${number.en}`}>
+              {number.en}
             </a>
           ) : (
             <>
-              <a key={index} className="text-white" href={`tel:${number}`}>
-                {number}
+              <a key={index} className="text-white" href={`tel:${number.en}`}>
+                {number.en}
               </a>
               ,{' '}
             </>
