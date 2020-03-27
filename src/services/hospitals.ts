@@ -2,11 +2,8 @@ import { AxiosResponse } from "axios";
 
 import axios from "src/utils/axios";
 import { IPagination } from "src/components/Pagination/Pagination";
+import { ILanguage } from "src/interface/common";
 
-export interface ILanguage {
-  en: string;
-  np?: string;
-}
 export interface IHospital {
   _id: string;
   availableTime: Array<ILanguage>;

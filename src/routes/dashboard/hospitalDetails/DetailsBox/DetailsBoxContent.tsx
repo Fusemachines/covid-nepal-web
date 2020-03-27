@@ -5,7 +5,7 @@ import GreenContactBadge from "src/components/Badges/GreenContactBadge";
 import NotAvailable from "src/components/NotAvailable";
 import { HospitalDetailsContext } from "../HospitalDetails";
 import lo from "src/i18n/locale.json";
-import { ILanguage } from "src/services/hospitals";
+import { ILanguage } from "src/interface/common";
 
 const DetailsBoxContent: FC<{}> = () => {
   const { hospital } = useContext(HospitalDetailsContext);
