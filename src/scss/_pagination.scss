@@ -1,0 +1,30 @@
+.pagination-wrapper {
+    background: #0A375D;
+    padding: {
+        top: 15px;
+        bottom: 12px;
+    }
+
+    &.sticky {
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+.pagination {
+    margin: 0;
+    li {
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        &.disabled {
+            pointer-events: none;
+        }
+
+        &#prev-button a svg {
+            transform: rotate(180deg);
+        }
+    }
+}

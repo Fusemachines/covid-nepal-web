@@ -32,7 +32,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   const showMapModal = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     if (address) {
-      toggleMapsModal({ title: name, mapURL });
+      toggleMapsModal({ title: name.en, mapURL });
     }
   };
 
@@ -40,12 +40,12 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
     <>
       <tr onClick={() => history.push(`/hospital/${nameSlug}`)} style={{ cursor: 'pointer' }}>
         <td>
-          <div>{name}</div>
+          <div>{name.en}</div>
         </td>
         <td onClick={showMapModal}>
           {address ? (
             <>
-              <div style={{ textTransform: 'capitalize' }}>{address}</div>
+              <div style={{ textTransform: 'capitalize' }}>{address.en}</div>
 
               <LocationIcon />
               <span className="ml-2">Map</span>
@@ -57,8 +57,8 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
         <td onClick={e => e.stopPropagation()}>
           {contact ? (
             contact.map((number, index) => (
-              <a key={index} className="text-white" href={`tel:${number}`}>
-                {number} {index === contact.length - 1 ? ' ' : ', '}
+              <a key={index} className="text-white" href={`tel:${number.en}`}>
+                {number.en} {index === contact.length - 1 ? ' ' : ', '}
               </a>
             ))
           ) : (

@@ -6,7 +6,7 @@ const InformationBox: FC<{ hospital: IHospital }> = ({ hospital }) => {
     <div className="py-4 px-5 rounded bg-bluelight">
       <div className="hospital-title">Process of Testing</div>
 
-      <div className="mt-4 text-secondary" dangerouslySetInnerHTML={{ __html: hospital.testingProcess }} />
+      <div className="mt-4 text-secondary" dangerouslySetInnerHTML={{ __html: hospital.testingProcess? hospital.testingProcess.en : "" }} />
 
       {/* <ul className="numc mt-5">
         <li>

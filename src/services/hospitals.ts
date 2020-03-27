@@ -1,37 +1,44 @@
 import { AxiosResponse } from 'axios';
 
 import axios from 'src/utils/axios';
+import { IPagination } from 'src/components/Pagination/Pagination';
 
+export interface ILanguage{
+  en: string,
+  np? : string
+}
 export interface IHospital {
   _id: string;
-  availableTime: Array<string>;
+  availableTime: Array<ILanguage>;
   coordinates: Array<number>;
-  contact: Array<string>;
-  name: string;
-  hospitalType: string;
-  openDays: string;
-  location: string;
+  contact: Array<ILanguage>;
+  name: ILanguage;
+  hospitalType: ILanguage;
+  openDays: ILanguage;
+  location: ILanguage;
   mapLink: string;
   totalBeds: number;
   availableBeds: number;
   covidTest: boolean;
-  testingProcess: string;
+  testingProcess: ILanguage;
   govtDesignated: boolean;
   numIsolationBeds: number;
   icu: number;
   nameSlug?: string;
-  focalPoint: string;
+  focalPoint: ILanguage;
   province: {
     code: number;
-    name: string;
+    name: ILanguage;
   };
-  district: string;
+  district: ILanguage;
   ventilators: number;
 }
-interface IHospitalCapaciyResponse {
+interface IHospitalCapaciyResponse extends IPagination {
   docs: Array<IHospital>;
 }
 export interface IFetchHospitalCapacityAPIPayload {
+  page: number;
+  size: number;
   province?: string;
   district?: string;
   covidTest?: string;
@@ -39,7 +46,7 @@ export interface IFetchHospitalCapacityAPIPayload {
 
 export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAPIPayload) {
   try {
-    const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload });
+    const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload});
     return response.data;
   } catch (error) {
     throw error;

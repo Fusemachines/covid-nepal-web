@@ -1,15 +1,16 @@
-import React, { FC, useState, useEffect } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { useTranslation } from 'react-i18next';
-import { ValueType } from 'react-select';
+import React, { FC, useState, useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import { ValueType } from "react-select";
 
-import HospitalCapacityTable from './Table/HospitalCapacityTable';
-import HospitalCapacityFilter from './Table/HospitalCapacityFilter';
-import { fetchHospitalCapacityAPI, IHospital } from 'src/services/hospitals';
-import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
-import { ProvinceOptions } from 'src/constants/options';
-import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
-import lo from 'src/i18n/locale.json'
+import HospitalCapacityTable from "./Table/HospitalCapacityTable";
+import HospitalCapacityFilter from "./Table/HospitalCapacityFilter";
+import { fetchHospitalCapacityAPI, IHospital } from "src/services/hospitals";
+import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from "src/services/contacts";
+import { ProvinceOptions } from "src/constants/options";
+import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
+import Pagination, { IPagination } from "src/components/Pagination/Pagination";
+import lo from "src/i18n/locale.json";
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
@@ -34,20 +35,26 @@ export const HospitalCapacityFiltersContext = React.createContext({} as IHospita
 
 const initialHospitalCapacityFiltersState = {
   province: ProvinceOptions[2],
-  district: { label: 'Kathmandu', value: 'Kathmandu' },
-  covidTest: { label: 'All', value: '' }
+  district: { label: "Kathmandu", value: "Kathmandu" },
+  covidTest: { label: "All", value: "" }
+};
+
+const initialPaginationState = {
+  page: 1,
+  size: 10
 };
 
 const HospitalCapacity: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
+  const [pagination, setPagination] = useState(initialPaginationState as IPagination);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
   const [t] = useTranslation();
 
   useEffect(() => {
     fetchHospitalCapacityData();
-  }, [filters]);
+  }, [filters, pagination.page]);
 
   useEffect(() => {
     fetchDistrictsByProvince();
@@ -56,14 +63,17 @@ const HospitalCapacity: FC<{}> = () => {
   const fetchHospitalCapacityData = async () => {
     setIsLoaded(false);
     try {
-      const { province, district /* , covidTest */ } = filters;
+      const { province, district } = filters;
       let payload = {
-        province: province ? province.value : '',
-        district: district ? district.value : ''
-        // covidTest: covidTest ? covidTest.value : ''
+        page: pagination.page,
+        size: pagination.size,
+        province: province ? province.value : "",
+        district: district ? district.value : ""
       };
       const response = await fetchHospitalCapacityAPI(payload);
-      setHospitalCapacityList(response.docs);
+      const { docs, ...rest } = response;
+      setHospitalCapacityList(docs);
+      setPagination(rest);
     } catch (error) {
       console.log(error);
     } finally {
@@ -80,7 +90,7 @@ const HospitalCapacity: FC<{}> = () => {
           return { label: doc.name, value: doc.name };
         });
 
-        mappedOptions.unshift({ label: 'All', value: '' });
+        mappedOptions.unshift({ label: "All", value: "" });
         setDistrictDropdownOptions(mappedOptions);
       }
     } catch (error) {
@@ -90,7 +100,7 @@ const HospitalCapacity: FC<{}> = () => {
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
-    setFilters({ ...filters, province: selectedField, district: { label: 'All', value: '' } });
+    setFilters({ ...filters, province: selectedField, district: { label: "All", value: "" } });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
@@ -103,30 +113,40 @@ const HospitalCapacity: FC<{}> = () => {
     setFilters({ ...filters, covidTest: selectedField });
   };
 
+  const handlePageChange = (pageNumber: number) => {
+    setPagination(prevPaginationState => ({ ...prevPaginationState, page: pageNumber }));
+  };
+
   return (
-    <Row className="mt-3">
-      <Col sm="12">
-        <div className="rounded bg-bluelight px-3 py-4">
-          <div className="d-md-flex filter-wrapper">
-            <div className="h5 font-weight-bold mb-3 mr-auto">{t(lo.contac_hospitalCapacityData)}</div>
-            <HospitalCapacityFiltersContext.Provider
-              value={{
-                filters,
-                districtDropdownOptions,
-                handleProvinceFilterChange,
-                handleDistrictFilterChange,
-                handleCovidTestFilterChange
-              }}
-            >
-              <HospitalCapacityFilter />
-            </HospitalCapacityFiltersContext.Provider>
+    <>
+      <Row className="mt-3">
+        <Col sm="12">
+          <div className="rounded bg-bluelight px-3 py-4">
+            <div className="d-md-flex filter-wrapper">
+              <div className="h5 font-weight-bold mb-3 mr-auto">{t(lo.contac_hospitalCapacityData)}</div>
+              <HospitalCapacityFiltersContext.Provider
+                value={{
+                  filters,
+                  districtDropdownOptions,
+                  handleProvinceFilterChange,
+                  handleDistrictFilterChange,
+                  handleCovidTestFilterChange
+                }}
+              >
+                <HospitalCapacityFilter />
+              </HospitalCapacityFiltersContext.Provider>
+            </div>
+            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
+              <HospitalCapacityTable />
+            </HospitalCapacityTableContext.Provider>
           </div>
-          <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
-            <HospitalCapacityTable />
-          </HospitalCapacityTableContext.Provider>
-        </div>
-      </Col>
-    </Row>
+        </Col>
+
+        <Col sm="12">
+          <Pagination {...pagination} handlePageChange={handlePageChange} />
+        </Col>
+      </Row>
+    </>
   );
 };
 
