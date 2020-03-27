@@ -6,6 +6,7 @@ import LocationIcon from "src/components/Icons/LocationIcon";
 import { IMapModalValues } from "./HospitalCapacityTable";
 import NotAvailable from "src/components/NotAvailable";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { selectLanguage } from "src/utils/stringManipulation";
 
 export interface IHospitalCapacityTableRowProps {
   hospitalCapacity: IHospital;
@@ -43,14 +44,14 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
       <tr onClick={() => history.push(`/hospital/${nameSlug}`)} style={{ cursor: "pointer" }}>
         <td>
           <div>
-            {name.en}
+            {selectLanguage(name)}
             {isVerified && <VerfiedCheckmark />}
           </div>
         </td>
         <td onClick={showMapModal}>
           {address ? (
             <>
-              <div style={{ textTransform: "capitalize" }}>{address.en}</div>
+              <div style={{ textTransform: "capitalize" }}>{selectLanguage(address)}</div>
 
               <LocationIcon />
               <span className="ml-2">Map</span>
