@@ -1,60 +1,41 @@
 [
   {
-    "id": "1",
-    "title": "Updated notice on travel restriction related to COVID-19",
+    "_id": "14",
+    "title": "Situation Report #1 to #46",
     "category": "Press Release",
-    "date": "18 March 2020",
+    "date": "27 March 2020",
     "url": "https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
   },
   {
-    "id": "2",
-    "title": "Situation Reports #1 to #41",
-    "category": "Reports",
-    "date": "19 March 2020",
-    "url": "https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
-  },
-  {
-    "id": "3",
-    "title": "Situation Report_COVID-19 #42 (as of 20 March 2020)",
-    "category": "Reports",
-    "date": "20 March 2020",
-    "url": "https://drive.google.com/file/d/1c1aju7qThbnHGKCiqqxdfIobWWO9ulRP/view"
-  },
-  
-  {
-    "id": "4",
-    "title": "Press Release as of 21 March 2020",
+    "_id": "13",
+    "title": "Criterias for COVID-19 Isolation and Quarantine Set up and Management by MoHP",
     "category": "Press Release",
-    "date": "20 March 2020",
-    "url": "https://drive.google.com/file/d/1ouT9PpNpGuWJSWlQuvZzqGS5f3Ur2Jzb/view"
+    "date": "27 March 2020",
+    "url": "https://drive.google.com/open?id=1AYfWh0CEuGwK237AN1KWjxU9C_bDKEM2"
   },
+
   {
-    "id": "5",
-    "title": "MoHP 4:15pm Press Release Video as of March 24 by Ministry of Health",
+    "_id": "12",
+    "title": "MoHP Audio Message To the Public To Prevent COVID-19",
     "category": "Press Release",
-    "date": "24 March 2020",
-    "url": "https://drive.google.com/file/d/1geRCtoaOHg0nCTk-4ZFE4vthxtvcy4ji/view"
+    "date": "26 March 2020",
+    "url": "https://drive.google.com/open?id=1w5KJeDucp954FV8EDh9tp3GlDdoEw-Kn"
   },
+
   {
-    "id": "6",
-    "title": "COVID-19 outbreak updates- as of March 25",
-    "category": "Reports",
-    "date": "25 March 2020",
-    "url": "https://drive.google.com/open?id=1Ahreq6VwU6qkn2aNVQ-E0UTzQxLZE7-2"
-  },
-  {
-    "_id": "7",
-    "title": "MoHP notice on, Rectifying The Flight Number of Air Arabia",
+    "_id": "11",
+    "title": "MoHP 4:15pm Daily Press Brief as of 26th March",
     "category": "Press Release",
-    "date": "25 March 2020",
-    "url": "https://drive.google.com/open?id=1UwpLZ-BCf3m4Vjwt9HD4kzNVhSzppMYe"
+    "date": "26 March 2020",
+    "url": "https://youtu.be/rxYXW40kruw"
   },
+
   {
-    "_id": "8",
-    "title": "MoHP 4:15pm Daily Press Brief as of 25th March",
+    "_id": "10",
+    "title": "Guidelines for use of personal protective equipment in relation to COVID-19",
     "category": "Press Release",
-    "date": "25 March 2020",
-    "url": "https://youtu.be/TSWADtbqAPg"
+    "date": "26 March 2020",
+    "url": "https://drive.google.com/open?id=18ZZVfHuQUvVxWY_O6qoONRLzsvuaVE7l"
   },
   {
     "_id": "9",
@@ -64,38 +45,61 @@
     "url": "https://drive.google.com/open?id=1qYd5Vr7n-O6eRmCGodjZ49pjcCGbmFC1"
   },
   {
-    "_id": "10",
-    "title": "Guidelines for use of personal protective equipment in relation to COVID-19",
+    "_id": "8",
+    "title": "MoHP 4:15pm Daily Press Brief as of 25th March",
     "category": "Press Release",
-    "date": "26 March 2020",
-    "url": "https://drive.google.com/open?id=18ZZVfHuQUvVxWY_O6qoONRLzsvuaVE7l"
+    "date": "25 March 2020",
+    "url": "https://youtu.be/TSWADtbqAPg"
   },
   {
-    "_id": "11",
-    "title": "MoHP 4:15pm Daily Press Brief as of 26th March",
+    "_id": "7",
+    "title": "MoHP notice on, Rectifying The Flight Number of Air Arabia",
     "category": "Press Release",
-    "date": "26 March 2020",
-    "url": "https://youtu.be/rxYXW40kruw"
+    "date": "25 March 2020",
+    "url": "https://drive.google.com/open?id=1UwpLZ-BCf3m4Vjwt9HD4kzNVhSzppMYe"
   },
   {
-    "_id": "12",
-    "title": "MoHP Audio Message To the Public To Prevent COVID-19",
-    "category": "Press Release",
-    "date": "26 March 2020",
-    "url": "https://drive.google.com/open?id=1w5KJeDucp954FV8EDh9tp3GlDdoEw-Kn"
+    "id": "6",
+    "title": "COVID-19 outbreak updates- as of March 25",
+    "category": "Reports",
+    "date": "25 March 2020",
+    "url": "https://drive.google.com/open?id=1Ahreq6VwU6qkn2aNVQ-E0UTzQxLZE7-2"
   },
   {
-    "_id": "13",
-    "title": "Criterias for COVID-19 Isolation and Quarantine Set up and Management by MoHP",
+    "id": "5",
+    "title": "MoHP 4:15pm Press Release Video as of March 24 by Ministry of Health",
     "category": "Press Release",
-    "date": "27 March 2020",
-    "url": "https://drive.google.com/open?id=1AYfWh0CEuGwK237AN1KWjxU9C_bDKEM2"
+    "date": "24 March 2020",
+    "url": "https://drive.google.com/file/d/1geRCtoaOHg0nCTk-4ZFE4vthxtvcy4ji/view"
   },
   {
-    "_id": "14",
-    "title": "Situation Report #1 to #46",
+    "id": "4",
+    "title": "Press Release as of 21 March 2020",
     "category": "Press Release",
-    "date": "27 March 2020",
+    "date": "20 March 2020",
+    "url": "https://drive.google.com/file/d/1ouT9PpNpGuWJSWlQuvZzqGS5f3Ur2Jzb/view"
+  },
+
+  {
+    "id": "3",
+    "title": "Situation Report_COVID-19 #42 (as of 20 March 2020)",
+    "category": "Reports",
+    "date": "20 March 2020",
+    "url": "https://drive.google.com/file/d/1c1aju7qThbnHGKCiqqxdfIobWWO9ulRP/view"
+  },
+
+  {
+    "id": "2",
+    "title": "Situation Reports #1 to #41",
+    "category": "Reports",
+    "date": "19 March 2020",
+    "url": "https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
+  },
+  {
+    "id": "1",
+    "title": "Updated notice on travel restriction related to COVID-19",
+    "category": "Press Release",
+    "date": "18 March 2020",
     "url": "https://drive.google.com/drive/folders/1QhLMbT76t6Zu1sFy5qlB5aoDbHVAcnHx"
   }
 ]

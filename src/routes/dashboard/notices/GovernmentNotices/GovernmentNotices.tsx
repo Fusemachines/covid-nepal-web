@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import govtNotices from "src/constants/notices/govtNotices.json";
@@ -10,7 +10,7 @@ const GovernmentNotices: FC<{}> = () => {
 
   return (
     <ul className="notices__list">
-      {govtNotices.reverse().map(notice => (
+      {govtNotices.map(notice => (
         <GovernmentNoticeItem
           key={notice._id}
           category={notice.category}

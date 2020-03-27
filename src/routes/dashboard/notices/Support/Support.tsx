@@ -7,7 +7,7 @@ const Resources: FC<{}> = () => {
 
   return (
     <ul className="resources__list">
-      {support.reverse().map(support => (
+      {support.map(support => (
         <SupportItem key={support._id} title={support.title} url={support.url} imageUrl={support.imageUrl} />
       ))}
     </ul>
