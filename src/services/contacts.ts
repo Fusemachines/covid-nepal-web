@@ -50,7 +50,7 @@ export interface IFetchDistrictListAPIResponse {
 }
 
 export interface IDistricts {
-  name: string;
+  name: ILanguage;
   province: string;
 }
 
