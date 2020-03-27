@@ -77,7 +77,7 @@
 
     .nav.nav-tabs {
         .nav-item {
-            width: 50%;
+            flex: min-content;
 
             .nav-link {
                 font-size: 18px !important;
