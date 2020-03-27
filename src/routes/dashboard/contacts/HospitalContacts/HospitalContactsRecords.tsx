@@ -6,6 +6,7 @@ import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IContact } from 'src/services/contacts';
 import Loader from 'src/components/Loader';
 import lo from 'src/i18n/locale.json';
+import { selectLanguage } from 'src/utils/stringManipulation';
 
 interface IHospitalContactsRecordsProps {
   isLoaded: boolean;
@@ -24,11 +25,11 @@ const HospitalContactsRecords: FC<IHospitalContactsRecordsProps> = props => {
             <tbody>
               {hospitalContacts.map((contact, index) => (
                 <tr key={index}>
-                  <td>{contact.name.en}</td>
+                  <td>{selectLanguage(contact.name)}</td>
                   <td className="text-right">
                     {contact.landLine.map((number, index) => (
                       <div className="badges badge-cus" key={index}>
-                        <GreenContactBadge contactNumber={number.en} />
+                        <GreenContactBadge contactNumber={selectLanguage(number)} />
                       </div>
                     ))}
                   </td>
