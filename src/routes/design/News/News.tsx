@@ -34,7 +34,7 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light">March 22, 2020</div>
                   </Media.Body>
                 </Media>
 
@@ -44,7 +44,7 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light">March 22, 2020</div>
                   </Media.Body>
                 </Media>
 
@@ -54,7 +54,7 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light">March 22, 2020</div>
                   </Media.Body>
                 </Media>
 
@@ -76,7 +76,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -86,7 +87,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -96,7 +98,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -106,7 +109,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -116,7 +120,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -126,7 +131,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -150,7 +156,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -160,7 +167,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -170,7 +178,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -180,7 +189,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -190,7 +200,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
@@ -200,7 +211,8 @@ const News = () => (
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
-                    <div className="small-xs text-light"><span>CNN</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs text-light"><span>www.nepalitimes.com</span><span className="mx-1">|</span> <span>2 hours ago</span></div>
+                    <div className="small-xs mt-1">Ever since the nationwide lockdown was announced on 23 March, the fear of being </div>
                   </Media.Body>
                 </Media>
 
