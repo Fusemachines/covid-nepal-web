@@ -5,6 +5,7 @@ import Home from './Landing';
 import Symptoms from './Symptoms';
 import Info from './Info';
 import Information from './NoticeandResources';
+import News from './News';
 
 const DesignRoutes: React.FC = () => (
   <Switch>
@@ -12,6 +13,7 @@ const DesignRoutes: React.FC = () => (
     <Route exact path={'/design/symptoms'} component={Symptoms} />
     <Route exact path={'/design/landing'} component={Home} />
     <Route exact path={'/design/info'} component={Info} />
+    <Route exact path={'/design/news'} component={News} />
     <Route exact path={'/design/notices&resources'} component={Information} />
   </Switch>
 );

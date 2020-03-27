@@ -128,7 +128,7 @@ const Menu = () => (
 
     <Navbar collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark">
       <Navbar.Brand href="/design" className="font-weight-bold">
-        <span className="mr-2">nCOVID</span>
+        <span className="mr-2">COVID-19</span>
         <span>NEPAL</span>
       </Navbar.Brand>
 

@@ -14,7 +14,7 @@ body {
     top: 0 !important;
 }
 #root {
-    min-height: calc(100% - 80px);
+    min-height: calc(100% - 50px);
 }
 
 :-moz-focusring {
@@ -54,7 +54,7 @@ body {
 
 .font-18 {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 a {
@@ -63,6 +63,22 @@ a {
 
 .text-secondary {
     color: #9BC7ED !important;
+}
+
+.text-lightblue {
+    color: #7AABD4;
+}
+
+.text-light {
+    color: #535353 !important;
+}
+
+.bg-grey {
+    background-color: #E6E6E6;
+}
+
+.font-weight-semibold {
+    font-weight: 700;
 }
 
 // list
@@ -89,10 +105,6 @@ a {
     }
 }
 
-.text-lightblue {
-    color: #7AABD4;
-}
-
 .bg-red {
     &-l1 {
         background-color: #FFBABD;
@@ -109,6 +121,11 @@ a {
     &-l5 {
         background-color: #EF8A8E;
     }
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
 
@@ -136,7 +153,4 @@ a {
 
 @import "loader";
 
-.goog-text-highlight {
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
+@import "news-page";
