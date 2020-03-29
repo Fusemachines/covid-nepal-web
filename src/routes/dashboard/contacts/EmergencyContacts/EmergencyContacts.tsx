@@ -28,7 +28,7 @@ const EmergencyContacts: FC<{}> = () => {
   return (
     <div className="px-3">
       <div className="info-list">
-        {/* {isLoaded && contactList.docs.map((contact, index) => <EmergencyContactItem key={index} contact={contact} />)} */}
+        {isLoaded && contactList.docs.map((contact, index) => <EmergencyContactItem key={index} contact={contact} />)}
         <div className="info-item py-3 mt-2">
           <div className="font-16">{t(lo.emerg_sukrarajTropicalInfecDisHosp)}</div>
           <small className="ml3">({t(lo.emerg_asProvideGovNotice)})</small>
