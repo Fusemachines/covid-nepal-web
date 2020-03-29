@@ -42,17 +42,17 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
             {/* {covidCasesCounts ? setCommas(covidCasesCounts.testedTotal) : '-'} */}
             </div>
         </Col>
-            
+
         <Col xs="6">
             {/* donot delete this */}
             <div className="invisible">
             <div>{t(lo.covC_totalTested)}</div>
             <div className="h3 m-0 font-weight-bold  d-inline-block">
                 {' '}
-                <TranslateNumber
+                {/* <TranslateNumber
                 originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
                 language={language}
-                />
+                /> */}
             </div>
             </div>
             {/* to make height equal */}
@@ -71,15 +71,15 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
             </div>
             {/* <TextCaption type={'success'} value={'0.10'} /> */}
         </Col>
-        
+
         <Col xs="6">
             <div>{t(lo.covC_totalConfirmed)}</div>
             <div className="h3 m-0 font-weight-bold  d-inline-block">
             {' '}
-            <TranslateNumber
+            {/* <TranslateNumber
                 originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
                 language={language}
-            />
+            /> */}
             {/* {covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'} */}
             </div>
             {/* <TextCaption type={'success'} value={'0.10'} /> */}
@@ -103,10 +103,10 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
             <div>{t(lo.covC_totalRecovered)}</div>
             <div className="h3 m-0 font-weight-bold d-inline-block ">
             {' '}
-            <TranslateNumber
+            {/* <TranslateNumber
                 originalString={covidCasesCounts ? setCommas(covidCasesCounts.recoveredGlobal) : '-'}
                 language={language}
-            />
+            /> */}
             {/* {covidCasesCounts ? setCommas(covidCasesCounts.recoveredGlobal) : '-'} */}
             </div>
             {/* <TextCaption type={'warning'} value={'0.10'} /> */}
@@ -130,16 +130,16 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
             <div>{t(lo.covC_totalDeath)}</div>
             <div className="h3 m-0 font-weight-bold d-inline-block">
             {' '}
-            <TranslateNumber
+            {/* <TranslateNumber
                 originalString={covidCasesCounts ? setCommas(covidCasesCounts.deathGlobal) : '-'}
                 language={language}
-            />
+            /> */}
             {/* {covidCasesCounts ? setCommas(covidCasesCounts.deathGlobal) : '-'} */}
             </div>
             {/* <TextCaption type={'danger'} value={'0.10'} /> */}
         </Col>
     </Row>
-    
+
     </>
   );
 };

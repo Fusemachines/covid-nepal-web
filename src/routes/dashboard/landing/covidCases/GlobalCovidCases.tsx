@@ -30,7 +30,7 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
           <div className="h3 m-0 font-weight-bold  d-inline-block">
             {' '}
             <TranslateNumber
-              originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
+              originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedTotal) : '-'}
               language={language}
             />
           </div>
@@ -41,7 +41,7 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
         <div className="h3 m-0 font-weight-bold  d-inline-block">
           {' '}
           <TranslateNumber
-            originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'}
+            originalString={covidCasesCounts ? setCommas(covidCasesCounts.confirmedTotal) : '-'}
             language={language}
           />
           {/* {covidCasesCounts ? setCommas(covidCasesCounts.confirmedGlobal) : '-'} */}
@@ -52,7 +52,7 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
         <div className="h3 m-0 font-weight-bold d-inline-block ">
           {' '}
           <TranslateNumber
-            originalString={covidCasesCounts ? setCommas(covidCasesCounts.recoveredGlobal) : '-'}
+            originalString={covidCasesCounts ? setCommas(covidCasesCounts.recoveredTotal) : '-'}
             language={language}
           />
           {/* {covidCasesCounts ? setCommas(covidCasesCounts.recoveredGlobal) : '-'} */}
@@ -63,7 +63,7 @@ const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
         <div className="h3 m-0 font-weight-bold d-inline-block">
           {' '}
           <TranslateNumber
-            originalString={covidCasesCounts ? setCommas(covidCasesCounts.deathGlobal) : '-'}
+            originalString={covidCasesCounts ? setCommas(covidCasesCounts.deathTotal) : '-'}
             language={language}
           />
           {/* {covidCasesCounts ? setCommas(covidCasesCounts.deathGlobal) : '-'} */}

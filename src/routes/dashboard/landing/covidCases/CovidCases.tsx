@@ -5,7 +5,7 @@ import { useTranslation, Trans } from 'react-i18next'
 import NepalCovidCases from './NepalCovidCases';
 import GlobalCovidCases from './GlobalCovidCases';
 import CovidData from './CovidData';
-import { fetchCovidCasesCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
+import { fetchCovidCasesGlobalCountsAPI, fetchCovidCasesNepalCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
 import RefreshIcon from 'src/components/Icons/RefreshIcon';
 import { getFormattedTime } from 'src/utils/date';
 import { pluralize } from 'src/utils/stringManipulation';
@@ -20,7 +20,8 @@ interface IUpdatedTime {
 }
 
 const CovidCases = () => {
-  const [covidCasesCounts, setCovidCasesCounts] = useState<ICovidCasesCounts | null>(null);
+  const [covidCasesNepalCounts, setCovidCasesNepalCounts] = useState<ICovidCasesCounts | null>(null);
+  const [covidCasesGlobalCounts, setCovidCasesGlobalCounts] = useState<ICovidCasesCounts | null>(null);
   const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
   const { t } = useTranslation();
 
@@ -36,13 +37,19 @@ const CovidCases = () => {
     return () => {
       clearInterval(covidInterval);
     };
-  }, [covidCasesCounts]);
+  }, [covidCasesNepalCounts, covidCasesGlobalCounts]);
 
   const fetchCovidCases = async () => {
     try {
       setIsLoading(true);
-      const response = await fetchCovidCasesCountsAPI();
-      setCovidCasesCounts(response);
+      const responseGlobal = await fetchCovidCasesGlobalCountsAPI();
+      setCovidCasesGlobalCounts(responseGlobal);
+
+      const responseNepal = await fetchCovidCasesNepalCountsAPI();
+      debugger;
+
+      setCovidCasesNepalCounts(responseNepal);
+
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -58,8 +65,8 @@ const CovidCases = () => {
   };
 
   const getUpdatedTime = () => {
-    if (covidCasesCounts) {
-      const updatedDate = Date.parse(covidCasesCounts.updatedAt);
+    if (covidCasesGlobalCounts || covidCasesNepalCounts) {
+      const updatedDate = covidCasesGlobalCounts ? Date.parse(covidCasesGlobalCounts.updatedAt) : covidCasesNepalCounts ? Date.parse(covidCasesNepalCounts.updatedAt) : 0;
       const currentDate = Date.parse(new Date().toString());
       const intervalInSeconds = (currentDate - updatedDate) / 1000;
       const formattedTime = getFormattedTime(intervalInSeconds);
@@ -121,15 +128,15 @@ const CovidCases = () => {
 
           <div className="clearfix"></div>
 
-        {/* <Row className="mb-3">
-          <NepalCovidCases covidCasesCounts={covidCasesCounts} />
-          <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
-        </Row> */}
-        
+        <Row className="mb-3">
+          <NepalCovidCases covidCasesCounts={covidCasesNepalCounts} />
+          <GlobalCovidCases covidCasesCounts={covidCasesGlobalCounts} />
+        </Row>
+
         {/* covid counts */}
-        <CovidData covidCasesCounts={covidCasesCounts} />
+        {/* <CovidData covidCasesCounts={covidCasesCounts} /> */}
         {/* covid counts end */}
-        
+
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
