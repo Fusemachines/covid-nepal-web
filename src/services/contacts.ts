@@ -7,9 +7,9 @@ export interface IContact {
   name: ILanguage;
   contactType: string;
   landLine: Array<ILanguage>;
-  mobile: string[];
-  openingTime: string;
-  closingTime: string;
+  mobile: ILanguage[];
+  openingTime: ILanguage;
+  closingTime: ILanguage;
   district: string;
   province: string;
   createdDate: string;
