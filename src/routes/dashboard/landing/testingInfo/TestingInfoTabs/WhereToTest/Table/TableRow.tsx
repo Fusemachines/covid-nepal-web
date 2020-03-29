@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { IHospital } from 'src/services/hospitals';
 import { useHistory } from 'react-router-dom';
+import { selectLanguage } from 'src/utils/stringManipulation';
 
 interface ITableRowProps {
   hospital: IHospital;
@@ -12,24 +13,24 @@ const TableRow: FC<ITableRowProps> = props => {
   return (
     <tr>
       <td>
-        <div>{hospital.name}</div>
+        <div>{selectLanguage(hospital.name)}</div>
       </td>
       <td className="text-center">
-        <div>{(hospital.availableTime && hospital.availableTime.length && hospital.availableTime[0]) || ''}</div>
-        <small>{hospital.openDays}</small>
+        <div>{(hospital.availableTime && hospital.availableTime.length && selectLanguage(hospital.availableTime[0])) || ''}</div>
+        <small>{selectLanguage(hospital.openDays)}</small>
       </td>
       <td className="align-middle" onClick={e => e.stopPropagation()}>
         {/* <div className="h5 text-warning font-weight-bold text-right"> */}
         {/* {hospital.contact && hospital.contact.join(', ')} */}
         {hospital.contact.map((number, index) =>
           index === hospital.contact.length - 1 ? (
-            <a key={index} className="text-white" href={`tel:${number}`}>
-              {number}
+            <a key={index} className="text-white" href={`tel:${number.en}`}>
+              {selectLanguage(number)}
             </a>
           ) : (
             <>
-              <a key={index} className="text-white" href={`tel:${number}`}>
-                {number}
+              <a key={index} className="text-white" href={`tel:${number.en}`}>
+                {selectLanguage(number)}
               </a>
               ,{' '}
             </>

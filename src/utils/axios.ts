@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 import Config from 'src/config';
 import parseErrorMessage from './error';
+import { getlocalStorage } from './storage';
 
 const axiosInstance = axios.create({
   baseURL: Config.ApiEnv.baseURL,
@@ -40,6 +41,18 @@ axiosInstance.interceptors.response.use(
         ? parseErrorMessage(error.response)
         : parseClientError(error)
     );
+  }
+);
+
+axiosInstance.interceptors.request.use(
+  function(config) {
+    config.params = {
+      ...config.params,
+      lang: getlocalStorage('i18nextLng') === 'ne' ? 'np' : 'en'
+    }
+    return config;
+  }, function(error) {
+    return Promise.reject(error)
   }
 );
 

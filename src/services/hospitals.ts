@@ -1,37 +1,49 @@
-import { AxiosResponse } from 'axios';
+import { AxiosResponse } from "axios";
 
-import axios from 'src/utils/axios';
+import axios from "src/utils/axios";
+import { IPagination } from "src/components/Pagination/Pagination";
+import { ILanguage } from "src/interface/common";
 
 export interface IHospital {
   _id: string;
-  availableTime: Array<string>;
+  availableTime: Array<ILanguage>;
   coordinates: Array<number>;
-  contact: Array<string>;
-  name: string;
-  hospitalType: string;
-  openDays: string;
-  location: string;
+  contact: Array<ILanguage>;
+  name: ILanguage;
+  isVerified: boolean;
+  hospitalType: ILanguage;
+  openDays: ILanguage;
+  location: ILanguage;
   mapLink: string;
   totalBeds: number;
   availableBeds: number;
   covidTest: boolean;
-  testingProcess: string;
+  testingProcess: ILanguage;
   govtDesignated: boolean;
   numIsolationBeds: number;
   icu: number;
   nameSlug?: string;
-  focalPoint: string;
+  focalPoint: ILanguage;
   province: {
     code: number;
-    name: string;
+    name: ILanguage;
   };
-  district: string;
+  district: ILanguage;
   ventilators: number;
 }
-interface IHospitalCapaciyResponse {
+
+export interface IHospitalsCount {
+  totalHospitals: number | null;
+  totalPending: number | null;
+  totalVerified: number | null;
+}
+
+interface IHospitalCapaciyResponse extends IPagination, IHospitalsCount {
   docs: Array<IHospital>;
 }
 export interface IFetchHospitalCapacityAPIPayload {
+  page: number;
+  size: number;
   province?: string;
   district?: string;
   covidTest?: string;

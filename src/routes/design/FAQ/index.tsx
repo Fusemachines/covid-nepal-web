@@ -1,3 +1,3 @@
-import Landing from './Landing';
+import FAQ from './FAQ';
 
-export default Landing;
+export default FAQ;

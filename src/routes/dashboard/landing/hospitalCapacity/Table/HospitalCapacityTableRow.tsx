@@ -1,10 +1,12 @@
-import React, { FC } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { FC } from "react";
+import { useHistory } from "react-router-dom";
 
-import { IHospital } from 'src/services/hospitals';
-import LocationIcon from 'src/components/Icons/LocationIcon';
-import { IMapModalValues } from './HospitalCapacityTable';
-import NotAvailable from 'src/components/NotAvailable';
+import { IHospital } from "src/services/hospitals";
+import LocationIcon from "src/components/Icons/LocationIcon";
+import { IMapModalValues } from "./HospitalCapacityTable";
+import NotAvailable from "src/components/NotAvailable";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { selectLanguage } from "src/utils/stringManipulation";
 
 export interface IHospitalCapacityTableRowProps {
   hospitalCapacity: IHospital;
@@ -17,6 +19,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
     hospitalCapacity: {
       _id,
       name,
+      isVerified,
       location: address,
       mapLink: mapURL,
       contact,
@@ -32,50 +35,53 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   const showMapModal = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     if (address) {
-      toggleMapsModal({ title: name, mapURL });
+      toggleMapsModal({ title: name.en, mapURL });
     }
   };
 
   return (
     <>
-      <tr onClick={() => history.push(`/hospital/${nameSlug}`)} style={{ cursor: 'pointer' }}>
+      <tr onClick={() => history.push(`/hospital/${nameSlug}`)} style={{ cursor: "pointer" }}>
         <td>
-          <div>{name}</div>
+          <div>
+            {selectLanguage(name)}
+            {isVerified && <VerfiedCheckmark />}
+          </div>
         </td>
         <td onClick={showMapModal}>
           {address ? (
             <>
-              <div style={{ textTransform: 'capitalize' }}>{address}</div>
+              <div style={{ textTransform: "capitalize" }}>{selectLanguage(address)}</div>
 
               <LocationIcon />
               <span className="ml-2">Map</span>
             </>
           ) : (
-            <NotAvailable id={'address-' + _id} />
+            <NotAvailable id={"address-" + _id} />
           )}
         </td>
         <td onClick={e => e.stopPropagation()}>
           {contact ? (
             contact.map((number, index) => (
-              <a key={index} className="text-white" href={`tel:${number}`}>
-                {number} {index === contact.length - 1 ? ' ' : ', '}
+              <a key={index} className="text-white" href={`tel:${number.en}`}>
+                {number.en} {index === contact.length - 1 ? " " : ", "}
               </a>
             ))
           ) : (
-            <NotAvailable id={'contact-' + _id} />
+            <NotAvailable id={"contact-" + _id} />
           )}
         </td>
 
-        <td onClick={e => e.stopPropagation()}>{totalBeds ? totalBeds : <NotAvailable id={'bed-' + _id} />}</td>
+        <td onClick={e => e.stopPropagation()}>{totalBeds ? totalBeds : <NotAvailable id={"bed-" + _id} />}</td>
 
-        <td onClick={e => e.stopPropagation()}>{icu ? icu : <NotAvailable id={'icu-' + _id} />}</td>
+        <td onClick={e => e.stopPropagation()}>{icu ? icu : <NotAvailable id={"icu-" + _id} />}</td>
 
         <td onClick={e => e.stopPropagation()}>
-          {ventilators ? ventilators : <NotAvailable id={'ventilators-' + _id} />}
+          {ventilators ? ventilators : <NotAvailable id={"ventilators-" + _id} />}
         </td>
 
         <td onClick={e => e.stopPropagation()}>
-          {numIsolationBeds ? numIsolationBeds : <NotAvailable id={'isolation-bed-' + _id} placement="left" />}
+          {numIsolationBeds ? numIsolationBeds : <NotAvailable id={"isolation-bed-" + _id} placement="left" />}
         </td>
       </tr>
     </>
@@ -83,3 +89,16 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
 };
 
 export default HospitalCapacityTableRow;
+
+const VerfiedCheckmark = () => (
+  <OverlayTrigger
+    placement={"top"}
+    overlay={
+      <Tooltip id={`tooltip-total`} className="covid-hospital-count">
+        Verified by covidnepal.org
+      </Tooltip>
+    }
+  >
+    <img src="/images/verified.svg" className="ml-2" />
+  </OverlayTrigger>
+);
