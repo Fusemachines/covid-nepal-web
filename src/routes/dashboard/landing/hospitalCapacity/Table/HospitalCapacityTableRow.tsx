@@ -72,16 +72,28 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
 
-        <td onClick={e => e.stopPropagation()}>{totalBeds ? totalBeds : <NotAvailable id={"bed-" + _id} />}</td>
-
-        <td onClick={e => e.stopPropagation()}>{icu ? icu : <NotAvailable id={"icu-" + _id} />}</td>
-
         <td onClick={e => e.stopPropagation()}>
-          {ventilators ? ventilators : <NotAvailable id={"ventilators-" + _id} />}
+          {typeof totalBeds === "number" && totalBeds > -1 ? totalBeds : <NotAvailable id={"bed-" + _id} />}
         </td>
 
         <td onClick={e => e.stopPropagation()}>
-          {numIsolationBeds ? numIsolationBeds : <NotAvailable id={"isolation-bed-" + _id} placement="left" />}
+          {typeof icu === "number" && icu > -1 ? icu : <NotAvailable id={"icu-" + _id} />}
+        </td>
+
+        <td onClick={e => e.stopPropagation()}>
+          {typeof ventilators === "number" && ventilators > -1 ? (
+            ventilators
+          ) : (
+            <NotAvailable id={"ventilators-" + _id} />
+          )}
+        </td>
+
+        <td onClick={e => e.stopPropagation()}>
+          {typeof numIsolationBeds === "number" && numIsolationBeds > -1 ? (
+            numIsolationBeds
+          ) : (
+            <NotAvailable id={"isolation-bed-" + _id} placement="left" />
+          )}
         </td>
       </tr>
     </>
