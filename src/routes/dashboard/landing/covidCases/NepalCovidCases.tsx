@@ -7,14 +7,13 @@ import { setCommas } from "src/utils/stringManipulation";
 import TranslateNumber from "src/components/TranslateNumber";
 import { useCookies } from "react-cookie";
 import lo from "src/i18n/locale.json";
+import useLanguage from "src/customHooks/useLanguage";
 interface INepalCovidCasesProps {
   covidCasesCounts: ICovidCasesCounts | null;
 }
 
 const NepalCovidCases: FC<INepalCovidCasesProps> = ({ covidCasesCounts }) => {
-  const [cookies] = useCookies(["googtrans"]);
-  const googtrans = cookies["googtrans"] || localStorage.getItem("googtrans") || "en";
-  const language = googtrans.includes("ne") ? "ne" : "en";
+  const language = useLanguage();
   const { t } = useTranslation();
 
   return (

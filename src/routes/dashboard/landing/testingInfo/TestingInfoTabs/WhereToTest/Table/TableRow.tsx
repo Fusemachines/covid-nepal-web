@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { useCookies } from "react-cookie";
 import { useHistory } from "react-router-dom";
 
 import { IHospital } from "src/services/hospitals";
 import { selectLanguage } from "src/utils/stringManipulation";
 import TranslateNumber from "src/components/TranslateNumber";
 import NotAvailable from "src/components/NotAvailable";
+import useLanguage from "src/customHooks/useLanguage";
 
 interface ITableRowProps {
   hospital: IHospital;
@@ -14,10 +14,7 @@ interface ITableRowProps {
 const TableRow: FC<ITableRowProps> = props => {
   const history = useHistory();
   const { hospital } = props;
-
-  const [cookies] = useCookies(["googtrans"]);
-  const googtrans = cookies["googtrans"] || localStorage.getItem("googtrans") || "en";
-  const language = googtrans.includes("ne") ? "ne" : "en";
+  const language = useLanguage();
 
   return (
     <tr>

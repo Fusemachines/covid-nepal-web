@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { useHistory } from "react-router-dom";
-import { useCookies } from "react-cookie";
 
 import { IHospital } from "src/services/hospitals";
 import LocationIcon from "src/components/Icons/LocationIcon";
@@ -9,6 +8,7 @@ import NotAvailable from "src/components/NotAvailable";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { selectLanguage } from "src/utils/stringManipulation";
 import TranslateNumber from "src/components/TranslateNumber";
+import useLanguage from "src/customHooks/useLanguage";
 
 export interface IHospitalCapacityTableRowProps {
   hospitalCapacity: IHospital;
@@ -17,9 +17,7 @@ export interface IHospitalCapacityTableRowProps {
 
 const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   const history = useHistory();
-  const [cookies] = useCookies(["googtrans"]);
-  const googtrans = cookies["googtrans"] || localStorage.getItem("googtrans") || "en";
-  const language = googtrans.includes("ne") ? "ne" : "en";
+  const language = useLanguage();
   const {
     hospitalCapacity: {
       _id,

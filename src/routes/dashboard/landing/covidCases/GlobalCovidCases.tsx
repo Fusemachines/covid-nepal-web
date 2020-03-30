@@ -5,17 +5,15 @@ import { useTranslation } from "react-i18next";
 import { ICovidCasesCounts } from "src/services/covidCases";
 import { setCommas } from "src/utils/stringManipulation";
 import lo from "src/i18n/locale.json";
-import { useCookies } from "react-cookie";
 import TranslateNumber from "src/components/TranslateNumber";
+import useLanguage from "src/customHooks/useLanguage";
 
 interface IGlobalCovidCasesProps {
   covidCasesCounts: ICovidCasesCounts | null;
 }
 
 const GlobalCovidCases: FC<IGlobalCovidCasesProps> = ({ covidCasesCounts }) => {
-  const [cookies] = useCookies(["googtrans"]);
-  const googtrans = cookies["googtrans"] || localStorage.getItem("googtrans") || "en";
-  const language = googtrans.includes("ne") ? "ne" : "en";
+  const language = useLanguage();
   const { t } = useTranslation();
 
   return (
