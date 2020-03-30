@@ -161,12 +161,36 @@ const JoinUs = () => {
                   <p>The risk of transmission of COVID-19 from the feces of an infected person is also unknown.</p>
                 </li>
 
+                <li className="mb-5">
+                  <div className="font-18 mb-2">Is Teku-based hospital, Sukraraj Tropical and Infectious Disease Hospital, the only hospital allocated for testing and treatment of COVID-19 in Nepal?</div>
+                  <p>No. The Government of Nepal has allocated two hospitals, STIDH(Teku) hospital, and Patan Hospital, where you can get tested for Covid-19 infection. Teku hospital is, however, given the first priority since it specializes in dealing with all kinds of infectious diseases like COVID-19.  They work closely with the National Public Health Laboratory which is also situated in Teku that performs the confirmatory testing for COVID-19. Do remember that you do not have to go to Teku hospital to take the swab specimen as other hospitals can take a specimen and send it to NPHL.</p>
+                  <p>For the treatment of COVID-19, all hospitals can manage beds, ICUs and ventilators for severely infected patients. Since there is no evidence that current medicine can prevent or cure the disease, each case can be managed by all the hospitals, giving antiviral and antibacterial therapy.</p>
+                </li>
+
+                <li className="mb-5">
+                  <div className="font-18 mb-2">With how many testing kits is the Teku hospital equipped currently?</div>
+                  <p>The last news suggests that the Teku hospital is equipped with about 1500 test kits. 522 tests were performed until yesterday.</p>
+                </li>
+
+                <li className="mb-5">
+                  <div className="font-18 mb-2">Is the swab testing carried out in Nepal or sent abroad? What is the medium of transportation of the specimens?</div>
+                  <p>Swab testing is done in Nepal. In some cases, the samples of the positive cases are transported to a WHO reference lab in the region for re-confirmation. The doctors are, however, immediately notified when a case shows a positive result. The specimens as they are highly contagious are transported using the Viral Transport Medium (VTM). In simple words, it as a tube with rubber seals and has chemicals inside it to prevent the specimen from disintegrating. It is generally Tripple packed in virus transport package. If the sample can be taken to the laboratory within four days, they may be kept at +4 °C and frozen at -70 °C on arrival if they are to be stored. Otherwise, they should be frozen at or below -70 °C until they can be transported to the laboratory via air shipping. </p>
+                </li>
+
+                <li className="mb-5">
+                  <div className="font-18 mb-2">If the test sample is transported to the laboratory outside Nepal,  how long does it take for the reports to arrive in Nepal?  </div>
+                  <p>It depends on cases but it is not very quick. It generally takes two hours or so to perform the test and can generally take a week to get the final result. The positive cases are reported to doctors immediately so that you are immediately transferred to the isolation room and treated accordingly.</p>
+                </li>
+
               </ul>
               
 
               <div className="h5">Sources</div>
-              <div><a className="text-white" href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" target="_blank">https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</a></div>
-              <div><a className="text-white mb-4" href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">https://www.cdc.gov/coronavirus/2019-ncov/faq.html</a></div>
+              <ul className="mt-2">
+                <li><a className="text-white" href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" target="_blank">https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</a></li>
+                <li><a className="text-white mb-4" href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">https://www.cdc.gov/coronavirus/2019-ncov/faq.html</a></li>
+                <li><a href="https://covid19.mohp.gov.np/#/about" target="_blank" className="text-white">https://covid19.mohp.gov.np/#/about</a></li>
+              </ul>
 
             </div>
           </Col>
