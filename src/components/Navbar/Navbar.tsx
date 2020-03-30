@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav, Dropdown } from 'react-bootstrap';
+import { Navbar as Navigation, Nav, Dropdown, NavDropdown } from 'react-bootstrap';
 import { Link, useLocation /*useHistory*/ } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
@@ -179,10 +179,10 @@ const Navbar: FC<INavbarProps> = props => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu as={'div'} alignRight>
-          <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
+              <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
               <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span></Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+        </Dropdown>
         {/* <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
@@ -240,8 +240,12 @@ const Navbar: FC<INavbarProps> = props => {
               />
             </Link> */}
 
+            <NavDropdown title="Support Us" id="basic-nav-dropdown" alignRight>
+              <NavDropdown.Item title={t(lo.nav_JoinUs)} href={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="small-xs"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavDropdown.Item>
+              <NavDropdown.Item href="/supporters" className="small-xs">Support Frontline WORKER</NavDropdown.Item>
+            </NavDropdown>
 
-            <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="btn btn-outline-white btn-sm"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavItem>
+
             {/* <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
               target="_blank"
