@@ -44,6 +44,7 @@ interface IHospitalCapaciyResponse extends IPagination, IHospitalsCount {
 export interface IFetchHospitalCapacityAPIPayload {
   page: number;
   size: number;
+  name?:string;
   province?: string;
   district?: string;
   covidTest?: string;
