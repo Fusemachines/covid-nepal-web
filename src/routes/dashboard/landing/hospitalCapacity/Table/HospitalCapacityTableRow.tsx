@@ -66,7 +66,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
         <td onClick={e => e.stopPropagation()}>
-          {contact ? (
+          {contact.length > 0 ? (
             contact.map((number, index) => (
               <a key={index} className="text-white" href={`tel:${number.en}`}>
                 <TranslateNumber originalValue={number.en} language={language} />
