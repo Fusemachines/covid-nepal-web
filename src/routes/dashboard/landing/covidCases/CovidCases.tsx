@@ -4,7 +4,6 @@ import { useTranslation, Trans } from "react-i18next";
 
 import NepalCovidCases from "./NepalCovidCases";
 import GlobalCovidCases from "./GlobalCovidCases";
-import CovidData from "./CovidData";
 import {
   fetchCovidCasesGlobalCountsAPI,
   fetchCovidCasesNepalCountsAPI,
@@ -140,10 +139,6 @@ const CovidCases = () => {
             <NepalCovidCases covidCasesCounts={covidCasesNepalCounts} />
             <GlobalCovidCases covidCasesCounts={covidCasesGlobalCounts} />
           </Row>
-
-          {/* covid counts */}
-          {/* <CovidData covidCasesCounts={covidCasesCounts} /> */}
-          {/* covid counts end */}
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
