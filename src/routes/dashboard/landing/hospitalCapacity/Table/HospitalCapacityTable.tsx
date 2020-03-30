@@ -9,18 +9,15 @@ import MapsModal from "src/components/MapsModal";
 import MapsIframe from "src/components/MapsIframe";
 import Loader from "src/components/Loader";
 import lo from "src/i18n/locale.json";
+import { IHospitalsCount } from "src/services/hospitals";
 
 export interface IMapModalValues {
   title: string;
   mapURL: string;
 }
 
-const HospitalCapacityTable: FC<{}> = () => {
-  const {
-    isLoaded,
-    hospitalsCount: { totalHospitals, totalVerified },
-    hospitalCapacityList
-  } = useContext(HospitalCapacityTableContext);
+const HospitalCapacityTable = () => {
+  const { isLoaded, hospitalsCount, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
 
   const [showMapsModal, setShowMapsModal] = useState(false);
   const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
@@ -54,22 +51,8 @@ const HospitalCapacityTable: FC<{}> = () => {
         <thead>
           <tr>
             <th>
-              {t(lo.contac_hospitalName)}{" "}
-              <div className="mt-1 small">
-                <div className="d-inline-block">
-                  Total
-                  <span className="badge badge-warning mx-2 py-1 px-2">
-                    {" "}
-                    {typeof totalHospitals === "number" && totalHospitals > -1 ? totalHospitals : "NA"}
-                  </span>
-                </div>
-                <div className="d-inline-block ml-2">
-                  Verified
-                  <span className="badge badge-success mx-2 py-1 px-2">
-                    {typeof totalVerified === "number" && totalVerified > -1 ? totalVerified : "NA"}
-                  </span>
-                </div>
-              </div>
+              {t(lo.contac_hospitalName)}
+              {<HospitalsCount hospitalsCount={hospitalsCount} />}
             </th>
             <th>{t(lo.hosp_Address)}</th>
             <th>{t(lo.hosp_Contact)}</th>
@@ -121,3 +104,23 @@ const HospitalCapacityTable: FC<{}> = () => {
 };
 
 export default HospitalCapacityTable;
+
+const HospitalsCount: FC<{ hospitalsCount: IHospitalsCount }> = ({
+  hospitalsCount: { totalHospitals, totalVerified }
+}) => (
+  <div className="mt-1 small">
+    <div className="d-inline-block">
+      Total
+      <span className="badge badge-warning mx-2 py-1 px-2">
+        {" "}
+        {typeof totalHospitals === "number" && totalHospitals > -1 ? totalHospitals : "NA"}
+      </span>
+    </div>
+    <div className="d-inline-block ml-2">
+      Verified
+      <span className="badge badge-success mx-2 py-1 px-2">
+        {typeof totalVerified === "number" && totalVerified > -1 ? totalVerified : "NA"}
+      </span>
+    </div>
+  </div>
+);
