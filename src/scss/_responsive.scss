@@ -74,8 +74,12 @@
     }
 
     .filter-wrapper {
+        .search-wrapper {
+            display: block;
+        }
+
         .filter {
-            margin: 10px 0 0;
+            margin: 10px 5px 0;
         }
     }
 
