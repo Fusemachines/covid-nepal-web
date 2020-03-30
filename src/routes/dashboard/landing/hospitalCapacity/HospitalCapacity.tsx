@@ -109,11 +109,14 @@ const HospitalCapacity: FC<{}> = () => {
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
+    setPagination(initialPaginationState as IPagination);
     setFilters({ ...filters, province: selectedField, district: { label: "All", value: "" } });
+
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
+    setPagination(initialPaginationState as IPagination);
     setFilters({ ...filters, district: selectedField });
   };
 
