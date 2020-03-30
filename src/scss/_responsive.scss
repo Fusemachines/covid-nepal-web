@@ -110,6 +110,19 @@
             margin-right: 15px;
         }
     }
+
+    .notices.nav.nav-tabs {
+        .nav-item {
+            width: 33.3333%;
+            flex: auto;
+
+            a {
+                font-size: 16px !important;
+                padding: 10px 10px;
+                height: 100%;
+            }
+        }
+    }
 }
 
 @media(max-width: 376px) {

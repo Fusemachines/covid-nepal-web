@@ -12,16 +12,16 @@ const NoticesTabs: FC<{}> = () => {
 
   return (
     <Tab.Container id="left-tabs-example" defaultActiveKey="notice">
-      <Nav variant="tabs" className="">
+      <Nav variant="tabs" className="notices">
         <Nav.Item>
           <Nav.Link eventKey="notice">{t(lo.notic_governNotice)}</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="resources">{t(lo.notic_resources)}</Nav.Link>
         </Nav.Item>
-        {/* <Nav.Item>
+        <Nav.Item>
           <Nav.Link eventKey="support">{t(lo.notic_support)}</Nav.Link>
-        </Nav.Item> */}
+        </Nav.Item>
       </Nav>
 
       <Tab.Content>
