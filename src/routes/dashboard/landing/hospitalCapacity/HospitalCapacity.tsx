@@ -11,10 +11,10 @@ import { ProvinceOptions } from "src/constants/options";
 import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
 import Pagination, { IPagination } from "src/components/Pagination/Pagination";
 import lo from "src/i18n/locale.json";
-import HospitalsCount from "./Table/HospitalsCount";
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
+  hospitalsCount: IHospitalsCount;
   hospitalCapacityList: Array<IHospital>;
 }
 
@@ -111,7 +111,6 @@ const HospitalCapacity: FC<{}> = () => {
     const selectedField = value as IOptions;
     setPagination(initialPaginationState as IPagination);
     setFilters({ ...filters, province: selectedField, district: { label: "All", value: "" } });
-
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
@@ -137,8 +136,6 @@ const HospitalCapacity: FC<{}> = () => {
             <div className="d-md-flex filter-wrapper">
               <div className="h5 font-weight-bold mb-3 mr-auto">{t(lo.contac_hospitalCapacityData)}</div>
 
-              <HospitalsCount hospitalsCount={hospitalsCount} />
-
               <HospitalCapacityFiltersContext.Provider
                 value={{
                   filters,
@@ -151,7 +148,7 @@ const HospitalCapacity: FC<{}> = () => {
                 <HospitalCapacityFilter />
               </HospitalCapacityFiltersContext.Provider>
             </div>
-            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList: hospitalCapacityList }}>
+            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalsCount, hospitalCapacityList }}>
               <HospitalCapacityTable />
             </HospitalCapacityTableContext.Provider>
           </div>
