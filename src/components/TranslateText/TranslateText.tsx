@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { translateNumbersInString } from 'src/utils/translate';
 
 const TranslateText: React.SFC<{ originalString: string; converedString?: string; language: string }> = ({ originalString, converedString, language }) => {
   if (language == 'ne') {
