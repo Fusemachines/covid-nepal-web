@@ -5,9 +5,11 @@
         border-color: #2074B9;
         font-weight: 600;
         vertical-align: top;
+        min-width: 120px;
 
         &.w-76 {
             width: 76px;
+            min-width: 76px;
         }
 
         &.w-110 {

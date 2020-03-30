@@ -108,15 +108,15 @@ export default HospitalCapacityTable;
 const HospitalsCount: FC<{ hospitalsCount: IHospitalsCount }> = ({
   hospitalsCount: { totalHospitals, totalVerified }
 }) => (
-  <div className="mt-1 small">
-    <div className="d-inline-block">
+  <div className="small">
+    <div className="mt-1 d-inline-block mr-2">
       Total
       <span className="badge badge-warning mx-2 py-1 px-2">
         {" "}
         {typeof totalHospitals === "number" && totalHospitals > -1 ? totalHospitals : "NA"}
       </span>
     </div>
-    <div className="d-inline-block ml-2">
+    <div className="mt-1 d-inline-block">
       Verified
       <span className="badge badge-success mx-2 py-1 px-2">
         {typeof totalVerified === "number" && totalVerified > -1 ? totalVerified : "NA"}
