@@ -18,7 +18,7 @@ export interface IMapModalValues {
 
 const HospitalCapacityTable = () => {
   const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
-  const [hospitalsCounts, setHospitalsCounts] = useState({} as IHospitalsCounts)
+  const [hospitalsCounts, setHospitalsCounts] = useState({} as IHospitalsCounts);
   const [showMapsModal, setShowMapsModal] = useState(false);
   const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
   const [t] = useTranslation();
@@ -30,7 +30,7 @@ const HospitalCapacityTable = () => {
   const fetchHopitalsCounts = async () => {
     try {
       const response = await fetchHospitalsCountsAPI();
-      setHospitalsCounts(response)
+      setHospitalsCounts(response);
     } catch (error) {}
   };
 
@@ -67,10 +67,18 @@ const HospitalCapacityTable = () => {
             </th>
             <th>{t(lo.hosp_Address)}</th>
             <th>{t(lo.hosp_Contact)}</th>
-            <th>{t(lo.hosp_BedNo)}</th>
-            <th>{t(lo.hosp_ICUBedsNo)}</th>
-            <th>{t(lo.hosp_VentilatorsNo)}</th>
-            <th>{t(lo.hosp_IsolationsBedNo)}</th>
+            <th>
+              {t(lo.hosp_BedNo)} <TotalCount totalCount={hospitalsCounts.totalBeds} />
+            </th>
+            <th>
+              {t(lo.hosp_ICUBedsNo)} <TotalCount totalCount={hospitalsCounts.totalIcus} />
+            </th>
+            <th>
+              {t(lo.hosp_VentilatorsNo)} <TotalCount totalCount={hospitalsCounts.totalVentilators} />
+            </th>
+            <th>
+              {t(lo.hosp_IsolationsBedNo)} <TotalCount totalCount={hospitalsCounts.totalIsolationBeds} />
+            </th>
           </tr>
         </thead>
 
@@ -131,6 +139,17 @@ const HospitalsCount: FC<{ hospitalsCounts: IHospitalsCounts }> = ({
       Verified
       <span className="badge badge-success mx-2 py-1 px-2">
         {typeof totalVerified === "number" && totalVerified > -1 ? totalVerified : "NA"}
+      </span>
+    </div>
+  </div>
+);
+
+const TotalCount: FC<{ totalCount: number }> = ({ totalCount }) => (
+  <div className="mt-1">
+    <div className="d-inline-block ml-2 small">
+      Total
+      <span className="badge badge-success mx-2 py-1 px-2">
+        {typeof totalCount === "number" && totalCount > -1 ? totalCount : "NA"}
       </span>
     </div>
   </div>
