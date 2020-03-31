@@ -11,9 +11,9 @@ import Mythbusters from './Mythbusters';
 const JoinUs = () => {
   const [t] = useTranslation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
   return (
     <>
       <div className="container faq-container">
