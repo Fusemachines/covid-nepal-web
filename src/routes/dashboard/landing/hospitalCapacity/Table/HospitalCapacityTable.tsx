@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from "react";
+import React, { FC, useContext, useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useTranslation, Trans } from "react-i18next";
@@ -9,7 +9,7 @@ import MapsModal from "src/components/MapsModal";
 import MapsIframe from "src/components/MapsIframe";
 import Loader from "src/components/Loader";
 import lo from "src/i18n/locale.json";
-import { IHospitalsCount } from "src/services/hospitals";
+import { fetchHospitalsCountsAPI, IHospitalsCounts } from "src/services/hospitals";
 
 export interface IMapModalValues {
   title: string;
@@ -17,11 +17,22 @@ export interface IMapModalValues {
 }
 
 const HospitalCapacityTable = () => {
-  const { isLoaded, hospitalsCount, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
-
+  const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
+  const [hospitalsCounts, setHospitalsCounts] = useState({} as IHospitalsCounts)
   const [showMapsModal, setShowMapsModal] = useState(false);
   const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
   const [t] = useTranslation();
+
+  useEffect(() => {
+    fetchHopitalsCounts();
+  }, []);
+
+  const fetchHopitalsCounts = async () => {
+    try {
+      const response = await fetchHospitalsCountsAPI();
+      setHospitalsCounts(response)
+    } catch (error) {}
+  };
 
   const toggleMapsModal = (mapModalValues?: IMapModalValues) => {
     setShowMapsModal(prevShowMapsState => !prevShowMapsState);
@@ -52,7 +63,7 @@ const HospitalCapacityTable = () => {
           <tr>
             <th>
               {t(lo.contac_hospitalName)}
-              {<HospitalsCount hospitalsCount={hospitalsCount} />}
+              {<HospitalsCount hospitalsCounts={hospitalsCounts} />}
             </th>
             <th>{t(lo.hosp_Address)}</th>
             <th>{t(lo.hosp_Contact)}</th>
@@ -105,8 +116,8 @@ const HospitalCapacityTable = () => {
 
 export default HospitalCapacityTable;
 
-const HospitalsCount: FC<{ hospitalsCount: IHospitalsCount }> = ({
-  hospitalsCount: { totalHospitals, totalVerified }
+const HospitalsCount: FC<{ hospitalsCounts: IHospitalsCounts }> = ({
+  hospitalsCounts: { totalHospitals, totalVerified }
 }) => (
   <div className="small">
     <div className="mt-1 d-inline-block mr-2">
