@@ -1,55 +1,49 @@
 import { AxiosResponse } from "axios";
 
-import axios from "src/utils/axios";
+import { strapiAxiosInstance } from "src/utils/axios";
+import { getlocalStorage } from "src/utils/storage";
 
-// TODO:pragyakar Update endpoints and interfaces
-
-interface IFetchTopNewsResponse {
-
+const strapiToken = getlocalStorage("strapi-token");
+const headers = {
+  headers: {
+    Authorization: `Bearer ${strapiToken}`
+  }
+}
+interface IFetchNewsPayload {
+  type: string;
+  start: number;
+  limit: number;
 }
 
-export async function fetchTopNewsAPI() {
+interface IFetchNewsResponse {
+  
+}
+
+export async function fetchNewsAPI(payload: IFetchNewsPayload) {
   try {
-    const response: AxiosResponse<IFetchTopNewsResponse> = await axios.get(`/`);
+    const { type, start, limit } = payload;
+    const URL = `/news-feeds?news_types.title=${type}&_start=${start}&_limit=${limit}`;
+    const response: AxiosResponse<IFetchNewsResponse> = await strapiAxiosInstance.get(URL, headers);
     return response.data;
   } catch (error) {
     throw error;
   }
-}
-
-interface IFetchTipsResponse {
-
 }
 
 export async function fetchTipsAPI() {
   try {
-    const response: AxiosResponse<IFetchTipsResponse> = await axios.get(`/`);
+    const URL = `/news-feeds?news_types.title=tips`;
+    const response: AxiosResponse<IFetchNewsResponse> = await strapiAxiosInstance.get(URL, headers);
     return response.data;
   } catch (error) {
     throw error;
   }
 }
 
-interface IFetchNepalNewsResponse {
-
-}
-
-export async function fetchNepalNewsAPI() {
+export async function fetchTopNewsAPI() {
   try {
-    const response: AxiosResponse<IFetchNepalNewsResponse> = await axios.get(`/`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-}
-
-interface IFetchGlobalNewsResponse {
-
-}
-
-export async function fetchGlobalNewsAPI() {
-try {
-    const response: AxiosResponse<IFetchGlobalNewsResponse> = await axios.get(`/`);
+    const URL = `/news-feeds?news_types.title=top`;
+    const response: AxiosResponse<IFetchNewsResponse> = await strapiAxiosInstance.get(URL, headers);
     return response.data;
   } catch (error) {
     throw error;

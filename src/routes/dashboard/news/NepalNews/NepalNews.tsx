@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NewsCard from "src/components/NewsCard";
 import { IMeta, initialMeta } from "src/interface/common";
-import { fetchNepalNewsAPI } from "src/services/news";
+import { fetchNewsAPI } from "src/services/news";
 
 const NepalNews = () => {
 
@@ -9,12 +9,12 @@ const NepalNews = () => {
   const [meta, setMeta] = useState<IMeta>(initialMeta);
 
   useEffect(() => {
-    
+    fetchNepalNews();
   }, []);
 
   const fetchNepalNews = () => {
     try {
-      const response = fetchNepalNewsAPI();
+      // const response = fetchNewsAPI();
 
     } catch(error) {
       console.log(error);

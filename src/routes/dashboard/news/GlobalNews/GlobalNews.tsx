@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NewsCard from "src/components/NewsCard";
 import { IMeta, initialMeta } from "src/interface/common";
-import { fetchGlobalNewsAPI } from "src/services/news";
+import { fetchNewsAPI } from "src/services/news";
 
 const GlobalNews = () => {
 
@@ -9,12 +9,12 @@ const GlobalNews = () => {
   const [meta, setMeta] = useState<IMeta>(initialMeta);
 
   useEffect(() => {
-    
+    fetchGlobalNews();
   }, []);
 
   const fetchGlobalNews = () => {
     try {
-      const response = fetchGlobalNewsAPI();
+      // const response = fetchNewsAPI();
 
     } catch(error) {
       console.log(error);

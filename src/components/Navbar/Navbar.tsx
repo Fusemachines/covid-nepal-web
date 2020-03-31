@@ -108,7 +108,6 @@ const Navbar: FC<INavbarProps> = props => {
 
   useEffect(() => {
     const path = location.pathname.split('/');
-    console.log(path);
   }, [location.pathname]);
 
   useEffect(() => {
