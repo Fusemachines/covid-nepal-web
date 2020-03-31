@@ -28,22 +28,26 @@ const Supporter = () => {
           </Col>
         </Row>
 
-        <Row className=" justify-content-center">
-          <Col md="4" className="mt-4 text-white support-wrapper bg-bluelight">
-            <p>
-              If you are in a position to <span className="text-bold">help our front-line workers</span> in this fight against COVID-19 in Nepal, connect with us. We will try our best to match you with front-line workers or medical institutions that have expressed the help they need.
-            </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJvqt8pEAFRwjKowDxu7PkaHXhaHZTHm5v0CZCBlQ0rdBZMA/viewform" className="btn btn-yellow text-upper text-bold btn-support">i/we can support</a>
+        <Row className="justify-content-center mb-5">
+          <Col md="4" className="mt-4">
+            <div className="text-white p-4 bg-bluelight h-100 rounded">
+              <p>
+                If you are in a position to <span className="text-bold">help our front-line workers</span> in this fight against COVID-19 in Nepal, connect with us. We will try our best to match you with front-line workers or medical institutions that have expressed the help they need.
+              </p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJvqt8pEAFRwjKowDxu7PkaHXhaHZTHm5v0CZCBlQ0rdBZMA/viewform" className="btn btn-yellow text-upper text-bold btn-support">i/we can support</a>
+            </div>
           </Col>
-          <Col md="4" className="mt-4 text-white help-wrapper bg-bluelight">
-            <p>
-              If you are a <span className="text-bold">healthcare worker or represent a medical institution</span> in the front-line fight against COVID-19 in Nepal and need help, connect with us. We will try our best to match you with people on our support base that have expressed their willingness and ability to provide help.
-            </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPuGeJ6U841s8yRYCRpX4jQd2nmaCqKUkGRx4WZWlsLHdh_A/viewform" className="btn btn-green text-upper text-bold btn-help">i/we can help</a>
+          <Col md="4" className="mt-4">
+            <div className="text-white p-4 bg-bluelight h-100 rounded">
+              <p>
+                If you are a <span className="text-bold">healthcare worker or represent a medical institution</span> in the front-line fight against COVID-19 in Nepal and need help, connect with us. We will try our best to match you with people on our support base that have expressed their willingness and ability to provide help.
+              </p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPuGeJ6U841s8yRYCRpX4jQd2nmaCqKUkGRx4WZWlsLHdh_A/viewform" className="btn btn-green text-upper text-bold btn-help">i/we can help</a>
+            </div>
           </Col>
         </Row>
 
-        <Row className="mt-5 justify-content-center tab-container">
+        <Row className="my-5 justify-content-center tab-container">
           <Col sm="12">
             <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
               <Tab eventKey="home" title="Supporter">
@@ -53,23 +57,28 @@ const Supporter = () => {
                       <th className="w-15">Supporter</th>
                       <th className="w-25">Contact</th>
                       <th className="w-60">Provided Support Items</th>
+                      <th className=""></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td className="text-bold">Sarojini Shrestha</td>
                       <td>sarojni@gmail.com <br /> Swyambhu Pharmacy, Swyambhu </td>
-                      <td className="d-flex justify-content-between">
-                        <div className="w-70">
-                          PPE, N95 Masks, Regular Masks, Gloves, Gown, Eye Protection Glasses, Face Shield, Hair Cap, Boots, Shoe Coverups,
-                          Sanitizer
-                      </div>
-                        <a href="#" className="btn btn-green text-upper text-bold btn-help">i/we need help</a>
+                      <td className="">
+                        <div className="d-flex justify-content-between">
+                          <div className="w-70">
+                            PPE, N95 Masks, Regular Masks, Gloves, Gown, Eye Protection Glasses, Face Shield, Hair Cap, Boots, Shoe Coverups, Sanitizer
+                          </div>
+                          <div className="">
+                            <a href="#" className="btn btn-green text-upper text-bold btn-help">i/we need help</a>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </Tab>
+              
               <Tab eventKey="requestForSupport" title="Request for Support">
                 <table className="table-requestor w-100" cellPadding="12">
                   <thead>
