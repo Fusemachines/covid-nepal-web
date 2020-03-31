@@ -246,6 +246,21 @@
     font-weight: 700;
 }
 
+.faq-menu {
+    position: sticky;
+    top: 84px;
+
+    a {
+        color: #ffffff;
+
+        &:hover,
+        &.active {
+            background: #ffffff;
+            color: #0A375D;
+        }
+    }
+}
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
       -webkit-transform: rotate(0deg);
