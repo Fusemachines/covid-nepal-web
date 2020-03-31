@@ -7,7 +7,7 @@ const FAQsMythbusters: FC<{}> = () => {
 
   return (
     <>
-        <h1 className="font-weight-bold my-4">Mythbusters</h1>
+        <h3 className="font-weight-bold my-2 pb-2 border-dark border-bottom">Mythbusters</h3>
 
         <ol>
         {faqs.map(faqs => (

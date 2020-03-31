@@ -17,9 +17,6 @@ const JoinUs = () => {
     <>
       <div className="container">
         <Row className="mt-4">
-          <Col sm="12" className="my-3">
-            <h1 className="text-center font-weight-bold">{t(lo.nav_FAQ)}</h1>
-          </Col>
 
           <Col md={4}>
             <div className="faq-menu rounded bg-bluelight p-4">
@@ -30,7 +27,7 @@ const JoinUs = () => {
 
           <Col md="8" className="mb-3">
             <div className="rounded bg-bluelight px-4" id="general">
-              <div className="pt-5">
+              <div className="py-4 border-bottom border-dark">
                 <General />
               </div>
               
