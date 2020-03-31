@@ -1,15 +1,18 @@
-import React, { useEffect, useState, FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState, FC } from "react";
+import { useTranslation } from "react-i18next";
 
-import { IFetchContactsAPIResponse, fetchEmergencyContactsAPI } from 'src/services/contacts';
-import EmergencyContactItem from './EmergencyContactRecords';
-import PhoneIcon from 'src/components/Icons/PhoneIcon';
-import lo from 'src/i18n/locale.json';
+import { IFetchContactsAPIResponse, fetchEmergencyContactsAPI } from "src/services/contacts";
+import EmergencyContactItem from "./EmergencyContactRecords";
+import PhoneIcon from "src/components/Icons/PhoneIcon";
+import lo from "src/i18n/locale.json";
+import useLanguage from "src/customHooks/useLanguage";
+import TranslateNumber from "src/components/TranslateNumber";
 
 const EmergencyContacts: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [contactList, setContactList] = useState<IFetchContactsAPIResponse>({} as IFetchContactsAPIResponse);
   const [t] = useTranslation();
+  const language = useLanguage();
 
   useEffect(() => {
     fetchEmergencyContacts();
@@ -37,7 +40,7 @@ const EmergencyContacts: FC<{}> = () => {
             <div className="col-7">
               <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9851168220`}>
                 <PhoneIcon />
-                9851168220
+                <TranslateNumber originalValue={9851168220} language={language} />
               </a>
             </div>
           </div>
@@ -47,7 +50,7 @@ const EmergencyContacts: FC<{}> = () => {
             <div className="col-7">
               <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9872701465`}>
                 <PhoneIcon />
-                9872701465
+                <TranslateNumber originalValue={9872701465} language={language} />
               </a>
             </div>
           </div>
@@ -57,7 +60,7 @@ const EmergencyContacts: FC<{}> = () => {
             <div className="col-7">
               <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9851239988`}>
                 <PhoneIcon />
-                9851239988
+                <TranslateNumber originalValue={9851239988} language={language} />
               </a>
             </div>
           </div>
@@ -67,7 +70,7 @@ const EmergencyContacts: FC<{}> = () => {
             <div className="col-7">
               <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9823168540`}>
                 <PhoneIcon />
-                9823168540
+                <TranslateNumber originalValue={9823168540} language={language} />
               </a>
               <small className="ml3">({t(lo.emerg_nightOnly)})</small>
             </div>
@@ -78,7 +81,7 @@ const EmergencyContacts: FC<{}> = () => {
             <div className="col-7">
               <a className="rounded btn-success px-3 py-1 mx-2 btn" href={`tel:9803152149`}>
                 <PhoneIcon />
-                9803152149
+                <TranslateNumber originalValue={9803152149} language={language} />
               </a>
               <small className="ml3">({t(lo.emerg_nightOnly)})</small>
             </div>

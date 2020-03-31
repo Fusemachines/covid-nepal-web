@@ -1,13 +1,16 @@
-export function translateNumbersInString(originalString: string) {
+export function translateNumbersToNepali(originalValue: string | number) {
   let newString = '';
-  for (let i = 0; i < originalString.length; i++) {
-    newString += translateNumberCharacter(originalString[i]);
+  if(typeof originalValue === 'number'){
+    originalValue = originalValue.toString();
+  }
+  for (let i = 0; i < originalValue.length; i++) {
+    newString += mapToNepaliNumberCharacters(originalValue[i]);
   }
   return newString;
 }
 
-function translateNumberCharacter(o: string): string {
-  switch (o) {
+function mapToNepaliNumberCharacters(originalString: string): string {
+  switch (originalString) {
     case '0':
       return '०';
     case '1':
@@ -29,6 +32,6 @@ function translateNumberCharacter(o: string): string {
     case '9':
       return '९';
     default:
-      return o;
+      return originalString;
   }
 }

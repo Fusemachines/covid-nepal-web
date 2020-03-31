@@ -5,17 +5,34 @@
     vertical-align: middle;
     max-width: 200px;
     position: relative;
-    float: right;
 
     input {
-        border-radius: 25px;
         padding-right: 25px;
+        color: #ffffff !important;
+        background: transparent !important;
+        border-color: #ffffff;
+
+        &::-webkit-input-placeholder { /* Edge */
+            color: #ffffff;
+        }
+        
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #ffffff;
+        }
+        
+        &::placeholder {
+            color: #ffffff;
+        }
     }
 
     i {
         position: absolute;
-        top: 0px;
-        right: 10px;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        cursor: pointer;
+        bottom: 0;
+        padding: 3px 6px;
     }
 }
 
@@ -26,6 +43,7 @@
 
     .filter {
         font-size: 12px;
+        margin-left: 15px;
 
         span {
             margin: 0 8px 0 12px ;

@@ -1,31 +1,22 @@
-import { AxiosResponse } from 'axios';
+import { AxiosResponse } from "axios";
 
-import axios from 'src/utils/axios';
+import axios from "src/utils/axios";
 
 export interface ICovidCasesCounts {
   _id: string;
-  testedToday: number;
   confirmedToday: number;
-  recoveredToday: number;
-  /* seriousToday: number;
-  seriousTotal: number; */
-  deathToday: number;
-  testedTotal: number;
   confirmedTotal: number;
-  recoveredTotal: number;
+  deathToday: number;
   deathTotal: number;
-  /* district: string;
-  province: string;
-  testedGlobal: number;
-  confirmedGlobal: number;
-  recoveredGlobal: number;
-  seriousGlobal: number;
-  deathGlobal: number; */
+  recoveredToday: number;
+  recoveredTotal: number;
+  testedToday: number;
+  testedTotal: number;
   createdAt: string;
   updatedAt: string;
 }
 
-export async function fetchCovidCasesNepalCountsAPI() {
+export async function fetchCovidCasesCountsOfNepalAPI() {
   try {
     const response: AxiosResponse<ICovidCasesCounts> = await axios.get(`/counts/nepal/latest`);
     return response.data;
@@ -34,7 +25,7 @@ export async function fetchCovidCasesNepalCountsAPI() {
   }
 }
 
-export async function fetchCovidCasesGlobalCountsAPI() {
+export async function fetchCovidCasesCountsOfGlobalAPI() {
   try {
     const response: AxiosResponse<ICovidCasesCounts> = await axios.get(`/counts/global/latest`);
     return response.data;
