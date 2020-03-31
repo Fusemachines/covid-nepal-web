@@ -252,12 +252,13 @@
     list-style: none;
     padding: 0;
     
-    li {
+    .faq--item {
+        display: block;
 
-        a {
+        .faq__link {
             display: inline-block;
             min-width: 150px;
-            padding: 6px 12px;
+            padding: 8px 12px;
             color: #ffffff;
             text-decoration: none;
             cursor: pointer;

@@ -21,8 +21,8 @@ const JoinUs = () => {
 
           <Col md={3}>
             <Scrollspy items={ ['general', 'mythbusters', ''] } currentClassName="active" className="faq-menu">
-              <li><a href="#general">General FAQs</a></li>
-              <li><a href="#mythbusters">Mythbusters</a></li>
+              <li className="faq--item"><a href="#general" className="faq__link">General FAQs</a></li>
+              <li className="faq--item"><a href="#mythbusters" className="faq__link">Mythbusters</a></li>
             </Scrollspy>
           </Col>
 
