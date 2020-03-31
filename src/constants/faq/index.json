@@ -1,0 +1,206 @@
+[
+    {        
+        "_id": "1",
+        "question": "What is a coronavirus?",
+        "answer": "Coronaviruses are a large family of viruses that may cause illness in animals or humans. In humans, several coronaviruses are known to cause respiratory infections. The most recently discovered coronavirus causes coronavirus disease COVID-19.",
+        "category": "general"
+    },
+    {        
+        "_id": "2",
+        "question": "What is COVID-19?",
+        "answer": "COVID-19 is an infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.",
+        "category": "general"
+    },
+    {        
+        "_id": "3",
+        "question": "What are the symptoms of COVID-19?",
+        "answer": "The most common symptoms of COVID-19 are fever, tiredness, and dry cough. Some patients may have aches and pains, nasal congestion, runny nose, sore throat or diarrhea. These symptoms are usually mild and begin gradually. Some people become infected but don’t develop any symptoms and don't feel unwell.",
+        "category": "general"
+    },
+    {        
+        "_id": "4",
+        "question": "How does the COVID-19 disease transmit from person to person?",
+        "answer": "The disease can spread from person to person if they breathe in the small droplets containing the virus when that person with COVID-19 coughs or exhales. These droplets land on objects and surfaces around the person. Other people then catch COVID-19 by touching these objects or surfaces, then touching their eyes, nose or mouth.",
+        "category": "general"
+    },
+    {        
+        "_id": "5",
+        "question": "Can the virus that causes COVID-19 be transmitted through the air?",
+        "answer": "Studies to date suggest that the virus that causes COVID-19 is mainly transmitted through contact with respiratory droplets rather than through the air.",
+        "category": "general"
+    },
+    {        
+        "_id": "6",
+        "question": "Can COVID-19 be caught from a person who has no symptoms?",
+        "answer": "It is possible to catch COVID-19 from someone who has, for example, just a mild cough and does not feel ill.",
+        "category": "general"
+    },
+    {        
+        "_id": "7",
+        "question": "What can I do to protect myself and prevent the spread of disease?",
+        "answer": "You can reduce your chances of being infected or spreading COVID-19 by taking some simple precautions:<ul class='my-2'><li class='mb-2'>Regularly and thoroughly clean your hands for at least 20 seconds with an alcohol-based hand rub or wash them with soap and water.</li><li class='mb-2'>Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.</li><li class='mb-2'>Avoid touching eyes, nose and mouth. Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.</li><li class='mb-2'>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.</li><li class='mb-2'>Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.</li><li class='mb-2'>traveling to places – especially if you are an older person or have diabetes, heart or lung disease.</li></ul>Why? You have a higher chance of catching COVID-19 in one of these areas.",
+        "category": "general"
+    },
+    {        
+        "_id": "8",
+        "question": "Are antibiotics effective in preventing or treating the COVID-19?",
+        "answer": "No. Antibiotics do not work against viruses, they only work on bacterial infections.",
+        "category": "general"
+    },
+    {        
+        "_id": "9",
+        "question": "Are there any medicines to cure COVID-19?",
+        "answer": "There is no evidence that current medicine can prevent or cure the disease. There are several ongoing clinical trials that include both western and traditional medicines.",
+        "category": "general"
+    },
+    {        
+        "_id": "10",
+        "question": "Will wearing a mask protect me from the COVID-19?",
+        "answer": "Not really. Only wear a mask if you are ill with COVID-19 symptoms (especially coughing) or looking after someone who may have COVID-19. The most effective ways to protect yourself and others against COVID-19 are to frequently clean your hands, cover your cough with the bend of elbow or tissue and maintain a distance of at least 1 meter (3 feet) from people.",
+        "category": "general"
+    },
+    {        
+        "_id": "11",
+        "question": "Can humans become infected with the COVID-19 from an animal source?",
+        "answer": "It’s possible. Handle raw meat, milk or animal organs with care to avoid contamination of uncooked foods and avoid consuming raw or undercooked animal products.",
+        "category": "general"
+    },
+    {        
+        "_id": "12",
+        "question": "Can I catch COVID-19 from my pet?",
+        "answer": "There is no evidence that a dog, cat or any pet can transmit COVID-19.",
+        "category": "general"
+    },
+    {        
+        "_id": "13",
+        "question": "How long does the virus survive on surfaces?",
+        "answer": "Studies suggest that coronaviruses (including preliminary information on the COVID-19 virus) may persist on surfaces for a few hours or up to several days.",
+        "category": "general"
+    },
+    {        
+        "_id": "14",
+        "question": "Will warm weather stop the outbreak?",
+        "answer": "At this time, it is not known whether the spread of COVID-19 will decrease when weather becomes warmer.",
+        "category": "general"
+    },
+    {        
+        "_id": "15",
+        "question": "How can pregnant women protect themselves from getting COVID-19?",
+        "answer": "Pregnant women should do the same things as the general public to avoid infection. You can help stop the spread of COVID-19 by taking these actions:<ul class='my-2'><li class='mb-2'>Cover your cough (using your elbow is a good technique).</li><li class='mb-2'>Avoid people who are sick.</li><li class='mb-2'>Clean your hands often using soap and water or alcohol-based hand sanitizer.</li></ul>",
+        "category": "general"
+    },
+    {        
+        "_id": "16",
+        "question": "Can COVID-19 be passed from a pregnant woman to the fetus or newborn?",
+        "answer": "We still do not know if a pregnant woman with COVID-19 can pass the virus that causes COVID-19 to her fetus or baby during pregnancy or delivery.",
+        "category": "general"
+    },
+    {        
+        "_id": "17",
+        "question": "Can the COVID-19 virus spread through drinking water?",
+        "answer": "The COVID-19 virus has not been detected in drinking water. Conventional water treatment methods that use filtration and disinfection, such as those in most municipal drinking water systems, should remove or inactivate the virus that causes COVID-19.",
+        "category": "general"
+    },
+    {        
+        "_id": "18",
+        "question": "Is the COVID-19 virus found in feces?",
+        "answer": "<p>The virus that causes COVID-19 has been detected in the feces of some patients diagnosed with COVID-19. The amount of virus released from the body (shed) in stool, how long the virus is shed, and whether the virus in the stool is infectious are not known.</p><p>The risk of transmission of COVID-19 from the feces of an infected person is also unknown.</p>",
+        "category": "general"
+    },
+    {        
+        "_id": "19",
+        "question": "Is Teku-based hospital, Sukraraj Tropical and Infectious Disease Hospital, the only hospital allocated for testing and treatment of COVID-19 in Nepal?",
+        "answer": "<p>No. The Government of Nepal has allocated two hospitals, STIDH(Teku) hospital, and Patan Hospital, where you can get tested for Covid-19 infection. Teku hospital is, however, given the first priority since it specializes in dealing with all kinds of infectious diseases like COVID-19. They work closely with the National Public Health Laboratory which is also situated in Teku that performs the confirmatory testing for COVID-19. Do remember that you do not have to go to Teku hospital to take the swab specimen as other hospitals can take a specimen and send it to NPHL.</p><p>For the treatment of COVID-19, all hospitals can manage beds, ICUs and ventilators for severely infected patients. Since there is no evidence that current medicine can prevent or cure the disease, each case can be managed by all the hospitals, giving antiviral and antibacterial therapy.</p>",
+        "category": "general"
+    },
+    {        
+        "_id": "20",
+        "question": "With how many testing kits is the Teku hospital equipped currently?",
+        "answer": "The last news suggests that the Teku hospital is equipped with about 1500 test kits. 522 tests were performed until yesterday.",
+        "category": "general"
+    },
+    {        
+        "_id": "21",
+        "question": "Is the swab testing carried out in Nepal or sent abroad? What is the medium of transportation of the specimens?",
+        "answer": "Swab testing is done in Nepal. In some cases, the samples of the positive cases are transported to a WHO reference lab in the region for re-confirmation. The doctors are, however, immediately notified when a case shows a positive result. The specimens as they are highly contagious are transported using the Viral Transport Medium (VTM). In simple words, it as a tube with rubber seals and has chemicals inside it to prevent the specimen from disintegrating. It is generally Tripple packed in virus transport package. If the sample can be taken to the laboratory within four days, they may be kept at +4 °C and frozen at -70 °C on arrival if they are to be stored. Otherwise, they should be frozen at or below -70 °C until they can be transported to the laboratory via air shipping.",
+        "category": "general"
+    },
+    {        
+        "_id": "22",
+        "question": "If the test sample is transported to the laboratory outside Nepal, how long does it take for the reports to arrive in Nepal?",
+        "answer": "It depends on cases but it is not very quick. It generally takes two hours or so to perform the test and can generally take a week to get the final result. The positive cases are reported to doctors immediately so that you are immediately transferred to the isolation room and treated accordingly.",
+        "category": "general"
+    },
+    {        
+        "_id": "23",
+        "question": "Consuming 'Bojho', Garlic or Turmeric will prevent the coronavirus infection.",
+        "answer": "It’s a Myth. Eating Bojho, Garlic and Turmeric is good for health. But until now, no evidence has been found that consuming these herbs and spices can prevent the coronavirus infection.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "24",
+        "question": "There is no sanitizer in the shop and now I cannot protect myself from coronavirus infection!",
+        "answer": "It’s a Myth. There's no need to panic if there are no hand sanitizers. What's more important is that you frequently wash your hands with soap and clean water as this reduces the risk of coronavirus infection. Hands should be thoroughly washed, especially between the fingers, the palm, around the thumb, the front and back of the hands, and also under the nails.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "25",
+        "question": "Smoking increases and doesn’t prevent coronavirus infection?",
+        "answer": "It’s a Fact. Smoking does not prevent coronavirus infection but increases the risk of it. Smoking is harmful to health. Each year, some 100,000 people die due to health problems caused by smoking cigarettes. People with underlying heart and other health problems are more prone to the infection if they have a habit of smoking.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "26",
+        "question": "Rinsing the mouth with mouthwash can prevent the coronavirus infection.",
+        "answer": "It’s a Myth. There is no evidence to date that coronavirus infection can be prevented by the use of mouthwashes. Although some company's use of mouthwashes will temporarily eradicate some of the viruses that are inside the mouth, it cannot protect against the COVID-19 infection.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "27",
+        "question": "The vaccine against pneumonia protect us from the coronavirus infection.",
+        "answer": "It’s a Myth. Vaccines against pneumonia such as 'pneumococcal vaccine' and 'hemophilus influenza' type B vaccines do not protect against the coronavirus. Since it is a new and different virus, it requires a different type of vaccine. Research is being done to develop the vaccine against the coronavirus, but has not yet been discovered. Although vaccines against pneumonia are not useful for the prevention of coronavirus, these vaccines can be used to prevent respiratory problems for health.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "28",
+        "question": "Warm weather will stop the outbreak of COVID-19.",
+        "answer": "It is a Myth. It is not known whether the spread of COVID-19 will decrease when weather becomes warmer.  There is much more to learn about the transmissibility, severity, and other features associated with COVID-19 and investigations are ongoing.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "29",
+        "question": "Taking a hot bath will not prevent the new coronavirus disease",
+        "answer": "<p>It’s a Fact. Taking a hot bath will not prevent you from catching COVID-19. Your normal body temperature remains around 36.5*C to 37*C, regardless of the temperature of your bath or shower. Actually, taking a hot bath with extremely hot water can be harmful, as it can burn you.</p><p>The best way to protect yourself against COVID-19 is by frequently cleaning your hands.</p>",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "30",
+        "question": "The new coronavirus cannot be transmitted through mosquito bites.",
+        "answer": "It’s a Fact. To date there has been no information nor evidence to suggest that the new coronavirus could be transmitted by mosquitoes. The new coronavirus is a respiratory virus which spreads primarily through droplets generated when an infected person coughs or sneezes, or through droplets of saliva or discharge from the nose. To protect yourself, clean your hands frequently with an alcohol-based hand rub or wash them with soap and water. Also, avoid close contact with anyone who is coughing and sneezing.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "31",
+        "question": "Thermal scanners can detect people infected with the new coronavirus.",
+        "answer": "It’s a Myth as they cannot detect people infected with the new coronavirus. Thermal scanners are effective in detecting people who have developed a fever (i.e.have a higher than normal body temperature) because of infection with the new coronavirus. However, they cannot detect people who are infected but are not yet sick with fever. This is because it takes between 2 and 10 days before people who are infected become sick.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "32",
+        "question": "Products made in China or have been delivered from China can spread the virus.",
+        "answer": "It’s a Myth. The virus cannot survive that long and hence cannot be spread from the products made in China.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "33",
+        "question": "The virus can die if we consume alcohol or rub the whole body with an alcohol rub.",
+        "answer": "It’s a myth. Drinking alcohol or rubbing chlorine or alcohol rub will only cause skin allergies and drinking habit.",
+        "category": "mythbusters"
+    },
+    {        
+        "_id": "34",
+        "question": "Drinking water and massaging the body with mustard oil can kill the virus.",
+        "answer": "It’s a myth. However, drinking hot water or gargling with warm salt water can prevent the virus from traveling from your throat to the lungs. But, massaging with oil won’t kill the virus or prevent the infection.",
+        "category": "mythbusters"
+    }
+]
