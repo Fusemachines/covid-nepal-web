@@ -43,10 +43,11 @@ const CovidCases = () => {
   const fetchCovidCases = async () => {
     setIsLoaded(false);
     try {
-      const globalCountsResponse = await fetchCovidCasesCountsOfGlobalAPI();
-      setCovidCasesCountsOfGlobal(globalCountsResponse);
-
-      const countsInNepal = await fetchCovidCasesCountsOfNepalAPI();
+      const [globalCounts, countsInNepal] = await Promise.all([
+        fetchCovidCasesCountsOfGlobalAPI(),
+        fetchCovidCasesCountsOfNepalAPI()
+      ]);
+      setCovidCasesCountsOfGlobal(globalCounts);
       setCovidCasesCountsOfNepal(countsInNepal);
     } catch (error) {
       console.log(error);

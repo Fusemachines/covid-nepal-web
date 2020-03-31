@@ -13,7 +13,7 @@ interface IGlobalCovidCasesProps {
   covidCasesGlobalCounts: ICovidCasesCounts | null;
 }
 
-const CovidCount: FC<IGlobalCovidCasesProps> = ({ covidCasesNepalCounts, covidCasesGlobalCounts }) => {
+const CovidCounts: FC<IGlobalCovidCasesProps> = ({ covidCasesNepalCounts, covidCasesGlobalCounts }) => {
   const language = useLanguage();
   const { t } = useTranslation();
 
@@ -118,4 +118,4 @@ const CovidCount: FC<IGlobalCovidCasesProps> = ({ covidCasesNepalCounts, covidCa
   );
 };
 
-export default CovidCount;
+export default CovidCounts;
