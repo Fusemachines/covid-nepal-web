@@ -3,6 +3,7 @@ import { Row, Col, Nav } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import lo from 'src/i18n/locale.json';
+import Scrollspy from 'react-scrollspy';
 
 import General from './General';
 import Mythbusters from './Mythbusters';
@@ -15,19 +16,19 @@ const JoinUs = () => {
   }, []);
   return (
     <>
-      <div className="container">
+      <div className="container faq-container">
         <Row className="mt-4">
 
-          <Col md={4}>
-            <div className="faq-menu rounded bg-bluelight p-4">
-                <Nav.Link href="/faq#general" className="active">General FAQs</Nav.Link>
-                <Nav.Link href="/faq#mythbusters" className="">Mythbusters</Nav.Link>
-            </div>
+          <Col md={3}>
+            <Scrollspy items={ ['general', 'mythbusters', ''] } currentClassName="active" className="faq-menu">
+              <li><a href="#general">General FAQs</a></li>
+              <li><a href="#mythbusters">Mythbusters</a></li>
+            </Scrollspy>
           </Col>
 
-          <Col md="8" className="mb-3">
-            <div className="rounded bg-bluelight px-4" id="general">
-              <div className="py-4 border-bottom border-dark">
+          <Col md="9" className="mb-3">
+            <div className="rounded bg-bluelight px-4">
+              <div className="py-4 border-bottom border-dark" id="general">
                 <General />
               </div>
               

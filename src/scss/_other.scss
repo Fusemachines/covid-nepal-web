@@ -249,12 +249,22 @@
 .faq-menu {
     position: sticky;
     top: 84px;
+    list-style: none;
+    padding: 0;
+    
+    li {
 
-    a {
-        color: #ffffff;
+        a {
+            display: inline-block;
+            min-width: 150px;
+            padding: 6px 12px;
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-        &:hover,
-        &.active {
+        &:hover a,
+        &.active a {
             background: #ffffff;
             color: #0A375D;
         }
