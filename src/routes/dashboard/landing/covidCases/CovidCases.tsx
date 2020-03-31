@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import { useTranslation, Trans } from "react-i18next";
 
-import NepalCovidCases from "./NepalCovidCases";
-import GlobalCovidCases from "./GlobalCovidCases";
+// import NepalCovidCases from "./NepalCovidCases";
+// import GlobalCovidCases from "./GlobalCovidCases";
+import CovidCount from './CovidCount';
 import {
   fetchCovidCasesGlobalCountsAPI,
   fetchCovidCasesNepalCountsAPI,
@@ -135,10 +136,14 @@ const CovidCases = () => {
 
           <div className="clearfix"></div>
 
-          <Row className="mb-3">
+          {/* <Row className="mb-3">
             <NepalCovidCases covidCasesCounts={covidCasesNepalCounts} />
             <GlobalCovidCases covidCasesCounts={covidCasesGlobalCounts} />
-          </Row>
+          </Row> */}
+
+          {/* Covid Count */}
+            <CovidCount covidCasesCounts={covidCasesGlobalCounts} />
+          {/* End Covid Count */}
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
