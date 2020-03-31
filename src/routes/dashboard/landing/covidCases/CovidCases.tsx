@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { useTranslation, Trans } from "react-i18next";
 
-import NepalCovidCases from "./NepalCovidCases";
-import GlobalCovidCases from "./GlobalCovidCases";
-import CovidCount from './CovidCount';
+import CovidCounts from "./CovidCounts";
 import {
-  fetchCovidCasesGlobalCountsAPI,
-  fetchCovidCasesNepalCountsAPI,
+  fetchCovidCasesCountsOfGlobalAPI,
+  fetchCovidCasesCountsOfNepalAPI,
   ICovidCasesCounts
 } from "src/services/covidCases";
 import RefreshIcon from "src/components/Icons/RefreshIcon";
@@ -24,12 +22,11 @@ interface IUpdatedTime {
 }
 
 const CovidCases = () => {
-  const [covidCasesNepalCounts, setCovidCasesNepalCounts] = useState<ICovidCasesCounts | null>(null);
-  const [covidCasesGlobalCounts, setCovidCasesGlobalCounts] = useState<ICovidCasesCounts | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [covidCasesCountsOfNepal, setCovidCasesCountsOfNepal] = useState<ICovidCasesCounts | null>(null);
+  const [covidCasesCountsOfGlobal, setCovidCasesCountsOfGlobal] = useState<ICovidCasesCounts | null>(null);
   const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
   const { t } = useTranslation();
-
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCovidCases();
@@ -41,37 +38,34 @@ const CovidCases = () => {
     return () => {
       clearInterval(covidInterval);
     };
-  }, [covidCasesNepalCounts, covidCasesGlobalCounts]);
+  }, [covidCasesCountsOfNepal, covidCasesCountsOfGlobal]);
 
   const fetchCovidCases = async () => {
+    setIsLoaded(false);
     try {
-      setIsLoading(true);
-      const responseGlobal = await fetchCovidCasesGlobalCountsAPI();
-      setCovidCasesGlobalCounts(responseGlobal);
+      const globalCountsResponse = await fetchCovidCasesCountsOfGlobalAPI();
+      setCovidCasesCountsOfGlobal(globalCountsResponse);
 
-      const responseNepal = await fetchCovidCasesNepalCountsAPI();
-      setCovidCasesNepalCounts(responseNepal);
-
-      setIsLoading(false);
+      const countsInNepal = await fetchCovidCasesCountsOfNepalAPI();
+      setCovidCasesCountsOfNepal(countsInNepal);
     } catch (error) {
       console.log(error);
     } finally {
       getUpdatedTime();
-      setIsLoading(false);
+      setIsLoaded(true);
     }
   };
 
   const handleRefreshClick = () => {
-    setIsLoading(true);
     fetchCovidCases();
   };
 
   const getUpdatedTime = () => {
-    if (covidCasesGlobalCounts || covidCasesNepalCounts) {
-      const updatedDate = covidCasesGlobalCounts
-        ? Date.parse(covidCasesGlobalCounts.updatedAt)
-        : covidCasesNepalCounts
-        ? Date.parse(covidCasesNepalCounts.updatedAt)
+    if (covidCasesCountsOfGlobal || covidCasesCountsOfNepal) {
+      const updatedDate = covidCasesCountsOfGlobal
+        ? Date.parse(covidCasesCountsOfGlobal.updatedAt)
+        : covidCasesCountsOfNepal
+        ? Date.parse(covidCasesCountsOfNepal.updatedAt)
         : 0;
       const currentDate = Date.parse(new Date().toString());
       const intervalInSeconds = (currentDate - updatedDate) / 1000;
@@ -127,7 +121,7 @@ const CovidCases = () => {
                       lo.covC_ago
                     )}`
                   : ""}
-                <i className={`ml-2 pointer ${isLoading ? "rotating" : ""}`} onClick={() => handleRefreshClick()}>
+                <i className={`ml-2 pointer ${isLoaded ? "" : "rotating"}`} onClick={() => handleRefreshClick()}>
                   <RefreshIcon />
                 </i>
               </small>
@@ -136,14 +130,10 @@ const CovidCases = () => {
 
           <div className="clearfix"></div>
 
-          <Row className="mb-3">
-            <NepalCovidCases covidCasesCounts={covidCasesNepalCounts} />
-            <GlobalCovidCases covidCasesCounts={covidCasesGlobalCounts} />
-          </Row>
-
-          {/* Covid Count */}
-            {/* <CovidCount covidCasesCounts={covidCasesGlobalCounts} /> */}
-          {/* End Covid Count */}
+          <CovidCounts
+            covidCasesNepalCounts={covidCasesCountsOfNepal}
+            covidCasesGlobalCounts={covidCasesCountsOfGlobal}
+          />
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
