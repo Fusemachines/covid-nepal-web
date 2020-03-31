@@ -1,32 +1,45 @@
-import React, { FC, useContext } from 'react';
-import { useTranslation,  } from 'react-i18next';
+import React, { FC, useContext } from "react";
+import { useTranslation } from "react-i18next";
 
-import CustomSelectInput from 'src/components/CustomSelectInput';
-import { ProvinceOptions/* , CovidTestOptions */ } from 'src/constants/options';
-import { HospitalCapacityFiltersContext } from '../HospitalCapacity';
-import lo from 'src/i18n/locale.json'
+import CustomSelectInput from "src/components/CustomSelectInput";
+import { ProvinceOptions } from "src/constants/options";
+import { HospitalCapacityFiltersContext } from "../HospitalCapacity";
+import lo from "src/i18n/locale.json";
+import SearchIcon from "src/components/Icons/SearchIcon";
 
 const HospitalCapacityFilter: FC<{}> = () => {
   const {
     districtDropdownOptions,
     filters,
+    handleSearchKeywordChange,
     handleProvinceFilterChange,
-    handleDistrictFilterChange,
-    /* handleCovidTestFilterChange */
+    handleDistrictFilterChange
   } = useContext(HospitalCapacityFiltersContext);
   const [t] = useTranslation();
 
   return (
     <div className="ml-auto">
+      <div className="search-wrapper">
+        <input
+          placeholder="Search by Name"
+          type="text"
+          className="form-control form-control-sm"
+          value={filters.hospitalName}
+          onChange={event => handleSearchKeywordChange(event)}
+        />
+        <i>
+          <SearchIcon />
+        </i>
+      </div>
       <div className="filter d-inline-block">
         <span>{t(lo.fil_Province)}</span>
 
         <CustomSelectInput
-          name={'province-select'}
+          name={"province-select"}
           options={ProvinceOptions}
-          placeholder={'Select Province'}
+          placeholder={"Select Province"}
           handleChange={handleProvinceFilterChange}
-          className={'filter-select'}
+          className={"filter-select"}
           selectedValue={filters.province}
           isSearchable={false}
         />
@@ -34,11 +47,11 @@ const HospitalCapacityFilter: FC<{}> = () => {
       <div className="filter d-inline-block">
         <span>{t(lo.fil_District)}</span>
         <CustomSelectInput
-          name={'district-select'}
+          name={"district-select"}
           options={districtDropdownOptions}
-          placeholder={'Select District'}
+          placeholder={"Select District"}
           handleChange={handleDistrictFilterChange}
-          className={'filter-select'}
+          className={"filter-select"}
           selectedValue={filters.district}
         />
       </div>

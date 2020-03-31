@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { useTranslation, Trans } from 'react-i18next'
+import React, { useState, useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
+import { useTranslation, Trans } from "react-i18next";
 
-import NepalCovidCases from './NepalCovidCases';
-import GlobalCovidCases from './GlobalCovidCases';
-import CovidData from './CovidData';
-import { fetchCovidCasesGlobalCountsAPI, fetchCovidCasesNepalCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
-import RefreshIcon from 'src/components/Icons/RefreshIcon';
-import { getFormattedTime } from 'src/utils/date';
-import { pluralize } from 'src/utils/stringManipulation';
-import lo from 'src/i18n/locale.json';
-import NoTranslate from 'src/components/NoTranslate';
+import NepalCovidCases from "./NepalCovidCases";
+import GlobalCovidCases from "./GlobalCovidCases";
+import CovidCount from './CovidCount';
+import {
+  fetchCovidCasesGlobalCountsAPI,
+  fetchCovidCasesNepalCountsAPI,
+  ICovidCasesCounts
+} from "src/services/covidCases";
+import RefreshIcon from "src/components/Icons/RefreshIcon";
+import { getFormattedTime } from "src/utils/date";
+import { pluralize } from "src/utils/stringManipulation";
+import lo from "src/i18n/locale.json";
+import NoTranslate from "src/components/NoTranslate";
 
 interface IUpdatedTime {
   days: number;
@@ -46,8 +50,6 @@ const CovidCases = () => {
       setCovidCasesGlobalCounts(responseGlobal);
 
       const responseNepal = await fetchCovidCasesNepalCountsAPI();
-      debugger;
-
       setCovidCasesNepalCounts(responseNepal);
 
       setIsLoading(false);
@@ -66,7 +68,11 @@ const CovidCases = () => {
 
   const getUpdatedTime = () => {
     if (covidCasesGlobalCounts || covidCasesNepalCounts) {
-      const updatedDate = covidCasesGlobalCounts ? Date.parse(covidCasesGlobalCounts.updatedAt) : covidCasesNepalCounts ? Date.parse(covidCasesNepalCounts.updatedAt) : 0;
+      const updatedDate = covidCasesGlobalCounts
+        ? Date.parse(covidCasesGlobalCounts.updatedAt)
+        : covidCasesNepalCounts
+        ? Date.parse(covidCasesNepalCounts.updatedAt)
+        : 0;
       const currentDate = Date.parse(new Date().toString());
       const intervalInSeconds = (currentDate - updatedDate) / 1000;
       const formattedTime = getFormattedTime(intervalInSeconds);
@@ -76,25 +82,25 @@ const CovidCases = () => {
 
   const showDays = () => {
     if (updatedTime && updatedTime.days > 0) {
-      return `${updatedTime.days} ${pluralize(updatedTime.days, 'day')}`;
+      return `${updatedTime.days} ${pluralize(updatedTime.days, "day")}`;
     } else {
-      return '';
+      return "";
     }
   };
 
   const showHours = () => {
     if (updatedTime && updatedTime.hours > 0 && updatedTime.hours < 24) {
-      return `${updatedTime.hours} ${pluralize(updatedTime.hours, 'hour')}`;
+      return `${updatedTime.hours} ${pluralize(updatedTime.hours, "hour")}`;
     } else {
-      return '';
+      return "";
     }
   };
 
   const showMinutes = () => {
     if (updatedTime && updatedTime.minutes > 0 && updatedTime.minutes < 60) {
-      return `${updatedTime.minutes}  ${pluralize(updatedTime.minutes, 'minute')}`;
+      return `${updatedTime.minutes}  ${pluralize(updatedTime.minutes, "minute")}`;
     } else {
-      return '';
+      return "";
     }
   };
 
@@ -102,7 +108,7 @@ const CovidCases = () => {
     if (updatedTime && updatedTime.seconds > 0 && updatedTime.seconds < 60) {
       return `less than a minute`;
     } else {
-      return '';
+      return "";
     }
   };
 
@@ -113,13 +119,15 @@ const CovidCases = () => {
           <div className="mb-3 border-bottom pb-2">
             <div className="d-inline-block">
               <div className="h5 mb-0 font-weight-bold">
-                <NoTranslate noTranslate={`${t(lo.nav_covid19)} ${t(lo.nav_Cases)}`}/>
+                <NoTranslate noTranslate={`${t(lo.nav_covid19)} ${t(lo.nav_Cases)}`} />
               </div>
               <small>
                 {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
-                  ? `${t(lo.covC_Updated)} ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ${t(lo.covC_ago)}`
-                  : ''}
-                <i className={`ml-2 pointer ${isLoading ? 'rotating' : ''}`} onClick={() => handleRefreshClick()}>
+                  ? `${t(lo.covC_Updated)} ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ${t(
+                      lo.covC_ago
+                    )}`
+                  : ""}
+                <i className={`ml-2 pointer ${isLoading ? "rotating" : ""}`} onClick={() => handleRefreshClick()}>
                   <RefreshIcon />
                 </i>
               </small>
@@ -128,23 +136,31 @@ const CovidCases = () => {
 
           <div className="clearfix"></div>
 
-        <Row className="mb-3">
-          <NepalCovidCases covidCasesCounts={covidCasesNepalCounts} />
-          <GlobalCovidCases covidCasesCounts={covidCasesGlobalCounts} />
-        </Row>
+          <Row className="mb-3">
+            <NepalCovidCases covidCasesCounts={covidCasesNepalCounts} />
+            <GlobalCovidCases covidCasesCounts={covidCasesGlobalCounts} />
+          </Row>
 
-        {/* covid counts */}
-        {/* <CovidData covidCasesCounts={covidCasesCounts} /> */}
-        {/* covid counts end */}
-
+          {/* Covid Count */}
+            {/* <CovidCount covidCasesCounts={covidCasesGlobalCounts} /> */}
+          {/* End Covid Count */}
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
-              *Disclaimer: These numbers are obtained from <a
-                className={'text-white'} target="_blank" rel="noopener noreferrer" href="https://heoc.mohp.gov.np/">
-                Nepal Government </a> and <a
-                className={'text-white'} target="_blank" rel="noopener noreferrer" href="https://coronavirus.jhu.edu/map.html">
-                Johns Hopkins University</a> and being updated as the numbers from these sources get updated.
+              *Disclaimer: These numbers are obtained from{" "}
+              <a className={"text-white"} target="_blank" rel="noopener noreferrer" href="https://heoc.mohp.gov.np/">
+                Nepal Government{" "}
+              </a>{" "}
+              and{" "}
+              <a
+                className={"text-white"}
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://coronavirus.jhu.edu/map.html"
+              >
+                Johns Hopkins University
+              </a>{" "}
+              and being updated as the numbers from these sources get updated.
             </Trans>
           </small>
         </div>
