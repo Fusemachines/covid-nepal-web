@@ -69,9 +69,10 @@
   &__title {
     font-weight: bold;
     font-size: 18px;
+    word-break: break-word;
   }
   &__link {
     color: #00C571;
-
+    word-break: break-word;
   }
 }
