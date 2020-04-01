@@ -10,6 +10,8 @@ import MapsIframe from "src/components/MapsIframe";
 import Loader from "src/components/Loader";
 import lo from "src/i18n/locale.json";
 import { fetchHospitalsCountsAPI, IHospitalsCounts } from "src/services/hospitals";
+import useLanguage from "src/customHooks/useLanguage";
+import TranslateNumber from "src/components/TranslateNumber";
 
 export interface IMapModalValues {
   title: string;
@@ -126,31 +128,49 @@ export default HospitalCapacityTable;
 
 const HospitalsCount: FC<{ hospitalsCounts: IHospitalsCounts }> = ({
   hospitalsCounts: { totalHospitals, totalVerified }
-}) => (
-  <div className="small">
-    <div className="mt-1 d-inline-block mr-2">
-      Total
-      <span className="badge badge-warning mx-2 py-1 px-2">
-        {" "}
-        {typeof totalHospitals === "number" && totalHospitals > -1 ? totalHospitals : "NA"}
-      </span>
+}) => {
+  const language = useLanguage();
+  return (
+    <div className="small">
+      <div className="mt-1 d-inline-block mr-2">
+        Total
+        <span className="badge badge-warning mx-2 py-1 px-2">
+          {" "}
+          {typeof totalHospitals === "number" && totalHospitals > -1 ? (
+            <TranslateNumber originalValue={totalHospitals} language={language} />
+          ) : (
+            "NA"
+          )}
+        </span>
+      </div>
+      <div className="mt-1 d-inline-block">
+        Verified
+        <span className="badge badge-success mx-2 py-1 px-2">
+          {typeof totalVerified === "number" && totalVerified > -1 ? (
+            <TranslateNumber originalValue={totalVerified} language={language} />
+          ) : (
+            "NA"
+          )}
+        </span>
+      </div>
     </div>
-    <div className="mt-1 d-inline-block">
-      Verified
-      <span className="badge badge-success mx-2 py-1 px-2">
-        {typeof totalVerified === "number" && totalVerified > -1 ? totalVerified : "NA"}
-      </span>
-    </div>
-  </div>
-);
+  );
+};
 
-const TotalCount: FC<{ totalCount: number }> = ({ totalCount }) => (
-  <div className="mt-1">
-    <div className="d-inline-block ml-2 small">
-      Total
-      <span className="badge badge-success mx-2 py-1 px-2">
-        {typeof totalCount === "number" && totalCount > -1 ? totalCount : "NA"}
-      </span>
+const TotalCount: FC<{ totalCount: number }> = ({ totalCount }) => {
+  const language = useLanguage();
+  return (
+    <div className="mt-1">
+      <div className="d-inline-block ml-2 small">
+        Total
+        <span className="badge badge-success mx-2 py-1 px-2">
+          {typeof totalCount === "number" && totalCount > -1 ? (
+            <TranslateNumber originalValue={totalCount} language={language} />
+          ) : (
+            "NA"
+          )}
+        </span>
+      </div>
     </div>
-  </div>
-);
+  );
+};
