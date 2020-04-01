@@ -810,7 +810,7 @@ const Home = () => {
               <div className="d-md-flex filter-wrapper mb-4">
                 <div className="h5 font-weight-bold mb-3 mr-auto">Hospital Capacity Data</div>
 
-                <div className="mx-auto">
+                {/* <div className="mx-auto">
                   <OverlayTrigger
                     placement={'top'}
                     overlay={
@@ -837,7 +837,7 @@ const Home = () => {
                     </div>
                   </OverlayTrigger>
 
-                  {/* <OverlayTrigger
+                  <OverlayTrigger
                     placement={'top'}
                     overlay={
                       <Tooltip id={`tooltip-review`} className="covid-hospital-count">
@@ -848,10 +848,20 @@ const Home = () => {
                     <div className="count-box blue">
                       <span>In Review </span> <span className="count">60</span>
                     </div>
-                  </OverlayTrigger> */}
-                </div>
+                  </OverlayTrigger>
+                </div> */}
 
                 <div className="ml-auto">
+                  
+                  <div className="search-wrapper">
+                    <input placeholder="Search by Name" type="text" className="form-control form-control-sm" />
+                    <i>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <path id="Path_736" data-name="Path 736" d="M21.76,20.6,17.117,15.96a7.365,7.365,0,1,0-1.157,1.157L20.6,21.76A.818.818,0,0,0,21.76,20.6Zm-10.4-3.512a5.727,5.727,0,1,1,5.727-5.727A5.727,5.727,0,0,1,11.364,17.091Z" transform="translate(-4 -4)" fill="#fff"/>
+                      </svg>
+                    </i>
+                  </div>
+
                   <div className="filter d-inline-block">
                     <span>Provinance</span>
                     <select className="custom-select form-control-sm filter-select">
@@ -859,13 +869,7 @@ const Home = () => {
                       <option>Bhaktapur</option>
                     </select>
                   </div>
-                  <div className="filter d-inline-block">
-                    <span>Provinance</span>
-                    <select className="custom-select form-control-sm filter-select">
-                      <option>Kathmandu</option>
-                      <option>Bhaktapur</option>
-                    </select>
-                  </div>
+
                   <div className="filter d-inline-block">
                     <span>Provinance</span>
                     <select className="custom-select form-control-sm filter-select">
@@ -881,13 +885,48 @@ const Home = () => {
               <Table responsive className="text-white">
                 <thead>
                   <tr>
-                    <th>Name of Hospital</th>
+                    <th>
+                      Name of Hospital
+                      <div className="mt-1 small">
+                        <div className="d-inline-block">
+                          Total
+                          <span className="badge badge-warning mx-2 py-1 px-2">100</span>
+                        </div>
+                        <div className="d-inline-block ml-2">
+                          Verified
+                          <span className="badge badge-success mx-2 py-1 px-2">50</span>
+                        </div>
+                      </div>
+                    </th>
                     <th>Address</th>
                     <th>Covid-19 Tests</th>
                     <th>Contact</th>
-                    <th>Isolation Beds</th>
-                    <th>ICU</th>
-                    <th>Govt Designated Center</th>
+                    <th>Isolation Beds
+                      <div className="mt-1">
+                        <div className="d-inline-block ml-2 small">
+                          Total
+                          <span className="badge badge-success mx-2 py-1 px-2">50</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th>ICU
+                      
+                      <div className="mt-1">
+                        <div className="d-inline-block ml-2 small">
+                          Total
+                          <span className="badge badge-success mx-2 py-1 px-2">50</span>
+                        </div>
+                      </div>
+                    </th>
+                    <th>Govt Designated Center
+                      
+                      <div className="mt-1">
+                        <div className="d-inline-block ml-2 small">
+                          Total
+                          <span className="badge badge-success mx-2 py-1 px-2">50</span>
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
 

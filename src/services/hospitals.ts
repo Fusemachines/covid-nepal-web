@@ -32,18 +32,13 @@ export interface IHospital {
   ventilators: number;
 }
 
-export interface IHospitalsCount {
-  totalHospitals: number | null;
-  totalPending: number | null;
-  totalVerified: number | null;
-}
-
-interface IHospitalCapaciyResponse extends IPagination, IHospitalsCount {
+interface IHospitalCapaciyResponse extends IPagination {
   docs: Array<IHospital>;
 }
 export interface IFetchHospitalCapacityAPIPayload {
   page: number;
   size: number;
+  name?: string;
   province?: string;
   district?: string;
   covidTest?: string;
@@ -52,6 +47,25 @@ export interface IFetchHospitalCapacityAPIPayload {
 export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAPIPayload) {
   try {
     const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export interface IHospitalsCounts {
+  totalBeds: number;
+  totalHospitals: number;
+  totalIcus: number;
+  totalIsolationBeds: number;
+  totalPending: number;
+  totalVentilators: number;
+  totalVerified: number;
+}
+
+export async function fetchHospitalsCountsAPI() {
+  try {
+    const response: AxiosResponse<IHospitalsCounts> = await axios.get(`/hospitals/count`);
     return response.data;
   } catch (error) {
     throw error;

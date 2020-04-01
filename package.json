@@ -4,6 +4,7 @@
   "author": "Pragyakar Joshi <pragyakar@fusemachines.com>",
   "private": true,
   "dependencies": {
+    "@types/react-scrollspy": "^3.3.2",
     "axios": "^0.19.2",
     "i18next": "^19.3.3",
     "i18next-browser-languagedetector": "^4.0.2",
@@ -18,6 +19,7 @@
     "react-i18next": "^11.3.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-scrollspy": "^3.4.2",
     "react-select": "^3.0.8",
     "typescript": "~3.7.2"
   },

@@ -7,6 +7,8 @@ import { IMapModalValues } from "./HospitalCapacityTable";
 import NotAvailable from "src/components/NotAvailable";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { selectLanguage } from "src/utils/stringManipulation";
+import TranslateNumber from "src/components/TranslateNumber";
+import useLanguage from "src/customHooks/useLanguage";
 
 export interface IHospitalCapacityTableRowProps {
   hospitalCapacity: IHospital;
@@ -15,6 +17,7 @@ export interface IHospitalCapacityTableRowProps {
 
 const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
   const history = useHistory();
+  const language = useLanguage();
   const {
     hospitalCapacity: {
       _id,
@@ -61,10 +64,11 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
         <td onClick={e => e.stopPropagation()}>
-          {contact ? (
+          {contact.length > 0 ? (
             contact.map((number, index) => (
               <a key={index} className="text-white" href={`tel:${number.en}`}>
-                {number.en} {index === contact.length - 1 ? " " : ", "}
+                <TranslateNumber originalValue={number.en} language={language} />
+                {index === contact.length - 1 ? " " : ", "}
               </a>
             ))
           ) : (
@@ -72,16 +76,36 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
 
-        <td onClick={e => e.stopPropagation()}>{totalBeds ? totalBeds : <NotAvailable id={"bed-" + _id} />}</td>
-
-        <td onClick={e => e.stopPropagation()}>{icu ? icu : <NotAvailable id={"icu-" + _id} />}</td>
-
         <td onClick={e => e.stopPropagation()}>
-          {ventilators ? ventilators : <NotAvailable id={"ventilators-" + _id} />}
+          {typeof totalBeds === "number" && totalBeds > -1 ? (
+            <TranslateNumber originalValue={totalBeds} language={language} />
+          ) : (
+            <NotAvailable id={"bed-" + _id} />
+          )}
         </td>
 
         <td onClick={e => e.stopPropagation()}>
-          {numIsolationBeds ? numIsolationBeds : <NotAvailable id={"isolation-bed-" + _id} placement="left" />}
+          {typeof icu === "number" && icu > -1 ? (
+            <TranslateNumber originalValue={icu} language={language} />
+          ) : (
+            <NotAvailable id={"icu-" + _id} />
+          )}
+        </td>
+
+        <td onClick={e => e.stopPropagation()}>
+          {typeof ventilators === "number" && ventilators > -1 ? (
+            <TranslateNumber originalValue={ventilators} language={language} />
+          ) : (
+            <NotAvailable id={"ventilators-" + _id} />
+          )}
+        </td>
+
+        <td onClick={e => e.stopPropagation()}>
+          {typeof numIsolationBeds === "number" && numIsolationBeds > -1 ? (
+            <TranslateNumber originalValue={numIsolationBeds} language={language} />
+          ) : (
+            <NotAvailable id={"isolation-bed-" + _id} placement="left" />
+          )}
         </td>
       </tr>
     </>

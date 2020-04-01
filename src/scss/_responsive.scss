@@ -74,14 +74,18 @@
     }
 
     .filter-wrapper {
+        .search-wrapper {
+            display: block;
+        }
+
         .filter {
-            margin: 10px 0 0;
+            margin: 10px 5px 0;
         }
     }
 
     .nav.nav-tabs {
         .nav-item {
-            flex: min-content;
+            flex: 1 1;
 
             .nav-link {
                 font-size: 18px !important;
@@ -104,6 +108,19 @@
 
         &:first-child {
             margin-right: 15px;
+        }
+    }
+
+    .notices.nav.nav-tabs {
+        .nav-item {
+            width: 33.3333%;
+            flex: auto;
+
+            a {
+                font-size: 16px !important;
+                padding: 10px 10px;
+                height: 100%;
+            }
         }
     }
 }

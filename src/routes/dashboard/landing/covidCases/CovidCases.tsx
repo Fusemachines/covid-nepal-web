@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { useTranslation, Trans } from 'react-i18next'
+import React, { useState, useEffect } from "react";
+import { Col } from "react-bootstrap";
+import { useTranslation, Trans } from "react-i18next";
 
-import NepalCovidCases from './NepalCovidCases';
-import GlobalCovidCases from './GlobalCovidCases';
-import CovidData from './CovidData';
-import { fetchCovidCasesCountsAPI, ICovidCasesCounts } from 'src/services/covidCases';
-import RefreshIcon from 'src/components/Icons/RefreshIcon';
-import { getFormattedTime } from 'src/utils/date';
-import { pluralize } from 'src/utils/stringManipulation';
-import lo from 'src/i18n/locale.json';
-import NoTranslate from 'src/components/NoTranslate';
+import CovidCounts from "./CovidCounts";
+import {
+  fetchCovidCasesCountsOfGlobalAPI,
+  fetchCovidCasesCountsOfNepalAPI,
+  ICovidCasesCounts
+} from "src/services/covidCases";
+import RefreshIcon from "src/components/Icons/RefreshIcon";
+import { getFormattedTime } from "src/utils/date";
+import { pluralize } from "src/utils/stringManipulation";
+import lo from "src/i18n/locale.json";
+import NoTranslate from "src/components/NoTranslate";
 
 interface IUpdatedTime {
   days: number;
@@ -20,11 +22,11 @@ interface IUpdatedTime {
 }
 
 const CovidCases = () => {
-  const [covidCasesCounts, setCovidCasesCounts] = useState<ICovidCasesCounts | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [covidCasesCountsOfNepal, setCovidCasesCountsOfNepal] = useState<ICovidCasesCounts | null>(null);
+  const [covidCasesCountsOfGlobal, setCovidCasesCountsOfGlobal] = useState<ICovidCasesCounts | null>(null);
   const [updatedTime, setUpdatedTime] = useState<IUpdatedTime>({} as IUpdatedTime);
   const { t } = useTranslation();
-
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchCovidCases();
@@ -36,30 +38,36 @@ const CovidCases = () => {
     return () => {
       clearInterval(covidInterval);
     };
-  }, [covidCasesCounts]);
+  }, [covidCasesCountsOfNepal, covidCasesCountsOfGlobal]);
 
   const fetchCovidCases = async () => {
+    setIsLoaded(false);
     try {
-      setIsLoading(true);
-      const response = await fetchCovidCasesCountsAPI();
-      setCovidCasesCounts(response);
-      setIsLoading(false);
+      const [globalCounts, countsInNepal] = await Promise.all([
+        fetchCovidCasesCountsOfGlobalAPI(),
+        fetchCovidCasesCountsOfNepalAPI()
+      ]);
+      setCovidCasesCountsOfGlobal(globalCounts);
+      setCovidCasesCountsOfNepal(countsInNepal);
     } catch (error) {
       console.log(error);
     } finally {
       getUpdatedTime();
-      setIsLoading(false);
+      setIsLoaded(true);
     }
   };
 
   const handleRefreshClick = () => {
-    setIsLoading(true);
     fetchCovidCases();
   };
 
   const getUpdatedTime = () => {
-    if (covidCasesCounts) {
-      const updatedDate = Date.parse(covidCasesCounts.updatedAt);
+    if (covidCasesCountsOfGlobal || covidCasesCountsOfNepal) {
+      const updatedDate = covidCasesCountsOfGlobal
+        ? Date.parse(covidCasesCountsOfGlobal.updatedAt)
+        : covidCasesCountsOfNepal
+        ? Date.parse(covidCasesCountsOfNepal.updatedAt)
+        : 0;
       const currentDate = Date.parse(new Date().toString());
       const intervalInSeconds = (currentDate - updatedDate) / 1000;
       const formattedTime = getFormattedTime(intervalInSeconds);
@@ -69,25 +77,25 @@ const CovidCases = () => {
 
   const showDays = () => {
     if (updatedTime && updatedTime.days > 0) {
-      return `${updatedTime.days} ${pluralize(updatedTime.days, 'day')}`;
+      return `${updatedTime.days} ${pluralize(updatedTime.days, "day")}`;
     } else {
-      return '';
+      return "";
     }
   };
 
   const showHours = () => {
     if (updatedTime && updatedTime.hours > 0 && updatedTime.hours < 24) {
-      return `${updatedTime.hours} ${pluralize(updatedTime.hours, 'hour')}`;
+      return `${updatedTime.hours} ${pluralize(updatedTime.hours, "hour")}`;
     } else {
-      return '';
+      return "";
     }
   };
 
   const showMinutes = () => {
     if (updatedTime && updatedTime.minutes > 0 && updatedTime.minutes < 60) {
-      return `${updatedTime.minutes}  ${pluralize(updatedTime.minutes, 'minute')}`;
+      return `${updatedTime.minutes}  ${pluralize(updatedTime.minutes, "minute")}`;
     } else {
-      return '';
+      return "";
     }
   };
 
@@ -95,7 +103,7 @@ const CovidCases = () => {
     if (updatedTime && updatedTime.seconds > 0 && updatedTime.seconds < 60) {
       return `less than a minute`;
     } else {
-      return '';
+      return "";
     }
   };
 
@@ -106,13 +114,15 @@ const CovidCases = () => {
           <div className="mb-3 border-bottom pb-2">
             <div className="d-inline-block">
               <div className="h5 mb-0 font-weight-bold">
-                <NoTranslate noTranslate={`${t(lo.nav_covid19)} ${t(lo.nav_Cases)}`}/>
+                <NoTranslate noTranslate={`${t(lo.nav_covid19)} ${t(lo.nav_Cases)}`} />
               </div>
               <small>
                 {updatedTime && (updatedTime.days || updatedTime.hours || updatedTime.minutes)
-                  ? `${t(lo.covC_Updated)} ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ${t(lo.covC_ago)}`
-                  : ''}
-                <i className={`ml-2 pointer ${isLoading ? 'rotating' : ''}`} onClick={() => handleRefreshClick()}>
+                  ? `${t(lo.covC_Updated)} ${showDays()} ${showHours()} ${showMinutes()} ${showSeconds()} ${t(
+                      lo.covC_ago
+                    )}`
+                  : ""}
+                <i className={`ml-2 pointer ${isLoaded ? "" : "rotating"}`} onClick={() => handleRefreshClick()}>
                   <RefreshIcon />
                 </i>
               </small>
@@ -121,23 +131,27 @@ const CovidCases = () => {
 
           <div className="clearfix"></div>
 
-        {/* <Row className="mb-3">
-          <NepalCovidCases covidCasesCounts={covidCasesCounts} />
-          <GlobalCovidCases covidCasesCounts={covidCasesCounts} />
-        </Row> */}
-        
-        {/* covid counts */}
-        <CovidData covidCasesCounts={covidCasesCounts} />
-        {/* covid counts end */}
-        
+          <CovidCounts
+            covidCasesNepalCounts={covidCasesCountsOfNepal}
+            covidCasesGlobalCounts={covidCasesCountsOfGlobal}
+          />
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
-              *Disclaimer: These numbers are obtained from <a
-                className={'text-white'} target="_blank" rel="noopener noreferrer" href="https://heoc.mohp.gov.np/">
-                Nepal Government </a> and <a
-                className={'text-white'} target="_blank" rel="noopener noreferrer" href="https://coronavirus.jhu.edu/map.html">
-                Johns Hopkins University</a> and being updated as the numbers from these sources get updated.
+              *Disclaimer: These numbers are obtained from{" "}
+              <a className={"text-white"} target="_blank" rel="noopener noreferrer" href="https://heoc.mohp.gov.np/">
+                Nepal Government{" "}
+              </a>{" "}
+              and{" "}
+              <a
+                className={"text-white"}
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://coronavirus.jhu.edu/map.html"
+              >
+                Johns Hopkins University
+              </a>{" "}
+              and being updated as the numbers from these sources get updated.
             </Trans>
           </small>
         </div>
