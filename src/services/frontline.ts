@@ -46,9 +46,15 @@ export interface IFetchRequestorsAPIResponse {
   docs: Array<IRequestor>;
 }
 
-export async function fetchRequestorsAPI() {
+interface IFetchRequestorsAPIPayload {
+  supportItems?: string;
+}
+
+export async function fetchRequestorsAPI(payload?: IFetchRequestorsAPIPayload) {
   try {
-    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`/frontline/requests`);
+    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`/frontline/requests`, {
+      params: { items: payload ? payload.supportItems : "" }
+    });
     return response.data;
   } catch (error) {
     throw error;
