@@ -5,10 +5,12 @@ import { fetchNewsAPI, INews } from "src/services/news";
 import { getLiteralDate } from "src/utils/date";
 
 const NepalNews = () => {
-  const [nepalNews, setNepalNews] = useState<INews[]>([]);
+  const [nepalNews, setNepalNews] = useState<Array<INews>>([]);
   const [meta, setMeta] = useState<IMeta>(initialMeta);
+  const [isLoaded, setIsLoaded] = useState(false); 
 
   useEffect(() => {
+    setIsLoaded(false);
     fetchNepalNews();
   }, [meta.page]);
 
@@ -19,11 +21,13 @@ const NepalNews = () => {
       setNepalNews(response.docs);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoaded(true);
     }
   };
 
   const handleLoadMore = () => {
-    setMeta({ ...meta, ...meta });
+    setMeta({ ...meta, page: meta.page + 1 });
   };
 
   return (
@@ -47,9 +51,13 @@ const NepalNews = () => {
           ))}
 
         <div className="text-center my-3">
-          {meta.totalPages > meta.page && (
-            <button className="btn btn-primary" onClick={() => handleLoadMore()}>
-              Load More
+          {meta.totalPages - 1 > meta.page && (
+            <button 
+              className="btn btn-primary" 
+              onClick={() => handleLoadMore()}
+              disabled={!isLoaded}
+              >
+              { isLoaded ? 'Load More' : 'Loading...' }
             </button>
           )}
         </div>
