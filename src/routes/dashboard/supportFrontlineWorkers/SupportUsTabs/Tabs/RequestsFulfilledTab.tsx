@@ -1,12 +1,28 @@
-import React, { useContext, FC } from "react";
+import React, { useContext, FC, useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 
-import { RequestorsContext } from "../SupportUsTabs";
 import Loader from "src/components/Loader";
-import { IRequestor } from "src/services/frontline";
+import { IRequestor, fetchRequestorsAPI } from "src/services/frontline";
 
 const RequestsFulfilledTab = () => {
-  const { isLoaded, requestorsList } = useContext(RequestorsContext);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [requestorsList, setRequestorsList] = useState<Array<IRequestor>>([]);
+
+  useEffect(() => {
+    fetchRequestors();
+  }, []);
+
+  const fetchRequestors = async () => {
+    setIsLoaded(false);
+    try {
+      const response = await fetchRequestorsAPI();
+      setRequestorsList(response.docs);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoaded(true);
+    }
+  };
 
   return (
     <Row className="request-fulfilled-wrapper">
@@ -23,8 +39,17 @@ const RequestsFulfilledTab = () => {
           </thead>
 
           <tbody>
-            {isLoaded ? "" : <Loader />}
-            {requestorsList.map(requestor => requestor && <RowOfRequestsFulfilledTab requestor={requestor} />)}
+            {isLoaded ? (
+              requestorsList.length > 0 ? (
+                requestorsList.map(requestor => requestor && <RowOfRequestsFulfilledTab requestor={requestor} />)
+              ) : (
+                <tr>
+                  <td>No records found</td>
+                </tr>
+              )
+            ) : (
+              <Loader />
+            )}
           </tbody>
         </table>
       </Col>
