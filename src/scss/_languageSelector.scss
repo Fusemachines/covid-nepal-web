@@ -1,0 +1,65 @@
+// language selector
+
+.lang {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+    height: 33px;
+
+    input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    label {
+        padding: 9px 5px;
+        display: inline-block;
+        color: #000000;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 10px;
+        margin-bottom: 0;
+        position: relative;
+
+        &.active {
+            background: #2074B9;
+            color: #ffffff;
+        }
+    }
+}
+
+.lang-selector {
+    margin: 3px 0;
+    
+    .dropdown-toggle {
+        background: #ffffff;
+        color: #0A375D;
+        padding: 4px 8px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        min-width: 100px;
+        padding: 0;
+        overflow: hidden;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                background: #76B1E3;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.mobile-flag {
+    display: none;
+}
+
+.mob-view {
+    display: none;
+}
