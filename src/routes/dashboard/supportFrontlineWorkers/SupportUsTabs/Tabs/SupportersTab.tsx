@@ -46,17 +46,21 @@ const SupportersTab = () => {
 
   return (
     <>
-      <div className="d-inline-block">
-        <span>Support Items</span>
-        <CustomSelectInput
-          name={"support-items-select"}
-          options={SupportItemsOptions}
-          placeholder={"Select Support Items"}
-          handleChange={handleSupportItemsFilterChange}
-          selectedValue={filters.supportItems}
-          isSearchable={false}
-        />
+      <div className="filter-wrapper py-2">
+        <div className="filter d-inline-block">
+          <span>Support Items</span>
+          <CustomSelectInput
+            name={"support-items-select"}
+            options={SupportItemsOptions}
+            placeholder={"Select Support Items"}
+            handleChange={handleSupportItemsFilterChange}
+            selectedValue={filters.supportItems}
+            isSearchable={false}
+            className="filter-select"
+          />
+        </div>
       </div>
+
       <table className="table-supporter w-100" cellPadding="12">
         <thead>
           <tr>
@@ -132,7 +136,7 @@ const SupportersTabTableRow: FC<{ supporter: ISupporter }> = ({
       <div className="d-flex justify-content-between">
         {providedItems.length > 0 ? <div className="w-70">{providedItems.join(", ")}</div> : "-"}
         {/* <div className="">
-          <a href="#" className="btn btn-green text-upper text-bold btn-help">
+          <a href="#" className="btn btn-success text-upper text-bold">
             i/we need help
           </a>
         </div> */}

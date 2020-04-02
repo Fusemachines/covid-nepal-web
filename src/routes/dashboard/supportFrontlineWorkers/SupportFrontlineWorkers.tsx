@@ -8,10 +8,13 @@ const SupportFrontlineWorkers = () => {
     <div>
       <div className="container-fluid mt-3">
         <Row className="mt-5 justify-content-center">
-          <Col lg="8" className="mt-4 text-white text-center support-heading-wrapper">
-            <img src="/images/support-frontline.png" alt="image" />
-            <h1 className="support-heading">SUPPORT FRONTLINE WORKERS</h1>
+          <Col lg="8">
+            <div className="mt-4 text-white text-center support-heading-wrapper">
+              <img src="/images/support-frontline.png" alt="image" />
+              <h1 className="support-heading">SUPPORT FRONTLINE WORKERS</h1>
+            </div>
           </Col>
+
           <Col lg="8" className="mt-4 text-white text-center">
             <p>
               As we all see, hear and read the horrors of this pandemic globally and its devastation, it is that much
@@ -21,9 +24,10 @@ const SupportFrontlineWorkers = () => {
             </p>
           </Col>
         </Row>
+
         <Row className="mt-3 justify-content-center">
           <Col lg="8" className="mt-4 text-white text-center">
-            <h2 className="text-green lets-fight-heading">LETS FIGHT THIS TOGETHER !</h2>
+            <h4 className="text-success">LETS FIGHT THIS TOGETHER !</h4>
           </Col>
         </Row>
 
@@ -38,12 +42,13 @@ const SupportFrontlineWorkers = () => {
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdJvqt8pEAFRwjKowDxu7PkaHXhaHZTHm5v0CZCBlQ0rdBZMA/viewform"
                 target="_blank"
-                className="btn btn-yellow text-upper text-bold btn-support"
+                className="btn btn-warning text-upper text-bold"
               >
                 i/we can support
               </a>
             </div>
           </Col>
+          
           <Col md="4" className="mt-4">
             <div className="text-white p-4 bg-bluelight h-100 rounded">
               <p>
@@ -55,7 +60,7 @@ const SupportFrontlineWorkers = () => {
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfPuGeJ6U841s8yRYCRpX4jQd2nmaCqKUkGRx4WZWlsLHdh_A/viewform"
                 target="_blank"
-                className="btn btn-green text-upper text-bold btn-help"
+                className="btn btn-success text-upper text-bold"
               >
                 i/we can help
               </a>

@@ -5,32 +5,17 @@
   &-bold {
     font-weight: bold;
   }
-  &-green {
-    color: #00c571;
-  }
 }
 
-.btn-yellow {
-  background: #ffc400;
-  color: #004e90;
-}
-.btn-support {
-  &:hover {
-    color: #004e90;
-  }
-}
-.btn-help {
-  &:hover {
-    color: white;
-  }
-}
 .common-wrapper {
   padding: 18px 23px;
   border-radius: 10px;
 }
+
 .help-wrapper {
   @extend .common-wrapper;
 }
+
 .support-wrapper {
   @extend .common-wrapper;
   margin-right: 30px;
@@ -38,11 +23,13 @@
     margin-right: 0;
   }
 }
+
 .support-heading-wrapper {
   position: relative;
   display: flex;
   justify-content: center;
 }
+
 .support-heading {
   position: absolute;
   top: 50%;
@@ -50,35 +37,33 @@
   font-weight: bold;
   transform: translateY(-50%);
 }
-.lets-fight-heading {
-  font-size: 24px;
-  font-weight: normal;
-}
+
 .w-70 {
   width: 70%;
 }
+
 .table-common {
   tr {
     border-bottom: 0.5px solid #2074b9;
     padding: 9px 0;
   }
 }
+
 .table-requestor,
 .table-supporter,
 .table-fulfilled {
   @extend .table-common;
 }
-.table-supporter,
-.table-requestor {
-  margin-top: 20px;
-}
+
 .image-wrapper {
   display: flex;
   justify-content: center;
 }
+
 .request-fulfilled-wrapper {
   margin-top: 20px;
 }
+
 .tab-container {
   .nav-link {
     color: white;
@@ -89,6 +74,7 @@
     }
   }
 }
+
 .w-60 {
   width: 60%;
 }
@@ -98,6 +84,7 @@
 .w-25 {
   width: 25%;
 }
+
 .table-fulfilled-wrapper {
   width: 50%;
   @media (max-width: 768px) {

@@ -45,7 +45,8 @@ const RequestorsTab = () => {
 
   return (
     <>
-      <div className="d-inline-block">
+    <div className="filter-wrapper py-2">
+      <div className="filter d-inline-block">
         <span>Support Items</span>
         <CustomSelectInput
           name={"support-items-select"}
@@ -54,8 +55,12 @@ const RequestorsTab = () => {
           handleChange={handleSupportItemsFilterChange}
           selectedValue={filters.supportItems}
           isSearchable={false}
+          className="filter-select"
         />
       </div>
+    </div>
+
+
       <table className="table-supporter w-100" cellPadding="12">
         <thead>
           <tr>
