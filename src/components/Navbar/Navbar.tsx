@@ -235,11 +235,12 @@ const Navbar: FC<INavbarProps> = props => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <NavDropdown.Item title={t(lo.nav_JoinUs)} href={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="small-xs">{t(lo.nav_JoinUs)}</NavDropdown.Item>
-                
-                <NavDropdown.Item href={routes.SUPPORT_US} className={`small-xs`}>
+                <Link to={routes.JOIN_US} className={`small-xs dropdown-item`}>
+                  {t(lo.nav_JoinUs)}
+                </Link>
+                <Link to={routes.SUPPORT_US} className={`small-xs dropdown-item`}>
                   {"Support Us"}
-                </NavDropdown.Item>
+                </Link>
               </Dropdown.Menu>
             </Dropdown>
 
