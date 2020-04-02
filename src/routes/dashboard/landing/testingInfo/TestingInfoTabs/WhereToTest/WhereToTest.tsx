@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import HospitalCross from 'src/components/Icons/HospitalCross';
 import AllocatedHospitalsTable from './Table';
 import lo from 'src/i18n/locale.json';
-import { Scrollbars } from 'react-custom-scrollbars';
+// import { Scrollbars } from 'react-custom-scrollbars';
 
 const WhereToTest: FC<{}> = () => {
   const { t } = useTranslation();
@@ -15,10 +15,10 @@ const WhereToTest: FC<{}> = () => {
         <HospitalCross />
         <div>{t(lo.contac_hospitalWhereToGetTested)}</div>
       </div>
-      <div className="mt-4 h-35">
-          <Scrollbars>
+      <div className="mt-4 hm-3">
+          {/* <Scrollbars style={{ height: 360 }} autoHide={false}> */}
             <AllocatedHospitalsTable />
-          </Scrollbars>   
+          {/* </Scrollbars>    */}
       </div>
     </div>
   );
