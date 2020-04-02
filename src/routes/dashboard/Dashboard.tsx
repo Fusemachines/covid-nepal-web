@@ -2,8 +2,6 @@ import React, { FC, useState } from 'react';
 
 import Navbar from 'src/components/Navbar';
 import DashboardRouter from 'src/routes/dashboard/Router';
-// import Contacts from 'src/routes/dashboard/contacts';
-
 import 'src/i18n';
 import { getlocalStorage, setlocalStorage } from 'src/utils/storage';
 

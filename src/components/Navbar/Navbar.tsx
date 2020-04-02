@@ -1,37 +1,37 @@
-import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav, Dropdown, NavDropdown } from 'react-bootstrap';
-import { Link, useLocation /*useHistory*/ } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
-import { useTranslation } from 'react-i18next';
+import React, { FC, useState, useEffect } from "react";
+import { Navbar as Navigation, Nav, Dropdown, NavDropdown } from "react-bootstrap";
+import { Link, useLocation /*useHistory*/ } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import { useTranslation } from "react-i18next";
 
-import * as routes from 'src/constants/routes';
+import * as routes from "src/constants/routes";
 // import TransparentButton from 'src/components/Buttons/TransparentButton';
-import EmergencyButton from 'src/components/Buttons/EmergencyButton';
-import NavItem from './NavItem';
-import lo from 'src/i18n/locale.json';
+import EmergencyButton from "src/components/Buttons/EmergencyButton";
+import NavItem from "./NavItem";
+import lo from "src/i18n/locale.json";
 
 // import i18n from '../../i18n';
-import Contacts from 'src/routes/dashboard/contacts';
+import Contacts from "src/routes/dashboard/contacts";
 // import LanguageSelectCommingSoon from './LanguageSelectCommingSoon';
-import { setCookie, getlocalStorage, deleteCookie } from '../../utils/storage';
-import TranslateText from '../TranslateText';
-import { NoTransWrapper } from '../NoTranslate';
+import { setCookie, getlocalStorage, deleteCookie } from "../../utils/storage";
+import TranslateText from "../TranslateText";
+import { NoTransWrapper } from "../NoTranslate";
 
 interface INavbarProps {
-  language: string,
-  setLanguage: (lang: string) => void
+  language: string;
+  setLanguage: (lang: string) => void;
 }
 
 const Navbar: FC<INavbarProps> = props => {
   // const [show, setShow] = useState(true);
-  const [cookies, setCookieFunction] = useCookies(['googtrans']);
+  const [cookies, setCookieFunction] = useCookies(["googtrans"]);
 
   const location = useLocation();
   // const history = useHistory();
   const currentPath = location.pathname;
-  const googtrans = cookies['googtrans'] || getlocalStorage('googtrans') || 'en';
+  const googtrans = cookies["googtrans"] || getlocalStorage("googtrans") || "en";
   // const [language, setLanguage] = useState(googtrans.includes('ne') ? 'ne' : 'en');
-  const language = googtrans.includes('ne') ? 'ne' : 'en';
+  const language = googtrans.includes("ne") ? "ne" : "en";
   // const interLang = i18n();
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const { t } = useTranslation();
@@ -42,10 +42,10 @@ const Navbar: FC<INavbarProps> = props => {
   const { navBar } = interLang; */
 
   const languageTranslate = (lang: string, setLanguage = false) => {
-    if (lang === 'ne') {
-      setCookie('googtrans', `/en/${lang}`, setCookieFunction);
+    if (lang === "ne") {
+      setCookie("googtrans", `/en/${lang}`, setCookieFunction);
       try {
-        const googleTeCombo: any = document.getElementsByClassName('goog-te-combo')[0];
+        const googleTeCombo: any = document.getElementsByClassName("goog-te-combo")[0];
         googleTeCombo.value = lang;
         /* const element = getElementFromIframe(':1.confirm');
         if (element && element.click) {
@@ -61,7 +61,7 @@ const Navbar: FC<INavbarProps> = props => {
       }
     } else {
       // setCookie('googtrans', `/en/${lang}`);
-      deleteCookie('googtrans', setCookieFunction);
+      deleteCookie("googtrans", setCookieFunction);
       // deleteCookie('googtrans');
       /* const element = getElementFromIframe(':1.restore');
       if (element && element.click) {
@@ -75,7 +75,7 @@ const Navbar: FC<INavbarProps> = props => {
   };
 
   function getElementFromIframe(id: string) {
-    const iframe: HTMLIFrameElement = document.getElementById(':1.container') as HTMLIFrameElement;
+    const iframe: HTMLIFrameElement = document.getElementById(":1.container") as HTMLIFrameElement;
     if (!iframe) {
       return null;
     }
@@ -97,25 +97,25 @@ const Navbar: FC<INavbarProps> = props => {
   };
 
   useEffect(() => {
-    const googtrans = localStorage.getItem('googtrans') || 'en';
-    if (googtrans.includes('ne')) {
-      languageTranslate('ne');
+    const googtrans = localStorage.getItem("googtrans") || "en";
+    if (googtrans.includes("ne")) {
+      languageTranslate("ne");
     } else {
-      deleteCookie('googtrans', setCookieFunction);
+      deleteCookie("googtrans", setCookieFunction);
       // deleteCookie('googtrans')
     }
   }, []);
 
   useEffect(() => {
-    const path = location.pathname.split('/');
+    const path = location.pathname.split("/");
     console.log(path);
   }, [location.pathname]);
 
   useEffect(() => {
     if (isSidebarVisible) {
-      document.getElementsByTagName('body')[0].classList.add('modal-open');
+      document.getElementsByTagName("body")[0].classList.add("modal-open");
     } else {
-      document.getElementsByTagName('body')[0].classList.remove('modal-open');
+      document.getElementsByTagName("body")[0].classList.remove("modal-open");
     }
   }, [isSidebarVisible]);
 
@@ -126,7 +126,12 @@ const Navbar: FC<INavbarProps> = props => {
   return (
     <React.Fragment>
       <div className="text-center bg-bluelight covid-alert d-flex">
-        <a className="small mx-auto" href="https://bit.ly/covidnepal_report_error_newinfo" target="_blank" rel="noopener noreferrer">
+        <a
+          className="small mx-auto"
+          href="https://bit.ly/covidnepal_report_error_newinfo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {t(lo.nav_HelpUsKeepDataReliable)}
         </a>
         <div className="d-none d-sm-none d-md-block social-link">
@@ -170,18 +175,26 @@ const Navbar: FC<INavbarProps> = props => {
         {/* <LanguageSelectCommingSoon isMobile={true} /> */}
         {/* language */}
         <Dropdown className="lang-selector mobile-flag">
-            <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
-            {language === 'ne'?
-            <><img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_NEP)}</span></>
-            :
-              <><img src="/images/english.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></>
-            }
-            </Dropdown.Toggle>
+          <Dropdown.Toggle as={"div"} id="dropdown-custom-components">
+            {language === "ne" ? (
+              <>
+                <img src="/images/nepal.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_NEP)}</span>
+              </>
+            ) : (
+              <>
+                <img src="/images/english.png" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span>
+              </>
+            )}
+          </Dropdown.Toggle>
 
-            <Dropdown.Menu as={'div'} alignRight>
-              <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.png" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
-              <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span></Dropdown.Item>
-            </Dropdown.Menu>
+          <Dropdown.Menu as={"div"} alignRight>
+            <Dropdown.Item onClick={() => setLanguagePath("en")}>
+              <img src="/images/english.png" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span>
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => setLanguagePath("ne")}>
+              <img src="/images/nepal.png" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span>
+            </Dropdown.Item>
+          </Dropdown.Menu>
         </Dropdown>
         {/* <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
@@ -220,7 +233,12 @@ const Navbar: FC<INavbarProps> = props => {
             <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
             {/* <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} /> */}
 
-            <NavItem title={t(lo.nav_GovNotice)} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
+            <NavItem
+              title={t(lo.nav_GovNotice)}
+              exact={false}
+              to={routes.NOTICES}
+              active={routes.NOTICES === currentPath}
+            />
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
 
@@ -241,10 +259,18 @@ const Navbar: FC<INavbarProps> = props => {
             </Link> */}
 
             <NavDropdown title="Support Us" id="basic-nav-dropdown" alignRight>
-              <NavDropdown.Item title={t(lo.nav_JoinUs)} href={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="small-xs"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavDropdown.Item>
-              <NavDropdown.Item href="/supporters" className="small-xs">Support Frontline WORKER</NavDropdown.Item>
+              <NavDropdown.Item
+                title={t(lo.nav_JoinUs)}
+                href={routes.JOIN_US}
+                active={routes.JOIN_US === currentPath}
+                className="small-xs"
+              >
+                <TranslateText originalString={t(lo.nav_JoinUs)} language={language} />
+              </NavDropdown.Item>
+              <NavDropdown.Item href={routes.SUPPORT_US} className="small-xs">
+                Support Frontline Workers
+              </NavDropdown.Item>
             </NavDropdown>
-
 
             {/* <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
@@ -263,7 +289,7 @@ const Navbar: FC<INavbarProps> = props => {
             {/* <LanguageSelectCommingSoon isMobile={false} /> */}
 
             <div className="d-sm-block d-md-none social-link mt-4">
-              <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer" >
+              <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="6.574" height="14.166" viewBox="0 0 6.574 14.166">
                   <path
                     id="Path_675"
@@ -290,17 +316,25 @@ const Navbar: FC<INavbarProps> = props => {
 
             {/* language */}
             <Dropdown className="lang-selector menu-flag">
-              <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
-              {language === 'ne'?
-              <><img src="/images/nepal.svg" className="mx-1" alt="nep" /> <span>{t(lo.nav_NEP)}</span></>
-              :
-                <><img src="/images/english.svg" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></>
-              }
+              <Dropdown.Toggle as={"div"} id="dropdown-custom-components">
+                {language === "ne" ? (
+                  <>
+                    <img src="/images/nepal.svg" className="mx-1" alt="nep" /> <span>{t(lo.nav_NEP)}</span>
+                  </>
+                ) : (
+                  <>
+                    <img src="/images/english.svg" className="mx-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span>
+                  </>
+                )}
               </Dropdown.Toggle>
 
-              <Dropdown.Menu as={'div'} alignRight>
-                <Dropdown.Item onClick={() => setLanguagePath('en')}><img src="/images/english.svg" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span></Dropdown.Item>
-                <Dropdown.Item onClick={() => setLanguagePath('ne')}><img src="/images/nepal.svg" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span></Dropdown.Item>
+              <Dropdown.Menu as={"div"} alignRight>
+                <Dropdown.Item onClick={() => setLanguagePath("en")}>
+                  <img src="/images/english.svg" className="mr-1" alt="eng" /> <span>{t(lo.nav_ENG)}</span>
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => setLanguagePath("ne")}>
+                  <img src="/images/nepal.svg" className="mr-1" alt="nepal" /> <span>{t(lo.nav_NEP)}</span>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             {/* <div className="lang menu-flag">

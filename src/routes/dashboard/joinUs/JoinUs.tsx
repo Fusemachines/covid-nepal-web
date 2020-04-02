@@ -6,7 +6,6 @@ import { useTranslation, Trans } from 'react-i18next';
 import JoinUsIcon from 'src/components/Icons/JoinUsIcon';
 import lo from 'src/i18n/locale.json'
 import { NoTransWrapper } from 'src/components/NoTranslate';
-/* import { JOIN_US } from 'src/constants/routes'; */
 
 const JoinUs = () => {
   const [t] = useTranslation();
