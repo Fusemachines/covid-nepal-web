@@ -100,8 +100,8 @@ const CovidCases = () => {
   };
 
   const showSeconds = () => {
-    if (updatedTime && updatedTime.seconds > 0 && updatedTime.seconds < 60) {
-      return `less than a minute`;
+    if (updatedTime && updatedTime.minutes < 0 && updatedTime.seconds > 0 && updatedTime.seconds < 60) {
+      return `${updatedTime.seconds}  ${pluralize(updatedTime.seconds, "second")}`;
     } else {
       return "";
     }

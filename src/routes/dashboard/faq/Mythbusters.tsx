@@ -7,9 +7,9 @@ const FAQsMythbusters: FC<{}> = () => {
 
   return (
     <>
-        <h1 className="font-weight-bold my-4">Mythbusters</h1>
+        <h3 className="font-weight-bold mt-5 pb-2 border-dark border-bottom">Mythbusters</h3>
 
-        <ol>
+        <ol className="mt-2">
         {faqs.map(faqs => (
             faqs.category === "mythbusters" &&
             <FAQsItem key={faqs._id} question={faqs.question} answer={faqs.answer} category={faqs.category} />

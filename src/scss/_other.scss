@@ -14,75 +14,12 @@
     }
 }
 
-// language
-
-.lang {
-    background: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-    padding: 0;
-    height: 33px;
-
-    input {
-      visibility: hidden;
-      position: absolute;
-    }
-
-    label {
-        padding: 9px 5px;
-        display: inline-block;
-        color: #000000;
-        vertical-align: middle;
-        cursor: pointer;
-        font-size: 10px;
-        margin-bottom: 0;
-        position: relative;
-
-        &.active {
-            background: #2074B9;
-            color: #ffffff;
-        }
-    }
-}
-
-.lang-selector {
-    margin: 3px 0;
-    
-    .dropdown-toggle {
-        background: #ffffff;
-        color: #0A375D;
-        padding: 4px 8px;
-        border-radius: 12px;
-        cursor: pointer;
-    }
-
-    .dropdown-menu {
-        min-width: 100px;
-        padding: 0;
-        overflow: hidden;
-
-        a {
-            text-decoration: none;
-
-            &:hover {
-                background: #76B1E3;
-                color: #ffffff;
-            }
-        }
-    }
-}
-
-.mobile-flag {
-    display: none;
-}
-
 .title {
     display: inline-block;
     border-radius: 15px;
     padding: 6px 15px;
     font-weight: 600;
 }
-
 
 .emg-call {
     position: relative;
@@ -123,10 +60,6 @@
     }
 }
 
-.mob-view {
-    display: none;
-}
-
 .info-title {
     font-weight: 600;
     font-size: 18px;
@@ -136,10 +69,6 @@
 .hospital-title {
     font-size: 18px;
     font-weight: 600;
-}
-
-.small-xs {
-    font-size: 10px;
 }
 
 .hospitalinfo-list {
@@ -165,11 +94,6 @@
 .tweet-wrapper {
     max-height: 75vh;
     overflow-y: auto;
-}
-
-
-#google_translate_element {
-    display: none;
 }
 
 .social-link {
@@ -239,60 +163,3 @@
         }
     }
 }
-
-.supported-by {
-    bottom: 0;
-    width: 100%;
-    font-weight: 700;
-}
-
-.faq-menu {
-    position: sticky;
-    top: 84px;
-
-    a {
-        color: #ffffff;
-
-        &:hover,
-        &.active {
-            background: #ffffff;
-            color: #0A375D;
-        }
-    }
-}
-
-@-webkit-keyframes rotating /* Safari and Chrome */ {
-    from {
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes rotating {
-    from {
-      -ms-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -ms-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  .rotating svg {
-    -webkit-animation: rotating 2s linear infinite;
-    -moz-animation: rotating 2s linear infinite;
-    -ms-animation: rotating 2s linear infinite;
-    -o-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite;
-  }

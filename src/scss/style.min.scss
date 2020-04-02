@@ -1,137 +1,4 @@
-.skiptranslate {
-  visibility: hidden !important ;
-}
-html {
-    height: 100%;
-}
-
-body {
-    background: #0A375D;
-    color: #ffffff;
-    font-size: 14px;
-    padding-top: 80px;
-    height: 100%;
-    top: 0 !important;
-}
-
-#root .App {
-    > .container-fluid,
-    > .container {
-        min-height: calc(100vh - 169px);
-    }
-}
-
-:-moz-focusring {
-    color: red;
-    outline: 0px dotted green;
-}
-
-.h5 {
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-.bg-orange {
-    background: #D1454B;
-}
-
-.bg-yellow {
-    background: #FFC400;
-}
-
-.bg-bluelight {
-    background-color: #004E90;
-}
-
-.rounded {
-    border-radius: 15px !important;
-}
-
-.pointer {
-    cursor: pointer;
-}
-
-.font-16 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.font-18 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-a {
-    text-decoration: underline;
-}
-
-.text-secondary {
-    color: #9BC7ED !important;
-}
-
-.text-lightblue {
-    color: #7AABD4;
-}
-
-.text-light {
-    color: #535353 !important;
-}
-
-.bg-grey {
-    background-color: #E6E6E6;
-}
-
-.font-weight-semibold {
-    font-weight: 700;
-}
-
-// list
-.numc {
-    list-style: decimal;
-}
-
-.circle {
-    li {
-        list-style: none;
-        position: relative;
-        margin: 12px 0;
-
-        &:before {
-            content: "";
-            width: 14px;
-            height: 14px;
-            position: absolute;
-            border-radius: 50%;
-            background-color: #079558;
-            top: 4px;
-            left: -30px;
-        }
-    }
-}
-
-.bg-red {
-    &-l1 {
-        background-color: #FFBABD;
-    }
-    &-l2 {
-        background-color: #FDD6D8;
-    }
-    &-l3 {
-        background-color: #FFDDDE;
-    }
-    &-l4 {
-        background-color: #E56E73;
-    }
-    &-l5 {
-        background-color: #EF8A8E;
-    }
-}
-
-.goog-text-highlight {
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
+@import "global";
 
 @import "nav";
 
@@ -155,8 +22,12 @@ a {
 
 @import "other";
 
-@import "responsive";
+@import "languageSelector";
 
 @import "loader";
 
 @import "news-page";
+
+@import "faq";
+
+@import "responsive";

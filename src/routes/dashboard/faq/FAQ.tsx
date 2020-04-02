@@ -3,6 +3,7 @@ import { Row, Col, Nav } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import lo from 'src/i18n/locale.json';
+import Scrollspy from 'react-scrollspy';
 
 import General from './General';
 import Mythbusters from './Mythbusters';
@@ -10,27 +11,24 @@ import Mythbusters from './Mythbusters';
 const JoinUs = () => {
   const [t] = useTranslation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
   return (
     <>
-      <div className="container">
+      <div className="container faq-container">
         <Row className="mt-4">
-          <Col sm="12" className="my-3">
-            <h1 className="text-center font-weight-bold">{t(lo.nav_FAQ)}</h1>
+
+          <Col md={3}>
+            <Scrollspy items={ ['general', 'mythbusters', ''] } currentClassName="active" className="faq-menu">
+              <li className="faq--item"><a href="#general" className="faq__link">General FAQs</a></li>
+              <li className="faq--item"><a href="#mythbusters" className="faq__link">Mythbusters</a></li>
+            </Scrollspy>
           </Col>
 
-          <Col md={4}>
-            <div className="faq-menu rounded bg-bluelight p-4">
-                <Nav.Link href="/faq#general" className="active">General FAQs</Nav.Link>
-                <Nav.Link href="/faq#mythbusters" className="">Mythbusters</Nav.Link>
-            </div>
-          </Col>
-
-          <Col md="8" className="mb-3">
-            <div className="rounded bg-bluelight px-4" id="general">
-              <div className="pt-5">
+          <Col md="9" className="mb-3">
+            <div className="rounded bg-bluelight px-4">
+              <div className="py-4 border-bottom border-dark" id="general">
                 <General />
               </div>
               
