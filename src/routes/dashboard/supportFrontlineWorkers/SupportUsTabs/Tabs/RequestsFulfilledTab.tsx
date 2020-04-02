@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, FC } from "react";
 import { Row, Col } from "react-bootstrap";
 
 import { RequestorsContext } from "../SupportUsTabs";
+import Loader from "src/components/Loader";
+import { IRequestor } from "src/services/frontline";
 
-const RequestsFulfilled = () => {
+const RequestsFulfilledTab = () => {
   const { isLoaded, requestorsList } = useContext(RequestorsContext);
 
   return (
@@ -19,19 +21,10 @@ const RequestsFulfilled = () => {
               <th>Supporter</th>
             </tr>
           </thead>
+
           <tbody>
-            <tr>
-              <td>
-                <span className="text-bold">Sam Pokheral</span>
-                <br />
-                Samriddhi Polyclinic
-              </td>
-              <td>
-                <span className="text-bold">Sarojni Shrestha</span>
-                <br />
-                Swyambhu Pharmacy, Swyambhu
-              </td>
-            </tr>
+            {isLoaded ? "" : <Loader />}
+            {requestorsList.map(requestor => requestor && <RowOfRequestsFulfilledTab requestor={requestor} />)}
           </tbody>
         </table>
       </Col>
@@ -39,4 +32,28 @@ const RequestsFulfilled = () => {
   );
 };
 
-export default RequestsFulfilled;
+const RowOfRequestsFulfilledTab: FC<{ requestor: IRequestor }> = ({ requestor: { name, location, fulfilledBy } }) => {
+  return (
+    <tr>
+      <td>
+        {fulfilledBy && fulfilledBy.length > 0
+          ? fulfilledBy.map(supporter => (
+              <>
+                <span className="text-bold">{supporter.name}</span>
+                <br />
+                {supporter.location}
+                <br />
+              </>
+            ))
+          : "N/A"}
+      </td>
+      <td>
+        <span className="text-bold">{name}</span>
+        <br />
+        {location}
+      </td>
+    </tr>
+  );
+};
+
+export default RequestsFulfilledTab;

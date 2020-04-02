@@ -19,6 +19,8 @@ export interface ISupporter extends IFrontline {
 
 export interface IRequestor extends IFrontline {
   requestedItems: Array<string>;
+  isFulfilled? : boolean;
+  fulfilledBy? : Array<ISupporter>;
 }
 
 export interface IFetchSupportersAPIResponse {
@@ -40,7 +42,7 @@ export interface IFetchRequestorsAPIResponse {
 
 export async function fetchRequestorsAPI() {
   try {
-    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`frontline/requests`);
+    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`https://f46f1b4c.ngrok.io/frontline/requests`);
     return response.data;
   } catch (error) {
     throw error;
