@@ -51,10 +51,9 @@ const HospitalCapacityTable = () => {
           <Trans i18nKey={lo.contac_disclaimerHospitalGoverWebsite}>
             *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
             hospital operators, doctors, etc. We need your help to continue gathering this information across all
-            hospitals in Nepal. If you would like to help collect data, please sign up{" "}
+            hospitals in Nepal. If you would like to help collect data, please sign up
             <Link className={"text-white"} to="/join-us">
-              {" "}
-              here{" "}
+              here
             </Link>
             .
           </Trans>
