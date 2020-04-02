@@ -17,8 +17,10 @@ const GlobalNews = () => {
   const fetchGlobalNews = async () => {
     try {
       const response = await fetchNewsAPI({ page: meta.page, size: meta.size, type: "GLOBAL" });
+      let data = globalNews;
+      response.docs.map(doc => data.push(doc));
       setMeta(response.meta);
-      setGlobalNews(response.docs);
+      setGlobalNews(data);
     } catch (error) {
       console.log(error);
     }finally {

@@ -7,7 +7,7 @@ import { getLiteralDate } from "src/utils/date";
 const NepalNews = () => {
   const [nepalNews, setNepalNews] = useState<Array<INews>>([]);
   const [meta, setMeta] = useState<IMeta>(initialMeta);
-  const [isLoaded, setIsLoaded] = useState(false); 
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(false);
@@ -17,8 +17,10 @@ const NepalNews = () => {
   const fetchNepalNews = async () => {
     try {
       const response = await fetchNewsAPI({ page: meta.page, size: meta.size, type: "NEPAL" });
+      let data = nepalNews;
+      response.docs.map(doc => data.push(doc));
       setMeta(response.meta);
-      setNepalNews(response.docs);
+      setNepalNews(data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -52,12 +54,8 @@ const NepalNews = () => {
 
         <div className="text-center my-3">
           {meta.totalPages - 1 > meta.page && (
-            <button 
-              className="btn btn-primary" 
-              onClick={() => handleLoadMore()}
-              disabled={!isLoaded}
-              >
-              { isLoaded ? 'Load More' : 'Loading...' }
+            <button className="btn btn-primary" onClick={() => handleLoadMore()} disabled={!isLoaded}>
+              {isLoaded ? "Load More" : "Loading..."}
             </button>
           )}
         </div>
