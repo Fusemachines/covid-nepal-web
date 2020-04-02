@@ -21,7 +21,6 @@ interface IFetchNewsPayload {
 }
 
 interface IFetchNewsResponse {
-  meta: IMeta;
   docs: Array<INews>;
 }
 
@@ -29,7 +28,7 @@ export async function fetchNewsAPI(payload: IFetchNewsPayload) {
   try {
     const { type, page, size } = payload;
     const URL = `news?type=${type}&page=${page}&size=${size}`;
-    const response: AxiosResponse<IFetchNewsResponse> = await axios.get(URL);
+    const response: AxiosResponse<IFetchNewsResponse & IMeta> = await axios.get(URL);
     return response.data;
   } catch (error) {
     throw error;
@@ -38,7 +37,7 @@ export async function fetchNewsAPI(payload: IFetchNewsPayload) {
 
 export async function fetchTipsAPI() {
   try {
-    const URL = `news?type=TIPS&page=&size=`;
+    const URL = `news/tips`;
     const response: AxiosResponse<IFetchNewsResponse> = await axios.get(URL);
     return response.data;
   } catch (error) {
@@ -48,8 +47,8 @@ export async function fetchTipsAPI() {
 
 export async function fetchTopNewsAPI() {
   try {
-    const URL = `news?type=TOP&page=&size=`;
-    const response: AxiosResponse<IFetchNewsResponse> = await axios.get(URL);
+    const URL = `news/top`;
+    const response: AxiosResponse<INews> = await axios.get(URL);
     return response.data;
   } catch (error) {
     throw error;

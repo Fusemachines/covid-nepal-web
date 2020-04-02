@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-import TopNews from 'src/routes/dashboard/news/TopNews';
+import TopNewsTips from 'src/routes/dashboard/news/TopNewsTips';
 import NepalNews from 'src/routes/dashboard/news/NepalNews';
 import GlobalNews from 'src/routes/dashboard/news/GlobalNews';
 
@@ -10,7 +10,7 @@ const News = () => {
     <div className="container-fluid py-4 news-page">
       <Row>
         <Col md="4">
-          <TopNews />
+          <TopNewsTips />
         </Col>
         <Col md="4">
           <NepalNews />
