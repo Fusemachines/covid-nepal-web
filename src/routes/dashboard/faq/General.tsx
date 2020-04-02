@@ -7,7 +7,7 @@ const FAQsGeneral: FC<{}> = () => {
 
   return (
     <>
-      
+
       <h3 className="font-weight-bold mb-4 pb-2 border-bottom border-dark">General FAQs</h3>
 
       <ol>
@@ -16,8 +16,8 @@ const FAQsGeneral: FC<{}> = () => {
           <FAQsItem key={faqs._id} question={faqs.question} answer={faqs.answer} category={faqs.category} />
         ))}
       </ol>
-      
-              
+
+
       <div className="h5">Sources</div>
       <ul className="mt-2">
         <li><a className="text-white" href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" target="_blank">https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</a></li>

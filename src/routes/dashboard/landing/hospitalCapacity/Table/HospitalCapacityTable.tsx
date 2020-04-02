@@ -8,7 +8,7 @@ import { HospitalCapacityTableContext } from "../HospitalCapacity";
 import MapsModal from "src/components/MapsModal";
 import MapsIframe from "src/components/MapsIframe";
 import Loader from "src/components/Loader";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import { fetchHospitalsCountsAPI, IHospitalsCounts } from "src/services/hospitals";
 import useLanguage from "src/customHooks/useLanguage";
 import TranslateNumber from "src/components/TranslateNumber";
@@ -51,10 +51,9 @@ const HospitalCapacityTable = () => {
           <Trans i18nKey={lo.contac_disclaimerHospitalGoverWebsite}>
             *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
             hospital operators, doctors, etc. We need your help to continue gathering this information across all
-            hospitals in Nepal. If you would like to help collect data, please sign up{" "}
+            hospitals in Nepal. If you would like to help collect data, please sign up
             <Link className={"text-white"} to="/join-us">
-              {" "}
-              here{" "}
+              here
             </Link>
             .
           </Trans>

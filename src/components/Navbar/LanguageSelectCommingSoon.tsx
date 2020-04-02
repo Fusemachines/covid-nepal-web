@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Modal from '../Modal';
 import { useTranslation } from 'react-i18next';
-import en from 'src/i18n/locale.json';
+import en from 'src/i18n/en';
 
 const LanguageSelectCommingSoon: React.FC<any> = ({ isMobile }) => {
   const [showModal, setModal] = useState<boolean>(false);

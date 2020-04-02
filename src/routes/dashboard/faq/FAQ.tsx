@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
+import lo from "src/i18n/en";
 import Scrollspy from "react-scrollspy";
 
 import General from "./General";
@@ -18,7 +19,7 @@ const JoinUs = () => {
             <Scrollspy items={["general", "mythbusters", ""]} currentClassName="active" className="faq-menu">
               <li className="faq--item">
                 <a href="#general" className="faq__link">
-                  General FAQs
+                  {t(lo.faq_generatFAQ)}
                 </a>
               </li>
               <li className="faq--item">

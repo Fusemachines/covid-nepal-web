@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import lo from 'src/i18n/locale.json'
+import lo from 'src/i18n/en'
 
 const SymtomSVG: FC = () => {
   const [t] = useTranslation();
@@ -928,7 +928,7 @@ const SymtomSVG: FC = () => {
             fontWeight="600"
           >
             <tspan x="0" y="0">
-              {t(lo.sym_SoreThroad)}
+              {t(lo.sym_SoreThroat)}
             </tspan>
           </text>
           <text
@@ -952,7 +952,7 @@ const SymtomSVG: FC = () => {
       <div className="left-3 left">{t(lo.sym_Fatigue)}</div>
       <div className="left-4 left">{t(lo.sym_Fever)}</div>
       <div className="left-5 left">{t(lo.sym_RunnyNose)}</div>
-      <div className="left left-6">{t(lo.sym_SoreThroad)}</div>
+      <div className="left left-6">{t(lo.sym_SoreThroat)}</div>
       <div className="right right-1">{t(lo.sym_DryCough)}</div>
       <div className="right right-2">{t(lo.sym_Headache)}</div>
       <div className="right-3 right">{t(lo.sym_Diarrohea)}</div>

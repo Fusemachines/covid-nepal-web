@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { ICovidCasesCounts } from "src/services/covidCases";
 import { setCommas } from "src/utils/stringManipulation";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import TranslateNumber from "src/components/TranslateNumber";
 import useLanguage from "src/customHooks/useLanguage";
 

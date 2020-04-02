@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from 'react-i18next';
-import en from "./en.json";
-import ne from './ne.json'
+import en from "./en";
+import ne from './ne'
 import detector from 'i18next-browser-languagedetector';
 import backend from 'i18next-xhr-backend';
 import { getlocalStorage } from "src/utils/storage";
