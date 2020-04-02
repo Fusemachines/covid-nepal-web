@@ -1,5 +1,5 @@
 import React, { useEffect, useState, FC } from "react";
-import { fetchSupportersAPI, ISupporter, IFetchSupportersAPIResponse } from "src/services/support";
+import { fetchSupportersAPI, ISupporter, IFetchSupportersAPIResponse } from "src/services/frontline";
 import Loader from "src/components/Loader";
 
 const SupportersTab = () => {
