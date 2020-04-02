@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Row, Col, Tabs, Tab, Media } from "react-bootstrap";
+import React from "react";
+import { Row, Col } from "react-bootstrap";
 
-import lo from "src/i18n/locale.json";
+import SupportUsTabs from "./SupportUsTabs";
 
 const SupportUs = () => {
   return (
@@ -60,104 +60,7 @@ const SupportUs = () => {
             </div>
           </Col>
         </Row>
-
-        <Row className="my-5 justify-content-center tab-container">
-          <Col sm="12">
-            <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-              <Tab eventKey="home" title="Supporter">
-                <table className="table-supporter w-100" cellPadding="12">
-                  <thead>
-                    <tr>
-                      <th className="w-15">Supporter</th>
-                      <th className="w-25">Contact</th>
-                      <th className="w-60">Provided Support Items</th>
-                      <th className=""></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="text-bold">Sarojini Shrestha</td>
-                      <td>
-                        sarojni@gmail.com <br /> Swyambhu Pharmacy, Swyambhu{" "}
-                      </td>
-                      <td className="">
-                        <div className="d-flex justify-content-between">
-                          <div className="w-70">
-                            PPE, N95 Masks, Regular Masks, Gloves, Gown, Eye Protection Glasses, Face Shield, Hair Cap,
-                            Boots, Shoe Coverups, Sanitizer
-                          </div>
-                          <div className="">
-                            <a href="#" className="btn btn-green text-upper text-bold btn-help">
-                              i/we need help
-                            </a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </Tab>
-
-              <Tab eventKey="requestForSupport" title="Request for Support">
-                <table className="table-requestor w-100" cellPadding="12">
-                  <thead>
-                    <tr>
-                      <th className="w-15">Requestor</th>
-                      <th className="w-25">Contact</th>
-                      <th className="w-60">Requested Support Items</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="text-bold">Sam Pokheral</td>
-                      <td>
-                        sam@gmail.com <br />
-                        Samriddhi Polyclinic, Kathmandu
-                      </td>
-                      <td className="d-flex justify-content-between">
-                        <div className="w-70">PPE, N95 Masks, Regular Masks, Gloves</div>
-                        <a href="#" className="btn btn-yellow text-upper text-bold btn-support">
-                          i/we can support
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </Tab>
-              <Tab eventKey="requestFulfilled" title="Request Fulfilled">
-                <Row className="request-fulfilled-wrapper">
-                  <Col md="6" className="image-wrapper">
-                    <img src="/images/thankyou.svg" alt="Image" />
-                  </Col>
-                  <Col md="6" className="table-fulfilled-wrapper">
-                    <table className="table-fulfilled w-100" cellPadding="12">
-                      <thead>
-                        <tr>
-                          <th>Requestor</th>
-                          <th>Supporter</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <span className="text-bold">Sam Pokheral</span>
-                            <br />
-                            Samriddhi Polyclinic
-                          </td>
-                          <td>
-                            <span className="text-bold">Sarojni Shrestha</span>
-                            <br />
-                            Swyambhu Pharmacy, Swyambhu
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </Col>
-                </Row>
-              </Tab>
-            </Tabs>
-          </Col>
-        </Row>
+        <SupportUsTabs />
       </div>
 
       <div className="small  pt-2 pb-3  text-center supported-by">
