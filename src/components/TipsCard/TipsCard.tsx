@@ -14,7 +14,7 @@ const TipsCard: React.FC<ITipsCardProps> = props => {
   return (
     <Media onClick={() => openUrl(url)}>
       <div className="mr-2 align-self-center">
-        <img src={imageUrl} className="img-fluid" alt={title} />
+        <img src={imageUrl} className="img-fluid" alt={title} style={{ width: "80px" }} />
       </div>
       <Media.Body className="align-self-center">
         <div className="font-weight-semibold">{title}</div>
