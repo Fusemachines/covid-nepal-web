@@ -4,11 +4,15 @@ export interface ILanguage {
 }
 
 export interface IMeta {
+  page: number;
   size: number;
   totalItems: number;
+  totalPages: number;
 }
 
 export const initialMeta: IMeta = {
-  size: 4,
-  totalItems: 0
-}
+  page: 0,
+  size: 10,
+  totalItems: 1,
+  totalPages: 1
+};

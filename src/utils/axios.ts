@@ -9,11 +9,6 @@ const axiosInstance = axios.create({
   timeout: Config.ApiEnv.timeout
 });
 
-const strapiAxiosInstance = axios.create({
-  baseURL: Config.ApiEnv.strapiURL,
-  timeout: Config.ApiEnv.timeout
-});
-
 interface IClientError {
   config: AxiosRequestConfig;
   request: XMLHttpRequest;
@@ -61,31 +56,4 @@ axiosInstance.interceptors.request.use(
   }
 );
 
-strapiAxiosInstance.interceptors.response.use(
-  function(config) {
-    return config;
-  },
-  function(error) {
-    return Promise.reject(
-      error.response
-        ? parseErrorMessage(error.response)
-        : parseClientError(error)
-    );
-  }
-);
-
-strapiAxiosInstance.interceptors.request.use(
-  function(config) {
-    return config;
-  },
-  function(error) {
-    return Promise.reject(
-      error.response
-        ? parseErrorMessage(error.response)
-        : parseClientError(error)
-    );
-  }
-);
-
 export default axiosInstance;
-export {strapiAxiosInstance};
