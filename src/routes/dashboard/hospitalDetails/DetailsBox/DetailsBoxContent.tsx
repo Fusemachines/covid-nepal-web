@@ -29,7 +29,7 @@ const DetailsBoxContent: FC<{}> = () => {
         <li>
           <span className="text-secondary">{t(lo.contac_openHours)}:</span>
 
-          {hospital.availableTime ? (
+          {hospital.availableTime.length > 0 ? (
             <span className="mx-2">
               <AvailableTimeComponent availableTime={hospital.availableTime} />
             </span>

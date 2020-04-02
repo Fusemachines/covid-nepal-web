@@ -5,7 +5,7 @@ import { ValueType } from "react-select";
 
 import HospitalCapacityTable from "./Table/HospitalCapacityTable";
 import HospitalCapacityFilter from "./Table/HospitalCapacityFilter";
-import { fetchHospitalCapacityAPI, IHospital, IHospitalsCount } from "src/services/hospitals";
+import { fetchHospitalCapacityAPI, IHospital } from "src/services/hospitals";
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from "src/services/contacts";
 import { ProvinceOptions } from "src/constants/options";
 import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
@@ -15,7 +15,6 @@ import SearchIcon from "src/components/Icons/SearchIcon";
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
-  hospitalsCount: IHospitalsCount;
   hospitalCapacityList: Array<IHospital>;
 }
 
@@ -46,15 +45,8 @@ const initialPaginationState = {
   size: 10
 };
 
-const initialHospitalsCountState = {
-  totalHospitals: null,
-  totalPending: null,
-  totalVerified: null
-};
-
 const HospitalCapacity: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hospitalsCount, setHospitalsCount] = useState<IHospitalsCount>(initialHospitalsCountState);
   const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
@@ -81,9 +73,8 @@ const HospitalCapacity: FC<{}> = () => {
         district: district ? district.value : ""
       };
       const response = await fetchHospitalCapacityAPI(payload);
-      const { docs, totalHospitals, totalPending, totalVerified, ...rest } = response;
+      const { docs, ...rest } = response;
       setHospitalCapacityList(docs);
-      setHospitalsCount({ totalHospitals, totalPending, totalVerified });
       setPagination(rest);
     } catch (error) {
       console.log(error);
@@ -153,7 +144,7 @@ const HospitalCapacity: FC<{}> = () => {
                 <HospitalCapacityFilter />
               </HospitalCapacityFiltersContext.Provider>
             </div>
-            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalsCount, hospitalCapacityList }}>
+            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList }}>
               <HospitalCapacityTable />
             </HospitalCapacityTableContext.Provider>
           </div>

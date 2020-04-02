@@ -1,0 +1,25 @@
+.faq-menu {
+    position: sticky;
+    top: 84px;
+    list-style: none;
+    padding: 0;
+    
+    .faq--item {
+        display: block;
+
+        .faq__link {
+            display: inline-block;
+            min-width: 150px;
+            padding: 8px 12px;
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        &:hover a,
+        &.active a {
+            background: #ffffff;
+            color: #0A375D;
+        }
+    }
+}
