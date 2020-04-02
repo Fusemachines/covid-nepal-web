@@ -1,5 +1,6 @@
 import React from "react";
 import { Media } from "react-bootstrap";
+import { openUrl } from "src/utils/helpers";
 
 interface INewsCardProps {
   title: string;
@@ -7,13 +8,14 @@ interface INewsCardProps {
   createdAt: string;
   imageUrl: string;
   content: string;
+  url: string;
 }
 
 const NewsCard: React.FC<INewsCardProps> = props => {
-  const { title, source, createdAt, imageUrl, content  } = props;
+  const { title, source, createdAt, imageUrl, content, url  } = props;
   return (
 
-    <Media>
+    <Media onClick={() => openUrl(url)}>
       <div className="mr-2 align-self-center">
         <img src={imageUrl} className="img-fluid" alt={title}/>
       </div>

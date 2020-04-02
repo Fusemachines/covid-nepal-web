@@ -39,6 +39,7 @@ const GlobalNews = () => {
               createdAt={news.uploadedAt}
               imageUrl={news.imageUrl}
               content={news.description}
+              url={news.url}
             />
           ))}
 

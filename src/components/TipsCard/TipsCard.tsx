@@ -1,16 +1,18 @@
 import React from "react";
 import { Media } from "react-bootstrap";
+import { openUrl } from "src/utils/helpers";
 
 interface ITipsCardProps {
   title: string;
   createdAt: string;
   imageUrl: string;
+  url: string;
 }
 
 const TipsCard: React.FC<ITipsCardProps> = props => {
-  const { title, createdAt, imageUrl } = props;
+  const { title, createdAt, imageUrl, url } = props;
   return (
-    <Media>
+    <Media onClick={() => openUrl(url)}>
       <div className="mr-2 align-self-center">
         <img src={imageUrl} className="img-fluid" alt={title} />
       </div>
