@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import WhereToTest from './WhereToTest';
 import WhenToTest from './WhenToTest';
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 
 const TestingInfoTabs: FC<{}> = () => {
   const { t } = useTranslation();

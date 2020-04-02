@@ -6,7 +6,7 @@ import { ProvinceOptions } from 'src/constants/options';
 import { ValueType, ActionMeta } from 'react-select';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 import { IContactFilters } from './HospitalContacts';
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 
 interface IHospitalContactsFilterProps {
   filters: IContactFilters;

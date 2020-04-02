@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Table } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import lo from 'src/i18n/locale.json'
+import lo from 'src/i18n/en'
 
 /* "nav_FAQ": "FAQ",
   "sym_Headache": "Headache",
@@ -72,7 +72,7 @@ const SymtomSVG: FC = () => {
         </tr>
 
         <tr>
-          <td className="">{t(lo.sym_SoreThroad)}</td>
+          <td className="">{t(lo.sym_SoreThroat)}</td>
           <td className="text-warning font-weight-bold">{t(lo.symCh_Sometimes)}</td>
           <td className="">{t(lo.symCh_Common)}</td>
           <td>{t(lo.symCh_Common)}</td>

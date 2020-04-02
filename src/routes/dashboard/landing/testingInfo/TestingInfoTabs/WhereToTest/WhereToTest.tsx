@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import HospitalCross from 'src/components/Icons/HospitalCross';
 import AllocatedHospitalsTable from './Table';
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 // import { Scrollbars } from 'react-custom-scrollbars';
 
 const WhereToTest: FC<{}> = () => {

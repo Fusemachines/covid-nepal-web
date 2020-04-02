@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { IFetchContactsAPIResponse, fetchEmergencyContactsAPI } from "src/services/contacts";
 import EmergencyContactItem from "./EmergencyContactRecords";
 import PhoneIcon from "src/components/Icons/PhoneIcon";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import useLanguage from "src/customHooks/useLanguage";
 import TranslateNumber from "src/components/TranslateNumber";
 

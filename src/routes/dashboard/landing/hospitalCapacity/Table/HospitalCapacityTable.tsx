@@ -8,7 +8,7 @@ import { HospitalCapacityTableContext } from "../HospitalCapacity";
 import MapsModal from "src/components/MapsModal";
 import MapsIframe from "src/components/MapsIframe";
 import Loader from "src/components/Loader";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import { fetchHospitalsCountsAPI, IHospitalsCounts } from "src/services/hospitals";
 import useLanguage from "src/customHooks/useLanguage";
 import TranslateNumber from "src/components/TranslateNumber";

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Media } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 
 const WhenToTest: FC<{}> = () => {
   const { t } = useTranslation();

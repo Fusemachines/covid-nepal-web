@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import GreenContactBadge from 'src/components/Badges/GreenContactBadge';
 import { IContact } from 'src/services/contacts';
 import Loader from 'src/components/Loader';
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 import { selectLanguage } from 'src/utils/stringManipulation';
 
 interface IHospitalContactsRecordsProps {

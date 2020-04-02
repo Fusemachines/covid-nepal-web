@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import GovernmentNotices from './GovernmentNotices';
 import Resources from './Resources';
 import Support from './Support';
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 
 const NoticesTabs: FC<{}> = () => {
   const [t] = useTranslation();
