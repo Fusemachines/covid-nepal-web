@@ -240,10 +240,16 @@ const Navbar: FC<INavbarProps> = props => {
               />
             </Link> */}
 
-            <NavDropdown title="Support Us" id="basic-nav-dropdown" alignRight>
-              <NavDropdown.Item title={t(lo.nav_JoinUs)} href={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="small-xs"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavDropdown.Item>
-              <NavDropdown.Item href="/supporters" className="small-xs">Support Frontline WORKER</NavDropdown.Item>
-            </NavDropdown>
+            <Dropdown alignRight className="mr-4">
+              <Dropdown.Toggle variant="warning" id="dropdown-basic">
+                Support Us
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <NavDropdown.Item title={t(lo.nav_JoinUs)} href={routes.JOIN_US} active={routes.JOIN_US === currentPath} className="small-xs"><TranslateText originalString={t(lo.nav_JoinUs)} language={language} /></NavDropdown.Item>
+                <NavDropdown.Item href="/supporters" className="small-xs">Support Frontline WORKER</NavDropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
 
             {/* <a
