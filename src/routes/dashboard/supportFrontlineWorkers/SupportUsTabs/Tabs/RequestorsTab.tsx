@@ -63,8 +63,13 @@ const RequestorsTabTableRow: FC<{ requestor: IRequestor }> = ({
   <tr>
     <td className="text-bold">{name}</td>
     <td>
-      {email}
-      <br />
+      {email ? (
+        <>
+          {email} <br />
+        </>
+      ) : (
+        ""
+      )}
       {landline ? (
         <>
           {landline} <br />

@@ -27,9 +27,7 @@ export interface IFetchSupportersAPIResponse {
 
 export async function fetchSupportersAPI() {
   try {
-    const response: AxiosResponse<IFetchSupportersAPIResponse> = await axios.get(
-      `frontline/supporters`
-    );
+    const response: AxiosResponse<IFetchSupportersAPIResponse> = await axios.get(`frontline/supporters`);
     return response.data;
   } catch (error) {
     throw error;
@@ -42,9 +40,7 @@ export interface IFetchRequestorsAPIResponse {
 
 export async function fetchRequestorsAPI() {
   try {
-    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(
-      `frontline/requests`
-    );
+    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`frontline/requests`);
     return response.data;
   } catch (error) {
     throw error;
