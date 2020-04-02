@@ -231,7 +231,6 @@ const Navbar: FC<INavbarProps> = props => {
           <Nav className="mx-auto">
             <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
-            {/* <NavItem title={t(lo.nav_JoinUs)} exact={false} to={routes.JOIN_US} active={routes.JOIN_US === currentPath} /> */}
 
             <NavItem
               title={t(lo.nav_GovNotice)}
@@ -243,42 +242,15 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
 
           <Nav>
-            {/* <NavItem
-              title={t(lo.nav_GovNotice)}
-              exact={false}
-              to={routes.NOTICES}
-              active={routes.NOTICES === currentPath}
-              className="btn btn-outline-white btn-sm"
-            /> */}
-            {/* <Link to={routes.NOTICES}>
-              <TransparentButton
-                text={t(en.GovNotice)}
-                handleClick={() => {}}
-                active={routes.NOTICES === currentPath}
-              />
-            </Link> */}
-
             <NavDropdown title="Support Us" id="basic-nav-dropdown" alignRight>
-              <NavDropdown.Item
-                title={t(lo.nav_JoinUs)}
-                href={routes.JOIN_US}
-                active={routes.JOIN_US === currentPath}
-                className="small-xs"
-              >
-                <TranslateText originalString={t(lo.nav_JoinUs)} language={language} />
-              </NavDropdown.Item>
-              <NavDropdown.Item href={routes.SUPPORT_US} className="small-xs">
-                Support Frontline Workers
-              </NavDropdown.Item>
+              <Link to={routes.JOIN_US} className={`small-xs`}>
+                {t(lo.nav_JoinUs)}
+              </Link>
+              <br />
+              <Link to={routes.SUPPORT_US} className={`small-xs`}>
+                {"Support Us"}
+              </Link>
             </NavDropdown>
-
-            {/* <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdsnaeqk6sTTDe6MelxQ_zQPAP--Ud2zSxrMgcpQPOL_Pubmw/viewform?pli=1"
-              target="_blank"
-              className="btn btn-outline-white btn-sm nav-link"
-            >
-              Sign up
-            </a> */}
 
             <EmergencyButton
               text={t(lo.com_EmergencyContact)}
@@ -337,31 +309,6 @@ const Navbar: FC<INavbarProps> = props => {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            {/* <div className="lang menu-flag">
-              <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
-                <input
-                  type="radio"
-                  id="np-lang"
-                  onClick={() => setLanguagePath('ne')}
-                  name="language"
-                  value="ne"
-                  checked={language === 'ne'}
-                />
-                <img src="/images/nepal.png" className="mx-1" alt="nepal" /> {t(lo.nav_NEP)}
-              </label>
-
-              <label htmlFor="en-lang" className={language === 'en' ? 'active' : ''}>
-                <input
-                  type="radio"
-                  id="en-lang"
-                  onClick={() => setLanguagePath('en')}
-                  name="language"
-                  value="en"
-                  checked={language === 'en'}
-                />
-                {t(lo.nav_ENG)} <img src="/images/english.png" className="mx-1" alt="eng" />
-              </label>
-            </div> */}
           </Nav>
         </Navigation.Collapse>
       </Navigation>
