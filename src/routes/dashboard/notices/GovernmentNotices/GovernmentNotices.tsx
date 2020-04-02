@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import govtNotices from "src/constants/notices/govtNotices.json";
 import GovernmentNoticeItem from "./GovernmentNoticeItem";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 
 const GovernmentNotices: FC<{}> = () => {
   const [t] = useTranslation();

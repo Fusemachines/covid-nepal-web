@@ -8,7 +8,7 @@ import * as routes from 'src/constants/routes';
 // import TransparentButton from 'src/components/Buttons/TransparentButton';
 import EmergencyButton from 'src/components/Buttons/EmergencyButton';
 import NavItem from './NavItem';
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 
 // import i18n from '../../i18n';
 import Contacts from 'src/routes/dashboard/contacts';

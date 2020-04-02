@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import CustomSelectInput from "src/components/CustomSelectInput";
 import { ProvinceOptions } from "src/constants/options";
 import { HospitalCapacityFiltersContext } from "../HospitalCapacity";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import SearchIcon from "src/components/Icons/SearchIcon";
 
 const HospitalCapacityFilter: FC<{}> = () => {
