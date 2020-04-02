@@ -19,7 +19,7 @@ const Landing = () => {
 
           <TestingInformation />
 
-          <Col md="12" lg="3" className="mt-2 order-lg-first hm-5">
+          <Col md="12" lg="3" className="mt-2 order-lg-first">
             <Scrollbars>
               {/* <div className="tweet-wrapper"> */}
               <LatestNews />
