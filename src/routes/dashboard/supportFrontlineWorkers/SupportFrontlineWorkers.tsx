@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 
 import SupportUsTabs from "./SupportUsTabs";
 
-const SupportUs = () => {
+const SupportFrontlineWorkers = () => {
   return (
     <div>
       <div className="container-fluid mt-3">
@@ -66,4 +66,4 @@ const SupportUs = () => {
   );
 };
 
-export default SupportUs;
+export default SupportFrontlineWorkers;

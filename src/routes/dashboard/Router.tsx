@@ -9,7 +9,7 @@ import withTracker from 'src/utils/googleAnalytics';
 import JoinUs from 'src/routes/dashboard/joinUs';
 import Notices from 'src/routes/dashboard/notices';
 import FAQ from 'src/routes/dashboard/faq';
-import Supporters from 'src/routes/dashboard/supportUs';
+import Supporters from 'src/routes/dashboard/supportFrontlineWorkers';
 
 const DashboardRouter: FC<{}> = () => (
   <Switch>
@@ -19,7 +19,7 @@ const DashboardRouter: FC<{}> = () => (
     <Route path={routes.NOTICES} component={withTracker(Notices)} />
     <Route path={routes.FAQ} component={withTracker(FAQ)} />
     <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
-    <Route path={routes.SUPPORT_US} component={withTracker(Supporters)} />
+    <Route path={routes.SUPPORT_FRONTLINE_WORKERS} component={withTracker(Supporters)} />
   </Switch>
 );
 

@@ -238,8 +238,8 @@ const Navbar: FC<INavbarProps> = props => {
                 <Link to={routes.JOIN_US} className={`small-xs dropdown-item`}>
                   {t(lo.nav_JoinUs)}
                 </Link>
-                <Link to={routes.SUPPORT_US} className={`small-xs dropdown-item`}>
-                  {"Support Us"}
+                <Link to={routes.SUPPORT_FRONTLINE_WORKERS} className={`small-xs dropdown-item`}>
+                  {"Support Frontline Workers"}
                 </Link>
               </Dropdown.Menu>
             </Dropdown>
