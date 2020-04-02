@@ -1,4 +1,4 @@
-import React, { useContext, FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 
 import Loader from "src/components/Loader";
@@ -41,7 +41,9 @@ const RequestsFulfilledTab = () => {
           <tbody>
             {isLoaded ? (
               requestorsList.length > 0 ? (
-                requestorsList.map(requestor => requestor && <RowOfRequestsFulfilledTab requestor={requestor} />)
+                requestorsList.map(
+                  requestor => requestor.isFulfilled && <RowOfRequestsFulfilledTab requestor={requestor} />
+                )
               ) : (
                 <tr>
                   <td>No records found</td>

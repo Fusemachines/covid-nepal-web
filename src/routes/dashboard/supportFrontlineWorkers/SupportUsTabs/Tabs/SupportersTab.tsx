@@ -1,18 +1,36 @@
 import React, { useEffect, useState, FC } from "react";
-import { fetchSupportersAPI, ISupporter, IFetchSupportersAPIResponse } from "src/services/frontline";
+import { fetchSupportersAPI, ISupporter } from "src/services/frontline";
 import Loader from "src/components/Loader";
+import CustomSelectInput from "src/components/CustomSelectInput";
+import { SupportItemsOptions } from "src/constants/options";
+import { ValueType } from "react-select";
+import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
+
+interface ISupportersTabFilters {
+  supportItems: IOptions;
+}
+
+const initialSupportersTabFiltersState: ISupportersTabFilters = {
+  supportItems: SupportItemsOptions[0]
+};
 
 const SupportersTab = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [filters, setFilters] = useState<ISupportersTabFilters>(initialSupportersTabFiltersState);
   const [supportersList, setSupportersList] = useState<Array<ISupporter>>([]);
+
   useEffect(() => {
     fetchSupporters();
-  }, []);
+  }, [filters.supportItems]);
 
   const fetchSupporters = async () => {
     setIsLoaded(false);
     try {
-      const response = await fetchSupportersAPI();
+      const {supportItems} = filters;
+      const payload = {
+        supportItems : supportItems.value
+      }
+      const response = await fetchSupportersAPI(payload);
       setSupportersList(response.docs);
     } catch (error) {
       console.log(error);
@@ -21,34 +39,52 @@ const SupportersTab = () => {
     }
   };
 
+  const handleSupportItemsFilterChange = (value: ValueType<IOptions>) => {
+    const selectedField = value as IOptions;
+    setFilters({ supportItems: selectedField });
+  };
+
   return (
-    <table className="table-supporter w-100" cellPadding="12">
-      <thead>
-        <tr>
-          <th className="w-15">Supporter</th>
-          <th className="w-25">Contact</th>
-          <th className="w-60">Provided Support Items</th>
-          <th className=""></th>
-        </tr>
-      </thead>
-      <tbody>
-        {isLoaded ? (
-          supportersList.length > 0 ? (
-            supportersList.map(supporter => <SupportersTabTableRow key={supporter._id} supporter={supporter} />)
+    <>
+      <div className="d-inline-block">
+        <span>Support Items</span>
+        <CustomSelectInput
+          name={"support-items-select"}
+          options={SupportItemsOptions}
+          placeholder={"Select Support Items"}
+          handleChange={handleSupportItemsFilterChange}
+          selectedValue={filters.supportItems}
+          isSearchable={false}
+        />
+      </div>
+      <table className="table-supporter w-100" cellPadding="12">
+        <thead>
+          <tr>
+            <th className="w-15">Supporter</th>
+            <th className="w-25">Contact</th>
+            <th className="w-60">Provided Support Items</th>
+            <th className=""></th>
+          </tr>
+        </thead>
+        <tbody>
+          {isLoaded ? (
+            supportersList.length > 0 ? (
+              supportersList.map(supporter => <SupportersTabTableRow key={supporter._id} supporter={supporter} />)
+            ) : (
+              <tr>
+                <td colSpan={7}>No records found</td>
+              </tr>
+            )
           ) : (
             <tr>
-              <td colSpan={7}>No records found</td>
+              <td colSpan={7}>
+                <Loader />
+              </td>
             </tr>
-          )
-        ) : (
-          <tr>
-            <td colSpan={7}>
-              <Loader />
-            </td>
-          </tr>
-        )}
-      </tbody>
-    </table>
+          )}
+        </tbody>
+      </table>
+    </>
   );
 };
 

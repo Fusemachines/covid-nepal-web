@@ -19,17 +19,23 @@ export interface ISupporter extends IFrontline {
 
 export interface IRequestor extends IFrontline {
   requestedItems: Array<string>;
-  isFulfilled? : boolean;
-  fulfilledBy? : Array<ISupporter>;
+  isFulfilled?: boolean;
+  fulfilledBy?: Array<ISupporter>;
 }
 
-export interface IFetchSupportersAPIResponse {
+interface IFetchSupportersAPIResponse {
   docs: Array<ISupporter>;
 }
 
-export async function fetchSupportersAPI() {
+interface IFetchSupportersAPIPayload {
+  supportItems: string;
+}
+
+export async function fetchSupportersAPI(payload: IFetchSupportersAPIPayload) {
   try {
-    const response: AxiosResponse<IFetchSupportersAPIResponse> = await axios.get(`frontline/supporters`);
+    const response: AxiosResponse<IFetchSupportersAPIResponse> = await axios.get(`frontline/supporters`, {
+      params: { items: payload.supportItems }
+    });
     return response.data;
   } catch (error) {
     throw error;
