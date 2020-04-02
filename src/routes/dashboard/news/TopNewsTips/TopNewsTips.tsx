@@ -60,8 +60,14 @@ const TopNewsTips = () => {
         <div className="bg-grey text-primary p-2">TIPS</div>
         <div className="news-list px-3">
           {tipsList &&
-            tipsList.map(tip => (
-              <TipsCard title={tip.title} createdAt={tip.uploadedAt} imageUrl={tip.imageUrl} url={tip.url} />
+            tipsList.map((tip, index) => (
+              <TipsCard
+                key={index}
+                title={tip.title}
+                createdAt={getLiteralDate(tip.uploadedAt)}
+                imageUrl={tip.imageUrl}
+                url={tip.url}
+              />
             ))}
         </div>
       </div>

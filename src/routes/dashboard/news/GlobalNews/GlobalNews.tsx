@@ -23,7 +23,7 @@ const GlobalNews = () => {
   };
 
   const handleLoadMore = () => {
-    setMeta({ page: meta.page + 1, ...meta });
+    setMeta({ ...meta, page: meta.page + 1 });
   };
 
   return (
@@ -33,8 +33,9 @@ const GlobalNews = () => {
       </div>
       <div className="news-list px-3 h-80">
         {globalNews &&
-          globalNews.map(news => (
+          globalNews.map((news, index) => (
             <NewsCard
+              key={index}
               title={news.title}
               source={news.source}
               createdAt={getLiteralDate(news.uploadedAt)}

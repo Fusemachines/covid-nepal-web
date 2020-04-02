@@ -23,7 +23,7 @@ const NepalNews = () => {
   };
 
   const handleLoadMore = () => {
-    setMeta({ page: meta.page + 1, ...meta });
+    setMeta({ ...meta, ...meta });
   };
 
   return (
@@ -34,8 +34,9 @@ const NepalNews = () => {
 
       <div className="news-list px-3 h-80">
         {nepalNews &&
-          nepalNews.map(news => (
+          nepalNews.map((news, index) => (
             <NewsCard
+              key={index}
               title={news.title}
               source={news.source}
               createdAt={getLiteralDate(news.uploadedAt)}
