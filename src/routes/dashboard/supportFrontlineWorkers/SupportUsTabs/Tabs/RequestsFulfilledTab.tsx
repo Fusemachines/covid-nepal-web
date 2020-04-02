@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Row, Col } from "react-bootstrap";
 
+import { RequestorsContext } from "../SupportUsTabs";
+
 const RequestsFulfilled = () => {
+  const { isLoaded, requestorsList } = useContext(RequestorsContext);
+
   return (
     <Row className="request-fulfilled-wrapper">
       <Col md="6" className="image-wrapper">

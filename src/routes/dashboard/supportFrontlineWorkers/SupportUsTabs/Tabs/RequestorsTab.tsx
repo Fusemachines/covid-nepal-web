@@ -1,26 +1,10 @@
-import React, { useEffect, useState, FC } from "react";
-import { IRequestor, fetchRequestorsAPI } from "src/services/frontline";
+import React, { FC, useContext } from "react";
+import { IRequestor } from "src/services/frontline";
 import Loader from "src/components/Loader";
+import { RequestorsContext } from "../SupportUsTabs";
 
 const RequestorsTab = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [requestorsList, setRequestorsList] = useState<Array<IRequestor>>([]);
-  useEffect(() => {
-    fetchRequestors();
-  }, []);
-
-  const fetchRequestors = async () => {
-    setIsLoaded(false);
-    try {
-      const response = await fetchRequestorsAPI();
-      setRequestorsList(response.docs);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoaded(true);
-    }
-  };
-
+  const { isLoaded, requestorsList } = useContext(RequestorsContext);
   return (
     <table className="table-supporter w-100" cellPadding="12">
       <thead>
