@@ -42,7 +42,7 @@ export interface IFetchRequestorsAPIResponse {
 
 export async function fetchRequestorsAPI() {
   try {
-    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`https://f46f1b4c.ngrok.io/frontline/requests`);
+    const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`/frontline/requests`);
     return response.data;
   } catch (error) {
     throw error;

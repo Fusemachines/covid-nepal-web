@@ -37,6 +37,7 @@ const SupportFrontlineWorkers = () => {
               </p>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdJvqt8pEAFRwjKowDxu7PkaHXhaHZTHm5v0CZCBlQ0rdBZMA/viewform"
+                target="_blank"
                 className="btn btn-yellow text-upper text-bold btn-support"
               >
                 i/we can support
@@ -53,6 +54,7 @@ const SupportFrontlineWorkers = () => {
               </p>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfPuGeJ6U841s8yRYCRpX4jQd2nmaCqKUkGRx4WZWlsLHdh_A/viewform"
+                target="_blank"
                 className="btn btn-green text-upper text-bold btn-help"
               >
                 i/we can help
