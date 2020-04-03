@@ -40,3 +40,19 @@ export const monthList = [
   "November",
   "December"
 ];
+
+export const SupportItemsOptions: Array<IOptions> = [
+  { label: "All", value: "" },
+  { label: "PPE(Personal Protective Equipment)", value: "PPE" },
+  { label: "N95 Masks", value: "N95 Masks" },
+  { label: "Regular Masks", value: "Regular Masks" },
+  { label: "Gloves", value: "Gloves" },
+  { label: "Gown", value: "Gown" },
+  { label: "Eye protection glasses", value: "Eye Protection Glasses" },
+  { label: "Face shield", value: "Face Shield" },
+  { label: "Hair cap", value: "Hair cap" },
+  { label: "Boots", value: "Boots" },
+  { label: "Shoe coverups", value: "Shoe coverups" },
+  { label: "Sanitizer", value: "Sanitizer" },
+  { label: "Training on how to use PPE", value: "Training" }
+];

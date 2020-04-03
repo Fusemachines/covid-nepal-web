@@ -11,7 +11,7 @@ import {
 import RefreshIcon from "src/components/Icons/RefreshIcon";
 import { getFormattedTime } from "src/utils/date";
 import { pluralize } from "src/utils/stringManipulation";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import NoTranslate from "src/components/NoTranslate";
 
 interface IUpdatedTime {

@@ -10,7 +10,7 @@ import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from "src/service
 import { ProvinceOptions } from "src/constants/options";
 import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
 import Pagination, { IPagination } from "src/components/Pagination/Pagination";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import SearchIcon from "src/components/Icons/SearchIcon";
 
 export interface IHospitalCapacityTableContext {

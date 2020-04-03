@@ -10,17 +10,18 @@ import JoinUs from 'src/routes/dashboard/joinUs';
 import Notices from 'src/routes/dashboard/notices';
 import FAQ from 'src/routes/dashboard/faq';
 import News from 'src/routes/dashboard/news';
+import Supporters from 'src/routes/dashboard/supportFrontlineWorkers';
 
 const DashboardRouter: FC<{}> = () => (
   <Switch>
     <Route exact path={routes.DASHBOARD} component={withTracker(Landing)} />
     <Route path={routes.SYMPTOMS} component={withTracker(Symptoms)} />
     <Route path={routes.HOSPITAL_DETAIL} component={withTracker(HospitalDetails)} />
-    <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
     <Route path={routes.NOTICES} component={withTracker(Notices)} />
-    {/* TODO:pragyakar add tracker for News component */}
-    <Route path={routes.NEWS} component={News} />
+    <Route path={routes.NEWS} component={withTracker(News)} />
     <Route path={routes.FAQ} component={withTracker(FAQ)} />
+    <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
+    <Route path={routes.SUPPORT_FRONTLINE_WORKERS} component={withTracker(Supporters)} />
   </Switch>
 );
 
