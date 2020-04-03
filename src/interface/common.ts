@@ -12,7 +12,7 @@ export interface IMeta {
 
 export const initialMeta: IMeta = {
   page: 0,
-  size: 5,
+  size: 7,
   totalItems: 1,
   totalPages: 1
 };

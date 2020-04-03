@@ -7,7 +7,7 @@ import { getLiteralDate } from "src/utils/date";
 const GlobalNews = () => {
   const [globalNews, setGlobalNews] = useState<INews[]>([]);
   const [meta, setMeta] = useState<IMeta>(initialMeta);
-  const [isLoaded, setIsLoaded] = useState(false); 
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(false);
@@ -23,7 +23,7 @@ const GlobalNews = () => {
       setGlobalNews(data);
     } catch (error) {
       console.log(error);
-    }finally {
+    } finally {
       setIsLoaded(true);
     }
   };
@@ -53,12 +53,8 @@ const GlobalNews = () => {
 
         <div className="text-center my-3">
           {meta.totalPages - 1 > meta.page && (
-            <button 
-              className="btn btn-primary" 
-              onClick={() => handleLoadMore()}
-              disabled={!isLoaded}
-              >
-              { isLoaded ? 'Load More' : 'Loading...' }
+            <button className="btn btn-primary" onClick={() => handleLoadMore()} disabled={!isLoaded}>
+              {isLoaded ? "Load More" : "Loading..."}
             </button>
           )}
         </div>
