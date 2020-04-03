@@ -10,6 +10,7 @@ const ne: ILocale = {
   "nav_Symptoms": "लक्षण",
   "nav_JoinUs": "स्वयंसेवक बन्नुहोस्",
   "nav_GovNotice": "सरकारी सूचना",
+  "nav_News": "समाचार",
   "nav_Cases": "घटनाहरु",
 
   "com_EmergencyContact": "आपतकालीन सम्पर्क",

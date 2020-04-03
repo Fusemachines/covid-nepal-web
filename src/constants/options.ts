@@ -26,6 +26,21 @@ export const CovidTestOptions: Array<IOptions> = [
   { label: "Unavailable", value: "unavailable" }
 ];
 
+export const monthList = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
 export const SupportItemsOptions: Array<IOptions> = [
   { label: "All", value: "" },
   { label: "PPE(Personal Protective Equipment)", value: "PPE" },
