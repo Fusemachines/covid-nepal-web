@@ -4,6 +4,8 @@ import { IMeta, initialMeta } from "src/interface/common";
 import { fetchNewsAPI, INews } from "src/services/news";
 import { getLiteralDate } from "src/utils/date";
 
+import { Scrollbars } from 'react-custom-scrollbars';
+
 const GlobalNews = () => {
   const [globalNews, setGlobalNews] = useState<INews[]>([]);
   const [meta, setMeta] = useState<IMeta>(initialMeta);
@@ -37,7 +39,9 @@ const GlobalNews = () => {
       <div className="my-3">
         <img src="/images/news/global.jpg" alt={"Global Icon"} /> <span className="font-weight-bold">Global</span>
       </div>
-      <div className="news-list px-3 h-80">
+
+      <div className="news-list">
+        <Scrollbars style={{ height: 760 }} autoHide={false}>
         {globalNews &&
           globalNews.map((news, index) => (
             <NewsCard
@@ -58,6 +62,7 @@ const GlobalNews = () => {
             </button>
           )}
         </div>
+        </Scrollbars>
       </div>
     </>
   );

@@ -16,7 +16,7 @@ const NewsCard: React.FC<INewsCardProps> = props => {
   const { title, source, createdAt, imageUrl, content, url  } = props;
   return (
 
-    <Media onClick={() => openUrl(url)}>
+    <Media onClick={() => openUrl(url)} className="mx-3">
       <div className="mr-2">
         <img src={imageUrl} className="img-fluid" alt={title} style={{ width: "80px" }} />
       </div>
