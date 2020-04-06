@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
+import { getLiteralDate } from "src/utils/date";
 
 interface IGovernmentNoticeItemProps {
+  key: string;
   url: string;
   title: string;
   category: string;
@@ -8,10 +10,10 @@ interface IGovernmentNoticeItemProps {
 }
 
 const GovernmentNoticeItem: FC<IGovernmentNoticeItemProps> = props => {
-  const { url, title, category, date } = props;
+  const { key, url, title, category, date } = props;
 
   return (
-    <li>
+    <li key={key}>
       <a href={url} className="p-3" target="_blank" rel="noopener noreferrer">
         <h5 className="notices__title">{title}</h5>
         <div className="notices__tag mr-3">
@@ -20,7 +22,7 @@ const GovernmentNoticeItem: FC<IGovernmentNoticeItemProps> = props => {
         </div>
         <div className="notices__date">
           <img src="/images/history.svg" alt={'History'} />
-          <span>{date}</span>
+          <span>{getLiteralDate(date)}</span>
         </div>
       </a>
     </li>

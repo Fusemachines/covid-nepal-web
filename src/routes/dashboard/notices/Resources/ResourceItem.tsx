@@ -2,15 +2,16 @@ import React, { FC } from 'react';
 import { Media } from 'react-bootstrap';
 
 interface IResourceItemProps {
+  key: string;
   url: string;
   title: string;
   imageUrl: string;
 }
 
 const ResourceItem: FC<IResourceItemProps> = props => {
-  const { url, title, imageUrl } = props;
+  const { key, url, title, imageUrl } = props;
   return (
-    <li>
+    <li key={key}>
       <a href={url} className="p-3" target="_blank" rel="noopener noreferrer">
         <Media>
           <div className="align-self-center mr-3">
