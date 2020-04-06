@@ -222,18 +222,6 @@ const Navbar: FC<INavbarProps> = props => {
             {/* <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} /> */}
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
-
-          <Nav>
-            {/* <NavItem
-              title={t(lo.nav_GovNotice)}
-              exact={false}
-              to={routes.NOTICES}
-              active={routes.NOTICES === currentPath}
-            />
-            <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} />
-            <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
-          </Nav>
-
           <Nav>
               <Link to={routes.JOIN_US} className={`btn btn-outline-light mr-2`}>
                 {t(lo.nav_JoinUs)}
@@ -249,7 +237,7 @@ const Navbar: FC<INavbarProps> = props => {
               className="desktop-view"
             />
             {/* Temporary Langauge Select */}
-            {/* <LanguageSelectCommingSoon isMobile={false} /> */}
+            {/* <LanguageSelectCommingSoon isMobile={false} />
 
             <div className="d-sm-block d-md-none social-link mt-4">
               <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">
