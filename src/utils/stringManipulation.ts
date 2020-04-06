@@ -19,3 +19,13 @@ export const selectLanguage = (item: ILanguage) => {
     return item.np
   } else return item.en
 }
+
+export const limitLetters = (text: string, limit: number) => {
+  const size = text.length;
+  if (size > limit) {
+    let reducedText = text.substr(0, limit);
+    return reducedText + "...";
+  } else {
+    return text;
+  }
+}

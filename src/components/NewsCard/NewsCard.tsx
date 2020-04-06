@@ -1,6 +1,7 @@
 import React from "react";
 import { Media } from "react-bootstrap";
 import { openUrl } from "src/utils/helpers";
+import { limitLetters } from "src/utils/stringManipulation";
 
 interface INewsCardProps {
   title: string;
@@ -26,7 +27,7 @@ const NewsCard: React.FC<INewsCardProps> = props => {
           <span className="mx-1">|</span>
           <span>{createdAt}</span>
         </div>
-        <div className="small-xs mt-1">{content}</div>
+        <div className="small-xs mt-1">{limitLetters(content, 120)}</div>
       </Media.Body>
     </Media>
   );

@@ -218,8 +218,13 @@ const Navbar: FC<INavbarProps> = props => {
           <Nav className="mx-auto">
             <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
+            <NavItem title={t(lo.nav_GovNotice)} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
+            {/* <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} /> */}
+            <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
+          </Nav>
 
-            <NavItem
+          <Nav>
+            {/* <NavItem
               title={t(lo.nav_GovNotice)}
               exact={false}
               to={routes.NOTICES}
