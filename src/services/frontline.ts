@@ -27,14 +27,15 @@ interface IFetchSupportersAPIResponse {
   docs: Array<ISupporter>;
 }
 
-interface IFetchSupportersAPIPayload {
+export interface IFetchSupportersAPIPayload {
+  name: string;
   supportItems: string;
 }
 
 export async function fetchSupportersAPI(payload: IFetchSupportersAPIPayload) {
   try {
     const response: AxiosResponse<IFetchSupportersAPIResponse> = await axios.get(`frontline/supporters`, {
-      params: { items: payload.supportItems }
+      params: { ...payload, items: encodeURIComponent(payload.supportItems) }
     });
     return response.data;
   } catch (error) {
@@ -53,7 +54,7 @@ interface IFetchRequestorsAPIPayload {
 export async function fetchRequestorsAPI(payload?: IFetchRequestorsAPIPayload) {
   try {
     const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`/frontline/requests`, {
-      params: { items: payload ? payload.supportItems : "" }
+      params: { items: payload && payload.supportItems ? encodeURIComponent(payload.supportItems) : "" }
     });
     return response.data;
   } catch (error) {
