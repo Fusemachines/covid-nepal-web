@@ -5,6 +5,8 @@ import { INotices, fetchResourcesAPI } from "src/services/notices";
 import ResourceItem from "./ResourceItem";
 import { useTranslation } from "react-i18next";
 
+import Loader from 'src/components/Loader';
+
 const Resources: FC<{}> = () => {
   const [t] = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -31,14 +33,16 @@ const Resources: FC<{}> = () => {
 
   return (
     <ul className="resources__list">
-      {resources && resources.map(resource => (
+      { isLoaded ?(resources && resources.map(resource => (
         <ResourceItem
           key={resource._id}
           title={resource.title}
           url={resource.url}
           imageUrl={resource.imageUrl}
         />
-      ))}
+        ))) : (
+          <Loader />
+        )}
     </ul>
   );
 };

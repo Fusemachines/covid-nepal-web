@@ -4,6 +4,9 @@ import { useTranslation } from "react-i18next";
 import { INotices, fetchNoticesAPI } from "src/services/notices";
 
 import GovernmentNoticeItem from "./GovernmentNoticeItem";
+
+import Loader from 'src/components/Loader';
+
 import lo from "src/i18n/en";
 
 const GovernmentNotices: FC<{}> = () => {
@@ -30,7 +33,7 @@ const GovernmentNotices: FC<{}> = () => {
 
   return (
     <ul className="notices__list">
-      {govtNotices && govtNotices.map(notice => (
+      { isLoaded ? (govtNotices && govtNotices.map(notice => (
         <GovernmentNoticeItem
           key={notice._id}
           category={notice.tag}
@@ -38,7 +41,10 @@ const GovernmentNotices: FC<{}> = () => {
           title={notice.title}
           url={notice.url}
         />
-      ))}
+      ))): (
+            <Loader />
+          
+      )}
     </ul>
   );
 };

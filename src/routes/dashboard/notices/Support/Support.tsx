@@ -5,6 +5,8 @@ import SupportItem from "./SupportItem";
 import { INotices, fetchSupportAPI } from "src/services/notices";
 import { useTranslation } from "react-i18next";
 
+import Loader from 'src/components/Loader';
+
 const Supports: FC<{}> = () => {
   const [t] = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,9 +32,11 @@ const Supports: FC<{}> = () => {
 
   return (
     <ul className="resources__list">
-      { support && support.map(support => (
+      { isLoaded ? ( support && support.map(support => (
         <SupportItem key={support._id} title={support.title} url={support.url} imageUrl={support.imageUrl} />
-      ))}
+      ))) : (
+        <Loader />
+      )}
     </ul>
   );
 };
