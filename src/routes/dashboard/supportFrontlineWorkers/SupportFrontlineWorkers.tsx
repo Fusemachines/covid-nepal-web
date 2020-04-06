@@ -1,7 +1,7 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
-import SupportUsTabs from "./SupportUsTabs";
+import SupportUsTabs from './SupportUsTabs';
 
 const SupportFrontlineWorkers = () => {
   return (
@@ -44,11 +44,11 @@ const SupportFrontlineWorkers = () => {
                 target="_blank"
                 className="btn btn-warning text-upper text-bold"
               >
-                i/we can support
+                #PROVIDE_FRONTLINE_HELP
               </a>
             </div>
           </Col>
-          
+
           <Col md="4" className="mt-4">
             <div className="text-white p-4 bg-bluelight h-100 rounded">
               <p>
@@ -62,7 +62,7 @@ const SupportFrontlineWorkers = () => {
                 target="_blank"
                 className="btn btn-success text-upper text-bold"
               >
-                i/we can help
+                #ASK_FRONTLINE_HELP
               </a>
             </div>
           </Col>
