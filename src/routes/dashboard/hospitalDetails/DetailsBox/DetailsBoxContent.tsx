@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import GreenContactBadge from "src/components/Badges/GreenContactBadge";
 import NotAvailable from "src/components/NotAvailable";
 import { HospitalDetailsContext } from "../HospitalDetails";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import { ILanguage } from "src/interface/common";
 import { selectLanguage } from "src/utils/stringManipulation";
 
@@ -29,7 +29,7 @@ const DetailsBoxContent: FC<{}> = () => {
         <li>
           <span className="text-secondary">{t(lo.contac_openHours)}:</span>
 
-          {hospital.availableTime ? (
+          {hospital.availableTime.length > 0 ? (
             <span className="mx-2">
               <AvailableTimeComponent availableTime={hospital.availableTime} />
             </span>

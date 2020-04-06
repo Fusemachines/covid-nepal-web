@@ -11,7 +11,7 @@ import {
 import RefreshIcon from "src/components/Icons/RefreshIcon";
 import { getFormattedTime } from "src/utils/date";
 import { pluralize } from "src/utils/stringManipulation";
-import lo from "src/i18n/locale.json";
+import lo from "src/i18n/en";
 import NoTranslate from "src/components/NoTranslate";
 
 interface IUpdatedTime {
@@ -100,8 +100,8 @@ const CovidCases = () => {
   };
 
   const showSeconds = () => {
-    if (updatedTime && updatedTime.seconds > 0 && updatedTime.seconds < 60) {
-      return `less than a minute`;
+    if (updatedTime && updatedTime.minutes < 0 && updatedTime.seconds > 0 && updatedTime.seconds < 60) {
+      return `${updatedTime.seconds}  ${pluralize(updatedTime.seconds, "second")}`;
     } else {
       return "";
     }

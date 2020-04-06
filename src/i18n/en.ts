@@ -1,5 +1,7 @@
-{
-  "nav_HelpUsKeepDataReliable": "Help us keep data reliable! Report Errors, New Info and Verify Data",
+import ILocale from "./locale"
+
+const en: ILocale = {
+  nav_HelpUsKeepDataReliable: "Help us keep data reliable! Report Errors, New Info and Verify Data",
   "nav_covid19": "COVID-19",
   "nav_Nepal": "Nepal",
   "nav_NEP": "NEP",
@@ -8,7 +10,9 @@
   "nav_Symptoms": "Symptoms",
   "nav_JoinUs": "Join Us",
   "nav_GovNotice": "Notices",
+  "nav_News": "News",
   "nav_Cases": "Cases",
+  "nav_Emergency": "Emergency",
 
   "com_EmergencyContact": "Emergency Contact",
   "com_HospitalContact": "Hospital Contact",
@@ -69,7 +73,7 @@
   "sym_Fever": "Fever",
   "sym_DryCough": "Dry Cough",
   "sym_RunnyNose": "Runny Nose",
-  "sym_SoreThroad": "Sore Throat",
+  "sym_SoreThroat": "Sore Throat",
   "sym_Diarrohea": "Diarrhoea",
   "sym_Preventions": "PREVENTIONS",
   "sym_WearMasks": "Wear Masks",
@@ -77,17 +81,6 @@
   "sym_SocialDistancing": "Social Distancing",
   "sym_SometimeChildren": "Sometimes for children",
   "sym_sourcesFooter": "Sources: CDC, WHO, American College of Allergy, Asthma and Immunology",
-
-  "0": "0",
-  "1": "1",
-  "2": "2",
-  "3": "3",
-  "4": "4",
-  "5": "5",
-  "6": "6",
-  "7": "7",
-  "8": "8",
-  "9": "9",
 
   "nav_FAQ": "FAQs",
   "sym_Headache": "Headache",
@@ -135,6 +128,8 @@
   "resourc_howToProtectUrself": "How to protect yourself and others against COVID-19",
   "resourc_joinFight": "Join the fight against misinformation",
 
+  faq_generatFAQ: 'General FAQs',
+
   "faq_q1_ques": "Is Teku-based hospital, Sukraraj Tropical and Infectious Disease Hospital, the only hospital allocated for testing and treatment of COVID-19 in Nepal?",
   "faq_q1_ans_1": "No. The Government of Nepal has allocated two hospitals, STIDH(Teku) hospital, and Patan Hospital, where you can get tested for Covid-19 infection. Teku hospital is, however, given the first priority since it specializes in dealing with all kinds of infectious diseases like COVID-19.  They work closely with the National Public Health Laboratory which is also situated in Teku that performs the confirmatory testing for COVID-19. Do remember that you do not have to go to Teku hospital to take the swab specimen as other hospitals can take a specimen and send it to NPHL. For the treatment of COVID-19, all hospitals can manage beds, ICUs and ventilators for severely infected patients. Since there is no evidence that current medicine can prevent or cure the disease, each case can be managed by all the hospitals, giving antiviral and antibacterial therapy.",
   "faq_q1_ans_2": "Yes, Teku hospital is a specialized hospital that has more experience dealing with the case of viral diseases like this. They are also close to National Lab which is the only lab in Nepal (as of today) that does confirmatory testing for COVID-19. But please remember other hospitals can take a specimen and send it to NPHL. Patients do not have to go to Teku hospital for it.",
@@ -147,5 +142,6 @@
   "faq_q4_ans": "It depends on cases but it is not very quick. It generally takes two hours or so to perform the test and can generally take a week to get the final result. The positive cases are reported to doctors immediately so that you are immediately transferred to the isolation room and treated accordingly.",
   "faq_q5_ques": "What is the survival rate & time period of the virus outside the human body?",
   "faq_q5_ans": "No one knows for sure. It depends on the environmental condition, but studies suggest it can survive for thousands of years in the right scenario. Since they are not considering living and do not have any metabolism they are either inactive or active. Not live or dead."
-
 }
+
+export default en

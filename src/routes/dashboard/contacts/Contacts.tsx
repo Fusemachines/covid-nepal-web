@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import EmergencyContacts from './EmergencyContacts';
 import SquareRightArrow from 'src/components/Icons/SquareRightArrow';
-import lo from 'src/i18n/locale.json';
+import lo from 'src/i18n/en';
 
 interface IContactsProps {
   visibility: boolean;

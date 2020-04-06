@@ -10,7 +10,7 @@ import {
   IHospital
 } from 'src/services/hospitals';
 import Loader from 'src/components/Loader';
-import lo from 'src/i18n/locale.json'
+import lo from 'src/i18n/en'
 
 const AllocatedHospitalTable: FC<{}> = () => {
   const [isLoaded, setIsLoaded] = useState(false);
