@@ -33,7 +33,7 @@ const SupportersTab = () => {
       const { searchBySupporterName, supportItems } = filters;
       const payload: IFetchSupportersAPIPayload = {
         name: searchBySupporterName,
-        supportItems: supportItems.value
+        items: supportItems.value
       };
       const response = await fetchSupportersAPI(payload);
       setSupportersList(response.docs);
