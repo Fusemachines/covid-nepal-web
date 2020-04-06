@@ -6,9 +6,9 @@ import { useTranslation } from "react-i18next";
 
 import * as routes from "src/constants/routes";
 // import TransparentButton from 'src/components/Buttons/TransparentButton';
-import EmergencyButton from 'src/components/Buttons/EmergencyButton';
-import NavItem from './NavItem';
-import lo from 'src/i18n/en';
+import EmergencyButton from "src/components/Buttons/EmergencyButton";
+import NavItem from "./NavItem";
+import lo from "src/i18n/en";
 
 // import i18n from '../../i18n';
 import Contacts from "src/routes/dashboard/contacts";
@@ -109,7 +109,7 @@ const Navbar: FC<INavbarProps> = props => {
   }, []);
 
   useEffect(() => {
-    const path = location.pathname.split('/');
+    const path = location.pathname.split("/");
   }, [location.pathname]);
 
   useEffect(() => {
@@ -217,23 +217,17 @@ const Navbar: FC<INavbarProps> = props => {
             <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
 
-            <NavItem title={t(lo.nav_GovNotice)} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
-            <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} />
-            <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
-          </Nav>
-
-          <Nav>
-            {/* <NavItem
+            <NavItem
               title={t(lo.nav_GovNotice)}
               exact={false}
               to={routes.NOTICES}
               active={routes.NOTICES === currentPath}
             />
+            <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} />
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
 
           <Nav>
-
             <Dropdown alignRight className="mr-4">
               <Dropdown.Toggle variant="warning" id="dropdown-basic">
                 Support Us
