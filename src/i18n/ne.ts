@@ -12,6 +12,7 @@ const ne: ILocale = {
   "nav_GovNotice": "सरकारी सूचना",
   "nav_News": "समाचार",
   "nav_Cases": "घटनाहरु",
+  "nav_Emergency": "आपतकालीन",
 
   "com_EmergencyContact": "आपतकालीन सम्पर्क",
   "com_HospitalContact": "अस्पताल सम्पर्क",

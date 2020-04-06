@@ -159,6 +159,7 @@ const Navbar: FC<INavbarProps> = props => {
         {/* Temporary Langauge Select */}
         {/* <LanguageSelectCommingSoon isMobile={true} /> */}
         {/* language */}
+        
         <Dropdown className="lang-selector mobile-flag">
           <Dropdown.Toggle as={"div"} id="dropdown-custom-components">
             {language === "ne" ? (
@@ -181,6 +182,7 @@ const Navbar: FC<INavbarProps> = props => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+
         {/* <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
@@ -208,7 +210,7 @@ const Navbar: FC<INavbarProps> = props => {
         </div> */}
 
         {/* emergency contact */}
-        <EmergencyButton text={t(lo.com_EmergencyContact)} handleClick={toggleEmergencyContact} className="mob-view" />
+        <EmergencyButton text={t(lo.nav_Emergency)} handleClick={toggleEmergencyContact} className="mob-view" />
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -228,23 +230,16 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
 
           <Nav>
-            <Dropdown alignRight className="mr-4">
-              <Dropdown.Toggle variant="warning" id="dropdown-basic">
-                Support Us
-              </Dropdown.Toggle>
+              <Link to={routes.JOIN_US} className={`btn btn-outline-light mr-2`}>
+                {t(lo.nav_JoinUs)}
+              </Link>
 
-              <Dropdown.Menu>
-                <Link to={routes.JOIN_US} className={`small-xs dropdown-item`}>
-                  {t(lo.nav_JoinUs)}
-                </Link>
-                <Link to={routes.SUPPORT_FRONTLINE_WORKERS} className={`small-xs dropdown-item`}>
-                  {"Support Frontline Workers"}
-                </Link>
-              </Dropdown.Menu>
-            </Dropdown>
+              <Link to={routes.SUPPORT_FRONTLINE_WORKERS} className={`btn btn-warning mr-2`}>
+                {"Support Frontline"}
+              </Link>
 
             <EmergencyButton
-              text={t(lo.com_EmergencyContact)}
+              text={t(lo.nav_Emergency)}
               handleClick={toggleEmergencyContact}
               className="desktop-view"
             />
