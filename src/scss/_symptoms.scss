@@ -5,7 +5,6 @@
     min-height: 300px;
     min-width: 300px;
     position: relative;
-    margin: auto;
 
     > img {
         display: block;
@@ -86,5 +85,14 @@
     }
     tbody td {
         border: 0;
+        padding: .55rem;
+    }
+}
+
+.svgWrapper {
+    display: flex; 
+    align-items: center;
+    @media (max-width: 992px) {
+        justify-content: center;
     }
 }
