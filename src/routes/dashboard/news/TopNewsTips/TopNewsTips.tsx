@@ -4,6 +4,8 @@ import { INews, fetchTipsAPI, fetchTopNewsAPI } from "src/services/news";
 import { getLiteralDate } from "src/utils/date";
 import { openUrl } from "src/utils/helpers";
 
+import { Scrollbars } from 'react-custom-scrollbars';
+
 const TopNewsTips = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [topNews, setTopNews] = useState<INews | null>(null);
@@ -58,7 +60,8 @@ const TopNewsTips = () => {
 
       <div className="news-block bg-white">
         <div className="bg-grey text-primary p-2">TIPS</div>
-        <div className="news-list px-3">
+        <div className="news-list">
+        <Scrollbars style={{ height: 260 }} autoHide={false}>
           {tipsList &&
             tipsList.map((tip, index) => (
               <TipsCard
@@ -69,6 +72,7 @@ const TopNewsTips = () => {
                 url={tip.url}
               />
             ))}
+          </Scrollbars>
         </div>
       </div>
     </>

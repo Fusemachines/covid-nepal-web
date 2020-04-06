@@ -32,6 +32,17 @@
         overflow-y: auto;
         background-color: #ffffff;
 
+        .media {
+            cursor: pointer;
+            &:hover {
+                // background: #F7F5F5;
+
+                .media-body .font-weight-semibold{
+                    text-decoration: underline;
+                }
+            }
+        }
+
         .h-50 {
             max-height: 500px;
         }

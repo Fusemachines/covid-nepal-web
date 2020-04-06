@@ -16,8 +16,8 @@ const NewsCard: React.FC<INewsCardProps> = props => {
   const { title, source, createdAt, imageUrl, content, url  } = props;
   return (
 
-    <Media onClick={() => openUrl(url)}>
-      <div className="mr-2 align-self-center">
+    <Media onClick={() => openUrl(url)} className="mx-3">
+      <div className="mr-2">
         <img src={imageUrl} className="img-fluid" alt={title} style={{ width: "80px" }} />
       </div>
       <Media.Body className="align-self-center">
