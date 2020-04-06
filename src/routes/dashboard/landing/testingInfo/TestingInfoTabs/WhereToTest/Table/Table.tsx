@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import TableRow from './TableRow';
 import {
@@ -32,7 +33,8 @@ const AllocatedHospitalTable: FC<{}> = () => {
   };
 
   return (
-    <Table responsive className="text-white h-50">
+    <Scrollbars style={{ height: 360 }} autoHide={false}>
+    <Table responsive className="text-white">
       <thead>
         <tr>
           <th>{t(lo.contac_hospitalName)}</th>
@@ -62,6 +64,7 @@ const AllocatedHospitalTable: FC<{}> = () => {
         )}
       </tbody>
     </Table>
+    </Scrollbars>
   );
 };
 
