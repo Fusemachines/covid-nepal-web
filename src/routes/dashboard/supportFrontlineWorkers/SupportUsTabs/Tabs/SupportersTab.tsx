@@ -61,7 +61,7 @@ const SupportersTab = () => {
       <div className="filter-wrapper py-2">
         <div className="search-wrapper">
           <input
-            placeholder="Search by Name"
+            placeholder="Search by Supporter"
             type="text"
             className="form-control form-control-sm"
             value={filters.searchBySupporterName}

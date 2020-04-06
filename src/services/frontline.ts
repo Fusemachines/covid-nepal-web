@@ -48,13 +48,14 @@ export interface IFetchRequestorsAPIResponse {
 }
 
 interface IFetchRequestorsAPIPayload {
-  supportItems?: string;
+  name?: string;
+  items?: string;
 }
 
 export async function fetchRequestorsAPI(payload?: IFetchRequestorsAPIPayload) {
   try {
     const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`/frontline/requests`, {
-      params: { items: payload && payload.supportItems ? encodeURIComponent(payload.supportItems) : "" }
+      params: { ...payload, items: payload && payload.items ? encodeURIComponent(payload.items) : "" }
     });
     return response.data;
   } catch (error) {

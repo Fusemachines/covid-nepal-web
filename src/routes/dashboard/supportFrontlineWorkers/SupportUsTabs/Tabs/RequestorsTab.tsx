@@ -4,18 +4,21 @@ import Loader from "src/components/Loader";
 import CustomSelectInput, { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
 import { SupportItemsOptions } from "src/constants/options";
 import { ValueType } from "react-select";
+import SearchIcon from "src/components/Icons/SearchIcon";
 
-interface ISupportersTabFilters {
+interface IRequestorsTabFilters {
+  searchByRequestorName: string;
   supportItems: IOptions;
 }
 
-const initialSupportersTabFiltersState: ISupportersTabFilters = {
+const initialRequestorsTabFiltersState: IRequestorsTabFilters = {
+  searchByRequestorName: "",
   supportItems: SupportItemsOptions[0]
 };
 
 const RequestorsTab = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [filters, setFilters] = useState<ISupportersTabFilters>(initialSupportersTabFiltersState);
+  const [filters, setFilters] = useState<IRequestorsTabFilters>(initialRequestorsTabFiltersState);
   const [requestorsList, setRequestorsList] = useState<Array<IRequestor>>([]);
 
   useEffect(() => {
@@ -25,9 +28,10 @@ const RequestorsTab = () => {
   const fetchRequestors = async () => {
     setIsLoaded(false);
     try {
-      const { supportItems } = filters;
+      const {searchByRequestorName, supportItems } = filters;
       const payload = {
-        supportItems: supportItems.value
+        name: searchByRequestorName,
+        items: supportItems.value
       };
       const response = await fetchRequestorsAPI(payload);
       setRequestorsList(response.docs);
@@ -38,14 +42,33 @@ const RequestorsTab = () => {
     }
   };
 
+  const handleSearchKeywordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilters({
+      searchByRequestorName: event.currentTarget.value,
+      supportItems: { label: "All", value: "" }
+    });
+  };
+
   const handleSupportItemsFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
-    setFilters({ supportItems: selectedField });
+    setFilters({ supportItems: selectedField, searchByRequestorName: "" });
   };
 
   return (
     <>
     <div className="filter-wrapper py-2">
+    <div className="search-wrapper">
+          <input
+            placeholder="Search by Requestor"
+            type="text"
+            className="form-control form-control-sm"
+            value={filters.searchByRequestorName}
+            onChange={event => handleSearchKeywordChange(event)}
+          />
+          <i>
+            <SearchIcon />
+          </i>
+        </div>
       <div className="filter d-inline-block">
         <span>Support Items</span>
         <CustomSelectInput
