@@ -17,10 +17,10 @@ const NewsCard: React.FC<INewsCardProps> = props => {
   return (
 
     <Media onClick={() => openUrl(url)} className="mx-3">
-      <div className="mr-2">
+      <div className="mr-2 pt-1">
         <img src={imageUrl} className="img-fluid" alt={title} style={{ width: "80px" }} />
       </div>
-      <Media.Body className="align-self-center">
+      <Media.Body>
         <div className="font-weight-semibold">{title}</div>
         <div className="small-xs text-light">
           <span>{source}</span>

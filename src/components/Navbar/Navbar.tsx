@@ -179,23 +179,14 @@ const Navbar: FC<INavbarProps> = props => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu as={'div'}>
-                <Link to={routes.SYMPTOMS} className="dropdown-item">
-                  {t(lo.nav_Symptoms)}
-                </Link>
-                <Link to={routes.PROTECT_YOURSELF} className="dropdown-item">
-                  Protect Yourself
-                </Link>
-                <Link to={routes.AT_HOME} className="dropdown-item">
-                  At Home
-                </Link>
-                <Link to={routes.PARENTING} className="dropdown-item">
-                  Parenting & Child Care
-                </Link>
-                <Link to={routes.ELDERLY} className="dropdown-item">
-                  Elderly People
-                </Link>
+                <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} className="" />
+                <NavItem title="Protect Yourself" to={routes.PROTECT_YOURSELF} active={routes.PROTECT_YOURSELF === currentPath} className="" />
+                <NavItem title="At Home" to={routes.AT_HOME} active={routes.AT_HOME === currentPath} className="" />
+                <NavItem title="Parenting & Child Care" to={routes.PARENTING} active={routes.PARENTING === currentPath} className="" />
+                <NavItem title="Elderly People" to={routes.ELDERLY} active={routes.ELDERLY === currentPath} className="" />
               </Dropdown.Menu>
             </Dropdown>
+
             <NavItem
               title={t(lo.nav_GovNotice)}
               exact={false}
