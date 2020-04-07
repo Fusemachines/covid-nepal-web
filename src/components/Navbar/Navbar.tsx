@@ -6,9 +6,9 @@ import { useTranslation } from "react-i18next";
 
 import * as routes from "src/constants/routes";
 // import TransparentButton from 'src/components/Buttons/TransparentButton';
-import EmergencyButton from 'src/components/Buttons/EmergencyButton';
-import NavItem from './NavItem';
-import lo from 'src/i18n/en';
+import EmergencyButton from "src/components/Buttons/EmergencyButton";
+import NavItem from "./NavItem";
+import lo from "src/i18n/en";
 
 // import i18n from '../../i18n';
 import Contacts from "src/routes/dashboard/contacts";
@@ -109,7 +109,7 @@ const Navbar: FC<INavbarProps> = props => {
   }, []);
 
   useEffect(() => {
-    const path = location.pathname.split('/');
+    const path = location.pathname.split("/");
   }, [location.pathname]);
 
   useEffect(() => {
@@ -159,6 +159,7 @@ const Navbar: FC<INavbarProps> = props => {
         {/* Temporary Langauge Select */}
         {/* <LanguageSelectCommingSoon isMobile={true} /> */}
         {/* language */}
+        
         <Dropdown className="lang-selector mobile-flag">
           <Dropdown.Toggle as={"div"} id="dropdown-custom-components">
             {language === "ne" ? (
@@ -181,6 +182,7 @@ const Navbar: FC<INavbarProps> = props => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+
         {/* <div className="lang mobile-flag" style={{ userSelect: 'none' }}>
           <label htmlFor="np-lang" className={language === 'ne' ? 'active' : ''}>
             <input
@@ -208,7 +210,7 @@ const Navbar: FC<INavbarProps> = props => {
         </div> */}
 
         {/* emergency contact */}
-        <EmergencyButton text={t(lo.com_EmergencyContact)} handleClick={toggleEmergencyContact} className="mob-view" />
+        <EmergencyButton text={t(lo.nav_Emergency)} handleClick={toggleEmergencyContact} className="mob-view" />
 
         <Navigation.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -216,46 +218,26 @@ const Navbar: FC<INavbarProps> = props => {
           <Nav className="mx-auto">
             <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
             <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
-
             <NavItem title={t(lo.nav_GovNotice)} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
-            <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} />
+            {/* <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} /> */}
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
-
           <Nav>
-            {/* <NavItem
-              title={t(lo.nav_GovNotice)}
-              exact={false}
-              to={routes.NOTICES}
-              active={routes.NOTICES === currentPath}
-            />
-            <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
-          </Nav>
+              <Link to={routes.JOIN_US} className={`btn btn-outline-light mr-2`}>
+                {t(lo.nav_JoinUs)}
+              </Link>
 
-          <Nav>
-
-            <Dropdown alignRight className="mr-4">
-              <Dropdown.Toggle variant="warning" id="dropdown-basic">
-                Support Us
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Link to={routes.JOIN_US} className={`small-xs dropdown-item`}>
-                  {t(lo.nav_JoinUs)}
-                </Link>
-                <Link to={routes.SUPPORT_FRONTLINE_WORKERS} className={`small-xs dropdown-item`}>
-                  {"Support Frontline Workers"}
-                </Link>
-              </Dropdown.Menu>
-            </Dropdown>
+              <Link to={routes.SUPPORT_FRONTLINE_WORKERS} className={`btn btn-warning mr-2`}>
+                {"Support Frontline"}
+              </Link>
 
             <EmergencyButton
-              text={t(lo.com_EmergencyContact)}
+              text={t(lo.nav_Emergency)}
               handleClick={toggleEmergencyContact}
               className="desktop-view"
             />
             {/* Temporary Langauge Select */}
-            {/* <LanguageSelectCommingSoon isMobile={false} /> */}
+            {/* <LanguageSelectCommingSoon isMobile={false} />
 
             <div className="d-sm-block d-md-none social-link mt-4">
               <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">

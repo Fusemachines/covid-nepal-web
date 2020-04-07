@@ -12,6 +12,7 @@ const en: ILocale = {
   "nav_GovNotice": "Notices",
   "nav_News": "News",
   "nav_Cases": "Cases",
+  "nav_Emergency": "Emergency",
 
   "com_EmergencyContact": "Emergency Contact",
   "com_HospitalContact": "Hospital Contact",

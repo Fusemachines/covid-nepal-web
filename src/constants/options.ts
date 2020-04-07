@@ -48,11 +48,11 @@ export const SupportItemsOptions: Array<IOptions> = [
   { label: "Regular Masks", value: "Regular Masks" },
   { label: "Gloves", value: "Gloves" },
   { label: "Gown", value: "Gown" },
-  { label: "Eye protection glasses", value: "Eye Protection Glasses" },
-  { label: "Face shield", value: "Face Shield" },
+  { label: "Eye protection glasses", value: "Eye protection glasses" },
+  { label: "Face shield", value: "Face shield" },
   { label: "Hair cap", value: "Hair cap" },
   { label: "Boots", value: "Boots" },
   { label: "Shoe coverups", value: "Shoe coverups" },
   { label: "Sanitizer", value: "Sanitizer" },
-  { label: "Training on how to use PPE", value: "Training" }
+  { label: "Training on how to use PPE", value: "Training on how to use PPE" }
 ];

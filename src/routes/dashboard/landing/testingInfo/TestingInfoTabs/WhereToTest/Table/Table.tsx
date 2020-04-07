@@ -64,8 +64,7 @@ const AllocatedHospitalTable: FC<{}> = () => {
         )}
       </tbody>
     </Table>
-    
-    </Scrollbars>   
+    </Scrollbars>
   );
 };
 

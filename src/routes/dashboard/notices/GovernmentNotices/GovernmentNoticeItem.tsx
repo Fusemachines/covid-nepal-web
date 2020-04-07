@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { getLiteralDate } from "src/utils/date";
 
 interface IGovernmentNoticeItemProps {
   url: string;
@@ -20,7 +21,7 @@ const GovernmentNoticeItem: FC<IGovernmentNoticeItemProps> = props => {
         </div>
         <div className="notices__date">
           <img src="/images/history.svg" alt={'History'} />
-          <span>{date}</span>
+          <span>{getLiteralDate(date)}</span>
         </div>
       </a>
     </li>

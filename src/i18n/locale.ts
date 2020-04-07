@@ -10,6 +10,7 @@ export default interface ILocale {
   nav_GovNotice: string,
   nav_Cases: string,
   nav_News: string,
+  nav_Emergency: string,
   com_EmergencyContact: string,
   com_HospitalContact: string,
   com_noRecordsFound: string,

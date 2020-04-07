@@ -1,16 +1,20 @@
 import React, { useEffect, useState, FC } from "react";
-import { fetchSupportersAPI, ISupporter } from "src/services/frontline";
+import { ValueType } from "react-select";
+
+import { fetchSupportersAPI, ISupporter, IFetchSupportersAPIPayload } from "src/services/frontline";
 import Loader from "src/components/Loader";
 import CustomSelectInput from "src/components/CustomSelectInput";
 import { SupportItemsOptions } from "src/constants/options";
-import { ValueType } from "react-select";
 import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
+import SearchIcon from "src/components/Icons/SearchIcon";
 
 interface ISupportersTabFilters {
+  searchBySupporterName: string;
   supportItems: IOptions;
 }
 
 const initialSupportersTabFiltersState: ISupportersTabFilters = {
+  searchBySupporterName: "",
   supportItems: SupportItemsOptions[0]
 };
 
@@ -26,10 +30,11 @@ const SupportersTab = () => {
   const fetchSupporters = async () => {
     setIsLoaded(false);
     try {
-      const {supportItems} = filters;
-      const payload = {
-        supportItems : supportItems.value
-      }
+      const { searchBySupporterName, supportItems } = filters;
+      const payload: IFetchSupportersAPIPayload = {
+        name: searchBySupporterName,
+        items: supportItems.value
+      };
       const response = await fetchSupportersAPI(payload);
       setSupportersList(response.docs);
     } catch (error) {
@@ -39,14 +44,33 @@ const SupportersTab = () => {
     }
   };
 
+  const handleSearchKeywordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilters({
+      searchBySupporterName: event.currentTarget.value,
+      supportItems: { label: "All", value: "" }
+    });
+  };
+
   const handleSupportItemsFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
-    setFilters({ supportItems: selectedField });
+    setFilters({ supportItems: selectedField, searchBySupporterName: "" });
   };
 
   return (
     <>
       <div className="filter-wrapper py-2">
+        <div className="search-wrapper">
+          <input
+            placeholder="Search by Supporter"
+            type="text"
+            className="form-control form-control-sm"
+            value={filters.searchBySupporterName}
+            onChange={event => handleSearchKeywordChange(event)}
+          />
+          <i>
+            <SearchIcon />
+          </i>
+        </div>
         <div className="filter d-inline-block">
           <span>Support Items</span>
           <CustomSelectInput
