@@ -16,10 +16,11 @@ const ProtectYourself = () => (
             <p><span className="text-bold">Avoid touching</span> your <span className="text-bold">eyes, nose, and mouth</span> with unwashed hands.</p>
           </div>
         </Col>
-        <Col lg="5" sm="12" className="mt-5 mt-lg-0 img-center">
-          <iframe width="440" height="315"
-            src="https://youtu.be/d914EnpU4Fo">
-          </iframe>
+        <Col lg="6" sm="12" className="mt-5 mt-lg-0 img-center">
+        <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/d914EnpU4Fo" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
+          {/* <video width="440" height="315">
+            <source src="https://youtu.be/d914EnpU4Fo" />
+          </video> */}
         </Col>
       </Row>
 
