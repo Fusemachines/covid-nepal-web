@@ -139,6 +139,20 @@ const Menu = () => (
             Home
           </Nav.Link>
           <Nav.Link href="/design/symptoms">Symptoms</Nav.Link>
+
+          <Dropdown className="nav-dropdown">
+            <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+            Symptoms & Prevention
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu as={'div'}>
+              <Dropdown.Item href="/design/symptoms">Symptoms</Dropdown.Item>
+              <Dropdown.Item href="/design/protectyourself">Protect Yourself</Dropdown.Item>
+              <Dropdown.Item href="/design/athome">At Home</Dropdown.Item>
+              <Dropdown.Item href="/design/parenting">Parenting & Child Care</Dropdown.Item>
+              <Dropdown.Item href="/design/elderly">Elderly People</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
           <Nav.Link href="/design/notices&resources">Notices</Nav.Link>
           <Nav.Link href="/design/news">News</Nav.Link>
           <Nav.Link href="/design/faq">FAQ</Nav.Link>
