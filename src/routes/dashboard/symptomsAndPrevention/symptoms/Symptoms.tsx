@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { Row, Col, Media } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
+import React, { useEffect } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
-import lo from "src/i18n/en";
-import SymtomSVG from "./SymtomSVG";
-import SymtomChart from "./SymptomChart";
+import lo from 'src/i18n/en';
+import SymtomSVG from './SymtomSVG';
+import SymtomChart from './SymptomChart';
 
 const Symptoms = () => {
   const [t] = useTranslation();
