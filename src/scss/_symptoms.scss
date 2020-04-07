@@ -5,7 +5,6 @@
     min-height: 300px;
     min-width: 300px;
     position: relative;
-    margin: auto;
 
     > img {
         display: block;
@@ -76,8 +75,6 @@
     }
 }
 
-
-
 .symptoms-table {
     margin: 0;
     thead th {
@@ -86,5 +83,6 @@
     }
     tbody td {
         border: 0;
+        padding: .55rem;
     }
 }

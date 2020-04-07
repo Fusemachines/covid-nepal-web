@@ -7,6 +7,10 @@ import Info from './Info';
 import Information from './NoticeandResources';
 import News from './News';
 import FAQ from './FAQ';
+import ProtectYourself from './Symptoms/protectYourself';
+import AtHome from './Symptoms/atHome';
+import Elderly from './Symptoms/elderly';
+import Parenting from './Symptoms/parenting';
 
 const DesignRoutes: React.FC = () => (
   <Switch>
@@ -17,6 +21,10 @@ const DesignRoutes: React.FC = () => (
     <Route exact path={'/design/news'} component={News} />
     <Route exact path={'/design/notices&resources'} component={Information} />
     <Route exact path={'/design/faq'} component={FAQ} />
+    <Route exact path={'/design/protectyourself'} component={ProtectYourself} />
+    <Route exact path={'/design/athome'} component={AtHome} />
+    <Route exact path={'/design/parenting'} component={Parenting} />
+    <Route exact path={'/design/elderly'} component={Elderly} />
   </Switch>
 );
 

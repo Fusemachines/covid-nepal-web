@@ -88,3 +88,41 @@
         }
     }
 }
+
+.nav-dropdown {
+    cursor: pointer;
+    margin-right: 25px;
+    
+    .dropdown-toggle {
+        padding: .5rem 0;
+    }
+    
+    > .dropdown-menu {
+        padding: 0;
+        overflow: hidden;
+        margin-top: 0;
+        max-width: 100%;
+        min-width: 170px;
+
+        > a {
+            text-decoration: none;
+            font-size: 13px;
+            border-bottom: 1px solid #9BC7ED;
+            margin: 0 !important;
+            padding: 8px 12px !important;
+            color: #0A375D !important;
+
+            &:hover,&.activeT {
+                background: #9BC7ED;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    &:hover .dropdown-menu {
+        display: block;
+    }
+}

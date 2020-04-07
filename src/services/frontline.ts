@@ -1,6 +1,6 @@
-import { AxiosResponse } from "axios";
+import { AxiosResponse } from 'axios';
 
-import axios from "src/utils/axios";
+import axios from 'src/utils/axios';
 
 interface IFrontline {
   _id: string;
@@ -29,13 +29,13 @@ interface IFetchSupportersAPIResponse {
 
 export interface IFetchSupportersAPIPayload {
   name: string;
-  supportItems: string;
+  items: string;
 }
 
 export async function fetchSupportersAPI(payload: IFetchSupportersAPIPayload) {
   try {
     const response: AxiosResponse<IFetchSupportersAPIResponse> = await axios.get(`frontline/supporters`, {
-      params: { ...payload, items: encodeURIComponent(payload.supportItems) }
+      params: payload,
     });
     return response.data;
   } catch (error) {
@@ -55,7 +55,7 @@ interface IFetchRequestorsAPIPayload {
 export async function fetchRequestorsAPI(payload?: IFetchRequestorsAPIPayload) {
   try {
     const response: AxiosResponse<IFetchRequestorsAPIResponse> = await axios.get(`/frontline/requests`, {
-      params: { ...payload, items: payload && payload.items ? encodeURIComponent(payload.items) : "" }
+      params: payload,
     });
     return response.data;
   } catch (error) {

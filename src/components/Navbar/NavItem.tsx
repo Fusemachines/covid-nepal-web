@@ -22,7 +22,7 @@ const NavItem: FC<INavItemProps> = props => {
   };
 
   return (
-    <Nav.Link href={to} onSelect={onSelect} className={`nav-link ${active ? 'activeT' : ''} ${className}`}>
+    <Nav.Link href={to} onSelect={onSelect} className={`${active ? 'activeT' : ''} ${className}`}>
       {children? children : <NoTranslate noTranslate={title} />}
     </Nav.Link>
   );
