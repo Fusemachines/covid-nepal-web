@@ -75,8 +75,6 @@
     }
 }
 
-
-
 .symptoms-table {
     margin: 0;
     thead th {
@@ -86,13 +84,5 @@
     tbody td {
         border: 0;
         padding: .55rem;
-    }
-}
-
-.svgWrapper {
-    display: flex; 
-    align-items: center;
-    @media (max-width: 992px) {
-        justify-content: center;
     }
 }

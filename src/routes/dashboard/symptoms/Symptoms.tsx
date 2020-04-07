@@ -16,8 +16,8 @@ const Symptoms = () => {
   return (
     <>
       <div className="container mt-3">
-        <Row className="mt-5">
-          <Col lg="5" className="svgWrapper">
+        <Row className="mt-5 align-items-center">
+          <Col lg="5">
             <SymtomSVG />
           </Col>
           <Col lg="7" sm="12" className="mt-5 mt-lg-0">

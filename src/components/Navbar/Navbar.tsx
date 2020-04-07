@@ -217,7 +217,20 @@ const Navbar: FC<INavbarProps> = props => {
         <Navigation.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
             <NavItem title={t(lo.nav_Home)} to={routes.DASHBOARD} active={routes.DASHBOARD === currentPath} />
-            <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} />
+            {/* <NavItem title={t(lo.nav_Symptoms)} to={routes.SYMPTOMS} active={routes.SYMPTOMS === currentPath} /> */}
+            <Dropdown className="nav-dropdown">
+              <Dropdown.Toggle as={'div'} id="dropdown-custom-components">
+                Symptoms & Prevention
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu as={'div'}>
+                <Link to={routes.SYMPTOMS} className="dropdown-item">{t(lo.nav_Symptoms)}</Link>
+                <Link to={routes.ProtectYourSelf} className="dropdown-item">Protect Yourself</Link>
+                <Link to={routes.AtHome} className="dropdown-item">At Home</Link>
+                <Link to={routes.Parenting} className="dropdown-item">Parenting & Child Care</Link>
+                <Link to={routes.Elderly} className="dropdown-item">Elderly People</Link>
+              </Dropdown.Menu>
+            </Dropdown>
             <NavItem title={t(lo.nav_GovNotice)} exact={false} to={routes.NOTICES} active={routes.NOTICES === currentPath} />
             {/* <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} /> */}
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
