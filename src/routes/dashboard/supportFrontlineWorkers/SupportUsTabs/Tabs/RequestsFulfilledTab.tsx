@@ -27,7 +27,7 @@ const RequestsFulfilledTab = () => {
   return (
     <Row className="request-fulfilled-wrapper">
       <Col md="6" className="image-wrapper">
-        <img src="/images/thankyou.svg" alt="Image" />
+        <img src="/images/thankyou.svg" alt="Image" className="img-fluid" />
       </Col>
       <Col md="6" className="table-fulfilled-wrapper">
         <div className="table-responsive">
