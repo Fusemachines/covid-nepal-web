@@ -5,12 +5,11 @@ import SupportUsTabs from './SupportUsTabs';
 
 const SupportFrontlineWorkers = () => {
   return (
-    <div>
       <div className="container-fluid mt-3">
         <Row className="mt-5 justify-content-center">
           <Col lg="8">
             <div className="mt-4 text-white text-center support-heading-wrapper">
-              <img src="/images/support-frontline.png" alt="image" />
+              <img src="/images/support-frontline.png" alt="image" className="img-fluid" />
               <h1 className="support-heading">SUPPORT FRONTLINE WORKERS</h1>
             </div>
           </Col>
@@ -68,7 +67,6 @@ const SupportFrontlineWorkers = () => {
           </Col>
         </Row>
         <SupportUsTabs />
-      </div>
     </div>
   );
 };

@@ -30,30 +30,32 @@ const RequestsFulfilledTab = () => {
         <img src="/images/thankyou.svg" alt="Image" />
       </Col>
       <Col md="6" className="table-fulfilled-wrapper">
-        <table className="table-fulfilled w-100" cellPadding="12">
-          <thead>
-            <tr>
-              <th>Requestor</th>
-              <th>Supporter</th>
-            </tr>
-          </thead>
+        <div className="table-responsive">
+          <table className="table-fulfilled w-100" cellPadding="12">
+            <thead>
+              <tr>
+                <th>Requestor</th>
+                <th>Supporter</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            {isLoaded ? (
-              requestorsList.length > 0 ? (
-                requestorsList.map(
-                  requestor => requestor.isFulfilled && <RowOfRequestsFulfilledTab requestor={requestor} />
+            <tbody>
+              {isLoaded ? (
+                requestorsList.length > 0 ? (
+                  requestorsList.map(
+                    requestor => requestor.isFulfilled && <RowOfRequestsFulfilledTab requestor={requestor} />
+                  )
+                ) : (
+                  <tr>
+                    <td>No records found</td>
+                  </tr>
                 )
               ) : (
-                <tr>
-                  <td>No records found</td>
-                </tr>
-              )
-            ) : (
-              <Loader />
-            )}
-          </tbody>
-        </table>
+                <Loader />
+              )}
+            </tbody>
+          </table>
+        </div>
       </Col>
     </Row>
   );

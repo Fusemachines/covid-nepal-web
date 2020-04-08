@@ -9,7 +9,7 @@ const SupportUsTabs = () => {
   return (
     <Row className="my-5 justify-content-center tab-container">
       <Col sm="12">
-        <Tabs defaultActiveKey="requestsForSupport" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="requestsForSupport" id="uncontrolled-tab-example" className="notices">
           <Tab eventKey="requestsForSupport" title="Requests for Support">
             <RequestorsTab />
           </Tab>

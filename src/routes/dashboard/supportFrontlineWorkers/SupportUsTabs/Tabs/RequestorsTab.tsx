@@ -83,7 +83,7 @@ const RequestorsTab = () => {
       </div>
     </div>
 
-
+    <div className="table-responsive">
       <table className="table-supporter w-100" cellPadding="12">
         <thead>
           <tr>
@@ -111,6 +111,7 @@ const RequestorsTab = () => {
           )}
         </tbody>
       </table>
+    </div>
     </>
   );
 };
