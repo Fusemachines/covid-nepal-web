@@ -193,7 +193,7 @@ const Navbar: FC<INavbarProps> = props => {
               to={routes.NOTICES}
               active={routes.NOTICES === currentPath}
             />
-            {/* <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} /> */}
+            <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} />
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
           <Nav>
