@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Call to Doctor Sewa",
+    "url": "https://covid.hamropatro.com/",
+    "imageUrl": "https://covidnepal.org/images/calldoctor.jpg",
+    "type": "Supports"
+  },
+  {
+    "title": "Corona Nepal",
+    "url": "http://www.coronanepal.org/",
+    "imageUrl": "https://covidnepal.org/images/coronanepal.jpg",
+    "type": "Supports"
+  },
+  {
+    "title": "Covid-19 latest data from the Ministry of Health and Population",
+    "url": "http://covid19.mohp.gov.np/#/",
+    "imageUrl": "https://covidnepal.org/images/nepal-government.jpg",
+    "type": "Supports"
+  },
+  {
+    "title": "Covid Nepal Diaspora Platform",
+    "url": "http://www.nepalrising.org/covid-19",
+    "imageUrl": "https://covidnepal.org/images/diagram-platform.jpg",
+    "type": "Supports"
+  }
+]

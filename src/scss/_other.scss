@@ -1,0 +1,165 @@
+.covid-alert {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1031;
+    padding: 5px 2px 8px;
+    display: block;
+    line-height: 1;
+
+    a {
+        line-height: 1.2;
+        font-weight: 600; 
+        color: #07ff95
+    }
+}
+
+.title {
+    display: inline-block;
+    border-radius: 15px;
+    padding: 6px 15px;
+    font-weight: 600;
+}
+
+.emg-call {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .icon {
+        padding: 6px 12px;
+        background: #079558;
+    }
+    .text {
+        padding: 6px 12px;
+        background: #00C571;
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 6px #00C571
+    }
+}
+
+.rec {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: #D1454B;
+    border: 2px solid lighten( #D1454B, 20% );
+    border-radius: 50%;
+}
+
+.info {
+    &-item  {
+        display: block;
+        border-bottom: 1px solid #2074B9;
+    }
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.hospital-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hospitalinfo-list {
+    padding: 0;
+
+    li {
+        border-bottom: 1px solid #2074B9;
+        list-style: none;
+        padding: 12px 0;
+    }
+}
+
+// maps
+.map-large,
+.maps {
+    iframe {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+}
+
+.tweet-wrapper {
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.social-link {
+    a {
+        cursor: pointer;
+        margin: 0 15px 0 0;
+
+        &:hover {
+            svg path {
+                fill: #0A375D;
+            }
+        }
+    }
+    
+}
+
+.count-box {
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px 12px;
+    font-size: 12px;
+    overflow: hidden;
+
+    > span {
+        padding: 4px 12px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.green {
+        background: rgba(0, 197, 13, 0.2);
+
+        .count {
+            background: #00C571;
+        }
+    }
+
+    &.blue {
+        background: rgba(32, 116, 185, 0.2);
+
+        .count {
+            background: #2074B9;
+        }
+    }
+
+    &.yellow {
+        background: rgba(255, 208, 58, 0.2);
+
+        .count {
+            background: #FFD03A;
+            color: #004E90;
+        }
+    }
+}
+
+.covid-hospital-count {
+    &.tooltip {
+        max-width: 168px;
+        .tooltip-inner {
+            background: #ffffff;
+            color: #0A375D;
+            font-size: 9px;
+        }
+    
+        .arrow:before {
+            border-top-color: #ffffff;
+        }
+    }
+}

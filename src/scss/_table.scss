@@ -1,0 +1,36 @@
+
+.table {
+    thead th {
+        border-top: 0;
+        border-color: #2074B9;
+        font-weight: 600;
+        vertical-align: top;
+        min-width: 120px;
+
+        &.w-76 {
+            width: 76px;
+            min-width: 76px;
+        }
+
+        &.w-110 {
+            width: 110px;
+        }
+
+        &.w-125 {
+            width: 125px;
+        }
+    }
+
+    tbody td {
+        border-bottom: 1px solid #2074B9;
+    }
+
+    &.h-50 {
+        max-height: 53vh;
+        overflow-y: auto;
+    }
+}
+
+.table-hover tbody tr:hover {
+    color: #ffffff;
+}

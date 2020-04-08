@@ -1,0 +1,396 @@
+[
+    {
+        "_id": "1",
+        "question": {
+          "en": "What is a coronavirus?",
+          "np": "कोरोनाभाइरस भनेको के हो?"
+        },
+        "answer": {
+          "en": "Coronaviruses are a large family of viruses that may cause illness in animals or humans. In humans, several coronaviruses are known to cause respiratory infections. The most recently discovered coronavirus causes coronavirus disease COVID-19.",
+          "np": "उत्तर: कोरोनाभाइरस भाइरसहरूको एक ठूलो परिवार हो जसको कारण जनावर वा मानिसहरू बिरामी हुन सक्छ। मानिसहरूमा, धेरै कोरोनाभाइरसहरू श्वासप्रश्वासको संक्रमणको कारक रूपमा चिनिन्छ। हालै पत्ता लागेका कोरोनाभाइरसले कोरोनाभाइरस रोग कोभिड-१९ हुने गर्दछ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "2",
+        "question": {
+          "en": "What is COVID-19?",
+          "np": "कोभिड -१९ भनेको के हो?"
+        },
+        "answer": {
+          "en": "COVID-19 is an infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.",
+          "np": "उत्तर:कोभिड -१९ एक सरूवा रोग हो जुन भर्खर पत्ता लागेको कोरोनाभाइरसले गर्दा हुने गर्दछ। सन् २०१९ को डिसेम्बरमा चीनको वुहानमा महामारी शुरू हुनु अघि यो नयाँ भाइरस र रोग अज्ञात थियो।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "3",
+        "question": {
+          "en": "What are the symptoms of COVID-19?",
+          "np": "कोभिड - १९ को लक्षणहरू के के हुन्?"
+        },
+        "answer": {
+          "en": "The most common symptoms of COVID-19 are fever, tiredness, and dry cough. Some patients may have aches and pains, nasal congestion, runny nose, sore throat or diarrhea. These symptoms are usually mild and begin gradually. Some people become infected but don’t develop any symptoms and don't feel unwell.",
+          "np": "सामान्यतया: कोरोना भाइरस (कोभिड - १९) रोगको मुख्य लक्षणहरू ज्वरो आउने, थकाई लाग्ने, सुख्खा खोकी लाग्ने आदी हुन्। केही बिरामीहरूलाई भने लगातार दुखाइ तथा पिडा हुने, नाक बन्द हुने, नाकबाट पानी बग्ने, घाँटी दुख्ने तथा पखाला लाग्न सक्छ। यी लक्षणहरू रोगको हल्का प्रभावहरू हुन् भने बिस्तारै प्रभाव बढ्न थाल्ने गर्दछ। केही मानिसहरू रोगबाट संक्रमित भएता पनि यी लक्षणहरू देखा पर्दैन र बिरामी भएको पनि महसुस पनि हुने गर्दैन्।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "4",
+        "question": {
+          "en": "How does the COVID-19 disease transmit from person to person?",
+          "np": "कोरोना भाइरस (कोभिड - १९) एउटा व्यक्तीदेखि अर्को व्यक्तीमा कसरी सर्दछ?"
+        },
+        "answer": {
+          "en": "The disease can spread from person to person if they breathe in the small droplets containing the virus when that person with COVID-19 coughs or exhales. These droplets land on objects and surfaces around the person. Other people then catch COVID-19 by touching these objects or surfaces, then touching their eyes, nose or mouth.",
+          "np": "कोरोना भाइरस (कोभिड - १९) बाट संक्रमित व्यक्तिले खोक्दा वा हाच्छिउँ गर्दा बाहिर आउने विषाणु भएका साना थोपाहरू कुनै पनि व्यक्तिले स्वाश लिदा शरिर भित्र प्रवेश गरेकोमा एक व्यक्तिबाट अर्को व्यक्तिमा सर्न सक्दछ। यी विषाणु भएका थोपाहरू मानिस वरिपरिका वस्तुहरू तथा सतहहरूमा पर्न जान्छ। अन्य मानिसहरूले यी वस्तुहरू वा सतहरूमा छोएर आँखा, नाक वा मुखमा छोएमा कोभिड-१९ रोग लाग्ने गर्दछ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "5",
+        "question": {
+          "en": "Can the virus that causes COVID-19 be transmitted through the air?",
+          "np": "के, कोभिड - १९ फैलाउने विषाणु हावाबाट सर्न सक्दछ?"
+        },
+        "answer": {
+          "en": "Studies to date suggest that the virus that causes COVID-19 is mainly transmitted through contact with respiratory droplets rather than through the air.",
+          "np": "जवाफ: अहिलेसम्मको अनुसन्धान अनुसार कोभिड - १९ का विषाणुहरू हावाबाछ भन्दा पनि मुख्यतया: संक्रमित व्यक्तिले खोक्दा वा हाच्छिउँ गर्दा निस्कने स-साना थोपा (छिटा) हरूको सम्पर्कमा आयो भने सर्ने गर्दछ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "6",
+        "question": {
+          "en": "Can COVID-19 be caught from a person who has no symptoms?",
+          "np": "के कुनै पनि लक्षणहरु नदेखिएको व्यक्तीवाट कोरोना भाइरस (कोभिड - १९) सर्न सक्छ?"
+        },
+        "answer": {
+          "en": "It is possible to catch COVID-19 from someone who has, for example, just a mild cough and does not feel ill.",
+          "np": "बिरामी महसुस नभएको वा सामान्य रुघा खोकी लागेको व्यक्तीद्वारा पनि कोभिड - १९ सर्न सक्छ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "7",
+        "question": {
+          "en": "What can I do to protect myself and prevent the spread of disease?",
+          "np": "कोभिड - १९ को संक्रमणबाट आफुलाइ बचाउन र फैलिन नदिन के कस्ता कदमहरु चाल्न सकिन्छ?"
+        },
+        "answer": {
+          "en": "You can reduce your chances of being infected or spreading COVID-19 by taking some simple precautions:<ul class='my-2'><li class='mb-2'>Regularly and thoroughly clean your hands for at least 20 seconds with an alcohol-based hand rub or wash them with soap and water.</li><li class='mb-2'>Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.</li><li class='mb-2'>Avoid touching eyes, nose and mouth. Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.</li><li class='mb-2'>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.</li><li class='mb-2'>Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.</li><li class='mb-2'>traveling to places – especially if you are an older person or have diabetes, heart or lung disease.</li></ul>Why? You have a higher chance of catching COVID-19 in one of these areas.",
+          "np": ""
+        },
+        "category": "general"
+    },
+    {
+        "_id": "8",
+        "question": {
+          "en": "Are antibiotics effective in preventing or treating the COVID-19?",
+          "np": "के कोरोना भाइरसबाट बच्न र संक्रमितको उपचारको लागि एन्टिबायोटिकको प्रयोग प्रभावकारी हुन्छ?"
+        },
+        "answer": {
+          "en": "No. Antibiotics do not work against viruses, they only work on bacterial infections.",
+          "np": "जवाफः हुदैन। एन्टिबायोटिकले जिवाणु (ब्याक्टेरिया) विरुद्ध मात्र लड्न सक्ने क्षमता हुने भएकोले एन्टिबायोटिकको प्रयोगले कोरोना विषाणुको संक्रमणबाट बचाउँदैन वा उपचार गर्न सकिदैन।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "9",
+        "question": {
+          "en": "Are there any medicines to cure COVID-19?",
+          "np": " कोरोना भाइरसबाट बच्ने वा उपचार गर्ने कुनै औषधि छ?"
+        },
+        "answer": {
+          "en": "There is no evidence that current medicine can prevent or cure the disease. There are several ongoing clinical trials that include both western and traditional medicines.",
+          "np": "हालसम्म कोरोना भाइरसबाट बच्न वा उपचारको लागि कुनै औषधि पत्ता लागिसकेको छैन।यसको उपचारको वारेमा धेरै देशहरुमा अध्ययन अनुसन्धान भइरहेको छ भने विश्व स्वास्थ्य संगठनले साझेदारहरुसँगको समन्वयमा यस विषयमा अध्ययन र अनुसन्धानलाई तीव्र रुपले अघि बढाइरहेको छ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "10",
+        "question": {
+          "en": "Will wearing a mask protect me from the COVID-19?",
+          "np": "के मास्क लगाएर मलाई कोभिड - १९ बाट बचाउनेछ?"
+        },
+        "answer": {
+          "en": "Not really. Only wear a mask if you are ill with COVID-19 symptoms (especially coughing) or looking after someone who may have COVID-19. The most effective ways to protect yourself and others against COVID-19 are to frequently clean your hands, cover your cough with the bend of elbow or tissue and maintain a distance of at least 1 meter (3 feet) from people.",
+          "np": "वास्तवमा होइन। केवल मास्क लगाउनुहोस् यदि तपाईं कोभिड - १९को लक्षणहरू (विशेष गरी खोकी ) बाट बिरामी हुनुहुन्छ वा कोभिड - १९  संक्रमित व्यक्तिको हेरविचार गर्दै हुनुहुन्छ। यो रोग बिरूद्ध आफूलाई र अरूलाई बचाउने सब भन्दा प्रभावकारी तरिकाहरू भनेको तपाईका हातहरू बारम्बार सफा गर्नुहोस्, कुकुर वा टिश्युको ले तपाईको खोकीलाई ढाक्नुहोस् र मानिसहरूबाट कम्तिमा १ मिटर ( ३ फिट) को दूरी राख्नुहोस्।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "11",
+        "question": {
+          "en": "Can humans become infected with the COVID-19 from an animal source?",
+          "np": "के मानिसहरूलाई जनावरबाट कोभिड-१९ का विषाणु सर्न सक्दछ?"
+        },
+        "answer": {
+          "en": "It’s possible. Handle raw meat, milk or animal organs with care to avoid contamination of uncooked foods and avoid consuming raw or undercooked animal products.",
+          "np": "सर्न सक्छ। काचो खानेकुराहरूबाट हुन सक्ने सक्रमणबाट बच्नको लागि काचो मासु, दुध वा जनावरका अंगहरूलाई चलाउँदा विशेष सावधानी अपनाउनु पर्दछ तथा काचो वा नपाकेका जनावरजन्य वस्तुहरूको सेवनलाई कम गर्नु गर्दछ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "12",
+        "question": {
+          "en": "Can I catch COVID-19 from my pet?",
+          "np": "के घरपालुवा जनावरबाट कोरोना भाइरसको संक्रमण हुन वा सर्न सक्छ?"
+        },
+        "answer": {
+          "en": "There is no evidence that a dog, cat or any pet can transmit COVID-19.",
+          "np": "हालसम्म घरपालुवा जनावर जस्तै कुकुर, बिरालोआदि कोरोना भाइरसबाट संक्रमित भएको पुष्टि भएको छैन।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "13",
+        "question": {
+          "en": "How long does the virus survive on surfaces?",
+          "np": "वातावरण र सतहहरूमा यो भाइरस कहिलेसम्म बाँच्न सक्छ?"
+        },
+        "answer": {
+          "en": "Studies suggest that coronaviruses (including preliminary information on the COVID-19 virus) may persist on surfaces for a few hours or up to several days.",
+          "np": "अध्ययन र अनुसन्धानका अनुसार कोरोनाभाइरस सतहहरूमा केही घण्टादेखि धेरै दिनसम्म बाँच्न सक्छ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "14",
+        "question": {
+          "en": "Will warm weather stop the outbreak?",
+          "np": "के न्यानो मौसमले यो प्रकोप रोक्नेछ?"
+        },
+        "answer": {
+          "en": "At this time, it is not known whether the spread of COVID-19 will decrease when weather becomes warmer.",
+          "np": "यो अझै थाहा छैन कि कोभिड-१९को प्रभाव घट्ने छ जब मौसम न्यानो हुन्छ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "15",
+        "question": {
+          "en": "How can pregnant women protect themselves from getting COVID-19?",
+          "np": "गर्भवती महिलाहरूले कोभिड-१९  बाट आफूलाई कसरी  जोगाउन सक्छन्?"
+        },
+        "answer": {
+          "en": "Pregnant women should do the same things as the general public to avoid infection. You can help stop the spread of COVID-19 by taking these actions:<ul class='my-2'><li class='mb-2'>Cover your cough (using your elbow is a good technique).</li><li class='mb-2'>Avoid people who are sick.</li><li class='mb-2'>Clean your hands often using soap and water or alcohol-based hand sanitizer.</li></ul>",
+          "np": ""
+        },
+        "category": "general"
+    },
+    {
+        "_id": "16",
+        "question": {
+          "en": "Can COVID-19 be passed from a pregnant woman to the fetus or newborn?",
+          "np": "के गर्भवती महिलाबाट बच्चामा कोरोनाभाइरस सर्न सक्छ?"
+        },
+        "answer": {
+          "en": "We still do not know if a pregnant woman with COVID-19 can pass the virus that causes COVID-19 to her fetus or baby during pregnancy or delivery.",
+          "np": "हालसम्म उपलब्ध जानकारीका आधारमा गर्भावस्थामा आमाबाट बच्चामा यो भाइरस सर्ने वा नसर्ने तथा उक्त भाइरसले बच्चामा पार्ने असरका बारेमा पर्याप्त तथ्य उपलब्ध छैन। यस विषयमा हाल अध्ययन भइरहेको छ। गर्भवती महिलाहरूले भाइरसबाट जोगिन उपयुक्त सावधानी अपनाउनु पर्दछ र ज्वरो, खोकी वा सास फेर्न कठिनाईजस्ता लक्षणहरू देखिएमा समयमै स्वास्थ्य संस्थामा सम्पर्क गर्नुपर्दछ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "17",
+        "question": {
+          "en": "Can the COVID-19 virus spread through drinking water?",
+          "np": "के कोरोनाभाइरस पिउने पानी को माध्यम बाट फैलन सक्छ?"
+        },
+        "answer": {
+          "en": "The COVID-19 virus has not been detected in drinking water. Conventional water treatment methods that use filtration and disinfection, such as those in most municipal drinking water systems, should remove or inactivate the virus that causes COVID-19.",
+          "np": "कोरोनाभाइरस पिउने पानीमा पत्ता लागेको छैन। परम्परागत पानी उपचार विधिहरू जसले फिल्टरेशन र कीटाणुशोधन प्रयोग गर्दछ, जस्तै प्राय जसो नगरपालिकाको खानेपानी प्रणालीहरूमा, भाइरसलाई हटाउन वा निष्क्रिय गर्नुपर्दछ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "18",
+        "question": {
+          "en": "Is the COVID-19 virus found in feces?",
+          "np": "के कोरोनाभाइरस  दिसाबाट फैलिन सक्छ ?"
+        },
+        "answer": {
+          "en": "<p>The virus that causes COVID-19 has been detected in the feces of some patients diagnosed with COVID-19. The amount of virus released from the body (shed) in stool, how long the virus is shed, and whether the virus in the stool is infectious are not known.</p><p>The risk of transmission of COVID-19 from the feces of an infected person is also unknown.</p>",
+          "np": ""
+        },
+        "category": "general"
+    },
+    {
+        "_id": "19",
+        "question": {
+          "en": "Is Teku-based hospital, Sukraraj Tropical and Infectious Disease Hospital, the only hospital allocated for testing and treatment of COVID-19 in Nepal?",
+          "np": "के टेकु स्थित अस्पताल, सुक्रराज ट्रोपिकल तथा संक्रामक रोग अस्पताल, नेपालमा कोविड्-१ को परीक्षण र उपचारका लागि विनियोजन गरिएको एक मात्र अस्पताल हो ?"
+        },
+        "answer": {
+          "en": "<p>No. The Government of Nepal has allocated two hospitals, STIDH(Teku) hospital, and Patan Hospital, where you can get tested for Covid-19 infection. Teku hospital is, however, given the first priority since it specializes in dealing with all kinds of infectious diseases like COVID-19. They work closely with the National Public Health Laboratory which is also situated in Teku that performs the confirmatory testing for COVID-19. Do remember that you do not have to go to Teku hospital to take the swab specimen as other hospitals can take a specimen and send it to NPHL.</p><p>For the treatment of COVID-19, all hospitals can manage beds, ICUs and ventilators for severely infected patients. Since there is no evidence that current medicine can prevent or cure the disease, each case can be managed by all the hospitals, giving antiviral and antibacterial therapy.</p>",
+          "np": ""
+        },
+        "category": "general"
+    },
+    {
+        "_id": "20",
+        "question": {
+          "en": "With how many testing kits is the Teku hospital equipped currently?",
+          "np": "टेकु अस्पतालमा हाल कतिवटा परीक्षण किटहरू उपलब्ध छ ?"
+        },
+        "answer": {
+          "en": "The last news suggests that the Teku hospital is equipped with about 1500 test kits. 522 tests were performed until yesterday.",
+          "np": "अन्तिम अद्यावधिक गरिए अनुसार हाल टेकु अस्पताल लगभग १५०० परीक्षण  किटहरू छन । हिजोसम्म जम्मा जम्मी ५२२ परीक्षण गरिएको थियो ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "21",
+        "question": {
+          "en": "Is the swab testing carried out in Nepal or sent abroad? What is the medium of transportation of the specimens?",
+          "np": "के स्वाब परीक्षण नेपालमा गरिन्छ वा विदेश पठाइन्छ? नमूनाहरु को यातायात को माध्यम के हो?"
+        },
+        "answer": {
+          "en": "Swab testing is done in Nepal. In some cases, the samples of the positive cases are transported to a WHO reference lab in the region for re-confirmation. The doctors are, however, immediately notified when a case shows a positive result. The specimens as they are highly contagious are transported using the Viral Transport Medium (VTM). In simple words, it as a tube with rubber seals and has chemicals inside it to prevent the specimen from disintegrating. It is generally Tripple packed in virus transport package. If the sample can be taken to the laboratory within four days, they may be kept at +4 °C and frozen at -70 °C on arrival if they are to be stored. Otherwise, they should be frozen at or below -70 °C until they can be transported to the laboratory via air shipping.",
+          "np": "स्वाब परीक्षण नेपालमा गरिन्छ। केहि केसहरूमा, पोसिटिभ केसका नमूनाहरू पुनः पुष्टिका लागि विश्वा स्वस्थ सँगठ्न सन्दर्भ प्रयोगशालामा पठाइन्छ। तथापि, केसको पोसिटिभ नतिजा देखा पर्दा डाक्टरहरूलाई तुरुन्तै सूचित गरिन्छ। नमूनाहरु अत्यधिक संक्रामक हुने भएका कारणले तिनीहरूलाई भाइरल ट्रान्सपोर्ट मिडियम(VTM) मा हलेर पठाइन्छ। सरल शब्दहरुमा भन्नु पर्द, यो रबर सिलहरु को एक ट्यूब हो र यस भित्र रसायनहरु राखिएको हुन्छ जस्ले नमूना बिगृने वा चुहिनेबाट रोक्छ्। यो ट्रिपल प्याकेजमा प्याक गरिएको हुन्छ।         यदि नमूनालाई प्रयोगशालामा चार दिन भित्र लिन सकिन्छ भने तिनीहरूलाई +४ डिग्री सेल्सियसमा राख्नुपर्नेछ र -७० डिग्री सेल्सियस भण्डारण गर्न सकिन्छ। अन्यथा, तिनीहरू शिपिंग मार्फत प्रयोगशालामा पठाउन नसकिए सम्म -७० डिग्री सेन्टिग्रेड वा तल स्थिर गर्नुपर्ने हुन्छ ।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "22",
+        "question": {
+          "en": "If the test sample is transported to the laboratory outside Nepal, how long does it take for the reports to arrive in Nepal?",
+          "np": "यदि परीक्षण नमूनाहरु नेपाल बाहिरको प्रयोगशालामा पठाइयो भने, रिपोर्टहरू नेपाल आउन कति समय लाग्छ ?"
+        },
+        "answer": {
+          "en": "It depends on cases but it is not very quick. It generally takes two hours or so to perform the test and can generally take a week to get the final result. The positive cases are reported to doctors immediately so that you are immediately transferred to the isolation room and treated accordingly.",
+          "np": "यो केसहरुमा निर्भर गर्दछ तर यो धेरै छिटो हुँदैन। सामान्यतया: यो परीक्षण गर्न दुई घण्टा लाग्छ र अन्तिम परिणाम लिन सामान्यतया एक हप्ता लाग्न सक्दछ। पोसिटिभ केसहरू तुरून्त डाक्टरहरूलाई रिपोर्ट गरिन्छ ताकि तपाईंलाई तुरुन्तै अलग कोठामा लागियोस र सोहि अनुरुप उपचार गर्न सकियोस।"
+        },
+        "category": "general"
+    },
+    {
+        "_id": "23",
+        "question": {
+          "en": "Consuming 'Bojho', Garlic or Turmeric will prevent the coronavirus infection.",
+          "np": ""
+        },
+        "answer": {
+          "en": "It’s a Myth. Eating Bojho, Garlic and Turmeric is good for health. But until now, no evidence has been found that consuming these herbs and spices can prevent the coronavirus infection.",
+          "np": ""
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "24",
+        "question": {
+          "en": "There is no sanitizer in the shop and now I cannot protect myself from coronavirus infection!",
+          "np": "पसलमा स्यानिटाइजर नपाएमा के गर्न सकिन्छ?"
+        },
+        "answer": {
+          "en": "It’s a Myth. There's no need to panic if there are no hand sanitizers. What's more important is that you frequently wash your hands with soap and clean water as this reduces the risk of coronavirus infection. Hands should be thoroughly washed, especially between the fingers, the palm, around the thumb, the front and back of the hands, and also under the nails.",
+          "np": "स्यानिटाइजर नभएमा पनि केही हुँदैन। बेलाबेलामा साबुन पानीले मिचिमिच हात धोएमा कोरोना भाइरसको जोखिम कम हुन्छ। हात धुँदा औंलाको बीचमा, हातको अगाडि र पछाडि र नङलाई पनि राम्ररी धुनुपर्छ।"
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "25",
+        "question": {
+          "en": "Smoking increases and doesn’t prevent coronavirus infection?",
+          "np": "धुम्रपान वा चुरोटले कोरोना भाइरसलाई असर गर्छ?"
+        },
+        "answer": {
+          "en": "It’s a Fact. Smoking does not prevent coronavirus infection but increases the risk of it. Smoking is harmful to health. Each year, some 100,000 people die due to health problems caused by smoking cigarettes. People with underlying heart and other health problems are more prone to the infection if they have a habit of smoking.",
+          "np": "धुम्रपान वा चुरोटले कोरोना भाइरसको संक्रमणबाट बचाउँदैन। धुम्रपान स्वास्थ्यका लागि हानिकारक हुन्छ। विश्वमा वर्षेनी करिब ८० लाख मानिसहरू धुम्रपानका कारण अकाल मर्दछन्। मुटु लगायत विभिन्न स्वास्थ्य समस्या भएका व्यक्तिहरुमा धुम्रपानका कारणले थप जटिलता हुने भएकोले उनीहरुमा कोरोना भाइरसको जोखिम अझ बढी हुन्छ।"
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "26",
+        "question": {
+          "en": "Rinsing the mouth with mouthwash can prevent the coronavirus infection.",
+          "np": "के माउथवासले मुख कुल्ला गर्नाले कोरोना भाइरसको संक्रमणबाट बच्न सकिन्छ?"
+        },
+        "answer": {
+          "en": "It’s a Myth. There is no evidence to date that coronavirus infection can be prevented by the use of mouthwashes. Although some company's use of mouthwashes will temporarily eradicate some of the viruses that are inside the mouth, it cannot protect against the COVID-19 infection.",
+          "np": "माउथवासको प्रयोगले कोरोना भाइरसको संक्रमणबाट बच्न सकिने कुनैपनि प्रमाण हालसम्म फेला परेको छैन।केही कम्पनीका माउथवासहरुको प्रयोगले मुखभित्र र्‍यालमा रहेका केही भाइरसहरुलाई केही समयका लागि निर्मुल गर्ने भएता पनि यसले कोरोना भाइरसको संक्रमणबाट भने सुरक्षित गर्न सक्दैन।"
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "27",
+        "question": {
+          "en": "The vaccine against pneumonia protect us from the coronavirus infection.",
+          "np": "के निमोनिया विरुद्धको खोपले हामीलाई कोरोना भाइरसको संक्रमणबाट बचाउँछ?"
+        },
+        "answer": {
+          "en": "It’s a Myth. Vaccines against pneumonia such as 'pneumococcal vaccine' and 'hemophilus influenza' type B vaccines do not protect against the coronavirus. Since it is a new and different virus, it requires a different type of vaccine. Research is being done to develop the vaccine against the coronavirus, but has not yet been discovered. Although vaccines against pneumonia are not useful for the prevention of coronavirus, these vaccines can be used to prevent respiratory problems for health.",
+          "np": "निमोनिया विरुद्धका खोपहरू जस्तै ‘न्युमोकोकल भ्याक्सिन’ र ‘हेमोफिलस इन्फ्लुएन्जा’ टाइप बी भ्याक्सिनले कोरोना भाइरसबाट जोगाउन सक्दैन।यो नयाँ र फरक किसिमको भाइरस भएकोले यसको लागि छुटै प्रकारको खोप चाहिन्छ। कोरोना भाइरस विरुद्धको खोपको विकासका लागि अनुसन्धान भइरहेको छ तर अहिलेसम्म पत्ता लागिसकेको छैन।निमोनिया विरुद्धका खोपहरू कोरोना भाइरस रोकथाम गर्नका लागि उपयोगी नभए तापनि श्वासप्रश्वासको समस्याबाट बच्न यी खोपहरू स्वास्थ्यका लागि लगाउन सिफारिस गरिन्छ।"
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "28",
+        "question": {
+          "en": "Warm weather will stop the outbreak of COVID-19."
+        },
+        "answer": {
+          "en": "It is a Myth. It is not known whether the spread of COVID-19 will decrease when weather becomes warmer.  There is much more to learn about the transmissibility, severity, and other features associated with COVID-19 and investigations are ongoing."
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "29",
+        "question": {
+          "en": "Taking a hot bath will not prevent the new coronavirus disease"
+        },
+        "answer": {
+          "en": "<p>It’s a Fact. Taking a hot bath will not prevent you from catching COVID-19. Your normal body temperature remains around 36.5*C to 37*C, regardless of the temperature of your bath or shower. Actually, taking a hot bath with extremely hot water can be harmful, as it can burn you.</p><p>The best way to protect yourself against COVID-19 is by frequently cleaning your hands.</p>"
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "30",
+        "question": {
+          "en": "The new coronavirus cannot be transmitted through mosquito bites."
+        },
+        "answer": {
+          "en": "It’s a Fact. To date there has been no information nor evidence to suggest that the new coronavirus could be transmitted by mosquitoes. The new coronavirus is a respiratory virus which spreads primarily through droplets generated when an infected person coughs or sneezes, or through droplets of saliva or discharge from the nose. To protect yourself, clean your hands frequently with an alcohol-based hand rub or wash them with soap and water. Also, avoid close contact with anyone who is coughing and sneezing."
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "31",
+        "question": {
+          "en": "Thermal scanners can detect people infected with the new coronavirus."
+        },
+        "answer": {
+          "en": "It’s a Myth as they cannot detect people infected with the new coronavirus. Thermal scanners are effective in detecting people who have developed a fever (i.e.have a higher than normal body temperature) because of infection with the new coronavirus. However, they cannot detect people who are infected but are not yet sick with fever. This is because it takes between 2 and 10 days before people who are infected become sick."
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "32",
+        "question": {
+          "en": "Products made in China or have been delivered from China can spread the virus."
+        },
+        "answer": {
+          "en": "It’s a Myth. The virus cannot survive that long and hence cannot be spread from the products made in China."
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "33",
+        "question": {
+          "en": "The virus can die if we consume alcohol or rub the whole body with an alcohol rub."
+        },
+        "answer": {
+          "en": "It’s a myth. Drinking alcohol or rubbing chlorine or alcohol rub will only cause skin allergies and drinking habit."
+        },
+        "category": "mythbusters"
+    },
+    {
+        "_id": "34",
+        "question": {
+          "en": "Drinking water and massaging the body with mustard oil can kill the virus."
+        },
+        "answer": {
+          "en": "It’s a myth. However, drinking hot water or gargling with warm salt water can prevent the virus from traveling from your throat to the lungs. But, massaging with oil won’t kill the virus or prevent the infection."
+        },
+        "category": "mythbusters"
+    }
+]
