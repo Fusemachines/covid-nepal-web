@@ -20,9 +20,9 @@ const FAQsGeneral: FC<{}> = () => {
 
       <div className="h5">Sources</div>
       <ul className="mt-2">
-        <li><a className="text-white" href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" target="_blank">https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</a></li>
-        <li><a className="text-white" href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">https://www.cdc.gov/coronavirus/2019-ncov/faq.html</a></li>
-        <li><a href="https://covid19.mohp.gov.np/#/about" target="_blank" className="text-white">https://covid19.mohp.gov.np/#/about</a></li>
+        <li><a className="text-white" href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" target="_blank" rel="noopener noreferrer">https://www.who.int/news-room/q-a-detail/q-a-coronaviruses</a></li>
+        <li><a className="text-white" href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/coronavirus/2019-ncov/faq.html</a></li>
+        <li><a href="https://covid19.mohp.gov.np/#/about" target="_blank" className="text-white" rel="noopener noreferrer">https://covid19.mohp.gov.np/#/about</a></li>
       </ul>
     </>
   );

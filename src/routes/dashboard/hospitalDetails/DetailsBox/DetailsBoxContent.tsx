@@ -70,7 +70,7 @@ const DetailsBoxContent: FC<{}> = () => {
 export default DetailsBoxContent;
 
 const AvailableTimeComponent: React.SFC<{ availableTime: Array<ILanguage> }> = ({ availableTime }) => {
-  if (availableTime.length == 2) {
+  if (availableTime.length === 2) {
     return (
       <span>
         {selectLanguage(availableTime[0])} AM - {selectLanguage(availableTime[1])}PM

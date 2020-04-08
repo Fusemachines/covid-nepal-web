@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Modal } from 'react-bootstrap';
 
 interface IMapsIframe {
   url: string;

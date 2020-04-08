@@ -3,7 +3,6 @@ import { initReactI18next } from 'react-i18next';
 import en from "./en";
 import ne from './ne'
 import detector from 'i18next-browser-languagedetector';
-import backend from 'i18next-xhr-backend';
 import { getlocalStorage } from "src/utils/storage";
 
 const resources = {

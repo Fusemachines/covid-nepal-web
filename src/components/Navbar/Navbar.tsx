@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav, Dropdown, NavDropdown } from 'react-bootstrap';
+import { Navbar as Navigation, Nav, Dropdown } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
@@ -193,17 +193,13 @@ const Navbar: FC<INavbarProps> = props => {
               to={routes.NOTICES}
               active={routes.NOTICES === currentPath}
             />
-            {/* <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} /> */}
+            <NavItem title={t(lo.nav_News)} exact={false} to={routes.NEWS} active={routes.NEWS === currentPath} />
             <NavItem title={t(lo.nav_FAQ)} exact={false} to={routes.FAQ} active={routes.FAQ === currentPath} />
           </Nav>
           <Nav>
-            <Link to={routes.JOIN_US} className={`btn btn-outline-light mr-2`}>
-              {t(lo.nav_JoinUs)}
-            </Link>
-
-            <Link to={routes.SUPPORT_FRONTLINE_WORKERS} className={`btn btn-warning mr-2`}>
-              {'Support Frontline'}
-            </Link>
+            <NavItem title={t(lo.nav_JoinUs)} exact={false} active={routes.JOIN_US === currentPath} to={routes.JOIN_US} className={`btn btn-outline-light mr-2 px-3`} />
+            
+            <NavItem title={'Support Frontline'} exact={false} active={routes.SUPPORT_FRONTLINE_WORKERS === currentPath} to={routes.SUPPORT_FRONTLINE_WORKERS} className={`btn btn-warning mr-2 px-3 text-dark`} />
 
             <EmergencyButton text={t(lo.nav_Emergency)} handleClick={toggleEmergencyContact} className="desktop-view" />
             {/* Temporary Langauge Select */}

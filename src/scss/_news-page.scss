@@ -28,6 +28,14 @@
         overflow: hidden;
     }
 
+    .main-news {
+        cursor: pointer;
+        
+        &:hover .font-14 {
+            text-decoration: underline;
+        }
+    }
+
     .news-list {
         overflow-y: auto;
         background-color: #ffffff;

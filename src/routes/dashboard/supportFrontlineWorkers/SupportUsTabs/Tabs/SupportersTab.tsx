@@ -85,33 +85,35 @@ const SupportersTab = () => {
         </div>
       </div>
 
-      <table className="table-supporter w-100" cellPadding="12">
-        <thead>
-          <tr>
-            <th className="w-15">Supporter</th>
-            <th className="w-25">Contact</th>
-            <th className="w-60">Provided Support Items</th>
-            <th className=""></th>
-          </tr>
-        </thead>
-        <tbody>
-          {isLoaded ? (
-            supportersList.length > 0 ? (
-              supportersList.map(supporter => <SupportersTabTableRow key={supporter._id} supporter={supporter} />)
+      <div className="table-responsive">
+        <table className="table-supporter w-100" cellPadding="12">
+          <thead>
+            <tr>
+              <th className="w-15">Supporter</th>
+              <th className="w-25">Contact</th>
+              <th className="w-60">Provided Support Items</th>
+              <th className=""></th>
+            </tr>
+          </thead>
+          <tbody>
+            {isLoaded ? (
+              supportersList.length > 0 ? (
+                supportersList.map(supporter => <SupportersTabTableRow key={supporter._id} supporter={supporter} />)
+              ) : (
+                <tr>
+                  <td colSpan={7}>No records found</td>
+                </tr>
+              )
             ) : (
               <tr>
-                <td colSpan={7}>No records found</td>
+                <td colSpan={7}>
+                  <Loader />
+                </td>
               </tr>
-            )
-          ) : (
-            <tr>
-              <td colSpan={7}>
-                <Loader />
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+            )}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
