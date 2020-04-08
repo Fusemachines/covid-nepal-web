@@ -199,7 +199,7 @@ const Navbar: FC<INavbarProps> = props => {
           <Nav>
             <NavItem title={t(lo.nav_JoinUs)} exact={false} active={routes.JOIN_US === currentPath} to={routes.JOIN_US} className={`btn btn-outline-light mr-2 px-3`} />
             
-            <NavItem title={'Support Frontline'} exact={false} active={routes.SUPPORT_FRONTLINE_WORKERS === currentPath} to={routes.SUPPORT_FRONTLINE_WORKERS} className={`btn btn-warning mr-2 px-3`} />
+            <NavItem title={'Support Frontline'} exact={false} active={routes.SUPPORT_FRONTLINE_WORKERS === currentPath} to={routes.SUPPORT_FRONTLINE_WORKERS} className={`btn btn-warning mr-2 px-3 text-dark`} />
 
             <EmergencyButton text={t(lo.nav_Emergency)} handleClick={toggleEmergencyContact} className="desktop-view" />
             {/* Temporary Langauge Select */}
