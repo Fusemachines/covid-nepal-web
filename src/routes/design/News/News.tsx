@@ -1,7 +1,6 @@
 import React from 'react';
 import Menu from '../Navbar';
 import { Row, Col, Media } from 'react-bootstrap';
-import { Scrollbars } from 'react-custom-scrollbars';
 
 const News = () => (
   <>
@@ -30,7 +29,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news1.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news1.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -40,7 +39,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news2.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news2.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -50,7 +49,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news3.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news3.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -65,14 +64,14 @@ const News = () => (
 
         <Col md="4">
           <div className="my-3">
-            <img src="/images/news/nepal.jpg" /> <span className="font-weight-bold">Nepal</span>
+            <img alt="" src="/images/news/nepal.jpg" /> <span className="font-weight-bold">Nepal</span>
           </div>
 
             <div className="news-list px-3 h-80">
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news1.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news1.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -83,7 +82,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news2.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news2.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -94,7 +93,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news3.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news3.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -105,7 +104,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news1.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news1.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -116,7 +115,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news2.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news2.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -127,7 +126,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news3.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news3.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -145,14 +144,14 @@ const News = () => (
 
         <Col md="4">
           <div className="my-3">
-            <img src="/images/news/global.jpg" /> <span className="font-weight-bold">Global</span>
+            <img alt="" src="/images/news/global.jpg" /> <span className="font-weight-bold">Global</span>
           </div>
 
             <div className="news-list px-3 h-80">
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news1.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news1.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -163,7 +162,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news2.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news2.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -174,7 +173,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news3.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news3.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -185,7 +184,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news1.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news1.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -196,7 +195,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news2.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news2.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>
@@ -207,7 +206,7 @@ const News = () => (
 
                 <Media>
                   <div className="mr-2 align-self-center">
-                    <img src="/images/news/news3.jpg" className="img-fluid" />
+                    <img alt="" src="/images/news/news3.jpg" className="img-fluid" />
                   </div>
                   <Media.Body className="align-self-center">
                     <div className="font-weight-semibold">Global research and innovation forum: towards a research</div>

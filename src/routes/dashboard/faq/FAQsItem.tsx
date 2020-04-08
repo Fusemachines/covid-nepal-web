@@ -9,7 +9,7 @@ interface ISupportItemProps {
 }
 
 const FAQsItem: FC<ISupportItemProps> = props => {
-  const { category, question, answer } = props;
+  const { question, answer } = props;
   return (
     <li className={`mb-5 ${question.np && answer.np ? 'notranslate' : ''}`}>
         <div className="font-18 mb-2">{selectLanguage(question)}</div>

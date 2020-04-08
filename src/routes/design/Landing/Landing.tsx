@@ -2,11 +2,6 @@ import React from 'react';
 import { Row, Col, Nav, Tab, Table, Media, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Menu from '../Navbar';
 
-// const [show, setShow] = useState(false);
-
-// const handleClose = () => setShow(false);
-// const handleShow = () => setShow(true);
-
 const Home = () => {
   const [show, setShow] = React.useState(false);
 

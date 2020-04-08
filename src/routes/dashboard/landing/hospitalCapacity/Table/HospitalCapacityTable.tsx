@@ -1,17 +1,17 @@
-import React, { FC, useContext, useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useTranslation, Trans } from "react-i18next";
+import React, { FC, useContext, useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
-import HospitalCapacityTableRow from "./HospitalCapacityTableRow";
-import { HospitalCapacityTableContext } from "../HospitalCapacity";
-import MapsModal from "src/components/MapsModal";
-import MapsIframe from "src/components/MapsIframe";
-import Loader from "src/components/Loader";
-import lo from "src/i18n/en";
-import { fetchHospitalsCountsAPI, IHospitalsCounts } from "src/services/hospitals";
-import useLanguage from "src/customHooks/useLanguage";
-import TranslateNumber from "src/components/TranslateNumber";
+import HospitalCapacityTableRow from './HospitalCapacityTableRow';
+import { HospitalCapacityTableContext } from '../HospitalCapacity';
+import MapsModal from 'src/components/MapsModal';
+import MapsIframe from 'src/components/MapsIframe';
+import Loader from 'src/components/Loader';
+import lo from 'src/i18n/en';
+import { fetchHospitalsCountsAPI, IHospitalsCounts } from 'src/services/hospitals';
+import useLanguage from 'src/customHooks/useLanguage';
+import TranslateNumber from 'src/components/TranslateNumber';
 
 export interface IMapModalValues {
   title: string;
@@ -52,7 +52,7 @@ const HospitalCapacityTable = () => {
             *Disclaimer: We are sourcing this data from various sources such as government website, situation report,
             hospital operators, doctors, etc. We need your help to continue gathering this information across all
             hospitals in Nepal. If you would like to help collect data, please sign up
-            <Link className={"text-white"} to="/join-us">
+            <Link className={'text-white'} to="/join-us">
               here
             </Link>
             .
@@ -126,7 +126,7 @@ const HospitalCapacityTable = () => {
 export default HospitalCapacityTable;
 
 const HospitalsCount: FC<{ hospitalsCounts: IHospitalsCounts }> = ({
-  hospitalsCounts: { totalHospitals, totalVerified }
+  hospitalsCounts: { totalHospitals, totalVerified },
 }) => {
   const language = useLanguage();
   return (
@@ -134,21 +134,21 @@ const HospitalsCount: FC<{ hospitalsCounts: IHospitalsCounts }> = ({
       <div className="mt-1 d-inline-block mr-2">
         Total
         <span className="badge badge-warning mx-2 py-1 px-2">
-          {" "}
-          {typeof totalHospitals === "number" && totalHospitals > -1 ? (
+          {' '}
+          {typeof totalHospitals === 'number' && totalHospitals > -1 ? (
             <TranslateNumber originalValue={totalHospitals} language={language} />
           ) : (
-            "NA"
+            'NA'
           )}
         </span>
       </div>
       <div className="mt-1 d-inline-block">
         Verified
         <span className="badge badge-success mx-2 py-1 px-2">
-          {typeof totalVerified === "number" && totalVerified > -1 ? (
+          {typeof totalVerified === 'number' && totalVerified > -1 ? (
             <TranslateNumber originalValue={totalVerified} language={language} />
           ) : (
-            "NA"
+            'NA'
           )}
         </span>
       </div>
@@ -163,10 +163,10 @@ const TotalCount: FC<{ totalCount: number }> = ({ totalCount }) => {
       <div className="d-inline-block ml-2 small">
         Total
         <span className="badge badge-success mx-2 py-1 px-2">
-          {typeof totalCount === "number" && totalCount > -1 ? (
+          {typeof totalCount === 'number' && totalCount > -1 ? (
             <TranslateNumber originalValue={totalCount} language={language} />
           ) : (
-            "NA"
+            'NA'
           )}
         </span>
       </div>

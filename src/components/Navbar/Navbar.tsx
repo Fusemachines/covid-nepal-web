@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Navbar as Navigation, Nav, Dropdown, NavDropdown } from 'react-bootstrap';
+import { Navbar as Navigation, Nav, Dropdown } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';

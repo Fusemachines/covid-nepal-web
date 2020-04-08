@@ -1,18 +1,17 @@
-import React, { FC } from "react";
-import { useHistory } from "react-router-dom";
+import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import { IHospital } from "src/services/hospitals";
-import { selectLanguage } from "src/utils/stringManipulation";
-import TranslateNumber from "src/components/TranslateNumber";
-import NotAvailable from "src/components/NotAvailable";
-import useLanguage from "src/customHooks/useLanguage";
+import { IHospital } from 'src/services/hospitals';
+import { selectLanguage } from 'src/utils/stringManipulation';
+import TranslateNumber from 'src/components/TranslateNumber';
+import NotAvailable from 'src/components/NotAvailable';
+import useLanguage from 'src/customHooks/useLanguage';
 
 interface ITableRowProps {
   hospital: IHospital;
 }
 
 const TableRow: FC<ITableRowProps> = props => {
-  const history = useHistory();
   const { hospital } = props;
   const language = useLanguage();
 
@@ -23,7 +22,7 @@ const TableRow: FC<ITableRowProps> = props => {
       </td>
       <td className="text-center">
         <div>
-          {(hospital.availableTime && hospital.availableTime.length && selectLanguage(hospital.availableTime[0])) || ""}
+          {(hospital.availableTime && hospital.availableTime.length && selectLanguage(hospital.availableTime[0])) || ''}
         </div>
         <small>{selectLanguage(hospital.openDays)}</small>
       </td>
@@ -32,22 +31,17 @@ const TableRow: FC<ITableRowProps> = props => {
           hospital.contact.map((number, index) => (
             <a key={index} className="text-white" href={`tel:${number.en}`}>
               <TranslateNumber originalValue={number.en} language={language} />
-              {index === hospital.contact.length - 1 ? " " : ", "}
+              {index === hospital.contact.length - 1 ? ' ' : ', '}
             </a>
           ))
         ) : (
-          <NotAvailable id={"contact-" + hospital._id} />
+          <NotAvailable id={'contact-' + hospital._id} />
         )}
       </td>
       <td>
-        <a
-          href={"javascript:void(0)"}
-          className="text-white small"
-          onClick={() => history.push(`/hospital/${hospital.nameSlug}`)}
-          style={{ cursor: "pointer" }}
-        >
+        <Link to={`/hospital/${hospital.nameSlug}`} style={{ cursor: 'pointer' }} className="text-white small">
           More info
-        </a>
+        </Link>
       </td>
     </tr>
   );

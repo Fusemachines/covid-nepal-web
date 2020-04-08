@@ -1,11 +1,11 @@
-import React, { FC, useContext } from "react";
-import { useTranslation } from "react-i18next";
+import React, { FC, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import CustomSelectInput from "src/components/CustomSelectInput";
-import { ProvinceOptions } from "src/constants/options";
-import { HospitalCapacityFiltersContext } from "../HospitalCapacity";
-import lo from "src/i18n/en";
-import SearchIcon from "src/components/Icons/SearchIcon";
+import CustomSelectInput from 'src/components/CustomSelectInput';
+import { ProvinceOptions } from 'src/constants/options';
+import { HospitalCapacityFiltersContext } from '../HospitalCapacity';
+import lo from 'src/i18n/en';
+import SearchIcon from 'src/components/Icons/SearchIcon';
 
 const HospitalCapacityFilter: FC<{}> = () => {
   const {
@@ -13,7 +13,7 @@ const HospitalCapacityFilter: FC<{}> = () => {
     filters,
     handleSearchKeywordChange,
     handleProvinceFilterChange,
-    handleDistrictFilterChange
+    handleDistrictFilterChange,
   } = useContext(HospitalCapacityFiltersContext);
   const [t] = useTranslation();
 
@@ -35,11 +35,11 @@ const HospitalCapacityFilter: FC<{}> = () => {
         <span>{t(lo.fil_Province)}</span>
 
         <CustomSelectInput
-          name={"province-select"}
+          name={'province-select'}
           options={ProvinceOptions}
-          placeholder={"Select Province"}
+          placeholder={'Select Province'}
           handleChange={handleProvinceFilterChange}
-          className={"filter-select"}
+          className={'filter-select'}
           selectedValue={filters.province}
           isSearchable={false}
         />
@@ -47,25 +47,14 @@ const HospitalCapacityFilter: FC<{}> = () => {
       <div className="filter d-inline-block">
         <span>{t(lo.fil_District)}</span>
         <CustomSelectInput
-          name={"district-select"}
+          name={'district-select'}
           options={districtDropdownOptions}
-          placeholder={"Select District"}
+          placeholder={'Select District'}
           handleChange={handleDistrictFilterChange}
-          className={"filter-select"}
+          className={'filter-select'}
           selectedValue={filters.district}
         />
       </div>
-      {/* <div className="filter d-inline-block">
-        <span>Covid Test</span>
-        <CustomSelectInput
-          name={'district-select'}
-          options={CovidTestOptions}
-          placeholder={'Select'}
-          handleChange={handleCovidTestFilterChange}
-          className={'filter-select'}
-          selectedValue={filters.covidTest}
-        />
-      </div> */}
     </div>
   );
 };

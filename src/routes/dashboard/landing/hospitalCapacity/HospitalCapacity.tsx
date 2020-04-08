@@ -1,17 +1,16 @@
-import React, { FC, useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
-import { ValueType } from "react-select";
+import React, { FC, useState, useEffect } from 'react';
+import { Col, Row } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import { ValueType } from 'react-select';
 
-import HospitalCapacityTable from "./Table/HospitalCapacityTable";
-import HospitalCapacityFilter from "./Table/HospitalCapacityFilter";
-import { fetchHospitalCapacityAPI, IHospital } from "src/services/hospitals";
-import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from "src/services/contacts";
-import { ProvinceOptions } from "src/constants/options";
-import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
-import Pagination, { IPagination } from "src/components/Pagination/Pagination";
-import lo from "src/i18n/en";
-import SearchIcon from "src/components/Icons/SearchIcon";
+import HospitalCapacityTable from './Table/HospitalCapacityTable';
+import HospitalCapacityFilter from './Table/HospitalCapacityFilter';
+import { fetchHospitalCapacityAPI, IHospital } from 'src/services/hospitals';
+import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
+import { ProvinceOptions } from 'src/constants/options';
+import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
+import Pagination, { IPagination } from 'src/components/Pagination/Pagination';
+import lo from 'src/i18n/en';
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
@@ -35,14 +34,14 @@ export const HospitalCapacityTableContext = React.createContext({} as IHospitalC
 export const HospitalCapacityFiltersContext = React.createContext({} as IHospitalCapacityFiltersContext);
 
 const initialHospitalCapacityFiltersState: IHospitalCapacityFilters = {
-  hospitalName: "",
+  hospitalName: '',
   province: ProvinceOptions[2],
-  district: { label: "Kathmandu", value: "Kathmandu" }
+  district: { label: 'Kathmandu', value: 'Kathmandu' },
 };
 
 const initialPaginationState = {
   page: 1,
-  size: 10
+  size: 10,
 };
 
 const HospitalCapacity: FC<{}> = () => {
@@ -69,8 +68,8 @@ const HospitalCapacity: FC<{}> = () => {
         page: pagination.page,
         size: pagination.size,
         name: hospitalName,
-        province: province ? province.value : "",
-        district: district ? district.value : ""
+        province: province ? province.value : '',
+        district: district ? district.value : '',
       };
       const response = await fetchHospitalCapacityAPI(payload);
       const { docs, ...rest } = response;
@@ -92,7 +91,7 @@ const HospitalCapacity: FC<{}> = () => {
           return { label: doc.name.en, value: doc.name.en };
         });
 
-        mappedOptions.unshift({ label: "All", value: "" });
+        mappedOptions.unshift({ label: 'All', value: '' });
         setDistrictDropdownOptions(mappedOptions);
       }
     } catch (error) {
@@ -103,21 +102,21 @@ const HospitalCapacity: FC<{}> = () => {
   const handleSearchKeywordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({
       hospitalName: event.currentTarget.value,
-      province: { label: "All", value: "" },
-      district: { label: "All", value: "" }
+      province: { label: 'All', value: '' },
+      district: { label: 'All', value: '' },
     });
   };
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
     setPagination(initialPaginationState as IPagination);
-    setFilters({ ...filters, hospitalName: "", province: selectedField, district: { label: "All", value: "" } });
+    setFilters({ ...filters, hospitalName: '', province: selectedField, district: { label: 'All', value: '' } });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
     setPagination(initialPaginationState as IPagination);
-    setFilters({ ...filters, hospitalName: "", district: selectedField });
+    setFilters({ ...filters, hospitalName: '', district: selectedField });
   };
 
   const handlePageChange = (pageNumber: number) => {
@@ -138,7 +137,7 @@ const HospitalCapacity: FC<{}> = () => {
                   districtDropdownOptions,
                   handleSearchKeywordChange,
                   handleProvinceFilterChange,
-                  handleDistrictFilterChange
+                  handleDistrictFilterChange,
                 }}
               >
                 <HospitalCapacityFilter />
