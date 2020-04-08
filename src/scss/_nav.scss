@@ -41,6 +41,11 @@
                 content: "";
                 width: 100%;
             }
+
+            &.btn:hover,
+            &.btn:focus {
+                color: #000000;
+            }
         }
 
         // .social-link a svg {
