@@ -46,6 +46,12 @@
             &.btn:focus {
                 color: #000000;
             }
+
+            &.btn {
+                &:after {
+                    display: none;
+                }
+            }
         }
 
         // .social-link a svg {
