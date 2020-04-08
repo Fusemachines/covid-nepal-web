@@ -1,6 +1,6 @@
 [![Gitter](https://badges.gitter.im/covidnepalopensource/community.svg)](https://gitter.im/covidnepalopensource/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-# COVID-19 NEPAL
+# COVID-19 NEPAL ADMIN
 
 The project has 3 sub division to complete a full cycle
 1) [COVID Nepal User](https://github.com/Fusemachines/covid-nepal-web)
@@ -22,7 +22,7 @@ After you have cloned the repo, move into the project directory and run the yarn
 > cd covid-nepal-web
 > yarn
 ```
-The project can now be started by running the start script
+The project needs .env file and you can now be started by running the start script
 ```
 > yarn start
 ```
@@ -93,9 +93,9 @@ See the section about [prettier](https://prettier.io/) for more information.
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Changelog
+<!-- ## Changelog
 
-[Learn about the latest improvements][changelog].
+[Learn about the latest improvements][changelog]. -->
 
 ## Want to help?
 
@@ -119,11 +119,11 @@ Reference from:
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+The source code is licensed under GPL v3. License is available [here](https://github.com/Fusemachines/covid-nepal-web/blob/master/LICENSE).
 
 Copyright (c) 2020-present, Fusemachines
 
-<h3 align="center">Special Sponsors</h3>
+<h3 align="center">Started At and Supported By</h3>
 <!--special start-->
 
 <p align="center">
@@ -136,7 +136,16 @@ Copyright (c) 2020-present, Fusemachines
 
 ### Maintainer
 
-* [jagatmachines](https://github.com/jagatmachines) -
-**Jagatjyoti G Tuladhar** &lt;jagat.tula@gmail.com&gt; (he/him)
+* [prashannajabara](https://github.com/prashannajabara) -
+**Prashanna Ja Ba Ra** &lt;prashanna.rana@fusemachines.com&gt; (he/him)
 
-### Collaborators
+### Maintainer
+
+### <a name="collaborators"></a> Collaborators
+
+* [jagatmachines](https://github.com/jagatmachines) -
+**Jagatjyoti G Tuladhar** &lt;jagajyoti@fusemachines.com&gt; (he/him)
+* [fuserabin](https://github.com/fuserabin) - Rabin Bhandari  &lt;rabin@fusemachines.com&gt; (he/him)
+* [Rokin Maharjan](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
+* [Pratik Manandhar](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
+* [Prashanna Ja.Ba.Ra](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
