@@ -42,12 +42,12 @@
                 width: 100%;
             }
 
-            &.btn:hover,
-            &.btn:focus {
-                color: #000000;
-            }
-
             &.btn {
+                &.active,
+                &:focus,
+                &:hover {
+                    color: #000000;
+                }
                 &:after {
                     display: none;
                 }
