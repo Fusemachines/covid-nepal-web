@@ -149,3 +149,4 @@ Copyright (c) 2020-present, Fusemachines
 * [sanishkarmacharya](https://github.com/sanishkarmacharya) - **Sanish Karmacharya** &lt;sanish@fusemachines.com&gt; (he/him)
 * [ashutoshdjoshi](https://github.com/ashutoshdjoshi) - **Ashutosh Joshi** &lt;ashutosh@fusemachines.com&gt; (he/him)
 * [shrestharosy028](https://github.com/shrestharosy028) - **Rosy Shrestha** &lt;rosy@fusemachines.com&gt; (she/her)
+* [bibekkc1250](https://github.com/bibekkc1250) - **Bibek KC** &lt;bibek@fusemachines.com&gt; (he/him)
