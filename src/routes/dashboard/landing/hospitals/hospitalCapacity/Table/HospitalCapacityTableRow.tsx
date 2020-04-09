@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { useHistory } from 'react-router-dom';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import { IHospital } from 'src/services/hospitals';
 import LocationIcon from 'src/components/Icons/LocationIcon';
 import { IMapModalValues } from './HospitalCapacityTable';
 import NotAvailable from 'src/components/NotAvailable';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { selectLanguage } from 'src/utils/stringManipulation';
 import TranslateNumber from 'src/components/TranslateNumber';
 import useLanguage from 'src/customHooks/useLanguage';
