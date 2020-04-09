@@ -155,4 +155,5 @@ Copyright (c) 2020-present, Fusemachines
 * [shrstha](https://github.com/shrstha) - **Ashok Shrestha** (he/him)
 * [shreejana0650](https://github.com/shreejana0650) - **Shreejana Mainali** (she/her)
 * [pratikmaharjan](https://github.com/pratikmaharjan) - **Pratik Maharjan** (he/him)
-* [santoshsilwal](https://github.com/santoshsilwal) - **santosh silwal** (he/him)
+* [santoshsilwal](https://github.com/santoshsilwal) - **Santosh Silwal** (he/him)
+* [ajshres](https://github.com/ajshres) - **Ajay Gopal Shrestha** (he/him)
