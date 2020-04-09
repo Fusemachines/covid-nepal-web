@@ -146,6 +146,6 @@ Copyright (c) 2020-present, Fusemachines
 * [jagatmachines](https://github.com/jagatmachines) -
 **Jagatjyoti G Tuladhar** &lt;jagajyoti@fusemachines.com&gt; (he/him)
 * [fuserabin](https://github.com/fuserabin) - Rabin Bhandari  &lt;rabin@fusemachines.com&gt; (he/him)
-* [Rokin Maharjan](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
+* [Rokin Maharjan](https://github.com/rokinfuse)  &lt;rokin@fusemachines.com&gt; (he/him)
 * [Pratik Manandhar](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
 * [Prashanna Ja.Ba.Ra](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
