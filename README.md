@@ -136,17 +136,23 @@ Copyright (c) 2020-present, Fusemachines
 
 ### Maintainer
 
-* [prashannajabara](https://github.com/prashannajabara) -
-**Prashanna Ja Ba Ra** &lt;prashanna.rana@fusemachines.com&gt; (he/him)
-
-### Maintainer
+* [prashannajabara](https://github.com/prashannajabara) - **Prashanna Ja Ba Ra** (he/him)
+* [jagatmachines](https://github.com/jagatmachines) - **Jagatjyoti G Tuladhar** (he/him)
+* [fuserabin](https://github.com/fuserabin) - **Rabin Bhandari**  (he/him)
 
 ### <a name="collaborators"></a> Collaborators
 
-* [jagatmachines](https://github.com/jagatmachines) -
-**Jagatjyoti G Tuladhar** &lt;jagajyoti@fusemachines.com&gt; (he/him)
-* [fuserabin](https://github.com/fuserabin) - **Rabin Bhandari**  &lt;rabin@fusemachines.com&gt; (he/him)
-* [sanishkarmacharya](https://github.com/sanishkarmacharya) - **Sanish Karmacharya** &lt;sanish@fusemachines.com&gt; (he/him)
-* [ashutoshdjoshi](https://github.com/ashutoshdjoshi) - **Ashutosh Joshi** &lt;ashutosh@fusemachines.com&gt; (he/him)
-* [shrestharosy028](https://github.com/shrestharosy028) - **Rosy Shrestha** &lt;rosy@fusemachines.com&gt; (she/her)
-* [bibekkc1250](https://github.com/bibekkc1250) - **Bibek KC** &lt;bibek@fusemachines.com&gt; (he/him)
+* [rokinfuse](https://github.com/rokinfuse) - **Rokin Maharjan** (he/him)
+* [sanishkarmacharya](https://github.com/sanishkarmacharya) - **Sanish Karmacharya** (he/him)
+* [ashutoshdjoshi](https://github.com/ashutoshdjoshi) - **Ashutosh Joshi** (he/him)
+* [shrestharosy028](https://github.com/shrestharosy028) - **Rosy Shrestha** (she/her)
+* [bibekkc1250](https://github.com/bibekkc1250) - **Bibek KC** (he/him)
+* [pratikfuse](https://github.com/pratikfuse) - **Pratik Manandhar** (he/him)
+* [a-siraj](https://github.com/a-siraj) - **Siraj Ahmad** (he/him)
+* [Suvhz](https://github.com/Suvhz) - **Suvha Shrestha** (he/him)
+* [pragyakarfuse](https://github.com/pragyakarfuse) - **Pragyakar Joshi** (he/him)
+* [Zenisha01](https://github.com/Zenisha01) - **Simran Manandhar** (she/her)
+* [shrstha](https://github.com/shrstha) - **Ashok Shrestha** (he/him)
+* [shreejana0650](https://github.com/shreejana0650) - **Shreejana Mainali** (she/her)
+* [pratikmaharjan](https://github.com/pratikmaharjan) - **Pratik Maharjan** (he/him)
+* [santoshsilwal](https://github.com/santoshsilwal) - **santosh silwal** (he/him)
