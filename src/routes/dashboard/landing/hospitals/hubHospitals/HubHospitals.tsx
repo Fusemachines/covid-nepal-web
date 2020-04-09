@@ -8,9 +8,12 @@ import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/service
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 import Pagination, { IPagination } from 'src/components/Pagination/Pagination';
-import HospitalCapacityTable from './Table/HospitalCapacityTable';
+import HospitalCapacityTable from './Table/HubHospitalsTable';
+import {
+  HospitalCapacityFiltersContext,
+  HospitalCapacityTableContext,
+} from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
 import HospitalFilters from 'src/routes/dashboard/landing/hospitals/common/HospitalFilters';
-import { HospitalCapacityTableContext, HospitalCapacityFiltersContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
 
 interface IHospitalCapacityFilters {
   hospitalName: string;
@@ -29,7 +32,7 @@ const initialPaginationState = {
   size: 10,
 };
 
-const HospitalCapacity = () => {
+const HubHospitals = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
   const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
@@ -135,4 +138,4 @@ const HospitalCapacity = () => {
   );
 };
 
-export default HospitalCapacity;
+export default HubHospitals;

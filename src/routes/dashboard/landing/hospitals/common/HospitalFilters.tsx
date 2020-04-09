@@ -1,13 +1,13 @@
-import React, { FC, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import CustomSelectInput from 'src/components/CustomSelectInput';
 import { ProvinceOptions } from 'src/constants/options';
-import { HospitalCapacityFiltersContext } from '../HospitalCapacity';
 import lo from 'src/i18n/en';
 import SearchIcon from 'src/components/Icons/SearchIcon';
+import { HospitalCapacityFiltersContext } from './hospitalContext';
 
-const HospitalCapacityFilter: FC<{}> = () => {
+const HospitalFilters = () => {
   const {
     districtDropdownOptions,
     filters,
@@ -25,7 +25,7 @@ const HospitalCapacityFilter: FC<{}> = () => {
           type="text"
           className="form-control form-control-sm"
           value={filters.hospitalName}
-          onChange={event => handleSearchKeywordChange(event)}
+          onChange={(event) => handleSearchKeywordChange(event)}
         />
         <i>
           <SearchIcon />
@@ -59,4 +59,4 @@ const HospitalCapacityFilter: FC<{}> = () => {
   );
 };
 
-export default HospitalCapacityFilter;
+export default HospitalFilters;

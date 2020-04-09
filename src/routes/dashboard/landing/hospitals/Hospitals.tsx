@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import HospitalCapacity from 'src/routes/dashboard/landing/hospitals/hospitalCapacity';
 import lo from 'src/i18n/en';
+import HubHospitals from './hubHospitals';
 
 const Hospitals = () => {
   const [t] = useTranslation();
@@ -13,12 +14,12 @@ const Hospitals = () => {
       <Row className="mt-3">
         <Col sm="12">
           <div className="rounded bg-bluelight overflow-hidden">
-            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Tab.Container id="left-tabs-example" defaultActiveKey="hospital-capacity">
               <Row>
                 <Col lg={4}>
                   <Nav fill variant="tabs">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">
+                      <Nav.Link eventKey="hospital-capacity">
                         <div>{t(lo.contac_hospitalCapacityData)}</div>
                       </Nav.Link>
                     </Nav.Item>
@@ -30,11 +31,11 @@ const Hospitals = () => {
 
                 <Col sm={12}>
                   <Tab.Content>
-                    <Tab.Pane eventKey="first">
+                    <Tab.Pane eventKey="hospital-capacity">
                       <HospitalCapacity />
                     </Tab.Pane>
                     <Tab.Pane eventKey="hub-hospital">
-                      <div className="p-4">Hub Hospital</div>
+                      <HubHospitals />
                     </Tab.Pane>
                   </Tab.Content>
                 </Col>
