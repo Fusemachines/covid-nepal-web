@@ -1,16 +1,16 @@
-import React, { FC, useState, useEffect } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { useTranslation } from 'react-i18next';
-import { ValueType } from 'react-select';
+import React, { FC, useState, useEffect } from "react";
+import { Col, Row, Tab, Nav } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import { ValueType } from "react-select";
 
-import HospitalCapacityTable from './Table/HospitalCapacityTable';
-import HospitalCapacityFilter from './Table/HospitalCapacityFilter';
-import { fetchHospitalCapacityAPI, IHospital } from 'src/services/hospitals';
-import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
-import { ProvinceOptions } from 'src/constants/options';
-import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
-import Pagination, { IPagination } from 'src/components/Pagination/Pagination';
-import lo from 'src/i18n/en';
+import HospitalCapacityTable from "./Table/HospitalCapacityTable";
+import HospitalCapacityFilter from "./Table/HospitalCapacityFilter";
+import { fetchHospitalCapacityAPI, IHospital } from "src/services/hospitals";
+import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from "src/services/contacts";
+import { ProvinceOptions } from "src/constants/options";
+import { IOptions } from "src/components/CustomSelectInput/CustomSelectInput";
+import Pagination, { IPagination } from "src/components/Pagination/Pagination";
+import lo from "src/i18n/en";
 
 export interface IHospitalCapacityTableContext {
   isLoaded: boolean;
@@ -34,14 +34,14 @@ export const HospitalCapacityTableContext = React.createContext({} as IHospitalC
 export const HospitalCapacityFiltersContext = React.createContext({} as IHospitalCapacityFiltersContext);
 
 const initialHospitalCapacityFiltersState: IHospitalCapacityFilters = {
-  hospitalName: '',
+  hospitalName: "",
   province: ProvinceOptions[2],
-  district: { label: 'Kathmandu', value: 'Kathmandu' },
+  district: { label: "Kathmandu", value: "Kathmandu" }
 };
 
 const initialPaginationState = {
   page: 1,
-  size: 10,
+  size: 10
 };
 
 const HospitalCapacity: FC<{}> = () => {
@@ -68,8 +68,8 @@ const HospitalCapacity: FC<{}> = () => {
         page: pagination.page,
         size: pagination.size,
         name: hospitalName,
-        province: province ? province.value : '',
-        district: district ? district.value : '',
+        province: province ? province.value : "",
+        district: district ? district.value : ""
       };
       const response = await fetchHospitalCapacityAPI(payload);
       const { docs, ...rest } = response;
@@ -91,7 +91,7 @@ const HospitalCapacity: FC<{}> = () => {
           return { label: doc.name.en, value: doc.name.en };
         });
 
-        mappedOptions.unshift({ label: 'All', value: '' });
+        mappedOptions.unshift({ label: "All", value: "" });
         setDistrictDropdownOptions(mappedOptions);
       }
     } catch (error) {
@@ -102,21 +102,21 @@ const HospitalCapacity: FC<{}> = () => {
   const handleSearchKeywordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({
       hospitalName: event.currentTarget.value,
-      province: { label: 'All', value: '' },
-      district: { label: 'All', value: '' },
+      province: { label: "All", value: "" },
+      district: { label: "All", value: "" }
     });
   };
 
   const handleProvinceFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
     setPagination(initialPaginationState as IPagination);
-    setFilters({ ...filters, hospitalName: '', province: selectedField, district: { label: 'All', value: '' } });
+    setFilters({ ...filters, hospitalName: "", province: selectedField, district: { label: "All", value: "" } });
   };
 
   const handleDistrictFilterChange = (value: ValueType<IOptions>) => {
     const selectedField = value as IOptions;
     setPagination(initialPaginationState as IPagination);
-    setFilters({ ...filters, hospitalName: '', district: selectedField });
+    setFilters({ ...filters, hospitalName: "", district: selectedField });
   };
 
   const handlePageChange = (pageNumber: number) => {
@@ -127,30 +127,58 @@ const HospitalCapacity: FC<{}> = () => {
     <>
       <Row className="mt-3">
         <Col sm="12">
-          <div className="rounded bg-bluelight px-3 py-4">
-            <div className="d-md-flex filter-wrapper">
-              <div className="h5 font-weight-bold mb-3 mr-auto">{t(lo.contac_hospitalCapacityData)}</div>
+          <div className="rounded bg-bluelight overflow-hidden">
+            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+              <Row>
+                <Col lg={4}>
+                  <Nav  fill variant="tabs">
+                    <Nav.Item>
+                      <Nav.Link eventKey="first"><div>{t(lo.contac_hospitalCapacityData)}</div></Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="hub-hospital">Hub Hospital</Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Col>
 
-              <HospitalCapacityFiltersContext.Provider
-                value={{
-                  filters,
-                  districtDropdownOptions,
-                  handleSearchKeywordChange,
-                  handleProvinceFilterChange,
-                  handleDistrictFilterChange,
-                }}
-              >
-                <HospitalCapacityFilter />
-              </HospitalCapacityFiltersContext.Provider>
-            </div>
-            <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList }}>
-              <HospitalCapacityTable />
-            </HospitalCapacityTableContext.Provider>
+                <Col lg={8}>
+                  <div className="d-md-flex filter-wrapper p-2">
+                    <HospitalCapacityFiltersContext.Provider
+                      value={{
+                        filters,
+                        districtDropdownOptions,
+                        handleSearchKeywordChange,
+                        handleProvinceFilterChange,
+                        handleDistrictFilterChange
+                      }}
+                    >
+                      <HospitalCapacityFilter />
+                    </HospitalCapacityFiltersContext.Provider>
+                  </div>
+                </Col>
+
+                <Col sm={12}>
+                  <Tab.Content>
+                    <Tab.Pane eventKey="first">
+                      <div className="p-4">
+                        <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList }}>
+                          <HospitalCapacityTable />
+                        </HospitalCapacityTableContext.Provider>
+
+                        <Pagination {...pagination} handlePageChange={handlePageChange} />
+                      </div>
+
+                    </Tab.Pane>
+                    {/* <Tab.Pane eventKey="hub-hospital">
+                      <div className="p-4">
+                        Hub Hospital
+                      </div>
+                    </Tab.Pane> */}
+                  </Tab.Content>
+                </Col>
+              </Row>
+            </Tab.Container>
           </div>
-        </Col>
-
-        <Col sm="12">
-          <Pagination {...pagination} handlePageChange={handlePageChange} />
         </Col>
       </Row>
     </>

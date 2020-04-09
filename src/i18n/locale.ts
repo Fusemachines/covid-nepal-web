@@ -25,6 +25,8 @@ export default interface ILocale {
   covC_totalDeath: string,
   covC_whoReportedNo: string,
   covC_disclaimerNepalGovJohnsHopkins: string,
+
+
   contac_whereToGetTested: string,
   contac_whenToGetTested: string,
   contac_hospitalWhereToGetTested: string,
@@ -39,12 +41,17 @@ export default interface ILocale {
   contac_disclaimerHospitalGoverWebsite: string,
   fil_Province: string,
   fil_District: string,
+
+
   hosp_Address: string,
+  hosp_OpenHours: string,
   hosp_Contact: string,
-  hosp_BedNo: string,
-  hosp_ICUBedsNo: string,
-  hosp_VentilatorsNo: string,
-  hosp_IsolationsBedNo: string,
+  hosp_TotalBeds: string,
+  hosp_ICUBeds: string,
+  hosp_Ventilators: string,
+  hosp_IsolationsBeds: string,
+
+
   emerg_sukrarajTropicalInfecDisHosp: string,
   emerg_asProvideGovNotice: string,
   emerg_nightOnly: string,

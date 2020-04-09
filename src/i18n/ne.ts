@@ -48,11 +48,12 @@ const ne: ILocale = {
   "fil_District": "जिल्ला",
 
   "hosp_Address": "ठेगाना",
+  "hosp_OpenHours": "खुला समय",
   "hosp_Contact": "सम्पर्क",
-  "hosp_BedNo": "सैया क्षमता",
-  "hosp_ICUBedsNo": "अईसिउ क्षमता",
-  "hosp_VentilatorsNo": " भेन्टिलेटर क्षमता",
-  "hosp_IsolationsBedNo": "एकान्तवास क्षमता",
+  "hosp_TotalBeds": "सैया क्षमता",
+  "hosp_ICUBeds": "अईसिउ क्षमता",
+  "hosp_Ventilators": " भेन्टिलेटर क्षमता",
+  "hosp_IsolationsBeds": "एकान्तवास क्षमता",
 
   "emerg_sukrarajTropicalInfecDisHosp": "सुक्रराज ट्रपिकल तथा संक्रामक रोग अस्पताल",
   "emerg_asProvideGovNotice": "सरकारी नोटिसमा प्रदान गरिए अनुसार",

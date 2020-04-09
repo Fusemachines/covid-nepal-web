@@ -15,7 +15,7 @@ export interface IHospitalCapacityTableRowProps {
   toggleMapsModal: (mapModalValues: IMapModalValues) => void;
 }
 
-const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
+const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = (props) => {
   const history = useHistory();
   const language = useLanguage();
   const {
@@ -25,7 +25,10 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
       isVerified,
       location: address,
       mapLink: mapURL,
+      availableTime,
+      openDays,
       contact,
+      hospitalType,
       totalBeds,
       numIsolationBeds,
       icu,
@@ -50,20 +53,26 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
             {selectLanguage(name)}
             {isVerified && <VerfiedCheckmark />}
           </div>
+          <div onClick={showMapModal}>
+            {address && (
+              <>
+                <LocationIcon />
+                <span className="ml-2" style={{ textTransform: 'capitalize' }}>
+                  {selectLanguage(address)}
+                </span>
+              </>
+            )}
+          </div>
         </td>
-        <td onClick={showMapModal}>
-          {address ? (
-            <>
-              <div style={{ textTransform: 'capitalize' }}>{selectLanguage(address)}</div>
-
-              <LocationIcon />
-              <span className="ml-2">Map</span>
-            </>
+        <td>
+          {availableTime.length > 0 ? (
+            <span>{(availableTime && selectLanguage(availableTime[0])) || ''}</span>
           ) : (
-            <NotAvailable id={'address-' + _id} />
+            <NotAvailable id={'availableTime-' + _id} />
           )}
+          <div>{openDays ? selectLanguage(openDays) : ''}</div>
         </td>
-        <td onClick={e => e.stopPropagation()}>
+        <td onClick={(e) => e.stopPropagation()}>
           {contact.length > 0 ? (
             contact.map((number, index) => (
               <a key={index} className="text-white" href={`tel:${number.en}`}>
@@ -76,7 +85,11 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
 
-        <td onClick={e => e.stopPropagation()}>
+        <td>
+        {hospitalType ? selectLanguage(hospitalType) : <NotAvailable id={"hospitalType-" + _id} />}
+        </td>
+
+        <td onClick={(e) => e.stopPropagation()}>
           {typeof totalBeds === 'number' && totalBeds > -1 ? (
             <TranslateNumber originalValue={totalBeds} language={language} />
           ) : (
@@ -84,7 +97,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
 
-        <td onClick={e => e.stopPropagation()}>
+        <td onClick={(e) => e.stopPropagation()}>
           {typeof icu === 'number' && icu > -1 ? (
             <TranslateNumber originalValue={icu} language={language} />
           ) : (
@@ -92,7 +105,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
 
-        <td onClick={e => e.stopPropagation()}>
+        <td onClick={(e) => e.stopPropagation()}>
           {typeof ventilators === 'number' && ventilators > -1 ? (
             <TranslateNumber originalValue={ventilators} language={language} />
           ) : (
@@ -100,7 +113,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = props => {
           )}
         </td>
 
-        <td onClick={e => e.stopPropagation()}>
+        <td onClick={(e) => e.stopPropagation()}>
           {typeof numIsolationBeds === 'number' && numIsolationBeds > -1 ? (
             <TranslateNumber originalValue={numIsolationBeds} language={language} />
           ) : (
@@ -123,6 +136,6 @@ const VerfiedCheckmark = () => (
       </Tooltip>
     }
   >
-    <img src="/images/verified.svg" className="ml-2" alt={""}/>
+    <img src="/images/verified.svg" className="ml-2" alt={''} />
   </OverlayTrigger>
 );
