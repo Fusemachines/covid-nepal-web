@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Media } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 const OpenSource = () => (
   <>
@@ -13,13 +13,13 @@ const OpenSource = () => (
         </Col>
         <Col lg="6" sm="12" className="mt-5 mt-lg-0 flex-column">
           <article className="mb-4">
-            <h6 className="text-bold">What is covidnepal.org open source guiding principle?</h6>
+            <h6 className="text-bold">What is covidnepal.org open-source guiding principle?</h6>
             <p>
-              Covidnepal.org was started with a vision to extend collaboration to wider community at grassroots level to
-              help drive continued engagement and relevancy. We are excited and encourage the wider nepal tech community
-              to be a part of this initiative. While fusemachines is supporting this initiative and will play a final
-              moderator role should there be a deadlock situation, our intention is to make this as much community
-              driven as possible.{' '}
+              Covidnepal.org was started with a vision to extend collaboration to a wider community at a grassroots
+              level to help drive continued engagement and relevancy. We are excited and encourage the wider Nepal tech
+              community to be a part of this initiative. While fusemachines is supporting this initiative and will play
+              a final moderator role should there be a deadlock situation, our intention is to make this as much
+              community-driven as possible.
             </p>
           </article>
           <article className="mb-4">
@@ -27,13 +27,21 @@ const OpenSource = () => (
             <p>GNU General Public License (GPL) 3.0 </p>
           </article>
           <article className="mb-4">
-            <h6 className="text-bold">
-              Who are current maintainers of the Open Source Steering Committee (OSSC) and what do they decide?
-            </h6>
+            <h6 className="text-bold">Who are the current moderators / maintainers of this open-source project?</h6>
             <p>
               OSSC will make collective recommendations on what feature roadmap should be built. They will also be
               responsible for code of conduct oversight and reviewing final code before accepting. Where applicable
               during deadlock they will decide upon a collective round of voting.{' '}
+            </p>
+          </article>
+          <article className="mb-4">
+            <h6 className="text-bold">How to apply to be a moderator?</h6>
+            <p>
+              Please complete this{' '}
+              <a href="https://forms.gle/wGwBFrbHFbPqf5Hw7" target="_blank" rel="noopener noreferrer">
+                form
+              </a>{' '}
+              and a member of our team will get in touch with you to discuss and onboard.
             </p>
           </article>
           <article>
@@ -71,9 +79,9 @@ const OpenSource = () => (
               by posting issues, updating documentation, submitting pull requests, providing feedback in comments, and
               any other activities.
               <br /> <br />
-              Communication through any of Covid Nepal's channels (GitHub, Gitter, IRC, mailing lists, Slack, etc.) must
-              be constructive and never resort to personal attacks, trolling, public or private harassment, insults, or
-              other unprofessional conduct.
+              Communication through any of Covid Nepal&apos;s channels (GitHub, Gitter, IRC, mailing lists, Slack, etc.)
+              must be constructive and never resort to personal attacks, trolling, public or private harassment,
+              insults, or other unprofessional conduct.
               <br /> <br />
               We promise to extend courtesy and respect to everyone involved in this project regardless of gender,
               gender identity, sexual orientation, disability, age, race, ethnicity, religion, or level of experience.
@@ -84,7 +92,12 @@ const OpenSource = () => (
               <br /> <br />
               If you are subject to or witness unacceptable behavior, or have any other concerns, please let us know
               through our{' '}
-              <a href="https://gitter.im/covidnepalopensource/community" target="_blank" className="text-white">
+              <a
+                href="https://gitter.im/covidnepalopensource/community"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
                 Gitter
               </a>
               .
@@ -133,6 +146,7 @@ const OpenSource = () => (
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSe9jQqlQyLnsebxWTn7mfQN9anEdm9gPUf29EYbo6lQWHZY9g/viewform"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-yellow px-4 py-2"
           >
             Apply to be part of the
