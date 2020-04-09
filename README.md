@@ -136,16 +136,14 @@ Copyright (c) 2020-present, Fusemachines
 
 ### Maintainer
 
-* [prashannajabara](https://github.com/prashannajabara) -
-**Prashanna Ja Ba Ra** &lt;prashanna.rana@fusemachines.com&gt; (he/him)
-
-### Maintainer
+* [prashannajabara](https://github.com/prashannajabara) - **Prashanna Ja Ba Ra** (he/him)
+* [jagatmachines](https://github.com/jagatmachines) - **Jagatjyoti G Tuladhar** (he/him)
+* [fuserabin](https://github.com/fuserabin) - **Rabin Bhandari**  (he/him)
 
 ### <a name="collaborators"></a> Collaborators
 
-* [jagatmachines](https://github.com/jagatmachines) -
-**Jagatjyoti G Tuladhar** &lt;jagajyoti@fusemachines.com&gt; (he/him)
-* [fuserabin](https://github.com/fuserabin) - Rabin Bhandari  &lt;rabin@fusemachines.com&gt; (he/him)
-* [Rokin Maharjan](https://github.com/rokinfuse)  &lt;rokin@fusemachines.com&gt; (he/him)
-* [Pratik Manandhar](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
-* [Prashanna Ja.Ba.Ra](https://github.com/fuserabin)  &lt;rabin@fusemachines.com&gt; (he/him)
+* [rokinfuse](https://github.com/rokinfuse) - **Rokin Maharjan** (he/him)
+* [sanishkarmacharya](https://github.com/sanishkarmacharya) - **Sanish Karmacharya** (he/him)
+* [ashutoshdjoshi](https://github.com/ashutoshdjoshi) - **Ashutosh Joshi** (he/him)
+* [shrestharosy028](https://github.com/shrestharosy028) - **Rosy Shrestha** (she/her)
+* [bibekkc1250](https://github.com/bibekkc1250) - **Bibek KC** (he/him)
