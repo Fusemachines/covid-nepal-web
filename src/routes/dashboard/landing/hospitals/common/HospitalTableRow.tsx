@@ -4,18 +4,22 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import { IHospital } from 'src/services/hospitals';
 import LocationIcon from 'src/components/Icons/LocationIcon';
-import { IMapModalValues } from './HospitalCapacityTable';
 import NotAvailable from 'src/components/NotAvailable';
 import { selectLanguage } from 'src/utils/stringManipulation';
 import TranslateNumber from 'src/components/TranslateNumber';
 import useLanguage from 'src/customHooks/useLanguage';
 
-export interface IHospitalCapacityTableRowProps {
+export interface IMapModalValues {
+  title: string;
+  mapURL: string;
+}
+
+export interface IHospitalTableRowProps {
   hospitalCapacity: IHospital;
   toggleMapsModal: (mapModalValues: IMapModalValues) => void;
 }
 
-const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = (props) => {
+const HospitalTableRow: FC<IHospitalTableRowProps> = (props) => {
   const history = useHistory();
   const language = useLanguage();
   const {
@@ -85,9 +89,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = (props) => 
           )}
         </td>
 
-        <td>
-        {hospitalType ? selectLanguage(hospitalType) : <NotAvailable id={"hospitalType-" + _id} />}
-        </td>
+        <td>{hospitalType ? selectLanguage(hospitalType) : <NotAvailable id={'hospitalType-' + _id} />}</td>
 
         <td onClick={(e) => e.stopPropagation()}>
           {typeof totalBeds === 'number' && totalBeds > -1 ? (
@@ -125,7 +127,7 @@ const HospitalCapacityTableRow: FC<IHospitalCapacityTableRowProps> = (props) => 
   );
 };
 
-export default HospitalCapacityTableRow;
+export default HospitalTableRow;
 
 const VerfiedCheckmark = () => (
   <OverlayTrigger
