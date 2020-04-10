@@ -142,7 +142,7 @@ Copyright (c) 2020-present, Fusemachines
 
 ### Moderators
 
-Do you want to be a moderator? Be part of the moderator team. [Sign Up Now](https://github.com/Fusemachines/covid-nepal-web)
+Do you want to be a moderator? Be part of the moderator team. [Sign Up Now](https://docs.google.com/forms/d/e/1FAIpQLSe9jQqlQyLnsebxWTn7mfQN9anEdm9gPUf29EYbo6lQWHZY9g/viewform)
 
 
 ### <a name="collaborators"></a> Collaborators
