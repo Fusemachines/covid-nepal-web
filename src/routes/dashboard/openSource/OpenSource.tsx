@@ -90,9 +90,9 @@ const OpenSource = () => (
               by posting issues, updating documentation, submitting pull requests, providing feedback in comments, and
               any other activities.
               <br /> <br />
-              Communication through any of Covid Nepal's channels (GitHub, Gitter, IRC, mailing lists, Slack, etc.) must
-              be constructive and never resort to personal attacks, trolling, public or private harassment, insults, or
-              other unprofessional conduct.
+              Communication through any of Covid Nepal&apos; channels (GitHub, Gitter, IRC, mailing lists, Slack, etc.)
+              must be constructive and never resort to personal attacks, trolling, public or private harassment,
+              insults, or other unprofessional conduct.
               <br /> <br />
               We promise to extend courtesy and respect to everyone involved in this project regardless of gender,
               gender identity, sexual orientation, disability, age, race, ethnicity, religion, or level of experience.
