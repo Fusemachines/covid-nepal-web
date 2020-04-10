@@ -8,7 +8,7 @@ const OpenSource = () => (
         <Col lg="4" sm="12">
           <h1 className="text-bold">
             Covidnepal.org
-            <br /> Open Source Guidelines
+            <br /> Open Source Community
           </h1>
         </Col>
         <Col lg="6" sm="12" className="mt-5 mt-lg-0 flex-column">
@@ -17,9 +17,7 @@ const OpenSource = () => (
             <p>
               Covidnepal.org was started with a vision to extend collaboration to a wider community at a grassroots
               level to help drive continued engagement and relevancy. We are excited and encourage the wider Nepal tech
-              community to be a part of this initiative. While fusemachines is supporting this initiative and will play
-              a final moderator role should there be a deadlock situation, our intention is to make this as much
-              community-driven as possible.{' '}
+              community to be a part of this initiative.
             </p>
           </article>
           <article className="mb-4">
@@ -30,13 +28,28 @@ const OpenSource = () => (
             <h6 className="text-bold">Who are the current moderators / maintainers of this open-source project?</h6>
           </article>
           <article>
-            <h6>Current Moderators:</h6>
+            <h6 className="text-bold">Where is the codebase?</h6>
+            <p>
+              <a className="btn btn-light text-bold" href="https://github.com/Fusemachines/covid-nepal-web" target="_blank">
+                <svg className="img-fluid mr-2" viewBox="0 0 16 16" version="1.1" width="22" height="22" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                 </path></svg>Github</a>
+            </p>
+          </article>
+          <article>
+            <h6 className="text-bold">Current Maintainers:</h6>
             <p>
               <span className="text-bold">Prashanna Jung Rana</span>
               <br />
               <span className="text-bold">Rabin Bhandari</span>
               <br />
               <span className="text-bold">Jagatjyoti G Tuladhar</span>
+            </p>
+          </article>
+          <article>
+            <h6 className="text-bold">Do you want to be a moderator? Be part of the moderator team</h6>
+            <p>
+            <a className="btn btn-green" href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe9jQqlQyLnsebxWTn7mfQN9anEdm9gPUf29EYbo6lQWHZY9g/viewform" target="_blank">Apply to be moderator now</a>
             </p>
           </article>
         </Col>

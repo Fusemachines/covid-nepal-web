@@ -87,7 +87,7 @@ const Navbar: FC<INavbarProps> = props => {
           to="/open-source"
         >
           <img src="/images/contributor.svg" alt="Contributor" width="14px" className="mr-1" />
-          Join our Open Source Community
+          Codebase is now available as Open Source (GPL 3.0) in Github! Be part of this Open Source Community!
         </Link>
         <div className="d-none d-sm-none d-md-block social-link">
           <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">
@@ -197,14 +197,14 @@ const Navbar: FC<INavbarProps> = props => {
           </Nav>
           <Nav>
             <NavItem title={t(lo.nav_JoinUs)} exact={false} active={routes.JOIN_US === currentPath} to={routes.JOIN_US} className={`btn btn-outline-light mr-2 px-3`} />
-            
+
             <NavItem title={'Support Frontline'} exact={false} active={routes.SUPPORT_FRONTLINE_WORKERS === currentPath} to={routes.SUPPORT_FRONTLINE_WORKERS} className={`btn btn-warning mr-2 px-3 text-dark`} />
 
             <EmergencyButton text={t(lo.nav_Emergency)} handleClick={toggleEmergencyContact} className="desktop-view" />
             {/* Temporary Langauge Select */}
             {/* <LanguageSelectCommingSoon isMobile={false} />
 
-           
+
 
             {/* language */}
             <Dropdown className="lang-selector menu-flag">
