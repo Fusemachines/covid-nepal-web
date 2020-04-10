@@ -134,11 +134,16 @@ Copyright (c) 2020-present, Fusemachines
 
 ## Thanks to our Collaborators
 
-### Maintainer
+### Maintainers
 
 * [prashannajabara](https://github.com/prashannajabara) - **Prashanna Ja Ba Ra** (he/him)
 * [jagatmachines](https://github.com/jagatmachines) - **Jagatjyoti G Tuladhar** (he/him)
 * [fuserabin](https://github.com/fuserabin) - **Rabin Bhandari**  (he/him)
+
+### Moderators
+
+Do you want to be a moderator? Be part of the moderator team. [Sign Up Now](https://github.com/Fusemachines/covid-nepal-web)
+
 
 ### <a name="collaborators"></a> Collaborators
 
