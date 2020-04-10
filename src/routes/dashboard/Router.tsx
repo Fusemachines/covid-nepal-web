@@ -15,7 +15,7 @@ import Notices from 'src/routes/dashboard/notices';
 import FAQ from 'src/routes/dashboard/faq';
 import News from 'src/routes/dashboard/news';
 import Supporters from 'src/routes/dashboard/supportFrontlineWorkers';
-import OpenSource from 'src/routes/dashboard/OpenSource';
+import OpenSource from 'src/routes/dashboard/openSource';
 
 const DashboardRouter: FC<{}> = () => (
   <Switch>
