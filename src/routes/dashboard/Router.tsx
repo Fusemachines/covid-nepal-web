@@ -15,6 +15,7 @@ import Notices from 'src/routes/dashboard/notices';
 import FAQ from 'src/routes/dashboard/faq';
 import News from 'src/routes/dashboard/news';
 import Supporters from 'src/routes/dashboard/supportFrontlineWorkers';
+import OpenSource from 'src/routes/dashboard/openSource';
 
 const DashboardRouter: FC<{}> = () => (
   <Switch>
@@ -31,6 +32,7 @@ const DashboardRouter: FC<{}> = () => (
     <Route path={routes.FAQ} component={withTracker(FAQ)} />
     <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
     <Route path={routes.SUPPORT_FRONTLINE_WORKERS} component={withTracker(Supporters)} />
+    <Route path={routes.OPEN_SOURCE} component={withTracker(OpenSource)} />
   </Switch>
 );
 

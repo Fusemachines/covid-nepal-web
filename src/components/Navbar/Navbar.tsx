@@ -82,14 +82,13 @@ const Navbar: FC<INavbarProps> = props => {
   return (
     <>
       <div className="text-center bg-bluelight covid-alert d-flex">
-        <a
+        <Link
           className="small mx-auto"
-          href="https://bit.ly/covidnepal_report_error_newinfo"
-          target="_blank"
-          rel="noopener noreferrer"
+          to="/open-source"
         >
-          {t(lo.nav_HelpUsKeepDataReliable)}
-        </a>
+          <img src="/images/contributor.svg" alt="Contributor" width="14px" className="mr-1" />
+          Join our Open Source Community
+        </Link>
         <div className="d-none d-sm-none d-md-block social-link">
           <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">
             <FacebookIcon />

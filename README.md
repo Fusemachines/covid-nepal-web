@@ -22,7 +22,7 @@ After you have cloned the repo, move into the project directory and run the yarn
 > cd covid-nepal-web
 > yarn
 ```
-The project can now be started by running the start script
+The project needs .env file and can now be started by running the start script
 ```
 > yarn start
 ```
@@ -93,9 +93,9 @@ See the section about [prettier](https://prettier.io/) for more information.
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Changelog
+<!-- ## Changelog
 
-[Learn about the latest improvements][changelog].
+[Learn about the latest improvements][changelog]. -->
 
 ## Want to help?
 
@@ -119,11 +119,11 @@ Reference from:
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+The source code is licensed under GPL v3. License is available [here](https://github.com/Fusemachines/covid-nepal-web/blob/master/LICENSE).
 
 Copyright (c) 2020-present, Fusemachines
 
-<h3 align="center">Special Sponsors</h3>
+<h3 align="center">Started At and Supported By</h3>
 <!--special start-->
 
 <p align="center">
@@ -136,7 +136,24 @@ Copyright (c) 2020-present, Fusemachines
 
 ### Maintainer
 
-* [jagatmachines](https://github.com/jagatmachines) -
-**Jagatjyoti G Tuladhar** &lt;jagat.tula@gmail.com&gt; (he/him)
+* [prashannajabara](https://github.com/prashannajabara) - **Prashanna Ja Ba Ra** (he/him)
+* [jagatmachines](https://github.com/jagatmachines) - **Jagatjyoti G Tuladhar** (he/him)
+* [fuserabin](https://github.com/fuserabin) - **Rabin Bhandari**  (he/him)
 
-### Collaborators
+### <a name="collaborators"></a> Collaborators
+
+* [rokinfuse](https://github.com/rokinfuse) - **Rokin Maharjan** (he/him)
+* [sanishkarmacharya](https://github.com/sanishkarmacharya) - **Sanish Karmacharya** (he/him)
+* [ashutoshdjoshi](https://github.com/ashutoshdjoshi) - **Ashutosh Joshi** (he/him)
+* [shrestharosy028](https://github.com/shrestharosy028) - **Rosy Shrestha** (she/her)
+* [bibekkc1250](https://github.com/bibekkc1250) - **Bibek KC** (he/him)
+* [pratikfuse](https://github.com/pratikfuse) - **Pratik Manandhar** (he/him)
+* [a-siraj](https://github.com/a-siraj) - **Siraj Ahmad** (he/him)
+* [Suvhz](https://github.com/Suvhz) - **Suvha Shrestha** (he/him)
+* [pragyakarfuse](https://github.com/pragyakarfuse) - **Pragyakar Joshi** (he/him)
+* [Zenisha01](https://github.com/Zenisha01) - **Simran Manandhar** (she/her)
+* [shrstha](https://github.com/shrstha) - **Ashok Shrestha** (he/him)
+* [shreejana0650](https://github.com/shreejana0650) - **Shreejana Mainali** (she/her)
+* [pratikmaharjan](https://github.com/pratikmaharjan) - **Pratik Maharjan** (he/him)
+* [santoshsilwal](https://github.com/santoshsilwal) - **Santosh Silwal** (he/him)
+* [ajshres](https://github.com/ajshres) - **Ajay Gopal Shrestha** (he/him)
