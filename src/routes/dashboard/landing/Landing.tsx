@@ -8,9 +8,6 @@ import TestingInformation from "src/routes/dashboard/landing/testingInfo";
 import LatestNews from "./latestNews";
 
 const Landing = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <>
       <div className="container-fluid mt-3">
