@@ -41,10 +41,9 @@ export interface IFetchHospitalCapacityAPIPayload {
   name?: string;
   province?: string;
   district?: string;
-  covidTest?: string;
 }
 
-export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAPIPayload) {
+export async function fetchHospitalsAPI(payload: IFetchHospitalCapacityAPIPayload) {
   try {
     const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload });
     return response.data;

@@ -3,7 +3,7 @@ import { Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { ValueType } from 'react-select';
 
-import { fetchHospitalCapacityAPI, IHospital } from 'src/services/hospitals';
+import { fetchHospitalsAPI, IHospital } from 'src/services/hospitals';
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
@@ -59,7 +59,7 @@ const HubHospitals = () => {
         province: province ? province.value : '',
         district: district ? district.value : '',
       };
-      const response = await fetchHospitalCapacityAPI(payload);
+      const response = await fetchHospitalsAPI(payload);
       const { docs, ...rest } = response;
       setHospitalCapacityList(docs);
       setPagination(rest);
