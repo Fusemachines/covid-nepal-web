@@ -39,21 +39,6 @@ const OpenSource = () => (
               <span className="text-bold">Jagatjyoti G Tuladhar</span>
             </p>
           </article>
-          <article className="mb-4">
-            <h6 className="text-bold">How to apply to be a moderator?</h6>
-            <p>
-              Please complete{' '}
-              <a
-                className="text-white"
-                href="https://docs.google.com/forms/u/1/d/17f1U0BVHz87PElj2doUMODcNDSFP9toZzR_f9hd_dlY/edit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                this form{' '}
-              </a>
-              and a member of our team will get in touch with you to discuss and onboard
-            </p>
-          </article>
         </Col>
       </Row>
 
