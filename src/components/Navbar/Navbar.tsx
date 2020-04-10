@@ -87,7 +87,7 @@ const Navbar: FC<INavbarProps> = props => {
           to="/open-source"
         >
           <img src="/images/contributor.svg" alt="Contributor" width="14px" className="mr-1" />
-          Be a Part of Open Source Steering Committee (OSSC)
+          Join our Open Source Community
         </Link>
         <div className="d-none d-sm-none d-md-block social-link">
           <a href="https://www.facebook.com/covidnepalorg/" target="_blank" rel="noopener noreferrer">

@@ -87,7 +87,7 @@ const OpenSource = () => (
 
       <Row className="mt-5 justify-content-center">
         <Col md="5" sm="12" className="d-flex justify-content-center">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9jQqlQyLnsebxWTn7mfQN9anEdm9gPUf29EYbo6lQWHZY9g/viewform" target="_blank" className="btn btn-yellow px-4 py-2">Apply to be part of the<br /> Open Source Steering Committee (OSSC)</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9jQqlQyLnsebxWTn7mfQN9anEdm9gPUf29EYbo6lQWHZY9g/viewform" target="_blank" className="btn btn-yellow px-4 py-2">Apply to be a moderator<br /> of our Open Source Community</a>
         </Col>
       </Row>
     </div>
