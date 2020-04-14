@@ -3,8 +3,7 @@ import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 
-import HospitalCapacityTableRow from './HospitalCapacityTableRow';
-import { HospitalCapacityTableContext } from '../HospitalCapacity';
+import { HospitalTableContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
 import MapsModal from 'src/components/MapsModal';
 import MapsIframe from 'src/components/MapsIframe';
 import Loader from 'src/components/Loader';
@@ -12,14 +11,10 @@ import lo from 'src/i18n/en';
 import { fetchHospitalsCountsAPI, IHospitalsCounts } from 'src/services/hospitals';
 import useLanguage from 'src/customHooks/useLanguage';
 import TranslateNumber from 'src/components/TranslateNumber';
-
-export interface IMapModalValues {
-  title: string;
-  mapURL: string;
-}
+import HospitalTableRow, { IMapModalValues } from 'src/routes/dashboard/landing/hospitals/common/HospitalTableRow';
 
 const HospitalCapacityTable = () => {
-  const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
+  const { isLoaded, hospitalsList: hospitalCapacityList } = useContext(HospitalTableContext);
   const [hospitalsCounts, setHospitalsCounts] = useState({} as IHospitalsCounts);
   const [showMapsModal, setShowMapsModal] = useState(false);
   const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
@@ -37,7 +32,7 @@ const HospitalCapacityTable = () => {
   };
 
   const toggleMapsModal = (mapModalValues?: IMapModalValues) => {
-    setShowMapsModal(prevShowMapsState => !prevShowMapsState);
+    setShowMapsModal((prevShowMapsState) => !prevShowMapsState);
     if (mapModalValues) {
       const { title, mapURL } = mapModalValues;
       setMapModalValues({ title, mapURL });
@@ -66,19 +61,22 @@ const HospitalCapacityTable = () => {
               {t(lo.contac_hospitalName)}
               {<HospitalsCount hospitalsCounts={hospitalsCounts} />}
             </th>
-            <th>{t(lo.hosp_Address)}</th>
+            <th>{t(lo.hosp_OpenHours)}</th>
+
             <th>{t(lo.hosp_Contact)}</th>
+            <th>Type</th>
+
             <th>
-              {t(lo.hosp_BedNo)} <TotalCount totalCount={hospitalsCounts.totalBeds} />
+              {t(lo.hosp_TotalBeds)} <TotalCount totalCount={hospitalsCounts.totalBeds} />
             </th>
             <th>
-              {t(lo.hosp_ICUBedsNo)} <TotalCount totalCount={hospitalsCounts.totalIcus} />
+              {t(lo.hosp_ICUBeds)} <TotalCount totalCount={hospitalsCounts.totalIcus} />
             </th>
             <th>
-              {t(lo.hosp_VentilatorsNo)} <TotalCount totalCount={hospitalsCounts.totalVentilators} />
+              {t(lo.hosp_Ventilators)} <TotalCount totalCount={hospitalsCounts.totalVentilators} />
             </th>
             <th>
-              {t(lo.hosp_IsolationsBedNo)} <TotalCount totalCount={hospitalsCounts.totalIsolationBeds} />
+              {t(lo.hosp_IsolationsBeds)} <TotalCount totalCount={hospitalsCounts.totalIsolationBeds} />
             </th>
           </tr>
         </thead>
@@ -86,11 +84,11 @@ const HospitalCapacityTable = () => {
         <tbody>
           {isLoaded ? (
             hospitalCapacityList.length > 0 ? (
-              hospitalCapacityList.map(hospitalCapacity => {
+              hospitalCapacityList.map((hospitalCapacity) => {
                 return (
-                  <HospitalCapacityTableRow
+                  <HospitalTableRow
                     key={hospitalCapacity._id}
-                    hospitalCapacity={hospitalCapacity}
+                    hospital={hospitalCapacity}
                     toggleMapsModal={toggleMapsModal}
                   />
                 );

@@ -3,9 +3,9 @@ import { Row, Col } from "react-bootstrap";
 import { Scrollbars } from "react-custom-scrollbars";
 
 import CovidCases from "src/routes/dashboard/landing/covidCases";
-import HospitalCapacity from "src/routes/dashboard/landing/hospitalCapacity";
 import TestingInformation from "src/routes/dashboard/landing/testingInfo";
 import LatestNews from "./latestNews";
+import Hospitals from "src/routes/dashboard/landing/hospitals";
 
 const Landing = () => {
   useEffect(() => {
@@ -27,7 +27,7 @@ const Landing = () => {
             </Scrollbars>
           </Col>
         </Row>
-        <HospitalCapacity />
+        <Hospitals />
       </div>
     </>
   );
