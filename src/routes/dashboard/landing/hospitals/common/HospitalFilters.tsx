@@ -5,7 +5,7 @@ import CustomSelectInput from 'src/components/CustomSelectInput';
 import { ProvinceOptions } from 'src/constants/options';
 import lo from 'src/i18n/en';
 import SearchIcon from 'src/components/Icons/SearchIcon';
-import { HospitalCapacityFiltersContext } from './hospitalContext';
+import { HospitalFiltersContext } from './hospitalContext';
 
 const HospitalFilters = () => {
   const {
@@ -14,7 +14,7 @@ const HospitalFilters = () => {
     handleSearchKeywordChange,
     handleProvinceFilterChange,
     handleDistrictFilterChange,
-  } = useContext(HospitalCapacityFiltersContext);
+  } = useContext(HospitalFiltersContext);
   const [t] = useTranslation();
 
   return (

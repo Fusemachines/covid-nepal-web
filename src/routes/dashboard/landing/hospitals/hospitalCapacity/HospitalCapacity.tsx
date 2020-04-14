@@ -3,14 +3,14 @@ import { Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { ValueType } from 'react-select';
 
-import { fetchHospitalsAPI, IHospital } from 'src/services/hospitals';
+import { fetchHospitalsAPI, IHospital, IFetchHospitalsAPIPayload } from 'src/services/hospitals';
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 import Pagination, { IPagination } from 'src/components/Pagination/Pagination';
 import HospitalCapacityTable from './Table/HospitalCapacityTable';
 import HospitalFilters from 'src/routes/dashboard/landing/hospitals/common/HospitalFilters';
-import { HospitalCapacityTableContext, HospitalCapacityFiltersContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
+import { HospitalTableContext, HospitalFiltersContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
 
 interface IHospitalCapacityFilters {
   hospitalName: string;
@@ -49,7 +49,7 @@ const HospitalCapacity = () => {
     setIsLoaded(false);
     try {
       const { hospitalName, province, district } = filters;
-      let payload = {
+      let payload : IFetchHospitalsAPIPayload = {
         page: pagination.page,
         size: pagination.size,
         name: hospitalName,
@@ -111,7 +111,7 @@ const HospitalCapacity = () => {
     <>
       <Col sm={12}>
         <div className="d-md-flex filter-wrapper p-2">
-          <HospitalCapacityFiltersContext.Provider
+          <HospitalFiltersContext.Provider
             value={{
               filters,
               districtDropdownOptions,
@@ -121,13 +121,13 @@ const HospitalCapacity = () => {
             }}
           >
             <HospitalFilters />
-          </HospitalCapacityFiltersContext.Provider>
+          </HospitalFiltersContext.Provider>
         </div>
       </Col>
       <div className="p-4">
-        <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList }}>
+        <HospitalTableContext.Provider value={{ isLoaded, hospitalsList: hospitalCapacityList }}>
           <HospitalCapacityTable />
-        </HospitalCapacityTableContext.Provider>
+        </HospitalTableContext.Provider>
 
         <Pagination {...pagination} handlePageChange={handlePageChange} />
       </div>

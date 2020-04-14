@@ -3,25 +3,26 @@ import { Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { ValueType } from 'react-select';
 
-import { fetchHospitalsAPI, IHospital } from 'src/services/hospitals';
+import { fetchHospitalsAPI, IHospital, IFetchHospitalsAPIPayload } from 'src/services/hospitals';
 import { fetchDistrictListAPI, IFetchDistrictListAPIResponse } from 'src/services/contacts';
 import { ProvinceOptions } from 'src/constants/options';
 import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 import Pagination, { IPagination } from 'src/components/Pagination/Pagination';
-import HospitalCapacityTable from './Table/HubHospitalsTable';
+import HubHospitalsTable from './Table/HubHospitalsTable';
 import {
-  HospitalCapacityFiltersContext,
-  HospitalCapacityTableContext,
+  HospitalFiltersContext,
+  HospitalTableContext,
 } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
 import HospitalFilters from 'src/routes/dashboard/landing/hospitals/common/HospitalFilters';
+import { tags } from 'src/constants/hospitals';
 
-interface IHospitalCapacityFilters {
+interface IHubHospitalsFilters {
   hospitalName: string;
   province: IOptions;
   district: IOptions;
 }
 
-const initialHospitalCapacityFiltersState: IHospitalCapacityFilters = {
+const initialHubHospitalsFiltersState: IHubHospitalsFilters = {
   hospitalName: '',
   province: ProvinceOptions[2],
   district: { label: 'Kathmandu', value: 'Kathmandu' },
@@ -34,34 +35,36 @@ const initialPaginationState = {
 
 const HubHospitals = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hospitalCapacityList, setHospitalCapacityList] = useState<Array<IHospital>>([]);
-  const [filters, setFilters] = useState<IHospitalCapacityFilters>(initialHospitalCapacityFiltersState);
+  const [hubHospitalsList, setHubHospitalsList] = useState<Array<IHospital>>([]);
+  const [filters, setFilters] = useState<IHubHospitalsFilters>(initialHubHospitalsFiltersState);
   const [districtDropdownOptions, setDistrictDropdownOptions] = useState<IOptions[]>([] as IOptions[]);
   const [pagination, setPagination] = useState<IPagination>(initialPaginationState as IPagination);
   const [t] = useTranslation();
 
   useEffect(() => {
-    fetchHospitalCapacityData();
+    fetchHospitals();
   }, [filters, pagination.page]);
 
   useEffect(() => {
     fetchDistrictsByProvince();
   }, [filters.province]);
 
-  const fetchHospitalCapacityData = async () => {
+  const fetchHospitals = async () => {
     setIsLoaded(false);
     try {
       const { hospitalName, province, district } = filters;
-      let payload = {
+      let payload : IFetchHospitalsAPIPayload = {
         page: pagination.page,
         size: pagination.size,
         name: hospitalName,
         province: province ? province.value : '',
         district: district ? district.value : '',
+        tags: tags.HUB
+
       };
       const response = await fetchHospitalsAPI(payload);
       const { docs, ...rest } = response;
-      setHospitalCapacityList(docs);
+      setHubHospitalsList(docs);
       setPagination(rest);
     } catch (error) {
       console.log(error);
@@ -114,7 +117,7 @@ const HubHospitals = () => {
     <>
       <Col sm={12}>
         <div className="d-md-flex filter-wrapper p-2">
-          <HospitalCapacityFiltersContext.Provider
+          <HospitalFiltersContext.Provider
             value={{
               filters,
               districtDropdownOptions,
@@ -124,13 +127,13 @@ const HubHospitals = () => {
             }}
           >
             <HospitalFilters />
-          </HospitalCapacityFiltersContext.Provider>
+          </HospitalFiltersContext.Provider>
         </div>
       </Col>
       <div className="p-4">
-        <HospitalCapacityTableContext.Provider value={{ isLoaded, hospitalCapacityList }}>
-          <HospitalCapacityTable />
-        </HospitalCapacityTableContext.Provider>
+        <HospitalTableContext.Provider value={{ isLoaded, hospitalsList : hubHospitalsList }}>
+          <HubHospitalsTable />
+        </HospitalTableContext.Provider>
 
         <Pagination {...pagination} handlePageChange={handlePageChange} />
       </div>

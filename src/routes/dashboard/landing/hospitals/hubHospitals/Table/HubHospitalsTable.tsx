@@ -11,15 +11,15 @@ import { fetchHospitalsCountsAPI, IHospitalsCounts } from 'src/services/hospital
 import useLanguage from 'src/customHooks/useLanguage';
 import TranslateNumber from 'src/components/TranslateNumber';
 import HospitalTableRow from 'src/routes/dashboard/landing/hospitals/common/HospitalTableRow';
-import { HospitalCapacityTableContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
+import { HospitalTableContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
 
 export interface IMapModalValues {
   title: string;
   mapURL: string;
 }
 
-const HospitalCapacityTable = () => {
-  const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
+const HubHospitalsTable = () => {
+  const { isLoaded, hospitalsList: hubHospitalsList } = useContext(HospitalTableContext);
   const [hospitalsCounts, setHospitalsCounts] = useState({} as IHospitalsCounts);
   const [showMapsModal, setShowMapsModal] = useState(false);
   const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
@@ -88,12 +88,12 @@ const HospitalCapacityTable = () => {
 
         <tbody>
           {isLoaded ? (
-            hospitalCapacityList.length > 0 ? (
-              hospitalCapacityList.map((hospitalCapacity) => {
+            hubHospitalsList.length > 0 ? (
+              hubHospitalsList.map((hubHospital) => {
                 return (
                   <HospitalTableRow
-                    key={hospitalCapacity._id}
-                    hospitalCapacity={hospitalCapacity}
+                    key={hubHospital._id}
+                    hospital={hubHospital}
                     toggleMapsModal={toggleMapsModal}
                   />
                 );
@@ -126,7 +126,7 @@ const HospitalCapacityTable = () => {
   );
 };
 
-export default HospitalCapacityTable;
+export default HubHospitalsTable;
 
 const HospitalsCount: FC<{ hospitalsCounts: IHospitalsCounts }> = ({
   hospitalsCounts: { totalHospitals, totalVerified },

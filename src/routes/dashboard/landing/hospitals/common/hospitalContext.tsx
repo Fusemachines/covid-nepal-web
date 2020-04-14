@@ -6,7 +6,7 @@ import { IOptions } from 'src/components/CustomSelectInput/CustomSelectInput';
 
 export interface IHospitalTableContext {
   isLoaded: boolean;
-  hospitalCapacityList: Array<IHospital>;
+  hospitalsList: Array<IHospital>;
 }
 
 export interface IHospitalFiltersContext {
@@ -22,5 +22,5 @@ interface IHospitalFilters {
   district: IOptions;
 }
 
-export const HospitalCapacityTableContext = createContext({} as IHospitalTableContext);
-export const HospitalCapacityFiltersContext = createContext({} as IHospitalFiltersContext);
+export const HospitalTableContext = createContext({} as IHospitalTableContext);
+export const HospitalFiltersContext = createContext({} as IHospitalFiltersContext);

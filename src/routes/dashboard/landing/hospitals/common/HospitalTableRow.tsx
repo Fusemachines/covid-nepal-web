@@ -15,7 +15,7 @@ export interface IMapModalValues {
 }
 
 export interface IHospitalTableRowProps {
-  hospitalCapacity: IHospital;
+  hospital: IHospital;
   toggleMapsModal: (mapModalValues: IMapModalValues) => void;
 }
 
@@ -23,7 +23,7 @@ const HospitalTableRow: FC<IHospitalTableRowProps> = (props) => {
   const history = useHistory();
   const language = useLanguage();
   const {
-    hospitalCapacity: {
+    hospital: {
       _id,
       name,
       isVerified,

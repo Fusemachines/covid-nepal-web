@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 
-import { HospitalCapacityTableContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
+import { HospitalTableContext } from 'src/routes/dashboard/landing/hospitals/common/hospitalContext';
 import MapsModal from 'src/components/MapsModal';
 import MapsIframe from 'src/components/MapsIframe';
 import Loader from 'src/components/Loader';
@@ -11,10 +11,10 @@ import lo from 'src/i18n/en';
 import { fetchHospitalsCountsAPI, IHospitalsCounts } from 'src/services/hospitals';
 import useLanguage from 'src/customHooks/useLanguage';
 import TranslateNumber from 'src/components/TranslateNumber';
-import HospitalTableRow, { IMapModalValues } from '../../common/HospitalTableRow';
+import HospitalTableRow, { IMapModalValues } from 'src/routes/dashboard/landing/hospitals/common/HospitalTableRow';
 
 const HospitalCapacityTable = () => {
-  const { isLoaded, hospitalCapacityList } = useContext(HospitalCapacityTableContext);
+  const { isLoaded, hospitalsList: hospitalCapacityList } = useContext(HospitalTableContext);
   const [hospitalsCounts, setHospitalsCounts] = useState({} as IHospitalsCounts);
   const [showMapsModal, setShowMapsModal] = useState(false);
   const [mapModalValues, setMapModalValues] = useState<IMapModalValues>({} as IMapModalValues);
@@ -88,7 +88,7 @@ const HospitalCapacityTable = () => {
                 return (
                   <HospitalTableRow
                     key={hospitalCapacity._id}
-                    hospitalCapacity={hospitalCapacity}
+                    hospital={hospitalCapacity}
                     toggleMapsModal={toggleMapsModal}
                   />
                 );
