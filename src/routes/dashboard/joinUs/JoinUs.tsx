@@ -11,9 +11,6 @@ import { NoTransWrapper } from "src/components/NoTranslate";
 const JoinUs = () => {
   const [t] = useTranslation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <>
       <div className="container-fluid mt-3">
