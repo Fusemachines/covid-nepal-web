@@ -162,3 +162,5 @@ Do you want to be a moderator? Be part of the moderator team. [Sign Up Now](http
 * [pratikmaharjan](https://github.com/pratikmaharjan) - **Pratik Maharjan** (he/him)
 * [santoshsilwal](https://github.com/santoshsilwal) - **Santosh Silwal** (he/him)
 * [ajshres](https://github.com/ajshres) - **Ajay Gopal Shrestha** (he/him)
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specifications. Contributions of any kind is welcome!
