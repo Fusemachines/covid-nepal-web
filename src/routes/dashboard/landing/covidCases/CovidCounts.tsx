@@ -34,7 +34,7 @@ const CovidCounts: FC<IGlobalCovidCasesProps> = ({ covidCasesNepalCounts, covidC
           <div className="">{t(lo.covC_totalTested)}</div>
           <div className="h3 m-0 font-weight-bold  d-inline-block">
             <TranslateNumber
-              originalValue={covidCasesNepalCounts ? setCommas(covidCasesNepalCounts.testedTotal) : "-"}
+              originalValue={covidCasesNepalCounts ? setCommas(2432089) : "-"}
               language={language}
             />
           </div>
@@ -48,7 +48,7 @@ const CovidCounts: FC<IGlobalCovidCasesProps> = ({ covidCasesNepalCounts, covidC
           <div className="">{t(lo.covC_totalConfirmed)}</div>
           <div className="h3 m-0 font-weight-bold  d-inline-block">
             <TranslateNumber
-              originalValue={covidCasesNepalCounts ? setCommas(covidCasesNepalCounts.confirmedTotal) : "-"}
+              originalValue={covidCasesNepalCounts ? setCommas(307925) : "-"}
               language={language}
             />
           </div>
@@ -72,7 +72,7 @@ const CovidCounts: FC<IGlobalCovidCasesProps> = ({ covidCasesNepalCounts, covidC
           <div className="">{t(lo.covC_totalRecovered)}</div>
           <div className="h3 m-0 font-weight-bold d-inline-block ">
             <TranslateNumber
-              originalValue={covidCasesNepalCounts ? setCommas(covidCasesNepalCounts.recoveredTotal) : "-"}
+              originalValue={covidCasesNepalCounts ? setCommas(278506) : "-"}
               language={language}
             />
           </div>
@@ -96,7 +96,7 @@ const CovidCounts: FC<IGlobalCovidCasesProps> = ({ covidCasesNepalCounts, covidC
           <div className="">{t(lo.covC_totalDeath)}</div>
           <div className="h3 m-0 font-weight-bold d-inline-block">
             <TranslateNumber
-              originalValue={covidCasesNepalCounts ? setCommas(covidCasesNepalCounts.deathTotal) : "-"}
+              originalValue={covidCasesNepalCounts ? setCommas(3194) : "-"}
               language={language}
             />
           </div>
