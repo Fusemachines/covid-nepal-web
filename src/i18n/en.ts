@@ -48,11 +48,12 @@ const en: ILocale = {
   "fil_District": "District",
 
   "hosp_Address": "Address",
+  "hosp_OpenHours": "Open Hours",
   "hosp_Contact": "Contact",
-  "hosp_BedNo": "No of Beds",
-  "hosp_ICUBedsNo": "No of ICU Beds",
-  "hosp_VentilatorsNo": "No of Ventilators",
-  "hosp_IsolationsBedNo": "No of Isolation Beds",
+  "hosp_TotalBeds": "Total Beds",
+  "hosp_ICUBeds": "ICU Beds",
+  "hosp_Ventilators": "Ventilators",
+  "hosp_IsolationsBeds": "Isolation Beds",
 
   "emerg_sukrarajTropicalInfecDisHosp": "Sukraraj Tropical And Infectious Disease Hospital",
   "emerg_asProvideGovNotice": "As provided in the government notices",

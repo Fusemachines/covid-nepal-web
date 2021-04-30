@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { FC, useEffect } from 'react';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 import * as routes from 'src/constants/routes';
 import Landing from 'src/routes/dashboard/landing';
@@ -17,22 +17,34 @@ import News from 'src/routes/dashboard/news';
 import Supporters from 'src/routes/dashboard/supportFrontlineWorkers';
 import OpenSource from 'src/routes/dashboard/openSource';
 
+const ScrollToTop: React.FC<{ children: any }> = ({ children }) => {
+  const { location } = useHistory();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return children;
+};
+
 const DashboardRouter: FC<{}> = () => (
   <Switch>
-    <Route exact path={routes.DASHBOARD} component={withTracker(Landing)} />
-    <Route path={routes.SYMPTOMS} component={withTracker(Symptoms)} />
-    <Route path={routes.AT_HOME} component={withTracker(AtHome)} />
-    <Route path={routes.ELDERLY} component={withTracker(Elderly)} />
-    <Route path={routes.PARENTING} component={withTracker(Parenting)} />
-    <Route path={routes.PROTECT_YOURSELF} component={withTracker(ProtectYourSelf)} />
+    <ScrollToTop>
+      <Route exact path={routes.DASHBOARD} component={withTracker(Landing)} />
+      <Route path={routes.SYMPTOMS} component={withTracker(Symptoms)} />
+      <Route path={routes.AT_HOME} component={withTracker(AtHome)} />
+      <Route path={routes.ELDERLY} component={withTracker(Elderly)} />
+      <Route path={routes.PARENTING} component={withTracker(Parenting)} />
+      <Route path={routes.PROTECT_YOURSELF} component={withTracker(ProtectYourSelf)} />
 
-    <Route path={routes.HOSPITAL_DETAIL} component={withTracker(HospitalDetails)} />
-    <Route path={routes.NOTICES} component={withTracker(Notices)} />
-    <Route path={routes.NEWS} component={withTracker(News)} />
-    <Route path={routes.FAQ} component={withTracker(FAQ)} />
-    <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
-    <Route path={routes.SUPPORT_FRONTLINE_WORKERS} component={withTracker(Supporters)} />
-    <Route path={routes.OPEN_SOURCE} component={withTracker(OpenSource)} />
+      <Route path={routes.HOSPITAL_DETAIL} component={withTracker(HospitalDetails)} />
+      <Route path={routes.NOTICES} component={withTracker(Notices)} />
+      <Route path={routes.NEWS} component={withTracker(News)} />
+      <Route path={routes.FAQ} component={withTracker(FAQ)} />
+      <Route path={routes.JOIN_US} component={withTracker(JoinUs)} />
+      <Route path={routes.SUPPORT_FRONTLINE_WORKERS} component={withTracker(Supporters)} />
+      <Route path={routes.OPEN_SOURCE} component={withTracker(OpenSource)} />
+    </ScrollToTop>
   </Switch>
 );
 

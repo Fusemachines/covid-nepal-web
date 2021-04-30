@@ -35,16 +35,16 @@ export interface IHospital {
 interface IHospitalCapaciyResponse extends IPagination {
   docs: Array<IHospital>;
 }
-export interface IFetchHospitalCapacityAPIPayload {
+export interface IFetchHospitalsAPIPayload {
   page: number;
   size: number;
   name?: string;
   province?: string;
   district?: string;
-  covidTest?: string;
+  tags?:string;
 }
 
-export async function fetchHospitalCapacityAPI(payload: IFetchHospitalCapacityAPIPayload) {
+export async function fetchHospitalsAPI(payload: IFetchHospitalsAPIPayload) {
   try {
     const response: AxiosResponse<IHospitalCapaciyResponse> = await axios.get(`/hospitals`, { params: payload });
     return response.data;

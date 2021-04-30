@@ -16,9 +16,6 @@ const Contacts: FC<IContactsProps> = props => {
   const { visibility, toggleContacts } = props;
   const [t] = useTranslation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <div className={`right-bar ${visibility ? 'show' : ''}`}>
       <div className="overlay" onClick={() => toggleContacts()} />
