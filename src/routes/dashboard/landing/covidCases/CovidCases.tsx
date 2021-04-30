@@ -138,11 +138,11 @@ const CovidCases = () => {
 
           <small>
             <Trans i18nKey={lo.covC_disclaimerNepalGovJohnsHopkins}>
-              *Disclaimer: These numbers are obtained from
-              <a className={"text-white"} target="_blank" rel="noopener noreferrer" href="https://heoc.mohp.gov.np/">
+              *Disclaimer: These numbers are obtained from{' '}
+              <a className={"text-white"} target="_blank" rel="noopener noreferrer" href="https://covid19.mohp.gov.np/">
                 Nepal Government
               </a>
-              and
+              {' '}and{' '}
               <a
                 className={"text-white"}
                 target="_blank"
@@ -151,7 +151,7 @@ const CovidCases = () => {
               >
                 Johns Hopkins University
               </a>
-              and being updated as the numbers from these sources get updated.
+              {' '}and being updated as the numbers from these sources get updated.
             </Trans>
           </small>
         </div>

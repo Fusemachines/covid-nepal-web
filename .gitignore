@@ -15,6 +15,7 @@ package-lock.json
 
 # misc
 .env
+.env.prod
 .env.zip
 .DS_Store
 .env.local
